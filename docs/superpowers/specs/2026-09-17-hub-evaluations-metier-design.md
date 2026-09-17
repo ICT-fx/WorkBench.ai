@@ -211,7 +211,10 @@ produire une page à moitié vide.
   l'échantillon, versions exactes des modèles.
 - **`/methodologie`** — le prompt intégral, le barème et ses poids, la composition du jeu
   de test, et une section **« ce que ce test ne mesure pas »** : un seul prompt par
-  modèle, pas de fine-tuning, pas d'OCR spécialisé en amont, 25 documents et non 10 000.
+  modèle, pas de fine-tuning, pas d'OCR spécialisé en amont, 25 documents et non 10 000,
+  **des factures synthétiques et non des factures réelles anonymisées**, et **des images
+  et non des PDF avec couche texte** — un PDF natif est sensiblement plus facile à lire
+  pour un modèle, donc les scores publiés sont un plancher, pas un plafond.
 
 La section des limites n'est pas de la modestie : reconnaître les limites avant qu'on
 les oppose est ce qui rend le reste crédible.
@@ -261,7 +264,7 @@ tests de rendu unitaires.
 | # | Étape | Notion | Nature | Ordre de grandeur |
 |---|---|---|---|---|
 | 0 | Socle : dépôt, schémas Zod, `task.json` facture, `prompt.md` | TSK-2 | dev | ½ journée |
-| 1 | 25 factures fabriquées + vérité terrain, cas pièges compris | TSK-3 | **manuel (Fantin)** | 1½ jour |
+| 1 | 25 factures fabriquées + vérité terrain, cas pièges compris | TSK-3 | générées par code, revue visuelle | ½ journée |
 | 2 | `eval run` + `eval score` | TSK-4 | dev, TDD | 1 journée |
 | 3 | `eval review` + `eval publish` | TSK-4 | dev + ~2 h de revue | ¾ journée |
 | 4 | Site Next.js et mise en ligne | TSK-5 | dev | 1½ jour |

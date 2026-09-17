@@ -1,0 +1,28 @@
+{
+  "docId": "f-014",
+  "fields": {
+    "numero_facture": "AV-2026-5457",
+    "date_emission": "2026-09-20",
+    "siret_emetteur": "80776092981396",
+    "tva_intracom": "FR87807760929",
+    "total_ht": -1400,
+    "total_tva": -280,
+    "total_ttc": -1680,
+    "echeance": "2026-10-20",
+    "lignes": [
+      {
+        "designation": "Annulation prestation du 12/02",
+        "quantite": 1,
+        "prix_unitaire_ht": 1250,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Geste commercial",
+        "quantite": 1,
+        "prix_unitaire_ht": 150,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": "AVOIR"
+  }
+}

@@ -83,3 +83,14 @@ describe("LeaderboardSchema", () => {
     expect(() => LeaderboardSchema.parse(lb)).toThrow();
   });
 });
+
+describe("Value imbriqué", () => {
+  it("accepte un null à l'intérieur d'une ligne (franchise de TVA)", () => {
+    const gt = {
+      docId: "f-001",
+      fields: { lignes: [{ designation: "Conseil", quantite: 1, prix_unitaire_ht: 100, taux_tva: null }] },
+    };
+    const lignes = GroundTruthSchema.parse(gt).fields.lignes as Array<Record<string, unknown>>;
+    expect(lignes[0]!.taux_tva).toBeNull();
+  });
+});
