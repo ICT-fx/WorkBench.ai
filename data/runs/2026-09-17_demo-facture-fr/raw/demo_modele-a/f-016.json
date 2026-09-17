@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-a",
+  "modelVersion": "demo-a-2026-09",
+  "docId": "f-016",
+  "raw": {
+    "numero_facture": "FA-2026-5154",
+    "date_emission": "2026-04-05",
+    "siret_emetteur": "16122399582455",
+    "tva_intracom": "FR24161223995",
+    "total_ht": 1088.73,
+    "total_tva": 217.75,
+    "total_ttc": 1306.48,
+    "echeance": "2026-05-05",
+    "lignes": [
+      {
+        "designation": "Pièces détachées série B",
+        "quantite": 40,
+        "prix_unitaire_ht": 27.3,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Frais de port",
+        "quantite": 1,
+        "prix_unitaire_ht": 85,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 3250,
+  "costUsd": 0.019177,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

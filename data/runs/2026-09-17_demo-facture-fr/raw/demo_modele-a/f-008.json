@@ -1,0 +1,41 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-a",
+  "modelVersion": "demo-a-2026-09",
+  "docId": "f-008",
+  "raw": {
+    "numero_facture": "FA-2026-8797",
+    "date_emission": "2026-01-05",
+    "siret_emetteur": "29456153654000",
+    "tva_intracom": "FR70294561536",
+    "total_ht": 4080,
+    "total_tva": 816,
+    "total_ttc": 4896,
+    "echeance": "2026-02-04",
+    "lignes": [
+      {
+        "designation": "Étude thermique",
+        "quantite": 1,
+        "prix_unitaire_ht": 3200,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Rapport d'expertise",
+        "quantite": 1,
+        "prix_unitaire_ht": 640,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Déplacement",
+        "quantite": 2,
+        "prix_unitaire_ht": 120,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 4194,
+  "costUsd": 0.019466,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

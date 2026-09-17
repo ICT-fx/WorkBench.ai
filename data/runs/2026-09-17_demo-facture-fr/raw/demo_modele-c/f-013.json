@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-c",
+  "modelVersion": "demo-c-2026-09",
+  "docId": "f-013",
+  "raw": {
+    "numero_facture": "AV-2026-1042",
+    "date_emission": "2026-03-26",
+    "siret_emetteur": "79841785799266",
+    "tva_intracom": "FR88798417857",
+    "total_ht": -680,
+    "total_tva": -136,
+    "total_ttc": -816,
+    "echeance": "2026-04-25",
+    "lignes": [
+      {
+        "designation": "Retour marchandise non conforme",
+        "quantite": 2,
+        "prix_unitaire_ht": 340,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": "AVOIR"
+  },
+  "latencyMs": 851,
+  "costUsd": 0.001072,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

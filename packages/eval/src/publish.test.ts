@@ -67,7 +67,7 @@ describe("buildLeaderboard", () => {
   ];
 
   it("produit un classement validé par le schéma", () => {
-    const lb = buildLeaderboard({ taskId: "facture-fr", runDate: "2026-10-08", scores, results, sampleSize: 1 });
+    const lb = buildLeaderboard({ taskId: "facture-fr", status: "reel", runDate: "2026-10-08", scores, results, sampleSize: 1 });
     expect(lb.rows).toHaveLength(1);
     expect(lb.runDate).toBe("2026-10-08");
   });
@@ -78,13 +78,13 @@ describe("buildLeaderboard", () => {
       { runId: "r", model: "m", modelVersion: "m-v1", docId: "f-002", raw: {}, latencyMs: 0, costUsd: 0, error: "timeout" },
     ];
     expect(() => buildLeaderboard({
-      taskId: "facture-fr", runDate: "2026-10-08", scores, results: instables, sampleSize: 2,
+      taskId: "facture-fr", status: "reel", runDate: "2026-10-08", scores, results: instables, sampleSize: 2,
     })).toThrow(/échec/i);
   });
 
   it("refuse une date de run mal formée", () => {
     expect(() => buildLeaderboard({
-      taskId: "facture-fr", runDate: "08/10/2026", scores, results, sampleSize: 1,
+      taskId: "facture-fr", status: "reel", runDate: "08/10/2026", scores, results, sampleSize: 1,
     })).toThrow();
   });
 });

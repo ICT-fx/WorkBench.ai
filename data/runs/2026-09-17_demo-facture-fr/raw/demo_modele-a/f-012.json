@@ -1,0 +1,41 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-a",
+  "modelVersion": "demo-a-2026-09",
+  "docId": "f-012",
+  "raw": {
+    "numero_facture": "FA-2026-7303",
+    "date_emission": "2026-02-07",
+    "siret_emetteur": "07500416329599",
+    "tva_intracom": "FR49075004163",
+    "total_ht": 11150,
+    "total_tva": 952,
+    "total_ttc": 12102,
+    "echeance": "2026-03-09",
+    "lignes": [
+      {
+        "designation": "Travaux de rénovation énergétique",
+        "quantite": 1,
+        "prix_unitaire_ht": 8400,
+        "taux_tva": 5.5
+      },
+      {
+        "designation": "Fourniture matériel neuf",
+        "quantite": 1,
+        "prix_unitaire_ht": 2150,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Entretien courant",
+        "quantite": 1,
+        "prix_unitaire_ht": 600,
+        "taux_tva": 10
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 3490,
+  "costUsd": 0.019992,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

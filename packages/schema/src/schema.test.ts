@@ -67,18 +67,23 @@ describe("LeaderboardSchema", () => {
   };
 
   it("accepte un classement complet", () => {
-    const lb = { taskId: "facture-fr", runDate: "2026-10-08", sampleSize: 25, rows: [row] };
+    const lb = { taskId: "facture-fr", status: "reel", runDate: "2026-10-08", sampleSize: 25, rows: [row] };
     expect(LeaderboardSchema.parse(lb).rows[0]!.docCount).toBe(25);
   });
 
   it("refuse un pourcentage supérieur à 100", () => {
-    const lb = { taskId: "facture-fr", runDate: "2026-10-08", sampleSize: 25,
+    const lb = { taskId: "facture-fr", status: "reel", runDate: "2026-10-08", sampleSize: 25,
       rows: [{ ...row, sansRelecture: 101 }] };
     expect(() => LeaderboardSchema.parse(lb)).toThrow();
   });
 
+  it("refuse un classement sans statut : on ne publie pas une démo par inadvertance", () => {
+    const lb = { taskId: "facture-fr", runDate: "2026-10-08", sampleSize: 25, rows: [row] };
+    expect(() => LeaderboardSchema.parse(lb)).toThrow();
+  });
+
   it("refuse un coût négatif", () => {
-    const lb = { taskId: "facture-fr", runDate: "2026-10-08", sampleSize: 25,
+    const lb = { taskId: "facture-fr", status: "reel", runDate: "2026-10-08", sampleSize: 25,
       rows: [{ ...row, costPerDoc: -1 }] };
     expect(() => LeaderboardSchema.parse(lb)).toThrow();
   });

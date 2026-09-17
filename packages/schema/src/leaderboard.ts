@@ -22,6 +22,13 @@ export type LeaderboardRow = z.infer<typeof LeaderboardRowSchema>;
 
 export const LeaderboardSchema = z.object({
   taskId: z.string().min(1),
+  /**
+   * `demo` = résultats fabriqués pour développer le site, jamais des mesures.
+   * Le champ est obligatoire et sans valeur par défaut : personne ne peut
+   * publier un classement de démonstration en oubliant de le signaler, et le
+   * site affiche un bandeau qu'on ne peut pas manquer.
+   */
+  status: z.enum(["reel", "demo"]),
   runDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Date attendue au format AAAA-MM-JJ"),
   sampleSize: z.number().int().min(1),
   rows: z.array(LeaderboardRowSchema),

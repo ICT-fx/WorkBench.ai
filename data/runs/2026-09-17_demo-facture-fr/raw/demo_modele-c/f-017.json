@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-c",
+  "modelVersion": "demo-c-2026-09",
+  "docId": "f-017",
+  "raw": {
+    "numero_facture": "FA-2026-1794",
+    "date_emission": "2026-08-06",
+    "siret_emetteur": "43873982477407",
+    "tva_intracom": "FR03438739824",
+    "total_ht": 6200,
+    "total_tva": 1118.96,
+    "total_ttc": 7440,
+    "echeance": "2026-05-09",
+    "lignes": [
+      {
+        "designation": "Chantier menuiserie — solde",
+        "quantite": 1,
+        "prix_unitaire_ht": 6200,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": "Acompte de 1800.00 € déjà versNaN"
+  },
+  "latencyMs": 629,
+  "costUsd": 0.000942,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

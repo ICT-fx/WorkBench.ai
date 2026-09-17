@@ -43,6 +43,7 @@ export type BuildLeaderboardOptions = {
   scores: DocScore[];
   results: ModelResult[];
   sampleSize: number;
+  status: "reel" | "demo";
   /** Au-delà de ce taux d'appels en échec, un modèle rend le run impubliable. */
   maxErrorRate?: number;
 };
@@ -70,6 +71,7 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard {
 
   return LeaderboardSchema.parse({
     taskId: opts.taskId,
+    status: opts.status,
     runDate: opts.runDate,
     sampleSize: opts.sampleSize,
     rows,

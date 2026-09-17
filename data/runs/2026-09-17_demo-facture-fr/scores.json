@@ -1,0 +1,7763 @@
+[
+  {
+    "model": "demo/modele-a",
+    "docId": "f-001",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1740,
+        "expected": 1740,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1450,
+        "expected": 1450,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 290,
+        "expected": 290,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "50329375521178",
+        "expected": "50329375521178",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-1155",
+        "expected": "FA-2026-1155",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-24",
+        "expected": "2026-06-24",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR35503293755",
+        "expected": "FR35503293755",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Maintenance préventive annuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1450,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Maintenance préventive annuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1450,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-24",
+        "expected": "2026-07-24",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-002",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 531.12,
+        "expected": 531.12,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 442.6,
+        "expected": 442.6,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 85,
+        "expected": 88.52,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "82642320332505",
+        "expected": "82642320332505",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9269",
+        "expected": "FA-2026-9269",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-16",
+        "expected": "2026-05-16",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR61826423203",
+        "expected": "FR61826423203",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Cartouche toner noir",
+            "quantite": 4,
+            "prix_unitaire_ht": 89.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ramette papier A4 80g",
+            "quantite": 20,
+            "prix_unitaire_ht": 4.15,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Cartouche toner noir",
+            "quantite": 4,
+            "prix_unitaire_ht": 89.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ramette papier A4 80g",
+            "quantite": 20,
+            "prix_unitaire_ht": 4.15,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-15",
+        "expected": "2026-06-15",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-003",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 7140,
+        "expected": 7140,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 5950,
+        "expected": 5950,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1190,
+        "expected": 1190,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "82003062098913",
+        "expected": "82003062098913",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9307",
+        "expected": "FA-2026-9307",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-04",
+        "expected": "2026-04-04",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR85820030620",
+        "expected": "FR85820030620",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Prestation de conseil — mars 2026",
+            "quantite": 7,
+            "prix_unitaire_ht": 850,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Prestation de conseil — mars 2026",
+            "quantite": 7,
+            "prix_unitaire_ht": 850,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-04",
+        "expected": "2026-05-04",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-004",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 3298.2,
+        "expected": 3298.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 2748.5,
+        "expected": 2748.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 549.7,
+        "expected": 549.7,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "41080414781958",
+        "expected": "41080414781958",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2589",
+        "expected": "FA-2026-2589",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-27",
+        "expected": "2026-02-27",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Remplacement pompe hydraulique",
+            "quantite": 1,
+            "prix_unitaire_ht": 2340.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Main d'œuvre",
+            "quantite": 6,
+            "prix_unitaire_ht": 68,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Remplacement pompe hydraulique",
+            "quantite": 1,
+            "prix_unitaire_ht": 2340.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Main d'œuvre",
+            "quantite": 6,
+            "prix_unitaire_ht": 68,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-29",
+        "expected": "2026-03-29",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-005",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 3792,
+        "expected": 3792,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 3160,
+        "expected": 3160,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 632,
+        "expected": 632,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "24978564410701",
+        "expected": "24978564410701",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-3650",
+        "expected": "FA-2026-3650",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-19",
+        "expected": "2026-06-19",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR31249785644",
+        "expected": "FR31249785644",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Licence logicielle — 12 mois",
+            "quantite": 3,
+            "prix_unitaire_ht": 420,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Formation utilisateurs",
+            "quantite": 2,
+            "prix_unitaire_ht": 950,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Licence logicielle — 12 mois",
+            "quantite": 3,
+            "prix_unitaire_ht": 420,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Formation utilisateurs",
+            "quantite": 2,
+            "prix_unitaire_ht": 950,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-19",
+        "expected": "2026-07-19",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-006",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 936,
+        "expected": 936,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 780,
+        "expected": 780,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 156,
+        "expected": 156,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "37002969319071",
+        "expected": "37002969319071",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-3793",
+        "expected": "FA-2026-3793",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-08",
+        "expected": "2026-01-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR42370029693",
+        "expected": "FR42370029693",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Nettoyage de fin de chantier",
+            "quantite": 1,
+            "prix_unitaire_ht": 780,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Nettoyage de fin de chantier",
+            "quantite": 1,
+            "prix_unitaire_ht": 780,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-007",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 775.44,
+        "expected": 775.44,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 646.2,
+        "expected": 646.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 129.24,
+        "expected": 129.24,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "98617048723807",
+        "expected": "98617048723807",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9408",
+        "expected": "FA-2026-9407",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-10",
+        "expected": "2026-03-10",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR27986170487",
+        "expected": "FR27986170487",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Transport palettes Lyon-Nantes",
+            "quantite": 3,
+            "prix_unitaire_ht": 215.4,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Transport palettes Lyon-Nantes",
+            "quantite": 3,
+            "prix_unitaire_ht": 215.4,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-09",
+        "expected": "2026-04-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-008",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 4896,
+        "expected": 4896,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4080,
+        "expected": 4080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 816,
+        "expected": 816,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "29456153654000",
+        "expected": "29456153654000",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-8797",
+        "expected": "FA-2026-8797",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-05",
+        "expected": "2026-01-05",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR70294561536",
+        "expected": "FR70294561536",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Étude thermique",
+            "quantite": 1,
+            "prix_unitaire_ht": 3200,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Rapport d'expertise",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement",
+            "quantite": 2,
+            "prix_unitaire_ht": 120,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Étude thermique",
+            "quantite": 1,
+            "prix_unitaire_ht": 3200,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Rapport d'expertise",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement",
+            "quantite": 2,
+            "prix_unitaire_ht": 120,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-02-04",
+        "expected": "2026-02-04",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-009",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 574.56,
+        "expected": 574.56,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 478.8,
+        "expected": 478.8,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 95.76,
+        "expected": 95.76,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "60560581620390",
+        "expected": "60560581620390",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6227",
+        "expected": "FA-2026-6227",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-06",
+        "expected": "2026-04-06",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR88605605816",
+        "expected": "FR88605605816",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Abonnement hébergement",
+            "quantite": 12,
+            "prix_unitaire_ht": 39.9,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Abonnement hébergement",
+            "quantite": 12,
+            "prix_unitaire_ht": 39.9,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-06",
+        "expected": "2026-05-06",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-010",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1256.4,
+        "expected": 1256.4,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1084,
+        "expected": 1084,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 172.4,
+        "expected": 172.4,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "92553523498878",
+        "expected": "92553523498878",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6914",
+        "expected": "FA-2026-6914",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-07-11",
+        "expected": "2026-07-11",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR17925535235",
+        "expected": "FR17925535234",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Repas séminaire",
+            "quantite": 24,
+            "prix_unitaire_ht": 18.5,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Location salle",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Repas séminaire",
+            "quantite": 24,
+            "prix_unitaire_ht": 18.5,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Location salle",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-08-10",
+        "expected": "2026-08-10",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-011",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 531.11,
+        "expected": 531.11,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 493.2,
+        "expected": 493.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 37.91,
+        "expected": 37.91,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "96165118287081",
+        "expected": "96165118287081",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6022",
+        "expected": "FA-2026-6022",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-08",
+        "expected": "2026-08-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR25961651182",
+        "expected": "FR25961651182",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Ouvrage technique",
+            "quantite": 12,
+            "prix_unitaire_ht": 34.9,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Reliure et façonnage",
+            "quantite": 12,
+            "prix_unitaire_ht": 6.2,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Ouvrage technique",
+            "quantite": 12,
+            "prix_unitaire_ht": 34.9,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Reliure et façonnage",
+            "quantite": 12,
+            "prix_unitaire_ht": 6.2,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-07",
+        "expected": "2026-09-07",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-012",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 12102,
+        "expected": 12102,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 11150,
+        "expected": 11150,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 952,
+        "expected": 952,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "07500416329599",
+        "expected": "07500416329599",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7303",
+        "expected": "FA-2026-7303",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-07",
+        "expected": "2026-02-07",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR49075004163",
+        "expected": "FR49075004163",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Travaux de rénovation énergétique",
+            "quantite": 1,
+            "prix_unitaire_ht": 8400,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Fourniture matériel neuf",
+            "quantite": 1,
+            "prix_unitaire_ht": 2150,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Entretien courant",
+            "quantite": 1,
+            "prix_unitaire_ht": 600,
+            "taux_tva": 10
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Travaux de rénovation énergétique",
+            "quantite": 1,
+            "prix_unitaire_ht": 8400,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Fourniture matériel neuf",
+            "quantite": 1,
+            "prix_unitaire_ht": 2150,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Entretien courant",
+            "quantite": 1,
+            "prix_unitaire_ht": 600,
+            "taux_tva": 10
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-09",
+        "expected": "2026-03-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-013",
+    "byCriterion": {
+      "total_ttc": {
+        "got": -816,
+        "expected": -816,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": -680,
+        "expected": -680,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": -136,
+        "expected": -136,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "79841785799266",
+        "expected": "79841785799266",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "AV-2026-1041",
+        "expected": "AV-2026-1041",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-26",
+        "expected": "2026-03-26",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR88798417857",
+        "expected": "FR88798417857",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Retour marchandise non conforme",
+            "quantite": 2,
+            "prix_unitaire_ht": 340,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Retour marchandise non conforme",
+            "quantite": 2,
+            "prix_unitaire_ht": 340,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-25",
+        "expected": "2026-04-25",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "AVOINaN",
+        "expected": "AVOIR",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-014",
+    "byCriterion": {
+      "total_ttc": {
+        "got": -1680,
+        "expected": -1680,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": -1400,
+        "expected": -1400,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": -280,
+        "expected": -280,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "80776092981396",
+        "expected": "80776092981396",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "AV-2026-5457",
+        "expected": "AV-2026-5457",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-09-20",
+        "expected": "2026-09-20",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR87807760929",
+        "expected": "FR87807760929",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Annulation prestation du 12/02",
+            "quantite": 1,
+            "prix_unitaire_ht": 1250,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Geste commercial",
+            "quantite": 1,
+            "prix_unitaire_ht": 150,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Annulation prestation du 12/02",
+            "quantite": 1,
+            "prix_unitaire_ht": 1250,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Geste commercial",
+            "quantite": 1,
+            "prix_unitaire_ht": 150,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-10-20",
+        "expected": "2026-10-20",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "AVOIR",
+        "expected": "AVOIR",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-015",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5712,
+        "expected": 5712,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4760,
+        "expected": 4760,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 952,
+        "expected": 952,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "75196914882655",
+        "expected": "75196914882655",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7197",
+        "expected": "FA-2026-7197",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-08",
+        "expected": "2026-05-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR87751969148",
+        "expected": "FR87751969148",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Campagne d'affichage",
+            "quantite": 1,
+            "prix_unitaire_ht": 5600,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Campagne d'affichage",
+            "quantite": 1,
+            "prix_unitaire_ht": 5600,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-07",
+        "expected": "2026-06-07",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-016",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1306.48,
+        "expected": 1306.48,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1088.73,
+        "expected": 1088.73,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 217.75,
+        "expected": 217.75,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "16122399582455",
+        "expected": "16122399582455",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-5154",
+        "expected": "FA-2026-5153",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-05",
+        "expected": "2026-04-05",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR24161223995",
+        "expected": "FR24161223995",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Pièces détachées série B",
+            "quantite": 40,
+            "prix_unitaire_ht": 27.3,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Frais de port",
+            "quantite": 1,
+            "prix_unitaire_ht": 85,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Pièces détachées série B",
+            "quantite": 40,
+            "prix_unitaire_ht": 27.3,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Frais de port",
+            "quantite": 1,
+            "prix_unitaire_ht": 85,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-05",
+        "expected": "2026-05-05",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-017",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 7440,
+        "expected": 7440,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6200,
+        "expected": 6200,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1240,
+        "expected": 1240,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "43873982477407",
+        "expected": "43873982477407",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-1794",
+        "expected": "FA-2026-1794",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-08",
+        "expected": "2026-08-06",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR03438739824",
+        "expected": "FR03438739824",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Chantier menuiserie — solde",
+            "quantite": 1,
+            "prix_unitaire_ht": 6200,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Chantier menuiserie — solde",
+            "quantite": 1,
+            "prix_unitaire_ht": 6200,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-05",
+        "expected": "2026-09-05",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Acompte de 1800.00 € déjà versé",
+        "expected": "Acompte de 1800.00 € déjà versé",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-018",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5160,
+        "expected": 5160,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4300,
+        "expected": 4300,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 860,
+        "expected": 860,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "60303176893449",
+        "expected": "60303176893449",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7180",
+        "expected": "FA-2026-7180",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-26",
+        "expected": "2026-08-26",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR17603031768",
+        "expected": "FR17603031768",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Développement sur mesure",
+            "quantite": 1,
+            "prix_unitaire_ht": 3500,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Recette et mise en production",
+            "quantite": 1,
+            "prix_unitaire_ht": 800,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Développement sur mesure",
+            "quantite": 1,
+            "prix_unitaire_ht": 3500,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Recette et mise en production",
+            "quantite": 1,
+            "prix_unitaire_ht": 800,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-25",
+        "expected": "2026-09-25",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Acompte de 450.00 € déjà versé",
+        "expected": "Acompte de 450.00 € déjà versé",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-019",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1600,
+        "expected": 1600,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1600,
+        "expected": 1600,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "26125259564404",
+        "expected": "26125259564404",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9260",
+        "expected": "FA-2026-9260",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-15",
+        "expected": "2026-06-15",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Graphisme identité visuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1600,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Graphisme identité visuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1600,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-15",
+        "expected": "2026-07-15",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "TVA non applicable, article 293 B du CGI",
+        "expected": "TVA non applicable, article 293 B du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-020",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1080,
+        "expected": 1080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1080,
+        "expected": 1080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "25678300260522",
+        "expected": "25678300260522",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6965",
+        "expected": "FA-2026-6965",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-08",
+        "expected": "2026-08-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Rédaction web — forfait",
+            "quantite": 1,
+            "prix_unitaire_ht": 900,
+            "taux_tva": null
+          },
+          {
+            "designation": "Relecture",
+            "quantite": 3,
+            "prix_unitaire_ht": 60,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Rédaction web — forfait",
+            "quantite": 1,
+            "prix_unitaire_ht": 900,
+            "taux_tva": null
+          },
+          {
+            "designation": "Relecture",
+            "quantite": 3,
+            "prix_unitaire_ht": 60,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "TVA non applicable, article 293 B du CGI",
+        "expected": "TVA non applicable, article 293 B du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-021",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 16700,
+        "expected": 16700,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 16700,
+        "expected": 16700,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "49189425348087",
+        "expected": "49189425348087",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2096",
+        "expected": "FA-2026-2096",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-11",
+        "expected": "2026-02-11",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR43491894253",
+        "expected": "FR43491894253",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Sous-traitance gros œuvre",
+            "quantite": 1,
+            "prix_unitaire_ht": 14500,
+            "taux_tva": null
+          },
+          {
+            "designation": "Location échafaudage",
+            "quantite": 1,
+            "prix_unitaire_ht": 2200,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Sous-traitance gros œuvre",
+            "quantite": 1,
+            "prix_unitaire_ht": 14500,
+            "taux_tva": null
+          },
+          {
+            "designation": "Location échafaudage",
+            "quantite": 1,
+            "prix_unitaire_ht": 2200,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-13",
+        "expected": "2026-03-13",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Autoliquidation — article 283-2 nonies du CGI",
+        "expected": "Autoliquidation — article 283-2 nonies du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-022",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 2196,
+        "expected": 2196,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1830,
+        "expected": 1830,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 366,
+        "expected": 366,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "19587104560540",
+        "expected": "19587104560540",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9754",
+        "expected": "FA-2026-9754",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-10",
+        "expected": "2026-05-10",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR48195871045",
+        "expected": "FR48195871045",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Contrôle réglementaire annuel",
+            "quantite": 1,
+            "prix_unitaire_ht": 590,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Mise en conformité",
+            "quantite": 1,
+            "prix_unitaire_ht": 1240,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Contrôle réglementaire annuel",
+            "quantite": 1,
+            "prix_unitaire_ht": 590,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Mise en conformité",
+            "quantite": 1,
+            "prix_unitaire_ht": 1240,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-09",
+        "expected": "2026-06-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-023",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 2016,
+        "expected": 2016,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1762.5,
+        "expected": 1762.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 253.5,
+        "expected": 253.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "78656783509850",
+        "expected": "78656783509850",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7958",
+        "expected": "FA-2026-7958",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-01",
+        "expected": "2026-08-01",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR37786567835",
+        "expected": "FR37786567835",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Menu traiteur",
+            "quantite": 45,
+            "prix_unitaire_ht": 22,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Boissons",
+            "quantite": 45,
+            "prix_unitaire_ht": 6.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Service",
+            "quantite": 1,
+            "prix_unitaire_ht": 480,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Menu traiteur",
+            "quantite": 45,
+            "prix_unitaire_ht": 22,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Boissons",
+            "quantite": 45,
+            "prix_unitaire_ht": 6.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Service",
+            "quantite": 1,
+            "prix_unitaire_ht": 480,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-08-31",
+        "expected": "2026-08-31",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-024",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 6000,
+        "expected": 6000,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6000,
+        "expected": 6000,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "06143542834728",
+        "expected": "06143542834728",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-8739",
+        "expected": "FA-2026-8739",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-17",
+        "expected": "2026-03-17",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Consulting mission Genève",
+            "quantite": 5,
+            "prix_unitaire_ht": 1200,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Consulting mission Genève",
+            "quantite": 5,
+            "prix_unitaire_ht": 1200,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-16",
+        "expected": "2026-04-16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Autoliquidation — article 283-2 nonies du CGI",
+        "expected": "Autoliquidation — article 283-2 nonies du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-a",
+    "docId": "f-025",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5292.96,
+        "expected": 5292.96,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4410.8,
+        "expected": 4410.8,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 882.16,
+        "expected": 882.16,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "83872995332725",
+        "expected": "83872995332725",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2601",
+        "expected": "FA-2026-2601",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-27",
+        "expected": "2026-03-27",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR74838729953",
+        "expected": "FR74838729953",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Serrure 3 points",
+            "quantite": 6,
+            "prix_unitaire_ht": 148,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Cylindre européen",
+            "quantite": 6,
+            "prix_unitaire_ht": 62.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Poignée inox",
+            "quantite": 12,
+            "prix_unitaire_ht": 34,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ferme-porte hydraulique",
+            "quantite": 4,
+            "prix_unitaire_ht": 195,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Butée de sol",
+            "quantite": 12,
+            "prix_unitaire_ht": 11.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Joint isophonique",
+            "quantite": 30,
+            "prix_unitaire_ht": 4.6,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Paumelle réglable",
+            "quantite": 24,
+            "prix_unitaire_ht": 8.75,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Pose et réglage",
+            "quantite": 18,
+            "prix_unitaire_ht": 58,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement forfaitaire",
+            "quantite": 3,
+            "prix_unitaire_ht": 95,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Évacuation déchets",
+            "quantite": 1,
+            "prix_unitaire_ht": 140,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Serrure 3 points",
+            "quantite": 6,
+            "prix_unitaire_ht": 148,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Cylindre européen",
+            "quantite": 6,
+            "prix_unitaire_ht": 62.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Poignée inox",
+            "quantite": 12,
+            "prix_unitaire_ht": 34,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ferme-porte hydraulique",
+            "quantite": 4,
+            "prix_unitaire_ht": 195,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Butée de sol",
+            "quantite": 12,
+            "prix_unitaire_ht": 11.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Joint isophonique",
+            "quantite": 30,
+            "prix_unitaire_ht": 4.6,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Paumelle réglable",
+            "quantite": 24,
+            "prix_unitaire_ht": 8.75,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Pose et réglage",
+            "quantite": 18,
+            "prix_unitaire_ht": 58,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement forfaitaire",
+            "quantite": 3,
+            "prix_unitaire_ht": 95,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Évacuation déchets",
+            "quantite": 1,
+            "prix_unitaire_ht": 140,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-26",
+        "expected": "2026-04-26",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-001",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1740,
+        "expected": 1740,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1450,
+        "expected": 1450,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 290,
+        "expected": 290,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "50329375521178",
+        "expected": "50329375521178",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-1156",
+        "expected": "FA-2026-1155",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-24",
+        "expected": "2026-06-24",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR35503293756",
+        "expected": "FR35503293755",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Maintenance préventive annuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1450,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Maintenance préventive annuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1450,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-24",
+        "expected": "2026-07-24",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-002",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 531.12,
+        "expected": 531.12,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 442.6,
+        "expected": 442.6,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 88.52,
+        "expected": 88.52,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "82642320332505",
+        "expected": "82642320332505",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9269",
+        "expected": "FA-2026-9269",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-16",
+        "expected": "2026-05-16",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR61826423203",
+        "expected": "FR61826423203",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Cartouche toner noir",
+            "quantite": 4,
+            "prix_unitaire_ht": 89.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ramette papier A4 80g",
+            "quantite": 20,
+            "prix_unitaire_ht": 4.15,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Cartouche toner noir",
+            "quantite": 4,
+            "prix_unitaire_ht": 89.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ramette papier A4 80g",
+            "quantite": 20,
+            "prix_unitaire_ht": 4.15,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-15",
+        "expected": "2026-06-15",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-003",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 7140,
+        "expected": 7140,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 5950,
+        "expected": 5950,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1190,
+        "expected": 1190,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "82003062098913",
+        "expected": "82003062098913",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9307",
+        "expected": "FA-2026-9307",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-04",
+        "expected": "2026-04-04",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR85820030620",
+        "expected": "FR85820030620",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Prestation de conseil — mars 2026",
+            "quantite": 7,
+            "prix_unitaire_ht": 850,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Prestation de conseil — mars 2026",
+            "quantite": 7,
+            "prix_unitaire_ht": 850,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-04",
+        "expected": "2026-05-04",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-004",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 3298.2,
+        "expected": 3298.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 2748.5,
+        "expected": 2748.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 549.7,
+        "expected": 549.7,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "41080414781958",
+        "expected": "41080414781958",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2589",
+        "expected": "FA-2026-2589",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-27",
+        "expected": "2026-02-27",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Remplacement pompe hydraulique",
+            "quantite": 1,
+            "prix_unitaire_ht": 2340.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Main d'œuvre",
+            "quantite": 6,
+            "prix_unitaire_ht": 68,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Remplacement pompe hydraulique",
+            "quantite": 1,
+            "prix_unitaire_ht": 2340.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Main d'œuvre",
+            "quantite": 6,
+            "prix_unitaire_ht": 68,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-29",
+        "expected": "2026-03-29",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-005",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 3792,
+        "expected": 3792,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 3160,
+        "expected": 3160,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 632,
+        "expected": 632,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "24978564410702",
+        "expected": "24978564410701",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-3650",
+        "expected": "FA-2026-3650",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-19",
+        "expected": "2026-06-19",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR31249785644",
+        "expected": "FR31249785644",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Licence logicielle — 12 mois",
+            "quantite": 3,
+            "prix_unitaire_ht": 420,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Formation utilisateurs",
+            "quantite": 2,
+            "prix_unitaire_ht": 950,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Licence logicielle — 12 mois",
+            "quantite": 3,
+            "prix_unitaire_ht": 420,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Formation utilisateurs",
+            "quantite": 2,
+            "prix_unitaire_ht": 950,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-19",
+        "expected": "2026-07-19",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-006",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 936,
+        "expected": 936,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 780,
+        "expected": 780,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 156,
+        "expected": 156,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "37002969319072",
+        "expected": "37002969319071",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-3793",
+        "expected": "FA-2026-3793",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-08",
+        "expected": "2026-01-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR42370029693",
+        "expected": "FR42370029693",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Nettoyage de fin de chantier",
+            "quantite": 1,
+            "prix_unitaire_ht": 780,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Nettoyage de fin de chantier",
+            "quantite": 1,
+            "prix_unitaire_ht": 780,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-007",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 775.44,
+        "expected": 775.44,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 646.2,
+        "expected": 646.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 129.24,
+        "expected": 129.24,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "98617048723807",
+        "expected": "98617048723807",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9407",
+        "expected": "FA-2026-9407",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-10",
+        "expected": "2026-03-10",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR27986170487",
+        "expected": "FR27986170487",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Transport palettes Lyon-Nantes",
+            "quantite": 3,
+            "prix_unitaire_ht": 215.4,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Transport palettes Lyon-Nantes",
+            "quantite": 3,
+            "prix_unitaire_ht": 215.4,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-09",
+        "expected": "2026-04-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-008",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 4896,
+        "expected": 4896,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4080,
+        "expected": 4080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 816,
+        "expected": 816,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "29456153654000",
+        "expected": "29456153654000",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-8797",
+        "expected": "FA-2026-8797",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-05",
+        "expected": "2026-01-05",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR70294561536",
+        "expected": "FR70294561536",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Étude thermique",
+            "quantite": 1,
+            "prix_unitaire_ht": 3200,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Rapport d'expertise",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement",
+            "quantite": 2,
+            "prix_unitaire_ht": 120,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Étude thermique",
+            "quantite": 1,
+            "prix_unitaire_ht": 3200,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Rapport d'expertise",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement",
+            "quantite": 2,
+            "prix_unitaire_ht": 120,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-02-04",
+        "expected": "2026-02-04",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-009",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 574.56,
+        "expected": 574.56,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 478.8,
+        "expected": 478.8,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 95.76,
+        "expected": 95.76,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "60560581620390",
+        "expected": "60560581620390",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6227",
+        "expected": "FA-2026-6227",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-06",
+        "expected": "2026-04-06",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR88605605816",
+        "expected": "FR88605605816",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Abonnement hébergement",
+            "quantite": 12,
+            "prix_unitaire_ht": 39.9,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Abonnement hébergement",
+            "quantite": 12,
+            "prix_unitaire_ht": 39.9,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-06",
+        "expected": "2026-05-06",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-010",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1256.4,
+        "expected": 1256.4,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1084,
+        "expected": 1084,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 176.13,
+        "expected": 172.4,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "92553523498878",
+        "expected": "92553523498878",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6915",
+        "expected": "FA-2026-6914",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-07-11",
+        "expected": "2026-07-11",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR17925535234",
+        "expected": "FR17925535234",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Repas séminaire",
+            "quantite": 24,
+            "prix_unitaire_ht": 18.5,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Location salle",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Repas séminaire",
+            "quantite": 24,
+            "prix_unitaire_ht": 18.5,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Location salle",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-08-10",
+        "expected": "2026-08-10",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-011",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 531.11,
+        "expected": 531.11,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 493.2,
+        "expected": 493.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 37.91,
+        "expected": 37.91,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "96165118287081",
+        "expected": "96165118287081",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6022",
+        "expected": "FA-2026-6022",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-08",
+        "expected": "2026-08-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR25961651182",
+        "expected": "FR25961651182",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Ouvrage technique",
+            "quantite": 12,
+            "prix_unitaire_ht": 34.9,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Reliure et façonnage",
+            "quantite": 12,
+            "prix_unitaire_ht": 6.2,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Ouvrage technique",
+            "quantite": 12,
+            "prix_unitaire_ht": 34.9,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Reliure et façonnage",
+            "quantite": 12,
+            "prix_unitaire_ht": 6.2,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-07",
+        "expected": "2026-09-07",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-012",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 12102,
+        "expected": 12102,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 10984.01,
+        "expected": 11150,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 952,
+        "expected": 952,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "07500416329599",
+        "expected": "07500416329599",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7303",
+        "expected": "FA-2026-7303",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-07",
+        "expected": "2026-02-07",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR49075004164",
+        "expected": "FR49075004163",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Travaux de rénovation énergétique",
+            "quantite": 1,
+            "prix_unitaire_ht": 8400,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Fourniture matériel neuf",
+            "quantite": 1,
+            "prix_unitaire_ht": 2150,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Entretien courant",
+            "quantite": 1,
+            "prix_unitaire_ht": 600,
+            "taux_tva": 10
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Travaux de rénovation énergétique",
+            "quantite": 1,
+            "prix_unitaire_ht": 8400,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Fourniture matériel neuf",
+            "quantite": 1,
+            "prix_unitaire_ht": 2150,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Entretien courant",
+            "quantite": 1,
+            "prix_unitaire_ht": 600,
+            "taux_tva": 10
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-09",
+        "expected": "2026-03-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-013",
+    "byCriterion": {
+      "total_ttc": {
+        "got": -816,
+        "expected": -816,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": -680,
+        "expected": -680,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": -136,
+        "expected": -136,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "79841785799266",
+        "expected": "79841785799266",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "AV-2026-1041",
+        "expected": "AV-2026-1041",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-26",
+        "expected": "2026-03-26",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR88798417857",
+        "expected": "FR88798417857",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Retour marchandise non conforme",
+            "quantite": 2,
+            "prix_unitaire_ht": 340,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Retour marchandise non conforme",
+            "quantite": 2,
+            "prix_unitaire_ht": 340,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-25",
+        "expected": "2026-04-25",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "AVOIR",
+        "expected": "AVOIR",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-014",
+    "byCriterion": {
+      "total_ttc": {
+        "got": -1680,
+        "expected": -1680,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": -1400,
+        "expected": -1400,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": -280,
+        "expected": -280,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "80776092981396",
+        "expected": "80776092981396",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "AV-2026-5457",
+        "expected": "AV-2026-5457",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-09-20",
+        "expected": "2026-09-20",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR87807760920",
+        "expected": "FR87807760929",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Annulation prestation du 12/02",
+            "quantite": 1,
+            "prix_unitaire_ht": 1250,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Geste commercial",
+            "quantite": 1,
+            "prix_unitaire_ht": 150,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Annulation prestation du 12/02",
+            "quantite": 1,
+            "prix_unitaire_ht": 1250,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Geste commercial",
+            "quantite": 1,
+            "prix_unitaire_ht": 150,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-10-20",
+        "expected": "2026-10-20",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "AVOIR",
+        "expected": "AVOIR",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-015",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5712,
+        "expected": 5712,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4760,
+        "expected": 4760,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 952,
+        "expected": 952,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "75196914882656",
+        "expected": "75196914882655",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7197",
+        "expected": "FA-2026-7197",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-05",
+        "expected": "2026-05-08",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR87751969148",
+        "expected": "FR87751969148",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Campagne d'affichage",
+            "quantite": 1,
+            "prix_unitaire_ht": 5600,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Campagne d'affichage",
+            "quantite": 1,
+            "prix_unitaire_ht": 5600,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-07",
+        "expected": "2026-06-07",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-016",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1306.48,
+        "expected": 1306.48,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1088.73,
+        "expected": 1088.73,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 217.75,
+        "expected": 217.75,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "16122399582455",
+        "expected": "16122399582455",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-5153",
+        "expected": "FA-2026-5153",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-05",
+        "expected": "2026-04-05",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR24161223995",
+        "expected": "FR24161223995",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Pièces détachées série B",
+            "quantite": 40,
+            "prix_unitaire_ht": 27.3,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Frais de port",
+            "quantite": 1,
+            "prix_unitaire_ht": 85,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Pièces détachées série B",
+            "quantite": 40,
+            "prix_unitaire_ht": 27.3,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Frais de port",
+            "quantite": 1,
+            "prix_unitaire_ht": 85,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-05",
+        "expected": "2026-05-05",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-017",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 7440,
+        "expected": 7440,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6244.56,
+        "expected": 6200,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1240,
+        "expected": 1240,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "43873982477408",
+        "expected": "43873982477407",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-1794",
+        "expected": "FA-2026-1794",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-06",
+        "expected": "2026-08-06",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR03438739824",
+        "expected": "FR03438739824",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Chantier menuiserie — solde",
+            "quantite": 1,
+            "prix_unitaire_ht": 6200,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Chantier menuiserie — solde",
+            "quantite": 1,
+            "prix_unitaire_ht": 6200,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-09",
+        "expected": "2026-09-05",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Acompte de 1800.00 € déjà versé",
+        "expected": "Acompte de 1800.00 € déjà versé",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-018",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5160,
+        "expected": 5160,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4300,
+        "expected": 4300,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 837.98,
+        "expected": 860,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "60303176893449",
+        "expected": "60303176893449",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7180",
+        "expected": "FA-2026-7180",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-26",
+        "expected": "2026-08-26",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR17603031768",
+        "expected": "FR17603031768",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Développement sur mesure",
+            "quantite": 1,
+            "prix_unitaire_ht": 3500,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Recette et mise en production",
+            "quantite": 1,
+            "prix_unitaire_ht": 800,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Développement sur mesure",
+            "quantite": 1,
+            "prix_unitaire_ht": 3500,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Recette et mise en production",
+            "quantite": 1,
+            "prix_unitaire_ht": 800,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-25",
+        "expected": "2026-09-25",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Acompte de 450.00 € déjà versNaN",
+        "expected": "Acompte de 450.00 € déjà versé",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-019",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1600,
+        "expected": 1600,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1600,
+        "expected": 1600,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 246.5,
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "26125259564404",
+        "expected": "26125259564404",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9260",
+        "expected": "FA-2026-9260",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-15",
+        "expected": "2026-06-15",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Graphisme identité visuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1600,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Graphisme identité visuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1600,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-15",
+        "expected": "2026-07-15",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "TVA non applicable, article 293 B du CGI",
+        "expected": "TVA non applicable, article 293 B du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-020",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1080,
+        "expected": 1080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1080,
+        "expected": 1080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 246.5,
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "25678300260522",
+        "expected": "25678300260522",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6965",
+        "expected": "FA-2026-6965",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-08",
+        "expected": "2026-08-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR40123456789",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Rédaction web — forfait",
+            "quantite": 1,
+            "prix_unitaire_ht": 900,
+            "taux_tva": null
+          },
+          {
+            "designation": "Relecture",
+            "quantite": 3,
+            "prix_unitaire_ht": 60,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Rédaction web — forfait",
+            "quantite": 1,
+            "prix_unitaire_ht": 900,
+            "taux_tva": null
+          },
+          {
+            "designation": "Relecture",
+            "quantite": 3,
+            "prix_unitaire_ht": 60,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-12-31",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "TVA non applicable, article 293 B du CGI",
+        "expected": "TVA non applicable, article 293 B du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-021",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 16077.76,
+        "expected": 16700,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 16700,
+        "expected": 16700,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "49189425348087",
+        "expected": "49189425348087",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2096",
+        "expected": "FA-2026-2096",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-11",
+        "expected": "2026-02-11",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR43491894253",
+        "expected": "FR43491894253",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Sous-traitance gros œuvre",
+            "quantite": 1,
+            "prix_unitaire_ht": 14500,
+            "taux_tva": null
+          },
+          {
+            "designation": "Location échafaudage",
+            "quantite": 1,
+            "prix_unitaire_ht": 2200,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Sous-traitance gros œuvre",
+            "quantite": 1,
+            "prix_unitaire_ht": 14500,
+            "taux_tva": null
+          },
+          {
+            "designation": "Location échafaudage",
+            "quantite": 1,
+            "prix_unitaire_ht": 2200,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-13",
+        "expected": "2026-03-13",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Autoliquidation — article 283-2 nonies du CGI",
+        "expected": "Autoliquidation — article 283-2 nonies du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-022",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 2196,
+        "expected": 2196,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1830,
+        "expected": 1830,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 366,
+        "expected": 366,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "19587104560540",
+        "expected": "19587104560540",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9754",
+        "expected": "FA-2026-9754",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-10",
+        "expected": "2026-05-10",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR48195871045",
+        "expected": "FR48195871045",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Contrôle réglementaire annuel",
+            "quantite": 1,
+            "prix_unitaire_ht": 590,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Mise en conformité",
+            "quantite": 1,
+            "prix_unitaire_ht": 1240,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Contrôle réglementaire annuel",
+            "quantite": 1,
+            "prix_unitaire_ht": 590,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Mise en conformité",
+            "quantite": 1,
+            "prix_unitaire_ht": 1240,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-09",
+        "expected": "2026-06-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-023",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 2016,
+        "expected": 2016,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1762.5,
+        "expected": 1762.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 253.5,
+        "expected": 253.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "78656783509850",
+        "expected": "78656783509850",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7958",
+        "expected": "FA-2026-7958",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-08",
+        "expected": "2026-08-01",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR37786567836",
+        "expected": "FR37786567835",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Menu traiteur",
+            "quantite": 45,
+            "prix_unitaire_ht": 22,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Boissons",
+            "quantite": 45,
+            "prix_unitaire_ht": 6.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Service",
+            "quantite": 1,
+            "prix_unitaire_ht": 480,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Menu traiteur",
+            "quantite": 45,
+            "prix_unitaire_ht": 22,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Boissons",
+            "quantite": 45,
+            "prix_unitaire_ht": 6.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Service",
+            "quantite": 1,
+            "prix_unitaire_ht": 480,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-08-31",
+        "expected": "2026-08-31",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-024",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 6000,
+        "expected": 6000,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6000,
+        "expected": 6000,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "06143542834728",
+        "expected": "06143542834728",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-8739",
+        "expected": "FA-2026-8739",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-17",
+        "expected": "2026-03-17",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Consulting mission Genève",
+            "quantite": 5,
+            "prix_unitaire_ht": 1200,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Consulting mission Genève",
+            "quantite": 5,
+            "prix_unitaire_ht": 1200,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-16",
+        "expected": "2026-04-16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Autoliquidation — article 283-2 nonies du CGI",
+        "expected": "Autoliquidation — article 283-2 nonies du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-b",
+    "docId": "f-025",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5292.96,
+        "expected": 5292.96,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4818.52,
+        "expected": 4410.8,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 882.16,
+        "expected": 882.16,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "83872995332725",
+        "expected": "83872995332725",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2601",
+        "expected": "FA-2026-2601",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-27",
+        "expected": "2026-03-27",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR74838729953",
+        "expected": "FR74838729953",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Serrure 3 points",
+            "quantite": 6,
+            "prix_unitaire_ht": 148,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Cylindre européen",
+            "quantite": 6,
+            "prix_unitaire_ht": 62.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Poignée inox",
+            "quantite": 12,
+            "prix_unitaire_ht": 34,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ferme-porte hydraulique",
+            "quantite": 4,
+            "prix_unitaire_ht": 195,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Butée de sol",
+            "quantite": 12,
+            "prix_unitaire_ht": 11.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Joint isophonique",
+            "quantite": 30,
+            "prix_unitaire_ht": 4.6,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Paumelle réglable",
+            "quantite": 24,
+            "prix_unitaire_ht": 8.75,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Pose et réglage",
+            "quantite": 18,
+            "prix_unitaire_ht": 58,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement forfaitaire",
+            "quantite": 3,
+            "prix_unitaire_ht": 95,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Évacuation déchets",
+            "quantite": 1,
+            "prix_unitaire_ht": 140,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Serrure 3 points",
+            "quantite": 6,
+            "prix_unitaire_ht": 148,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Cylindre européen",
+            "quantite": 6,
+            "prix_unitaire_ht": 62.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Poignée inox",
+            "quantite": 12,
+            "prix_unitaire_ht": 34,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ferme-porte hydraulique",
+            "quantite": 4,
+            "prix_unitaire_ht": 195,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Butée de sol",
+            "quantite": 12,
+            "prix_unitaire_ht": 11.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Joint isophonique",
+            "quantite": 30,
+            "prix_unitaire_ht": 4.6,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Paumelle réglable",
+            "quantite": 24,
+            "prix_unitaire_ht": 8.75,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Pose et réglage",
+            "quantite": 18,
+            "prix_unitaire_ht": 58,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement forfaitaire",
+            "quantite": 3,
+            "prix_unitaire_ht": 95,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Évacuation déchets",
+            "quantite": 1,
+            "prix_unitaire_ht": 140,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-26-04",
+        "expected": "2026-04-26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Paiement à 30 jours",
+        "expected": null,
+        "verdict": "hallucine",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-001",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1740,
+        "expected": 1740,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1450,
+        "expected": 1450,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 264.65,
+        "expected": 290,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "50329375521178",
+        "expected": "50329375521178",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-1155",
+        "expected": "FA-2026-1155",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-24",
+        "expected": "2026-06-24",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR35503293755",
+        "expected": "FR35503293755",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Maintenance préventive annuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1450,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Maintenance préventive annuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1450,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-24",
+        "expected": "2026-07-24",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-002",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 531.12,
+        "expected": 531.12,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 442.6,
+        "expected": 442.6,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 82.75,
+        "expected": 88.52,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "82642320332506",
+        "expected": "82642320332505",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9269",
+        "expected": "FA-2026-9269",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-16-05",
+        "expected": "2026-05-16",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR61826423204",
+        "expected": "FR61826423203",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Cartouche toner noir",
+            "quantite": 4,
+            "prix_unitaire_ht": 89.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ramette papier A4 80g",
+            "quantite": 20,
+            "prix_unitaire_ht": 4.15,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Cartouche toner noir",
+            "quantite": 4,
+            "prix_unitaire_ht": 89.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ramette papier A4 80g",
+            "quantite": 20,
+            "prix_unitaire_ht": 4.15,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-15",
+        "expected": "2026-06-15",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-003",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 7140,
+        "expected": 7140,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6088.96,
+        "expected": 5950,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1189.88,
+        "expected": 1190,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "82003062098913",
+        "expected": "82003062098913",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9307",
+        "expected": "FA-2026-9307",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-04",
+        "expected": "2026-04-04",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR85820030620",
+        "expected": "FR85820030620",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Prestation de conseil — mars 2026",
+            "quantite": 7,
+            "prix_unitaire_ht": 850,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Prestation de conseil — mars 2026",
+            "quantite": 7,
+            "prix_unitaire_ht": 850,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-04",
+        "expected": "2026-05-04",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-004",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 3298.2,
+        "expected": 3298.2,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 2748.5,
+        "expected": 2748.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 549.7,
+        "expected": 549.7,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "41080414781958",
+        "expected": "41080414781958",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2589",
+        "expected": "FA-2026-2589",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-27",
+        "expected": "2026-02-27",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Remplacement pompe hydraulique",
+            "quantite": 1,
+            "prix_unitaire_ht": 2340.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Main d'œuvre",
+            "quantite": 6,
+            "prix_unitaire_ht": 68,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Remplacement pompe hydraulique",
+            "quantite": 1,
+            "prix_unitaire_ht": 2340.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Main d'œuvre",
+            "quantite": 6,
+            "prix_unitaire_ht": 68,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-29",
+        "expected": "2026-03-29",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-005",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 3792,
+        "expected": 3792,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 3160,
+        "expected": 3160,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 586.38,
+        "expected": 632,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "24978564410701",
+        "expected": "24978564410701",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-3650",
+        "expected": "FA-2026-3650",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-19-06",
+        "expected": "2026-06-19",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR31249785644",
+        "expected": "FR31249785644",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Licence logicielle — 12 mois",
+            "quantite": 3,
+            "prix_unitaire_ht": 420,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Formation utilisateurs",
+            "quantite": 2,
+            "prix_unitaire_ht": 950,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Licence logicielle — 12 mois",
+            "quantite": 3,
+            "prix_unitaire_ht": 420,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Formation utilisateurs",
+            "quantite": 2,
+            "prix_unitaire_ht": 950,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-19",
+        "expected": "2026-07-19",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-006",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1024.6,
+        "expected": 936,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 780,
+        "expected": 780,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 156,
+        "expected": 156,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "37002969319071",
+        "expected": "37002969319071",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-3793",
+        "expected": "FA-2026-3793",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-08",
+        "expected": "2026-01-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR42370029693",
+        "expected": "FR42370029693",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Nettoyage de fin de chantier",
+            "quantite": 1,
+            "prix_unitaire_ht": 780,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Nettoyage de fin de chantier",
+            "quantite": 1,
+            "prix_unitaire_ht": 780,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-007",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 789.28,
+        "expected": 775.44,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 600.78,
+        "expected": 646.2,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 129.24,
+        "expected": 129.24,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "98617048723807",
+        "expected": "98617048723807",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9407",
+        "expected": "FA-2026-9407",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-10",
+        "expected": "2026-03-10",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR27986170487",
+        "expected": "FR27986170487",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Transport palettes Lyon-Nantes",
+            "quantite": 3,
+            "prix_unitaire_ht": 215.4,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Transport palettes Lyon-Nantes",
+            "quantite": 3,
+            "prix_unitaire_ht": 215.4,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-04",
+        "expected": "2026-04-09",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-008",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 4896,
+        "expected": 4896,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4080,
+        "expected": 4080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 833.4,
+        "expected": 816,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "29456153654000",
+        "expected": "29456153654000",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-8797",
+        "expected": "FA-2026-8797",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-05",
+        "expected": "2026-01-05",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR70294561536",
+        "expected": "FR70294561536",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Étude thermique",
+            "quantite": 1,
+            "prix_unitaire_ht": 3200,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Rapport d'expertise",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement",
+            "quantite": 2,
+            "prix_unitaire_ht": 120,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Étude thermique",
+            "quantite": 1,
+            "prix_unitaire_ht": 3200,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Rapport d'expertise",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement",
+            "quantite": 2,
+            "prix_unitaire_ht": 120,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-02",
+        "expected": "2026-02-04",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-009",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 563.6,
+        "expected": 574.56,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 478.8,
+        "expected": 478.8,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 95.76,
+        "expected": 95.76,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "60560581620390",
+        "expected": "60560581620390",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6227",
+        "expected": "FA-2026-6227",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-04",
+        "expected": "2026-04-06",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR88605605817",
+        "expected": "FR88605605816",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Abonnement hébergement",
+            "quantite": 12,
+            "prix_unitaire_ht": 39.9,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Abonnement hébergement",
+            "quantite": 12,
+            "prix_unitaire_ht": 39.9,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-06",
+        "expected": "2026-05-06",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-010",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1256.4,
+        "expected": 1256.4,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1084,
+        "expected": 1084,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 166.17,
+        "expected": 172.4,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "92553523498879",
+        "expected": "92553523498878",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6915",
+        "expected": "FA-2026-6914",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-07-11",
+        "expected": "2026-07-11",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR17925535234",
+        "expected": "FR17925535234",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Repas séminaire",
+            "quantite": 24,
+            "prix_unitaire_ht": 18.5,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Location salle",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Repas séminaire",
+            "quantite": 24,
+            "prix_unitaire_ht": 18.5,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Location salle",
+            "quantite": 1,
+            "prix_unitaire_ht": 640,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-08-10",
+        "expected": "2026-08-10",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-011",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 531.11,
+        "expected": 531.11,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 501.84,
+        "expected": 493.2,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 37.91,
+        "expected": 37.91,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "96165118287082",
+        "expected": "96165118287081",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6023",
+        "expected": "FA-2026-6022",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-08",
+        "expected": "2026-08-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR25961651182",
+        "expected": "FR25961651182",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Ouvrage technique",
+            "quantite": 12,
+            "prix_unitaire_ht": 34.9,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Reliure et façonnage",
+            "quantite": 12,
+            "prix_unitaire_ht": 6.2,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Ouvrage technique",
+            "quantite": 12,
+            "prix_unitaire_ht": 34.9,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Reliure et façonnage",
+            "quantite": 12,
+            "prix_unitaire_ht": 6.2,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-07",
+        "expected": "2026-09-07",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-012",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 12102,
+        "expected": 12102,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 11150,
+        "expected": 11150,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1031.59,
+        "expected": 952,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "07500416329599",
+        "expected": "07500416329599",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7304",
+        "expected": "FA-2026-7303",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-07",
+        "expected": "2026-02-07",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR49075004163",
+        "expected": "FR49075004163",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Travaux de rénovation énergétique",
+            "quantite": 1,
+            "prix_unitaire_ht": 8400,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Fourniture matériel neuf",
+            "quantite": 1,
+            "prix_unitaire_ht": 2150,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Entretien courant",
+            "quantite": 1,
+            "prix_unitaire_ht": 600,
+            "taux_tva": 10
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Travaux de rénovation énergétique",
+            "quantite": 1,
+            "prix_unitaire_ht": 8400,
+            "taux_tva": 5.5
+          },
+          {
+            "designation": "Fourniture matériel neuf",
+            "quantite": 1,
+            "prix_unitaire_ht": 2150,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Entretien courant",
+            "quantite": 1,
+            "prix_unitaire_ht": 600,
+            "taux_tva": 10
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-09",
+        "expected": "2026-03-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-013",
+    "byCriterion": {
+      "total_ttc": {
+        "got": -816,
+        "expected": -816,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": -680,
+        "expected": -680,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": -136,
+        "expected": -136,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "79841785799266",
+        "expected": "79841785799266",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "AV-2026-1042",
+        "expected": "AV-2026-1041",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-26",
+        "expected": "2026-03-26",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR88798417857",
+        "expected": "FR88798417857",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Retour marchandise non conforme",
+            "quantite": 2,
+            "prix_unitaire_ht": 340,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Retour marchandise non conforme",
+            "quantite": 2,
+            "prix_unitaire_ht": 340,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-25",
+        "expected": "2026-04-25",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "AVOIR",
+        "expected": "AVOIR",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-014",
+    "byCriterion": {
+      "total_ttc": {
+        "got": -1680,
+        "expected": -1680,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": -1400,
+        "expected": -1400,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": -280,
+        "expected": -280,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "80776092981396",
+        "expected": "80776092981396",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "AV-2026-5458",
+        "expected": "AV-2026-5457",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-20-09",
+        "expected": "2026-09-20",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR87807760929",
+        "expected": "FR87807760929",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Annulation prestation du 12/02",
+            "quantite": 1,
+            "prix_unitaire_ht": 1250,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Geste commercial",
+            "quantite": 1,
+            "prix_unitaire_ht": 150,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Annulation prestation du 12/02",
+            "quantite": 1,
+            "prix_unitaire_ht": 1250,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Geste commercial",
+            "quantite": 1,
+            "prix_unitaire_ht": 150,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-10-20",
+        "expected": "2026-10-20",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "AVOIR",
+        "expected": "AVOIR",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-015",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5312.83,
+        "expected": 5712,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4760,
+        "expected": 4760,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 952,
+        "expected": 952,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "75196914882655",
+        "expected": "75196914882655",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7197",
+        "expected": "FA-2026-7197",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-08",
+        "expected": "2026-05-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR87751969148",
+        "expected": "FR87751969148",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Campagne d'affichage",
+            "quantite": 1,
+            "prix_unitaire_ht": 5600,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Campagne d'affichage",
+            "quantite": 1,
+            "prix_unitaire_ht": 5600,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-07",
+        "expected": "2026-06-07",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-016",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1306.48,
+        "expected": 1306.48,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1163.39,
+        "expected": 1088.73,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 217.75,
+        "expected": 217.75,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "16122399582456",
+        "expected": "16122399582455",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-5154",
+        "expected": "FA-2026-5153",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-04-05",
+        "expected": "2026-04-05",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR24161223995",
+        "expected": "FR24161223995",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Pièces détachées série B",
+            "quantite": 40,
+            "prix_unitaire_ht": 27.3,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Frais de port",
+            "quantite": 1,
+            "prix_unitaire_ht": 85,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Pièces détachées série B",
+            "quantite": 40,
+            "prix_unitaire_ht": 27.3,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Frais de port",
+            "quantite": 1,
+            "prix_unitaire_ht": 85,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-05",
+        "expected": "2026-05-05",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-017",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 7440,
+        "expected": 7440,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6200,
+        "expected": 6200,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 1118.96,
+        "expected": 1240,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "43873982477407",
+        "expected": "43873982477407",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-1794",
+        "expected": "FA-2026-1794",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-06",
+        "expected": "2026-08-06",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR03438739824",
+        "expected": "FR03438739824",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Chantier menuiserie — solde",
+            "quantite": 1,
+            "prix_unitaire_ht": 6200,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Chantier menuiserie — solde",
+            "quantite": 1,
+            "prix_unitaire_ht": 6200,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-05-09",
+        "expected": "2026-09-05",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Acompte de 1800.00 € déjà versNaN",
+        "expected": "Acompte de 1800.00 € déjà versé",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-018",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5160,
+        "expected": 5160,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4300,
+        "expected": 4300,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 860,
+        "expected": 860,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "60303176893449",
+        "expected": "60303176893449",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7180",
+        "expected": "FA-2026-7180",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-26",
+        "expected": "2026-08-26",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR17603031768",
+        "expected": "FR17603031768",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Développement sur mesure",
+            "quantite": 1,
+            "prix_unitaire_ht": 3500,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Recette et mise en production",
+            "quantite": 1,
+            "prix_unitaire_ht": 800,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Développement sur mesure",
+            "quantite": 1,
+            "prix_unitaire_ht": 3500,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Recette et mise en production",
+            "quantite": 1,
+            "prix_unitaire_ht": 800,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-09-25",
+        "expected": "2026-09-25",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Acompte de 450.00 € déjà versé",
+        "expected": "Acompte de 450.00 € déjà versé",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-019",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1551.13,
+        "expected": 1600,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1618.03,
+        "expected": 1600,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "26125259564405",
+        "expected": "26125259564404",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9260",
+        "expected": "FA-2026-9260",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-06-15",
+        "expected": "2026-06-15",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Graphisme identité visuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1600,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Graphisme identité visuelle",
+            "quantite": 1,
+            "prix_unitaire_ht": 1600,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-07-15",
+        "expected": "2026-07-15",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "TVA non applicable, article 293 B du CGI",
+        "expected": "TVA non applicable, article 293 B du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-020",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 1080,
+        "expected": 1080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1080,
+        "expected": 1080,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "25678300260523",
+        "expected": "25678300260522",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-6965",
+        "expected": "FA-2026-6965",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-08-08",
+        "expected": "2026-08-08",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Rédaction web — forfait",
+            "quantite": 1,
+            "prix_unitaire_ht": 900,
+            "taux_tva": null
+          },
+          {
+            "designation": "Relecture",
+            "quantite": 3,
+            "prix_unitaire_ht": 60,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Rédaction web — forfait",
+            "quantite": 1,
+            "prix_unitaire_ht": 900,
+            "taux_tva": null
+          },
+          {
+            "designation": "Relecture",
+            "quantite": 3,
+            "prix_unitaire_ht": 60,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "TVA non applicable, article 293 B du CGI",
+        "expected": "TVA non applicable, article 293 B du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-021",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 16700,
+        "expected": 16700,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 15462.97,
+        "expected": 16700,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "49189425348088",
+        "expected": "49189425348087",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2096",
+        "expected": "FA-2026-2096",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-02-11",
+        "expected": "2026-02-11",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR43491894253",
+        "expected": "FR43491894253",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Sous-traitance gros œuvre",
+            "quantite": 1,
+            "prix_unitaire_ht": 14500,
+            "taux_tva": null
+          },
+          {
+            "designation": "Location échafaudage",
+            "quantite": 1,
+            "prix_unitaire_ht": 2200,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Sous-traitance gros œuvre",
+            "quantite": 1,
+            "prix_unitaire_ht": 14500,
+            "taux_tva": null
+          },
+          {
+            "designation": "Location échafaudage",
+            "quantite": 1,
+            "prix_unitaire_ht": 2200,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-03-13",
+        "expected": "2026-03-13",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Autoliquidation — article 283-2 nonies du CGI",
+        "expected": "Autoliquidation — article 283-2 nonies du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-022",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 2196,
+        "expected": 2196,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1830,
+        "expected": 1830,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 366,
+        "expected": 366,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "19587104560540",
+        "expected": "19587104560540",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-9754",
+        "expected": "FA-2026-9754",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-05-10",
+        "expected": "2026-05-10",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR48195871045",
+        "expected": "FR48195871045",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Contrôle réglementaire annuel",
+            "quantite": 1,
+            "prix_unitaire_ht": 590,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Mise en conformité",
+            "quantite": 1,
+            "prix_unitaire_ht": 1240,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Contrôle réglementaire annuel",
+            "quantite": 1,
+            "prix_unitaire_ht": 590,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Mise en conformité",
+            "quantite": 1,
+            "prix_unitaire_ht": 1240,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-06-09",
+        "expected": "2026-06-09",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-023",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 2016,
+        "expected": 2016,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 1762.5,
+        "expected": 1762.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 253.5,
+        "expected": 253.5,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "78656783509850",
+        "expected": "78656783509850",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-7958",
+        "expected": "FA-2026-7958",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-01-08",
+        "expected": "2026-08-01",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR37786567836",
+        "expected": "FR37786567835",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Menu traiteur",
+            "quantite": 45,
+            "prix_unitaire_ht": 22,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Boissons",
+            "quantite": 45,
+            "prix_unitaire_ht": 6.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Service",
+            "quantite": 1,
+            "prix_unitaire_ht": 480,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Menu traiteur",
+            "quantite": 45,
+            "prix_unitaire_ht": 22,
+            "taux_tva": 10
+          },
+          {
+            "designation": "Boissons",
+            "quantite": 45,
+            "prix_unitaire_ht": 6.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Service",
+            "quantite": 1,
+            "prix_unitaire_ht": 480,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-08-31",
+        "expected": "2026-08-31",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-024",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 6000,
+        "expected": 6000,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 6000,
+        "expected": 6000,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "06143542834728",
+        "expected": "06143542834728",
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-8739",
+        "expected": "FA-2026-8739",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-17",
+        "expected": "2026-03-17",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Consulting mission Genève",
+            "quantite": 5,
+            "prix_unitaire_ht": 1200,
+            "taux_tva": null
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Consulting mission Genève",
+            "quantite": 5,
+            "prix_unitaire_ht": 1200,
+            "taux_tva": null
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-16",
+        "expected": "2026-04-16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": "Autoliquidation — article 283-2 nonies du CGI",
+        "expected": "Autoliquidation — article 283-2 nonies du CGI",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "demo/modele-c",
+    "docId": "f-025",
+    "byCriterion": {
+      "total_ttc": {
+        "got": 5292.96,
+        "expected": 5292.96,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_ht": {
+        "got": 4410.8,
+        "expected": 4410.8,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "total_tva": {
+        "got": 838.7,
+        "expected": 882.16,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "siret_emetteur": {
+        "got": "83872995332726",
+        "expected": "83872995332725",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "numero_facture": {
+        "got": "FA-2026-2601",
+        "expected": "FA-2026-2601",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "date_emission": {
+        "got": "2026-03-27",
+        "expected": "2026-03-27",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "tva_intracom": {
+        "got": "FR74838729953",
+        "expected": "FR74838729953",
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "lignes": {
+        "got": [
+          {
+            "designation": "Serrure 3 points",
+            "quantite": 6,
+            "prix_unitaire_ht": 148,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Cylindre européen",
+            "quantite": 6,
+            "prix_unitaire_ht": 62.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Poignée inox",
+            "quantite": 12,
+            "prix_unitaire_ht": 34,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ferme-porte hydraulique",
+            "quantite": 4,
+            "prix_unitaire_ht": 195,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Butée de sol",
+            "quantite": 12,
+            "prix_unitaire_ht": 11.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Joint isophonique",
+            "quantite": 30,
+            "prix_unitaire_ht": 4.6,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Paumelle réglable",
+            "quantite": 24,
+            "prix_unitaire_ht": 8.75,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Pose et réglage",
+            "quantite": 18,
+            "prix_unitaire_ht": 58,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement forfaitaire",
+            "quantite": 3,
+            "prix_unitaire_ht": 95,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Évacuation déchets",
+            "quantite": 1,
+            "prix_unitaire_ht": 140,
+            "taux_tva": 20
+          }
+        ],
+        "expected": [
+          {
+            "designation": "Serrure 3 points",
+            "quantite": 6,
+            "prix_unitaire_ht": 148,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Cylindre européen",
+            "quantite": 6,
+            "prix_unitaire_ht": 62.5,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Poignée inox",
+            "quantite": 12,
+            "prix_unitaire_ht": 34,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Ferme-porte hydraulique",
+            "quantite": 4,
+            "prix_unitaire_ht": 195,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Butée de sol",
+            "quantite": 12,
+            "prix_unitaire_ht": 11.9,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Joint isophonique",
+            "quantite": 30,
+            "prix_unitaire_ht": 4.6,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Paumelle réglable",
+            "quantite": 24,
+            "prix_unitaire_ht": 8.75,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Pose et réglage",
+            "quantite": 18,
+            "prix_unitaire_ht": 58,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Déplacement forfaitaire",
+            "quantite": 3,
+            "prix_unitaire_ht": 95,
+            "taux_tva": 20
+          },
+          {
+            "designation": "Évacuation déchets",
+            "quantite": 1,
+            "prix_unitaire_ht": 140,
+            "taux_tva": 20
+          }
+        ],
+        "verdict": "correct",
+        "points": 2,
+        "maxPoints": 2
+      },
+      "echeance": {
+        "got": "2026-04-26",
+        "expected": "2026-04-26",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      },
+      "mentions_speciales": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  }
+]
