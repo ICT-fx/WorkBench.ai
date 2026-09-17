@@ -1,0 +1,30 @@
+{
+  "name": "hub-evals",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "fixtures:generate": "tsx packages/fixtures/src/cli.ts",
+    "eval": "tsx packages/eval/src/cli.ts",
+    "eval:run": "tsx packages/eval/src/cli.ts run",
+    "eval:score": "tsx packages/eval/src/cli.ts score",
+    "eval:publish": "tsx packages/eval/src/cli.ts publish",
+    "demo:run": "tsx packages/fixtures/src/demo-run.ts",
+    "eval:review": "tsx packages/eval/src/cli.ts review"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

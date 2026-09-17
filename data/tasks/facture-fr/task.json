@@ -1,0 +1,80 @@
+{
+  "id": "facture-fr",
+  "label": "Facture française",
+  "question": "Extraire les champs d'une facture fournisseur française reçue en scan ou en photo.",
+  "criteria": [
+    {
+      "id": "total_ttc",
+      "label": "Montant total TTC",
+      "kind": "number",
+      "weight": 3,
+      "critical": true,
+      "tolerance": 0
+    },
+    {
+      "id": "total_ht",
+      "label": "Montant total HT",
+      "kind": "number",
+      "weight": 3,
+      "critical": true,
+      "tolerance": 0
+    },
+    {
+      "id": "total_tva",
+      "label": "Montant total de TVA",
+      "kind": "number",
+      "weight": 3,
+      "critical": true,
+      "tolerance": 0
+    },
+    {
+      "id": "siret_emetteur",
+      "label": "SIRET de l'émetteur",
+      "kind": "exact",
+      "weight": 3,
+      "critical": true
+    },
+    {
+      "id": "numero_facture",
+      "label": "Numéro de facture",
+      "kind": "exact",
+      "weight": 2,
+      "critical": true
+    },
+    {
+      "id": "date_emission",
+      "label": "Date d'émission",
+      "kind": "date",
+      "weight": 2,
+      "critical": true
+    },
+    {
+      "id": "tva_intracom",
+      "label": "Numéro de TVA intracommunautaire",
+      "kind": "exact",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "lignes",
+      "label": "Lignes de facturation",
+      "kind": "lines",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "echeance",
+      "label": "Date d'échéance",
+      "kind": "date",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "mentions_speciales",
+      "label": "Mentions spéciales",
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@hub/fixtures",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@hub/schema": "*",
+    "@napi-rs/canvas": "^0.1.60",
+    "sharp": "^0.34.0"
+  }
+}

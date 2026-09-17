@@ -1,0 +1,42 @@
+{
+  "taskId": "facture-fr",
+  "runId": "2026-09-17_demo-facture-fr",
+  "status": "demo",
+  "runDate": "2026-09-17",
+  "sampleSize": 25,
+  "rows": [
+    {
+      "model": "demo/modele-a",
+      "modelVersion": "demo-a-2026-09",
+      "sansRelecture": 84,
+      "exactitude": 97.8,
+      "hallucinations": 0,
+      "costPerDoc": 0.019089,
+      "latencyP50": 4194,
+      "errorCount": 0,
+      "docCount": 25
+    },
+    {
+      "model": "demo/modele-b",
+      "modelVersion": "demo-b-2026-09",
+      "sansRelecture": 48,
+      "exactitude": 88,
+      "hallucinations": 44.4,
+      "costPerDoc": 0.003979,
+      "latencyP50": 1803,
+      "errorCount": 0,
+      "docCount": 25
+    },
+    {
+      "model": "demo/modele-c",
+      "modelVersion": "demo-c-2026-09",
+      "sansRelecture": 16,
+      "exactitude": 78.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.001041,
+      "latencyP50": 931,
+      "errorCount": 0,
+      "docCount": 25
+    }
+  ]
+}

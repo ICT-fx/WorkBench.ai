@@ -1,0 +1,28 @@
+{
+  "docId": "f-020",
+  "fields": {
+    "numero_facture": "FA-2026-6965",
+    "date_emission": "2026-08-08",
+    "siret_emetteur": "25678300260522",
+    "tva_intracom": null,
+    "total_ht": 1080,
+    "total_tva": null,
+    "total_ttc": 1080,
+    "echeance": null,
+    "lignes": [
+      {
+        "designation": "Rédaction web — forfait",
+        "quantite": 1,
+        "prix_unitaire_ht": 900,
+        "taux_tva": null
+      },
+      {
+        "designation": "Relecture",
+        "quantite": 3,
+        "prix_unitaire_ht": 60,
+        "taux_tva": null
+      }
+    ],
+    "mentions_speciales": "TVA non applicable, article 293 B du CGI"
+  }
+}

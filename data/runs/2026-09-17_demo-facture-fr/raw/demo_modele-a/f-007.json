@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-a",
+  "modelVersion": "demo-a-2026-09",
+  "docId": "f-007",
+  "raw": {
+    "numero_facture": "FA-2026-9408",
+    "date_emission": "2026-03-10",
+    "siret_emetteur": "98617048723807",
+    "tva_intracom": "FR27986170487",
+    "total_ht": 646.2,
+    "total_tva": 129.24,
+    "total_ttc": 775.44,
+    "echeance": "2026-04-09",
+    "lignes": [
+      {
+        "designation": "Transport palettes Lyon-Nantes",
+        "quantite": 3,
+        "prix_unitaire_ht": 215.4,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 6213,
+  "costUsd": 0.017835,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

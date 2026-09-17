@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-17_demo-facture-fr",
+  "model": "demo/modele-b",
+  "modelVersion": "demo-b-2026-09",
+  "docId": "f-015",
+  "raw": {
+    "numero_facture": "FA-2026-7197",
+    "date_emission": "2026-08-05",
+    "siret_emetteur": "75196914882656",
+    "tva_intracom": "FR87751969148",
+    "total_ht": 4760,
+    "total_tva": 952,
+    "total_ttc": 5712,
+    "echeance": "2026-06-07",
+    "lignes": [
+      {
+        "designation": "Campagne d'affichage",
+        "quantite": 1,
+        "prix_unitaire_ht": 5600,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": "Paiement à 30 jours"
+  },
+  "latencyMs": 1355,
+  "costUsd": 0.003702,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}
