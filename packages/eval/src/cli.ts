@@ -3,16 +3,16 @@ import { join } from "node:path";
 import { DocScoreSchema, ReviewItemSchema, type DocScore, type ReviewItem } from "@hub/schema";
 import { z } from "zod";
 import { createInterface } from "node:readline/promises";
-import { runTask } from "./run.js";
-import { selectForReview, type ReviewCandidate } from "./review.js";
-import { scoreDocument } from "./score.js";
-import { applyReview, buildLeaderboard } from "./publish.js";
-import { fetchCatalogue, assertUsable, V1_MODELS } from "./models.js";
-import { createGatewayGenerate } from "./gateway.js";
+import { runTask } from "./run";
+import { selectForReview, type ReviewCandidate } from "./review";
+import { scoreDocument } from "./score";
+import { applyReview, buildLeaderboard } from "./publish";
+import { fetchCatalogue, assertUsable, V1_MODELS } from "./models";
+import { createGatewayGenerate } from "./gateway";
 import {
   loadTask, loadPrompt, loadDocuments, loadGroundTruths, loadRunResults,
   runsRoot, publishedDir,
-} from "./load.js";
+} from "./load";
 
 const arg = (name: string): string | undefined => {
   const i = process.argv.indexOf(`--${name}`);
@@ -169,6 +169,7 @@ async function cmdPublish(taskId: string): Promise<void> {
   const arbitres = applyReview(task, scores, review);
   const leaderboard = buildLeaderboard({
     taskId,
+    runId,
     status: flag("demo") ? "demo" : "reel",
     runDate: runId.slice(0, 10),
     scores: arbitres,

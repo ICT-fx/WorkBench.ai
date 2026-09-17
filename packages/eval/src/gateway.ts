@@ -1,8 +1,8 @@
 import { generateObject } from "ai";
 import { z } from "zod";
 import type { Task } from "@hub/schema";
-import { computeCost, type Catalogue } from "./models.js";
-import type { GenerateFn } from "./run.js";
+import { computeCost, type Catalogue } from "./models";
+import type { GenerateFn } from "./run";
 
 const looseLine = z.object({
   designation: z.string().nullable(),

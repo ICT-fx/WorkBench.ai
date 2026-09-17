@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import type { DocScore, FieldScore, ModelResult, FieldVerdict } from "@hub/schema";
-import { aggregate } from "./aggregate.js";
+import { aggregate } from "./aggregate";
 
 const field = (verdict: FieldVerdict, weight: number, expectedNull = false): FieldScore => ({
   got: verdict === "hallucine" ? "inventé" : null,

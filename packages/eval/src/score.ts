@@ -1,5 +1,5 @@
 import type { DocScore, FieldScore, GroundTruth, Task, Value } from "@hub/schema";
-import { compareField, normalizeGot } from "./compare.js";
+import { compareField, normalizeGot } from "./compare";
 
 /** Un champ vaut son poids, ou zéro. Pas de demi-point : une facture est juste ou fausse. */
 function scoreField(

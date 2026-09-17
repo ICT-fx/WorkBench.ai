@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { parseCatalogue, assertUsable, computeCost, V1_MODELS } from "./models.js";
+import { parseCatalogue, assertUsable, computeCost, V1_MODELS } from "./models";
 
 const payload = {
   data: [

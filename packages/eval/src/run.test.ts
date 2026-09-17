@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readFileSync } from "node:fs";
 import { TaskSchema, type Task } from "@hub/schema";
-import { runTask, type GenerateFn } from "./run.js";
+import { runTask, type GenerateFn } from "./run";
 
 const task: Task = TaskSchema.parse(
   JSON.parse(readFileSync("data/tasks/facture-fr/task.json", "utf8")));

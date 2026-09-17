@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ValueSchema } from "./value.js";
+import { ValueSchema } from "./value";
 
 /**
  * Ce qu'il fallait extraire d'un document.

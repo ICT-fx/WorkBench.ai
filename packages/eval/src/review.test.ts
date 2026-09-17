@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import type { DocScore, FieldScore, FieldVerdict, ReviewItem } from "@hub/schema";
-import { selectForReview } from "./review.js";
+import { selectForReview } from "./review";
 
 const f = (verdict: FieldVerdict, expected: unknown, got: unknown): FieldScore => ({
   got: got as FieldScore["got"], expected: expected as FieldScore["expected"],

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { SCENARIOS, TRAPS } from "./scenarios.js";
-import { buildInvoice, toGroundTruth } from "./invoice-model.js";
+import { SCENARIOS, TRAPS } from "./scenarios";
+import { buildInvoice, toGroundTruth } from "./invoice-model";
 
 describe("jeu de test", () => {
   it("compte 25 documents aux identifiants uniques", () => {

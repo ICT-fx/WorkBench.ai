@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ValueSchema } from "./value.js";
+import { ValueSchema } from "./value";
 
 /** Exactement quatre verdicts. Ne jamais en introduire un cinquième. */
 export const FIELD_VERDICTS = ["correct", "faux", "manquant", "hallucine"] as const;

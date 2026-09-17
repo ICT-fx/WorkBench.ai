@@ -1,6 +1,6 @@
 import type { DocScore, Leaderboard, ModelResult, ReviewItem, Task } from "@hub/schema";
 import { LeaderboardSchema } from "@hub/schema";
-import { aggregate } from "./aggregate.js";
+import { aggregate } from "./aggregate";
 
 /**
  * Applique les arbitrages humains par-dessus le score automatique.
@@ -39,6 +39,7 @@ export function applyReview(task: Task, scores: DocScore[], review: ReviewItem[]
 
 export type BuildLeaderboardOptions = {
   taskId: string;
+  runId: string;
   runDate: string;
   scores: DocScore[];
   results: ModelResult[];
@@ -71,6 +72,7 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard {
 
   return LeaderboardSchema.parse({
     taskId: opts.taskId,
+    runId: opts.runId,
     status: opts.status,
     runDate: opts.runDate,
     sampleSize: opts.sampleSize,

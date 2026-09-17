@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/*
+  Le vocabulaire visuel vient du grand livre comptable : papier réglé,
+  filets fins, colonne des montants alignée à droite, et l'encre rouge
+  réservée à ce qui cloche.
+*/
+@theme {
+  --color-papier: #f1f3f1;
+  --color-papier-creux: #e7ebe8;
+  --color-encre: #15201e;
+  --color-encre-pale: #5c6b66;
+  --color-filet: #c6cfc9;
+  --color-rouge: #a32b22;
+  --color-valide: #1f5c3d;
+
+  --font-sans: var(--police-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --papier: var(--color-papier);
+  --papier-creux: var(--color-papier-creux);
+  --encre: var(--color-encre);
+  --encre-pale: var(--color-encre-pale);
+  --filet: var(--color-filet);
+  --rouge: var(--color-rouge);
+  --valide: var(--color-valide);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papier: #121715;
+    --papier-creux: #1a211e;
+    --encre: #e6ebe8;
+    --encre-pale: #93a29c;
+    --filet: #2e3936;
+    --rouge: #e8695e;
+    --valide: #6fbf94;
+  }
+}
+
+html {
+  background: var(--papier);
+  color: var(--encre);
+}
+
+body {
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Les chiffres s'alignent en colonne : c'est ce qui rend un tableau lisible. */
+.chiffres {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* L'en-tête d'un formulaire imprimé : large, posé, sans emphase. */
+.etendu {
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: -0.015em;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: from-font;
+}
+
+:focus-visible {
+  outline: 2px solid var(--encre);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

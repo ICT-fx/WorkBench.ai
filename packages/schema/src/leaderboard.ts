@@ -22,6 +22,8 @@ export type LeaderboardRow = z.infer<typeof LeaderboardRowSchema>;
 
 export const LeaderboardSchema = z.object({
   taskId: z.string().min(1),
+  /** Le run d'où sortent ces chiffres : sans lui, la piste d'audit est rompue. */
+  runId: z.string().min(1),
   /**
    * `demo` = résultats fabriqués pour développer le site, jamais des mesures.
    * Le champ est obligatoire et sans valeur par défaut : personne ne peut

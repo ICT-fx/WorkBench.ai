@@ -1,4 +1,4 @@
-import type { ScenarioInput } from "./invoice-model.js";
+import type { ScenarioInput } from "./invoice-model";
 
 /** Les neuf cas pièges du design. Sans eux, tous les modèles finissent à 95 %. */
 export const TRAPS = [
@@ -8,6 +8,19 @@ export const TRAPS = [
 export type Trap = (typeof TRAPS)[number];
 
 export type TemplateId = "sobre" | "tableau" | "colore";
+
+/** Libellés lisibles des pièges, publiés dans les données pour le site. */
+export const TRAP_LABELS: Record<Trap, string> = {
+  multi_tva: "Plusieurs taux de TVA sur la même facture",
+  avoir: "Avoir : tous les montants sont négatifs",
+  remise_pied: "Remise en pied de facture, appliquée avant la TVA",
+  acompte: "Acompte déjà versé : le net à payer n'est pas le total TTC",
+  franchise_293b: "Franchise en base : il n'y a pas de TVA à trouver",
+  autoliquidation: "Autoliquidation : la TVA n'est pas due par l'émetteur",
+  scan_degrade: "Scan de travers, contraste faible",
+  devise_etrangere: "Montants en devise étrangère",
+  deux_pages: "Facture sur deux pages",
+};
 
 export type Scenario = {
   id: string;

@@ -1,6 +1,6 @@
 import { createCanvas, type SKRSContext2D } from "@napi-rs/canvas";
-import type { Invoice } from "./invoice-model.js";
-import type { TemplateId } from "./scenarios.js";
+import type { Invoice } from "./invoice-model";
+import type { TemplateId } from "./scenarios";
 
 const W = 1240;
 const M = 80;

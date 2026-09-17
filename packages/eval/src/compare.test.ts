@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import type { Criterion } from "@hub/schema";
-import { compareField } from "./compare.js";
+import { compareField } from "./compare";
 
 const num: Criterion = { id: "total_ttc", label: "TTC", kind: "number", weight: 3, critical: true, tolerance: 0 };
 const date: Criterion = { id: "date_emission", label: "Date", kind: "date", weight: 2, critical: true };

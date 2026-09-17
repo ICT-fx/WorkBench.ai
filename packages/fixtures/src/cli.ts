@@ -1,10 +1,10 @@
 import { mkdir, writeFile, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { GroundTruthSchema } from "@hub/schema";
-import { buildInvoice, toGroundTruth } from "./invoice-model.js";
-import { renderInvoice } from "./render.js";
-import { degrade } from "./degrade.js";
-import { SCENARIOS } from "./scenarios.js";
+import { buildInvoice, toGroundTruth } from "./invoice-model";
+import { renderInvoice } from "./render";
+import { degrade } from "./degrade";
+import { SCENARIOS, TRAP_LABELS } from "./scenarios";
 
 const TASK_DIR = "data/tasks/facture-fr";
 
@@ -38,6 +38,21 @@ async function main(): Promise<void> {
     const gt = GroundTruthSchema.parse(toGroundTruth(invoice));
     await writeFile(join(gtDir, `${scenario.id}.json`), `${JSON.stringify(gt, null, 2)}\n`);
   }
+
+  // Les pièges appartiennent aux données : le site doit pouvoir les lire sans
+  // importer le générateur, qui dépend du rendu graphique.
+  await writeFile(
+    join(TASK_DIR, "cases.json"),
+    `${JSON.stringify(
+      SCENARIOS.map((s) => ({
+        docId: s.id,
+        template: s.template,
+        traps: (s.traps ?? []).map((t) => ({ id: t, label: TRAP_LABELS[t] })),
+      })),
+      null,
+      2,
+    )}\n`,
+  );
 
   const nulls = SCENARIOS.flatMap((s) =>
     Object.values(toGroundTruth(buildInvoice(s.input)).fields).filter((v) => v === null));

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildInvoice, toGroundTruth } from "./invoice-model.js";
+import { buildInvoice, toGroundTruth } from "./invoice-model";
 
 describe("cohérence comptable", () => {
   it("calcule un TTC égal au HT plus la TVA, au centime", () => {

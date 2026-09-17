@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CriterionSchema } from "./criterion.js";
+import { CriterionSchema } from "./criterion";
 
 export const TaskSchema = z.object({
   id: z.string().min(1),

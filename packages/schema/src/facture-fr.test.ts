@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
-import { TaskSchema } from "./index.js";
+import { TaskSchema } from "./index";
 
 const task = TaskSchema.parse(
   JSON.parse(readFileSync("data/tasks/facture-fr/task.json", "utf8")),
