@@ -18,7 +18,8 @@
     "eval:run": "tsx packages/eval/src/cli.ts run",
     "eval:score": "tsx packages/eval/src/cli.ts score",
     "eval:publish": "tsx packages/eval/src/cli.ts publish",
-    "demo:run": "tsx packages/fixtures/src/demo-run.ts"
+    "demo:run": "tsx packages/fixtures/src/demo-run.ts",
+    "eval:review": "tsx packages/eval/src/cli.ts review"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
