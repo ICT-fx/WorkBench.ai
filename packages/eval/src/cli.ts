@@ -9,6 +9,7 @@ import { scoreDocument } from "./score";
 import { applyReview, buildLeaderboard } from "./publish";
 import { fetchCatalogue, assertUsable, V1_MODELS } from "./models";
 import { createGatewayGenerate } from "./gateway";
+import { estimateRunCost } from "./estimate";
 import {
   loadTask, loadPrompt, loadDocuments, loadGroundTruths, loadRunResults,
   runsRoot, publishedDir,
@@ -26,13 +27,6 @@ async function cmdRun(taskId: string): Promise<void> {
   const models = arg("models")?.split(",") ?? [...V1_MODELS];
   const runId = arg("run") ?? `${today()}_${taskId}`;
 
-  if (process.env.AI_GATEWAY_API_KEY === undefined) {
-    throw new Error(
-      "AI_GATEWAY_API_KEY absente. Créer une clé sur vercel.com (AI Gateway), puis :\n" +
-      "  export AI_GATEWAY_API_KEY=...",
-    );
-  }
-
   const catalogue = await fetchCatalogue();
   assertUsable(catalogue, models);
 
@@ -42,6 +36,30 @@ async function cmdRun(taskId: string): Promise<void> {
 
   const limit = arg("limit");
   const subset = limit === undefined ? documents : documents.slice(0, Number(limit));
+
+  // L'estimation ne passe aucun appel et n'exige aucune clé : on sait ce qu'on
+  // va dépenser avant de le dépenser.
+  if (flag("estimate")) {
+    const e = estimateRunCost(catalogue, models, subset.map((d) => ({ images: d.images.length })), promptText);
+    const usd = (n: number) => `${n.toFixed(2)} $`;
+    console.log(`Estimation : ${subset.length} documents × ${models.length} modèles = ${e.calls} appels\n`);
+    for (const m of e.perModel) {
+      console.log(`  ${m.model.padEnd(28)} ${usd(m.usd).padStart(9)}   (plafond ${usd(m.ceilingUsd)})`);
+    }
+    console.log(`\n  Total estimé : ${usd(e.totalUsd)} — plafond si les modèles raisonnent longuement : ${usd(e.ceilingUsd)}`);
+    console.log(`  Hypothèses : ${e.hypotheses.imageTokens} tokens par page d'image, ` +
+      `${e.hypotheses.outputTokens} tokens de réponse, tarifs publics du catalogue du jour.`);
+    return;
+  }
+
+  // L'AI Gateway accepte une clé d'API ou, dans un projet Vercel lié, un jeton OIDC.
+  if (process.env.AI_GATEWAY_API_KEY === undefined && process.env.VERCEL_OIDC_TOKEN === undefined) {
+    throw new Error(
+      "Aucune authentification AI Gateway. Créer une clé sur vercel.com (AI Gateway), puis :\n" +
+      "  export AI_GATEWAY_API_KEY=...\n" +
+      "Pour connaître le coût avant de lancer : npm run eval:run -- --estimate",
+    );
+  }
 
   console.log(`Run ${runId} : ${subset.length} documents × ${models.length} modèles ` +
     `= ${subset.length * models.length} appels.`);

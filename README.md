@@ -35,6 +35,7 @@ cher qu'un chiffre manquant, parce qu'il passe la relecture.
 
 ```bash
 npm install
+npm run eval:run -- --estimate         # coût prévu, sans aucun appel ni clé
 export AI_GATEWAY_API_KEY=...          # clé Vercel AI Gateway
 
 npm run eval:run     -- --run 2026-10-08_facture-fr    # appelle les modèles
@@ -50,6 +51,14 @@ comparaisons dans le temps honnêtes.
 Un run est un dossier horodaté et **immuable**. Ajouter un modèle crée un nouveau
 run ; les précédents restent consultables. Une interruption se reprend avec
 `--resume`, qui ne repaie jamais un appel déjà obtenu.
+
+## Déployer le site
+
+Sur Vercel, avec **Root Directory** réglé sur `apps/web` et l'option d'inclusion des
+fichiers hors du dossier racine laissée active (c'est le réglage par défaut) : le
+build copie les images de test depuis `data/`, qui se trouve au-dessus. Next.js est
+détecté automatiquement, aucune variable d'environnement n'est nécessaire — le site
+ne fait aucun appel à un modèle.
 
 ## Structure
 

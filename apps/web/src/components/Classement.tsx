@@ -45,7 +45,9 @@ const COLONNES: Colonne[] = [
 ];
 
 export function Classement({ rows }: { rows: LeaderboardRow[] }) {
-  const [tri, setTri] = useState<keyof LeaderboardRow>("sansRelecture");
+  // La spec : l'exactitude ordonne le classement, « sans relecture » est la
+  // métrique mise en avant visuellement. Les deux rôles sont distincts.
+  const [tri, setTri] = useState<keyof LeaderboardRow>("exactitude");
 
   const colonne = COLONNES.find((c) => c.id === tri)!;
   const triees = [...rows].sort((a, b) => {
@@ -169,7 +171,7 @@ export function Classement({ rows }: { rows: LeaderboardRow[] }) {
       </ul>
 
       <p className="mt-4 text-xs md:hidden" style={{ color: "var(--encre-pale)" }}>
-        Classé par factures sans relecture.
+        Classé par exactitude.
       </p>
     </div>
   );

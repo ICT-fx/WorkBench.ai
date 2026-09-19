@@ -55,13 +55,12 @@ export function parseNumber(v: Value): number | null {
     const [decimal, thousands] = lastComma > lastDot ? [",", "."] : [".", ","];
     s = s.split(thousands).join("").replace(decimal, ".");
   } else if (lastComma >= 0) {
-    s = /,\d{3}$/.test(s) ? s.split(",").join("") : s.replace(",", ".");
+    // Un séparateur seul ne marque les milliers que s'il découpe des groupes
+    // réguliers de trois chiffres, le premier ne commençant pas par zéro :
+    // « 1,234 » vaut 1234, mais « 0,125 » vaut 0,125.
+    s = /^[1-9]\d{0,2}(,\d{3})+$/.test(s) ? s.split(",").join("") : s.replace(",", ".");
   } else if (lastDot >= 0) {
-    if (/\.\d{3}$/.test(s) && s.indexOf(".") !== s.length - 4) {
-      s = s.split(".").join("");
-    } else if (/^\d+\.\d{3}$/.test(s)) {
-      s = s.split(".").join("");
-    }
+    if (/^[1-9]\d{0,2}(\.\d{3})+$/.test(s)) s = s.split(".").join("");
   }
 
   if (!/^\d*\.?\d+$/.test(s)) return null;

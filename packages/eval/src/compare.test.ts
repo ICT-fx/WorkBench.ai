@@ -53,6 +53,18 @@ describe("montants", () => {
     expect(compareField(tolerant, 100, 100.02)).toBe("correct");
     expect(compareField(tolerant, 100, 100.03)).toBe("faux");
   });
+  it("ne prend pas un montant inférieur à 1 pour un séparateur de milliers", () => {
+    // « 0,125 » et « 0.125 » valent 0,125 : un groupe de milliers ne commence
+    // jamais par zéro. Les lire comme 125 multiplierait le montant par mille.
+    expect(compareField(num, 0.125, "0,125")).toBe("correct");
+    expect(compareField(num, 0.125, "0.125")).toBe("correct");
+  });
+
+  it("lit plusieurs groupes de milliers", () => {
+    expect(compareField(num, 1234567, "1.234.567")).toBe("correct");
+    expect(compareField(num, 1234567.89, "1.234.567,89")).toBe("correct");
+  });
+
   it("refuse une valeur non numérique", () => {
     expect(compareField(num, 100, "cent euros")).toBe("faux");
   });
