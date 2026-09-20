@@ -1,5 +1,5 @@
-import type { DocScore, Leaderboard, ModelResult, ReviewItem, Task } from "@hub/schema";
-import { LeaderboardSchema } from "@hub/schema";
+import type { BenchmarkHistory, DocScore, Leaderboard, ModelResult, ReviewItem, Task } from "@hub/schema";
+import { BenchmarkHistorySchema, LeaderboardSchema } from "@hub/schema";
 import { aggregate } from "./aggregate";
 
 /**
@@ -77,5 +77,34 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard {
     runDate: opts.runDate,
     sampleSize: opts.sampleSize,
     rows,
+  });
+}
+
+/**
+ * Ajoute une publication à l'historique d'un benchmark.
+ *
+ * L'historique est ce qui permet de suivre un modèle dans le temps : un même
+ * alias peut changer de comportement sans prévenir, et seul un re-test le montre.
+ * Republier un run remplace son entrée au lieu de la dupliquer. Une première
+ * mesure réelle efface les runs de démonstration : une courbe qui mêlerait les
+ * deux ferait passer du fabriqué pour du mesuré.
+ */
+export function appendHistory(history: BenchmarkHistory | null, leaderboard: Leaderboard): BenchmarkHistory {
+  const gardes = (history?.runs ?? []).filter((run) =>
+    run.runId !== leaderboard.runId && (leaderboard.status === "demo" || run.status === "reel"));
+
+  return BenchmarkHistorySchema.parse({
+    benchmarkId: leaderboard.taskId,
+    runs: [
+      ...gardes,
+      {
+        runId: leaderboard.runId,
+        runDate: leaderboard.runDate,
+        status: leaderboard.status,
+        rows: leaderboard.rows.map((r) => ({
+          model: r.model, exactitude: r.exactitude, costPerDoc: r.costPerDoc, latencyP50: r.latencyP50,
+        })),
+      },
+    ].sort((a, b) => a.runDate.localeCompare(b.runDate)),
   });
 }

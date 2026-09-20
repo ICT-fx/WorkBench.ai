@@ -1,0 +1,62 @@
+[
+  {
+    "id": "finance",
+    "label": { "fr": "Finance", "en": "Finance" },
+    "summary": { "fr": "Lire des états financiers, prévoir la trésorerie, alerter avant qu'il ne soit trop tard.", "en": "Read financial statements, forecast cash, raise the alarm before it is too late." },
+    "icon": "finance"
+  },
+  {
+    "id": "comptabilite",
+    "label": { "fr": "Comptabilité", "en": "Accounting" },
+    "summary": { "fr": "Saisir sans ressaisir : factures, relevés bancaires et notes de frais.", "en": "Capture once, never retype: invoices, bank statements and expense reports." },
+    "icon": "comptabilite"
+  },
+  {
+    "id": "rh",
+    "label": { "fr": "Ressources humaines", "en": "Human resources" },
+    "summary": { "fr": "Présélectionner sans discriminer, répondre juste en droit du travail.", "en": "Shortlist without bias, answer employment-law questions correctly." },
+    "icon": "rh"
+  },
+  {
+    "id": "juridique",
+    "label": { "fr": "Juridique", "en": "Legal" },
+    "summary": { "fr": "Résumer un contrat sans rien inventer, repérer la clause qui coûtera cher.", "en": "Summarise a contract without inventing anything, spot the clause that will cost you." },
+    "icon": "juridique"
+  },
+  {
+    "id": "commercial",
+    "label": { "fr": "Commercial", "en": "Sales" },
+    "summary": { "fr": "Qualifier les prospects et rédiger des propositions qui tiennent la route.", "en": "Qualify leads and draft proposals that hold up." },
+    "icon": "commercial"
+  },
+  {
+    "id": "marketing",
+    "label": { "fr": "Marketing", "en": "Marketing" },
+    "summary": { "fr": "Écrire à la voix de la marque et lire une campagne sans se tromper de chiffre.", "en": "Write in the brand's voice and read a campaign without misreading a number." },
+    "icon": "marketing"
+  },
+  {
+    "id": "service-client",
+    "label": { "fr": "Service client", "en": "Customer service" },
+    "summary": { "fr": "Répondre juste, dans le ton, et savoir quand passer la main à un humain.", "en": "Answer correctly, in the right tone, and know when to hand over to a human." },
+    "icon": "service-client"
+  },
+  {
+    "id": "achats",
+    "label": { "fr": "Achats & logistique", "en": "Procurement & logistics" },
+    "summary": { "fr": "Comparer des devis qui ne se ressemblent pas, commander la bonne quantité.", "en": "Compare quotes that do not look alike, order the right quantity." },
+    "icon": "achats"
+  },
+  {
+    "id": "informatique",
+    "label": { "fr": "Informatique", "en": "IT" },
+    "summary": { "fr": "Dépanner les collègues et interroger les données sans mettre l'entreprise en danger.", "en": "Unblock colleagues and query data without putting the company at risk." },
+    "icon": "informatique"
+  },
+  {
+    "id": "direction",
+    "label": { "fr": "Direction", "en": "Management" },
+    "summary": { "fr": "Des comptes rendus fidèles et des notes de synthèse sur lesquelles décider.", "en": "Faithful minutes and decision memos you can act on." },
+    "icon": "direction"
+  }
+]

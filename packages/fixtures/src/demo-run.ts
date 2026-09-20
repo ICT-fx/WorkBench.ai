@@ -1,18 +1,23 @@
 /**
- * Fabrique un run de DÉMONSTRATION.
+ * Fabrique les réponses brutes d'un run de DÉMONSTRATION.
  *
  * Aucune de ces réponses ne vient d'un modèle : elles sont inventées pour
- * développer et tester le site avant d'avoir une clé d'API. Le classement issu
- * de ce run est publié avec `status: "demo"`, et le site l'affiche comme tel.
- * Les modèles portent des noms fictifs pour qu'aucune capture d'écran ne puisse
- * être prise pour une mesure réelle.
+ * développer et tester le site avant d'avoir une clé d'API. Le site n'affiche
+ * des réponses brutes que pour un panel — le dernier modèle capable de lire une
+ * image chez chacun des grands labos — dont le taux d'erreur suit le classement
+ * de démonstration (`npm run demo:hub`), publié avec `status: "demo"`.
  */
-import { mkdir, writeFile, readdir, readFile } from "node:fs/promises";
+import { mkdir, writeFile, readdir, readFile, rm } from "node:fs/promises";
 import { join } from "node:path";
-import { ModelResultSchema, GroundTruthSchema, type GroundTruth, type ModelResult } from "@hub/schema";
+import { z } from "zod";
+import {
+  ModelResultSchema, GroundTruthSchema, BenchmarkSchema, LabSchema, ModelCatalogueSchema,
+  type GroundTruth, type ModelResult,
+} from "@hub/schema";
+import { DERNIER_RUN, ligne, peutPasser, rng, runIdDemo } from "./demo-model";
 
-const RUN_ID = "2026-09-17_demo-facture-fr";
 const TASK_ID = "facture-fr";
+const RUN_ID = runIdDemo(DERNIER_RUN, TASK_ID);
 
 type Profil = {
   alias: string;
@@ -27,22 +32,33 @@ type Profil = {
   prixParAppel: number;
 };
 
-const PROFILS: Profil[] = [
-  { alias: "demo/modele-a", version: "demo-a-2026-09", erreur: 0.04, hallucination: 0.0, echec: 0, latence: 4200, prixParAppel: 0.019 },
-  { alias: "demo/modele-b", version: "demo-b-2026-09", erreur: 0.09, hallucination: 0.35, echec: 0, latence: 1800, prixParAppel: 0.004 },
-  { alias: "demo/modele-c", version: "demo-c-2026-09", erreur: 0.22, hallucination: 0.08, echec: 0.04, latence: 900, prixParAppel: 0.001 },
-];
+const json = async (file: string): Promise<unknown> => JSON.parse(await readFile(file, "utf8"));
 
-function rng(seed: string): () => number {
-  let h = 2166136261;
-  for (const ch of seed) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); }
-  return () => {
-    h += 0x6d2b79f5;
-    let t = h;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
+/** Le panel : chez chaque labo doté d'une couleur, le modèle le plus récent qui lit les images. */
+async function panel(): Promise<Profil[]> {
+  const dir = join("data", "catalogue");
+  const { models } = ModelCatalogueSchema.parse(await json(join(dir, "models.json")));
+  const labs = z.array(LabSchema).parse(await json(join(dir, "labs.json")));
+  const task = z.array(BenchmarkSchema).parse(await json(join(dir, "benchmarks.json")))
+    .find((b) => b.id === TASK_ID);
+  if (task === undefined) throw new Error(`Benchmark ${TASK_ID} absent du catalogue`);
+
+  return labs.filter((l) => l.slot !== undefined).flatMap((lab) => {
+    const dernier = models
+      .filter((m) => m.lab === lab.id && peutPasser(m, task) && m.released <= DERNIER_RUN)
+      .sort((a, b) => b.released.localeCompare(a.released))[0];
+    if (dernier === undefined) return [];
+    const row = ligne(dernier, task, DERNIER_RUN);
+    return [{
+      alias: row.model,
+      version: row.modelVersion,
+      erreur: (100 - row.exactitude) / 100,
+      hallucination: row.hallucinations / 100,
+      echec: row.errorCount / task.sampleSize,
+      latence: row.latencyP50,
+      prixParAppel: row.costPerDoc,
+    }];
+  });
 }
 
 function abimer(value: unknown, rand: () => number): unknown {
@@ -85,6 +101,10 @@ async function main(): Promise<void> {
     GroundTruthSchema.parse(JSON.parse(await readFile(join(gtDir, f), "utf8")))));
 
   const runDir = join("data", "runs", RUN_ID);
+  const PROFILS = await panel();
+  // Un run de démonstration se régénère en entier : pas de réponses orphelines
+  // d'un ancien panel à côté des nouvelles.
+  await rm(runDir, { recursive: true, force: true });
 
   for (const profil of PROFILS) {
     const dir = join(runDir, "raw", profil.alias.replace(/\//g, "_"));
@@ -113,13 +133,13 @@ async function main(): Promise<void> {
   }
 
   await writeFile(join(runDir, "run.json"), `${JSON.stringify({
-    runId: RUN_ID, taskId: TASK_ID, startedAt: "2026-09-17T12:00:00.000Z",
+    runId: RUN_ID, taskId: TASK_ID, startedAt: `${DERNIER_RUN}T12:00:00.000Z`,
     models: PROFILS.map((p) => ({ alias: p.alias, version: p.version })),
     promptHash: "000000000000", docCount: truths.length,
   }, null, 2)}\n`);
 
   console.log(`Run de DÉMONSTRATION écrit : ${runDir}`);
-  console.log(`${PROFILS.length} modèles fictifs × ${truths.length} documents.`);
+  console.log(`${PROFILS.length} modèles du panel × ${truths.length} documents, réponses fabriquées.`);
 }
 
 main().catch((e: unknown) => { console.error(e); process.exitCode = 1; });

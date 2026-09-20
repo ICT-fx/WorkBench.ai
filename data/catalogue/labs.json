@@ -1,0 +1,17 @@
+[
+  { "id": "google", "name": "Google", "country": "US", "slot": 1, "monogram": "G", "url": "https://deepmind.google" },
+  { "id": "anthropic", "name": "Anthropic", "country": "US", "slot": 2, "monogram": "A", "url": "https://www.anthropic.com" },
+  { "id": "meta", "name": "Meta", "country": "US", "slot": 3, "monogram": "M", "url": "https://ai.meta.com" },
+  { "id": "mistral", "name": "Mistral AI", "country": "FR", "slot": 4, "monogram": "Mi", "url": "https://mistral.ai" },
+  { "id": "alibaba", "name": "Alibaba", "country": "CN", "slot": 5, "monogram": "Q", "url": "https://qwen.ai" },
+  { "id": "openai", "name": "OpenAI", "country": "US", "slot": 6, "monogram": "O", "url": "https://openai.com" },
+  { "id": "deepseek", "name": "DeepSeek", "country": "CN", "slot": 7, "monogram": "D", "url": "https://www.deepseek.com" },
+  { "id": "spacexai", "name": "SpaceXAI", "country": "US", "slot": 8, "monogram": "X", "url": "https://x.ai" },
+  { "id": "moonshotai", "name": "Moonshot AI", "country": "CN", "monogram": "K", "url": "https://www.moonshot.ai" },
+  { "id": "zai", "name": "Z.ai", "country": "CN", "monogram": "Z", "url": "https://z.ai" },
+  { "id": "minimax", "name": "MiniMax", "country": "CN", "monogram": "Mm", "url": "https://www.minimax.io" },
+  { "id": "nvidia", "name": "NVIDIA", "country": "US", "monogram": "N", "url": "https://www.nvidia.com" },
+  { "id": "tencent", "name": "Tencent", "country": "CN", "monogram": "T", "url": "https://hunyuan.tencent.com" },
+  { "id": "xiaomi", "name": "Xiaomi", "country": "CN", "monogram": "Xi", "url": "https://www.mi.com" },
+  { "id": "amazon", "name": "Amazon", "country": "US", "monogram": "Am", "url": "https://aws.amazon.com/ai" }
+]

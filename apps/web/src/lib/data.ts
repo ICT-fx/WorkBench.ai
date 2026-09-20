@@ -1,7 +1,13 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
-import { LeaderboardSchema, TaskSchema, GroundTruthSchema } from "@hub/schema";
-import type { GroundTruth, Leaderboard, Task } from "@hub/schema";
+import { z } from "zod";
+import {
+  LeaderboardSchema, TaskSchema, GroundTruthSchema, LabSchema, ModelCatalogueSchema,
+  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema,
+} from "@hub/schema";
+import type {
+  Benchmark, BenchmarkHistory, Domain, GroundTruth, Lab, Leaderboard, ModelCatalogue, News, Task,
+} from "@hub/schema";
 
 /** Remonte jusqu'au dépôt : le cwd diffère entre `next dev`, le build et les tests. */
 function repoRoot(): string {
@@ -27,6 +33,33 @@ export function loadLeaderboard(taskId: string): Leaderboard {
     throw new Error(`Classement publié invalide (${file})\n${String(e)}`);
   }
 }
+
+/** Lit et valide un fichier du catalogue ; un catalogue invalide arrête le build. */
+function loadJson<T>(schema: z.ZodType<T>, ...segments: string[]): T {
+  const file = join(repoRoot(), "data", ...segments);
+  try {
+    return schema.parse(JSON.parse(readFileSync(file, "utf8")));
+  } catch (e) {
+    throw new Error(`Fichier de données invalide (${file})\n${String(e)}`);
+  }
+}
+
+export const loadLabs = (): Lab[] => loadJson(z.array(LabSchema), "catalogue", "labs.json");
+export const loadModelCatalogue = (): ModelCatalogue => loadJson(ModelCatalogueSchema, "catalogue", "models.json");
+export const loadDomains = (): Domain[] => loadJson(z.array(DomainSchema), "catalogue", "domains.json");
+export const loadBenchmarks = (): Benchmark[] => loadJson(z.array(BenchmarkSchema), "catalogue", "benchmarks.json");
+export const loadNews = (): News[] => loadJson(z.array(NewsSchema), "news.json");
+
+/** L'historique n'existe qu'à partir de la deuxième publication d'un benchmark. */
+export function loadHistory(benchmarkId: string): BenchmarkHistory | null {
+  const file = join(repoRoot(), "data", "published", "history", `${benchmarkId}.json`);
+  if (!existsSync(file)) return null;
+  return loadJson(BenchmarkHistorySchema, "published", "history", `${benchmarkId}.json`);
+}
+
+/** Une tâche n'a de définition exécutable que si le pipeline sait la jouer. */
+export const hasTask = (taskId: string): boolean =>
+  existsSync(join(repoRoot(), "data", "tasks", taskId, "task.json"));
 
 export function publishedTaskIds(): string[] {
   const dir = join(repoRoot(), "data", "published");

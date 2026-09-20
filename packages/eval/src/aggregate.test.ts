@@ -32,6 +32,22 @@ const res = (model: string, docId: string, latencyMs: number, costUsd = 0.01): M
 });
 
 describe("aggregate", () => {
+  it("publie une marge d'erreur qui se resserre quand l'échantillon grandit", () => {
+    const jeu = (n: number) => Array.from({ length: n }, (_, i) =>
+      doc("m", `d${i}`, { critique: i % 4 === 0 ? "faux" : "correct" }));
+    const marge = (n: number) => {
+      const scores = jeu(n);
+      return aggregate(scores, scores.map((s) => res("m", s.docId, 100)))[0]!.ci!;
+    };
+    expect(marge(8)).toBeGreaterThan(marge(80));
+    expect(marge(80)).toBeGreaterThan(0);
+  });
+
+  it("n'affiche aucune marge d'erreur quand tout est juste : rien ne varie", () => {
+    const scores = [doc("m", "d1"), doc("m", "d2")];
+    expect(aggregate(scores, scores.map((s) => res("m", s.docId, 100)))[0]!.ci).toBe(0);
+  });
+
   it("compte le pourcentage de documents sans aucun champ critique faux", () => {
     const scores = [
       doc("m", "d1"), doc("m", "d2"), doc("m", "d3"),

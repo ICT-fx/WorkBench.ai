@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "mistral/mistral-medium-3.5",
+  "modelVersion": "mistral-medium-3.5@demo",
+  "docId": "f-004",
+  "raw": {
+    "numero_facture": "FA-2026-2580",
+    "date_emission": "2026-02-27",
+    "siret_emetteur": "41080414781959",
+    "tva_intracom": null,
+    "total_ht": 2748.5,
+    "total_tva": 549.7,
+    "total_ttc": 3298.2,
+    "echeance": "2026-29-03",
+    "lignes": [
+      {
+        "designation": "Remplacement pompe hydraulique",
+        "quantite": 1,
+        "prix_unitaire_ht": 2340.5,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Main d'œuvre",
+        "quantite": 6,
+        "prix_unitaire_ht": 68,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 6110,
+  "costUsd": 0.034018,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

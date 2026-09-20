@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "mistral/mistral-medium-3.5",
+  "modelVersion": "mistral-medium-3.5@demo",
+  "docId": "f-019",
+  "raw": null,
+  "latencyMs": 60000,
+  "costUsd": 0,
+  "error": "timeout après 60 s (démonstration)"
+}

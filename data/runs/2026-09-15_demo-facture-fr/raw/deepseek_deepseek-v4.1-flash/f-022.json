@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek-v4.1-flash@demo",
+  "docId": "f-022",
+  "raw": {
+    "numero_facture": "FA-2026-9755",
+    "date_emission": "2026-10-05",
+    "siret_emetteur": "19587104560540",
+    "tva_intracom": "FR48195871045",
+    "total_ht": 1658.42,
+    "total_tva": 391.46,
+    "total_ttc": 2196,
+    "echeance": "2026-09-06",
+    "lignes": [
+      {
+        "designation": "Contrôle réglementaire annuel",
+        "quantite": 1,
+        "prix_unitaire_ht": 590,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Mise en conformité",
+        "quantite": 1,
+        "prix_unitaire_ht": 1240,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 4186,
+  "costUsd": 0.010274,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

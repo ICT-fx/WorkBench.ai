@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "gpt-6-astra@demo",
+  "docId": "f-002",
+  "raw": {
+    "numero_facture": "FA-2026-9269",
+    "date_emission": "2026-16-05",
+    "siret_emetteur": "82642320332505",
+    "tva_intracom": "FR61826423204",
+    "total_ht": 465.72,
+    "total_tva": 93.93,
+    "total_ttc": 531.12,
+    "echeance": "2026-06-15",
+    "lignes": [
+      {
+        "designation": "Cartouche toner noir",
+        "quantite": 4,
+        "prix_unitaire_ht": 89.9,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Ramette papier A4 80g",
+        "quantite": 20,
+        "prix_unitaire_ht": 4.15,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 13623,
+  "costUsd": 0.345091,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

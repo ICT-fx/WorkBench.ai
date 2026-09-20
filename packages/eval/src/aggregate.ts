@@ -44,9 +44,11 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
     let maxPoints = 0;
     let hallucinated = 0;
     let absentFields = 0;
+    let fields = 0;
 
     for (const score of modelScores) {
       for (const field of Object.values(score.byCriterion)) {
+        fields++;
         points += field.points;
         maxPoints += field.maxPoints;
         if (field.expected === null) {
@@ -59,6 +61,12 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
     // Les documents en échec comptent au dénominateur : ils n'ont pas été traités.
     const attempted = modelScores.length + failed.length;
 
+    // Marge d'erreur à 95 % sur l'exactitude, en points : l'approximation normale
+    // d'une proportion, sur le nombre de champs notés. Vingt-cinq documents ne
+    // départagent pas deux modèles à un point d'écart, et le classement doit le dire.
+    const p = maxPoints === 0 ? 0 : points / maxPoints;
+    const ci = fields === 0 ? undefined : Math.round(1.96 * Math.sqrt((p * (1 - p)) / fields) * 1000) / 10;
+
     rows.push({
       model,
       modelVersion: ok[0]?.modelVersion ?? modelResults[0]?.modelVersion ?? model,
@@ -69,6 +77,7 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
       latencyP50: median(ok.map((r) => r.latencyMs)),
       errorCount: failed.length,
       docCount: modelScores.length,
+      ...(ci === undefined ? {} : { ci }),
     });
   }
 

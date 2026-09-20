@@ -1,84 +1,455 @@
 @import "tailwindcss";
 
 /*
-  Le vocabulaire visuel vient du grand livre comptable : papier réglé,
-  filets fins, colonne des montants alignée à droite, et l'encre rouge
-  réservée à ce qui cloche.
+  Le vocabulaire visuel vient du grand livre comptable — filets fins, colonnes
+  de chiffres alignées, l'encre rouge réservée à ce qui cloche — passé au vert :
+  des panneaux aux angles adoucis posés sur un papier teinté, et le vert profond
+  pour tout ce qui structure (bandeaux, sélection, action).
+
+  `static` : Tailwind n'émet d'ordinaire que les variables qu'il voit utilisées.
+  Les teintes des séries sont choisies à l'exécution (`var(--color-serie-N)`
+  selon le labo) : sans `static`, elles disparaîtraient du CSS produit.
 */
-@theme {
-  --color-papier: #f1f3f1;
-  --color-papier-creux: #e7ebe8;
-  --color-encre: #15201e;
-  --color-encre-pale: #5c6b66;
-  --color-filet: #c6cfc9;
+@theme static {
+  --color-papier: #f3f6f2;
+  --color-surface: #fcfdfb;
+  --color-creux: #e9efe9;
+  --color-encre: #13201a;
+  --color-encre-pale: #4f6158;
+  /* Le plus clair des gris qui tient 4,5:1 sur les quatre fonds clairs. */
+  --color-encre-muette: #5f6f66;
+  --color-filet: #d3ddd5;
+  --color-filet-fort: #b4c3b8;
+
+  --color-vert: #1c5b3c;
+  --color-vert-fonce: #113b28;
+  --color-vert-vif: #2a9960;
+  --color-vert-pale: #dbeade;
+  --color-vert-brume: #edf4ee;
+  --color-sur-vert: #f4faf5;
+
   --color-rouge: #a32b22;
-  --color-valide: #1f5c3d;
+  --color-rouge-pale: #f6e5e2;
+  --color-ambre: #7a4f00;
+  --color-ambre-pale: #fbf0d3;
+  --color-ambre-filet: #e6cf8f;
+
+  /* Palette catégorielle des graphiques : huit teintes validées pour les
+     daltoniens, dans un ordre fixe. La couleur suit le labo, jamais son rang. */
+  --color-serie-1: #2a78d6;
+  --color-serie-2: #eb6834;
+  --color-serie-3: #1baf7a;
+  --color-serie-4: #eda100;
+  --color-serie-5: #e87ba4;
+  --color-serie-6: #008300;
+  --color-serie-7: #4a3aa7;
+  --color-serie-8: #e34948;
+  --color-serie-autre: #5d6d64;
+  /* L'encre posée sur chaque teinte : celle des deux qui reste lisible. */
+  --color-sur-serie-1: #ffffff;
+  --color-sur-serie-2: #13201a;
+  --color-sur-serie-3: #13201a;
+  --color-sur-serie-4: #13201a;
+  --color-sur-serie-5: #13201a;
+  --color-sur-serie-6: #ffffff;
+  --color-sur-serie-7: #ffffff;
+  --color-sur-serie-8: #13201a;
+  --color-sur-serie-autre: #ffffff;
 
   --font-sans: var(--police-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 16px;
+
+  --ease-sortie: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-:root {
-  --papier: var(--color-papier);
-  --papier-creux: var(--color-papier-creux);
-  --encre: var(--color-encre);
-  --encre-pale: var(--color-encre-pale);
-  --filet: var(--color-filet);
-  --rouge: var(--color-rouge);
-  --valide: var(--color-valide);
-}
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --color-papier: #0e1411;
+      --color-surface: #151b18;
+      --color-creux: #1c2520;
+      --color-encre: #e7eee9;
+      --color-encre-pale: #a3b3aa;
+      --color-encre-muette: #7f8f86;
+      --color-filet: #28332d;
+      --color-filet-fort: #3a4941;
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --papier: #121715;
-    --papier-creux: #1a211e;
-    --encre: #e6ebe8;
-    --encre-pale: #93a29c;
-    --filet: #2e3936;
-    --rouge: #e8695e;
-    --valide: #6fbf94;
+      --color-vert: #3f9d6b;
+      --color-vert-fonce: #1b4a33;
+      --color-vert-vif: #5cc08a;
+      --color-vert-pale: #1e3a2b;
+      --color-vert-brume: #18261e;
+      --color-sur-vert: #eef8f1;
+
+      --color-rouge: #ec7268;
+      --color-rouge-pale: #3a1d1a;
+      --color-ambre: #f0c869;
+      --color-ambre-pale: #2f2710;
+      --color-ambre-filet: #5a4a1c;
+
+      --color-serie-1: #3987e5;
+      --color-serie-2: #d95926;
+      --color-serie-3: #199e70;
+      --color-serie-4: #c98500;
+      --color-serie-5: #d55181;
+      --color-serie-6: #008300;
+      --color-serie-7: #9085e9;
+      --color-serie-8: #e66767;
+      --color-serie-autre: #8a9a91;
+      --color-sur-serie-1: #0c1511;
+      --color-sur-serie-7: #0c1511;
+      --color-sur-serie-autre: #0c1511;
+    }
+  }
+
+  html {
+    background: var(--color-papier);
+    color: var(--color-encre);
+    scroll-padding-top: 5rem;
+    scrollbar-color: var(--color-filet-fort) transparent;
+  }
+
+  body {
+    background: var(--color-papier);
+    color: var(--color-encre);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-vert);
+    color: var(--color-sur-vert);
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: from-font;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-vert-vif);
+    outline-offset: 2px;
+    border-radius: var(--radius-s);
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input,
+  select {
+    caret-color: var(--color-vert);
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-html {
-  background: var(--papier);
-  color: var(--encre);
-}
-
-body {
-  background: var(--papier);
-  color: var(--encre);
-  font-family: var(--font-sans);
-  font-synthesis-weight: none;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Les chiffres s'alignent en colonne : c'est ce qui rend un tableau lisible. */
-.chiffres {
-  font-variant-numeric: tabular-nums lining-nums;
-  font-feature-settings: "tnum" 1;
-}
-
-/* L'en-tête d'un formulaire imprimé : large, posé, sans emphase. */
-.etendu {
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  letter-spacing: -0.015em;
-}
-
-a {
-  color: inherit;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: from-font;
-}
-
-:focus-visible {
-  outline: 2px solid var(--encre);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+@layer components {
+  .conteneur {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
   }
+  @media (min-width: 640px) {
+    .conteneur { padding-inline: 1.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .conteneur { padding-inline: 2rem; }
+  }
+
+  /* L'en-tête d'un formulaire imprimé : large, posé, sans emphase. */
+  .etendu {
+    font-stretch: 118%;
+    font-variation-settings: "wdth" 118;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+    line-height: 1.12;
+  }
+
+  /* Les chiffres s'alignent en colonne : c'est ce qui rend un tableau lisible. */
+  .chiffres {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Les petits libellés de structure : en-têtes de colonnes, onglets, légendes. */
+  .etiquette {
+    font-size: 0.72rem;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-encre-pale);
+  }
+
+  .panneau {
+    background: var(--color-surface);
+    border: 1px solid var(--color-filet);
+    border-radius: var(--radius-l);
+    overflow: clip;
+  }
+
+  /* Le bandeau vert qui coiffe une section : il possède toute sa largeur. */
+  .bandeau {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.7rem 1.25rem;
+    background: var(--color-vert-fonce);
+    color: var(--color-sur-vert);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  /* La barre d'outils d'un panneau : titre à gauche, réglages à droite. */
+  .barre {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--color-filet);
+    background: var(--color-vert-brume);
+  }
+
+  .segment {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--color-creux);
+  }
+  .segment > button,
+  .segment > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.36rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-encre-pale);
+    transition: background-color 160ms var(--ease-sortie), color 160ms var(--ease-sortie);
+  }
+  .segment > button:hover,
+  .segment > a:hover {
+    color: var(--color-encre);
+    background: color-mix(in oklab, var(--color-surface) 70%, transparent);
+  }
+  .segment > [aria-pressed="true"],
+  .segment > [aria-selected="true"],
+  .segment > [aria-current="page"] {
+    background: var(--color-vert-fonce);
+    color: var(--color-sur-vert);
+  }
+  .segment > [aria-pressed="true"]:hover,
+  .segment > [aria-selected="true"]:hover,
+  .segment > [aria-current="page"]:hover {
+    background: var(--color-vert-fonce);
+    color: var(--color-sur-vert);
+  }
+
+  .bouton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-filet-fort);
+    background: var(--color-surface);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-encre);
+    transition: border-color 160ms var(--ease-sortie), background-color 160ms var(--ease-sortie), transform 160ms var(--ease-sortie);
+  }
+  .bouton:hover {
+    border-color: var(--color-vert);
+    background: var(--color-vert-brume);
+  }
+  .bouton:active {
+    transform: translateY(1px);
+  }
+  .bouton > svg {
+    transition: transform 200ms var(--ease-sortie);
+  }
+  .bouton:hover > svg:last-child {
+    transform: translateX(2px);
+  }
+  .bouton-plein {
+    background: var(--color-vert-fonce);
+    border-color: var(--color-vert-fonce);
+    color: var(--color-sur-vert);
+  }
+  .bouton-plein:hover {
+    background: var(--color-vert);
+    border-color: var(--color-vert);
+  }
+  .bouton[disabled],
+  .bouton[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .pastille {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-filet);
+    background: var(--color-creux);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-encre-pale);
+    white-space: nowrap;
+  }
+
+  /* La marque « démo » accompagne chaque tableau et chaque graphique : une
+     capture d'écran sortie de son contexte la porte encore. */
+  .pastille-demo {
+    border-color: var(--color-ambre-filet);
+    background: var(--color-ambre-pale);
+    color: var(--color-ambre);
+  }
+
+  .champ {
+    width: 100%;
+    padding: 0.55rem 0.85rem;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--color-filet-fort);
+    background: var(--color-surface);
+    color: var(--color-encre);
+    font-size: 0.9rem;
+  }
+  .champ::placeholder {
+    color: var(--color-encre-muette);
+  }
+  .champ:hover {
+    border-color: var(--color-vert);
+  }
+
+  /* Le fond pointé des graphiques : la grille d'un papier millimétré, en sourdine. */
+  .trame {
+    background-color: var(--color-surface);
+    background-image: radial-gradient(circle, color-mix(in oklab, var(--color-filet-fort) 55%, transparent) 1px, transparent 1.4px);
+    background-size: 14px 14px;
+  }
+
+  .tableau {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .tableau thead th {
+    padding: 0.65rem 0.9rem;
+    background: var(--color-creux);
+    border-bottom: 1px solid var(--color-filet-fort);
+    text-align: left;
+    white-space: nowrap;
+  }
+  .tableau tbody td,
+  .tableau tbody th {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--color-filet);
+    vertical-align: middle;
+    font-weight: 400;
+    text-align: left;
+  }
+  .tableau tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+  .tableau tbody tr {
+    transition: background-color 120ms var(--ease-sortie);
+  }
+  .tableau tbody tr:hover {
+    background: var(--color-vert-brume);
+  }
+  .tableau .droite {
+    text-align: right;
+  }
+  /* Le podium se lit à la teinte de la ligne, du plus soutenu au plus léger. */
+  .tableau tbody tr[data-rang="1"] { background: color-mix(in oklab, var(--color-vert-pale) 100%, transparent); }
+  .tableau tbody tr[data-rang="2"] { background: color-mix(in oklab, var(--color-vert-pale) 62%, transparent); }
+  .tableau tbody tr[data-rang="3"] { background: color-mix(in oklab, var(--color-vert-pale) 32%, transparent); }
+
+  .prose-hub {
+    max-width: 68ch;
+  }
+  .prose-hub > * + * {
+    margin-top: 1.1rem;
+  }
+  .prose-hub h2 {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+  }
+  .prose-hub h3 {
+    margin-top: 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .prose-hub ul {
+    padding-left: 1.1rem;
+    list-style: disc;
+  }
+  .prose-hub li + li {
+    margin-top: 0.5rem;
+  }
+  .prose-hub li::marker {
+    color: var(--color-vert-vif);
+  }
+  .prose-hub a {
+    color: var(--color-vert);
+    text-decoration: underline;
+  }
+
+  .infobulle {
+    position: absolute;
+    z-index: 30;
+    pointer-events: none;
+    min-width: 11rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--color-filet-fort);
+    background: var(--color-surface);
+    box-shadow: 0 8px 24px -12px color-mix(in oklab, var(--color-encre) 45%, transparent);
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+}
+
+@keyframes pousse {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes apparait {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
 }

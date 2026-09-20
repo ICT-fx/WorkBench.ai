@@ -1,7 +1,8 @@
 # Hub d'évaluations métier
 
-Le classement des modèles d'IA sur des tâches d'entreprise concrètes, à commencer
-par la lecture d'une facture française.
+Le classement des modèles d'IA sur des tâches d'entreprise concrètes, métier par
+métier — finance, comptabilité, ressources humaines, juridique, service client… — à
+commencer par la lecture d'une facture française.
 
 Les benchmarks publics mesurent des examens académiques. Une PME qui doit choisir
 un outil veut savoir autre chose : combien de ses factures passeront sans
@@ -23,6 +24,27 @@ brutes de chaque modèle, le barème et le code qui note. Chaque chiffre publié
 
 Les quatre ne sont jamais fondues en une note unique. Un modèle peut être premier
 en exactitude et inutilisable parce qu'il invente.
+
+L'**indice métier** du site n'y déroge pas : il ne moyenne que l'exactitude, métier
+par métier, chaque métier pesant autant que les autres. Il n'existe pas tant qu'un
+métier manque, et ne dit rien du coût ni des hallucinations.
+
+## Ce qui est réel aujourd'hui, et ce qui ne l'est pas
+
+| | Statut |
+|---|---|
+| Les 52 modèles, leurs labos, dates de sortie, prix et fenêtres de contexte | **Réels**, synchronisés depuis le catalogue public de l'AI Gateway |
+| La tâche « lecture de factures » : documents, vérités terrain, barème, pipeline | **Réels** et rejouables |
+| Les vingt autres benchmarks | Protocole rédigé, jeu de test **à construire** |
+| Tous les scores affichés | **Démonstration** : fabriqués pour construire le site |
+
+Les scores de démonstration sont produits par `npm run demo:hub` à partir de deux
+faits publics — le prix et la date de sortie du modèle — et d'un aléa déterministe,
+pour n'y glisser aucune opinion sur un labo. Chaque classement porte `status: "demo"`,
+et le site marque « Démo » chaque page, chaque tableau et chaque graphique : une
+capture d'écran sortie de son contexte la porte encore. Dès qu'un benchmark est publié
+par le vrai pipeline (`eval:publish`), son fichier remplace celui de démonstration et
+la marque disparaît, benchmark par benchmark.
 
 ### Les trois verdicts
 
@@ -64,14 +86,21 @@ ne fait aucun appel à un modèle.
 
 ```
 data/
+  catalogue/            labos, modèles, métiers, benchmarks — ce que le site sait du marché
   tasks/facture-fr/     définition, barème, prompt, documents, vérités terrain
   runs/<date>_<tâche>/  réponses brutes, scores, arbitrages — jamais réécrits
-  published/            les classements que le site affiche
+  published/            le dernier classement de chaque benchmark
+  published/history/    toutes les publications passées : l'évolution dans le temps
+  news.json             les actualités rédigées à la main
 packages/schema/        types et validation partagés
-packages/fixtures/      génération du jeu de test
-packages/eval/          les quatre commandes du pipeline
-apps/web/               le site
+packages/fixtures/      jeu de test, et données de démonstration
+packages/eval/          le pipeline, et la synchronisation du catalogue
+apps/web/               le site (français et anglais)
 ```
+
+Le site reprend la structure de vals.ai : accueil, benchmarks par métier, fiches
+modèles, comparaison, actualités, à propos. Tout est statique : les pages sont
+calculées au build à partir de `data/`.
 
 ## Le jeu de test
 
@@ -91,15 +120,28 @@ npm run fixtures:generate    # régénère le jeu à l'identique (générateur d
 
 ## Ajouter un modèle
 
-Ajoutez son identifiant à `V1_MODELS` dans `packages/eval/src/models.ts`, puis
-lancez un nouveau run. Les identifiants sont vérifiés contre le catalogue de l'AI
+Pour qu'il apparaisse sur le site, ajoutez-le à `data/catalogue/models.seed.json`
+(identifiant AI Gateway, nom, labo, date de sortie, statut des poids), puis :
+
+```bash
+npm run catalogue:sync    # prix, contexte et modalités depuis le catalogue public, sans clé
+npm run demo:hub          # tant que les scores sont de démonstration
+```
+
+Un modèle absent du catalogue garde des champs vides : le site affiche « non
+communiqué » plutôt qu'un chiffre recopié de mémoire.
+
+Pour le mesurer, ajoutez son identifiant à `V1_MODELS` dans
+`packages/eval/src/models.ts`, puis lancez un nouveau run. Les identifiants sont vérifiés contre le catalogue de l'AI
 Gateway avant le premier appel : un modèle absent ou incapable de lire une image
 arrête le run au lieu de produire un classement amputé.
 
 ## Ajouter une tâche
 
-Créez `data/tasks/<id>/` avec `task.json` (les critères et leurs poids), `prompt.md`,
-`documents/` et `ground-truth/`. Le site découvre les tâches publiées tout seul.
+Déclarez le benchmark dans `data/catalogue/benchmarks.json` (métier, question,
+sous-tâches, `maturity: "maquette"`), puis créez `data/tasks/<id>/` avec `task.json`
+(les critères et leurs poids), `prompt.md`, `documents/` et `ground-truth/`. Quand la
+tâche est jouable de bout en bout, passez-la en `maturity: "pipeline"`.
 
 ## Limites assumées
 

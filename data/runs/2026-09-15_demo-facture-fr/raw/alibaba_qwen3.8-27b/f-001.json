@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "alibaba/qwen3.8-27b",
+  "modelVersion": "qwen3.8-27b@demo",
+  "docId": "f-001",
+  "raw": {
+    "numero_facture": "FA-2026-1155",
+    "date_emission": "2026-24-06",
+    "siret_emetteur": "50329375521178",
+    "tva_intracom": "FR35503293755",
+    "total_ht": 1335.79,
+    "total_tva": 290,
+    "total_ttc": 1867.87,
+    "echeance": "2026-07-24",
+    "lignes": [
+      {
+        "designation": "Maintenance préventive annuelle",
+        "quantite": 1,
+        "prix_unitaire_ht": 1450,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 4142,
+  "costUsd": 0.010611,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

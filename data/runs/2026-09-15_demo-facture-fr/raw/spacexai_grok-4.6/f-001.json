@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "spacexai/grok-4.6",
+  "modelVersion": "grok-4.6@demo",
+  "docId": "f-001",
+  "raw": {
+    "numero_facture": "FA-2026-1156",
+    "date_emission": "2026-06-24",
+    "siret_emetteur": "50329375521178",
+    "tva_intracom": "FR35503293755",
+    "total_ht": 1450,
+    "total_tva": 281.35,
+    "total_ttc": 1740,
+    "echeance": "2026-24-07",
+    "lignes": [
+      {
+        "designation": "Maintenance préventive annuelle",
+        "quantite": 1,
+        "prix_unitaire_ht": 1450,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 4704,
+  "costUsd": 0.032155,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

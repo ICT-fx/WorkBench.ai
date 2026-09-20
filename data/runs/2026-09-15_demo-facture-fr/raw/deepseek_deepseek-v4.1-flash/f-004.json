@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek-v4.1-flash@demo",
+  "docId": "f-004",
+  "raw": {
+    "numero_facture": "FA-2026-2589",
+    "date_emission": "2026-02-27",
+    "siret_emetteur": "41080414781959",
+    "tva_intracom": null,
+    "total_ht": 2748.5,
+    "total_tva": 504.54,
+    "total_ttc": 3298.2,
+    "echeance": "2026-03-29",
+    "lignes": [
+      {
+        "designation": "Remplacement pompe hydraulique",
+        "quantite": 1,
+        "prix_unitaire_ht": 2340.5,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Main d'œuvre",
+        "quantite": 6,
+        "prix_unitaire_ht": 68,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 5062,
+  "costUsd": 0.007581,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

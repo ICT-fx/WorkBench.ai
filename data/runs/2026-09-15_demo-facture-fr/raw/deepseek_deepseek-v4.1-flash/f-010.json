@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek-v4.1-flash@demo",
+  "docId": "f-010",
+  "raw": {
+    "numero_facture": "FA-2026-6915",
+    "date_emission": "2026-07-11",
+    "siret_emetteur": "92553523498879",
+    "tva_intracom": "FR17925535234",
+    "total_ht": 1188.26,
+    "total_tva": 174.7,
+    "total_ttc": 1142.25,
+    "echeance": "2026-10-08",
+    "lignes": [
+      {
+        "designation": "Repas séminaire",
+        "quantite": 24,
+        "prix_unitaire_ht": 18.5,
+        "taux_tva": 10
+      },
+      {
+        "designation": "Location salle",
+        "quantite": 1,
+        "prix_unitaire_ht": 640,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 4849,
+  "costUsd": 0.00794,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

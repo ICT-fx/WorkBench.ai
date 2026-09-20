@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek-v4.1-flash@demo",
+  "docId": "f-014",
+  "raw": {
+    "numero_facture": "AV-2026-5458",
+    "date_emission": "2026-09-20",
+    "siret_emetteur": "80776092981396",
+    "tva_intracom": "FR87807760920",
+    "total_ht": -1400,
+    "total_tva": -277.68,
+    "total_ttc": -1680,
+    "echeance": "2026-10-20",
+    "lignes": [
+      {
+        "designation": "Annulation prestation du 12/02",
+        "quantite": 1,
+        "prix_unitaire_ht": 1250,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Geste commercial",
+        "quantite": 1,
+        "prix_unitaire_ht": 150,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": "AVOIR"
+  },
+  "latencyMs": 4624,
+  "costUsd": 0.009005,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

@@ -1,0 +1,711 @@
+{
+  "taskId": "note-de-frais",
+  "runId": "2026-09-15_demo-note-de-frais",
+  "status": "demo",
+  "runDate": "2026-09-15",
+  "sampleSize": 60,
+  "rows": [
+    {
+      "model": "anthropic/claude-fable-5.1",
+      "modelVersion": "claude-fable-5.1@demo",
+      "sansRelecture": 71.4,
+      "exactitude": 85.9,
+      "hallucinations": 4.3,
+      "costPerDoc": 0.287367,
+      "latencyP50": 21812,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 4.4,
+      "bySubtask": {
+        "lecture": 89.1,
+        "tva": 85,
+        "politique": 86.8,
+        "doublons": 82.5
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "modelVersion": "gpt-6-astra@demo",
+      "sansRelecture": 70.3,
+      "exactitude": 84.7,
+      "hallucinations": 0.4,
+      "costPerDoc": 0.382765,
+      "latencyP50": 31919,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 4.6,
+      "bySubtask": {
+        "lecture": 86.7,
+        "tva": 82.9,
+        "politique": 81.5,
+        "doublons": 81.1
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.8",
+      "modelVersion": "claude-opus-4.8@demo",
+      "sansRelecture": 68.6,
+      "exactitude": 84.6,
+      "hallucinations": 3.9,
+      "costPerDoc": 0.106239,
+      "latencyP50": 21149,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 4.6,
+      "bySubtask": {
+        "lecture": 83.3,
+        "tva": 83.1,
+        "politique": 83.9,
+        "doublons": 81
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5",
+      "modelVersion": "claude-opus-5@demo",
+      "sansRelecture": 68,
+      "exactitude": 83.4,
+      "hallucinations": 1.4,
+      "costPerDoc": 0.108463,
+      "latencyP50": 25648,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 4.7,
+      "bySubtask": {
+        "lecture": 85.2,
+        "tva": 80.9,
+        "politique": 83.6,
+        "doublons": 81.3
+      }
+    },
+    {
+      "model": "openai/gpt-5.6-sol",
+      "modelVersion": "gpt-5.6-sol@demo",
+      "sansRelecture": 61.1,
+      "exactitude": 80.7,
+      "hallucinations": 5.2,
+      "costPerDoc": 0.087346,
+      "latencyP50": 17398,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5,
+      "bySubtask": {
+        "lecture": 85.2,
+        "tva": 77.2,
+        "politique": 77,
+        "doublons": 73.7
+      }
+    },
+    {
+      "model": "meta/muse-spark-1.3",
+      "modelVersion": "muse-spark-1.3@demo",
+      "sansRelecture": 63.6,
+      "exactitude": 80.6,
+      "hallucinations": 0.3,
+      "costPerDoc": 0.038195,
+      "latencyP50": 10970,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5,
+      "bySubtask": {
+        "lecture": 85.6,
+        "tva": 77,
+        "politique": 77.9,
+        "doublons": 77.3
+      }
+    },
+    {
+      "model": "openai/gpt-5.4",
+      "modelVersion": "gpt-5.4@demo",
+      "sansRelecture": 59.5,
+      "exactitude": 79.7,
+      "hallucinations": 5.4,
+      "costPerDoc": 0.118314,
+      "latencyP50": 22285,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.1,
+      "bySubtask": {
+        "lecture": 83.3,
+        "tva": 75.6,
+        "politique": 79.6,
+        "doublons": 77.7
+      }
+    },
+    {
+      "model": "meta/muse-spark-1.1",
+      "modelVersion": "muse-spark-1.1@demo",
+      "sansRelecture": 57.6,
+      "exactitude": 79.1,
+      "hallucinations": 6.2,
+      "costPerDoc": 0.023016,
+      "latencyP50": 9506,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.1,
+      "bySubtask": {
+        "lecture": 82.4,
+        "tva": 78.1,
+        "politique": 76.7,
+        "doublons": 78.5
+      }
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "modelVersion": "gpt-5.5@demo",
+      "sansRelecture": 60.4,
+      "exactitude": 78.8,
+      "hallucinations": 1.6,
+      "costPerDoc": 0.158324,
+      "latencyP50": 18610,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.2,
+      "bySubtask": {
+        "lecture": 79.6,
+        "tva": 78.6,
+        "politique": 78.3,
+        "doublons": 75.6
+      }
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "modelVersion": "gemini-3.1-pro-preview@demo",
+      "sansRelecture": 53.8,
+      "exactitude": 77.6,
+      "hallucinations": 3.7,
+      "costPerDoc": 0.058845,
+      "latencyP50": 20419,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.3,
+      "bySubtask": {
+        "lecture": 79.5,
+        "tva": 78.2,
+        "politique": 73.7,
+        "doublons": 73
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "modelVersion": "claude-opus-4.6@demo",
+      "sansRelecture": 53.8,
+      "exactitude": 77.5,
+      "hallucinations": 5.6,
+      "costPerDoc": 0.117785,
+      "latencyP50": 15638,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.3,
+      "bySubtask": {
+        "lecture": 78,
+        "tva": 74.7,
+        "politique": 76.2,
+        "doublons": 75.4
+      }
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "modelVersion": "gemini-3.5-flash@demo",
+      "sansRelecture": 55.7,
+      "exactitude": 77.4,
+      "hallucinations": 0.5,
+      "costPerDoc": 0.046767,
+      "latencyP50": 14143,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.3,
+      "bySubtask": {
+        "lecture": 76.1,
+        "tva": 75.5,
+        "politique": 75.3,
+        "doublons": 74.4
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.5",
+      "modelVersion": "claude-opus-4.5@demo",
+      "sansRelecture": 56.7,
+      "exactitude": 77.1,
+      "hallucinations": 0,
+      "costPerDoc": 0.188817,
+      "latencyP50": 23560,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.3,
+      "bySubtask": {
+        "lecture": 79.6,
+        "tva": 79.4,
+        "politique": 75.6,
+        "doublons": 74.5
+      }
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "modelVersion": "gemini-3.6-flash@demo",
+      "sansRelecture": 52,
+      "exactitude": 76.6,
+      "hallucinations": 6.8,
+      "costPerDoc": 0.020436,
+      "latencyP50": 15082,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.4,
+      "bySubtask": {
+        "lecture": 79.5,
+        "tva": 78.2,
+        "politique": 74.5,
+        "doublons": 72.9
+      }
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "modelVersion": "gpt-5.2@demo",
+      "sansRelecture": 55.9,
+      "exactitude": 76.5,
+      "hallucinations": 0,
+      "costPerDoc": 0.101617,
+      "latencyP50": 17799,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.4,
+      "bySubtask": {
+        "lecture": 76.5,
+        "tva": 74.7,
+        "politique": 74.7,
+        "doublons": 70.8
+      }
+    },
+    {
+      "model": "spacexai/grok-4.5",
+      "modelVersion": "grok-4.5@demo",
+      "sansRelecture": 51.2,
+      "exactitude": 75.4,
+      "hallucinations": 2.5,
+      "costPerDoc": 0.031622,
+      "latencyP50": 17985,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.4,
+      "bySubtask": {
+        "lecture": 77,
+        "tva": 72.8,
+        "politique": 76.6,
+        "doublons": 72.7
+      }
+    },
+    {
+      "model": "spacexai/grok-4.3",
+      "modelVersion": "grok-4.3@demo",
+      "sansRelecture": 52.7,
+      "exactitude": 75.4,
+      "hallucinations": 0.1,
+      "costPerDoc": 0.021086,
+      "latencyP50": 12321,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.4,
+      "bySubtask": {
+        "lecture": 76.5,
+        "tva": 75.4,
+        "politique": 71.8,
+        "doublons": 70.8
+      }
+    },
+    {
+      "model": "anthropic/claude-sonnet-5",
+      "modelVersion": "claude-sonnet-5@demo",
+      "sansRelecture": 49,
+      "exactitude": 74.3,
+      "hallucinations": 6.6,
+      "costPerDoc": 0.052939,
+      "latencyP50": 8271,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.5,
+      "bySubtask": {
+        "lecture": 75.2,
+        "tva": 72.9,
+        "politique": 71.8,
+        "doublons": 71.4
+      }
+    },
+    {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "modelVersion": "deepseek-v4.1-flash@demo",
+      "sansRelecture": 47.9,
+      "exactitude": 74.2,
+      "hallucinations": 6.8,
+      "costPerDoc": 0.01002,
+      "latencyP50": 12721,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.5,
+      "bySubtask": {
+        "lecture": 74.4,
+        "tva": 72.7,
+        "politique": 74.3,
+        "doublons": 73.2
+      }
+    },
+    {
+      "model": "alibaba/qwen3.8-27b",
+      "modelVersion": "qwen3.8-27b@demo",
+      "sansRelecture": 50.1,
+      "exactitude": 74.1,
+      "hallucinations": 0.6,
+      "costPerDoc": 0.010838,
+      "latencyP50": 8710,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.5,
+      "bySubtask": {
+        "lecture": 76.1,
+        "tva": 73.3,
+        "politique": 71,
+        "doublons": 68.9
+      }
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "modelVersion": "kimi-k2.6@demo",
+      "sansRelecture": 51.4,
+      "exactitude": 74.1,
+      "hallucinations": 0.4,
+      "costPerDoc": 0.021902,
+      "latencyP50": 12159,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.5,
+      "bySubtask": {
+        "lecture": 75.5,
+        "tva": 69.1,
+        "politique": 69.8,
+        "doublons": 70.1
+      }
+    },
+    {
+      "model": "alibaba/qwen3.8-max",
+      "modelVersion": "qwen3.8-max@demo",
+      "sansRelecture": 49.9,
+      "exactitude": 73.7,
+      "hallucinations": 0,
+      "costPerDoc": 0.049549,
+      "latencyP50": 12718,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.6,
+      "bySubtask": {
+        "lecture": 72.6,
+        "tva": 69.9,
+        "politique": 71.8,
+        "doublons": 69.6
+      }
+    },
+    {
+      "model": "spacexai/grok-4.6",
+      "modelVersion": "grok-4.6@demo",
+      "sansRelecture": 46.7,
+      "exactitude": 72.9,
+      "hallucinations": 3,
+      "costPerDoc": 0.044216,
+      "latencyP50": 17561,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.6,
+      "bySubtask": {
+        "lecture": 76.6,
+        "tva": 72.5,
+        "politique": 71.5,
+        "doublons": 71.1
+      }
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "modelVersion": "gemini-3.8-flash@demo",
+      "sansRelecture": 46.3,
+      "exactitude": 72.6,
+      "hallucinations": 4.1,
+      "costPerDoc": 0.020125,
+      "latencyP50": 12066,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.6,
+      "bySubtask": {
+        "lecture": 75.2,
+        "tva": 72.9,
+        "politique": 73,
+        "doublons": 70.9
+      }
+    },
+    {
+      "model": "openai/gpt-5.6-luna",
+      "modelVersion": "gpt-5.6-luna@demo",
+      "sansRelecture": 46,
+      "exactitude": 72.4,
+      "hallucinations": 0,
+      "costPerDoc": 0.006977,
+      "latencyP50": 8698,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.7,
+      "bySubtask": {
+        "lecture": 73.5,
+        "tva": 73.2,
+        "politique": 72.2,
+        "doublons": 69.2
+      }
+    },
+    {
+      "model": "moonshotai/kimi-k3",
+      "modelVersion": "kimi-k3@demo",
+      "sansRelecture": 42.8,
+      "exactitude": 72.1,
+      "hallucinations": 5.9,
+      "costPerDoc": 0.059891,
+      "latencyP50": 19481,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.7,
+      "bySubtask": {
+        "lecture": 74,
+        "tva": 72.3,
+        "politique": 69.6,
+        "doublons": 69.8
+      }
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "modelVersion": "gpt-5.4-mini@demo",
+      "sansRelecture": 47.5,
+      "exactitude": 71.9,
+      "hallucinations": 1.6,
+      "costPerDoc": 0.01819,
+      "latencyP50": 12342,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.7,
+      "bySubtask": {
+        "lecture": 75.5,
+        "tva": 71.6,
+        "politique": 71.9,
+        "doublons": 67.8
+      }
+    },
+    {
+      "model": "mistral/mistral-medium-3.5",
+      "modelVersion": "mistral-medium-3.5@demo",
+      "sansRelecture": 44.6,
+      "exactitude": 70.8,
+      "hallucinations": 0.1,
+      "costPerDoc": 0.045123,
+      "latencyP50": 18806,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.8,
+      "bySubtask": {
+        "lecture": 73.5,
+        "tva": 70.8,
+        "politique": 72.3,
+        "doublons": 67.9
+      }
+    },
+    {
+      "model": "alibaba/qwen3.6-27b",
+      "modelVersion": "qwen3.6-27b@demo",
+      "sansRelecture": 40.2,
+      "exactitude": 69.9,
+      "hallucinations": 5.3,
+      "costPerDoc": 0.021686,
+      "latencyP50": 11249,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.8,
+      "bySubtask": {
+        "lecture": 74.1,
+        "tva": 69.2,
+        "politique": 70.4,
+        "doublons": 66.8
+      }
+    },
+    {
+      "model": "minimax/minimax-m3",
+      "modelVersion": "minimax-m3@demo",
+      "sansRelecture": 36.6,
+      "exactitude": 68.5,
+      "hallucinations": 6.2,
+      "costPerDoc": 0.008949,
+      "latencyP50": 13225,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.9,
+      "bySubtask": {
+        "lecture": 70.2,
+        "tva": 66.1,
+        "politique": 68.3,
+        "doublons": 66.2
+      }
+    },
+    {
+      "model": "mistral/mistral-large-3",
+      "modelVersion": "mistral-large-3@demo",
+      "sansRelecture": 36.7,
+      "exactitude": 67.3,
+      "hallucinations": 0.2,
+      "costPerDoc": 0.005962,
+      "latencyP50": 4086,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 5.9,
+      "bySubtask": {
+        "lecture": 68.5,
+        "tva": 66.8,
+        "politique": 66,
+        "doublons": 64.8
+      }
+    },
+    {
+      "model": "google/gemini-3-flash",
+      "modelVersion": "gemini-3-flash@demo",
+      "sansRelecture": 32.1,
+      "exactitude": 65.7,
+      "hallucinations": 8.1,
+      "costPerDoc": 0.012541,
+      "latencyP50": 14946,
+      "errorCount": 2,
+      "docCount": 58,
+      "ci": 6,
+      "bySubtask": {
+        "lecture": 65.2,
+        "tva": 63.4,
+        "politique": 67.3,
+        "doublons": 58
+      }
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "modelVersion": "gemma-4-31b-it@demo",
+      "sansRelecture": 30.2,
+      "exactitude": 65.2,
+      "hallucinations": 7,
+      "costPerDoc": 0.003614,
+      "latencyP50": 5143,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 6,
+      "bySubtask": {
+        "lecture": 68.4,
+        "tva": 66.1,
+        "politique": 62.7,
+        "doublons": 62
+      }
+    },
+    {
+      "model": "alibaba/qwen3.5-plus",
+      "modelVersion": "qwen3.5-plus@demo",
+      "sansRelecture": 31.9,
+      "exactitude": 64.8,
+      "hallucinations": 0,
+      "costPerDoc": 0.018364,
+      "latencyP50": 10115,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 6,
+      "bySubtask": {
+        "lecture": 64.8,
+        "tva": 64.9,
+        "politique": 64.8,
+        "doublons": 62.5
+      }
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "modelVersion": "claude-haiku-4.5@demo",
+      "sansRelecture": 28.9,
+      "exactitude": 64.5,
+      "hallucinations": 7.4,
+      "costPerDoc": 0.021866,
+      "latencyP50": 13005,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 6.1,
+      "bySubtask": {
+        "lecture": 66.1,
+        "tva": 66.3,
+        "politique": 63.3,
+        "doublons": 58.2
+      }
+    },
+    {
+      "model": "spacexai/grok-4.1-fast-reasoning",
+      "modelVersion": "grok-4.1-fast-reasoning@demo",
+      "sansRelecture": 28.4,
+      "exactitude": 64,
+      "hallucinations": 7.3,
+      "costPerDoc": 0.003157,
+      "latencyP50": 12154,
+      "errorCount": 2,
+      "docCount": 58,
+      "ci": 6.1,
+      "bySubtask": {
+        "lecture": 66.2,
+        "tva": 62.4,
+        "politique": 65.8,
+        "doublons": 61.5
+      }
+    },
+    {
+      "model": "amazon/nova-2-lite",
+      "modelVersion": "nova-2-lite@demo",
+      "sansRelecture": 24.8,
+      "exactitude": 62.6,
+      "hallucinations": 7.1,
+      "costPerDoc": 0.01229,
+      "latencyP50": 5811,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 6.1,
+      "bySubtask": {
+        "lecture": 65.5,
+        "tva": 61.4,
+        "politique": 58.2,
+        "doublons": 60.7
+      }
+    },
+    {
+      "model": "mistral/ministral-14b",
+      "modelVersion": "ministral-14b@demo",
+      "sansRelecture": 18.3,
+      "exactitude": 59.2,
+      "hallucinations": 9.7,
+      "costPerDoc": 0.001985,
+      "latencyP50": 4108,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 6.2,
+      "bySubtask": {
+        "lecture": 62,
+        "tva": 57.4,
+        "politique": 58.6,
+        "doublons": 54.5
+      }
+    },
+    {
+      "model": "meta/llama-4-maverick",
+      "modelVersion": "llama-4-maverick@demo",
+      "sansRelecture": 9.8,
+      "exactitude": 54.7,
+      "hallucinations": 10.2,
+      "costPerDoc": 0.003411,
+      "latencyP50": 3755,
+      "errorCount": 0,
+      "docCount": 60,
+      "ci": 6.3,
+      "bySubtask": {
+        "lecture": 56.9,
+        "tva": 52.8,
+        "politique": 53.7,
+        "doublons": 53
+      }
+    }
+  ]
+}

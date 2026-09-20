@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "muse-spark-1.3@demo",
+  "docId": "f-015",
+  "raw": {
+    "numero_facture": "FA-2026-7197",
+    "date_emission": "2026-05-08",
+    "siret_emetteur": "75196914882655",
+    "tva_intracom": "FR87751969149",
+    "total_ht": 4760,
+    "total_tva": 952,
+    "total_ttc": 5280.81,
+    "echeance": "2026-06-07",
+    "lignes": [
+      {
+        "designation": "Campagne d'affichage",
+        "quantite": 1,
+        "prix_unitaire_ht": 5600,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 4979,
+  "costUsd": 0.038241,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

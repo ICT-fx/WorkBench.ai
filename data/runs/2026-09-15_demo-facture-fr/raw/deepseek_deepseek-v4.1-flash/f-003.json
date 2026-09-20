@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek-v4.1-flash@demo",
+  "docId": "f-003",
+  "raw": {
+    "numero_facture": "FA-2026-9307",
+    "date_emission": "2026-04-04",
+    "siret_emetteur": "82003062098914",
+    "tva_intracom": "FR85820030621",
+    "total_ht": 5950,
+    "total_tva": 1190,
+    "total_ttc": 7755.6,
+    "echeance": "2026-04-05",
+    "lignes": [
+      {
+        "designation": "Prestation de conseil — mars 2026",
+        "quantite": 7,
+        "prix_unitaire_ht": 850,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 2489,
+  "costUsd": 0.008902,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

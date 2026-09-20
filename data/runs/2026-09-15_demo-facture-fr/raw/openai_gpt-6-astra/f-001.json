@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "gpt-6-astra@demo",
+  "docId": "f-001",
+  "raw": {
+    "numero_facture": "FA-2026-1155",
+    "date_emission": "2026-24-06",
+    "siret_emetteur": "50329375521178",
+    "tva_intracom": "FR35503293756",
+    "total_ht": 1450,
+    "total_tva": 290,
+    "total_ttc": 1627.41,
+    "echeance": "2026-07-24",
+    "lignes": [
+      {
+        "designation": "Maintenance préventive annuelle",
+        "quantite": 1,
+        "prix_unitaire_ht": 1450,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 11448,
+  "costUsd": 0.312616,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

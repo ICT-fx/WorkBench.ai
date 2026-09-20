@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
-import { TaskSchema, type DocScore, type ModelResult, type ReviewItem, type Task } from "@hub/schema";
-import { applyReview, buildLeaderboard } from "./publish";
+import {
+  TaskSchema, type DocScore, type Leaderboard, type ModelResult, type ReviewItem, type Task,
+} from "@hub/schema";
+import { appendHistory, applyReview, buildLeaderboard } from "./publish";
 
 const task: Task = TaskSchema.parse(
   JSON.parse(readFileSync("data/tasks/facture-fr/task.json", "utf8")));
@@ -86,5 +88,38 @@ describe("buildLeaderboard", () => {
     expect(() => buildLeaderboard({
       taskId: "facture-fr", runId: "2026-10-08_facture-fr", status: "reel", runDate: "08/10/2026", scores, results, sampleSize: 1,
     })).toThrow();
+  });
+});
+
+describe("appendHistory", () => {
+  const publication = (runDate: string, status: "reel" | "demo", exactitude = 90): Leaderboard => ({
+    taskId: "facture-fr", runId: `${runDate}_facture-fr`, status, runDate, sampleSize: 25,
+    rows: [{
+      model: "labo/modele", modelVersion: "v1", sansRelecture: 80, exactitude, hallucinations: 0,
+      costPerDoc: 0.01, latencyP50: 1200, errorCount: 0, docCount: 25,
+    }],
+  });
+
+  it("crée l'historique à la première publication", () => {
+    const h = appendHistory(null, publication("2026-10-08", "reel"));
+    expect(h.runs.map((r) => r.runDate)).toEqual(["2026-10-08"]);
+    expect(h.runs[0]!.rows[0]).toEqual({ model: "labo/modele", exactitude: 90, costPerDoc: 0.01, latencyP50: 1200 });
+  });
+
+  it("range les publications par date, quel que soit l'ordre d'arrivée", () => {
+    const h = appendHistory(appendHistory(null, publication("2026-12-01", "reel")), publication("2026-10-08", "reel"));
+    expect(h.runs.map((r) => r.runDate)).toEqual(["2026-10-08", "2026-12-01"]);
+  });
+
+  it("remplace un run republié au lieu de le dupliquer", () => {
+    const h = appendHistory(appendHistory(null, publication("2026-10-08", "reel", 90)), publication("2026-10-08", "reel", 93));
+    expect(h.runs).toHaveLength(1);
+    expect(h.runs[0]!.rows[0]!.exactitude).toBe(93);
+  });
+
+  it("efface les runs de démonstration à la première mesure réelle", () => {
+    const demo = appendHistory(appendHistory(null, publication("2026-07-15", "demo")), publication("2026-09-15", "demo"));
+    const h = appendHistory(demo, publication("2026-10-08", "reel"));
+    expect(h.runs.map((r) => r.status)).toEqual(["reel"]);
   });
 });

@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "alibaba/qwen3.8-27b",
+  "modelVersion": "qwen3.8-27b@demo",
+  "docId": "f-015",
+  "raw": {
+    "numero_facture": "FA-2026-7197",
+    "date_emission": "2026-08-05",
+    "siret_emetteur": "75196914882655",
+    "tva_intracom": "FR87751969148",
+    "total_ht": 4760,
+    "total_tva": 952,
+    "total_ttc": 5712,
+    "echeance": "2026-07-06",
+    "lignes": [
+      {
+        "designation": "Campagne d'affichage",
+        "quantite": 1,
+        "prix_unitaire_ht": 5600,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 3396,
+  "costUsd": 0.008442,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "google/gemini-3.8-flash",
+  "modelVersion": "gemini-3.8-flash@demo",
+  "docId": "f-009",
+  "raw": {
+    "numero_facture": "FA-2026-6227",
+    "date_emission": "2026-06-04",
+    "siret_emetteur": "60560581620390",
+    "tva_intracom": "FR88605605816",
+    "total_ht": 519.21,
+    "total_tva": 95.76,
+    "total_ttc": 621.6,
+    "echeance": "2026-05-06",
+    "lignes": [
+      {
+        "designation": "Abonnement hébergement",
+        "quantite": 12,
+        "prix_unitaire_ht": 39.9,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 3866,
+  "costUsd": 0.018415,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

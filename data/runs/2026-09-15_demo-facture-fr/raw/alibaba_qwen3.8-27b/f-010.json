@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "alibaba/qwen3.8-27b",
+  "modelVersion": "qwen3.8-27b@demo",
+  "docId": "f-010",
+  "raw": {
+    "numero_facture": "FA-2026-6915",
+    "date_emission": "2026-11-07",
+    "siret_emetteur": "92553523498878",
+    "tva_intracom": "FR17925535234",
+    "total_ht": 1084,
+    "total_tva": 167.56,
+    "total_ttc": 1360.25,
+    "echeance": "2026-08-10",
+    "lignes": [
+      {
+        "designation": "Repas séminaire",
+        "quantite": 24,
+        "prix_unitaire_ht": 18.5,
+        "taux_tva": 10
+      },
+      {
+        "designation": "Location salle",
+        "quantite": 1,
+        "prix_unitaire_ht": 640,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 3844,
+  "costUsd": 0.009286,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

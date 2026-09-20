@@ -1,3 +1,4 @@
 .next/
 public/documents/
 next-env.d.ts
+tsconfig.tsbuildinfo

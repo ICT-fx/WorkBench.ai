@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "gpt-6-astra@demo",
+  "docId": "f-018",
+  "raw": {
+    "numero_facture": "FA-2026-7180",
+    "date_emission": "2026-26-08",
+    "siret_emetteur": "60303176893440",
+    "tva_intracom": "FR17603031768",
+    "total_ht": 4300,
+    "total_tva": 860,
+    "total_ttc": 5160,
+    "echeance": "2026-25-09",
+    "lignes": [
+      {
+        "designation": "Développement sur mesure",
+        "quantite": 1,
+        "prix_unitaire_ht": 3500,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Recette et mise en production",
+        "quantite": 1,
+        "prix_unitaire_ht": 800,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": "Acompte de 450.00 € déjà versNaN"
+  },
+  "latencyMs": 12145,
+  "costUsd": 0.343512,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

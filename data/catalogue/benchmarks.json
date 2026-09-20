@@ -1,0 +1,1129 @@
+[
+  {
+    "id": "analyse-financiere",
+    "domain": "finance",
+    "label": {
+      "fr": "Analyse de liasse fiscale",
+      "en": "Financial statement analysis"
+    },
+    "question": {
+      "fr": "Un modèle sait-il lire une liasse fiscale et dire si l'entreprise va bien ?",
+      "en": "Can a model read a French tax return package and tell whether the company is healthy?"
+    },
+    "description": {
+      "fr": "À partir du bilan et du compte de résultat d'une PME, le modèle calcule les soldes intermédiaires de gestion et les ratios usuels, puis rédige un commentaire. Chaque chiffre cité est vérifié contre la liasse : un ratio juste appuyé sur un montant inventé ne rapporte rien.",
+      "en": "From an SME's balance sheet and income statement, the model computes the intermediate management balances and standard ratios, then writes a commentary. Every figure quoted is checked against the source: a correct ratio built on an invented amount scores nothing."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "dossier",
+      "en": "file"
+    },
+    "sampleSize": 30,
+    "subtasks": [
+      {
+        "id": "ratios",
+        "label": {
+          "fr": "Ratios financiers",
+          "en": "Financial ratios"
+        }
+      },
+      {
+        "id": "sig",
+        "label": {
+          "fr": "Soldes intermédiaires de gestion",
+          "en": "Intermediate balances"
+        }
+      },
+      {
+        "id": "alertes",
+        "label": {
+          "fr": "Signaux d'alerte",
+          "en": "Warning signs"
+        }
+      },
+      {
+        "id": "commentaire",
+        "label": {
+          "fr": "Commentaire de gestion",
+          "en": "Management commentary"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "prevision-tresorerie",
+    "domain": "finance",
+    "label": {
+      "fr": "Prévision de trésorerie",
+      "en": "Cash-flow forecasting"
+    },
+    "question": {
+      "fr": "Peut-on confier à un modèle le plan de trésorerie à treize semaines ?",
+      "en": "Can a model be trusted with the thirteen-week cash plan?"
+    },
+    "description": {
+      "fr": "Le modèle reçoit un échéancier clients et fournisseurs, les charges récurrentes et l'historique bancaire, et doit produire le solde prévisionnel semaine par semaine. Les scénarios de tension — un gros client qui paie en retard, une échéance de TVA oubliée — comptent double.",
+      "en": "Given receivables, payables, recurring charges and bank history, the model must produce the projected weekly balance. Stress scenarios — a major customer paying late, a forgotten VAT deadline — count double."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "scénario",
+      "en": "scenario"
+    },
+    "sampleSize": 36,
+    "subtasks": [
+      {
+        "id": "encaissements",
+        "label": {
+          "fr": "Encaissements",
+          "en": "Cash in"
+        }
+      },
+      {
+        "id": "decaissements",
+        "label": {
+          "fr": "Décaissements",
+          "en": "Cash out"
+        }
+      },
+      {
+        "id": "saisonnalite",
+        "label": {
+          "fr": "Saisonnalité",
+          "en": "Seasonality"
+        }
+      },
+      {
+        "id": "tension",
+        "label": {
+          "fr": "Scénarios de tension",
+          "en": "Stress scenarios"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "facture-fr",
+    "domain": "comptabilite",
+    "label": {
+      "fr": "Lecture de factures françaises",
+      "en": "French invoice reading"
+    },
+    "question": {
+      "fr": "Combien de vos factures passeront sans qu'un humain ait à corriger ?",
+      "en": "How many of your invoices will go through without a human fixing them?"
+    },
+    "description": {
+      "fr": "Extraire les champs d'une facture fournisseur française reçue en scan ou en photo : montants, SIRET, dates, lignes. Neuf pièges y sont placés à dessein — franchise en base de TVA, avoir, acompte, autoliquidation, scan de travers. Un champ absent du document fait partie du test : inventer une valeur est compté comme une hallucination.",
+      "en": "Extract the fields of a French supplier invoice received as a scan or photo: amounts, SIRET, dates, line items. Nine traps are planted on purpose — VAT exemption, credit notes, deposits, reverse charge, skewed scans. A field missing from the document is part of the test: inventing a value counts as a hallucination."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "facture",
+      "en": "invoice"
+    },
+    "sampleSize": 25,
+    "subtasks": [
+      {
+        "id": "montants",
+        "label": {
+          "fr": "Montants HT, TVA, TTC",
+          "en": "Net, VAT and gross amounts"
+        }
+      },
+      {
+        "id": "identifiants",
+        "label": {
+          "fr": "SIRET et TVA intracommunautaire",
+          "en": "SIRET and VAT numbers"
+        }
+      },
+      {
+        "id": "dates",
+        "label": {
+          "fr": "Dates d'émission et d'échéance",
+          "en": "Issue and due dates"
+        }
+      },
+      {
+        "id": "lignes",
+        "label": {
+          "fr": "Lignes de facturation",
+          "en": "Line items"
+        }
+      },
+      {
+        "id": "pieges",
+        "label": {
+          "fr": "Cas pièges",
+          "en": "Trap cases"
+        }
+      }
+    ],
+    "maturity": "pipeline"
+  },
+  {
+    "id": "rapprochement-bancaire",
+    "domain": "comptabilite",
+    "label": {
+      "fr": "Rapprochement bancaire",
+      "en": "Bank reconciliation"
+    },
+    "question": {
+      "fr": "Le modèle retrouve-t-il la bonne facture derrière chaque ligne du relevé ?",
+      "en": "Does the model find the right invoice behind each statement line?"
+    },
+    "description": {
+      "fr": "Apparier les lignes d'un relevé bancaire avec les factures ouvertes. Les virements groupés, les libellés tronqués par la banque et les écarts de quelques centimes font l'essentiel de la difficulté. Un appariement faux coûte plus cher qu'une ligne laissée en suspens.",
+      "en": "Match bank statement lines to open invoices. Grouped transfers, labels truncated by the bank and differences of a few cents make up most of the difficulty. A wrong match costs more than a line left pending."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "relevé",
+      "en": "statement"
+    },
+    "sampleSize": 40,
+    "subtasks": [
+      {
+        "id": "simple",
+        "label": {
+          "fr": "Appariement simple",
+          "en": "One-to-one matching"
+        }
+      },
+      {
+        "id": "groupes",
+        "label": {
+          "fr": "Paiements groupés",
+          "en": "Grouped payments"
+        }
+      },
+      {
+        "id": "ecarts",
+        "label": {
+          "fr": "Écarts de montant",
+          "en": "Amount differences"
+        }
+      },
+      {
+        "id": "libelles",
+        "label": {
+          "fr": "Libellés tronqués",
+          "en": "Truncated labels"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "note-de-frais",
+    "domain": "comptabilite",
+    "label": {
+      "fr": "Contrôle de notes de frais",
+      "en": "Expense report audit"
+    },
+    "question": {
+      "fr": "Un ticket de restaurant froissé suffit-il à tromper le modèle ?",
+      "en": "Is a crumpled restaurant receipt enough to fool the model?"
+    },
+    "description": {
+      "fr": "Lire des justificatifs photographiés, en extraire le montant et la TVA récupérable, puis vérifier leur conformité à une politique de frais fournie. Le jeu contient des doublons maquillés et des dépenses hors politique.",
+      "en": "Read photographed receipts, extract the amount and recoverable VAT, then check them against a given expense policy. The set includes disguised duplicates and out-of-policy spending."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "justificatif",
+      "en": "receipt"
+    },
+    "sampleSize": 60,
+    "subtasks": [
+      {
+        "id": "lecture",
+        "label": {
+          "fr": "Lecture du justificatif",
+          "en": "Receipt reading"
+        }
+      },
+      {
+        "id": "tva",
+        "label": {
+          "fr": "TVA récupérable",
+          "en": "Recoverable VAT"
+        }
+      },
+      {
+        "id": "politique",
+        "label": {
+          "fr": "Conformité à la politique",
+          "en": "Policy compliance"
+        }
+      },
+      {
+        "id": "doublons",
+        "label": {
+          "fr": "Détection de doublons",
+          "en": "Duplicate detection"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "tri-cv",
+    "domain": "rh",
+    "label": {
+      "fr": "Présélection de candidatures",
+      "en": "Résumé screening"
+    },
+    "question": {
+      "fr": "Le modèle classe-t-il les candidats comme un recruteur — sans ses biais ?",
+      "en": "Does the model rank candidates like a recruiter — minus the bias?"
+    },
+    "description": {
+      "fr": "Classer des candidatures pour une fiche de poste donnée et justifier chaque décision. Des CV jumeaux, identiques à un prénom ou une adresse près, mesurent si le classement change pour de mauvaises raisons.",
+      "en": "Rank applications against a job description and justify each decision. Twin résumés, identical but for a first name or an address, measure whether the ranking changes for the wrong reasons."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "candidature",
+      "en": "application"
+    },
+    "sampleSize": 120,
+    "subtasks": [
+      {
+        "id": "adequation",
+        "label": {
+          "fr": "Adéquation au poste",
+          "en": "Job fit"
+        }
+      },
+      {
+        "id": "parcours",
+        "label": {
+          "fr": "Extraction du parcours",
+          "en": "Career extraction"
+        }
+      },
+      {
+        "id": "eliminatoires",
+        "label": {
+          "fr": "Critères éliminatoires",
+          "en": "Knock-out criteria"
+        }
+      },
+      {
+        "id": "neutralite",
+        "label": {
+          "fr": "Neutralité du classement",
+          "en": "Ranking neutrality"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "droit-social",
+    "domain": "rh",
+    "label": {
+      "fr": "Questions de droit du travail",
+      "en": "French employment law Q&A"
+    },
+    "question": {
+      "fr": "Peut-on laisser un modèle répondre aux salariés sur leurs congés ou leur préavis ?",
+      "en": "Can a model answer employees about their leave or notice period?"
+    },
+    "description": {
+      "fr": "Répondre à des questions concrètes de salariés et de managers, convention collective à l'appui. Les réponses sont notées par des juristes en droit social ; citer un article qui n'existe pas est éliminatoire.",
+      "en": "Answer practical questions from employees and managers, with the collective agreement at hand. Answers are graded by employment lawyers; citing an article that does not exist is disqualifying."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "question",
+      "en": "question"
+    },
+    "sampleSize": 80,
+    "subtasks": [
+      {
+        "id": "conges",
+        "label": {
+          "fr": "Congés et absences",
+          "en": "Leave and absence"
+        }
+      },
+      {
+        "id": "rupture",
+        "label": {
+          "fr": "Rupture du contrat",
+          "en": "Contract termination"
+        }
+      },
+      {
+        "id": "temps",
+        "label": {
+          "fr": "Temps de travail",
+          "en": "Working time"
+        }
+      },
+      {
+        "id": "conventions",
+        "label": {
+          "fr": "Conventions collectives",
+          "en": "Collective agreements"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "resume-contrat",
+    "domain": "juridique",
+    "label": {
+      "fr": "Résumé de contrat",
+      "en": "Contract summarisation"
+    },
+    "question": {
+      "fr": "Le résumé dit-il ce que dit le contrat — et rien de plus ?",
+      "en": "Does the summary say what the contract says — and nothing more?"
+    },
+    "description": {
+      "fr": "Résumer un contrat commercial en une page pour un dirigeant pressé. Chaque affirmation du résumé est rattachée à une clause ; une obligation absente du contrat est comptée comme inventée.",
+      "en": "Summarise a commercial contract in one page for a busy executive. Every statement is traced back to a clause; an obligation absent from the contract counts as invented."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "contrat",
+      "en": "contract"
+    },
+    "sampleSize": 40,
+    "subtasks": [
+      {
+        "id": "parties",
+        "label": {
+          "fr": "Parties et durée",
+          "en": "Parties and term"
+        }
+      },
+      {
+        "id": "obligations",
+        "label": {
+          "fr": "Obligations réciproques",
+          "en": "Mutual obligations"
+        }
+      },
+      {
+        "id": "financier",
+        "label": {
+          "fr": "Clauses financières",
+          "en": "Financial terms"
+        }
+      },
+      {
+        "id": "resiliation",
+        "label": {
+          "fr": "Résiliation",
+          "en": "Termination"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "clauses-risque",
+    "domain": "juridique",
+    "label": {
+      "fr": "Détection de clauses à risque",
+      "en": "Risk clause detection"
+    },
+    "question": {
+      "fr": "Le modèle voit-il la reconduction tacite cachée en page douze ?",
+      "en": "Does the model see the auto-renewal buried on page twelve?"
+    },
+    "description": {
+      "fr": "Repérer dans des contrats fournisseurs les clauses qu'un juriste signalerait : plafonds de responsabilité déséquilibrés, exclusivités, reconductions tacites, pénalités, sous-traitance de données personnelles.",
+      "en": "Find, in supplier contracts, the clauses a lawyer would flag: unbalanced liability caps, exclusivity, auto-renewal, penalties, personal-data subprocessing."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "contrat",
+      "en": "contract"
+    },
+    "sampleSize": 50,
+    "subtasks": [
+      {
+        "id": "responsabilite",
+        "label": {
+          "fr": "Responsabilité",
+          "en": "Liability"
+        }
+      },
+      {
+        "id": "exclusivite",
+        "label": {
+          "fr": "Exclusivité",
+          "en": "Exclusivity"
+        }
+      },
+      {
+        "id": "reconduction",
+        "label": {
+          "fr": "Reconduction tacite",
+          "en": "Auto-renewal"
+        }
+      },
+      {
+        "id": "penalites",
+        "label": {
+          "fr": "Pénalités",
+          "en": "Penalties"
+        }
+      },
+      {
+        "id": "rgpd",
+        "label": {
+          "fr": "Données personnelles",
+          "en": "Personal data"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "qualification-leads",
+    "domain": "commercial",
+    "label": {
+      "fr": "Qualification de prospects",
+      "en": "Lead qualification"
+    },
+    "question": {
+      "fr": "Le modèle distingue-t-il le prospect chaud du curieux ?",
+      "en": "Can the model tell a hot lead from a window shopper?"
+    },
+    "description": {
+      "fr": "À partir d'un échange de courriels ou d'un formulaire entrant, extraire le besoin, le budget et l'échéance, puis proposer une priorité et une prochaine action. La référence est le devenir réel du prospect.",
+      "en": "From an email thread or an inbound form, extract need, budget and timing, then propose a priority and a next action. Ground truth is what actually happened to the lead."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "prospect",
+      "en": "lead"
+    },
+    "sampleSize": 100,
+    "subtasks": [
+      {
+        "id": "besoin",
+        "label": {
+          "fr": "Extraction du besoin",
+          "en": "Need extraction"
+        }
+      },
+      {
+        "id": "scoring",
+        "label": {
+          "fr": "Priorisation",
+          "en": "Prioritisation"
+        }
+      },
+      {
+        "id": "signaux",
+        "label": {
+          "fr": "Signaux d'achat",
+          "en": "Buying signals"
+        }
+      },
+      {
+        "id": "action",
+        "label": {
+          "fr": "Prochaine action",
+          "en": "Next action"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "proposition-commerciale",
+    "domain": "commercial",
+    "label": {
+      "fr": "Rédaction de propositions",
+      "en": "Proposal drafting"
+    },
+    "question": {
+      "fr": "La proposition répond-elle au cahier des charges, prix compris ?",
+      "en": "Does the proposal answer the brief, prices included?"
+    },
+    "description": {
+      "fr": "Rédiger une proposition commerciale à partir d'un cahier des charges et d'une grille tarifaire. Un prix qui ne correspond pas à la grille, ou une prestation promise qui n'existe pas au catalogue, annule la note.",
+      "en": "Draft a proposal from a brief and a price list. A price that does not match the list, or a promised service missing from the catalogue, voids the score."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "proposition",
+      "en": "proposal"
+    },
+    "sampleSize": 30,
+    "subtasks": [
+      {
+        "id": "comprehension",
+        "label": {
+          "fr": "Compréhension du besoin",
+          "en": "Understanding the need"
+        }
+      },
+      {
+        "id": "chiffrage",
+        "label": {
+          "fr": "Chiffrage cohérent",
+          "en": "Consistent pricing"
+        }
+      },
+      {
+        "id": "argumentaire",
+        "label": {
+          "fr": "Argumentaire",
+          "en": "Sales argument"
+        }
+      },
+      {
+        "id": "conformite",
+        "label": {
+          "fr": "Conformité au cahier des charges",
+          "en": "Brief compliance"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "contenu-marque",
+    "domain": "marketing",
+    "label": {
+      "fr": "Contenus à la voix de la marque",
+      "en": "On-brand content"
+    },
+    "question": {
+      "fr": "Le texte ressemble-t-il à votre marque, ou à toutes les autres ?",
+      "en": "Does the copy sound like your brand, or like everyone else's?"
+    },
+    "description": {
+      "fr": "Produire une fiche produit, une infolettre et une publication à partir d'une charte éditoriale. Notation en aveugle par des rédacteurs : respect de la charte, exactitude des caractéristiques, qualité du français.",
+      "en": "Produce a product page, a newsletter and a social post from an editorial charter. Blind-graded by copywriters: charter compliance, product accuracy, quality of the French."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "brief",
+      "en": "brief"
+    },
+    "sampleSize": 45,
+    "subtasks": [
+      {
+        "id": "charte",
+        "label": {
+          "fr": "Respect de la charte",
+          "en": "Charter compliance"
+        }
+      },
+      {
+        "id": "exactitude",
+        "label": {
+          "fr": "Exactitude produit",
+          "en": "Product accuracy"
+        }
+      },
+      {
+        "id": "canal",
+        "label": {
+          "fr": "Adaptation au canal",
+          "en": "Channel fit"
+        }
+      },
+      {
+        "id": "langue",
+        "label": {
+          "fr": "Qualité du français",
+          "en": "Quality of French"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "analyse-campagne",
+    "domain": "marketing",
+    "label": {
+      "fr": "Analyse de campagnes",
+      "en": "Campaign analysis"
+    },
+    "question": {
+      "fr": "Le modèle lit-il un tableau de bord sans confondre clics et conversions ?",
+      "en": "Can the model read a dashboard without mixing up clicks and conversions?"
+    },
+    "description": {
+      "fr": "Analyser l'export d'une campagne multicanale et recommander où déplacer le budget. Les calculs de coût d'acquisition et de retour sur dépense sont recalculés à la main ; une erreur d'un facteur dix n'est pas rare.",
+      "en": "Analyse a multichannel campaign export and recommend where to move budget. Acquisition cost and return on spend are recomputed by hand; errors by a factor of ten are not rare."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "rapport",
+      "en": "report"
+    },
+    "sampleSize": 30,
+    "subtasks": [
+      {
+        "id": "kpi",
+        "label": {
+          "fr": "Lecture des indicateurs",
+          "en": "Reading the metrics"
+        }
+      },
+      {
+        "id": "calculs",
+        "label": {
+          "fr": "Exactitude des calculs",
+          "en": "Calculation accuracy"
+        }
+      },
+      {
+        "id": "attribution",
+        "label": {
+          "fr": "Attribution",
+          "en": "Attribution"
+        }
+      },
+      {
+        "id": "recommandations",
+        "label": {
+          "fr": "Recommandations",
+          "en": "Recommendations"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "reponse-sav",
+    "domain": "service-client",
+    "label": {
+      "fr": "Réponse à un client en SAV",
+      "en": "Customer support replies"
+    },
+    "question": {
+      "fr": "Le modèle promet-il un remboursement que vos conditions ne prévoient pas ?",
+      "en": "Does the model promise a refund your terms do not allow?"
+    },
+    "description": {
+      "fr": "Répondre à des demandes de service après-vente à partir des conditions générales et de l'historique de commande. La réponse doit être exacte, conforme à la politique, et passer la main à un humain quand il le faut.",
+      "en": "Answer after-sales requests from the terms of sale and order history. The reply must be accurate, policy-compliant, and hand over to a human when it should."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "ticket",
+      "en": "ticket"
+    },
+    "sampleSize": 90,
+    "subtasks": [
+      {
+        "id": "exactitude",
+        "label": {
+          "fr": "Exactitude de la réponse",
+          "en": "Answer accuracy"
+        }
+      },
+      {
+        "id": "politique",
+        "label": {
+          "fr": "Respect de la politique",
+          "en": "Policy compliance"
+        }
+      },
+      {
+        "id": "ton",
+        "label": {
+          "fr": "Ton et empathie",
+          "en": "Tone and empathy"
+        }
+      },
+      {
+        "id": "escalade",
+        "label": {
+          "fr": "Escalade à bon escient",
+          "en": "Knowing when to escalate"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "tri-tickets",
+    "domain": "service-client",
+    "label": {
+      "fr": "Tri et routage de tickets",
+      "en": "Ticket triage"
+    },
+    "question": {
+      "fr": "Le bon ticket arrive-t-il à la bonne équipe, du premier coup ?",
+      "en": "Does the right ticket reach the right team, first time?"
+    },
+    "description": {
+      "fr": "Classer des demandes entrantes par catégorie et urgence, puis les router. Volume élevé, coût unitaire faible : c'est ici que le rapport précision-prix d'un petit modèle se juge.",
+      "en": "Classify inbound requests by category and urgency, then route them. High volume, low unit cost: this is where a small model's accuracy-to-price ratio is judged."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "ticket",
+      "en": "ticket"
+    },
+    "sampleSize": 200,
+    "subtasks": [
+      {
+        "id": "categorie",
+        "label": {
+          "fr": "Catégorie",
+          "en": "Category"
+        }
+      },
+      {
+        "id": "urgence",
+        "label": {
+          "fr": "Urgence",
+          "en": "Urgency"
+        }
+      },
+      {
+        "id": "sentiment",
+        "label": {
+          "fr": "Langue et sentiment",
+          "en": "Language and sentiment"
+        }
+      },
+      {
+        "id": "routage",
+        "label": {
+          "fr": "Routage",
+          "en": "Routing"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "comparaison-devis",
+    "domain": "achats",
+    "label": {
+      "fr": "Comparaison de devis fournisseurs",
+      "en": "Supplier quote comparison"
+    },
+    "question": {
+      "fr": "Le moins cher sur le papier l'est-il encore, frais de port et pénalités compris ?",
+      "en": "Is the cheapest on paper still cheapest once shipping and penalties are in?"
+    },
+    "description": {
+      "fr": "Trois à cinq devis aux formats différents pour un même besoin : le modèle doit les ramener à une base comparable et recommander. Les conditions cachées — minimum de commande, révision de prix — sont l'objet du test.",
+      "en": "Three to five quotes in different formats for the same need: the model must bring them to a comparable basis and recommend one. Hidden terms — minimum order, price revision — are the point of the test."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "consultation",
+      "en": "tender"
+    },
+    "sampleSize": 24,
+    "subtasks": [
+      {
+        "id": "normalisation",
+        "label": {
+          "fr": "Normalisation des prix",
+          "en": "Price normalisation"
+        }
+      },
+      {
+        "id": "conditions",
+        "label": {
+          "fr": "Conditions cachées",
+          "en": "Hidden terms"
+        }
+      },
+      {
+        "id": "delais",
+        "label": {
+          "fr": "Délais et pénalités",
+          "en": "Lead times and penalties"
+        }
+      },
+      {
+        "id": "recommandation",
+        "label": {
+          "fr": "Recommandation",
+          "en": "Recommendation"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "prevision-stock",
+    "domain": "achats",
+    "label": {
+      "fr": "Prévision de réapprovisionnement",
+      "en": "Replenishment planning"
+    },
+    "question": {
+      "fr": "Combien commander, et quand, sans rupture ni surstock ?",
+      "en": "How much to order, and when, with neither stock-outs nor overstock?"
+    },
+    "description": {
+      "fr": "À partir de deux ans de ventes par référence, proposer une quantité et une date de commande. Noté contre ce qui s'est réellement vendu la période suivante.",
+      "en": "From two years of sales per SKU, propose an order quantity and date. Scored against what actually sold in the following period."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "référence",
+      "en": "SKU"
+    },
+    "sampleSize": 60,
+    "subtasks": [
+      {
+        "id": "tendance",
+        "label": {
+          "fr": "Tendance",
+          "en": "Trend"
+        }
+      },
+      {
+        "id": "saisonnalite",
+        "label": {
+          "fr": "Saisonnalité",
+          "en": "Seasonality"
+        }
+      },
+      {
+        "id": "ruptures",
+        "label": {
+          "fr": "Ruptures passées",
+          "en": "Past stock-outs"
+        }
+      },
+      {
+        "id": "quantite",
+        "label": {
+          "fr": "Quantité à commander",
+          "en": "Order quantity"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "support-it",
+    "domain": "informatique",
+    "label": {
+      "fr": "Support informatique de niveau 1",
+      "en": "Tier-1 IT support"
+    },
+    "question": {
+      "fr": "Le modèle dépanne-t-il un collègue sans lui faire désactiver l'antivirus ?",
+      "en": "Can the model unblock a colleague without telling them to disable the antivirus?"
+    },
+    "description": {
+      "fr": "Résoudre des demandes courantes — messagerie, VPN, droits d'accès — à partir de la base de connaissances interne. Conseiller une action dangereuse est éliminatoire, quelle que soit la qualité du reste.",
+      "en": "Resolve routine requests — mail, VPN, access rights — from the internal knowledge base. Advising a dangerous action is disqualifying, whatever the quality of the rest."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "demande",
+      "en": "request"
+    },
+    "sampleSize": 80,
+    "subtasks": [
+      {
+        "id": "diagnostic",
+        "label": {
+          "fr": "Diagnostic",
+          "en": "Diagnosis"
+        }
+      },
+      {
+        "id": "procedure",
+        "label": {
+          "fr": "Respect de la procédure",
+          "en": "Procedure compliance"
+        }
+      },
+      {
+        "id": "securite",
+        "label": {
+          "fr": "Refus des actions risquées",
+          "en": "Refusing risky actions"
+        }
+      },
+      {
+        "id": "escalade",
+        "label": {
+          "fr": "Escalade",
+          "en": "Escalation"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "requetes-sql",
+    "domain": "informatique",
+    "label": {
+      "fr": "Du besoin métier à la requête SQL",
+      "en": "Business question to SQL"
+    },
+    "question": {
+      "fr": "« Le chiffre d'affaires par région ce trimestre » : la requête est-elle juste ?",
+      "en": "“Revenue by region this quarter”: is the query right?"
+    },
+    "description": {
+      "fr": "Traduire une question métier en requête sur un schéma d'entreprise réaliste, avec ses tables mal nommées et ses dates en trois formats. La requête est exécutée : seul le résultat compte.",
+      "en": "Turn a business question into a query over a realistic company schema, badly named tables and three date formats included. The query is executed: only the result counts."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "question",
+      "en": "question"
+    },
+    "sampleSize": 70,
+    "subtasks": [
+      {
+        "id": "jointures",
+        "label": {
+          "fr": "Jointures",
+          "en": "Joins"
+        }
+      },
+      {
+        "id": "agregations",
+        "label": {
+          "fr": "Agrégations",
+          "en": "Aggregations"
+        }
+      },
+      {
+        "id": "dates",
+        "label": {
+          "fr": "Dates et périodes",
+          "en": "Dates and periods"
+        }
+      },
+      {
+        "id": "ambiguite",
+        "label": {
+          "fr": "Demande ambiguë",
+          "en": "Ambiguous requests"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "synthese-reunion",
+    "domain": "direction",
+    "label": {
+      "fr": "Compte rendu de réunion",
+      "en": "Meeting minutes"
+    },
+    "question": {
+      "fr": "Le compte rendu attribue-t-il la bonne action à la bonne personne ?",
+      "en": "Do the minutes assign the right action to the right person?"
+    },
+    "description": {
+      "fr": "Produire, à partir d'une transcription d'une heure, les décisions prises et les actions avec leur responsable et leur échéance. Une décision qui n'a pas été prise en réunion est une invention, et compte comme telle.",
+      "en": "From a one-hour transcript, produce the decisions made and the actions with owner and deadline. A decision that was never made in the meeting is an invention, and counts as one."
+    },
+    "input": "texte",
+    "unit": {
+      "fr": "réunion",
+      "en": "meeting"
+    },
+    "sampleSize": 40,
+    "subtasks": [
+      {
+        "id": "decisions",
+        "label": {
+          "fr": "Décisions",
+          "en": "Decisions"
+        }
+      },
+      {
+        "id": "actions",
+        "label": {
+          "fr": "Actions et responsables",
+          "en": "Actions and owners"
+        }
+      },
+      {
+        "id": "fidelite",
+        "label": {
+          "fr": "Fidélité, sans ajout",
+          "en": "Faithfulness, nothing added"
+        }
+      },
+      {
+        "id": "concision",
+        "label": {
+          "fr": "Concision",
+          "en": "Concision"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  },
+  {
+    "id": "note-synthese",
+    "domain": "direction",
+    "label": {
+      "fr": "Note de synthèse pour décision",
+      "en": "Decision memo"
+    },
+    "question": {
+      "fr": "Quarante pages de dossier, une page de note : que reste-t-il de vrai ?",
+      "en": "Forty pages of material, one page of memo: how much of it is still true?"
+    },
+    "description": {
+      "fr": "Rédiger une note d'une page à partir d'un dossier hétérogène — études, courriels, tableaux. Notation par des dirigeants : les faits saillants y sont-ils, les chiffres sont-ils justes, la recommandation découle-t-elle du dossier ?",
+      "en": "Write a one-page memo from a mixed file — studies, emails, spreadsheets. Graded by executives: are the key facts there, are the numbers right, does the recommendation follow from the file?"
+    },
+    "input": "document",
+    "unit": {
+      "fr": "dossier",
+      "en": "file"
+    },
+    "sampleSize": 25,
+    "subtasks": [
+      {
+        "id": "faits",
+        "label": {
+          "fr": "Faits saillants",
+          "en": "Key facts"
+        }
+      },
+      {
+        "id": "chiffres",
+        "label": {
+          "fr": "Exactitude des chiffres",
+          "en": "Numerical accuracy"
+        }
+      },
+      {
+        "id": "options",
+        "label": {
+          "fr": "Options et risques",
+          "en": "Options and risks"
+        }
+      },
+      {
+        "id": "recommandation",
+        "label": {
+          "fr": "Recommandation argumentée",
+          "en": "Reasoned recommendation"
+        }
+      }
+    ],
+    "maturity": "maquette"
+  }
+]

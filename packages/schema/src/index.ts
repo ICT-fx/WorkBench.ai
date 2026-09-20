@@ -5,4 +5,5 @@ export * from "./ground-truth";
 export * from "./run";
 export * from "./score";
 export * from "./leaderboard";
+export * from "./catalogue";
 export * from "./parse-file";

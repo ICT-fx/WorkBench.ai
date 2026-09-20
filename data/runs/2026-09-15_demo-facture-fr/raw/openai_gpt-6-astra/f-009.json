@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "gpt-6-astra@demo",
+  "docId": "f-009",
+  "raw": {
+    "numero_facture": "FA-2026-6227",
+    "date_emission": "2026-06-04",
+    "siret_emetteur": "60560581620390",
+    "tva_intracom": "FR88605605816",
+    "total_ht": 478.8,
+    "total_tva": 97.07,
+    "total_ttc": 574.56,
+    "echeance": "2026-06-05",
+    "lignes": [
+      {
+        "designation": "Abonnement hébergement",
+        "quantite": 12,
+        "prix_unitaire_ht": 39.9,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 8472,
+  "costUsd": 0.363344,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

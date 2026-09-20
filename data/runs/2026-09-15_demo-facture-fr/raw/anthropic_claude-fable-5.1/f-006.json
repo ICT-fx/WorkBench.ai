@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "claude-fable-5.1@demo",
+  "docId": "f-006",
+  "raw": {
+    "numero_facture": "FA-2026-3793",
+    "date_emission": "2026-01-08",
+    "siret_emetteur": "37002969319071",
+    "tva_intracom": "FR42370029693",
+    "total_ht": 780,
+    "total_tva": 156,
+    "total_ttc": 936,
+    "echeance": "2026-12-31",
+    "lignes": [
+      {
+        "designation": "Nettoyage de fin de chantier",
+        "quantite": 1,
+        "prix_unitaire_ht": 780,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 5564,
+  "costUsd": 0.28813,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

@@ -17,6 +17,14 @@ export const LeaderboardRowSchema = z.object({
    *  temps afficherait un score flatteur calculé sur les factures faciles. */
   errorCount: z.number().int().min(0),
   docCount: z.number().int().min(0),
+  /**
+   * Demi-largeur de l'intervalle de confiance à 95 % sur l'exactitude, en points.
+   * Optionnel : deux modèles séparés par moins que cette marge ne sont pas
+   * départagés, et le site le dit au lieu d'afficher un rang trompeur.
+   */
+  ci: z.number().min(0).optional(),
+  /** Exactitude par sous-tâche du benchmark, quand il en déclare. */
+  bySubtask: z.record(z.string(), percent).optional(),
 });
 export type LeaderboardRow = z.infer<typeof LeaderboardRowSchema>;
 

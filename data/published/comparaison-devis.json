@@ -1,0 +1,711 @@
+{
+  "taskId": "comparaison-devis",
+  "runId": "2026-09-15_demo-comparaison-devis",
+  "status": "demo",
+  "runDate": "2026-09-15",
+  "sampleSize": 24,
+  "rows": [
+    {
+      "model": "anthropic/claude-fable-5.1",
+      "modelVersion": "claude-fable-5.1@demo",
+      "sansRelecture": 77.8,
+      "exactitude": 89.5,
+      "hallucinations": 2.8,
+      "costPerDoc": 0.371324,
+      "latencyP50": 13178,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 6.1,
+      "bySubtask": {
+        "normalisation": 80.1,
+        "conditions": 86,
+        "delais": 94.7,
+        "recommandation": 87.7
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "modelVersion": "gpt-6-astra@demo",
+      "sansRelecture": 77.4,
+      "exactitude": 88.1,
+      "hallucinations": 0,
+      "costPerDoc": 0.521565,
+      "latencyP50": 20189,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 6.5,
+      "bySubtask": {
+        "normalisation": 77.5,
+        "conditions": 85.6,
+        "delais": 92,
+        "recommandation": 85.7
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5",
+      "modelVersion": "claude-opus-5@demo",
+      "sansRelecture": 75.7,
+      "exactitude": 87.6,
+      "hallucinations": 1,
+      "costPerDoc": 0.130195,
+      "latencyP50": 19252,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 6.6,
+      "bySubtask": {
+        "normalisation": 75.4,
+        "conditions": 85,
+        "delais": 93.1,
+        "recommandation": 83.9
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.8",
+      "modelVersion": "claude-opus-4.8@demo",
+      "sansRelecture": 74,
+      "exactitude": 87.3,
+      "hallucinations": 3,
+      "costPerDoc": 0.126693,
+      "latencyP50": 19415,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 6.7,
+      "bySubtask": {
+        "normalisation": 76.3,
+        "conditions": 86,
+        "delais": 89.5,
+        "recommandation": 82
+      }
+    },
+    {
+      "model": "meta/muse-spark-1.1",
+      "modelVersion": "muse-spark-1.1@demo",
+      "sansRelecture": 70.9,
+      "exactitude": 85.5,
+      "hallucinations": 4.3,
+      "costPerDoc": 0.026093,
+      "latencyP50": 7709,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7,
+      "bySubtask": {
+        "normalisation": 76.1,
+        "conditions": 82.2,
+        "delais": 87.9,
+        "recommandation": 81.4
+      }
+    },
+    {
+      "model": "meta/muse-spark-1.3",
+      "modelVersion": "muse-spark-1.3@demo",
+      "sansRelecture": 72.5,
+      "exactitude": 84.4,
+      "hallucinations": 0,
+      "costPerDoc": 0.049997,
+      "latencyP50": 6806,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.3,
+      "bySubtask": {
+        "normalisation": 74.7,
+        "conditions": 82.8,
+        "delais": 89.8,
+        "recommandation": 83.1
+      }
+    },
+    {
+      "model": "spacexai/grok-4.5",
+      "modelVersion": "grok-4.5@demo",
+      "sansRelecture": 68.2,
+      "exactitude": 84.1,
+      "hallucinations": 2.1,
+      "costPerDoc": 0.033552,
+      "latencyP50": 13658,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.3,
+      "bySubtask": {
+        "normalisation": 74.2,
+        "conditions": 83.1,
+        "delais": 87.5,
+        "recommandation": 81
+      }
+    },
+    {
+      "model": "openai/gpt-5.6-sol",
+      "modelVersion": "gpt-5.6-sol@demo",
+      "sansRelecture": 65.3,
+      "exactitude": 83.9,
+      "hallucinations": 4.8,
+      "costPerDoc": 0.105062,
+      "latencyP50": 12287,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.4,
+      "bySubtask": {
+        "normalisation": 72.6,
+        "conditions": 79.9,
+        "delais": 89.4,
+        "recommandation": 80.5
+      }
+    },
+    {
+      "model": "spacexai/grok-4.3",
+      "modelVersion": "grok-4.3@demo",
+      "sansRelecture": 67.1,
+      "exactitude": 83.1,
+      "hallucinations": 0.1,
+      "costPerDoc": 0.023053,
+      "latencyP50": 9418,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.5,
+      "bySubtask": {
+        "normalisation": 72.9,
+        "conditions": 80.1,
+        "delais": 89.3,
+        "recommandation": 81.7
+      }
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "modelVersion": "gemini-3.1-pro-preview@demo",
+      "sansRelecture": 64.1,
+      "exactitude": 82.4,
+      "hallucinations": 2.7,
+      "costPerDoc": 0.076426,
+      "latencyP50": 17349,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.6,
+      "bySubtask": {
+        "normalisation": 75.9,
+        "conditions": 80.4,
+        "delais": 88,
+        "recommandation": 77.8
+      }
+    },
+    {
+      "model": "alibaba/qwen3.8-max",
+      "modelVersion": "qwen3.8-max@demo",
+      "sansRelecture": 66.7,
+      "exactitude": 82.2,
+      "hallucinations": 0,
+      "costPerDoc": 0.061785,
+      "latencyP50": 12032,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.7,
+      "bySubtask": {
+        "normalisation": 73.3,
+        "conditions": 80.8,
+        "delais": 84.8,
+        "recommandation": 82.2
+      }
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "modelVersion": "gpt-5.5@demo",
+      "sansRelecture": 65.4,
+      "exactitude": 82.1,
+      "hallucinations": 0.5,
+      "costPerDoc": 0.208719,
+      "latencyP50": 13504,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.7,
+      "bySubtask": {
+        "normalisation": 75.1,
+        "conditions": 77.2,
+        "delais": 85.1,
+        "recommandation": 79.7
+      }
+    },
+    {
+      "model": "google/gemini-3.5-flash",
+      "modelVersion": "gemini-3.5-flash@demo",
+      "sansRelecture": 65.8,
+      "exactitude": 81.8,
+      "hallucinations": 0,
+      "costPerDoc": 0.061466,
+      "latencyP50": 10276,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.7,
+      "bySubtask": {
+        "normalisation": 73.2,
+        "conditions": 82.7,
+        "delais": 88.7,
+        "recommandation": 77.5
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "modelVersion": "claude-opus-4.6@demo",
+      "sansRelecture": 64,
+      "exactitude": 81.4,
+      "hallucinations": 4.6,
+      "costPerDoc": 0.144876,
+      "latencyP50": 12246,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.8,
+      "bySubtask": {
+        "normalisation": 73.1,
+        "conditions": 78.4,
+        "delais": 84.5,
+        "recommandation": 76.6
+      }
+    },
+    {
+      "model": "openai/gpt-5.4",
+      "modelVersion": "gpt-5.4@demo",
+      "sansRelecture": 60.6,
+      "exactitude": 81.2,
+      "hallucinations": 4.8,
+      "costPerDoc": 0.166019,
+      "latencyP50": 17023,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 7.8,
+      "bySubtask": {
+        "normalisation": 70.4,
+        "conditions": 79,
+        "delais": 87.3,
+        "recommandation": 78.3
+      }
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "modelVersion": "gemini-3.6-flash@demo",
+      "sansRelecture": 58.1,
+      "exactitude": 80.2,
+      "hallucinations": 5.1,
+      "costPerDoc": 0.026092,
+      "latencyP50": 9180,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8,
+      "bySubtask": {
+        "normalisation": 72.2,
+        "conditions": 77.9,
+        "delais": 83.5,
+        "recommandation": 75.8
+      }
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "modelVersion": "gpt-5.2@demo",
+      "sansRelecture": 61.1,
+      "exactitude": 79.6,
+      "hallucinations": 0.4,
+      "costPerDoc": 0.145817,
+      "latencyP50": 13519,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.1,
+      "bySubtask": {
+        "normalisation": 70.4,
+        "conditions": 76.6,
+        "delais": 84.3,
+        "recommandation": 75.7
+      }
+    },
+    {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "modelVersion": "deepseek-v4.1-flash@demo",
+      "sansRelecture": 58.7,
+      "exactitude": 79.2,
+      "hallucinations": 5.5,
+      "costPerDoc": 0.013342,
+      "latencyP50": 9941,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.1,
+      "bySubtask": {
+        "normalisation": 70.6,
+        "conditions": 77.4,
+        "delais": 81.7,
+        "recommandation": 74.7
+      }
+    },
+    {
+      "model": "alibaba/qwen3.8-27b",
+      "modelVersion": "qwen3.8-27b@demo",
+      "sansRelecture": 60.4,
+      "exactitude": 79.2,
+      "hallucinations": 0.5,
+      "costPerDoc": 0.013006,
+      "latencyP50": 7939,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.1,
+      "bySubtask": {
+        "normalisation": 67.5,
+        "conditions": 77.9,
+        "delais": 84.3,
+        "recommandation": 75.3
+      }
+    },
+    {
+      "model": "moonshotai/kimi-k3",
+      "modelVersion": "kimi-k3@demo",
+      "sansRelecture": 56.8,
+      "exactitude": 78.8,
+      "hallucinations": 5.2,
+      "costPerDoc": 0.069948,
+      "latencyP50": 16987,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.2,
+      "bySubtask": {
+        "normalisation": 68.5,
+        "conditions": 75.2,
+        "delais": 84.4,
+        "recommandation": 73.4
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.5",
+      "modelVersion": "claude-opus-4.5@demo",
+      "sansRelecture": 60.3,
+      "exactitude": 78.7,
+      "hallucinations": 0,
+      "costPerDoc": 0.256743,
+      "latencyP50": 17171,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.2,
+      "bySubtask": {
+        "normalisation": 68.6,
+        "conditions": 79.2,
+        "delais": 81.8,
+        "recommandation": 75.8
+      }
+    },
+    {
+      "model": "openai/gpt-5.6-luna",
+      "modelVersion": "gpt-5.6-luna@demo",
+      "sansRelecture": 60.6,
+      "exactitude": 78.3,
+      "hallucinations": 0,
+      "costPerDoc": 0.009363,
+      "latencyP50": 7227,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.2,
+      "bySubtask": {
+        "normalisation": 65.2,
+        "conditions": 76.3,
+        "delais": 84.9,
+        "recommandation": 75.6
+      }
+    },
+    {
+      "model": "spacexai/grok-4.6",
+      "modelVersion": "grok-4.6@demo",
+      "sansRelecture": 59.1,
+      "exactitude": 78.3,
+      "hallucinations": 2,
+      "costPerDoc": 0.053386,
+      "latencyP50": 13718,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.2,
+      "bySubtask": {
+        "normalisation": 67.6,
+        "conditions": 77.2,
+        "delais": 81.8,
+        "recommandation": 76.7
+      }
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "modelVersion": "gemini-3.8-flash@demo",
+      "sansRelecture": 56.5,
+      "exactitude": 77.8,
+      "hallucinations": 3.3,
+      "costPerDoc": 0.025601,
+      "latencyP50": 9825,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.3,
+      "bySubtask": {
+        "normalisation": 68.8,
+        "conditions": 74.9,
+        "delais": 81.3,
+        "recommandation": 74.1
+      }
+    },
+    {
+      "model": "alibaba/qwen3.6-27b",
+      "modelVersion": "qwen3.6-27b@demo",
+      "sansRelecture": 55.2,
+      "exactitude": 77.5,
+      "hallucinations": 4,
+      "costPerDoc": 0.029278,
+      "latencyP50": 7569,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.4,
+      "bySubtask": {
+        "normalisation": 66.5,
+        "conditions": 75.9,
+        "delais": 79.8,
+        "recommandation": 73.4
+      }
+    },
+    {
+      "model": "mistral/mistral-medium-3.5",
+      "modelVersion": "mistral-medium-3.5@demo",
+      "sansRelecture": 54.3,
+      "exactitude": 77,
+      "hallucinations": 0.1,
+      "costPerDoc": 0.058877,
+      "latencyP50": 16450,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.4,
+      "bySubtask": {
+        "normalisation": 67,
+        "conditions": 76.1,
+        "delais": 78.7,
+        "recommandation": 74.4
+      }
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "modelVersion": "kimi-k2.6@demo",
+      "sansRelecture": 54.8,
+      "exactitude": 77,
+      "hallucinations": 1,
+      "costPerDoc": 0.026775,
+      "latencyP50": 9404,
+      "errorCount": 2,
+      "docCount": 22,
+      "ci": 8.4,
+      "bySubtask": {
+        "normalisation": 66.8,
+        "conditions": 76.4,
+        "delais": 79.7,
+        "recommandation": 72.2
+      }
+    },
+    {
+      "model": "minimax/minimax-m3",
+      "modelVersion": "minimax-m3@demo",
+      "sansRelecture": 53.7,
+      "exactitude": 76.7,
+      "hallucinations": 4.7,
+      "costPerDoc": 0.011657,
+      "latencyP50": 11497,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.5,
+      "bySubtask": {
+        "normalisation": 64.5,
+        "conditions": 72.1,
+        "delais": 82,
+        "recommandation": 75
+      }
+    },
+    {
+      "model": "anthropic/claude-sonnet-5",
+      "modelVersion": "claude-sonnet-5@demo",
+      "sansRelecture": 51.9,
+      "exactitude": 76.2,
+      "hallucinations": 6.1,
+      "costPerDoc": 0.067124,
+      "latencyP50": 6120,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.5,
+      "bySubtask": {
+        "normalisation": 66.2,
+        "conditions": 75.5,
+        "delais": 81.5,
+        "recommandation": 70.4
+      }
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "modelVersion": "gpt-5.4-mini@demo",
+      "sansRelecture": 52.6,
+      "exactitude": 75.5,
+      "hallucinations": 1.2,
+      "costPerDoc": 0.022554,
+      "latencyP50": 10228,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.6,
+      "bySubtask": {
+        "normalisation": 66.4,
+        "conditions": 74.9,
+        "delais": 79.1,
+        "recommandation": 73.1
+      }
+    },
+    {
+      "model": "spacexai/grok-4.1-fast-reasoning",
+      "modelVersion": "grok-4.1-fast-reasoning@demo",
+      "sansRelecture": 46.3,
+      "exactitude": 73.6,
+      "hallucinations": 5.8,
+      "costPerDoc": 0.003347,
+      "latencyP50": 9667,
+      "errorCount": 2,
+      "docCount": 22,
+      "ci": 8.8,
+      "bySubtask": {
+        "normalisation": 65.8,
+        "conditions": 72.5,
+        "delais": 78.9,
+        "recommandation": 71.2
+      }
+    },
+    {
+      "model": "alibaba/qwen3.5-plus",
+      "modelVersion": "qwen3.5-plus@demo",
+      "sansRelecture": 49.7,
+      "exactitude": 73.6,
+      "hallucinations": 0.5,
+      "costPerDoc": 0.025672,
+      "latencyP50": 6241,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 8.8,
+      "bySubtask": {
+        "normalisation": 64.4,
+        "conditions": 70.4,
+        "delais": 78.9,
+        "recommandation": 69.3
+      }
+    },
+    {
+      "model": "google/gemini-3-flash",
+      "modelVersion": "gemini-3-flash@demo",
+      "sansRelecture": 45.3,
+      "exactitude": 71.9,
+      "hallucinations": 6.4,
+      "costPerDoc": 0.015689,
+      "latencyP50": 12142,
+      "errorCount": 1,
+      "docCount": 23,
+      "ci": 9,
+      "bySubtask": {
+        "normalisation": 62.8,
+        "conditions": 70.2,
+        "delais": 76.1,
+        "recommandation": 70.3
+      }
+    },
+    {
+      "model": "amazon/nova-2-lite",
+      "modelVersion": "nova-2-lite@demo",
+      "sansRelecture": 41.8,
+      "exactitude": 71.2,
+      "hallucinations": 6,
+      "costPerDoc": 0.016918,
+      "latencyP50": 4308,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 9.1,
+      "bySubtask": {
+        "normalisation": 62.5,
+        "conditions": 69.1,
+        "delais": 75.8,
+        "recommandation": 70.2
+      }
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "modelVersion": "gemma-4-31b-it@demo",
+      "sansRelecture": 40.1,
+      "exactitude": 71.1,
+      "hallucinations": 5.8,
+      "costPerDoc": 0.004555,
+      "latencyP50": 4268,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 9.1,
+      "bySubtask": {
+        "normalisation": 61,
+        "conditions": 70.3,
+        "delais": 74.9,
+        "recommandation": 70.7
+      }
+    },
+    {
+      "model": "mistral/mistral-large-3",
+      "modelVersion": "mistral-large-3@demo",
+      "sansRelecture": 43.1,
+      "exactitude": 69.4,
+      "hallucinations": 0.5,
+      "costPerDoc": 0.005328,
+      "latencyP50": 3429,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 9.2,
+      "bySubtask": {
+        "normalisation": 60.1,
+        "conditions": 69.7,
+        "delais": 71.4,
+        "recommandation": 67.6
+      }
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "modelVersion": "claude-haiku-4.5@demo",
+      "sansRelecture": 35.9,
+      "exactitude": 68.1,
+      "hallucinations": 6.2,
+      "costPerDoc": 0.026313,
+      "latencyP50": 10367,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 9.3,
+      "bySubtask": {
+        "normalisation": 57.4,
+        "conditions": 68.6,
+        "delais": 71.8,
+        "recommandation": 64.8
+      }
+    },
+    {
+      "model": "mistral/ministral-14b",
+      "modelVersion": "ministral-14b@demo",
+      "sansRelecture": 22.1,
+      "exactitude": 62.2,
+      "hallucinations": 9,
+      "costPerDoc": 0.001502,
+      "latencyP50": 2945,
+      "errorCount": 0,
+      "docCount": 24,
+      "ci": 9.7,
+      "bySubtask": {
+        "normalisation": 53.2,
+        "conditions": 62.8,
+        "delais": 65.6,
+        "recommandation": 61.1
+      }
+    },
+    {
+      "model": "meta/llama-4-maverick",
+      "modelVersion": "llama-4-maverick@demo",
+      "sansRelecture": 21,
+      "exactitude": 60.2,
+      "hallucinations": 9.8,
+      "costPerDoc": 0.003422,
+      "latencyP50": 3241,
+      "errorCount": 2,
+      "docCount": 22,
+      "ci": 9.8,
+      "bySubtask": {
+        "normalisation": 49.8,
+        "conditions": 60.9,
+        "delais": 64.6,
+        "recommandation": 58.6
+      }
+    }
+  ]
+}

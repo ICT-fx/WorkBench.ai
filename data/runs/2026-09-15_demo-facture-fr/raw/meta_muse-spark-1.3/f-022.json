@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "muse-spark-1.3@demo",
+  "docId": "f-022",
+  "raw": {
+    "numero_facture": "FA-2026-9755",
+    "date_emission": "2026-05-10",
+    "siret_emetteur": "19587104560540",
+    "tva_intracom": "FR48195871045",
+    "total_ht": 1830,
+    "total_tva": 366,
+    "total_ttc": 2354.79,
+    "echeance": "2026-09-06",
+    "lignes": [
+      {
+        "designation": "Contrôle réglementaire annuel",
+        "quantite": 1,
+        "prix_unitaire_ht": 590,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Mise en conformité",
+        "quantite": 1,
+        "prix_unitaire_ht": 1240,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 2925,
+  "costUsd": 0.031215,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

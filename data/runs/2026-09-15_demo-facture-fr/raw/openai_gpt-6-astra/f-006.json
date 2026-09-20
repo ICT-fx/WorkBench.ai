@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "gpt-6-astra@demo",
+  "docId": "f-006",
+  "raw": {
+    "numero_facture": "FA-2026-3793",
+    "date_emission": "2026-08-01",
+    "siret_emetteur": "37002969319071",
+    "tva_intracom": "FR42370029693",
+    "total_ht": 780,
+    "total_tva": 156,
+    "total_ttc": 936,
+    "echeance": null,
+    "lignes": [
+      {
+        "designation": "Nettoyage de fin de chantier",
+        "quantite": 1,
+        "prix_unitaire_ht": 780,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 9124,
+  "costUsd": 0.27588,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

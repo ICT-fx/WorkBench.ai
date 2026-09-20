@@ -1,0 +1,41 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "spacexai/grok-4.6",
+  "modelVersion": "grok-4.6@demo",
+  "docId": "f-023",
+  "raw": {
+    "numero_facture": "FA-2026-7958",
+    "date_emission": "2026-08-01",
+    "siret_emetteur": "78656783509850",
+    "tva_intracom": "FR37786567836",
+    "total_ht": 1799.62,
+    "total_tva": 259.51,
+    "total_ttc": 2016,
+    "echeance": "2026-31-08",
+    "lignes": [
+      {
+        "designation": "Menu traiteur",
+        "quantite": 45,
+        "prix_unitaire_ht": 22,
+        "taux_tva": 10
+      },
+      {
+        "designation": "Boissons",
+        "quantite": 45,
+        "prix_unitaire_ht": 6.5,
+        "taux_tva": 20
+      },
+      {
+        "designation": "Service",
+        "quantite": 1,
+        "prix_unitaire_ht": 480,
+        "taux_tva": 20
+      }
+    ],
+    "mentions_speciales": null
+  },
+  "latencyMs": 7569,
+  "costUsd": 0.039261,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

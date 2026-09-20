@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "google/gemini-3.8-flash",
+  "modelVersion": "gemini-3.8-flash@demo",
+  "docId": "f-021",
+  "raw": {
+    "numero_facture": "FA-2026-2097",
+    "date_emission": "2026-11-02",
+    "siret_emetteur": "49189425348087",
+    "tva_intracom": "FR43491894254",
+    "total_ht": 16700,
+    "total_tva": null,
+    "total_ttc": 16700,
+    "echeance": "2026-03-13",
+    "lignes": [
+      {
+        "designation": "Sous-traitance gros œuvre",
+        "quantite": 1,
+        "prix_unitaire_ht": 14500,
+        "taux_tva": null
+      },
+      {
+        "designation": "Location échafaudage",
+        "quantite": 1,
+        "prix_unitaire_ht": 2200,
+        "taux_tva": null
+      }
+    ],
+    "mentions_speciales": "Autoliquidation — article 283-2 nonies du CGNaN"
+  },
+  "latencyMs": 3901,
+  "costUsd": 0.0152,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

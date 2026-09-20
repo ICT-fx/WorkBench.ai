@@ -1,0 +1,285 @@
+[
+  {
+    "slug": "le-hub-s-ouvre-a-dix-metiers",
+    "date": "2026-09-18",
+    "kind": "annonce",
+    "featured": true,
+    "title": {
+      "fr": "Le hub s'ouvre à dix métiers de l'entreprise",
+      "en": "The hub opens up to ten business functions"
+    },
+    "summary": {
+      "fr": "De la seule lecture de factures à 21 benchmarks, de la finance à la direction. Un seul est exécutable de bout en bout aujourd'hui ; les vingt autres ont un protocole rédigé et un jeu de test à construire.",
+      "en": "From invoice reading alone to 21 benchmarks, from finance to management. One of them can be run end to end today; the other twenty have a written protocol and a test set still to be built."
+    },
+    "body": {
+      "fr": [
+        "Le hub a commencé par une seule question : combien de factures françaises un modèle lit-il sans qu'un humain ait à corriger ? C'était le bon point de départ, parce qu'une facture se note sans débat : le montant est juste ou il ne l'est pas. Mais une entreprise ne se résume pas à sa comptabilité fournisseurs.",
+        "Le hub couvre désormais dix métiers : finance, comptabilité, ressources humaines, juridique, commercial, marketing, service client, achats et logistique, informatique, direction. Vingt et un benchmarks en tout, deux ou trois par métier.",
+        "Chacun part d'une question qu'un dirigeant se pose vraiment, pas d'une capacité abstraite du modèle :",
+        "- Le modèle voit-il la reconduction tacite cachée en page douze ?",
+        "- Le modèle promet-il un remboursement que vos conditions ne prévoient pas ?",
+        "- Le moins cher sur le papier l'est-il encore, frais de port et pénalités compris ?",
+        "Ce qui est exécutable aujourd'hui : la lecture de factures françaises. Le prompt, les vingt-cinq documents, les vérités terrain, le barème et le code de notation sont dans le dépôt, et le pipeline joue la tâche de bout en bout. Sa fiche porte la mention « Protocole exécutable ».",
+        "Ce qui ne l'est pas encore : les vingt autres benchmarks. Leur protocole est rédigé — la question, ce que reçoit le modèle, les sous-tâches, la taille de l'échantillon — mais leur jeu de test reste à construire. Leur fiche porte la mention « Protocole en préparation ».",
+        "Pourquoi les afficher quand même ? Parce qu'un protocole publié avant les résultats ne peut pas être retouché après coup pour arranger un classement. Et parce qu'il se discute mieux avant qu'après : si la question posée à un métier n'est pas la bonne, autant l'apprendre maintenant.",
+        "Tous les scores affichés aujourd'hui sont des scores de démonstration, sur les vingt et un benchmarks, factures comprises : aucun modèle n'a encore été interrogé. La marque « Démo » tombera benchmark par benchmark, à mesure que le vrai pipeline publiera ses mesures.",
+        "Pour lire l'ensemble, il y a l'indice métier : la moyenne des scores par métier, chaque métier pesant autant que les autres. Il ne remplace aucun classement. Le meilleur modèle en finance n'est pas forcément le bon pour votre service client, et c'est précisément ce que le hub cherche à montrer."
+      ],
+      "en": [
+        "The hub began with a single question: how many French invoices can a model read without a human having to fix anything? It was the right place to start, because an invoice can be graded without argument: the amount is right or it is not. But a company is more than its accounts payable.",
+        "The hub now covers ten business functions: finance, accounting, human resources, legal, sales, marketing, customer service, procurement and logistics, IT, and management. Twenty-one benchmarks in all, two or three per function.",
+        "Each one starts from a question an executive actually asks, not from some abstract capability of the model:",
+        "- Does the model see the auto-renewal buried on page twelve?",
+        "- Does the model promise a refund your terms do not allow?",
+        "- Is the cheapest on paper still cheapest once shipping and penalties are in?",
+        "What can be run today: French invoice reading. The prompt, the twenty-five documents, the ground truths, the scoring grid and the scoring code are in the repository, and the pipeline runs the task end to end. Its page carries the label “Runnable protocol”.",
+        "What cannot, yet: the other twenty benchmarks. Their protocol is written — the question, what the model receives, the subtasks, the sample size — but their test set has still to be built. Their pages carry the label “Protocol in preparation”.",
+        "Why show them anyway? Because a protocol published before the results cannot be quietly adjusted afterwards to suit a ranking. And because it is easier to challenge before than after: if we are asking a business function the wrong question, we would rather hear it now.",
+        "Every score on display today is a demonstration score, across all twenty-one benchmarks, invoices included: no model has been queried yet. The “Demo” mark will come off benchmark by benchmark, as the real pipeline publishes its measurements.",
+        "To read the whole, there is the Business Index: the mean of the per-function scores, every function weighing the same. It replaces no leaderboard. The best model for finance is not necessarily the right one for your customer service, and that is exactly what the hub sets out to show."
+      ]
+    }
+  },
+  {
+    "slug": "scores-de-demonstration-ce-qui-est-reel",
+    "date": "2026-09-16",
+    "kind": "annonce",
+    "featured": true,
+    "title": {
+      "fr": "Scores de démonstration : ce qui est réel sur ce site, et ce qui ne l'est pas",
+      "en": "Demonstration scores: what is real on this site, and what is not"
+    },
+    "summary": {
+      "fr": "Les modèles, leurs prix et leurs dates de sortie sont réels. Les scores ne le sont pas : ils sont fabriqués pour construire le site, et marqués « Démo » partout où ils apparaissent.",
+      "en": "The models, their prices and their release dates are real. The scores are not: they are fabricated to build the site, and marked “Demo” wherever they appear."
+    },
+    "body": {
+      "fr": [
+        "Autant le dire d'emblée : aucun des scores affichés aujourd'hui sur ce site n'est une mesure. Aucun modèle n'a encore été interrogé. Les classements que vous voyez servent à construire le site — ses tableaux, ses graphiques, ses pages de comparaison — avant d'y verser de vrais résultats.",
+        "Ce qui est réel :",
+        "- Les modèles, et les labos qui les publient.",
+        "- Leurs tarifs, en dollars par million de tokens, leurs fenêtres de contexte et ce qu'ils savent lire — texte, image, PDF —, synchronisés depuis le catalogue public de l'AI Gateway.",
+        "- Leurs dates de sortie et le statut de leurs poids, saisis à la main.",
+        "- Les protocoles : les questions posées, les sous-tâches, la taille des échantillons — et, pour la lecture de factures, les documents, le barème et le prompt.",
+        "Ce qui ne l'est pas : les scores. Ils sont fabriqués par un petit modèle statistique, publié dans le dépôt. Le niveau d'un modèle d'IA y est déduit de deux faits publics, son prix et sa date de sortie — plus cher et plus récent, donc meilleur, en moyenne — puis brouillé par un aléa. L'aléa est déterministe : relancé, le générateur produit les mêmes chiffres.",
+        "Ce choix est délibéré. Des scores tirés au hasard n'auraient ressemblé à rien, et le site se serait construit sur des tableaux absurdes. Des scores fixés « à dire d'expert » auraient glissé une opinion sur tel ou tel labo dans des données factices. Le prix et la date de sortie ont le mérite d'être des faits, et de ne rien prétendre.",
+        "Il en sort un classement qui ressemble à un vrai classement, ce qui suffit pour régler une mise en page. Il ne dit rien des modèles. Si l'un d'eux est premier ici, c'est qu'il est cher et récent, pas qu'il lit bien vos factures.",
+        "Pour qu'aucun de ces chiffres ne puisse passer pour une mesure, la marque « Démo » ne figure pas seulement en haut de la page. Elle accompagne chaque tableau et chaque graphique : une capture d'écran sortie de son contexte la porte encore. Dans les données, le statut de démonstration est un champ obligatoire, sans valeur par défaut : personne ne peut publier un classement en oubliant de dire ce qu'il est.",
+        "La marque tombera benchmark par benchmark. Quand le vrai pipeline publie un benchmark — modèles interrogés, réponses notées, cas douteux arbitrés par un humain —, son classement remplace celui de démonstration, et la marque disparaît pour ce benchmark-là. Le bandeau du site restera tant qu'il subsistera un seul classement de démonstration."
+      ],
+      "en": [
+        "Better to say it straight away: none of the scores on this site today is a measurement. No model has been queried yet. The rankings you see exist to build the site — its tables, its charts, its comparison pages — before real results are poured in.",
+        "What is real:",
+        "- The models, and the labs that release them.",
+        "- Their prices, in dollars per million tokens, their context windows and what they can read — text, image, PDF — all synced from the AI Gateway's public catalogue.",
+        "- Their release dates and the status of their weights, entered by hand.",
+        "- The protocols: the questions asked, the subtasks, the sample sizes — and, for invoice reading, the documents, the scoring grid and the prompt.",
+        "What is not: the scores. They are fabricated by a small statistical model, published in the repository. An AI model's level is derived from two public facts, its price and its release date — pricier and more recent, hence better, on average — then blurred with noise. The noise is deterministic: run the generator again and it produces the same figures.",
+        "The choice is deliberate. Purely random scores would have looked like nothing at all, and the site would have been built on absurd tables. Scores set by “expert judgement” would have slipped an opinion about this or that lab into fake data. Price and release date have the merit of being facts, and of claiming nothing.",
+        "What comes out looks like a real ranking, which is all it takes to get a layout right. It says nothing about the models. If one of them comes first here, it is because it is expensive and recent, not because it reads your invoices well.",
+        "So that none of these figures can pass for a measurement, the “Demo” mark does not sit only at the top of the page. It travels with every table and every chart: a screenshot taken out of context still carries it. In the data, demonstration status is a mandatory field with no default value: nobody can publish a ranking and forget to say what it is.",
+        "The mark will come off benchmark by benchmark. When the real pipeline publishes a benchmark — models queried, answers scored, doubtful cases settled by a human — its ranking replaces the demonstration one, and the mark drops for that benchmark. The site-wide banner will stay for as long as a single demonstration ranking remains."
+      ]
+    }
+  },
+  {
+    "slug": "quatre-mesures-jamais-une-seule-note",
+    "date": "2026-09-11",
+    "kind": "analyse",
+    "featured": true,
+    "title": {
+      "fr": "Quatre mesures, jamais une seule note",
+      "en": "Four measures, never a single score"
+    },
+    "summary": {
+      "fr": "Exactitude, coût, temps, hallucinations : le hub ne les fond jamais en un score unique. Un modèle peut être premier en exactitude et inutilisable parce qu'il invente.",
+      "en": "Accuracy, cost, time, hallucinations: the hub never melts them into one number. A model can top the accuracy table and still be unusable because it makes things up."
+    },
+    "body": {
+      "fr": [
+        "Une note sur cent est commode. Elle tient dans un titre, elle désigne un vainqueur. Elle cache aussi ce qui compte au moment de choisir.",
+        "Prenez deux modèles. Le premier lit une facture un peu mieux que le second, mais quand une case est vide, il lui arrive de la remplir. Le second fait quelques erreurs de plus et laisse vide ce qui est vide. Une moyenne pondérée placerait le premier devant. Votre comptable choisirait le second : une case vide se voit, alors qu'un montant de TVA inventé passe la relecture et part dans les écritures.",
+        "C'est pourquoi le hub publie quatre mesures, côte à côte :",
+        "- Sans relecture : la part des cas traités sans qu'un humain ait rien à corriger.",
+        "- Exactitude : les points obtenus sur l'ensemble des éléments notés, pondérés par ce que coûte une erreur.",
+        "- Hallucinations : les éléments inventés là où la source ne contient rien.",
+        "- Coût et temps : par cas de test, aux tarifs publics du jour du test ; le temps est une médiane, pour qu'un seul appel lent ne fausse pas tout.",
+        "Elles ne répondent pas à la même question. L'exactitude dit si le modèle sait faire. Le taux sans relecture dit combien de travail il vous reste. Les hallucinations disent si vous pouvez lui faire confiance quand personne ne regarde. Le coût et le temps disent si l'ensemble tient encore à dix mille documents par mois.",
+        "Aucune formule ne pèse ces quatre réponses à votre place. Un cabinet qui traite trois cents factures par mois n'a pas les contraintes d'une plateforme qui en reçoit cent mille : pour l'un le prix est un détail, pour l'autre il décide de tout. Le poids de chaque mesure dépend de votre cas, et c'est à vous de le fixer.",
+        "Il existe pourtant un chiffre d'ensemble sur le site : l'indice métier. Il n'agrège qu'une seule des quatre mesures, l'exactitude. Pour chaque métier, on fait la moyenne de l'exactitude du modèle sur les benchmarks de ce métier ; l'indice est la moyenne de ces scores, chaque métier pesant autant que les autres, qu'il compte deux benchmarks ou trois.",
+        "L'indice ne dit donc rien du coût, du temps ni des hallucinations, qui restent dans leurs colonnes. Il sert à repérer les modèles qui tiennent tous les postes. Pour choisir, ouvrez le classement du métier qui vous concerne, et lisez les quatre colonnes."
+      ],
+      "en": [
+        "A mark out of a hundred is convenient. It fits in a headline and it names a winner. It also hides what matters when the time comes to choose.",
+        "Take two models. The first reads an invoice slightly better than the second, but when a box is empty it sometimes fills it in. The second makes a few more mistakes and leaves empty what is empty. A weighted average would put the first one ahead. Your accountant would pick the second: an empty box gets noticed, whereas an invented VAT amount sails through review and into the books.",
+        "That is why the hub publishes four measures, side by side:",
+        "- No review needed: the share of cases handled with nothing for a human to fix.",
+        "- Accuracy: the points earned across all graded items, weighted by what a mistake costs.",
+        "- Hallucinations: items invented where the source contains nothing.",
+        "- Cost and time: per test case, at public prices on the day of the test; time is a median, so that one slow call does not skew everything.",
+        "They do not answer the same question. Accuracy tells you whether the model can do the job. The no-review rate tells you how much work is left for you. Hallucinations tell you whether you can trust it when nobody is looking. Cost and time tell you whether the whole thing still holds at ten thousand documents a month.",
+        "No formula can weigh those four answers for you. A practice handling three hundred invoices a month does not have the constraints of a platform receiving a hundred thousand: for one, price is a detail; for the other, it decides everything. How much each measure weighs depends on your case, and it is yours to set.",
+        "There is, all the same, one overall figure on the site: the Business Index. It aggregates only one of the four measures — accuracy. For each business function, we take the mean of the model's accuracy on that function's benchmarks; the index is the mean of those scores, every function weighing the same, whether it has two benchmarks or three.",
+        "So the index says nothing about cost, time or hallucinations, which stay in their own columns. Its job is to spot the models that can hold every post. To choose, open the leaderboard for the function that concerns you, and read all four columns."
+      ]
+    }
+  },
+  {
+    "slug": "lecture-de-factures-neuf-pieges",
+    "date": "2026-09-08",
+    "kind": "benchmark",
+    "benchmark": "facture-fr",
+    "title": {
+      "fr": "Lecture de factures : neuf pièges placés à dessein",
+      "en": "Invoice reading: nine traps, planted on purpose"
+    },
+    "summary": {
+      "fr": "Sans cas pièges, tous les modèles finiraient au-dessus de 95 % et le classement ne dirait rien. Voici les neuf que contient le jeu de test, et pourquoi ses vingt-cinq factures sont fabriquées.",
+      "en": "Without trap cases, every model would finish above 95% and the ranking would say nothing. Here are the nine in the test set, and why its twenty-five invoices are fabricated."
+    },
+    "body": {
+      "fr": [
+        "Lire une facture propre, bien cadrée, avec un seul taux de TVA, n'a plus rien de difficile. Si le jeu de test ne contenait que cela, tous les modèles finiraient au-dessus de 95 % et le classement ne dirait rien. Ce qui sépare les modèles, ce sont les factures qui sortent de l'ordinaire — celles qui, dans un service comptable, font perdre du temps.",
+        "Sur les vingt-cinq factures du jeu, seize portent donc au moins un piège. Il y en a neuf :",
+        "- Plusieurs taux de TVA sur la même facture : des repas de séminaire à 10 % et une location de salle à 20 %. Le total de TVA ne se déduit plus d'un seul taux.",
+        "- L'avoir : tous les montants sont négatifs, et le modèle doit les rendre tels quels.",
+        "- La remise en pied de facture, appliquée avant la TVA : le total hors taxes n'est plus la somme des lignes.",
+        "- L'acompte déjà versé : le net à payer n'est pas le total TTC, et c'est le total qui est demandé.",
+        "- La franchise en base (article 293 B du CGI) : il n'y a pas de TVA à trouver. La bonne réponse est « rien ».",
+        "- L'autoliquidation : la TVA n'est pas due par l'émetteur, la facture n'en porte donc pas.",
+        "- Le scan de travers, au contraste faible : ce que reçoit vraiment une PME, qui ne travaille pas sur des PDF propres.",
+        "- La devise étrangère : une mission facturée en francs suisses.",
+        "- La facture sur deux pages : dix lignes, et des totaux qui ne figurent que sur la seconde.",
+        "Plusieurs de ces pièges ont un point commun : l'information demandée n'existe pas. Une facture en franchise en base n'a ni taux ni montant de TVA. Le prompt le dit sans détour : si une information ne figure pas sur le document, la réponse attendue est « null », c'est-à-dire rien. Un modèle qui produit quand même une valeur est compté en hallucination, à part du reste.",
+        "Pourquoi des factures fabriquées, et pas de vraies factures anonymisées ? Parce que le dépôt est public, et que maquiller de vrais documents laisse des traces : il suffit d'un SIRET oublié dans un pied de page. Les entreprises du jeu de test sont entièrement fictives.",
+        "Il y a un second avantage, moins visible : la vérité terrain est exacte par construction. Les montants sont calculés avant d'être imprimés sur la facture ; personne n'a eu à les ressaisir, donc personne n'a pu se tromper en le faisant. Le générateur est déterministe : relancé, il produit le même jeu, à l'identique.",
+        "Les limites sont connues. Vingt-cinq documents suffisent à classer, pas à mesurer un écart de deux points. Les factures sont soumises en image, pas en PDF avec couche texte, qui serait plus facile à lire. Un seul prompt, le même pour tous les modèles, sans réglage ni OCR en amont. Les scores publiés sont un plancher, pas un plafond.",
+        "Les documents, leurs vérités terrain et le prompt sont dans le dépôt. La page du benchmark montre, piège par piège, ce qu'un panel de modèles a répondu — des réponses de démonstration, tant que le vrai pipeline n'a pas publié."
+      ],
+      "en": [
+        "Reading a clean, well-framed invoice with a single VAT rate is no longer hard. If the test set held nothing else, every model would finish above 95% and the ranking would say nothing. What separates models is the invoices that stray from the ordinary — the ones that cost an accounts team its time.",
+        "So sixteen of the set's twenty-five invoices carry at least one trap. There are nine of them:",
+        "- Several VAT rates on one invoice: seminar meals at 10% and room hire at 20%. The VAT total can no longer be derived from a single rate.",
+        "- The credit note: every amount is negative, and the model must return them as such.",
+        "- A discount at the foot of the invoice, applied before VAT: the net total is no longer the sum of the lines.",
+        "- A deposit already paid: the amount due is not the gross total, and the total is what we ask for.",
+        "- The small-business VAT exemption (article 293 B of the French tax code): there is no VAT to find. The right answer is “nothing”.",
+        "- Reverse charge: the issuer does not owe the VAT, so the invoice shows none.",
+        "- The skewed, low-contrast scan: what an SME actually receives, rather than clean PDFs.",
+        "- A foreign currency: an assignment billed in Swiss francs.",
+        "- The two-page invoice: ten lines, and totals that appear only on the second page.",
+        "Several of these traps have one thing in common: the information requested does not exist. An invoice under the VAT exemption has neither a VAT rate nor a VAT amount. The prompt says so plainly: if a piece of information is not on the document, the expected answer is “null” — nothing. A model that produces a value anyway is scored as hallucinating, and counted separately from everything else.",
+        "Why fabricated invoices rather than real ones, anonymised? Because the repository is public, and disguising real documents leaves traces: a company number forgotten in a footer is all it takes. The companies in the test set are entirely fictitious.",
+        "There is a second, less visible benefit: the ground truth is exact by construction. Amounts are computed before they are printed on the invoice; nobody had to key them in again, so nobody could get them wrong doing so. The generator is deterministic: run it again and it produces exactly the same set.",
+        "The limits are known. Twenty-five documents are enough to rank, not to measure a two-point gap. Invoices are submitted as images, not as PDFs with a text layer, which would be easier to read. One prompt, the same for every model, with no tuning and no OCR upstream. Published scores are a floor, not a ceiling.",
+        "The documents, their ground truths and the prompt are in the repository. The benchmark page shows, trap by trap, what a panel of models answered — demonstration answers, until the real pipeline has published."
+      ]
+    }
+  },
+  {
+    "slug": "un-chiffre-invente-coute-plus-cher",
+    "date": "2026-09-01",
+    "kind": "analyse",
+    "title": {
+      "fr": "Un chiffre inventé coûte plus cher qu'un chiffre manquant",
+      "en": "An invented figure costs more than a missing one"
+    },
+    "summary": {
+      "fr": "Une case vide se voit et se complète. Un montant plausible mais faux passe la relecture. C'est pourquoi, pour le hub, répondre « rien » quand il n'y a rien est une bonne réponse.",
+      "en": "An empty box gets noticed and filled in. A plausible but wrong amount gets through review. That is why, for the hub, answering “nothing” when there is nothing is a right answer."
+    },
+    "body": {
+      "fr": [
+        "La facture d'un graphiste en franchise en base de TVA ne porte pas de TVA. Pas de taux, pas de montant : la mention « TVA non applicable, article 293 B du CGI » en tient lieu. Demandez à un modèle le montant de TVA de cette facture. Il y a deux façons de se tromper, et elles ne se valent pas.",
+        "La première : ne rien rendre alors qu'il y avait quelque chose à lire. La case reste vide dans votre logiciel, quelqu'un la voit, ouvre la facture et la complète. Une minute de perdue.",
+        "La seconde : rendre un chiffre alors qu'il n'y avait rien. Le modèle applique 20 % au hors taxes, parce que c'est ce qu'on voit d'habitude, et l'écrit. Le montant est plausible, bien formaté, cohérent avec le reste. Personne ne le remarque. Il part en comptabilité, puis dans une déclaration de TVA.",
+        "C'est la raison pour laquelle le hub distingue trois verdicts et non deux. Un champ est juste. Ou il est faux ou manquant. Ou il est halluciné : le modèle a produit une valeur là où le document n'en contient aucune. Les hallucinations sont comptées à part — la part des champs réellement absents que le modèle a quand même remplis — et ne sont jamais fondues dans une note globale.",
+        "La conséquence est inscrite dans le jeu de test : un champ absent du document fait partie de l'épreuve. Une facture peut légitimement ne porter ni TVA, ni échéance, ni numéro de TVA intracommunautaire. Dans ces cas-là, répondre « rien » n'est pas un aveu d'échec : c'est la bonne réponse, et elle rapporte les mêmes points qu'un montant bien lu.",
+        "Le prompt envoyé aux modèles le dit en toutes lettres, avant toute autre consigne : si une information ne figure pas sur le document, ne devine pas, ne déduis pas, ne complète pas à partir de ce qui te semble habituel. Un modèle qui invente malgré cela n'a pas été piégé par une consigne ambiguë.",
+        "Le code de notation prend la même précaution dans l'autre sens. Un modèle qui écrit « non trouvé », « aucun » ou « n/a » s'abstient correctement : sa réponse est ramenée à « rien » avant d'être notée, au lieu d'être comptée comme une chaîne inventée.",
+        "Pour une entreprise, la leçon dépasse la facture. Avant de confier un document à un modèle, la question utile n'est pas seulement « lit-il bien ? », mais « que fait-il quand il n'y a rien à lire ? »."
+      ],
+      "en": [
+        "An invoice from a freelance designer under the small-business VAT exemption carries no VAT. No rate, no amount: the line “TVA non applicable, article 293 B du CGI” stands in for both. Ask a model for the VAT amount on that invoice. There are two ways to get it wrong, and they are not equal.",
+        "The first: returning nothing when there was something to read. The box stays empty in your software, someone notices, opens the invoice and fills it in. A minute lost.",
+        "The second: returning a figure when there was nothing. The model applies 20% to the net amount, because that is what one usually sees, and writes it down. The amount is plausible, neatly formatted, consistent with the rest. Nobody notices. It goes into the books, then into a VAT return.",
+        "That is why the hub uses three verdicts rather than two. A field is correct. Or it is wrong or missing. Or it is hallucinated: the model produced a value where the document contains none. Hallucinations are counted separately — the share of genuinely absent fields that the model filled in anyway — and are never melted into an overall score.",
+        "The consequence is built into the test set: a field absent from the document is part of the test. An invoice may quite legitimately carry no VAT, no due date, or no intra-EU VAT number. In those cases, answering “nothing” is not an admission of failure: it is the right answer, and it earns the same points as an amount read correctly.",
+        "The prompt sent to the models spells it out, ahead of any other instruction: if a piece of information is not on the document, do not guess, do not infer, do not fill in from what seems usual. A model that invents despite that has not been caught out by an ambiguous instruction.",
+        "The scoring code takes the same care in the other direction. A model that writes “non trouvé”, “aucun” or “n/a” is abstaining correctly: its answer is reduced to “nothing” before it is scored, rather than counted as an invented string.",
+        "For a business, the lesson goes beyond invoices. Before handing a document to a model, the useful question is not only “does it read well?” but “what does it do when there is nothing to read?”"
+      ]
+    }
+  },
+  {
+    "slug": "un-point-d-ecart-c-est-un-ex-aequo",
+    "date": "2026-08-28",
+    "kind": "analyse",
+    "title": {
+      "fr": "Un point d'écart, c'est un ex æquo",
+      "en": "A one-point gap is a tie"
+    },
+    "summary": {
+      "fr": "Vingt-cinq factures ne départagent pas deux modèles séparés d'un point. Le hub publie la marge d'erreur de ses scores, et le dit quand un classement ne tranche pas.",
+      "en": "Twenty-five invoices cannot separate two models one point apart. The hub publishes the margin of error of its scores, and says so when a ranking does not settle the matter."
+    },
+    "body": {
+      "fr": [
+        "Un classement donne envie de lire les rangs comme une vérité : le premier est meilleur que le deuxième, qui est meilleur que le troisième. Sur un jeu de vingt-cinq factures, c'est souvent faux.",
+        "Faites le calcul à l'échelle d'un document. Avec vingt-cinq factures, une seule facture ratée déplace de quatre points la part des factures traitées sans relecture. Deux modèles séparés par un écart de cet ordre se distinguent par un seul document — peut-être un scan un peu plus penché que les autres. Rejouez le test avec vingt-cinq autres factures, et l'ordre peut s'inverser.",
+        "C'est ce que mesure la marge d'erreur : la demi-largeur de l'intervalle de confiance à 95 % autour de l'exactitude, en points. Un score de 90 % avec une marge de ± 3 points signifie que la valeur qu'on obtiendrait sur un jeu beaucoup plus grand se situe vraisemblablement entre 87 et 93.",
+        "La règle du hub est simple : deux modèles séparés par moins que la plus grande de leurs deux marges ne sont pas départagés. Le rang les range, parce qu'il faut bien un ordre pour afficher un tableau ; il ne les distingue pas.",
+        "Le site le signale de deux façons. Dans les tableaux, la marge accompagne le score chaque fois qu'elle est publiée : « ± 2,1 ». Et dans les points à retenir d'un benchmark, quand l'écart entre les deux premiers est inférieur à la marge, c'est écrit : ce test ne les départage pas.",
+        "L'indice métier a lui aussi sa marge, combinée à partir de celles des benchmarks qui le composent. Elle est plus étroite que celle d'un benchmark seul : vingt et un tests en disent plus long qu'un seul.",
+        "La marge ne corrige pas tout. Elle décrit le hasard du tirage des documents, pas les limites du protocole : un seul prompt, des images plutôt que des PDF, aucun réglage par modèle. Elle dit seulement jusqu'où un écart mérite confiance.",
+        "Conséquence pratique : ne choisissez pas un modèle pour un point d'écart. Quand deux modèles sont ex æquo en exactitude, ce sont les autres colonnes qui décident — le coût, le temps et, surtout, les hallucinations."
+      ],
+      "en": [
+        "A leaderboard tempts you to read ranks as truth: first beats second, second beats third. On a set of twenty-five invoices, that is often false.",
+        "Do the sums at the scale of one document. With twenty-five invoices, a single failed invoice moves the share of invoices handled without review by four points. Two models separated by a gap of that size differ by one document — perhaps a scan a little more skewed than the rest. Run the test again with twenty-five other invoices, and the order may flip.",
+        "That is what the margin of error measures: the half-width of the 95% confidence interval around accuracy, in points. A score of 90% with a margin of ± 3 points means that the value you would get on a much larger set probably lies between 87 and 93.",
+        "The hub's rule is simple: two models separated by less than the larger of their two margins are not told apart. The rank puts them in order, because a table has to be displayed in some order; it does not distinguish them.",
+        "The site flags this in two ways. In tables, the margin sits next to the score whenever it is published: “± 2.1”. And in a benchmark's key takeaways, when the gap between the top two is smaller than the margin, it says so: this test does not separate them.",
+        "The Business Index has its own margin, combined from those of the benchmarks behind it. It is narrower than a single benchmark's: twenty-one tests tell you more than one.",
+        "The margin does not fix everything. It describes the luck of the draw in the documents, not the limits of the protocol: a single prompt, images rather than PDFs, no per-model tuning. It only tells you how far a gap can be trusted.",
+        "In practice: do not choose a model over a one-point gap. When two models tie on accuracy, the other columns decide — cost, time and, above all, hallucinations."
+      ]
+    }
+  },
+  {
+    "slug": "comment-se-construit-un-benchmark-metier",
+    "date": "2026-08-25",
+    "kind": "benchmark",
+    "title": {
+      "fr": "Comment se construit un benchmark métier",
+      "en": "How a business benchmark gets built"
+    },
+    "summary": {
+      "fr": "Une question de dirigeant, des documents fabriqués dont la vérité est exacte par construction, un barème pesé par ce que coûte une erreur, un arbitrage humain, une publication figée. Cinq étapes, dans cet ordre.",
+      "en": "An executive's question, fabricated documents whose truth is exact by construction, a scoring grid weighted by what a mistake costs, human review, a frozen publication. Five steps, in that order."
+    },
+    "body": {
+      "fr": [
+        "Un benchmark du hub ne commence pas par un modèle, ni par une technologie. Il commence par une question qu'un dirigeant poserait : combien de mes factures passeront sans qu'un humain ait à corriger ? Si la question ne tient pas en une phrase, dite à quelqu'un qui n'a jamais ouvert une documentation technique, le benchmark n'est pas prêt.",
+        "Viennent ensuite les documents. Ils sont fabriqués, jamais empruntés à un client : le dépôt est public. Ils sont produits par du code, qui calcule les montants avant de les imprimer : la vérité terrain est exacte par construction. Et ils contiennent des pièges placés à dessein, parce qu'un jeu de test facile met tous les modèles à égalité.",
+        "Troisième étape, le barème. Chaque élément noté reçoit un poids de 1 à 3, fixé par ce qu'une erreur coûte au métier, pas par sa difficulté technique. Sur une facture, le montant TTC pèse 3 et la date d'échéance 1. Certains champs sont dits critiques : un seul champ critique faux, et la facture entière bascule en « à relire ». Un champ vaut son poids ou zéro, sans demi-point : un montant est juste ou il est faux.",
+        "La notation est automatique, et elle est tatillonne là où le métier l'est. Les montants se comparent au centime. Une date écrite 03/04/2026 est lue comme le 3 avril, jamais comme le 4 mars : le jeu de test est français, et l'inversion du jour et du mois est précisément l'erreur qui coûte cher en comptabilité. Elle est indulgente là où le métier l'est aussi : un SIRET s'écrit avec ou sans espaces.",
+        "Quatrième étape, l'arbitrage humain. Le code de notation n'est pas une autorité, c'est un outil de tri. Trois sortes de cas passent sous les yeux d'un humain : toutes les hallucinations, parce qu'elles décident de la mesure la plus lourde ; les réponses jugées justes mais écrites autrement que la référence, parce que c'est là que le comparateur peut être trop indulgent ; et un échantillon de 10 % des réponses jugées justes, qui sert de contrôle. L'humain tranche, et son verdict prime.",
+        "Dernière étape, la publication. Un run est un dossier horodaté et immuable : les réponses brutes de chaque modèle y sont conservées telles qu'elles ont été produites, avec la version exacte du modèle qui a répondu, le coût et le temps de chaque appel. Rien n'est jamais réécrit. Changer le barème et relancer la notation ne coûte aucun appel, et c'est ce qui rend les comparaisons dans le temps honnêtes.",
+        "Deux garde-fous encadrent la publication. Un modèle qui échoue sur plus d'un dixième du jeu la bloque : mieux vaut pas de classement qu'un classement calculé sur les seuls documents qu'un modèle a bien voulu traiter. Et les appels en échec restent comptés : ils n'entrent dans aucune moyenne, mais ils figurent dans le classement.",
+        "Aujourd'hui, la lecture de factures françaises est le premier benchmark dont les premières pièces sont en place : la question, les documents, le barème, le code. Il lui manque un vrai run. Les vingt autres en sont à la première étape — la question est posée, le protocole est rédigé — et attendent leurs documents."
+      ],
+      "en": [
+        "A hub benchmark does not start with a model, or with a technology. It starts with a question an executive would ask: how many of my invoices will go through without a human fixing them? If the question cannot be put in one sentence, to someone who has never opened a technical manual, the benchmark is not ready.",
+        "Then come the documents. They are fabricated, never borrowed from a client: the repository is public. They are produced by code, which computes the amounts before printing them: the ground truth is exact by construction. And they contain traps planted on purpose, because an easy test set puts every model level.",
+        "Third step, the scoring grid. Every graded item gets a weight from 1 to 3, set by what a mistake costs the business, not by how technically hard it is. On an invoice, the gross total weighs 3 and the due date 1. Some fields are marked critical: one critical field wrong, and the whole invoice drops into “needs review”. A field is worth its weight or zero, with no half points: an amount is right or it is wrong.",
+        "Scoring is automatic, and it is fussy where the business is fussy. Amounts are compared to the cent. A date written 03/04/2026 is read as 3 April, never 4 March: the test set is French, and swapping day and month is precisely the mistake that costs money in accounting. It is lenient where the business is lenient too: a SIRET number may be written with or without spaces.",
+        "Fourth step, human review. The scoring code is not an authority; it is a sorting tool. Three kinds of case go in front of a human: every hallucination, because they decide the measure that weighs most; answers judged correct but written differently from the reference, because that is where the comparator may be too lenient; and a 10% sample of answers judged correct, which serves as a control. The human decides, and that verdict prevails.",
+        "Last step, publication. A run is a timestamped, immutable folder: each model's raw answers are kept exactly as produced, along with the exact version of the model that answered, and the cost and time of every call. Nothing is ever rewritten. Changing the grid and rescoring costs no API call at all, which is what keeps comparisons over time honest.",
+        "Two safeguards frame publication. A model that fails on more than a tenth of the set blocks it: better no ranking than one computed only on the documents a model was willing to process. And failed calls stay on the record: they enter no average, but they appear in the ranking.",
+        "Today, French invoice reading is the first benchmark with its first pieces in place: the question, the documents, the grid, the code. What it still lacks is a real run. The other twenty are at step one — the question is asked, the protocol is written — and are waiting for their documents."
+      ]
+    }
+  }
+]

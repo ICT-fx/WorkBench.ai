@@ -1,0 +1,29 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "claude-fable-5.1@demo",
+  "docId": "f-024",
+  "raw": {
+    "numero_facture": "FA-2026-8739",
+    "date_emission": "2026-03-17",
+    "siret_emetteur": "06143542834728",
+    "tva_intracom": null,
+    "total_ht": 6000,
+    "total_tva": null,
+    "total_ttc": 6287.69,
+    "echeance": "2026-16-04",
+    "lignes": [
+      {
+        "designation": "Consulting mission Genève",
+        "quantite": 5,
+        "prix_unitaire_ht": 1200,
+        "taux_tva": null
+      }
+    ],
+    "mentions_speciales": "Autoliquidation — article 283-2 nonies du CGI"
+  },
+  "latencyMs": 8993,
+  "costUsd": 0.213005,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}

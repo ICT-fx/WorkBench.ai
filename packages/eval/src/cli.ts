@@ -1,12 +1,15 @@
 import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { DocScoreSchema, ReviewItemSchema, type DocScore, type ReviewItem } from "@hub/schema";
+import {
+  BenchmarkHistorySchema, DocScoreSchema, ReviewItemSchema,
+  type BenchmarkHistory, type DocScore, type ReviewItem,
+} from "@hub/schema";
 import { z } from "zod";
 import { createInterface } from "node:readline/promises";
 import { runTask } from "./run";
 import { selectForReview, type ReviewCandidate } from "./review";
 import { scoreDocument } from "./score";
-import { applyReview, buildLeaderboard } from "./publish";
+import { appendHistory, applyReview, buildLeaderboard } from "./publish";
 import { fetchCatalogue, assertUsable, V1_MODELS } from "./models";
 import { createGatewayGenerate } from "./gateway";
 import { estimateRunCost } from "./estimate";
@@ -195,9 +198,19 @@ async function cmdPublish(taskId: string): Promise<void> {
     sampleSize: new Set(scores.map((s) => s.docId)).size,
   });
 
-  await mkdir(publishedDir(), { recursive: true });
+  await mkdir(join(publishedDir(), "history"), { recursive: true });
   const out = join(publishedDir(), `${taskId}.json`);
   await writeFile(out, `${JSON.stringify(leaderboard, null, 2)}\n`);
+
+  // Chaque publication s'ajoute à l'historique : c'est lui qui trace l'évolution dans le temps.
+  const historyFile = join(publishedDir(), "history", `${taskId}.json`);
+  let history: BenchmarkHistory | null = null;
+  try {
+    history = BenchmarkHistorySchema.parse(JSON.parse(await readFile(historyFile, "utf8")));
+  } catch {
+    // Première publication de ce benchmark : pas encore d'historique.
+  }
+  await writeFile(historyFile, `${JSON.stringify(appendHistory(history, leaderboard), null, 2)}\n`);
 
   console.log(`Classement publié (${review.length} arbitrage(s) humain(s) appliqué(s)) :`);
   for (const [i, row] of leaderboard.rows.entries()) {

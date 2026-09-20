@@ -1,0 +1,35 @@
+{
+  "runId": "2026-09-15_demo-facture-fr",
+  "model": "mistral/mistral-medium-3.5",
+  "modelVersion": "mistral-medium-3.5@demo",
+  "docId": "f-020",
+  "raw": {
+    "numero_facture": "FA-2026-6966",
+    "date_emission": "2026-08-08",
+    "siret_emetteur": "25678300260523",
+    "tva_intracom": null,
+    "total_ht": 1080,
+    "total_tva": null,
+    "total_ttc": 1080,
+    "echeance": null,
+    "lignes": [
+      {
+        "designation": "Rédaction web — forfait",
+        "quantite": 1,
+        "prix_unitaire_ht": 900,
+        "taux_tva": null
+      },
+      {
+        "designation": "Relecture",
+        "quantite": 3,
+        "prix_unitaire_ht": 60,
+        "taux_tva": null
+      }
+    ],
+    "mentions_speciales": "TVA non applicable, article 293 B du CGNaN"
+  },
+  "latencyMs": 8603,
+  "costUsd": 0.045893,
+  "inputTokens": 1500,
+  "outputTokens": 320
+}
