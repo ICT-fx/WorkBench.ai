@@ -1,88 +1,118 @@
 # Hub d'évaluations métier — modèles, benchmarks, roadmap
 
 **24 septembre 2026** · document de cadrage, à valider
+*Révisé le 24/09 au soir : 20 modèles au lieu de 10, passage à OpenRouter.*
 
-Trois questions traitées ici : quels modèles garder, dans quel ordre construire les
+Trois questions traitées ici : quels modèles tester, dans quel ordre construire les
 benchmarks et lesquels sont réellement testables, et par quelle API passer.
 
 ---
 
-# 1. Les modèles : 10 au lieu de 52
+# 1. Les modèles : 20, choisis pour une entreprise européenne
 
-## Pourquoi réduire
+## Ce qu'on écarte, et pourquoi
 
-Cinquante-deux modèles, c'est un tableau que personne ne lit, cinq fois le coût
-d'appels, et surtout une comparaison illisible : sept versions d'Anthropic
-côte à côte n'aident aucun dirigeant à décider.
+Un seul critère fait le tri : **savoir lire une image**. Six de tes dix métiers reposent
+sur des documents. Un modèle qui ne lit pas d'image ne peut pas concourir, et sur les 458
+modèles du catalogue OpenRouter, 288 en sont capables.
 
-Quatre règles pour trancher :
+On écarte ensuite les versions anciennes d'une même famille — comparer GPT-5.2, 5.4 et 5.5
+intéresse les curieux, pas un dirigeant — et les versions « preview », qui changent sans
+prévenir et rendent un classement daté invérifiable.
 
-1. **Savoir lire une image.** Six de tes dix métiers reposent sur des documents —
-   factures, contrats, justificatifs. Un modèle qui ne lit pas d'image ne peut pas
-   concourir. Cela écarte 13 modèles à lui seul.
-2. **Une génération par laboratoire**, la plus récente. Comparer GPT-5.2, 5.4, 5.5 et 6
-   intéresse les curieux, pas un DAF.
-3. **Couvrir les axes de décision réels** : le meilleur, le rapport qualité-prix,
-   le français, l'auto-hébergeable, le challenger chinois.
-4. **Pas de version « preview »**, qui change sans prévenir et rend un classement daté
-   invérifiable.
+**Correction par rapport à la première version de ce document.** J'avais écrit que Z.ai,
+MiniMax et Xiaomi disparaissaient faute de savoir lire une image. C'était vrai du catalogue
+Vercel, pas du catalogue OpenRouter, qui propose des variantes vision de ces modèles. Le
+choix d'OpenRouter les remet donc en jeu, et GLM entre dans la liste.
 
-## Les 10 modèles retenus
+## Les quatre questions d'un dirigeant européen
 
-Prix au million de tokens, relevés sur le catalogue de la passerelle Vercel le 24/09/2026.
+La liste n'est pas un palmarès, c'est une grille de décision. Chaque groupe répond à une
+question qu'on te posera :
 
-| Modèle | Rôle dans la comparaison | Entrée | Sortie | Poids |
+1. *« Quel est le meilleur, sans regarder le prix ? »* → les modèles frontière
+2. *« Lequel j'industrialise sur du volume ? »* → le milieu de gamme
+3. *« Et si je ne veux pas que mes documents sortent d'Europe ? »* → souveraineté et poids ouverts
+4. *« Combien ça coûte si j'en passe 50 000 par mois ? »* → le prix plancher
+
+## La liste complète
+
+Prix au million de tokens, relevés sur OpenRouter le 24/09/2026.
+
+### Groupe 1 — Les modèles frontière
+
+| Modèle | Laboratoire | Entrée | Sortie |
+|---|---|---:|---:|
+| `openai/gpt-6-astra` | OpenAI (US) | 10,00 $ | 50,00 $ |
+| `anthropic/claude-opus-5.5` | Anthropic (US) | 4,00 $ | 20,00 $ |
+| `x-ai/grok-4.7` | xAI (US) | 1,60 $ | 4,80 $ |
+| `meta/muse-spark-1.3` | Meta (US) | 1,25 $ | 4,25 $ |
+| `google/gemini-3.8-flash` | Google (US) | 0,75 $ | 3,75 $ |
+
+### Groupe 2 — Le milieu de gamme, celui qu'on industrialise
+
+| Modèle | Laboratoire | Entrée | Sortie | Intérêt pour une PME européenne |
 |---|---|---:|---:|---|
-| `openai/gpt-6-astra` | Le haut de gamme d'OpenAI | 10,00 $ | 50,00 $ | fermés |
-| `anthropic/claude-opus-5` | Le haut de gamme d'Anthropic | 5,00 $ | 25,00 $ | fermés |
-| `spacexai/grok-4.6` | Le haut de gamme de xAI | 2,00 $ | 6,00 $ | fermés |
-| `mistral/mistral-medium-3.5` | **Le français**, la question de la souveraineté | 1,50 $ | 7,50 $ | ouverts |
-| `meta/muse-spark-1.3` | La génération actuelle de Meta | 1,25 $ | 4,25 $ | fermés |
-| `google/gemini-3.8-flash` | Le rapport qualité-prix de Google | 0,75 $ | 3,75 $ | fermés |
-| `alibaba/qwen3.8-27b` | **Auto-hébergeable** : 27 milliards de paramètres tiennent sur une machine | 0,50 $ | 3,00 $ | ouverts |
-| `deepseek/deepseek-v4.1-flash` | Le challenger chinois, ouvert et peu cher | 0,30 $ | 1,20 $ | ouverts |
-| `openai/gpt-5.6-luna` | **Le très bon marché** : cinquante fois moins cher que le haut de gamme | 0,20 $ | 1,20 $ | fermés |
-| `google/gemma-4-31b-it` | Le moins cher du lot, poids ouverts | 0,14 $ | 0,40 $ | ouverts |
+| `openai/gpt-6-sol` | OpenAI (US) | 2,00 $ | 10,00 $ | Le compromis d'OpenAI, cinq fois moins cher que son haut de gamme |
+| `qwen/qwen3.8-max-0902` | Alibaba (CN) | 2,00 $ | 6,00 $ | Le haut de gamme chinois, souvent au niveau pour bien moins cher |
+| `moonshotai/kimi-k2.6` | Moonshot (CN) | 0,95 $ | 4,00 $ | Réputé sur les documents longs |
+| `amazon/nova-pro-v1` | Amazon (US) | 0,80 $ | 3,20 $ | **Disponible sur AWS en région européenne** : le chemin déjà validé par beaucoup de DSI |
+| `cohere/command-a-plus` | Cohere (CA) | 0,30 $ | 1,50 $ | Orienté entreprise, déployable sur site, poids publiés |
 
-Deux laboratoires apparaissent deux fois, OpenAI et Google. C'est délibéré : dans les
-deux cas l'un tient le rôle « haut de gamme » et l'autre le rôle « prix plancher », et
-l'écart entre les deux est précisément ce qu'un dirigeant veut voir. Quatre modèles sur
-dix ont des poids ouverts, donc hébergeables chez soi : c'est la réponse à « je ne veux
-pas que mes documents sortent de l'entreprise ».
+### Groupe 3 — Souveraineté européenne et modèles auto-hébergeables
 
-## Les 42 modèles écartés
+| Modèle | Laboratoire | Entrée | Sortie | Intérêt |
+|---|---|---:|---:|---|
+| `mistralai/mistral-medium-3-5` | **Mistral (FR)** | 1,50 $ | 7,50 $ | Le vaisseau amiral français |
+| `mistralai/mistral-small-2603` | **Mistral (FR)** | 0,15 $ | 0,60 $ | Dix fois moins cher, et il lit les images |
+| `mistralai/ministral-8b-2512` | **Mistral (FR)** | 0,15 $ | 0,15 $ | 8 milliards de paramètres : tourne sur une machine de bureau |
+| `qwen/qwen3.8-27b` | Alibaba (CN) | 0,42 $ | 3,00 $ | Poids ouverts, 27 milliards : un serveur à un GPU suffit |
+| `google/gemma-4-31b-it` | Google (US) | 0,09 $ | 0,34 $ | Poids ouverts, le moins cher des auto-hébergeables |
 
-**Incapables de lire une image (13)** — donc hors-jeu sur les tâches documentaires :
+**Le point décisif de ce groupe** : un modèle à poids ouverts peut être hébergé **en
+France**. OVHcloud et Scaleway figurent parmi les hébergeurs référencés par Hugging Face.
+Les documents ne quittent alors ni l'entreprise ni le territoire. C'est l'argument que tes
+clients attendent, et aucun benchmark public ne le mesure aujourd'hui.
 
-`mistral/mistral-small-4` (absent de la passerelle), `deepseek/deepseek-v4-pro`,
-`deepseek/deepseek-v4-pro-0813`, `deepseek/deepseek-v3.2-thinking`, `alibaba/qwen3.7-max`,
-`moonshotai/kimi-k2-thinking`, `zai/glm-5.3`, `zai/glm-5.1`, `zai/glm-4.7`,
-`minimax/minimax-m2.5`, `nvidia/nemotron-3-ultra-550b-a55b`, `tencent/hy4-preview`,
-`xiaomi/mimo-v2.5-pro`.
+### Groupe 4 — Le prix plancher, pour les gros volumes
 
-Conséquence : les laboratoires **Z.ai, MiniMax, NVIDIA, Tencent et Xiaomi disparaissent
-entièrement** du hub. Aucun de leurs modèles ne sait lire un document.
+| Modèle | Laboratoire | Entrée | Sortie | Poids |
+|---|---|---:|---:|---|
+| `deepseek/deepseek-v4.1-flash` | DeepSeek (CN) | 0,14 $ | 0,42 $ | ouverts |
+| `z-ai/glm-5.3-flash` | Z.ai (CN) | 0,15 $ | 0,50 $ | ouverts |
+| `meta-llama/llama-4-maverick` | Meta (US) | 0,19 $ | 0,65 $ | ouverts |
+| `openai/gpt-6-luna` | OpenAI (US) | 0,10 $ | 0,50 $ | fermés |
+| `amazon/nova-lite-v1` | Amazon (US) | 0,06 $ | 0,24 $ | fermés |
 
-**Versions plus anciennes de familles conservées (23)** :
+## Ce que dit déjà cette liste
 
-- Anthropic : `claude-opus-4.8`, `claude-opus-4.6`, `claude-opus-4.5`, `claude-sonnet-5`, `claude-haiku-4.5`
-- OpenAI : `gpt-5.6-sol`, `gpt-5.5`, `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.2`
-- Google : `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3-flash`
-- xAI : `grok-4.5`, `grok-4.3`, `grok-4.1-fast-reasoning`
-- Alibaba : `qwen3.8-max`, `qwen3.6-27b`, `qwen3.5-plus`
-- Mistral : `mistral-large-3`, `ministral-14b`
-- Meta : `muse-spark-1.1`, `llama-4-maverick`
+**Du moins cher au plus cher, il y a un facteur 167.** Nova Lite coûte 0,06 $ le million de
+tokens, GPT-6 Astra en coûte 10. Toute la question du hub tient là : est-ce que le plus
+cher fait 167 fois mieux sur *votre* facture ? Presque sûrement pas. Reste à savoir de
+combien il fait mieux, et si l'écart justifie la dépense.
 
-**Autres (6)** : `anthropic/claude-fable-5.1` et `google/gemini-3.1-pro-preview`
-(version d'essai), `moonshotai/kimi-k3`, `moonshotai/kimi-k2.6`, `minimax/minimax-m3`,
-`amazon/nova-2-lite`.
+Douze laboratoires sont représentés, dont **trois modèles français** et **huit modèles à
+poids ouverts**, donc hébergeables en Europe.
+
+## Ce que coûte un run avec 20 modèles
+
+Calculé sur les tarifs réels du 24/09 :
+
+| Benchmark | Coût des appels |
+|---|---|
+| Documents courts — 100 factures ou tickets | **12 $** |
+| Documents longs — 50 contrats | **49 $** |
+
+Donc environ **60 $ pour la vague 1 complète**, avec vingt modèles. C'est très abordable.
+À noter : OpenRouter propose des variantes `:batch` à moitié prix, mais elles faussent la
+mesure de latence — on ne les utilisera pas pour un classement publié.
 
 ## Le banc de réserve
 
-Quatre modèles à rajouter si tu veux enrichir un benchmark précis sans alourdir tout le
-hub : `anthropic/claude-fable-5.1` et `openai/gpt-5.6-sol` pour le très haut de gamme,
-`moonshotai/kimi-k3` pour un deuxième chinois, `mistral/mistral-large-3` si tu veux deux
-français.
+À ajouter si tu veux creuser un point précis : `anthropic/claude-fable-5.1` et
+`openai/gpt-6-astra-pro` pour l'extrême haut de gamme, `moonshotai/kimi-k3` pour un second
+chinois de pointe, `mistralai/mistral-large-3` pour un troisième français,
+`minimax/minimax-m3` et `xiaomi/mimo-v2.5-pro` pour élargir le champ chinois.
 
 ---
 
@@ -193,46 +223,76 @@ Chaque run sera chiffré avant d'être lancé avec `npm run eval:run -- --estima
 
 # 4. Accéder aux API des modèles
 
-## Ce que couvre déjà Vercel
+## Ce qu'est une clé d'API
 
-Vérification faite le 24/09 sur le catalogue en direct : **la passerelle Vercel expose 389
-modèles**, et **51 de tes 52** y figurent. Le seul absent est `mistral/mistral-small-4`,
-qui de toute façon ne lit pas les images.
+Une clé d'API est une longue chaîne de caractères qui sert de mot de passe pour un
+programme. Quand notre script demande à un modèle de lire une facture, il joint cette clé
+à sa requête. Le fournisseur reconnaît le compte, autorise l'appel et le facture.
 
-**Conclusion : la couverture n'est pas ton problème.** Les dix modèles retenus sont tous
-disponibles chez Vercel, avec une seule clé et une seule facture.
+Sans intermédiaire, il en faudrait **une par laboratoire** : un compte OpenAI, un compte
+Anthropic, un compte Google, un compte Mistral, un compte Alibaba… soit douze comptes,
+douze moyens de paiement et douze factures pour nos vingt modèles.
 
-## Les alternatives, comparées
+Un agrégateur supprime ce problème : **une seule clé, un seul compte, une seule facture**,
+et il redistribue les appels aux bons fournisseurs. C'est ce que fait la passerelle de
+Vercel, et c'est ce que fait OpenRouter.
 
-| Solution | Couverture | Modèle économique | Verdict |
-|---|---|---|---|
-| **Vercel AI Gateway** | 389 modèles, tous les grands laboratoires | Une clé, une facture, coût et latence remontés par appel | **À garder.** Déjà intégré au projet |
-| **OpenRouter** | 458 modèles, 63 fournisseurs, 288 sachant lire une image | Prix des fournisseurs **sans marge** sur l'inférence ; frais de 5,5 % à l'achat de crédits ; possibilité d'apporter ses propres clés | **La meilleure roue de secours.** Couverture supérieure, à adopter si un modèle manque chez Vercel |
-| **Hugging Face Inference Providers** | Route vers des hébergeurs de modèles **ouverts** : Together, Fireworks, Groq, Cerebras, DeepInfra, Novita… Interface compatible OpenAI | Paiement à l'usage chez l'hébergeur | **Complément, pas substitut.** Pas de Claude ni de Gemini. Utile pour la partie auto-hébergeable |
-| **LiteLLM** (open source) | 100+ fournisseurs, 1 800+ modèles, proxy à installer soi-même | Gratuit, mais **il faut un compte et une clé chez chaque fournisseur** | À considérer seulement si tu veux mesurer sans aucun intermédiaire. Coût caché : dix comptes à ouvrir et à facturer |
+## Le choix : OpenRouter
 
-## Une réserve méthodologique importante
+Décision du 24/09, et c'est la bonne pour la raison que tu as identifiée : **le contrôle
+du fournisseur**.
 
-Un agrégateur qui route vers des hébergeurs tiers ne sert pas toujours le modèle dans la
-même version : la compression appliquée au modèle varie d'un hébergeur à l'autre, et la
-latence avec. Pour un classement publié, il faut soit **épingler le fournisseur**, soit
-**l'indiquer dans les résultats**. vals.ai insiste sur ce point : ils appellent les modèles
-« à travers un harnais fixe, de sorte que les écarts de score reflètent le modèle et non
-l'échafaudage ». Nous ferons pareil, et la colonne « version exacte du modèle » du
-classement est déjà là pour ça.
+Un modèle à poids ouverts n'est pas servi par un seul hébergeur. Le même Qwen peut tourner
+chez cinq hébergeurs différents, avec des niveaux de compression différents — un modèle
+compressé répond plus vite, pour moins cher, mais un peu moins bien. Si l'hébergeur change
+entre deux mesures, le classement bouge sans que le modèle ait changé. Le benchmark ne
+mesure alors plus rien.
 
-## Recommandation
+OpenRouter laisse reprendre la main, et c'est documenté :
 
-Rester sur Vercel pour toute la vague 1. Ajouter OpenRouter en second fournisseur si un
-modèle manque ou si un prix devient aberrant. Ne pas monter de proxy maison : ça
-n'apporterait rien au classement et ajouterait un composant à maintenir.
+| Paramètre | Ce qu'il permet |
+|---|---|
+| `order` + `allow_fallbacks: false` | Imposer un hébergeur précis, sans report automatique sur un autre |
+| `quantizations` | N'accepter qu'un niveau de compression donné (`fp8`, `bf16`, `int8`…) |
+| `data_collection` | **Écarter les hébergeurs qui conservent les données** — décisif pour un public européen |
+| `only` / `ignore` | Liste blanche ou liste noire d'hébergeurs |
+
+La documentation prévient elle-même que « les modèles compressés peuvent présenter des
+performances dégradées sur certaines requêtes ». C'est précisément ce qu'on veut maîtriser.
+
+Chaque classement publié indiquera donc **l'hébergeur et le niveau de compression**, au
+même titre que la version exacte du modèle.
+
+## Les autres solutions, et pourquoi elles ne conviennent pas ici
+
+| Solution | Couverture | Verdict |
+|---|---|---|
+| **OpenRouter** | 458 modèles, 63 fournisseurs, 288 sachant lire une image. Prix des fournisseurs **sans marge** ; frais de 5,5 % à l'achat de crédits | **Retenu.** Le seul qui donne la maîtrise de l'hébergeur |
+| **Vercel AI Gateway** | 389 modèles. Déjà intégré au projet | Bon, mais catalogue plus étroit et pas d'épinglage d'hébergeur. À garder comme secours |
+| **Hugging Face Inference Providers** | Route vers des hébergeurs de modèles **ouverts** : Together, Fireworks, Groq, Cerebras, DeepInfra, **OVHcloud, Scaleway**… | Pas de Claude ni de Gemini, donc pas un substitut. **Mais la bonne piste pour mesurer un modèle ouvert hébergé en France** — un test à part, très parlant pour tes clients |
+| **LiteLLM** (open source) | 100+ fournisseurs, proxy à installer soi-même | Gratuit, mais il faut **une clé chez chaque fournisseur** : on revient aux douze comptes. Aucun gain pour le classement |
+
+## Ce qu'il faut faire concrètement
+
+1. Créer un compte sur **openrouter.ai**.
+2. Aller dans **Keys**, créer une clé, la copier — elle ne s'affiche qu'une fois.
+3. Créditer le compte. **Vingt dollars couvrent largement la vague 1.**
+4. Créer à la racine du projet un fichier `.env.local` contenant
+   `OPENROUTER_API_KEY=ta-clé`. Ce fichier est déjà exclu de git, la clé ne sera jamais
+   publiée. **Ne la colle pas dans le chat.**
+
+Côté code, le changement est modeste : les identifiants de modèles diffèrent un peu entre
+les deux catalogues (`mistral/mistral-medium-3.5` chez Vercel, `mistralai/mistral-medium-3-5`
+chez OpenRouter), et il faut ajouter les paramètres d'épinglage d'hébergeur.
 
 ---
 
 # Ce qu'il reste à décider
 
-1. Valider la liste des 10 modèles, ou en ajuster un ou deux.
-2. Confirmer l'ordre de la vague 1 : factures, puis clauses, puis tickets.
+1. Valider la liste des 20 modèles, ou ajuster les groupes.
+2. Confirmer l'ordre de la vague 1 : factures, puis clauses de contrat, puis tickets.
 3. Trancher sur DocILE : demander l'accès et clarifier si un usage par Flowera est permis,
    ou s'en tenir à VRDU dont la licence est claire.
-4. Obtenir une clé AI Gateway pour lancer le premier run réel.
+4. Créer la clé OpenRouter et créditer une vingtaine de dollars.
+5. Décider si l'on ajoute un test « modèle ouvert hébergé en France » via OVHcloud ou
+   Scaleway. Ce serait un angle que personne d'autre ne publie.
