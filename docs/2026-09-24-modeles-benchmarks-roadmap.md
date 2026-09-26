@@ -1,118 +1,132 @@
 # Hub d'évaluations métier — modèles, benchmarks, roadmap
 
 **24 septembre 2026** · document de cadrage, à valider
-*Révisé le 24/09 au soir : 20 modèles au lieu de 10, passage à OpenRouter.*
+*Révisé le 26/09 : 27 modèles, catégories renommées, passage à OpenRouter.*
 
 Trois questions traitées ici : quels modèles tester, dans quel ordre construire les
 benchmarks et lesquels sont réellement testables, et par quelle API passer.
 
 ---
 
-# 1. Les modèles : 20, choisis pour une entreprise européenne
+# 1. Les modèles : 27 modèles, quatre questions
 
-## Ce qu'on écarte, et pourquoi
+## Le tri de départ
 
-Un seul critère fait le tri : **savoir lire une image**. Six de tes dix métiers reposent
-sur des documents. Un modèle qui ne lit pas d'image ne peut pas concourir, et sur les 458
-modèles du catalogue OpenRouter, 288 en sont capables.
+Un seul critère élimine d'office : **savoir lire une image**. Six de tes dix métiers
+reposent sur des documents. Sur les 458 modèles du catalogue OpenRouter, 288 en sont
+capables ; les autres sont hors-jeu.
 
 On écarte ensuite les versions anciennes d'une même famille — comparer GPT-5.2, 5.4 et 5.5
-intéresse les curieux, pas un dirigeant — et les versions « preview », qui changent sans
-prévenir et rendent un classement daté invérifiable.
+n'apprend rien à un dirigeant — et les versions « preview », qui changent sans prévenir et
+rendent un classement daté invérifiable.
 
-**Correction par rapport à la première version de ce document.** J'avais écrit que Z.ai,
-MiniMax et Xiaomi disparaissaient faute de savoir lire une image. C'était vrai du catalogue
-Vercel, pas du catalogue OpenRouter, qui propose des variantes vision de ces modèles. Le
-choix d'OpenRouter les remet donc en jeu, et GLM entre dans la liste.
+Deux principes de sélection s'ajoutent, et ils tirent dans des directions opposées :
 
-## Les quatre questions d'un dirigeant européen
+- **Les modèles que tout le monde connaît doivent être là.** Si un lecteur cherche Claude
+  Sonnet, Gemini, Llama, Mistral Large ou DeepSeek et ne les trouve pas, il doute du
+  sérieux du classement avant même de lire les chiffres.
+- **Les modèles hors de prix aussi.** Aucune PME ne déploiera Fable 5.1 à 10 $ le million
+  de tokens. Mais sans lui, on ne sait pas si les modèles abordables sont *presque* aussi
+  bons ou très loin derrière. C'est l'étalon qui donne son sens à tout le reste.
 
-La liste n'est pas un palmarès, c'est une grille de décision. Chaque groupe répond à une
-question qu'on te posera :
+## Les quatre groupes
 
-1. *« Quel est le meilleur, sans regarder le prix ? »* → les modèles frontière
-2. *« Lequel j'industrialise sur du volume ? »* → le milieu de gamme
-3. *« Et si je ne veux pas que mes documents sortent d'Europe ? »* → souveraineté et poids ouverts
-4. *« Combien ça coûte si j'en passe 50 000 par mois ? »* → le prix plancher
+Chaque groupe répond à une question qu'on te posera. Ce ne sont pas des niveaux de
+qualité : un modèle du groupe D peut très bien battre un modèle du groupe A sur la lecture
+de factures. C'est précisément ce que le hub cherche à savoir.
 
-## La liste complète
+### Groupe A — Ce que l'IA sait faire de mieux, prix mis de côté
 
-Prix au million de tokens, relevés sur OpenRouter le 24/09/2026.
+*La question : « À quoi ressemble le meilleur résultat possible aujourd'hui ? »*
+Ces modèles servent de référence haute. Personne ne les industrialise, tout le monde veut
+savoir où ils en sont.
 
-### Groupe 1 — Les modèles frontière
-
-| Modèle | Laboratoire | Entrée | Sortie |
-|---|---|---:|---:|
-| `openai/gpt-6-astra` | OpenAI (US) | 10,00 $ | 50,00 $ |
-| `anthropic/claude-opus-5.5` | Anthropic (US) | 4,00 $ | 20,00 $ |
-| `x-ai/grok-4.7` | xAI (US) | 1,60 $ | 4,80 $ |
-| `meta/muse-spark-1.3` | Meta (US) | 1,25 $ | 4,25 $ |
-| `google/gemini-3.8-flash` | Google (US) | 0,75 $ | 3,75 $ |
-
-### Groupe 2 — Le milieu de gamme, celui qu'on industrialise
-
-| Modèle | Laboratoire | Entrée | Sortie | Intérêt pour une PME européenne |
+| Modèle | Fournisseur | Entrée | Sortie | Pourquoi lui |
 |---|---|---:|---:|---|
-| `openai/gpt-6-sol` | OpenAI (US) | 2,00 $ | 10,00 $ | Le compromis d'OpenAI, cinq fois moins cher que son haut de gamme |
-| `qwen/qwen3.8-max-0902` | Alibaba (CN) | 2,00 $ | 6,00 $ | Le haut de gamme chinois, souvent au niveau pour bien moins cher |
-| `moonshotai/kimi-k2.6` | Moonshot (CN) | 0,95 $ | 4,00 $ | Réputé sur les documents longs |
-| `amazon/nova-pro-v1` | Amazon (US) | 0,80 $ | 3,20 $ | **Disponible sur AWS en région européenne** : le chemin déjà validé par beaucoup de DSI |
-| `cohere/command-a-plus` | Cohere (CA) | 0,30 $ | 1,50 $ | Orienté entreprise, déployable sur site, poids publiés |
+| `anthropic/claude-fable-5.1` | Anthropic (US) | 10.00 $ | 50.00 $ | Le plus cher du marché. Trop cher pour un usage courant, mais c'est l'étalon : il montre ce que l'IA sait faire au mieux |
+| `openai/gpt-6-astra` | OpenAI (US) | 10.00 $ | 50.00 $ | Le sommet d'OpenAI |
+| `qwen/qwen3.8-max-prime` | Alibaba (CN) | 4.00 $ | 12.00 $ | Le sommet chinois, deux fois moins cher que ses rivaux américains |
+| `anthropic/claude-opus-5.5` | Anthropic (US) | 4.00 $ | 20.00 $ | Le haut de gamme courant d'Anthropic |
+| `moonshotai/kimi-k3` | Moonshot (CN) | 3.00 $ | 15.00 $ | Réputé sur les documents très longs |
+| `x-ai/grok-4.7` | xAI (US) | 1.60 $ | 4.80 $ | Le haut de gamme de xAI |
 
-### Groupe 3 — Souveraineté européenne et modèles auto-hébergeables
+### Groupe B — Le bon rapport qualité-prix, ceux qu'on déploie vraiment
 
-| Modèle | Laboratoire | Entrée | Sortie | Intérêt |
+*La question : « Lequel je mets en production le mois prochain ? »*
+Le cœur du marché, et les noms que tes lecteurs connaissent.
+
+| Modèle | Fournisseur | Entrée | Sortie | Pourquoi lui |
 |---|---|---:|---:|---|
-| `mistralai/mistral-medium-3-5` | **Mistral (FR)** | 1,50 $ | 7,50 $ | Le vaisseau amiral français |
-| `mistralai/mistral-small-2603` | **Mistral (FR)** | 0,15 $ | 0,60 $ | Dix fois moins cher, et il lit les images |
-| `mistralai/ministral-8b-2512` | **Mistral (FR)** | 0,15 $ | 0,15 $ | 8 milliards de paramètres : tourne sur une machine de bureau |
-| `qwen/qwen3.8-27b` | Alibaba (CN) | 0,42 $ | 3,00 $ | Poids ouverts, 27 milliards : un serveur à un GPU suffit |
-| `google/gemma-4-31b-it` | Google (US) | 0,09 $ | 0,34 $ | Poids ouverts, le moins cher des auto-hébergeables |
+| `openai/gpt-6-sol` | OpenAI (US) | 2.00 $ | 10.00 $ | Le GPT que la plupart des entreprises déploieront : cinq fois moins cher que le sommet |
+| `anthropic/claude-sonnet-5` | Anthropic (US) | 2.00 $ | 10.00 $ | Le Claude du quotidien, le nom que tout le monde cite |
+| `qwen/qwen3.8-max-0902` | Alibaba (CN) | 2.00 $ | 6.00 $ | Le Qwen haut de gamme de série |
+| `meta/muse-spark-1.3` | Meta (US) | 1.25 $ | 4.25 $ | La génération actuelle de Meta |
+| `moonshotai/kimi-k2.6` | Moonshot (CN) | 0.95 $ | 4.00 $ | Le Kimi de série |
+| `amazon/nova-pro-v1` | Amazon (US) | 0.80 $ | 3.20 $ | Disponible sur AWS en région européenne : le chemin déjà validé par beaucoup de DSI |
+| `google/gemini-3.8-flash` | Google (US) | 0.75 $ | 3.75 $ | Le Gemini de série, remarquablement peu cher pour son niveau |
+| `cohere/command-a-plus` | Cohere (CA) | 0.30 $ | 1.50 $ | Orienté entreprise, déployable sur site |
+
+### Groupe C — Vos documents ne sortent pas : souveraineté et auto-hébergement
+
+*La question : « Et si je ne veux pas que mes factures partent aux États-Unis ? »*
+Quatre modèles français, et des modèles à poids ouverts qu'on peut installer sur ses
+propres serveurs.
+
+| Modèle | Fournisseur | Entrée | Sortie | Pourquoi lui |
+|---|---|---:|---:|---|
+| `mistralai/mistral-medium-3-5` | Mistral (FR) | 1.50 $ | 7.50 $ | Le vaisseau amiral français |
+| `mistralai/mistral-large-2512` | Mistral (FR) | 0.50 $ | 1.50 $ | Mistral Large, le nom français le plus connu |
+| `qwen/qwen3.8-27b` | Alibaba (CN) | 0.42 $ | 3.00 $ | 27 milliards de paramètres : un serveur à un GPU suffit |
+| `meta-llama/llama-4-maverick` | Meta (US) | 0.19 $ | 0.65 $ | Llama, le modèle ouvert le plus connu au monde |
+| `mistralai/mistral-small-2603` | Mistral (FR) | 0.15 $ | 0.60 $ | Dix fois moins cher que le Medium, et il lit les images |
+| `mistralai/ministral-8b-2512` | Mistral (FR) | 0.15 $ | 0.15 $ | 8 milliards : tourne sur une machine de bureau |
+| `google/gemma-4-31b-it` | Google (US) | 0.09 $ | 0.34 $ | Le moins cher des auto-hébergeables |
 
 **Le point décisif de ce groupe** : un modèle à poids ouverts peut être hébergé **en
 France**. OVHcloud et Scaleway figurent parmi les hébergeurs référencés par Hugging Face.
-Les documents ne quittent alors ni l'entreprise ni le territoire. C'est l'argument que tes
-clients attendent, et aucun benchmark public ne le mesure aujourd'hui.
+Les documents ne quittent alors ni l'entreprise ni le territoire. Aucun benchmark public ne
+mesure ça aujourd'hui.
 
-### Groupe 4 — Le prix plancher, pour les gros volumes
+### Groupe D — Traiter du volume au coût le plus bas
 
-| Modèle | Laboratoire | Entrée | Sortie | Poids |
+*La question : « Combien ça me coûte si j'en passe 50 000 par mois ? »*
+À ce niveau de prix, le coût cesse d'être un obstacle. Reste à savoir ce qu'on perd en
+qualité — et c'est peut-être moins qu'on ne croit.
+
+| Modèle | Fournisseur | Entrée | Sortie | Pourquoi lui |
 |---|---|---:|---:|---|
-| `deepseek/deepseek-v4.1-flash` | DeepSeek (CN) | 0,14 $ | 0,42 $ | ouverts |
-| `z-ai/glm-5.3-flash` | Z.ai (CN) | 0,15 $ | 0,50 $ | ouverts |
-| `meta-llama/llama-4-maverick` | Meta (US) | 0,19 $ | 0,65 $ | ouverts |
-| `openai/gpt-6-luna` | OpenAI (US) | 0,10 $ | 0,50 $ | fermés |
-| `amazon/nova-lite-v1` | Amazon (US) | 0,06 $ | 0,24 $ | fermés |
+| `deepseek/deepseek-v4.1-flash` | DeepSeek (CN) | 0.30 $ | 1.20 $ | DeepSeek, le nom qui a fait chuter les prix du marché |
+| `google/gemini-3.5-flash-lite` | Google (US) | 0.30 $ | 2.50 $ | La version allégée de Gemini |
+| `openai/gpt-6-luna` | OpenAI (US) | 0.10 $ | 0.50 $ | Cent fois moins cher que GPT-6 Astra |
+| `amazon/nova-lite-v1` | Amazon (US) | 0.06 $ | 0.24 $ | Sur AWS, en région européenne |
+| `z-ai/glm-5.3-flash` | Z.ai (CN) | 0.04 $ | 0.50 $ | Poids ouverts |
+| `qwen/qwen3.7-flash` | Alibaba (CN) | 0.03 $ | 0.13 $ | Le prix plancher absolu du catalogue |
 
-## Ce que dit déjà cette liste
+## Ce que cette liste dit déjà
 
-**Du moins cher au plus cher, il y a un facteur 167.** Nova Lite coûte 0,06 $ le million de
-tokens, GPT-6 Astra en coûte 10. Toute la question du hub tient là : est-ce que le plus
-cher fait 167 fois mieux sur *votre* facture ? Presque sûrement pas. Reste à savoir de
-combien il fait mieux, et si l'écart justifie la dépense.
+**Du moins cher au plus cher, il y a un facteur 333.** Qwen 3.7 Flash coûte 0,03 $ le
+million de tokens, GPT-6 Astra en coûte 10. Toute la question du hub tient là : le plus
+cher fait-il 333 fois mieux sur *votre* facture ? Certainement pas. De combien fait-il
+mieux, alors, et l'écart justifie-t-il la dépense ?
 
-Douze laboratoires sont représentés, dont **trois modèles français** et **huit modèles à
-poids ouverts**, donc hébergeables en Europe.
+Treize fournisseurs de modèles sont représentés, dont **quatre modèles français** et
+**neuf modèles à poids ouverts**, donc hébergeables en Europe.
 
-## Ce que coûte un run avec 20 modèles
+## Ce que coûte un run complet
 
-Calculé sur les tarifs réels du 24/09 :
+Sur les tarifs réels du 26/09, avec les 27 modèles :
 
 | Benchmark | Coût des appels |
 |---|---|
-| Documents courts — 100 factures ou tickets | **12 $** |
-| Documents longs — 50 contrats | **49 $** |
+| 100 factures ou tickets | **21 $** |
+| 50 contrats | **86 $** |
 
-Donc environ **60 $ pour la vague 1 complète**, avec vingt modèles. C'est très abordable.
+Environ **110 $ pour toute la vague 1**. Passer de 20 à 27 modèles coûte une cinquantaine
+de dollars de plus : le prix d'un classement que personne ne pourra accuser d'avoir oublié
+un modèle connu.
+
 À noter : OpenRouter propose des variantes `:batch` à moitié prix, mais elles faussent la
-mesure de latence — on ne les utilisera pas pour un classement publié.
-
-## Le banc de réserve
-
-À ajouter si tu veux creuser un point précis : `anthropic/claude-fable-5.1` et
-`openai/gpt-6-astra-pro` pour l'extrême haut de gamme, `moonshotai/kimi-k3` pour un second
-chinois de pointe, `mistralai/mistral-large-3` pour un troisième français,
-`minimax/minimax-m3` et `xiaomi/mimo-v2.5-pro` pour élargir le champ chinois.
+mesure de latence. On ne les utilisera pas pour un classement publié.
 
 ---
 
