@@ -21,7 +21,8 @@
     "demo:run": "tsx packages/fixtures/src/demo-run.ts",
     "demo:hub": "tsx packages/fixtures/src/demo-hub.ts",
     "catalogue:sync": "tsx packages/eval/src/catalogue-sync.ts",
-    "eval:review": "tsx packages/eval/src/cli.ts review"
+    "eval:review": "tsx packages/eval/src/cli.ts review",
+    "key:check": "tsx packages/eval/src/check-key.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
