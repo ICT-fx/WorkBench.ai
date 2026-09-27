@@ -77,12 +77,22 @@ async function cmdRun(taskId: string): Promise<void> {
     outRoot: runsRoot,
     generate: createOpenRouterGenerate({
       apiKey,
-      // Pas de report silencieux sur un autre hébergeur en cours de requête :
-      // un classement doit pouvoir être rejoué à l'identique.
-      provider: { allow_fallbacks: false },
+      // Le report sur un autre hébergeur est autorisé : l'interdire a fait
+      // échouer tous les appels d'un modèle dont l'hébergeur principal était
+      // en panne. L'hébergeur réellement utilisé est enregistré à chaque
+      // appel, ce qui suffit à rendre le run vérifiable.
+      provider: { allow_fallbacks: true },
+      // Certains modèles réfléchissent longuement avant de répondre et
+      // rendaient une réponse vide, faute de place pour écrire le JSON.
+      maxTokens: 3000,
+      surReprise: (model, docId, tentative, ms) => {
+        console.log(`  ↻ ${model} ${docId.slice(0, 8)} : reprise ${tentative} dans ${Math.round(ms / 1000)} s`);
+      },
     }),
     resume: flag("resume"),
-    concurrency: Number(arg("concurrency") ?? 8),
+    // Deux appels à la fois : au-delà, OpenRouter réserve plus de crédit que
+    // le compte n'en a de disponible et refuse les requêtes.
+    concurrency: Number(arg("concurrency") ?? 2),
   });
 
   console.log(`Terminé : ${summary.calls} appels, ${summary.errors} en échec, ` +

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
+  "raw": {
+    "contract_num": "1032436",
+    "advertiser": "PROTECT FREEDOM PAC",
+    "gross_amount": 72500,
+    "flight_from": "2020-01-31",
+    "flight_to": "2020-02-06",
+    "vat_number": null
+  },
+  "latencyMs": 3187,
+  "costUsd": 0.06548,
+  "provider": "Anthropic",
+  "inputTokens": 6123,
+  "outputTokens": 85
+}

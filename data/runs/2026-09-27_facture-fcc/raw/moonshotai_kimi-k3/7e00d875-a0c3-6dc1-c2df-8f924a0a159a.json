@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "7e00d875-a0c3-6dc1-c2df-8f924a0a159a",
+  "raw": null,
+  "latencyMs": 331,
+  "costUsd": 0,
+  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/moonshotai/kimi-k3-20260715. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"co"
+}

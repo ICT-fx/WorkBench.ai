@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "15262983-7227-5abf-803b-1089dfad4494",
+  "raw": {
+    "contract_num": "4360160",
+    "advertiser": "DT Firm, The-12.5 perc 909 GREEN ST HARRISBURG, PA 17102-2927",
+    "gross_amount": 917650,
+    "flight_from": "2020-05-01",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 2118,
+  "costUsd": 0.00034104,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 5224,
+  "outputTokens": 115
+}

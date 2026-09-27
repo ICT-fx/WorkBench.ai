@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "15262983-7227-5abf-803b-1089dfad4494",
+  "raw": {
+    "contract_num": "4306160",
+    "advertiser": "DT Firm, The-12.5 perc",
+    "gross_amount": 17000,
+    "flight_from": "2020-05-01",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 1520,
+  "costUsd": 0.00012948,
+  "provider": "Reka",
+  "inputTokens": 1221,
+  "outputTokens": 106
+}

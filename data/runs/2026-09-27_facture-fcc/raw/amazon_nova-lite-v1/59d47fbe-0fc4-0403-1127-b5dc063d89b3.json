@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "59d47fbe-0fc4-0403-1127-b5dc063d89b3",
+  "raw": {
+    "contract_num": "NV-Bernie 2020",
+    "advertiser": null,
+    "gross_amount": 9580,
+    "flight_from": "2020-02-12",
+    "flight_to": "2020-02-17",
+    "vat_number": null
+  },
+  "latencyMs": 1941,
+  "costUsd": 0.00033408,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 5224,
+  "outputTokens": 86
+}

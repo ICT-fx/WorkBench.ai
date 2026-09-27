@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "mistralai/mistral-small-2603",
+  "modelVersion": "mistralai/mistral-small-2603",
+  "docId": "2388be11-9ced-8bde-f56c-f963d0cdcbe2",
+  "raw": null,
+  "latencyMs": 550,
+  "costUsd": 0,
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+}

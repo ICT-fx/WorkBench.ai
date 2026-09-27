@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "59d47fbe-0fc4-0403-1127-b5dc063d89b3",
+  "raw": {
+    "contract_num": "1930",
+    "advertiser": "Bernie 2020",
+    "gross_amount": 9580,
+    "flight_from": "2020-02-12",
+    "flight_to": "2020-02-17",
+    "vat_number": null
+  },
+  "latencyMs": 3070,
+  "costUsd": 0.08148,
+  "provider": "Anthropic",
+  "inputTokens": 6123,
+  "outputTokens": 405
+}

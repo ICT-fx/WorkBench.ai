@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "29604390-e222-96d8-a7ba-a713a18ad1ea",
+  "raw": {
+    "contract_num": "708937",
+    "advertiser": "One Nation",
+    "gross_amount": 42750,
+    "flight_from": "2020-07-21",
+    "flight_to": "2020-07-30",
+    "vat_number": null
+  },
+  "latencyMs": 3494,
+  "costUsd": 0.08358,
+  "provider": "Anthropic",
+  "inputTokens": 7988,
+  "outputTokens": 74
+}

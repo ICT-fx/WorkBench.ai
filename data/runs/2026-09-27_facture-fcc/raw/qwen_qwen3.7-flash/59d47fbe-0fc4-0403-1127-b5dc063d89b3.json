@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.7-flash",
+  "modelVersion": "qwen/qwen3.7-flash",
+  "docId": "59d47fbe-0fc4-0403-1127-b5dc063d89b3",
+  "raw": null,
+  "latencyMs": 45531,
+  "costUsd": 0,
+  "error": "réponse sans JSON exploitable : "
+}

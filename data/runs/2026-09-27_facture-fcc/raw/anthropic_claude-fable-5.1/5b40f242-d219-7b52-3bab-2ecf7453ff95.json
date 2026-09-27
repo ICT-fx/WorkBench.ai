@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "5b40f242-d219-7b52-3bab-2ecf7453ff95",
+  "raw": {
+    "contract_num": "1621917",
+    "advertiser": "SALANGO FOR WEST VIRGINIA",
+    "gross_amount": 5360,
+    "flight_from": "2020-05-18",
+    "flight_to": "2020-06-08",
+    "vat_number": null
+  },
+  "latencyMs": 4938,
+  "costUsd": 0.10298,
+  "provider": "Anthropic",
+  "inputTokens": 9853,
+  "outputTokens": 89
+}

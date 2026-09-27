@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "4bfca5a0-0e93-ed57-b06b-d2d25b8f16a0",
+  "raw": {
+    "contract_num": "2383065",
+    "advertiser": "POL/Tom Steyer/President/US/Dem",
+    "gross_amount": 89260,
+    "flight_from": "2020-02-18",
+    "flight_to": "2020-02-24",
+    "vat_number": null
+  },
+  "latencyMs": 5923,
+  "costUsd": 0.19623,
+  "provider": "Anthropic",
+  "inputTokens": 19178,
+  "outputTokens": 89
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "08bea544-d037-eaad-848d-8a98dbc62b36",
+  "raw": {
+    "contract_num": "1976789",
+    "advertiser": "Steyer/D/President",
+    "gross_amount": 27950,
+    "flight_from": "2020-01-28",
+    "flight_to": "2020-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 2360,
+  "costUsd": 0.15728,
+  "provider": "OpenAI",
+  "inputTokens": 12295,
+  "outputTokens": 72
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "5c8edc38-9c6e-f131-6124-bd4aab4b9b01",
+  "raw": {
+    "contract_num": "2416181",
+    "advertiser": "POL/J CRUMPACKER/R/CONOR",
+    "gross_amount": 3110,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-19",
+    "vat_number": null
+  },
+  "latencyMs": 2382,
+  "costUsd": 0.1761425,
+  "provider": "OpenAI",
+  "inputTokens": 13208,
+  "outputTokens": 221
+}

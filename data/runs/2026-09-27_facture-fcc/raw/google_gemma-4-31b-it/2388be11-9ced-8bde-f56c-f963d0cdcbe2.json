@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "2388be11-9ced-8bde-f56c-f963d0cdcbe2",
+  "raw": {
+    "contract_num": null,
+    "advertiser": "Jacobs For Congress-8",
+    "gross_amount": 995,
+    "flight_from": "2020-03-20",
+    "flight_to": "2020-03-20",
+    "vat_number": null
+  },
+  "latencyMs": 1635,
+  "costUsd": 0.0000827,
+  "provider": "Reka",
+  "inputTokens": 685,
+  "outputTokens": 93
+}

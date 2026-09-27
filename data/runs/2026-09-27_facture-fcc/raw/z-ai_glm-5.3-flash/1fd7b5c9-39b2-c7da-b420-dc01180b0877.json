@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "1fd7b5c9-39b2-c7da-b420-dc01180b0877",
+  "raw": null,
+  "latencyMs": 125390,
+  "costUsd": 0,
+  "error": "A Timeout Occurred"
+}

@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "9294d8b3-ad2a-b2ae-245d-417533ab01ce",
+  "raw": null,
+  "latencyMs": 640,
+  "costUsd": 0,
+  "error": "503 Service Unavailable — {\"error\":{\"message\":\"Provider returned error\",\"code\":503,\"metadata\":{\"raw\":\"no healthy upstream\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"org_3JrOXDBGJ7iVET5O7FrCoFgzSEL\"}"
+}

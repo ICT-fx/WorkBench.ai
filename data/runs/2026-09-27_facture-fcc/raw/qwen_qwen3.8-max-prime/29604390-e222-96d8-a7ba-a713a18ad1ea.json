@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "29604390-e222-96d8-a7ba-a713a18ad1ea",
+  "raw": {
+    "contract_num": "708937",
+    "advertiser": "One Nation",
+    "gross_amount": 42750,
+    "flight_from": "2020-07-21",
+    "flight_to": "2020-07-30",
+    "vat_number": null
+  },
+  "latencyMs": 5088,
+  "costUsd": 0.02862,
+  "provider": "Alibaba",
+  "inputTokens": 5970,
+  "outputTokens": 395
+}

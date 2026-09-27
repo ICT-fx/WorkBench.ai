@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "2c0265e7-00b1-6c3b-efed-9ec369e297e2",
+  "raw": {
+    "contract_num": "279169",
+    "advertiser": "Mike Bloomberg 2020",
+    "gross_amount": 823000,
+    "flight_from": "2020-01-27",
+    "flight_to": "2020-03-03",
+    "vat_number": "00096412"
+  },
+  "latencyMs": 3530,
+  "costUsd": 0.00091632,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 14884,
+  "outputTokens": 97
+}

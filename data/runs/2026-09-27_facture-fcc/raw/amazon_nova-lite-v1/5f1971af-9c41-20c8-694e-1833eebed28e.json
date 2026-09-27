@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
+  "raw": {
+    "contract_num": "2420107",
+    "advertiser": "POL/Woody Thrasher/Governor/West Virginia",
+    "gross_amount": 5400,
+    "flight_from": "2020-03-16",
+    "flight_to": "2020-03-22",
+    "vat_number": null
+  },
+  "latencyMs": 6232,
+  "costUsd": 0.00062508,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 10054,
+  "outputTokens": 91
+}

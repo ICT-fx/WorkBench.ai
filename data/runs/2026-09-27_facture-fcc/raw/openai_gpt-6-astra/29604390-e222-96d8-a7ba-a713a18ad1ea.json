@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "29604390-e222-96d8-a7ba-a713a18ad1ea",
+  "raw": {
+    "contract_num": "708937",
+    "advertiser": "One Nation",
+    "gross_amount": 42750,
+    "flight_from": "2020-07-21",
+    "flight_to": "2020-07-30",
+    "vat_number": null
+  },
+  "latencyMs": 1763,
+  "costUsd": 0.0932175,
+  "provider": "OpenAI",
+  "inputTokens": 7186,
+  "outputTokens": 68
+}

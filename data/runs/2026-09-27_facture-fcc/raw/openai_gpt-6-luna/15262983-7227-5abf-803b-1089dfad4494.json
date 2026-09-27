@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "15262983-7227-5abf-803b-1089dfad4494",
+  "raw": {
+    "contract_num": "4360160",
+    "advertiser": "Suplizio for State Senate-R (135664)",
+    "gross_amount": 17650,
+    "flight_from": "2020-05-01",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 1196,
+  "costUsd": 0.0008023,
+  "provider": "OpenAI",
+  "inputTokens": 5483,
+  "outputTokens": 234
+}

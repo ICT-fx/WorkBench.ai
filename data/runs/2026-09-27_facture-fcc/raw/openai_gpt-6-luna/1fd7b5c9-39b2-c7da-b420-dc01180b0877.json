@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "1fd7b5c9-39b2-c7da-b420-dc01180b0877",
+  "raw": {
+    "contract_num": "280551",
+    "advertiser": "Biden for President",
+    "gross_amount": 43215,
+    "flight_from": "2020-02-28",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 906,
+  "costUsd": 0.001005675,
+  "provider": "OpenAI",
+  "inputTokens": 7186,
+  "outputTokens": 215
+}

@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-sol",
+  "modelVersion": "openai/gpt-6-sol",
+  "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
+  "raw": null,
+  "latencyMs": 3857,
+  "costUsd": 0,
+  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/openai/gpt-6-sol-20260922. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"code"
+}

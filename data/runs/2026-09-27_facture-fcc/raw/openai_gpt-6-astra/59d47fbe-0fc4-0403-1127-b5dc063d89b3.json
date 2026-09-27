@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "59d47fbe-0fc4-0403-1127-b5dc063d89b3",
+  "raw": {
+    "contract_num": null,
+    "advertiser": "NV-Bernie 2020",
+    "gross_amount": 9580,
+    "flight_from": "2020-02-12",
+    "flight_to": "2020-02-17",
+    "vat_number": null
+  },
+  "latencyMs": 1339,
+  "costUsd": 0.07383,
+  "provider": "OpenAI",
+  "inputTokens": 5483,
+  "outputTokens": 106
+}

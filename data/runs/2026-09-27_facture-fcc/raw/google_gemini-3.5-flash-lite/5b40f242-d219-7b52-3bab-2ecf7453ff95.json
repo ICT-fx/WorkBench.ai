@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "5b40f242-d219-7b52-3bab-2ecf7453ff95",
+  "raw": {
+    "contract_num": "1621917",
+    "advertiser": "SALANGO FOR WEST VIRGINIA",
+    "gross_amount": 5360,
+    "flight_from": "2020-05-18",
+    "flight_to": "2020-06-08",
+    "vat_number": null
+  },
+  "latencyMs": 3927,
+  "costUsd": 0.0020242,
+  "provider": "Google",
+  "inputTokens": 5914,
+  "outputTokens": 100
+}

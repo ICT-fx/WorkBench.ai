@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "1fd7b5c9-39b2-c7da-b420-dc01180b0877",
+  "raw": {
+    "contract_num": "280551",
+    "advertiser": "Biden for President",
+    "gross_amount": 43215,
+    "flight_from": "2020-02-28",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 3922,
+  "costUsd": 0.08363,
+  "provider": "Anthropic",
+  "inputTokens": 7988,
+  "outputTokens": 75
+}

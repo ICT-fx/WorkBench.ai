@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "7e00d875-a0c3-6dc1-c2df-8f924a0a159a",
+  "raw": {
+    "contract_num": "1342418",
+    "advertiser": "Civic Nebraska",
+    "gross_amount": 360,
+    "flight_from": "2020-02-10",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 1592,
+  "costUsd": 0.001815675,
+  "provider": "OpenAI",
+  "inputTokens": 13878,
+  "outputTokens": 162
+}

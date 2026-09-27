@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "5e0773ca-7f3a-838c-90de-f0cbc5dd6370",
+  "raw": {
+    "contract_num": "278222",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 34500,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-18",
+    "vat_number": null
+  },
+  "latencyMs": 4448,
+  "costUsd": 0.08378,
+  "provider": "Anthropic",
+  "inputTokens": 7988,
+  "outputTokens": 78
+}

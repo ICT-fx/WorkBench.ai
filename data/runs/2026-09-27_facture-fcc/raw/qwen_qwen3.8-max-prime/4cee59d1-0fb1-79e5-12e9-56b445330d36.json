@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "4cee59d1-0fb1-79e5-12e9-56b445330d36",
+  "raw": {
+    "contract_num": "1954547",
+    "advertiser": "POL/ Joe Biden / D / PRES / US",
+    "gross_amount": 3685,
+    "flight_from": "2020-03-11",
+    "flight_to": "2020-03-16",
+    "vat_number": null
+  },
+  "latencyMs": 8025,
+  "costUsd": 0.037764,
+  "provider": "Alibaba",
+  "inputTokens": 5970,
+  "outputTokens": 1157
+}

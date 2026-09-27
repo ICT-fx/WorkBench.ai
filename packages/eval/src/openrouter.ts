@@ -1,5 +1,6 @@
 import type { Task } from "@hub/schema";
 import type { GenerateFn } from "./run";
+import { HttpError, reessayer } from "./retry";
 
 const BASE = "https://openrouter.ai/api/v1/chat/completions";
 
@@ -40,6 +41,8 @@ export type OpenRouterOptions = {
   apiKey: string;
   provider?: ProviderOptions;
   maxTokens?: number;
+  /** Informe des reprises, pour que le run ne paraisse pas figé. */
+  surReprise?: (model: string, docId: string, tentative: number, attenteMs: number) => void;
 };
 
 type Reponse = {
@@ -52,8 +55,8 @@ type Reponse = {
 
 /** Appelle un modèle via OpenRouter, en envoyant les pages du document en images. */
 export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
-  return async ({ model, promptText, images, task }: {
-    model: string; promptText: string; images: Buffer[]; task: Task;
+  return async ({ model, docId, promptText, images, task }: {
+    model: string; docId: string; promptText: string; images: Buffer[]; task: Task;
   }) => {
     const started = Date.now();
 
@@ -65,7 +68,7 @@ export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
       })),
     ];
 
-    const rep = await fetch(BASE, {
+    const appeler = async (): Promise<Response> => fetch(BASE, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${opts.apiKey}`,
@@ -83,14 +86,23 @@ export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
       }),
     });
 
+    const json = await reessayer(async () => {
+      const rep = await appeler();
+      if (!rep.ok) {
+        const corps = (await rep.text()).slice(0, 300);
+        const entete = rep.headers.get("retry-after");
+        const retryAfterMs = entete === null ? undefined : Number(entete) * 1000;
+        throw new HttpError(rep.status, `${rep.status} ${rep.statusText} — ${corps}`,
+          Number.isFinite(retryAfterMs) ? retryAfterMs : undefined);
+      }
+      const j = (await rep.json()) as Reponse;
+      if (j.error !== undefined) throw new Error(j.error.message ?? "erreur OpenRouter");
+      return j;
+    }, {
+      surReprise: (t, ms) => { opts.surReprise?.(model, docId, t, ms); },
+    });
+
     const latencyMs = Date.now() - started;
-
-    if (!rep.ok) {
-      throw new Error(`${rep.status} ${rep.statusText} — ${(await rep.text()).slice(0, 200)}`);
-    }
-
-    const json = (await rep.json()) as Reponse;
-    if (json.error !== undefined) throw new Error(json.error.message ?? "erreur OpenRouter");
 
     const texte = json.choices?.[0]?.message?.content ?? "";
     const objet = extraireJson(texte);

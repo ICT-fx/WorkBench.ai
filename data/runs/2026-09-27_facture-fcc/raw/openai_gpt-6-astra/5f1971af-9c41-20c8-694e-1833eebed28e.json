@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
+  "raw": {
+    "contract_num": "2420107",
+    "advertiser": "Woody Thrasher for Governor 2020",
+    "gross_amount": 5400,
+    "flight_from": "2020-03-16",
+    "flight_to": "2020-03-22",
+    "vat_number": null
+  },
+  "latencyMs": 5625,
+  "costUsd": 1.0213175,
+  "provider": "OpenAI",
+  "inputTokens": 81398,
+  "outputTokens": 77
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "988505d4-62ea-2dd2-5430-5c0a05817267",
+  "raw": {
+    "contract_num": "2390143",
+    "advertiser": "POL/Michael Bloomberg/President/US/D",
+    "gross_amount": 152200,
+    "flight_from": "2020-02-22",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 4722,
+  "costUsd": 0.17758,
+  "provider": "Anthropic",
+  "inputTokens": 17313,
+  "outputTokens": 89
+}

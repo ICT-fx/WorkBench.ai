@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "0458e5e4-b253-f5bb-0bfe-fd9b1a8eaada",
+  "raw": {
+    "contract_num": "26800107",
+    "advertiser": "Mike Bloomberg 2020, Inc",
+    "gross_amount": 2120,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 2285,
+  "costUsd": 0.073205,
+  "provider": "OpenAI",
+  "inputTokens": 5561,
+  "outputTokens": 74
+}

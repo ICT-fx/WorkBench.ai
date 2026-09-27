@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "0be55a7b-c4b9-7956-d523-30f79a4ebc1a",
+  "raw": {
+    "contract_num": "4226883",
+    "advertiser": "Friends Of Jim QNell-R",
+    "gross_amount": 1428,
+    "flight_from": "2023-01-27",
+    "flight_to": "2023-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 941,
+  "costUsd": 0.0000854,
+  "provider": "Reka",
+  "inputTokens": 685,
+  "outputTokens": 102
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "5c8edc38-9c6e-f131-6124-bd4aab4b9b01",
+  "raw": {
+    "contract_num": "2416181 (Rev 0) Agy30066235",
+    "advertiser": "POLI/U BRAUNSCHKEIDER/ANNE CRAINSCHEID",
+    "gross_amount": 3110,
+    "flight_from": "2020-05-04",
+    "flight_to": "2020-05-20",
+    "vat_number": null
+  },
+  "latencyMs": 3075,
+  "costUsd": 0.00065436,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 10462,
+  "outputTokens": 111
+}

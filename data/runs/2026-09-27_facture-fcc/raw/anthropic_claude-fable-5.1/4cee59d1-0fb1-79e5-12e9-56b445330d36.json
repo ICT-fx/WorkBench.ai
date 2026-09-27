@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "4cee59d1-0fb1-79e5-12e9-56b445330d36",
+  "raw": {
+    "contract_num": "1954547",
+    "advertiser": "POL/ Joe Biden / D / PRES / US",
+    "gross_amount": 3685,
+    "flight_from": "2020-03-11",
+    "flight_to": "2020-03-16",
+    "vat_number": null
+  },
+  "latencyMs": 3313,
+  "costUsd": 0.08433,
+  "provider": "Anthropic",
+  "inputTokens": 7988,
+  "outputTokens": 89
+}

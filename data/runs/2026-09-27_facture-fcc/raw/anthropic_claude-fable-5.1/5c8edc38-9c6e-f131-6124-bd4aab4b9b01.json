@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "5c8edc38-9c6e-f131-6124-bd4aab4b9b01",
+  "raw": {
+    "contract_num": "2416181",
+    "advertiser": "POLI/J CRUMPACKER/R/CON/OR",
+    "gross_amount": 3110,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-19",
+    "vat_number": null
+  },
+  "latencyMs": 4662,
+  "costUsd": 0.15142,
+  "provider": "Anthropic",
+  "inputTokens": 14682,
+  "outputTokens": 92
+}

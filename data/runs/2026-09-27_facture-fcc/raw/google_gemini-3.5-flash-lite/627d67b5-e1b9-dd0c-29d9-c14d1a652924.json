@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "627d67b5-e1b9-dd0c-29d9-c14d1a652924",
+  "raw": {
+    "contract_num": "385458",
+    "advertiser": "Valerie Plame for Congress",
+    "gross_amount": 22180,
+    "flight_from": "2020-04-28",
+    "flight_to": "2020-05-04",
+    "vat_number": null
+  },
+  "latencyMs": 2067,
+  "costUsd": 0.0020242,
+  "provider": "Google",
+  "inputTokens": 5914,
+  "outputTokens": 100
+}

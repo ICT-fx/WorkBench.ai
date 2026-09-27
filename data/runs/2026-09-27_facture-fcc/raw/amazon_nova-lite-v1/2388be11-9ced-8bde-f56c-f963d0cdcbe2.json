@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "2388be11-9ced-8bde-f56c-f963d0cdcbe2",
+  "raw": {
+    "contract_num": "7303200",
+    "advertiser": "Jacobs For Congress(R-133577)",
+    "gross_amount": 845.75,
+    "flight_from": "2020-03-01",
+    "flight_to": "2020-03-10",
+    "vat_number": null
+  },
+  "latencyMs": 1399,
+  "costUsd": 0.00014424,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 2004,
+  "outputTokens": 100
+}

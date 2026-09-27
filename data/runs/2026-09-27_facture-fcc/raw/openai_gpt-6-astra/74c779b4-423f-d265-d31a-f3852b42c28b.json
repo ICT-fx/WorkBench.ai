@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
+  "raw": {
+    "contract_num": "1032436",
+    "advertiser": "PROTECT FREEDOM PAC",
+    "gross_amount": 72500,
+    "flight_from": "2020-01-31",
+    "flight_to": "2020-02-06",
+    "vat_number": null
+  },
+  "latencyMs": 1772,
+  "costUsd": 0.07218,
+  "provider": "OpenAI",
+  "inputTokens": 5483,
+  "outputTokens": 73
+}

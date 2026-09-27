@@ -1,0 +1,117 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "taskId": "facture-fcc",
+  "startedAt": "2026-09-27T09:14:01.567Z",
+  "models": [
+    {
+      "alias": "anthropic/claude-fable-5.1",
+      "version": "anthropic/claude-fable-5.1"
+    },
+    {
+      "alias": "openai/gpt-6-astra",
+      "version": "openai/gpt-6-astra"
+    },
+    {
+      "alias": "qwen/qwen3.8-max-prime",
+      "version": "qwen/qwen3.8-max-prime"
+    },
+    {
+      "alias": "moonshotai/kimi-k3",
+      "version": "moonshotai/kimi-k3"
+    },
+    {
+      "alias": "anthropic/claude-opus-5.5",
+      "version": "anthropic/claude-opus-5.5"
+    },
+    {
+      "alias": "x-ai/grok-4.7",
+      "version": "x-ai/grok-4.7"
+    },
+    {
+      "alias": "openai/gpt-6-sol",
+      "version": "openai/gpt-6-sol"
+    },
+    {
+      "alias": "anthropic/claude-sonnet-5",
+      "version": "anthropic/claude-sonnet-5"
+    },
+    {
+      "alias": "qwen/qwen3.8-max-0902",
+      "version": "qwen/qwen3.8-max-0902"
+    },
+    {
+      "alias": "meta/muse-spark-1.3",
+      "version": "meta/muse-spark-1.3"
+    },
+    {
+      "alias": "moonshotai/kimi-k2.6",
+      "version": "moonshotai/kimi-k2.6"
+    },
+    {
+      "alias": "amazon/nova-pro-v1",
+      "version": "amazon/nova-pro-v1"
+    },
+    {
+      "alias": "google/gemini-3.8-flash",
+      "version": "google/gemini-3.8-flash"
+    },
+    {
+      "alias": "cohere/command-a-plus",
+      "version": "cohere/command-a-plus"
+    },
+    {
+      "alias": "mistralai/mistral-medium-3-5",
+      "version": "mistralai/mistral-medium-3-5"
+    },
+    {
+      "alias": "mistralai/mistral-large-2512",
+      "version": "mistralai/mistral-large-2512"
+    },
+    {
+      "alias": "qwen/qwen3.8-27b",
+      "version": "qwen/qwen3.8-27b"
+    },
+    {
+      "alias": "meta-llama/llama-4-maverick",
+      "version": "meta-llama/llama-4-maverick"
+    },
+    {
+      "alias": "mistralai/mistral-small-2603",
+      "version": "mistralai/mistral-small-2603"
+    },
+    {
+      "alias": "mistralai/ministral-8b-2512",
+      "version": "mistralai/ministral-8b-2512"
+    },
+    {
+      "alias": "google/gemma-4-31b-it",
+      "version": "google/gemma-4-31b-it"
+    },
+    {
+      "alias": "deepseek/deepseek-v4.1-flash",
+      "version": "deepseek/deepseek-v4.1-flash"
+    },
+    {
+      "alias": "google/gemini-3.5-flash-lite",
+      "version": "google/gemini-3.5-flash-lite"
+    },
+    {
+      "alias": "openai/gpt-6-luna",
+      "version": "openai/gpt-6-luna"
+    },
+    {
+      "alias": "amazon/nova-lite-v1",
+      "version": "amazon/nova-lite-v1"
+    },
+    {
+      "alias": "z-ai/glm-5.3-flash",
+      "version": "z-ai/glm-5.3-flash"
+    },
+    {
+      "alias": "qwen/qwen3.7-flash",
+      "version": "qwen/qwen3.7-flash"
+    }
+  ],
+  "promptHash": "99c8d6c42342",
+  "docCount": 25
+}
