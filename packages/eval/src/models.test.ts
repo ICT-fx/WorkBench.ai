@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { parseCatalogue, assertUsable, computeCost, V1_MODELS } from "./models";
+import { parseCatalogue, assertUsable, computeCost, HUB_MODELS } from "./models";
 
 const payload = {
   data: [
@@ -38,6 +38,28 @@ describe("catalogue", () => {
   });
 });
 
+describe("catalogue OpenRouter", () => {
+  const openrouter = {
+    data: [
+      { id: "lab/vision", name: "V", architecture: { input_modalities: ["text", "image"] },
+        pricing: { prompt: "0.000002", completion: "0.000008" } },
+      { id: "lab/texte", name: "T", architecture: { input_modalities: ["text"] },
+        pricing: { prompt: "0.0000005", completion: "0.000001" } },
+    ],
+  };
+
+  it("lit la forme d'OpenRouter, qui nomme ses champs autrement que Vercel", () => {
+    const c = parseCatalogue(openrouter);
+    expect(c.get("lab/vision")!.acceptsImages).toBe(true);
+    expect(c.get("lab/texte")!.acceptsImages).toBe(false);
+    expect(c.get("lab/vision")!.inputPrice).toBeCloseTo(0.000002, 10);
+  });
+
+  it("retient les modèles OpenRouter, qui n'annoncent pas de type", () => {
+    expect(parseCatalogue(openrouter).size).toBe(2);
+  });
+});
+
 describe("coût", () => {
   it("multiplie les tokens par les tarifs publiés", () => {
     const entry = parseCatalogue(payload).get("a/vision")!;
@@ -51,13 +73,16 @@ describe("coût", () => {
   });
 });
 
-describe("sélection V1", () => {
-  it("retient six modèles distincts", () => {
-    expect(new Set(V1_MODELS).size).toBe(6);
+describe("sélection du hub", () => {
+  it("retient 27 modèles distincts", () => {
+    expect(new Set(HUB_MODELS).size).toBe(27);
   });
 
-  it("couvre au moins quatre fournisseurs différents", () => {
-    const providers = new Set(V1_MODELS.map((m) => m.split("/")[0]));
-    expect(providers.size).toBeGreaterThanOrEqual(4);
+  it("couvre au moins dix fournisseurs de modèles", () => {
+    expect(new Set(HUB_MODELS.map((m) => m.split("/")[0])).size).toBeGreaterThanOrEqual(10);
+  });
+
+  it("compte au moins un modèle français", () => {
+    expect(HUB_MODELS.filter((m) => m.startsWith("mistralai/")).length).toBeGreaterThanOrEqual(1);
   });
 });

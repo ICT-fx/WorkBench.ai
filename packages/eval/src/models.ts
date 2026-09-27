@@ -10,6 +10,26 @@
  * Les alias sont résolus contre le catalogue de l'AI Gateway au lancement : si
  * l'un d'eux disparaît, le run s'arrête au lieu de publier un classement amputé.
  */
+/**
+ * Les 27 modèles du hub, identifiants OpenRouter.
+ *
+ * Quatre groupes : ce que l'IA sait faire de mieux prix mis de côté, le bon
+ * rapport qualité-prix, la souveraineté et l'auto-hébergement, et le volume au
+ * coût le plus bas. Voir docs/2026-09-24-modeles-benchmarks-roadmap.md.
+ */
+export const HUB_MODELS = [
+  "anthropic/claude-fable-5.1", "openai/gpt-6-astra", "qwen/qwen3.8-max-prime",
+  "moonshotai/kimi-k3", "anthropic/claude-opus-5.5", "x-ai/grok-4.7",
+  "openai/gpt-6-sol", "anthropic/claude-sonnet-5", "qwen/qwen3.8-max-0902",
+  "meta/muse-spark-1.3", "moonshotai/kimi-k2.6", "amazon/nova-pro-v1",
+  "google/gemini-3.8-flash", "cohere/command-a-plus",
+  "mistralai/mistral-medium-3-5", "mistralai/mistral-large-2512", "qwen/qwen3.8-27b",
+  "meta-llama/llama-4-maverick", "mistralai/mistral-small-2603",
+  "mistralai/ministral-8b-2512", "google/gemma-4-31b-it",
+  "deepseek/deepseek-v4.1-flash", "google/gemini-3.5-flash-lite", "openai/gpt-6-luna",
+  "amazon/nova-lite-v1", "z-ai/glm-5.3-flash", "qwen/qwen3.7-flash",
+] as const;
+
 export const V1_MODELS = [
   "openai/gpt-6-astra",
   "anthropic/claude-opus-5",
@@ -30,27 +50,33 @@ export type CatalogueEntry = {
 
 export type Catalogue = Map<string, CatalogueEntry>;
 
-const CATALOGUE_URL = "https://ai-gateway.vercel.sh/v1/models";
+const CATALOGUE_URL = "https://openrouter.ai/api/v1/models";
 
 type RawModel = {
   id: string;
   name?: string;
   type?: string;
+  /** Forme de la passerelle Vercel. */
   modalities?: { input?: string[] };
-  pricing?: { input?: string; output?: string };
+  /** Forme d'OpenRouter. */
+  architecture?: { input_modalities?: string[] };
+  pricing?: { input?: string; output?: string; prompt?: string; completion?: string };
 };
 
 export function parseCatalogue(payload: unknown): Catalogue {
   const data = (payload as { data?: RawModel[] }).data ?? [];
   const catalogue: Catalogue = new Map();
   for (const m of data) {
-    if (m.type !== "language") continue;
+    // Le champ `type` n'existe que chez Vercel ; chez OpenRouter tout est un
+    // modèle de langage. On accepte les deux formes de catalogue.
+    if (m.type !== undefined && m.type !== "language") continue;
+    const entrees = m.architecture?.input_modalities ?? m.modalities?.input ?? [];
     catalogue.set(m.id, {
       id: m.id,
       name: m.name ?? m.id,
-      inputPrice: Number(m.pricing?.input ?? 0),
-      outputPrice: Number(m.pricing?.output ?? 0),
-      acceptsImages: (m.modalities?.input ?? []).includes("image"),
+      inputPrice: Number(m.pricing?.prompt ?? m.pricing?.input ?? 0),
+      outputPrice: Number(m.pricing?.completion ?? m.pricing?.output ?? 0),
+      acceptsImages: entrees.includes("image"),
     });
   }
   return catalogue;

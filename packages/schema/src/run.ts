@@ -14,6 +14,10 @@ export const ModelResultSchema = z.object({
   raw: z.unknown(),
   latencyMs: z.number().min(0),
   costUsd: z.number().min(0),
+  /** L'hébergeur qui a réellement servi le modèle : deux hébergeurs du même
+   *  modèle peuvent le servir plus ou moins compressé, donc plus ou moins bien.
+   *  Sans cette information, un classement n'est pas reproductible. */
+  provider: z.string().optional(),
   inputTokens: z.number().min(0).optional(),
   outputTokens: z.number().min(0).optional(),
   error: z.string().optional(),

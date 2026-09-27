@@ -24,11 +24,17 @@ export type LoadedDocument = { docId: string; images: Buffer[] };
  */
 export async function loadDocuments(taskId: string): Promise<LoadedDocument[]> {
   const dir = join(taskDir(taskId), "documents");
-  const files = (await readdir(dir)).filter((f) => f.endsWith(".png")).sort();
+  const numeroPage = (f: string): number => Number(/-p(\d+)\.\w+$/.exec(f)?.[1] ?? 1);
+  const files = (await readdir(dir))
+    .filter((f) => f.endsWith(".jpg") || f.endsWith(".png"))
+    // Tri numérique : un tri alphabétique placerait la page 10 avant la page 2.
+    .sort((a, b) => a.localeCompare(b) || 0)
+    .sort((a, b) => (a.replace(/-p\d+\.\w+$/, "") === b.replace(/-p\d+\.\w+$/, "")
+      ? numeroPage(a) - numeroPage(b) : 0));
 
   const byDoc = new Map<string, string[]>();
   for (const file of files) {
-    const base = file.replace(/\.png$/, "");
+    const base = file.replace(/\.(png|jpg)$/, "");
     const docId = /-p\d+$/.test(base) ? base.replace(/-p\d+$/, "") : base;
     byDoc.set(docId, [...(byDoc.get(docId) ?? []), file]);
   }

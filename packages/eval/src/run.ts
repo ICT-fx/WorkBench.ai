@@ -16,6 +16,9 @@ export type GenerateResult = {
   object: unknown;
   /** Version réellement servie par le fournisseur, jamais l'alias demandé. */
   modelVersion: string;
+  /** L'hébergeur qui a servi l'appel : deux hébergeurs du même modèle peuvent
+   *  le servir plus ou moins compressé. Sans lui, un run n'est pas rejouable. */
+  provider?: string;
   latencyMs: number;
   costUsd: number;
   inputTokens?: number;
@@ -105,6 +108,7 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
       result = {
         runId: opts.runId, model, modelVersion: r.modelVersion, docId: doc.docId,
         raw: r.object, latencyMs: r.latencyMs, costUsd: r.costUsd,
+        ...(r.provider === undefined ? {} : { provider: r.provider }),
         ...(r.inputTokens === undefined ? {} : { inputTokens: r.inputTokens }),
         ...(r.outputTokens === undefined ? {} : { outputTokens: r.outputTokens }),
       };

@@ -10,8 +10,9 @@ import { runTask } from "./run";
 import { selectForReview, type ReviewCandidate } from "./review";
 import { scoreDocument } from "./score";
 import { appendHistory, applyReview, buildLeaderboard } from "./publish";
-import { fetchCatalogue, assertUsable, V1_MODELS } from "./models";
-import { createGatewayGenerate } from "./gateway";
+import { existsSync } from "node:fs";
+import { fetchCatalogue, assertUsable, HUB_MODELS } from "./models";
+import { createOpenRouterGenerate } from "./openrouter";
 import { estimateRunCost } from "./estimate";
 import {
   loadTask, loadPrompt, loadDocuments, loadGroundTruths, loadRunResults,
@@ -27,7 +28,7 @@ const flag = (name: string): boolean => process.argv.includes(`--${name}`);
 const today = (): string => new Date().toISOString().slice(0, 10);
 
 async function cmdRun(taskId: string): Promise<void> {
-  const models = arg("models")?.split(",") ?? [...V1_MODELS];
+  const models = arg("models")?.split(",") ?? [...HUB_MODELS];
   const runId = arg("run") ?? `${today()}_${taskId}`;
 
   const catalogue = await fetchCatalogue();
@@ -55,11 +56,15 @@ async function cmdRun(taskId: string): Promise<void> {
     return;
   }
 
-  // L'AI Gateway accepte une clé d'API ou, dans un projet Vercel lié, un jeton OIDC.
-  if (process.env.AI_GATEWAY_API_KEY === undefined && process.env.VERCEL_OIDC_TOKEN === undefined) {
+  for (const f of [".env.local", ".env"]) {
+    if (existsSync(f)) { try { process.loadEnvFile(f); } catch { /* illisible */ } }
+  }
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (apiKey === undefined || apiKey.trim() === "") {
     throw new Error(
-      "Aucune authentification AI Gateway. Créer une clé sur vercel.com (AI Gateway), puis :\n" +
-      "  export AI_GATEWAY_API_KEY=...\n" +
+      "Aucune clé OpenRouter. La créer sur https://openrouter.ai/settings/keys,\n" +
+      "puis la placer dans .env.local :  OPENROUTER_API_KEY=sk-or-v1-...\n" +
+      "Vérifier ensuite avec : npm run key:check\n" +
       "Pour connaître le coût avant de lancer : npm run eval:run -- --estimate",
     );
   }
@@ -69,8 +74,15 @@ async function cmdRun(taskId: string): Promise<void> {
 
   const summary = await runTask({
     task, promptText, documents: subset, models, runId,
-    outRoot: runsRoot, generate: createGatewayGenerate(catalogue),
+    outRoot: runsRoot,
+    generate: createOpenRouterGenerate({
+      apiKey,
+      // Pas de report silencieux sur un autre hébergeur en cours de requête :
+      // un classement doit pouvoir être rejoué à l'identique.
+      provider: { allow_fallbacks: false },
+    }),
     resume: flag("resume"),
+    concurrency: Number(arg("concurrency") ?? 8),
   });
 
   console.log(`Terminé : ${summary.calls} appels, ${summary.errors} en échec, ` +
