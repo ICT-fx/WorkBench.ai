@@ -1,0 +1,52 @@
+{
+  "id": "facture-fcc",
+  "label": "Lecture de factures",
+  "question": "Combien de vos factures passeront sans qu'un humain ait à corriger ?",
+  "criteria": [
+    {
+      "id": "gross_amount",
+      "label": "Montant total facturé",
+      "kind": "number",
+      "weight": 3,
+      "critical": true,
+      "tolerance": 0
+    },
+    {
+      "id": "contract_num",
+      "label": "Numéro de contrat",
+      "kind": "exact",
+      "weight": 2,
+      "critical": true
+    },
+    {
+      "id": "advertiser",
+      "label": "Client facturé",
+      "kind": "exact",
+      "weight": 2,
+      "critical": true
+    },
+    {
+      "id": "flight_from",
+      "label": "Début de la période facturée",
+      "kind": "date",
+      "weight": 2,
+      "critical": true,
+      "dateOrder": "MDY"
+    },
+    {
+      "id": "flight_to",
+      "label": "Fin de la période facturée",
+      "kind": "date",
+      "weight": 2,
+      "critical": true,
+      "dateOrder": "MDY"
+    },
+    {
+      "id": "vat_number",
+      "label": "Numéro de TVA",
+      "kind": "exact",
+      "weight": 1,
+      "critical": false
+    }
+  ]
+}

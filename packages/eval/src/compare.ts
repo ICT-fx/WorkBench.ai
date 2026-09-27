@@ -71,6 +71,21 @@ export function parseNumber(v: Value): number | null {
 const MOIS = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
   "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
 
+const MONTHS = ["january", "february", "march", "april", "may", "june",
+  "july", "august", "september", "october", "november", "december"];
+
+/** Retrouve un mois écrit en toutes lettres, en français ou en anglais. */
+function moisEcrit(mot: string): number {
+  const debut = mot.slice(0, 3);
+  const i = MOIS.findIndex((m) => m.startsWith(debut));
+  if (i >= 0) return i + 1;
+  const j = MONTHS.findIndex((m) => m.startsWith(debut));
+  return j >= 0 ? j + 1 : 0;
+}
+
+/** Une année à deux chiffres désigne le siècle courant. */
+const anneePleine = (a: number): number => (a < 100 ? 2000 + a : a);
+
 const iso = (y: number, m: number, d: number): string | null =>
   m >= 1 && m <= 12 && d >= 1 && d <= 31
     ? `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`
@@ -79,26 +94,38 @@ const iso = (y: number, m: number, d: number): string | null =>
 /**
  * Normalise une date en AAAA-MM-JJ.
  *
- * Une date en `03/04/2026` est lue comme le 3 avril, jamais comme le 4 mars :
- * le jeu de test est français, et accepter les deux lectures rendrait le
- * comparateur incapable de détecter une inversion jour/mois — qui est
- * précisément l'erreur la plus coûteuse en comptabilité.
+ * Une seule lecture est admise, celle du pays du document : accepter les deux
+ * rendrait le comparateur incapable de détecter une inversion jour/mois, qui
+ * est précisément l'erreur la plus coûteuse en comptabilité.
  */
-export function parseDate(v: Value): string | null {
+export function parseDate(v: Value, order: "DMY" | "MDY" = "DMY"): string | null {
   if (typeof v !== "string") return null;
   const s = deaccent(v.trim().toLowerCase());
 
   const isoMatch = /^(\d{4})-(\d{2})-(\d{2})/.exec(s);
   if (isoMatch) return iso(Number(isoMatch[1]), Number(isoMatch[2]), Number(isoMatch[3]));
 
-  const numeric = /^(\d{1,2})[/.-](\d{1,2})[/.-](\d{4})$/.exec(s);
-  if (numeric) return iso(Number(numeric[3]), Number(numeric[2]), Number(numeric[1]));
-
-  const written = /^(\d{1,2})(?:er)?\s+([a-z]+)\.?\s+(\d{4})$/.exec(s);
-  if (written) {
-    const idx = MOIS.findIndex((m) => m.startsWith(written[2]!.slice(0, 3)));
-    if (idx >= 0) return iso(Number(written[3]), idx + 1, Number(written[1]));
+  const numeric = /^(\d{1,2})[/.-](\d{1,2})[/.-](\d{2}|\d{4})$/.exec(s);
+  if (numeric) {
+    const [a, b] = [Number(numeric[1]), Number(numeric[2])];
+    const [jour, mois] = order === "MDY" ? [b, a] : [a, b];
+    return iso(anneePleine(Number(numeric[3])), mois, jour);
   }
+
+  // « 3 février 2026 » ou « 3rd February 2026 »
+  const ecritJourDabord = /^(\d{1,2})(?:er|st|nd|rd|th)?\s+([a-z]+)\.?,?\s+(\d{2}|\d{4})$/.exec(s);
+  if (ecritJourDabord) {
+    const mois = moisEcrit(ecritJourDabord[2]!);
+    if (mois > 0) return iso(anneePleine(Number(ecritJourDabord[3])), mois, Number(ecritJourDabord[1]));
+  }
+
+  // « February 3, 2026 »
+  const ecritMoisDabord = /^([a-z]+)\.?\s+(\d{1,2})(?:er|st|nd|rd|th)?,?\s+(\d{2}|\d{4})$/.exec(s);
+  if (ecritMoisDabord) {
+    const mois = moisEcrit(ecritMoisDabord[1]!);
+    if (mois > 0) return iso(anneePleine(Number(ecritMoisDabord[3])), mois, Number(ecritMoisDabord[2]));
+  }
+
   return null;
 }
 
@@ -201,8 +228,8 @@ export function compareField(criterion: Criterion, expected: Value | null, got: 
       return Math.abs(e - o) <= (criterion.tolerance ?? 0) ? "correct" : "faux";
     }
     case "date": {
-      const e = parseDate(expected);
-      const o = parseDate(g);
+      const e = parseDate(expected, criterion.dateOrder);
+      const o = parseDate(g, criterion.dateOrder);
       if (e === null || o === null) return "faux";
       return e === o ? "correct" : "faux";
     }

@@ -14,6 +14,13 @@ export const CriterionSchema = z.object({
   critical: z.boolean(),
   /** Écart toléré pour les critères numériques. 0 = au centime près. */
   tolerance: z.number().min(0).optional(),
+  /**
+   * Convention de lecture des dates chiffrées, pour les critères de kind "date".
+   * "DMY" (défaut) : 02/03 = 2 mars, usage français.
+   * "MDY" : 02/03 = 3 février, usage américain.
+   * La convention suit le pays du document, pas celui du lecteur.
+   */
+  dateOrder: z.enum(["DMY", "MDY"]).optional(),
   /** Mots-clés attendus, pour les critères de kind "text". */
   expectedKeywords: z.array(z.string()).optional(),
 });

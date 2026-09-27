@@ -85,6 +85,36 @@ describe("dates", () => {
   });
 });
 
+describe("dates selon la convention du pays du document", () => {
+  const dateUS: Criterion = { ...date, dateOrder: "MDY" };
+
+  it("lit 02/03/20 comme le 3 février sur un document américain", () => {
+    expect(compareField(dateUS, "2026-02-03", "02/03/26")).toBe("correct");
+  });
+
+  it("et comme le 2 mars sur un document français", () => {
+    expect(compareField(date, "2026-03-02", "02/03/26")).toBe("correct");
+  });
+
+  it("refuse l'autre lecture, sinon l'inversion jour/mois ne se verrait jamais", () => {
+    expect(compareField(dateUS, "2026-03-02", "02/03/26")).toBe("faux");
+    expect(compareField(date, "2026-02-03", "02/03/26")).toBe("faux");
+  });
+
+  it("accepte une année sur deux chiffres", () => {
+    expect(compareField(dateUS, "2020-02-03", "2/3/20")).toBe("correct");
+  });
+
+  it("lit l'ISO de la même façon quelle que soit la convention", () => {
+    expect(compareField(dateUS, "2026-02-03", "2026-02-03")).toBe("correct");
+    expect(compareField(date, "2026-02-03", "2026-02-03")).toBe("correct");
+  });
+
+  it("lit un mois écrit en toutes lettres quelle que soit la convention", () => {
+    expect(compareField(dateUS, "2026-02-03", "February 3, 2026")).toBe("correct");
+  });
+});
+
 describe("champs exacts", () => {
   it("ignore les espaces et la casse mais pas les chiffres", () => {
     expect(compareField(exact, "40483304800022", "404 833 048 00022")).toBe("correct");
