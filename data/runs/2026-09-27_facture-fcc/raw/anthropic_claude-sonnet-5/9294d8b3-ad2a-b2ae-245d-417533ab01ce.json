@@ -3,8 +3,17 @@
   "model": "anthropic/claude-sonnet-5",
   "modelVersion": "anthropic/claude-sonnet-5",
   "docId": "9294d8b3-ad2a-b2ae-245d-417533ab01ce",
-  "raw": null,
-  "latencyMs": 605,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/anthropic/claude-sonnet-5-20260630. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortl"
+  "raw": {
+    "contract_num": "386096",
+    "advertiser": "Tricia Zunker for Wisconsin",
+    "gross_amount": 15070,
+    "flight_from": "2020-05-08",
+    "flight_to": "2020-05-12",
+    "vat_number": null
+  },
+  "latencyMs": 3686,
+  "costUsd": 0.020732,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 9851,
+  "outputTokens": 103
 }

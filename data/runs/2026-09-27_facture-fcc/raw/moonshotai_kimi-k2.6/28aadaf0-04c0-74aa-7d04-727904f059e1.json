@@ -4,7 +4,7 @@
   "modelVersion": "moonshotai/kimi-k2.6",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
   "raw": null,
-  "latencyMs": 1873,
+  "latencyMs": 656610,
   "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 8000 tokens, but can only afford 7200. To increase, visit https://openrouter.ai/workspaces/default/keys/38c7737c5977c2022db9fa60954723722c11dbd39c8a56c3cd464109e49632f0 and adjust the key's weekly limit"
 }

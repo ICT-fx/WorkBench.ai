@@ -4,7 +4,7 @@
   "modelVersion": "mistralai/mistral-small-2603",
   "docId": "7e00d875-a0c3-6dc1-c2df-8f924a0a159a",
   "raw": null,
-  "latencyMs": 485,
+  "latencyMs": 34627,
   "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"mistralai/mistral-small-2603 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Mistral\",\"is_byok\":fa"
 }

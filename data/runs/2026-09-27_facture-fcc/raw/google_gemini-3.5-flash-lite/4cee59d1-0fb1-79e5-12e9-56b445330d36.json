@@ -3,8 +3,17 @@
   "model": "google/gemini-3.5-flash-lite",
   "modelVersion": "google/gemini-3.5-flash-lite",
   "docId": "4cee59d1-0fb1-79e5-12e9-56b445330d36",
-  "raw": null,
-  "latencyMs": 415,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "1954547",
+    "advertiser": "POL/ Joe Biden / D / PRES / US",
+    "gross_amount": 3685,
+    "flight_from": "2020-02-24",
+    "flight_to": "2020-03-16",
+    "vat_number": null
+  },
+  "latencyMs": 1906,
+  "costUsd": 0.0017036,
+  "provider": "Google",
+  "inputTokens": 4812,
+  "outputTokens": 104
 }

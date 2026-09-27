@@ -3,8 +3,17 @@
   "model": "z-ai/glm-5.3-flash",
   "modelVersion": "z-ai/glm-5.3-flash",
   "docId": "08bea544-d037-eaad-848d-8a98dbc62b36",
-  "raw": null,
-  "latencyMs": 125429,
-  "costUsd": 0,
-  "error": "A Timeout Occurred"
+  "raw": {
+    "contract_num": "1976789",
+    "advertiser": "Steyer/D/President",
+    "gross_amount": 27950,
+    "flight_from": "2020-01-28",
+    "flight_to": "2020-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 7225,
+  "costUsd": 0.00217578,
+  "provider": "Together",
+  "inputTokens": 13430,
+  "outputTokens": 384
 }

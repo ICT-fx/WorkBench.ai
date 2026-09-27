@@ -62,3 +62,15 @@ describe("reessayer", () => {
     expect(attentes).toEqual([4200]);
   });
 });
+
+describe("refus de crédit", () => {
+  it("réessaie quand ce sont les appels en cours qui réservent le crédit", () => {
+    expect(estPassager(new HttpError(402,
+      'would exceed your available credits given your current in-flight requests'))).toBe(true);
+  });
+
+  it("abandonne quand le crédit est réellement épuisé : attendre n'y changera rien", () => {
+    expect(estPassager(new HttpError(402,
+      '{"reason":"weight_exceeds_budget"} maximum cost exceeds your available credits'))).toBe(false);
+  });
+});

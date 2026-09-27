@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
-  "raw": null,
-  "latencyMs": 330,
-  "costUsd": 0,
-  "error": "403 Forbidden — {\"error\":{\"message\":\"This model requires you to complete the following before use: 18+ age confirmation. Confirm at https://openrouter.ai/settings/preferences.\",\"code\":403,\"metadata\":{\"missing_attesta"
+  "raw": {
+    "contract_num": "273868",
+    "advertiser": "BIDEN FOR PRESIDENT",
+    "gross_amount": 10095,
+    "flight_from": "2020-03-01",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 8112,
+  "costUsd": 0.01064,
+  "provider": "Meta",
+  "inputTokens": 5710,
+  "outputTokens": 916
 }

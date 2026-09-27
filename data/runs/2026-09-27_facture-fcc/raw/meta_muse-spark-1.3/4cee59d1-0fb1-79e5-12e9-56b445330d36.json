@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "4cee59d1-0fb1-79e5-12e9-56b445330d36",
-  "raw": null,
-  "latencyMs": 512,
-  "costUsd": 0,
-  "error": "403 Forbidden — {\"error\":{\"message\":\"This model requires you to complete the following before use: 18+ age confirmation. Confirm at https://openrouter.ai/settings/preferences.\",\"code\":403,\"metadata\":{\"missing_attesta"
+  "raw": {
+    "contract_num": "1954547",
+    "advertiser": "POL/ Joe Biden / D / PRES / US",
+    "gross_amount": 3685,
+    "flight_from": "2020-03-11",
+    "flight_to": "2020-03-16",
+    "vat_number": null
+  },
+  "latencyMs": 6119,
+  "costUsd": 0.013423,
+  "provider": "Meta",
+  "inputTokens": 7488,
+  "outputTokens": 956
 }

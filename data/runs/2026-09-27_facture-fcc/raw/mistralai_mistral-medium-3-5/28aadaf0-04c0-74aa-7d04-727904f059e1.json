@@ -3,8 +3,17 @@
   "model": "mistralai/mistral-medium-3-5",
   "modelVersion": "mistralai/mistral-medium-3-5",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
-  "raw": null,
-  "latencyMs": 2025,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "1331293",
+    "advertiser": "Tom Steyer for President-D",
+    "gross_amount": 6975,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 9433,
+  "costUsd": 0.022992,
+  "provider": "Mistral",
+  "inputTokens": 14898,
+  "outputTokens": 86
 }

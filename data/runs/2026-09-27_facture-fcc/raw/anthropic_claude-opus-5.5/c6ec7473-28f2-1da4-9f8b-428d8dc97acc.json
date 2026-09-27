@@ -1,0 +1,10 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
+  "raw": null,
+  "latencyMs": 201069,
+  "costUsd": 0,
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 8000 tokens, but can only afford 4371. To increase, visit https://openrouter.ai/workspaces/default/keys/38c7737c5977c2022db9fa60954723722c11dbd39c8a56c3cd464109e49632f0 and adjust the key's weekly limit"
+}

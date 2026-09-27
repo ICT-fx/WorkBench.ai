@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-prime",
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "4b703aaa-2e13-528c-85f8-9bd7879d4cbb",
-  "raw": null,
-  "latencyMs": 35399,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "648742",
+    "advertiser": "Bloomberg/Democrat/President",
+    "gross_amount": 7000,
+    "flight_from": "2020-01-11",
+    "flight_to": "2020-01-17",
+    "vat_number": null
+  },
+  "latencyMs": 95552,
+  "costUsd": 0.102564,
+  "provider": "Alibaba",
+  "inputTokens": 5970,
+  "outputTokens": 7789
 }

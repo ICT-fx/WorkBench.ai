@@ -3,8 +3,17 @@
   "model": "anthropic/claude-opus-5.5",
   "modelVersion": "anthropic/claude-opus-5.5",
   "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
-  "raw": null,
-  "latencyMs": 318,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "1032436",
+    "advertiser": "PROTECT FREEDOM PAC",
+    "gross_amount": 72500,
+    "flight_from": "2020-01-31",
+    "flight_to": "2020-02-06",
+    "vat_number": null
+  },
+  "latencyMs": 4719,
+  "costUsd": 0.026192,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 6123,
+  "outputTokens": 85
 }

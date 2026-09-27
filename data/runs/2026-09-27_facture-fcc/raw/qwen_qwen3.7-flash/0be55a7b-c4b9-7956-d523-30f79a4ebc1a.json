@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.7-flash",
   "modelVersion": "qwen/qwen3.7-flash",
   "docId": "0be55a7b-c4b9-7956-d523-30f79a4ebc1a",
-  "raw": null,
-  "latencyMs": 31880,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "4228683",
+    "advertiser": "Friends Of Jim ONeil-R (134816)",
+    "gross_amount": 1428,
+    "flight_from": "2020-01-27",
+    "flight_to": "2020-02-23",
+    "vat_number": null
+  },
+  "latencyMs": 43967,
+  "costUsd": 0.00034554,
+  "provider": "Alibaba",
+  "inputTokens": 1794,
+  "outputTokens": 2244
 }

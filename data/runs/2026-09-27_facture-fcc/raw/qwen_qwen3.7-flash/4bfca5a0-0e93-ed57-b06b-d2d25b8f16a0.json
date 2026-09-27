@@ -4,7 +4,7 @@
   "modelVersion": "qwen/qwen3.7-flash",
   "docId": "4bfca5a0-0e93-ed57-b06b-d2d25b8f16a0",
   "raw": null,
-  "latencyMs": 36771,
+  "latencyMs": 51839,
   "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "error": "réponse sans JSON exploitable : ```json\n{\n    \"contract_num\": \"2383065\",\n    \"advertiser\": \"POL/Tom Steyer/President/US/Dem\",\n    \"gross_amount\": 89260.00,\n    \"flight_from\": \"2020-02-18\",\n   "
 }

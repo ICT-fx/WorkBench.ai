@@ -3,8 +3,17 @@
   "model": "google/gemini-3.8-flash",
   "modelVersion": "google/gemini-3.8-flash",
   "docId": "5e0773ca-7f3a-838c-90de-f0cbc5dd6370",
-  "raw": null,
-  "latencyMs": 609,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "278222",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 34500,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-18",
+    "vat_number": null
+  },
+  "latencyMs": 6405,
+  "costUsd": 0.00591525,
+  "provider": "Google",
+  "inputTokens": 4812,
+  "outputTokens": 615
 }

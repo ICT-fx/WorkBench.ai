@@ -3,8 +3,17 @@
   "model": "google/gemini-3.8-flash",
   "modelVersion": "google/gemini-3.8-flash",
   "docId": "782276fb-5d1c-af75-b44f-d75997a7b168",
-  "raw": null,
-  "latencyMs": 3249,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly."
+  "raw": {
+    "contract_num": "2343198",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 19845,
+    "flight_from": "2020-01-18",
+    "flight_to": "2020-01-24",
+    "vat_number": null
+  },
+  "latencyMs": 10592,
+  "costUsd": 0.00913125,
+  "provider": "Google",
+  "inputTokens": 9220,
+  "outputTokens": 591
 }

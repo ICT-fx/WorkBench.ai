@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-astra",
   "modelVersion": "openai/gpt-6-astra",
   "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
-  "raw": null,
-  "latencyMs": 729,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/openai/gpt-6-astra-20260903. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"co"
+  "raw": {
+    "contract_num": "273868",
+    "advertiser": "BIDEN FOR PRESIDENT",
+    "gross_amount": 10095,
+    "flight_from": "2020-03-01",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 4298,
+  "costUsd": 0.07208,
+  "provider": "OpenAI",
+  "inputTokens": 5483,
+  "outputTokens": 71
 }

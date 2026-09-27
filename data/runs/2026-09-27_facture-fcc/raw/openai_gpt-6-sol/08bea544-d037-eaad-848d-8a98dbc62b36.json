@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "08bea544-d037-eaad-848d-8a98dbc62b36",
-  "raw": null,
-  "latencyMs": 1029,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "1976789",
+    "advertiser": "Steyer/D/President",
+    "gross_amount": 27950,
+    "flight_from": "2020-01-28",
+    "flight_to": "2020-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 6157,
+  "costUsd": 0.032176,
+  "provider": "OpenAI",
+  "inputTokens": 12295,
+  "outputTokens": 144
 }

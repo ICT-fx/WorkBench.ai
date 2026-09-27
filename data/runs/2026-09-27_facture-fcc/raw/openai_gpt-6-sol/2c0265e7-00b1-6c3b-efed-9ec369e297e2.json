@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "2c0265e7-00b1-6c3b-efed-9ec369e297e2",
-  "raw": null,
-  "latencyMs": 1705,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "279169",
+    "advertiser": "Mike Bloomberg 2020",
+    "gross_amount": 823000,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 40438,
+  "costUsd": 0.041221,
+  "provider": "OpenAI",
+  "inputTokens": 15701,
+  "outputTokens": 197
 }

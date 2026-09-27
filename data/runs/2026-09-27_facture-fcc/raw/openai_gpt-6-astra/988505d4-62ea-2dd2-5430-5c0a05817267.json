@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-astra",
   "modelVersion": "openai/gpt-6-astra",
   "docId": "988505d4-62ea-2dd2-5430-5c0a05817267",
-  "raw": null,
-  "latencyMs": 1552,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/openai/gpt-6-astra-20260903. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"co"
+  "raw": {
+    "contract_num": "2390143",
+    "advertiser": "POL/Michael Bloomberg/President/US/D",
+    "gross_amount": 152200,
+    "flight_from": "2020-02-22",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 4180,
+  "costUsd": 0.200055,
+  "provider": "OpenAI",
+  "inputTokens": 15701,
+  "outputTokens": 76
 }

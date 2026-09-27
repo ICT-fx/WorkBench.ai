@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "dc6d73e4-df80-b018-42d1-8215f2516702",
+  "raw": {
+    "contract_num": "2338688",
+    "advertiser": "POL/Bernie Sanders/President/US/Dem",
+    "gross_amount": 8875,
+    "flight_from": "2020-01-28",
+    "flight_to": "2020-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 140612,
+  "costUsd": 0.056304,
+  "provider": "Alibaba",
+  "inputTokens": 10458,
+  "outputTokens": 1206
+}

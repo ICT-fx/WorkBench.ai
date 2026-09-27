@@ -11,7 +11,15 @@
 const PASSAGERS = new Set([402, 408, 409, 425, 429, 500, 502, 503, 504]);
 
 export function estPassager(erreur: unknown): boolean {
-  if (erreur instanceof HttpError) return PASSAGERS.has(erreur.status);
+  if (erreur instanceof HttpError) {
+    // Un 402 recouvre deux situations opposées. « Les appels en cours
+    // réservent tout le crédit » se règle en attendant qu'ils se terminent.
+    // « Le coût maximal de cette requête dépasse le crédit disponible » ne se
+    // règlera pas tout seul : il faut recharger. Réessayer huit fois a fait
+    // tourner un run une heure à vide.
+    if (erreur.status === 402) return !/weight_exceeds_budget|maximum cost exceeds/i.test(erreur.message);
+    return PASSAGERS.has(erreur.status);
+  }
   const m = erreur instanceof Error ? erreur.message : String(erreur);
   // Erreurs réseau et délais dépassés : la requête n'a jamais abouti.
   return /timeout|timed out|fetch failed|ECONNRESET|ETIMEDOUT|socket hang up/i.test(m);
@@ -41,7 +49,7 @@ export type ReessayerOptions = {
 
 /** Rejoue `action` tant que l'erreur est passagère, puis abandonne. */
 export async function reessayer<T>(action: () => Promise<T>, opts: ReessayerOptions = {}): Promise<T> {
-  const tentatives = opts.tentatives ?? 5;
+  const tentatives = opts.tentatives ?? 8;
   const dormir = opts.dormir ?? ((ms) => new Promise((r) => setTimeout(r, ms)));
 
   let derniere: unknown;

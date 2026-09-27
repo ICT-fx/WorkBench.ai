@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "2c0265e7-00b1-6c3b-efed-9ec369e297e2",
-  "raw": null,
-  "latencyMs": 1141,
-  "costUsd": 0,
-  "error": "403 Forbidden — {\"error\":{\"message\":\"This model requires you to complete the following before use: 18+ age confirmation. Confirm at https://openrouter.ai/settings/preferences.\",\"code\":403,\"metadata\":{\"missing_attesta"
+  "raw": {
+    "contract_num": "279169",
+    "advertiser": "Mike Bloomberg 2020",
+    "gross_amount": 823000,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 9749,
+  "costUsd": 0.024621,
+  "provider": "Meta",
+  "inputTokens": 16378,
+  "outputTokens": 1068
 }

@@ -3,8 +3,17 @@
   "model": "z-ai/glm-5.3-flash",
   "modelVersion": "z-ai/glm-5.3-flash",
   "docId": "4bfca5a0-0e93-ed57-b06b-d2d25b8f16a0",
-  "raw": null,
-  "latencyMs": 949,
-  "costUsd": 0,
-  "error": "503 Service Unavailable — {\"error\":{\"message\":\"Provider returned error\",\"code\":503,\"metadata\":{\"raw\":\"no healthy upstream\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"org_3JrOXDBGJ7iVET5O7FrCoFgzSEL\"}"
+  "raw": {
+    "contract_num": "2383065",
+    "advertiser": "POL/Tom Steyer/President/US/Dem",
+    "gross_amount": 89260,
+    "flight_from": "2020-02-18",
+    "flight_to": "2020-02-24",
+    "vat_number": null
+  },
+  "latencyMs": 5304,
+  "costUsd": 0.00296408,
+  "provider": "Together",
+  "inputTokens": 19022,
+  "outputTokens": 283
 }

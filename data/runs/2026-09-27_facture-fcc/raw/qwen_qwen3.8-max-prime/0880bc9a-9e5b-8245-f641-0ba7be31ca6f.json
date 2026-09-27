@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-prime",
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "0880bc9a-9e5b-8245-f641-0ba7be31ca6f",
-  "raw": null,
-  "latencyMs": 39817,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "22128",
+    "advertiser": "POL/Bill Johnson/R/US Hou",
+    "gross_amount": 44730,
+    "flight_from": "2020-02-05",
+    "flight_to": "2020-03-17",
+    "vat_number": null
+  },
+  "latencyMs": 50706,
+  "costUsd": 0.041368,
+  "provider": "Alibaba",
+  "inputTokens": 11522,
+  "outputTokens": 2892
 }

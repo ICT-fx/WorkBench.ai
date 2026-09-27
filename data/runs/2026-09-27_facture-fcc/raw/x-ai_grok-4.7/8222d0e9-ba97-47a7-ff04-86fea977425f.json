@@ -3,8 +3,17 @@
   "model": "x-ai/grok-4.7",
   "modelVersion": "x-ai/grok-4.7",
   "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
-  "raw": null,
-  "latencyMs": 1176,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/x-ai/grok-4.7-20260916. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"code\":4"
+  "raw": {
+    "contract_num": "273868",
+    "advertiser": "BIDEN FOR PRESIDENT",
+    "gross_amount": 10095,
+    "flight_from": "2020-02-24",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 77376,
+  "costUsd": 0.0403712,
+  "provider": "xAI",
+  "inputTokens": 5996,
+  "outputTokens": 6700
 }

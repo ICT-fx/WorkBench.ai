@@ -4,7 +4,7 @@
   "modelVersion": "mistralai/mistral-large-2512",
   "docId": "5e0773ca-7f3a-838c-90de-f0cbc5dd6370",
   "raw": null,
-  "latencyMs": 723,
+  "latencyMs": 35777,
   "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"mistralai/mistral-large-2512 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Mistral\",\"is_byok\":fa"
 }

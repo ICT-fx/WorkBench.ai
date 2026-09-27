@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+  "raw": {
+    "contract_num": "278359",
+    "advertiser": "House Majority Forward/League of Conservat",
+    "gross_amount": 14150,
+    "flight_from": "2020-02-19",
+    "flight_to": "2020-02-25",
+    "vat_number": null
+  },
+  "latencyMs": 94732,
+  "costUsd": 0.0167805875,
+  "provider": "Morph",
+  "inputTokens": 6073,
+  "outputTokens": 1950
+}

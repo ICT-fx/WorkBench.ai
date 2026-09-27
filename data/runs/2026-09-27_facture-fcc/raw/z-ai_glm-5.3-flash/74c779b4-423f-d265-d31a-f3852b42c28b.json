@@ -3,8 +3,17 @@
   "model": "z-ai/glm-5.3-flash",
   "modelVersion": "z-ai/glm-5.3-flash",
   "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
-  "raw": null,
-  "latencyMs": 370,
-  "costUsd": 0,
-  "error": "503 Service Unavailable — {\"error\":{\"message\":\"Provider returned error\",\"code\":503,\"metadata\":{\"raw\":\"no healthy upstream\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"org_3JrOXDBGJ7iVET5O7FrCoFgzSEL\"}"
+  "raw": {
+    "contract_num": "1032436",
+    "advertiser": "PROTECT FREEDOM PAC",
+    "gross_amount": 72500,
+    "flight_from": "2020-01-31",
+    "flight_to": "2020-02-06",
+    "vat_number": null
+  },
+  "latencyMs": 4225,
+  "costUsd": 0.00099138,
+  "provider": "Together",
+  "inputTokens": 5974,
+  "outputTokens": 252
 }

@@ -4,7 +4,7 @@
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
   "raw": null,
-  "latencyMs": 222,
+  "latencyMs": 14584,
   "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "error": "réponse sans JSON exploitable : "
 }

@@ -27,6 +27,24 @@ export type GenerateResult = {
 
 export type GenerateFn = (args: GenerateArgs) => Promise<GenerateResult>;
 
+/**
+ * Un échec qui a tout de même été facturé.
+ *
+ * Un modèle qui réfléchit longuement puis rend une réponse inexploitable a
+ * bien consommé des jetons, et le fournisseur les facture. Ne pas les
+ * enregistrer rend la dépense réelle invisible : c'est ainsi qu'un run a
+ * annoncé 18,71 $ alors que 19,98 $ avaient été débités.
+ */
+export class ErreurFacturee extends Error {
+  constructor(message: string, readonly facture: {
+    costUsd: number; inputTokens?: number; outputTokens?: number;
+    provider?: string; modelVersion?: string;
+  }) {
+    super(message);
+    this.name = "ErreurFacturee";
+  }
+}
+
 export type RunTaskOptions = {
   task: Task;
   promptText: string;
@@ -114,9 +132,16 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
       };
     } catch (e) {
       errors++;
+      const f = e instanceof ErreurFacturee ? e.facture : undefined;
       result = {
-        runId: opts.runId, model, modelVersion: versions.get(model) ?? model, docId: doc.docId,
-        raw: null, latencyMs: Date.now() - started, costUsd: 0,
+        runId: opts.runId, model,
+        modelVersion: f?.modelVersion ?? versions.get(model) ?? model,
+        docId: doc.docId,
+        raw: null, latencyMs: Date.now() - started,
+        costUsd: f?.costUsd ?? 0,
+        ...(f?.provider === undefined ? {} : { provider: f.provider }),
+        ...(f?.inputTokens === undefined ? {} : { inputTokens: f.inputTokens }),
+        ...(f?.outputTokens === undefined ? {} : { outputTokens: f.outputTokens }),
         error: e instanceof Error ? e.message : String(e),
       };
     }

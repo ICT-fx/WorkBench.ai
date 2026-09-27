@@ -3,8 +3,17 @@
   "model": "anthropic/claude-sonnet-5",
   "modelVersion": "anthropic/claude-sonnet-5",
   "docId": "627d67b5-e1b9-dd0c-29d9-c14d1a652924",
-  "raw": null,
-  "latencyMs": 442,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "385458",
+    "advertiser": "Valerie Plame for Congress",
+    "gross_amount": 22180,
+    "flight_from": "2020-04-28",
+    "flight_to": "2020-05-04",
+    "vat_number": null
+  },
+  "latencyMs": 3387,
+  "costUsd": 0.020692,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 9851,
+  "outputTokens": 99
 }

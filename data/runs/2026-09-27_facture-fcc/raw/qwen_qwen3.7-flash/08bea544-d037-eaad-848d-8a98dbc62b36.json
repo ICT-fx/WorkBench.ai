@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.7-flash",
   "modelVersion": "qwen/qwen3.7-flash",
   "docId": "08bea544-d037-eaad-848d-8a98dbc62b36",
-  "raw": null,
-  "latencyMs": 30884,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "1976789",
+    "advertiser": "Steyer/D/President",
+    "gross_amount": 27950,
+    "flight_from": "2020-01-28",
+    "flight_to": "2020-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 45250,
+  "costUsd": 0.00059616,
+  "provider": "Alibaba",
+  "inputTokens": 10122,
+  "outputTokens": 2250
 }

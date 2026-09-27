@@ -3,8 +3,17 @@
   "model": "meta-llama/llama-4-maverick",
   "modelVersion": "meta-llama/llama-4-maverick",
   "docId": "15262983-7227-5abf-803b-1089dfad4494",
-  "raw": null,
-  "latencyMs": 422,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "4360160",
+    "advertiser": "Suplizio for State Senate-R (135664)",
+    "gross_amount": 17650,
+    "flight_from": "2020-05-01",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 2060,
+  "costUsd": 0.0016192,
+  "provider": "DeepInfra",
+  "inputTokens": 7780,
+  "outputTokens": 79
 }

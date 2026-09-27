@@ -3,8 +3,17 @@
   "model": "z-ai/glm-5.3-flash",
   "modelVersion": "z-ai/glm-5.3-flash",
   "docId": "9294d8b3-ad2a-b2ae-245d-417533ab01ce",
-  "raw": null,
-  "latencyMs": 640,
-  "costUsd": 0,
-  "error": "503 Service Unavailable — {\"error\":{\"message\":\"Provider returned error\",\"code\":503,\"metadata\":{\"raw\":\"no healthy upstream\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"org_3JrOXDBGJ7iVET5O7FrCoFgzSEL\"}"
+  "raw": {
+    "contract_num": "386096",
+    "advertiser": "Tricia Zunker for Wisconsin",
+    "gross_amount": 15070,
+    "flight_from": "2020-05-08",
+    "flight_to": "2020-05-12",
+    "vat_number": null
+  },
+  "latencyMs": 3679,
+  "costUsd": 0.00407086,
+  "provider": "Wafer",
+  "inputTokens": 9702,
+  "outputTokens": 54
 }

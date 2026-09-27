@@ -3,8 +3,17 @@
   "model": "amazon/nova-pro-v1",
   "modelVersion": "amazon/nova-pro-v1",
   "docId": "4cee59d1-0fb1-79e5-12e9-56b445330d36",
-  "raw": null,
-  "latencyMs": 720,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "1954547-1",
+    "advertiser": "POL / Joe Biden / D / PRES / US",
+    "gross_amount": 3132.25,
+    "flight_from": "03/17/20",
+    "flight_to": "03/16/20",
+    "vat_number": null
+  },
+  "latencyMs": 4478,
+  "costUsd": 0.0057616,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 6834,
+  "outputTokens": 92
 }

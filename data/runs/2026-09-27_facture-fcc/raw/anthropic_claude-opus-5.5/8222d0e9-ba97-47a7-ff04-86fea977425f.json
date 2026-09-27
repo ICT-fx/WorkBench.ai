@@ -3,8 +3,17 @@
   "model": "anthropic/claude-opus-5.5",
   "modelVersion": "anthropic/claude-opus-5.5",
   "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
-  "raw": null,
-  "latencyMs": 338,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/anthropic/claude-opus-5.5-20260921. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortl"
+  "raw": {
+    "contract_num": "273868",
+    "advertiser": "BIDEN FOR PRESIDENT",
+    "gross_amount": 10095,
+    "flight_from": "2020-03-01",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 6103,
+  "costUsd": 0.029272,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 6123,
+  "outputTokens": 239
 }

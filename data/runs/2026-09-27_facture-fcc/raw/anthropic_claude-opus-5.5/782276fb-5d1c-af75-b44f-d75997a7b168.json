@@ -3,8 +3,17 @@
   "model": "anthropic/claude-opus-5.5",
   "modelVersion": "anthropic/claude-opus-5.5",
   "docId": "782276fb-5d1c-af75-b44f-d75997a7b168",
-  "raw": null,
-  "latencyMs": 1380,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/anthropic/claude-opus-5.5-20260921. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortl"
+  "raw": {
+    "contract_num": "2343198",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 19845,
+    "flight_from": "2020-01-18",
+    "flight_to": "2020-01-24",
+    "vat_number": null
+  },
+  "latencyMs": 8862,
+  "costUsd": 0.156284,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 38616,
+  "outputTokens": 91
 }

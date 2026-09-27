@@ -4,7 +4,7 @@
   "modelVersion": "qwen/qwen3.7-flash",
   "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
   "raw": null,
-  "latencyMs": 34200,
+  "latencyMs": 58877,
   "costUsd": 0,
   "error": "réponse sans JSON exploitable : "
 }

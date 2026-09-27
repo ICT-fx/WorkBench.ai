@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
+  "raw": {
+    "contract_num": "275425",
+    "advertiser": "Tom Steyer 2020",
+    "gross_amount": 21960,
+    "flight_from": "2020-02-04",
+    "flight_to": "2020-02-10",
+    "vat_number": null
+  },
+  "latencyMs": 170574,
+  "costUsd": 0.094328,
+  "provider": "Alibaba",
+  "inputTokens": 11522,
+  "outputTokens": 4020
+}

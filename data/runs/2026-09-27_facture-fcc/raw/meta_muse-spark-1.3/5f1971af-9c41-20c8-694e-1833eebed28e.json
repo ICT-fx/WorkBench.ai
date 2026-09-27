@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
-  "raw": null,
-  "latencyMs": 2966,
-  "costUsd": 0,
-  "error": "403 Forbidden — {\"error\":{\"message\":\"This model requires you to complete the following before use: 18+ age confirmation. Confirm at https://openrouter.ai/settings/preferences.\",\"code\":403,\"metadata\":{\"missing_attesta"
+  "raw": {
+    "contract_num": "2420107",
+    "advertiser": "POL/Woody Thrasher/Governor/West Virginia",
+    "gross_amount": 5400,
+    "flight_from": "2020-03-16",
+    "flight_to": "2020-03-22",
+    "vat_number": null
+  },
+  "latencyMs": 24504,
+  "costUsd": 0.03900875,
+  "provider": "Meta",
+  "inputTokens": 24580,
+  "outputTokens": 2041
 }

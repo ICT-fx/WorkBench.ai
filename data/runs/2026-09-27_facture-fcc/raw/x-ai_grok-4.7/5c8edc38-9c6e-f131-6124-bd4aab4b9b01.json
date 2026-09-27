@@ -3,8 +3,17 @@
   "model": "x-ai/grok-4.7",
   "modelVersion": "x-ai/grok-4.7",
   "docId": "5c8edc38-9c6e-f131-6124-bd4aab4b9b01",
-  "raw": null,
-  "latencyMs": 1020,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "2416181",
+    "advertiser": "POLI/ CRUMPACKER/R/CON/OR",
+    "gross_amount": 3110,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-19",
+    "vat_number": null
+  },
+  "latencyMs": 61466,
+  "costUsd": 0.0428912,
+  "provider": "xAI",
+  "inputTokens": 12545,
+  "outputTokens": 5042
 }

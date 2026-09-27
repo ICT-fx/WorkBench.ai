@@ -4,7 +4,7 @@
   "modelVersion": "mistralai/ministral-8b-2512",
   "docId": "4bfca5a0-0e93-ed57-b06b-d2d25b8f16a0",
   "raw": null,
-  "latencyMs": 1243,
+  "latencyMs": 2147,
   "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "error": "400 Bad Request — {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"object\\\":\\\"error\\\",\\\"message\\\":\\\"Total number of images exceeds the maximum allowed of 8.\\\",\\\"type\\\":\\\"invalid_request_invalid_args\\\",\\\"param\\\":null,\\\"code\\\":\\\"3051\\\",\\\"raw_status_code\\\":400}\",\"provider_name\":\"Mistral\",\"i"
 }

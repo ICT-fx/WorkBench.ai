@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "08bea544-d037-eaad-848d-8a98dbc62b36",
-  "raw": null,
-  "latencyMs": 898,
-  "costUsd": 0,
-  "error": "403 Forbidden — {\"error\":{\"message\":\"This model requires you to complete the following before use: 18+ age confirmation. Confirm at https://openrouter.ai/settings/preferences.\",\"code\":403,\"metadata\":{\"missing_attesta"
+  "raw": {
+    "contract_num": "1976789",
+    "advertiser": "Steyer/D/President",
+    "gross_amount": 27950,
+    "flight_from": "2020-01-28",
+    "flight_to": "2020-02-03",
+    "vat_number": null
+  },
+  "latencyMs": 7861,
+  "costUsd": 0.0195295,
+  "provider": "Meta",
+  "inputTokens": 12822,
+  "outputTokens": 824
 }

@@ -38,8 +38,16 @@ async function cmdRun(taskId: string): Promise<void> {
     loadTask(taskId), loadPrompt(taskId), loadDocuments(taskId),
   ]);
 
+  // L'ordre des deux filtres compte : --limit désigne les N premiers documents
+  // du tirage, --max-pages écarte ensuite les trop longs parmi ceux-là. Dans
+  // l'autre sens, écarter d'abord les longs ferait entrer des documents hors
+  // du périmètre convenu — l'erreur qui a fait déborder le run précédent.
   const limit = arg("limit");
-  const subset = limit === undefined ? documents : documents.slice(0, Number(limit));
+  const maxPages = arg("max-pages");
+  let subset = limit === undefined ? documents : documents.slice(0, Number(limit));
+  if (maxPages !== undefined) {
+    subset = subset.filter((d) => d.images.length <= Number(maxPages));
+  }
 
   // L'estimation ne passe aucun appel et n'exige aucune clé : on sait ce qu'on
   // va dépenser avant de le dépenser.
@@ -82,9 +90,10 @@ async function cmdRun(taskId: string): Promise<void> {
       // en panne. L'hébergeur réellement utilisé est enregistré à chaque
       // appel, ce qui suffit à rendre le run vérifiable.
       provider: { allow_fallbacks: true },
-      // Certains modèles réfléchissent longuement avant de répondre et
-      // rendaient une réponse vide, faute de place pour écrire le JSON.
-      maxTokens: 3000,
+      // Certains modèles réfléchissent longuement avant de répondre : à 3 000
+      // jetons, quarante-trois réponses sont revenues vides ou tronquées,
+      // faute de place pour écrire le JSON après la réflexion.
+      maxTokens: 8000,
       surReprise: (model, docId, tentative, ms) => {
         console.log(`  ↻ ${model} ${docId.slice(0, 8)} : reprise ${tentative} dans ${Math.round(ms / 1000)} s`);
       },

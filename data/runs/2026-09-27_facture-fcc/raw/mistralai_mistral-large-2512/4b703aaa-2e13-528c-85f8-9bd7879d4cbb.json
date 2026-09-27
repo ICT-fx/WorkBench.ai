@@ -3,8 +3,17 @@
   "model": "mistralai/mistral-large-2512",
   "modelVersion": "mistralai/mistral-large-2512",
   "docId": "4b703aaa-2e13-528c-85f8-9bd7879d4cbb",
-  "raw": null,
-  "latencyMs": 644,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "648742",
+    "advertiser": "Bloomberg/Democrat/President",
+    "gross_amount": 6500,
+    "flight_from": "2020-01-11",
+    "flight_to": "2020-01-17",
+    "vat_number": null
+  },
+  "latencyMs": 3375,
+  "costUsd": 0.0039822,
+  "provider": "Mistral",
+  "inputTokens": 8034,
+  "outputTokens": 92
 }

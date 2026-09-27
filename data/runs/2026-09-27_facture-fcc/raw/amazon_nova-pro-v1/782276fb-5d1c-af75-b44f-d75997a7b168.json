@@ -3,8 +3,17 @@
   "model": "amazon/nova-pro-v1",
   "modelVersion": "amazon/nova-pro-v1",
   "docId": "782276fb-5d1c-af75-b44f-d75997a7b168",
-  "raw": null,
-  "latencyMs": 3134,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/amazon/nova-pro-v1. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"code\":429,\""
+  "raw": {
+    "contract_num": "2343198",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 19845,
+    "flight_from": "01/18/20",
+    "flight_to": "01/24/20",
+    "vat_number": null
+  },
+  "latencyMs": 6102,
+  "costUsd": 0.0109072,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 13274,
+  "outputTokens": 90
 }

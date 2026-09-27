@@ -3,8 +3,17 @@
   "model": "z-ai/glm-5.3-flash",
   "modelVersion": "z-ai/glm-5.3-flash",
   "docId": "0458e5e4-b253-f5bb-0bfe-fd9b1a8eaada",
-  "raw": null,
-  "latencyMs": 125181,
-  "costUsd": 0,
-  "error": "A Timeout Occurred"
+  "raw": {
+    "contract_num": "26800107",
+    "advertiser": "Mike Bloomberg 2020, Inc",
+    "gross_amount": 2120,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 2236,
+  "costUsd": 0.0010115,
+  "provider": "Together",
+  "inputTokens": 6160,
+  "outputTokens": 175
 }

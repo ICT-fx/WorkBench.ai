@@ -1,5 +1,5 @@
 import type { Task } from "@hub/schema";
-import type { GenerateFn } from "./run";
+import { ErreurFacturee, type GenerateFn } from "./run";
 import { HttpError, reessayer } from "./retry";
 
 const BASE = "https://openrouter.ai/api/v1/chat/completions";
@@ -104,10 +104,20 @@ export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
 
     const latencyMs = Date.now() - started;
 
+    const facture = {
+      costUsd: json.usage?.cost ?? 0,
+      ...(json.model === undefined ? {} : { modelVersion: json.model }),
+      ...(json.provider === undefined ? {} : { provider: json.provider }),
+      ...(json.usage?.prompt_tokens === undefined ? {} : { inputTokens: json.usage.prompt_tokens }),
+      ...(json.usage?.completion_tokens === undefined ? {} : { outputTokens: json.usage.completion_tokens }),
+    };
+
     const texte = json.choices?.[0]?.message?.content ?? "";
     const objet = extraireJson(texte);
     if (objet === null) {
-      throw new Error(`réponse sans JSON exploitable : ${texte.slice(0, 160)}`);
+      // L'appel a été facturé même si sa réponse est inutilisable.
+      throw new ErreurFacturee(
+        `réponse sans JSON exploitable : ${texte.slice(0, 160)}`, facture);
     }
 
     // On ne garde que les clés du barème : une clé inventée hors barème ne doit

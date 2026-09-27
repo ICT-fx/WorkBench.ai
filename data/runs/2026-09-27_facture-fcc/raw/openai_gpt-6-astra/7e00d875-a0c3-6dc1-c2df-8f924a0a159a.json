@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-astra",
   "modelVersion": "openai/gpt-6-astra",
   "docId": "7e00d875-a0c3-6dc1-c2df-8f924a0a159a",
-  "raw": null,
-  "latencyMs": 1361,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/openai/gpt-6-astra-20260903. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"co"
+  "raw": {
+    "contract_num": "1342418",
+    "advertiser": "Civic Nebraska",
+    "gross_amount": 360,
+    "flight_from": "2020-02-10",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 5141,
+  "costUsd": 0.1769175,
+  "provider": "OpenAI",
+  "inputTokens": 13878,
+  "outputTokens": 69
 }

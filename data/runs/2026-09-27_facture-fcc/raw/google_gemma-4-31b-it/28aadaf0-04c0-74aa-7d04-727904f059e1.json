@@ -3,8 +3,17 @@
   "model": "google/gemma-4-31b-it",
   "modelVersion": "google/gemma-4-31b-it",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
-  "raw": null,
-  "latencyMs": 800,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+  "raw": {
+    "contract_num": "9739088",
+    "advertiser": "Buying Time, LLC",
+    "gross_amount": 6975,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-02-02",
+    "vat_number": null
+  },
+  "latencyMs": 35364,
+  "costUsd": 0.00023686,
+  "provider": "CoreWeave",
+  "inputTokens": 2032,
+  "outputTokens": 99
 }

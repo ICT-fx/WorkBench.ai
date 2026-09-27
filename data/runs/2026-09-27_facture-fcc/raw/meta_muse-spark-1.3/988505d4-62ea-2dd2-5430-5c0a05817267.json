@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "988505d4-62ea-2dd2-5430-5c0a05817267",
-  "raw": null,
-  "latencyMs": 774,
-  "costUsd": 0,
-  "error": "403 Forbidden — {\"error\":{\"message\":\"This model requires you to complete the following before use: 18+ age confirmation. Confirm at https://openrouter.ai/settings/preferences.\",\"code\":403,\"metadata\":{\"missing_attesta"
+  "raw": {
+    "contract_num": "2390143",
+    "advertiser": "POL/Michael Bloomberg/President/US/D",
+    "gross_amount": 152200,
+    "flight_from": "2020-02-24",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 18444,
+  "costUsd": 0.02961425,
+  "provider": "Meta",
+  "inputTokens": 16378,
+  "outputTokens": 2151
 }

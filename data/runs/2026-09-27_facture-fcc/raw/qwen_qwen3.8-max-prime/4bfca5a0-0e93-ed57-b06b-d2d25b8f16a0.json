@@ -4,7 +4,7 @@
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "4bfca5a0-0e93-ed57-b06b-d2d25b8f16a0",
   "raw": null,
-  "latencyMs": 31504,
+  "latencyMs": 38214,
   "costUsd": 0,
   "error": "réponse sans JSON exploitable : "
 }

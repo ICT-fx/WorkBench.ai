@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
-  "raw": null,
-  "latencyMs": 2574,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/qwen/qwen3.8-max-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"code"
+  "raw": {
+    "contract_num": "2420107",
+    "advertiser": "POL/Woody Thrasher/Governor/West Virginia",
+    "gross_amount": 5400,
+    "flight_from": "2020-03-16",
+    "flight_to": "2020-03-22",
+    "vat_number": null
+  },
+  "latencyMs": 42925,
+  "costUsd": 0.048806,
+  "provider": "Alibaba",
+  "inputTokens": 15478,
+  "outputTokens": 2975
 }

@@ -22,7 +22,7 @@ export type LoadedDocument = { docId: string; images: Buffer[] };
  * Une facture sur deux pages est stockée en `f-025-p1.png` et `f-025-p2.png` :
  * les deux images appartiennent au même document et partent dans le même appel.
  */
-export async function loadDocuments(taskId: string): Promise<LoadedDocument[]> {
+export async function loadDocuments(taskId: string, maxPages?: number): Promise<LoadedDocument[]> {
   const dir = join(taskDir(taskId), "documents");
   const numeroPage = (f: string): number => Number(/-p(\d+)\.\w+$/.exec(f)?.[1] ?? 1);
   const files = (await readdir(dir))
@@ -39,8 +39,15 @@ export async function loadDocuments(taskId: string): Promise<LoadedDocument[]> {
     byDoc.set(docId, [...(byDoc.get(docId) ?? []), file]);
   }
 
+  // Un fournisseur refuse au-delà de huit images par requête. Plutôt que de
+  // juger certains modèles sur un sous-ensemble plus facile, on écarte les
+  // documents trop longs pour tout le monde, et on l'inscrit dans les limites.
+  const retenus = maxPages === undefined
+    ? [...byDoc.entries()]
+    : [...byDoc.entries()].filter(([, names]) => names.length <= maxPages);
+
   return Promise.all(
-    [...byDoc.entries()].map(async ([docId, names]) => ({
+    retenus.map(async ([docId, names]) => ({
       docId,
       images: await Promise.all(names.map((n) => readFile(join(dir, n)))),
     })),

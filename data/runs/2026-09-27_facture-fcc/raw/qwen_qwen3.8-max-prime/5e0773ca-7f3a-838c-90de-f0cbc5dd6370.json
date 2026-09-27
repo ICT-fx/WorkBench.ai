@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-prime",
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "5e0773ca-7f3a-838c-90de-f0cbc5dd6370",
-  "raw": null,
-  "latencyMs": 25753,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "278222",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 34500,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-18",
+    "vat_number": null
+  },
+  "latencyMs": 34544,
+  "costUsd": 0.03902,
+  "provider": "Alibaba",
+  "inputTokens": 5970,
+  "outputTokens": 2755
 }

@@ -3,8 +3,17 @@
   "model": "x-ai/grok-4.7",
   "modelVersion": "x-ai/grok-4.7",
   "docId": "782276fb-5d1c-af75-b44f-d75997a7b168",
-  "raw": null,
-  "latencyMs": 3499,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/x-ai/grok-4.7-20260916. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"code\":4"
+  "raw": {
+    "contract_num": "2343198",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 19845,
+    "flight_from": "2020-01-18",
+    "flight_to": "2020-01-24",
+    "vat_number": null
+  },
+  "latencyMs": 82806,
+  "costUsd": 0.0610304,
+  "provider": "xAI",
+  "inputTokens": 21194,
+  "outputTokens": 5938
 }

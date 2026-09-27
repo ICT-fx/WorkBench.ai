@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
+  "raw": {
+    "contract_num": "116282",
+    "advertiser": "Bob Hamilton for KS Inc",
+    "gross_amount": 3625,
+    "flight_from": "2020-04-28",
+    "flight_to": "2020-05-04",
+    "vat_number": null
+  },
+  "latencyMs": 166910,
+  "costUsd": 0.0095141675,
+  "provider": "Morph",
+  "inputTokens": 6073,
+  "outputTokens": 636
+}

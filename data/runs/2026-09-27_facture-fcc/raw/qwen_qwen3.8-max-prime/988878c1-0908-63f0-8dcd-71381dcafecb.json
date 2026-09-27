@@ -1,0 +1,19 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "988878c1-0908-63f0-8dcd-71381dcafecb",
+  "raw": {
+    "contract_num": "1019677",
+    "advertiser": "Pickering For Supreme Court",
+    "gross_amount": 3675,
+    "flight_from": "2020-05-06",
+    "flight_to": "2020-05-12",
+    "vat_number": null
+  },
+  "latencyMs": 129437,
+  "costUsd": 0.023008,
+  "provider": "Alibaba",
+  "inputTokens": 4582,
+  "outputTokens": 390
+}

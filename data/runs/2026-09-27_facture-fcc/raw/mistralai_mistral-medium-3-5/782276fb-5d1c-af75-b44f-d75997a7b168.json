@@ -3,8 +3,17 @@
   "model": "mistralai/mistral-medium-3-5",
   "modelVersion": "mistralai/mistral-medium-3-5",
   "docId": "782276fb-5d1c-af75-b44f-d75997a7b168",
-  "raw": null,
-  "latencyMs": 3454,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/mistralai/mistral-medium-3.5-20260430. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry sho"
+  "raw": {
+    "contract_num": "2343198",
+    "advertiser": "MIKE BLOOMBERG 2020",
+    "gross_amount": 19845,
+    "flight_from": "2020-01-18",
+    "flight_to": "2020-01-24",
+    "vat_number": null
+  },
+  "latencyMs": 14603,
+  "costUsd": 0.0303405,
+  "provider": "Mistral",
+  "inputTokens": 19762,
+  "outputTokens": 93
 }
