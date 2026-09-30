@@ -3,8 +3,17 @@
   "model": "google/gemini-3.8-flash",
   "modelVersion": "google/gemini-3.8-flash",
   "docId": "7e00d875-a0c3-6dc1-c2df-8f924a0a159a",
-  "raw": null,
-  "latencyMs": 184253,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 8000 tokens, but can only afford 4983. To increase, visit https://openrouter.ai/workspaces/default/keys/38c7737c5977c2022db9fa60954723722c11dbd39c8a56c3cd464109e49632f0 and adjust the key's weekly limit"
+  "raw": {
+    "contract_num": "1342418",
+    "advertiser": "Civic Nebraska",
+    "gross_amount": 360,
+    "flight_from": "2020-02-10",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 54753,
+  "costUsd": 0.0302895,
+  "provider": "Google",
+  "inputTokens": 1506,
+  "outputTokens": 7776
 }

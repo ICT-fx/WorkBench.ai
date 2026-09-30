@@ -3,8 +3,17 @@
   "model": "mistralai/mistral-large-2512",
   "modelVersion": "mistralai/mistral-large-2512",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
-  "raw": null,
-  "latencyMs": 183533,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "9739088",
+    "advertiser": "Tom Steyer for President-D",
+    "gross_amount": 6975,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 39149,
+  "costUsd": 0.0075795,
+  "provider": "Mistral",
+  "inputTokens": 14886,
+  "outputTokens": 91
 }

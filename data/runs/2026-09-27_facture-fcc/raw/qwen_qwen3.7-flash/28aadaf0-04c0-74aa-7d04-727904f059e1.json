@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.7-flash",
   "modelVersion": "qwen/qwen3.7-flash",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
-  "raw": null,
-  "latencyMs": 56569,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "1331293",
+    "advertiser": "Tom Steyer for President-D",
+    "gross_amount": 6975,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 92271,
+  "costUsd": 0.00124268,
+  "provider": "Alibaba",
+  "inputTokens": 15466,
+  "outputTokens": 5990
 }

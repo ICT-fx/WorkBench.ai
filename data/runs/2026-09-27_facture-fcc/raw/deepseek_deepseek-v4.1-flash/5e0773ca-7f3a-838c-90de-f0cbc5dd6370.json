@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "5e0773ca-7f3a-838c-90de-f0cbc5dd6370",
-  "raw": null,
-  "latencyMs": 15484,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "278222",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 34500,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-18",
+    "vat_number": null
+  },
+  "latencyMs": 13238,
+  "costUsd": 0.003866004,
+  "provider": "Together",
+  "inputTokens": 3851,
+  "outputTokens": 2353
 }

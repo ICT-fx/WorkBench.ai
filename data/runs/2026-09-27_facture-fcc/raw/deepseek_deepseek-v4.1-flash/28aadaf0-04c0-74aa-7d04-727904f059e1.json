@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
-  "raw": null,
-  "latencyMs": 18724,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "1331293",
+    "advertiser": "Tom Steyer for President-D",
+    "gross_amount": 6975,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 24515,
+  "costUsd": 0.005450004,
+  "provider": "Together",
+  "inputTokens": 6291,
+  "outputTokens": 3063
 }

@@ -1,7 +1,7 @@
 {
   "runId": "2026-09-27_facture-fcc",
   "taskId": "facture-fcc",
-  "startedAt": "2026-09-27T10:40:26.217Z",
+  "startedAt": "2026-09-27T19:59:13.669Z",
   "models": [
     {
       "alias": "anthropic/claude-fable-5.1",
@@ -113,5 +113,5 @@
     }
   ],
   "promptHash": "99c8d6c42342",
-  "docCount": 25
+  "docCount": 19
 }

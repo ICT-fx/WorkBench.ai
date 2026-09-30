@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
-  "raw": null,
-  "latencyMs": 14584,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "1032436",
+    "advertiser": "PROTECT FREEDOM PAC",
+    "gross_amount": 72500,
+    "flight_from": "2020-01-31",
+    "flight_to": "2020-02-06",
+    "vat_number": null
+  },
+  "latencyMs": 33279,
+  "costUsd": 0.009264204,
+  "provider": "Together",
+  "inputTokens": 2989,
+  "outputTokens": 7067
 }

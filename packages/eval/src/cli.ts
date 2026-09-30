@@ -16,7 +16,7 @@ import { createOpenRouterGenerate } from "./openrouter";
 import { estimateRunCost } from "./estimate";
 import {
   loadTask, loadPrompt, loadDocuments, loadGroundTruths, loadRunResults,
-  runsRoot, publishedDir,
+  runsRoot, publishedDir, pixelsTotaux, type LoadedDocument,
 } from "./load";
 
 const arg = (name: string): string | undefined => {
@@ -26,6 +26,29 @@ const arg = (name: string): string | undefined => {
 const flag = (name: string): boolean => process.argv.includes(`--${name}`);
 
 const today = (): string => new Date().toISOString().slice(0, 10);
+
+/**
+ * Le périmètre des documents, appliqué à l'identique au run et à la notation.
+ *
+ * L'ordre compte : --limit désigne les N premiers documents du tirage,
+ * --max-pages et --max-pixels écartent ensuite les trop lourds. Dans l'autre
+ * sens, des documents hors tirage entreraient dans le jeu — l'erreur qui a
+ * fait déborder un run.
+ *
+ * Les deux plafonds viennent de limites de fournisseurs : l'un refuse plus de
+ * huit images par requête, l'autre plafonne le total de pixels. On écarte ces
+ * documents pour tout le monde plutôt que d'en priver un seul modèle : un
+ * classement doit comparer des modèles, pas des sous-ensembles.
+ */
+function perimetre(documents: LoadedDocument[]): LoadedDocument[] {
+  const limit = arg("limit");
+  const maxPages = arg("max-pages");
+  const maxPixels = arg("max-pixels");
+  let retenus = limit === undefined ? documents : documents.slice(0, Number(limit));
+  if (maxPages !== undefined) retenus = retenus.filter((d) => d.images.length <= Number(maxPages));
+  if (maxPixels !== undefined) retenus = retenus.filter((d) => pixelsTotaux(d.images) <= Number(maxPixels));
+  return retenus;
+}
 
 async function cmdRun(taskId: string): Promise<void> {
   const models = arg("models")?.split(",") ?? [...HUB_MODELS];
@@ -38,16 +61,7 @@ async function cmdRun(taskId: string): Promise<void> {
     loadTask(taskId), loadPrompt(taskId), loadDocuments(taskId),
   ]);
 
-  // L'ordre des deux filtres compte : --limit désigne les N premiers documents
-  // du tirage, --max-pages écarte ensuite les trop longs parmi ceux-là. Dans
-  // l'autre sens, écarter d'abord les longs ferait entrer des documents hors
-  // du périmètre convenu — l'erreur qui a fait déborder le run précédent.
-  const limit = arg("limit");
-  const maxPages = arg("max-pages");
-  let subset = limit === undefined ? documents : documents.slice(0, Number(limit));
-  if (maxPages !== undefined) {
-    subset = subset.filter((d) => d.images.length <= Number(maxPages));
-  }
+  const subset = perimetre(documents);
 
   // L'estimation ne passe aucun appel et n'exige aucune clé : on sait ce qu'on
   // va dépenser avant de le dépenser.
@@ -112,13 +126,15 @@ async function cmdScore(taskId: string): Promise<void> {
   const runId = arg("run") ?? `${today()}_${taskId}`;
   const runDir = join(runsRoot(), runId);
 
-  const [task, groundTruths, results] = await Promise.all([
-    loadTask(taskId), loadGroundTruths(taskId), loadRunResults(runDir),
+  const [task, groundTruths, results, documents] = await Promise.all([
+    loadTask(taskId), loadGroundTruths(taskId), loadRunResults(runDir), loadDocuments(taskId),
   ]);
+  const retenus = new Set(perimetre(documents).map((d) => d.docId));
 
   const scores: DocScore[] = [];
   for (const result of results) {
     if (result.error !== undefined) continue;
+    if (!retenus.has(result.docId)) continue;
     const gt = groundTruths.get(result.docId);
     if (gt === undefined) throw new Error(`Vérité terrain manquante pour ${result.docId}`);
     const parsed = (result.raw ?? {}) as Record<string, unknown>;

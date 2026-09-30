@@ -17,6 +17,33 @@ export const loadPrompt = (taskId: string): Promise<string> =>
 export type LoadedDocument = { docId: string; images: Buffer[] };
 
 /**
+ * Dimensions d'une image JPEG, lues dans son en-tête.
+ *
+ * Sert à écarter les documents trop lourds : un fournisseur plafonne le total
+ * de pixels d'une requête, et surtout, une page huit fois plus grande que les
+ * autres coûte huit fois plus cher à tous les modèles. Une comparaison
+ * honnête suppose des documents de poids comparable.
+ */
+export function dimensionsJpeg(data: Buffer): { largeur: number; hauteur: number } | null {
+  let i = 2;
+  while (i < data.length - 9) {
+    if (data[i] !== 0xff) { i++; continue; }
+    const marqueur = data[i + 1]!;
+    if (marqueur === 0xc0 || marqueur === 0xc1 || marqueur === 0xc2) {
+      return { hauteur: data.readUInt16BE(i + 5), largeur: data.readUInt16BE(i + 7) };
+    }
+    i += 2 + data.readUInt16BE(i + 2);
+  }
+  return null;
+}
+
+export const pixelsTotaux = (images: Buffer[]): number =>
+  images.reduce((total, img) => {
+    const d = dimensionsJpeg(img);
+    return total + (d === null ? 0 : d.largeur * d.hauteur);
+  }, 0);
+
+/**
  * Charge les documents d'une tâche.
  *
  * Une facture sur deux pages est stockée en `f-025-p1.png` et `f-025-p2.png` :

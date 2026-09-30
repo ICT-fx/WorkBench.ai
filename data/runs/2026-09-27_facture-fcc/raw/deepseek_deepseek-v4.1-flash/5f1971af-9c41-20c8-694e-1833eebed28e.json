@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
-  "raw": null,
-  "latencyMs": 20792,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "2420107",
+    "advertiser": "POL/Woody Thrasher/Governor/West Virginia",
+    "gross_amount": 5400,
+    "flight_from": "2020-03-16",
+    "flight_to": "2020-03-22",
+    "vat_number": null
+  },
+  "latencyMs": 31145,
+  "costUsd": 0.006194004,
+  "provider": "Together",
+  "inputTokens": 6307,
+  "outputTokens": 3679
 }

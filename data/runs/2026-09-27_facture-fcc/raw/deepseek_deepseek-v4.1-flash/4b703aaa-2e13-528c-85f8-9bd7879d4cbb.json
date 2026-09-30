@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "4b703aaa-2e13-528c-85f8-9bd7879d4cbb",
-  "raw": null,
-  "latencyMs": 13016,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "648742",
+    "advertiser": "Bloomberg/Democrat/President",
+    "gross_amount": 7000,
+    "flight_from": "2020-01-11",
+    "flight_to": "2020-01-17",
+    "vat_number": null
+  },
+  "latencyMs": 27603,
+  "costUsd": 0.009594804,
+  "provider": "Together",
+  "inputTokens": 3851,
+  "outputTokens": 7127
 }

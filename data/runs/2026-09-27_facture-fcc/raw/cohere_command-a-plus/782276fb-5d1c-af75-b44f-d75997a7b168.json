@@ -4,7 +4,7 @@
   "modelVersion": "cohere/command-a-plus",
   "docId": "782276fb-5d1c-af75-b44f-d75997a7b168",
   "raw": null,
-  "latencyMs": 177925,
+  "latencyMs": 2917,
   "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "error": "400 Bad Request — {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"id\\\":\\\"b5103db5-f702-4c02-ad15-b4d5e83e211b\\\",\\\"message\\\":\\\"invalid request: total decoded image size must be at most 20000000 pixels - received 91497048 pixels\\\"}\",\"provider_name\":\"Cohere\",\"is_byok\":false}},\"user_id\":\"or"
 }

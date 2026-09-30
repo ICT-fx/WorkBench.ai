@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
-  "raw": null,
-  "latencyMs": 15216,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "273868",
+    "advertiser": "BIDEN FOR PRESIDENT",
+    "gross_amount": 10095,
+    "flight_from": "2020-02-24",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 13494,
+  "costUsd": 0.003407004,
+  "provider": "Together",
+  "inputTokens": 2965,
+  "outputTokens": 2192
 }

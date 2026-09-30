@@ -3,8 +3,17 @@
   "model": "moonshotai/kimi-k2.6",
   "modelVersion": "moonshotai/kimi-k2.6",
   "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
-  "raw": null,
-  "latencyMs": 180097,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 8000 tokens, but can only afford 7200. To increase, visit https://openrouter.ai/workspaces/default/keys/38c7737c5977c2022db9fa60954723722c11dbd39c8a56c3cd464109e49632f0 and adjust the key's weekly limit"
+  "raw": {
+    "contract_num": "273868",
+    "advertiser": "BIDEN FOR PRESIDENT",
+    "gross_amount": 10095,
+    "flight_from": "2020-03-01",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 61565,
+  "costUsd": 0.0181072,
+  "provider": "Novita",
+  "inputTokens": 5974,
+  "outputTokens": 3920
 }

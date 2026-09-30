@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.7-flash",
   "modelVersion": "qwen/qwen3.7-flash",
   "docId": "15262983-7227-5abf-803b-1089dfad4494",
-  "raw": null,
-  "latencyMs": 52461,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "4360160",
+    "advertiser": "Suplizio for State Senate-R (135664)",
+    "gross_amount": 17650,
+    "flight_from": "2020-05-01",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 38809,
+  "costUsd": 0.00043402,
+  "provider": "Alibaba",
+  "inputTokens": 4570,
+  "outputTokens": 2284
 }

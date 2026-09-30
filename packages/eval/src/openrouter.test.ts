@@ -25,3 +25,16 @@ describe("extraireJson", () => {
     expect(extraireJson('{"a":')).toBeNull();
   });
 });
+
+describe("dimensionsJpeg", () => {
+  it("lit la taille dans l'en-tête d'un vrai document du jeu", async () => {
+    const { readdir, readFile } = await import("node:fs/promises");
+    const { dimensionsJpeg } = await import("./load");
+    const dir = "data/tasks/facture-fcc/documents";
+    const premier = (await readdir(dir)).filter((f) => f.endsWith(".jpg")).sort()[0]!;
+    const d = dimensionsJpeg(await readFile(`${dir}/${premier}`));
+    expect(d).not.toBeNull();
+    expect(d!.largeur).toBeGreaterThan(300);
+    expect(d!.hauteur).toBeGreaterThan(300);
+  });
+});

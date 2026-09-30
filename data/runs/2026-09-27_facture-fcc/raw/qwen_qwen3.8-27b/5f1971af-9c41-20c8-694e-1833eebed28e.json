@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-27b",
   "modelVersion": "qwen/qwen3.8-27b",
   "docId": "5f1971af-9c41-20c8-694e-1833eebed28e",
-  "raw": null,
-  "latencyMs": 35817,
-  "costUsd": 0,
-  "error": "Unexpected end of JSON input"
+  "raw": {
+    "contract_num": "2420107",
+    "advertiser": "POL/Woody Thrasher/Governor/West Virginia",
+    "gross_amount": 5400,
+    "flight_from": "2020-03-16",
+    "flight_to": "2020-03-22",
+    "vat_number": null
+  },
+  "latencyMs": 183240,
+  "costUsd": 0.01100368,
+  "provider": "Reka",
+  "inputTokens": 67420,
+  "outputTokens": 2271
 }

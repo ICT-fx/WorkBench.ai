@@ -3,8 +3,17 @@
   "model": "mistralai/mistral-small-2603",
   "modelVersion": "mistralai/mistral-small-2603",
   "docId": "28aadaf0-04c0-74aa-7d04-727904f059e1",
-  "raw": null,
-  "latencyMs": 36716,
-  "costUsd": 0,
-  "error": "429 Too Many Requests — {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"mistralai/mistral-small-2603 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Mistral\",\"is_byok\":fa"
+  "raw": {
+    "contract_num": "1331293",
+    "advertiser": "Tom Steyer for President-D",
+    "gross_amount": 6975,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 235291,
+  "costUsd": 0.0022893,
+  "provider": "Mistral",
+  "inputTokens": 14898,
+  "outputTokens": 91
 }

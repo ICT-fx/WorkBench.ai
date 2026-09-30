@@ -3,8 +3,17 @@
   "model": "deepseek/deepseek-v4.1-flash",
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "5c8edc38-9c6e-f131-6124-bd4aab4b9b01",
-  "raw": null,
-  "latencyMs": 15397,
-  "costUsd": 0,
-  "error": "réponse sans JSON exploitable : "
+  "raw": {
+    "contract_num": "2416181",
+    "advertiser": "POLIJ CRUMPACKER/CONOR",
+    "gross_amount": 3110,
+    "flight_from": "2020-05-12",
+    "flight_to": "2020-05-19",
+    "vat_number": null
+  },
+  "latencyMs": 13518,
+  "costUsd": 0.005274804,
+  "provider": "Together",
+  "inputTokens": 6331,
+  "outputTokens": 2907
 }
