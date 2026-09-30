@@ -235,13 +235,18 @@ async function cmdPublish(taskId: string): Promise<void> {
   const review = await readReview(runDir);
 
   const arbitres = applyReview(task, scores, review);
+  // Le classement ne porte que sur les documents notés. Un run peut contenir
+  // des appels sur des documents écartés depuis : les inclure fausserait le
+  // coût moyen et le compteur d'échecs.
+  const notes = new Set(scores.map((s) => s.docId));
+  const retenus = results.filter((r) => notes.has(r.docId));
   const leaderboard = buildLeaderboard({
     taskId,
     runId,
     status: flag("demo") ? "demo" : "reel",
     runDate: runId.slice(0, 10),
     scores: arbitres,
-    results,
+    results: retenus,
     sampleSize: new Set(scores.map((s) => s.docId)).size,
   });
 

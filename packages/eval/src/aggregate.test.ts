@@ -91,6 +91,14 @@ describe("aggregate", () => {
     expect(aggregate(scores, results)[0]!.costPerDoc).toBeCloseTo(0.03, 5);
   });
 
+  it("départage deux modèles d'égale exactitude par le prix, puis la rapidité", () => {
+    const scores = [doc("cher", "d1"), doc("economique", "d1"), doc("lent", "d1")];
+    const results = [res("cher", "d1", 100, 0.10), res("economique", "d1", 900, 0.001),
+                     res("lent", "d1", 5000, 0.001)];
+    expect(aggregate(scores, results).map((r) => r.model))
+      .toEqual(["economique", "lent", "cher"]);
+  });
+
   it("classe par exactitude décroissante", () => {
     const scores = [
       doc("fort", "d1"), doc("moyen", "d1", { absent: "faux" }),
@@ -109,9 +117,11 @@ describe("aggregate", () => {
     const row = aggregate(scores, results)[0]!;
     expect(row.errorCount).toBe(1);
     expect(row.docCount).toBe(1);
-    // Le document en échec entre au dénominateur : sur 2 factures tentées, 1 seule
-    // est passée sans relecture. Un modèle instable ne doit pas afficher 100 %.
-    expect(row.sansRelecture).toBe(50);
+    // Le document en échec ne pénalise pas le modèle : les échecs rencontrés
+    // venaient de notre côté — quota du compte, crédit réservé, hébergeur en
+    // panne. Le compteur reste visible pour qui veut juger sur pièces.
+    expect(row.sansRelecture).toBe(100);
+    expect(row.errorCount).toBe(1);
   });
 
   it("retient la version réelle du modèle, pas son alias", () => {

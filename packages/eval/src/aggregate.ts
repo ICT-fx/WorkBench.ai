@@ -58,8 +58,12 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
       }
     }
 
-    // Les documents en échec comptent au dénominateur : ils n'ont pas été traités.
-    const attempted = modelScores.length + failed.length;
+    // Les documents en échec ne pénalisent pas le modèle : dans ce projet, les
+    // échecs observés venaient du quota du compte, du crédit réservé par les
+    // appels simultanés ou d'un hébergeur en panne — de notre côté, donc, pas
+    // du modèle. Ils restent visibles dans `errorCount`, à interpréter avec le
+    // contexte du run.
+    const attempted = modelScores.length;
 
     // Marge d'erreur à 95 % sur l'exactitude, en points : l'approximation normale
     // d'une proportion, sur le nombre de champs notés. Vingt-cinq documents ne
@@ -81,5 +85,11 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
     });
   }
 
-  return rows.sort((a, b) => b.exactitude - a.exactitude);
+  // À exactitude égale — et vingt modèles peuvent être parfaits sur une tâche
+  // facile — c'est le prix qui départage, puis la rapidité. Un classement doit
+  // rendre un ordre unique, et ces deux critères sont mesurés, pas arbitraires.
+  return rows.sort((a, b) =>
+    b.exactitude - a.exactitude ||
+    a.costPerDoc - b.costPerDoc ||
+    a.latencyP50 - b.latencyP50);
 }

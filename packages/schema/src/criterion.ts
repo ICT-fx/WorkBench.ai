@@ -21,6 +21,15 @@ export const CriterionSchema = z.object({
    * La convention suit le pays du document, pas celui du lecteur.
    */
   dateOrder: z.enum(["DMY", "MDY"]).optional(),
+  /**
+   * Raison pour laquelle ce critère est écarté de la note.
+   *
+   * La réponse des modèles reste enregistrée et consultable, mais elle ne
+   * compte pas. Sert aux champs dont la question admet plusieurs réponses
+   * défendables : on mesurerait alors si le modèle devine ce qu'on voulait,
+   * pas s'il sait lire.
+   */
+  exclu: z.string().min(1).optional(),
   /** Mots-clés attendus, pour les critères de kind "text". */
   expectedKeywords: z.array(z.string()).optional(),
 });

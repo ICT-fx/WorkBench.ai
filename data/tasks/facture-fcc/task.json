@@ -16,22 +16,25 @@
       "label": "Numéro de contrat",
       "kind": "exact",
       "weight": 2,
-      "critical": true
+      "critical": false,
+      "exclu": "Écarté : ces factures portent six identifiants distincts — Contract #, Order #, Invoice #, Estimate #, Alt Order #, Agency Order #. La question n'en désigne aucun sans ambiguïté, et 47 % des réponses ont retenu un autre identifiant du document. On mesurerait la devinette, pas la lecture."
     },
     {
       "id": "advertiser",
       "label": "Client facturé",
       "kind": "exact",
       "weight": 2,
-      "critical": true
+      "critical": false,
+      "exclu": "Écarté : les champs « Advertiser » et « Product » se recouvrent largement sur ces factures publicitaires, le second reprenant souvent le nom de l'annonceur."
     },
     {
       "id": "flight_from",
       "label": "Début de la période facturée",
       "kind": "date",
       "weight": 2,
-      "critical": true,
-      "dateOrder": "MDY"
+      "critical": false,
+      "dateOrder": "MDY",
+      "exclu": "Écarté : le document affiche à la fois « Flight Dates » et « Invoice Period », deux périodes différentes et toutes deux défendables comme début de la facturation."
     },
     {
       "id": "flight_to",

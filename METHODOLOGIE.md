@@ -109,45 +109,82 @@ La notation seule ne suffit pas. Ce qui a été contrôlé, et qu'il faut refair
 
 # 3. Les résultats du 27 septembre 2026
 
-## Ce qui est solide
+## Le barème retenu
 
-**Sur les trois champs non ambigus — montant total, date de fin, numéro de TVA —
-vingt modèles sur vingt-sept font un sans-faute sur les 19 factures.**
+Trois champs sur six sont notés : **montant total**, **date de fin de période** et
+**numéro de TVA** (champ sonde, absent de tous les documents).
 
-Quatre modèles décrochent :
+Les trois autres — numéro de contrat, date de début, client facturé — sont **écartés de
+la note**, avec leur raison inscrite dans `data/tasks/facture-fcc/task.json`. Leur
+question admet plusieurs réponses défendables sur ces documents : on mesurerait la
+devinette et non la lecture. Les réponses des modèles restent enregistrées et
+consultables.
 
-| Modèle | Exactitude (champs fiables) | Coût par facture |
-|---|---:|---:|
-| `amazon/nova-pro-v1` | 64,0 % | 0,0056 $ |
-| `amazon/nova-lite-v1` | 79,8 % | 0,0004 $ |
-| `google/gemma-4-31b-it` | 86,8 % | 0,0002 $ |
-| `mistralai/mistral-large-2512` | 89,5 % | 0,0040 $ |
+## Le classement
+
+19 factures, 27 modèles, 513 appels notés. Ordonné par exactitude, puis par prix, puis
+par rapidité — ces deux derniers critères départagent les égalités, et ils sont mesurés.
+
+| # | Modèle | Exactitude | Sans relecture | $/facture | Latence |
+|---:|---|---:|---:|---:|---:|
+| 1 | `qwen/qwen3.7-flash` | 100.0 % | 100.0 % | 0.0006 $ | 38.8 s |
+| 2 | `openai/gpt-6-luna` | 100.0 % | 100.0 % | 0.0011 $ | 1.6 s |
+| 3 | `z-ai/glm-5.3-flash` | 100.0 % | 100.0 % | 0.0016 $ | 6.1 s |
+| 4 | `google/gemini-3.5-flash-lite` | 100.0 % | 100.0 % | 0.0017 $ | 2.1 s |
+| 5 | `deepseek/deepseek-v4.1-flash` | 100.0 % | 100.0 % | 0.0035 $ | 12.2 s |
+| 6 | `qwen/qwen3.8-27b` | 100.0 % | 100.0 % | 0.0044 $ | 12.5 s |
+| 7 | `cohere/command-a-plus` | 100.0 % | 100.0 % | 0.0062 $ | 10.1 s |
+| 8 | `google/gemini-3.8-flash` | 100.0 % | 100.0 % | 0.0082 $ | 7.9 s |
+| 9 | `moonshotai/kimi-k2.6` | 100.0 % | 100.0 % | 0.0121 $ | 38.0 s |
+| 10 | `meta/muse-spark-1.3` | 100.0 % | 100.0 % | 0.0139 $ | 8.1 s |
+| 11 | `anthropic/claude-sonnet-5` | 100.0 % | 100.0 % | 0.0176 $ | 3.4 s |
+| 12 | `qwen/qwen3.8-max-0902` | 100.0 % | 100.0 % | 0.0210 $ | 18.6 s |
+| 13 | `openai/gpt-6-sol` | 100.0 % | 100.0 % | 0.0227 $ | 4.2 s |
+| 14 | `x-ai/grok-4.7` | 100.0 % | 100.0 % | 0.0257 $ | 25.8 s |
+| 15 | `moonshotai/kimi-k3` | 100.0 % | 100.0 % | 0.0340 $ | 6.2 s |
+| 16 | `anthropic/claude-opus-5.5` | 100.0 % | 100.0 % | 0.0366 $ | 5.2 s |
+| 17 | `qwen/qwen3.8-max-prime` | 100.0 % | 100.0 % | 0.0390 $ | 9.1 s |
+| 18 | `anthropic/claude-fable-5.1` | 100.0 % | 100.0 % | 0.0876 $ | 4.2 s |
+| 19 | `openai/gpt-6-astra` | 100.0 % | 100.0 % | 0.1092 $ | 2.1 s |
+| 20 | `meta-llama/llama-4-maverick` | 97.4 % | 94.7 % | 0.0022 $ | 2.3 s |
+| 21 | `mistralai/mistral-medium-3-5` | 96.5 % | 89.5 % | 0.0125 $ | 4.9 s |
+| 22 | `mistralai/mistral-small-2603` | 92.1 % | 78.9 % | 0.0012 $ | 5.6 s |
+| 23 | `mistralai/ministral-8b-2512` | 90.4 % | 73.7 % | 0.0012 $ | 3.4 s |
+| 24 | `mistralai/mistral-large-2512` | 89.5 % | 73.7 % | 0.0040 $ | 29.7 s |
+| 25 | `google/gemma-4-31b-it` | 86.8 % | 63.2 % | 0.0002 $ | 5.6 s |
+| 26 | `amazon/nova-lite-v1` | 79.8 % | 52.6 % | 0.0004 $ | 2.1 s |
+| 27 | `amazon/nova-pro-v1` | 64.0 % | 36.8 % | 0.0056 $ | 2.7 s |
+
+## Ce que ce classement dit
+
+**Dix-neuf modèles sur vingt-sept sont parfaits.** Entre le moins cher d'entre eux,
+`qwen/qwen3.7-flash` à 0,0006 $ la facture, et le plus cher, `openai/gpt-6-astra` à
+0,1092 $, il y a un **facteur 187 pour un résultat identique**.
 
 **Aucune hallucination : 513 occasions, zéro invention.** Sur un champ clairement absent
 du document, les modèles testés s'abstiennent correctement. L'hypothèse de départ —
-« beaucoup vont inventer » — est fausse pour cette génération de modèles.
+« beaucoup vont inventer » — est fausse pour cette génération.
 
-**L'écart de prix ne se retrouve pas dans les résultats.** `gpt-6-astra` à 0,1092 $ la
-facture et `gemini-3.5-flash-lite` à 0,0017 $ sont tous deux à 100 % sur les champs
-fiables. Un facteur 64 en prix, aucun écart mesurable en qualité sur cette tâche.
+**Les huit modèles qui décrochent** sont, à deux exceptions près, les plus petits :
+`nova-pro-v1` (64,0 %), `nova-lite-v1` (79,8 %), `gemma-4-31b-it` (86,8 %). Le cas
+`mistral-large-2512` (89,5 %) surprend davantage et mériterait un examen des erreurs.
 
-## Ce qui ne l'est pas
+**La conclusion méthodologique compte autant que le classement : cette tâche est trop
+facile pour départager les modèles sérieux.** Extraire trois champs d'en-tête ne suffit
+pas. La difficulté réelle est dans les lignes de facturation.
 
-Le classement calculé sur les six champs plaçait Qwen et GLM devant Claude et GPT.
-**C'est un artefact**, et il ne doit pas être publié. Explication au paragraphe suivant.
+## Répartition des erreurs, tous champs confondus
 
-## Répartition des erreurs par champ
+Mesurée avant l'exclusion des champs ambigus. C'est ce tableau qui a révélé le problème.
 
 | Champ | Taux d'erreur | Diagnostic |
 |---|---:|---|
-| `contract_num` | 47,4 % | **Ambigu** : ces factures portent six identifiants (Contract #, Order #, Invoice #, Estimate #, Alt Order #, Agency Order #) |
-| `flight_from` | 24,2 % | **Ambigu** : le document affiche « Flight Dates » et « Invoice Period » |
-| `advertiser` | 21,1 % | **Partiellement ambigu** : « Advertiser » et « Product » se ressemblent |
+| `contract_num` | 47,4 % | **Ambigu** : six identifiants sur le document |
+| `flight_from` | 24,2 % | **Ambigu** : « Flight Dates » et « Invoice Period » |
+| `advertiser` | 21,1 % | **Partiellement ambigu** : « Advertiser » et « Product » se recouvrent |
 | `flight_to` | 6,2 % | Fiable |
 | `gross_amount` | 3,5 % | Fiable |
 | `vat_number` | 0 % | Fiable (champ sonde) |
-
----
 
 # 4. Les erreurs commises, à ne pas reproduire
 
@@ -170,6 +207,16 @@ préparation.** Elle ne devient jamais un `null` silencieux.
 **Vérifier une hypothèse avant de bâtir dessus.**
 L'angle « qui invente » supposait des champs absents. Il n'y en avait aucun une fois les
 dates correctement lues. → **Compter les cas avant de promettre un résultat.**
+
+**Un champ dont la question admet plusieurs réponses doit être écarté, pas corrigé
+après coup.** Le barème porte un motif d'exclusion explicite, et la réponse du modèle
+reste consultable. Masquer le champ sans dire pourquoi serait invérifiable.
+
+**Un échec d'appel ne pénalise pas le modèle.** Les échecs rencontrés venaient du quota
+du compte, du crédit réservé par les appels simultanés ou d'un hébergeur en panne —
+de notre côté, donc. Ils restent visibles dans `errorCount` pour qui veut juger sur
+pièces, mais n'entrent pas dans les taux. À réexaminer le jour où un modèle échouera
+pour une raison qui lui est propre.
 
 **Comparer deux classements avant de publier.**
 Calculer le classement sur tous les champs puis sur les seuls champs non ambigus. S'ils

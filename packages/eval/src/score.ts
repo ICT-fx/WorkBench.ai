@@ -34,6 +34,8 @@ export function scoreDocument(
   let needsReview = false;
 
   for (const criterion of task.criteria) {
+    // Un critère écarté ne compte pas : sa réponse reste dans le fichier brut.
+    if (criterion.exclu !== undefined) continue;
     const expected = groundTruth.fields[criterion.id] ?? null;
     const field = scoreField(criterion, expected, parsed[criterion.id]);
     byCriterion[criterion.id] = field;
