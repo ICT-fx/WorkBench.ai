@@ -89,7 +89,7 @@ async function main(): Promise<void> {
   const payload: unknown = from >= 0
     ? JSON.parse(await readFile(process.argv[from + 1]!, "utf8"))
     : await fetch(CATALOGUE_URL).then((r) => {
-        if (!r.ok) throw new Error(`Catalogue AI Gateway inaccessible : ${r.status} ${r.statusText}`);
+        if (!r.ok) throw new Error(`Catalogue OpenRouter inaccessible : ${r.status} ${r.statusText}`);
         return r.json();
       });
 

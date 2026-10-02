@@ -27,7 +27,7 @@ export const ModalitySchema = z.enum(["text", "image", "pdf", "video", "audio"])
 export type Modality = z.infer<typeof ModalitySchema>;
 
 export const ModelSchema = z.object({
-  /** Identifiant AI Gateway : c'est celui que le pipeline appelle. */
+  /** Identifiant OpenRouter : c'est celui que le pipeline appelle. */
   id: z.string().regex(/^[a-z0-9-]+\/[a-z0-9.\-]+$/),
   name: z.string().min(1),
   lab: z.string().min(1),
@@ -35,7 +35,7 @@ export const ModelSchema = z.object({
   /** `null` : le statut des poids n'a pas pu être vérifié. */
   weights: z.enum(["ouverts", "fermes"]).nullable(),
   /**
-   * Les champs ci-dessous viennent du catalogue public de l'AI Gateway
+   * Les champs ci-dessous viennent du catalogue public d'OpenRouter
    * (`npm run catalogue:sync`). `null` : le modèle n'y figure pas — on
    * affiche « non communiqué » plutôt qu'un chiffre de mémoire.
    */

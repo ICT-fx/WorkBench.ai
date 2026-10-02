@@ -1,21 +1,14 @@
 /**
- * Les six modèles de la V1.
- *
- * La sélection couvre les questions que pose réellement une PME :
- * les trois grandes familles propriétaires, un modèle français pour la question
- * de la souveraineté, un modèle ouvert de taille auto-hébergeable pour « et si
- * je ne veux pas que mes factures sortent de chez moi », et un modèle à bas coût
- * pour que la recommandation « meilleur rapport coût/précision » ait un sens.
- *
- * Les alias sont résolus contre le catalogue de l'AI Gateway au lancement : si
- * l'un d'eux disparaît, le run s'arrête au lieu de publier un classement amputé.
- */
-/**
- * Les 27 modèles du hub, identifiants OpenRouter.
+ * Les 27 modèles du hub, identifiants OpenRouter. Liste unique : c'est elle que
+ * le run appelle, que `key:check` vérifie, et qu'il faut tenir à jour avec
+ * `data/catalogue/models.seed.json`.
  *
  * Quatre groupes : ce que l'IA sait faire de mieux prix mis de côté, le bon
  * rapport qualité-prix, la souveraineté et l'auto-hébergement, et le volume au
  * coût le plus bas. Voir docs/2026-09-24-modeles-benchmarks-roadmap.md.
+ *
+ * Les alias sont résolus contre le catalogue d'OpenRouter au lancement : si l'un
+ * d'eux disparaît, le run s'arrête au lieu de publier un classement amputé.
  */
 export const HUB_MODELS = [
   "anthropic/claude-fable-5.1", "openai/gpt-6-astra", "qwen/qwen3.8-max-prime",
@@ -28,15 +21,6 @@ export const HUB_MODELS = [
   "mistralai/ministral-8b-2512", "google/gemma-4-31b-it",
   "deepseek/deepseek-v4.1-flash", "google/gemini-3.5-flash-lite", "openai/gpt-6-luna",
   "amazon/nova-lite-v1", "z-ai/glm-5.3-flash", "qwen/qwen3.7-flash",
-] as const;
-
-export const V1_MODELS = [
-  "openai/gpt-6-astra",
-  "anthropic/claude-opus-5",
-  "google/gemini-3.8-flash",
-  "mistral/mistral-large-3",
-  "alibaba/qwen3.8-27b",
-  "openai/gpt-5.6-luna",
 ] as const;
 
 export type CatalogueEntry = {
@@ -85,7 +69,7 @@ export function parseCatalogue(payload: unknown): Catalogue {
 export async function fetchCatalogue(url: string = CATALOGUE_URL): Promise<Catalogue> {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Catalogue AI Gateway inaccessible : ${response.status} ${response.statusText}`);
+    throw new Error(`Catalogue des modèles inaccessible : ${response.status} ${response.statusText}`);
   }
   return parseCatalogue(await response.json());
 }

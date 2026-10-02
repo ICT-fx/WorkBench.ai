@@ -4,23 +4,8 @@
  * découvrir un problème ici qu'au milieu d'un run payant.
  */
 import { existsSync } from "node:fs";
+import { HUB_MODELS } from "./models";
 
-const V1_MODELS = [
-  // Ce que l'IA sait faire de mieux
-  "anthropic/claude-fable-5.1", "openai/gpt-6-astra", "qwen/qwen3.8-max-prime",
-  "moonshotai/kimi-k3", "anthropic/claude-opus-5.5", "x-ai/grok-4.7",
-  // Ceux qu'on déploie vraiment
-  "openai/gpt-6-sol", "anthropic/claude-sonnet-5", "qwen/qwen3.8-max-0902",
-  "meta/muse-spark-1.3", "moonshotai/kimi-k2.6", "amazon/nova-pro-v1",
-  "google/gemini-3.8-flash", "cohere/command-a-plus",
-  // Souveraineté et auto-hébergement
-  "mistralai/mistral-medium-3-5", "mistralai/mistral-large-2512", "qwen/qwen3.8-27b",
-  "meta-llama/llama-4-maverick", "mistralai/mistral-small-2603",
-  "mistralai/ministral-8b-2512", "google/gemma-4-31b-it",
-  // Volume au coût le plus bas
-  "deepseek/deepseek-v4.1-flash", "google/gemini-3.5-flash-lite", "openai/gpt-6-luna",
-  "amazon/nova-lite-v1", "z-ai/glm-5.3-flash", "qwen/qwen3.7-flash",
-] as const;
 
 const BASE = "https://openrouter.ai/api/v1";
 
@@ -78,9 +63,9 @@ async function main(): Promise<void> {
   const ids = new Set(
     ((await cat.json()) as { data: { id: string }[] }).data.map((m) => m.id),
   );
-  const manquants = V1_MODELS.filter((m) => !ids.has(m));
+  const manquants = HUB_MODELS.filter((m) => !ids.has(m));
 
-  console.log(`\n${V1_MODELS.length - manquants.length}/${V1_MODELS.length} modèles du hub disponibles.`);
+  console.log(`\n${HUB_MODELS.length - manquants.length}/${HUB_MODELS.length} modèles du hub disponibles.`);
   if (manquants.length > 0) {
     console.log("Absents du catalogue (à remplacer dans la sélection) :");
     for (const m of manquants) console.log(`  · ${m}`);

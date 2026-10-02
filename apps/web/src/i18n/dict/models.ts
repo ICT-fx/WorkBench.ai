@@ -40,7 +40,7 @@ const fr = {
     reasoning: "Raisonnement",
     yes: "Oui",
     no: "Non",
-    gatewayId: "Identifiant AI Gateway",
+    gatewayId: "Identifiant OpenRouter",
   },
   overview: {
     title: "En un coup d'œil",
@@ -136,7 +136,7 @@ const en: typeof fr = {
     reasoning: "Reasoning",
     yes: "Yes",
     no: "No",
-    gatewayId: "AI Gateway identifier",
+    gatewayId: "OpenRouter identifier",
   },
   overview: {
     title: "At a glance",
