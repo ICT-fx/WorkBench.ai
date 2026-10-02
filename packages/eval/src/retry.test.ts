@@ -74,3 +74,20 @@ describe("refus de crédit", () => {
       '{"reason":"weight_exceeds_budget"} maximum cost exceeds your available credits'))).toBe(false);
   });
 });
+
+describe("délais dépassés", () => {
+  it("reprend un appel interrompu par le délai maximal", () => {
+    // `AbortSignal.timeout` rejette avec un DOMException nommé TimeoutError :
+    // sans cette reconnaissance, un appel qui dépasse le délai serait compté
+    // comme un échec définitif du modèle, qu'il n'a pas commis.
+    const e = new Error("The operation was aborted due to timeout");
+    e.name = "TimeoutError";
+    expect(estPassager(e)).toBe(true);
+  });
+
+  it("reprend aussi une annulation sans message explicite", () => {
+    const e = new Error("");
+    e.name = "AbortError";
+    expect(estPassager(e)).toBe(true);
+  });
+});

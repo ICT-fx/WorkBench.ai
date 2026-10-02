@@ -38,6 +38,8 @@ export type ProviderOptions = {
 };
 
 export type OpenRouterOptions = {
+  /** Délai maximal d'un appel, en millisecondes. Au-delà, l'appel est repris. */
+  timeoutMs?: number;
   apiKey: string;
   provider?: ProviderOptions;
   maxTokens?: number;
@@ -70,6 +72,14 @@ export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
 
     const appeler = async (): Promise<Response> => fetch(BASE, {
       method: "POST",
+      // Sans délai maximal, une connexion qui ne répond plus bloque l'appel pour
+      // toujours. À deux appels simultanés, deux connexions mortes figent le run
+      // entier : c'est arrivé après 194 appels, sans message d'erreur, le
+      // processus attendant une réponse qui ne venait jamais. Quatre minutes
+      // laissent largement répondre les modèles les plus lents — la médiane la
+      // plus haute mesurée est de 39 secondes — et un dépassement est traité
+      // comme une erreur passagère, donc réessayé.
+      signal: AbortSignal.timeout(opts.timeoutMs ?? 240_000),
       headers: {
         Authorization: `Bearer ${opts.apiKey}`,
         "Content-Type": "application/json",

@@ -20,9 +20,13 @@ export function estPassager(erreur: unknown): boolean {
     if (erreur.status === 402) return !/weight_exceeds_budget|maximum cost exceeds/i.test(erreur.message);
     return PASSAGERS.has(erreur.status);
   }
+  // `AbortSignal.timeout` rejette avec un DOMException nommé TimeoutError, dont
+  // le message varie selon la version de Node : on reconnaît le nom d'abord.
+  const nom = erreur instanceof Error ? erreur.name : "";
+  if (nom === "TimeoutError" || nom === "AbortError") return true;
   const m = erreur instanceof Error ? erreur.message : String(erreur);
   // Erreurs réseau et délais dépassés : la requête n'a jamais abouti.
-  return /timeout|timed out|fetch failed|ECONNRESET|ETIMEDOUT|socket hang up/i.test(m);
+  return /timeout|timed out|aborted|fetch failed|ECONNRESET|ETIMEDOUT|socket hang up/i.test(m);
 }
 
 export class HttpError extends Error {

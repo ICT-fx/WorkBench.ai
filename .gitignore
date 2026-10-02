@@ -6,3 +6,10 @@ node_modules/
 dist/
 .playwright-mcp/
 .impeccable/
+
+# Les pages rendues des documents de test : 206 Mo pour cent factures, et
+# `npm run deepform:prepare` les régénère à l'identique depuis l'archive
+# publique, le tirage étant déterministe. Le manifeste, lui, est versionné :
+# c'est lui qui fixe quels documents composent le jeu.
+# Les pages déjà suivies le restent — ce sont celles que le site affiche.
+data/tasks/*/documents/
