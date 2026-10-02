@@ -93,11 +93,16 @@ export function loadGroundTruth(taskId: string, docId: string): GroundTruth {
 /**
  * Les notations d'un run. Le site les lit pour choisir quels documents montrer
  * et pour afficher le verdict champ par champ ; il ne les recalcule jamais.
+ *
+ * Un classement publié peut porter plusieurs runs, séparés par « + » : les runs
+ * restent immuables et séparés sur le disque, c'est la lecture qui les réunit.
  */
 export function loadScores(runId: string): DocScore[] {
-  const file = join(repoRoot(), "data", "runs", runId, "scores.json");
-  if (!existsSync(file)) return [];
-  return z.array(DocScoreSchema).parse(JSON.parse(readFileSync(file, "utf8")));
+  return runId.split("+").flatMap((run) => {
+    const file = join(repoRoot(), "data", "runs", run, "scores.json");
+    if (!existsSync(file)) return [];
+    return z.array(DocScoreSchema).parse(JSON.parse(readFileSync(file, "utf8")));
+  });
 }
 
 export type SourceDocument = {
@@ -142,8 +147,13 @@ export type ReponseModele = {
  * lui-même plutôt que de nous croire sur parole.
  */
 export function loadReponses(runId: string, docId: string, criterionId: string): ReponseModele[] {
-  const rawDir = join(repoRoot(), "data", "runs", runId, "raw");
-  if (!existsSync(rawDir)) return [];
+  // Le document n'appartient qu'à un seul run — la publication refuse le
+  // contraire — donc le premier run qui le contient est le bon.
+  const rawDir = runId.split("+")
+    .map((run) => join(repoRoot(), "data", "runs", run, "raw"))
+    .find((dir) => existsSync(dir) && readdirSync(dir).some(
+      (dossier) => existsSync(join(dir, dossier, `${docId}.json`))));
+  if (rawDir === undefined) return [];
 
   return readdirSync(rawDir).map((dossier) => {
     const file = join(rawDir, dossier, `${docId}.json`);
