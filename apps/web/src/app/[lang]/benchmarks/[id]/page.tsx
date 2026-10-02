@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { fill, getDictionary, href, isLocale, tr } from "@/i18n";
 import { getHub } from "@/lib/site";
 import {
-  documentImages, hasTask, loadCases, loadGroundTruth, loadHistory, loadReponses, loadTask,
+  documentImages, hasCases, loadCases, loadGroundTruth, loadHistory, loadReponses, loadScores, loadTask,
 } from "@/lib/data";
 import { stateOfTheArt } from "@/lib/hub";
+import { documentsClivants } from "@/lib/exemples";
 import { takeaways } from "@/lib/takeaways";
 import { date, pct } from "@/lib/format";
 import { labView, modelHref, scatterPoints } from "@/lib/views";
@@ -20,9 +21,13 @@ import { NuageCout } from "@/components/charts/NuageCout";
 import { LigneRuns } from "@/components/charts/LigneRuns";
 import { LeaderboardTable, type TableRow } from "@/components/benchmarks/LeaderboardTable";
 
+/**
+ * Toutes les tâches du catalogue ont une page, mesurées ou non. Une tâche au
+ * programme y montre son protocole et ce qui lui manque : c'est ce qui permet de
+ * publier la liste complète des métiers sans faire croire qu'ils sont mesurés.
+ */
 export function generateStaticParams() {
-  const { benchmarks, leaderboards } = getHub();
-  return benchmarks.filter((b) => leaderboards.has(b.id)).map((b) => ({ id: b.id }));
+  return getHub().benchmarks.map((b) => ({ id: b.id }));
 }
 
 export const dynamicParams = false;
@@ -62,8 +67,9 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
   if (!isLocale(lang)) notFound();
   const site = getHub();
   const benchmark = site.benchmarks.find((b) => b.id === id);
+  if (benchmark === undefined) notFound();
   const leaderboard = site.leaderboards.get(id);
-  if (benchmark === undefined || leaderboard === undefined) notFound();
+  if (leaderboard === undefined) return <BenchmarkAVenir lang={lang} id={id} />;
 
   const dict = getDictionary(lang);
   const t = dict.benchmarks.detail;
@@ -90,15 +96,20 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
     : 0;
   const phrases = takeaways({ benchmark, leaderboard, names, excluded: ecartes, locale: lang, dict });
 
-  // Le meilleur de chaque sous-tâche, de la mieux maîtrisée à la plus dure.
+  // Chaque champ noté, de la mieux maîtrisée à la plus dure. La valeur affichée
+  // est la moyenne de tous les modèles : le maximum vaudrait 100 % partout dès
+  // qu'un modèle est parfait, et ne distinguerait plus rien. Le meilleur modèle
+  // reste nommé à côté, parce que c'est lui qu'on vient chercher.
   const meneurs = benchmark.subtasks.flatMap((s) => {
-    const best = classees
-      .filter((r) => r.bySubtask?.[s.id] !== undefined)
-      .sort((a, b) => b.bySubtask![s.id]! - a.bySubtask![s.id]!)[0];
+    const notes = classees.flatMap((r) => (r.bySubtask?.[s.id] === undefined ? [] : [r]));
+    const best = [...notes].sort((a, b) => b.bySubtask![s.id]! - a.bySubtask![s.id]!)[0];
     const score = best === undefined ? undefined : scoreById.get(best.model);
-    return best === undefined || score === undefined
-      ? []
-      : [{ id: s.id, label: tr(s.label, lang), value: best.bySubtask![s.id]!, score }];
+    if (best === undefined || score === undefined) return [];
+    const moyenne = notes.reduce((a, r) => a + r.bySubtask![s.id]!, 0) / notes.length;
+    return [{
+      id: s.id, label: tr(s.label, lang), value: Math.round(moyenne * 10) / 10,
+      best: best.bySubtask![s.id]!, score,
+    }];
   }).sort((a, b) => b.value - a.value);
 
   const history = loadHistory(id);
@@ -108,7 +119,7 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
   }));
 
   const freres = site.benchmarks.filter((b) => b.domain === benchmark.domain && b.id !== id && site.leaderboards.has(b.id));
-  const avecPieges = hasTask(id);
+  const avecPieges = hasCases(id);
 
   return (
     <main className="conteneur pb-8 pt-10">
@@ -184,6 +195,34 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         <section>
           <h2 className="etendu text-2xl">{t.about}</h2>
           <p className="mt-5 max-w-[64ch]">{tr(benchmark.description, lang)}</p>
+
+          {/* La provenance des documents : sans elle, personne ne peut refaire la mesure. */}
+          {benchmark.dataset !== undefined && (
+            <div className="panneau mt-8 max-w-xl">
+              <div className="barre">
+                <Icon name="document" size={15} />
+                <h3>{t.dataset}</h3>
+              </div>
+              <div className="px-5 py-4">
+                <p className="text-sm text-encre-pale">{tr(benchmark.dataset.origin, lang)}</p>
+                <dl className="chiffres mt-4 text-sm">
+                  <div className="flex justify-between gap-6 border-t border-filet py-2.5">
+                    <dt className="text-encre-pale">{t.datasetSource}</dt>
+                    <dd className="text-right">
+                      <a href={benchmark.dataset.url} className="text-vert underline" rel="noreferrer">
+                        {benchmark.dataset.name}
+                      </a>
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-6 border-t border-filet py-2.5">
+                    <dt className="text-encre-pale">{t.datasetLicence}</dt>
+                    <dd className="max-w-[26ch] text-right">{benchmark.dataset.licence}</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          )}
+
           <dl className="chiffres mt-8 max-w-xl border-t border-filet text-sm">
             {[
               [t.facts.sample, `${leaderboard.sampleSize} ${unit}s`],
@@ -214,6 +253,7 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
                   <Link href={modelHref(lang, m.score.model.id)} className="col-span-2 flex items-center gap-2 text-sm text-encre-pale no-underline hover:text-encre hover:underline">
                     <LabMark lab={m.score.lab} size={16} />
                     {m.score.model.name}
+                    <span className="chiffres ml-auto text-xs">{pct(m.best, lang)}</span>
                   </Link>
                 </li>
               ))}
@@ -236,7 +276,9 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         </section>
       )}
 
-      {avecPieges && <CasPieges taskId={id} runId={leaderboard.runId} lang={lang} names={names} />}
+      {avecPieges
+        ? <CasPieges taskId={id} runId={leaderboard.runId} lang={lang} names={names} />
+        : <DocumentsClivants taskId={id} runId={leaderboard.runId} lang={lang} names={names} />}
 
       <p className="mt-16 max-w-[64ch]">
         <Link href={href(lang, "/about/methodology")} className="text-vert underline">{t.methodology}</Link> {t.methodologyTail}
@@ -257,6 +299,194 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
           </ul>
         </nav>
       )}
+    </main>
+  );
+}
+
+/**
+ * Les documents sur lesquels les modèles se sont le plus contredits, avec la
+ * réponse brute de chacun en face de l'annotation d'origine.
+ *
+ * C'est la contrepartie des cas pièges pour un jeu de documents réels : ici,
+ * aucune difficulté n'a été placée, et c'est le désaccord des modèles qui
+ * désigne les documents intéressants. Sans cette section, le lecteur devrait
+ * nous croire sur parole ; avec elle, il peut vérifier une notation à l'œil.
+ */
+function DocumentsClivants({ taskId, runId, lang, names }: {
+  taskId: string; runId: string; lang: "fr" | "en"; names: Map<string, string>;
+}) {
+  const dict = getDictionary(lang);
+  const t = dict.benchmarks.detail;
+  const task = loadTask(taskId);
+  const labels = Object.fromEntries(task.criteria.map((c) => [c.id, c.label]));
+  const clivants = documentsClivants(loadScores(runId));
+  if (clivants.length === 0) return null;
+
+  return (
+    <section className="mt-16">
+      <h2 className="etendu text-2xl">{t.splits}</h2>
+      <p className="mt-2 max-w-[68ch] text-encre-pale">{t.splitsLead}</p>
+
+      <div className="mt-8 space-y-10">
+        {clivants.map((clivant) => {
+          const attendu = loadGroundTruth(taskId, clivant.docId).fields[clivant.criterionId] ?? null;
+          const reponses = loadReponses(runId, clivant.docId, clivant.criterionId);
+          const pages = documentImages(taskId, clivant.docId);
+
+          return (
+            <article key={clivant.docId} className="panneau">
+              <div className="barre flex-wrap">
+                <h3 className="font-medium">{labels[clivant.criterionId] ?? clivant.criterionId}</h3>
+                <span className="chiffres text-xs text-encre-pale">
+                  {fill(t.splitDoc, {
+                    errors: clivant.errors, models: clivant.models,
+                    field: labels[clivant.criterionId] ?? clivant.criterionId,
+                  })}
+                </span>
+              </div>
+              <div className="grid gap-8 p-5 sm:p-7 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] md:items-start">
+                {pages[0] !== undefined && (
+                  <figure>
+                    <div className="overflow-hidden rounded-[var(--radius-m)] border border-filet">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={pages[0]} alt={fill(t.invoiceAlt, { doc: clivant.docId })} className="w-full" loading="lazy" />
+                    </div>
+                    <figcaption className="chiffres mt-2 text-xs text-encre-muette">
+                      {fill(t.splitPages, { n: pages.length })} · {clivant.docId}
+                    </figcaption>
+                  </figure>
+                )}
+                <dl className="text-sm">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2 border-b-2 border-filet-fort pb-2.5">
+                    <dt className="font-semibold">{t.splitExpected}</dt>
+                    <dd className="chiffres font-semibold text-vert">
+                      {attendu === null ? t.nothingToFind : <ValeurBrute valeur={attendu} abstention={t.abstains} />}
+                    </dd>
+                  </div>
+                  {reponses.map((r) => {
+                    // Le verdict n'est pas recalculé ici : on compare à l'affiché,
+                    // uniquement pour signaler visuellement ce qui diverge.
+                    const diverge = !r.enEchec && JSON.stringify(r.valeur ?? null) !== JSON.stringify(attendu);
+                    return (
+                      <div key={r.model} className="flex flex-wrap items-baseline justify-between gap-2 border-b border-filet py-2.5">
+                        <dt>{names.get(r.model) ?? r.model}</dt>
+                        <dd className={diverge ? "font-semibold text-rouge" : undefined}>
+                          {r.enEchec ? t.callFailed : <ValeurBrute valeur={r.valeur} abstention={t.abstains} />}
+                        </dd>
+                      </div>
+                    );
+                  })}
+                </dl>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * La page d'une tâche au programme : son protocole, et pas un chiffre.
+ *
+ * Elle existe pour que le hub puisse publier la liste complète des métiers qu'il
+ * couvrira sans laisser croire qu'ils sont mesurés. Chaque page dit ce qui lui
+ * manque — un jeu de données à intégrer, une grille de notation à écrire, ou des
+ * documents que seules des entreprises détiennent.
+ */
+function BenchmarkAVenir({ lang, id }: { lang: "fr" | "en"; id: string }) {
+  const site = getHub();
+  const benchmark = site.benchmarks.find((b) => b.id === id)!;
+  const dict = getDictionary(lang);
+  const t = dict.benchmarks.detail;
+  const liste = dict.benchmarks.list;
+  const domaine = site.domains.find((d) => d.id === benchmark.domain)!;
+  const unit = tr(benchmark.unit, lang);
+  const roadmap = benchmark.roadmap;
+  const mesures = site.benchmarks.filter((b) => site.leaderboards.has(b.id));
+
+  return (
+    <main className="conteneur pb-8 pt-10">
+      <nav aria-label={t.breadcrumb} className="flex flex-wrap items-center gap-2 text-sm text-encre-pale">
+        <Link href={href(lang, "/benchmarks")} className="no-underline hover:underline">{t.breadcrumb}</Link>
+        <Icon name="chevron-right" size={14} />
+        <Link href={`${href(lang, "/benchmarks")}#${domaine.id}`} className="flex items-center gap-1.5 no-underline hover:underline">
+          <Icon name={hasIcon(domaine.icon) ? domaine.icon : "indice"} size={15} />
+          {tr(domaine.label, lang)}
+        </Link>
+      </nav>
+
+      <header className="mt-8 max-w-[52rem]">
+        <p className="flex flex-wrap items-center gap-2">
+          <span className="pastille">{dict.common.labels.soon}</span>
+          <span className="pastille">
+            <Icon name={benchmark.input === "document" ? "document" : "text"} size={12} />
+            {benchmark.input === "document" ? liste.onDocuments : liste.onText}
+          </span>
+        </p>
+        <h1 className="etendu mt-4 text-4xl sm:text-5xl">{tr(benchmark.label, lang)}</h1>
+        <p className="mt-5 text-xl text-encre-pale">{tr(benchmark.question, lang)}</p>
+        <p className="mt-6 max-w-[62ch] text-encre-pale">{t.soon.lead}</p>
+      </header>
+
+      <div className="mt-14 grid gap-x-16 gap-y-14 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)]">
+        <section>
+          <h2 className="etendu text-2xl">{t.soon.whatFor}</h2>
+          <p className="mt-5 max-w-[64ch]">{tr(benchmark.description, lang)}</p>
+
+          <h3 className="etiquette mt-10">{t.soon.graded}</h3>
+          <ul className="panneau mt-4 divide-y divide-filet">
+            {benchmark.subtasks.map((s) => (
+              <li key={s.id} className="px-5 py-3 text-sm">{tr(s.label, lang)}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="etendu text-2xl">{t.soon.missing}</h2>
+          {roadmap !== undefined && (
+            <>
+              <p className="mt-5 max-w-[64ch]">{liste.data[roadmap.data]}</p>
+              <dl className="chiffres mt-8 max-w-xl border-t border-filet text-sm">
+                {[
+                  [t.soon.plan, fill(liste.wave, { n: roadmap.wave })],
+                  ...(roadmap.target === undefined ? [] : [[t.soon.target, roadmap.target]]),
+                  [t.soon.sample, `${benchmark.sampleSize} ${unit}s`],
+                  [t.facts.input, benchmark.input === "document" ? t.facts.inputDocument : t.facts.inputText],
+                ].map(([k, v]) => (
+                  <div key={k} className="flex justify-between gap-6 border-b border-filet py-2.5">
+                    <dt className="text-encre-pale">{k}</dt>
+                    <dd className="max-w-[28ch] text-right">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-5 text-sm text-encre-muette">{t.soon.planLead}</p>
+            </>
+          )}
+        </section>
+      </div>
+
+      <p className="mt-16 max-w-[64ch] border-t border-filet pt-8 text-encre-pale">{t.soon.noFigures}</p>
+
+      {mesures.length > 0 && (
+        <nav aria-label={t.soon.measured} className="mt-8">
+          <h2 className="etiquette">{t.soon.measured}</h2>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {mesures.map((b) => (
+              <li key={b.id}>
+                <Link href={href(lang, `/benchmarks/${b.id}`)} className="bouton">
+                  {tr(b.label, lang)}
+                  <Icon name="arrow-right" size={15} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <p className="mt-16 max-w-[64ch]">
+        <Link href={href(lang, "/about/methodology")} className="text-vert underline">{t.soon.method}</Link> {t.soon.methodTail}
+      </p>
     </main>
   );
 }

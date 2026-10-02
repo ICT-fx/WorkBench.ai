@@ -3,10 +3,11 @@ import { join, dirname } from "node:path";
 import { z } from "zod";
 import {
   LeaderboardSchema, TaskSchema, GroundTruthSchema, LabSchema, ModelCatalogueSchema,
-  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema,
+  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema, DocScoreSchema,
 } from "@hub/schema";
 import type {
-  Benchmark, BenchmarkHistory, Domain, GroundTruth, Lab, Leaderboard, ModelCatalogue, News, Task,
+  Benchmark, BenchmarkHistory, DocScore, Domain, GroundTruth, Lab, Leaderboard, ModelCatalogue,
+  News, Task,
 } from "@hub/schema";
 
 /** Remonte jusqu'au dépôt : le cwd diffère entre `next dev`, le build et les tests. */
@@ -61,6 +62,14 @@ export function loadHistory(benchmarkId: string): BenchmarkHistory | null {
 export const hasTask = (taskId: string): boolean =>
   existsSync(join(repoRoot(), "data", "tasks", taskId, "task.json"));
 
+/**
+ * Les cas pièges sont une construction : des documents fabriqués pour mettre une
+ * difficulté précise sous les yeux. Un jeu de documents réels n'en a pas, et la
+ * section correspondante n'existe alors pas sur le site.
+ */
+export const hasCases = (taskId: string): boolean =>
+  existsSync(join(repoRoot(), "data", "tasks", taskId, "cases.json"));
+
 export function publishedTaskIds(): string[] {
   const dir = join(repoRoot(), "data", "published");
   return readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, ""));
@@ -78,6 +87,16 @@ export function loadPrompt(taskId: string): string {
 export function loadGroundTruth(taskId: string, docId: string): GroundTruth {
   const file = join(repoRoot(), "data", "tasks", taskId, "ground-truth", `${docId}.json`);
   return GroundTruthSchema.parse(JSON.parse(readFileSync(file, "utf8")));
+}
+
+/**
+ * Les notations d'un run. Le site les lit pour choisir quels documents montrer
+ * et pour afficher le verdict champ par champ ; il ne les recalcule jamais.
+ */
+export function loadScores(runId: string): DocScore[] {
+  const file = join(repoRoot(), "data", "runs", runId, "scores.json");
+  if (!existsSync(file)) return [];
+  return z.array(DocScoreSchema).parse(JSON.parse(readFileSync(file, "utf8")));
 }
 
 export type ReponseModele = {

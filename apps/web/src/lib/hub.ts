@@ -41,6 +41,22 @@ export type Hub = {
   demo: boolean;
   /** Date du run le plus récent parmi les classements publiés. */
   updated: string;
+  /**
+   * L'étendue de ce que l'indice couvre réellement.
+   *
+   * Un indice calculé sur un métier ne vaut pas un indice calculé sur dix, et le
+   * site doit afficher lequel des deux il montre. Sans ces compteurs, un visiteur
+   * lirait « indice métier » comme un verdict général alors qu'il ne porte que
+   * sur les tâches déjà mesurées.
+   */
+  coverage: {
+    domainsMeasured: number;
+    domainsTotal: number;
+    benchmarksMeasured: number;
+    benchmarksTotal: number;
+    /** Les métiers portant au moins une mesure, dans l'ordre du catalogue. */
+    domains: string[];
+  };
 };
 
 const mean = (xs: number[]): number | null =>
@@ -55,6 +71,12 @@ export function buildHub(input: HubInput): Hub {
   const labById = new Map(input.labs.map((l) => [l.id, l]));
   const benchmarkById = new Map(input.benchmarks.map((b) => [b.id, b]));
   const published = input.leaderboards.filter((lb) => benchmarkById.has(lb.taskId));
+  const mesures = new Set(published.map((lb) => lb.taskId));
+  // Les métiers dotés d'au moins une mesure. Les autres ne rendent pas l'indice
+  // incomparable : ils le rendent partiel, ce que le site affiche.
+  const metiersMesures = input.domains
+    .filter((d) => input.benchmarks.some((b) => b.domain === d.id && mesures.has(b.id)))
+    .map((d) => d.id);
 
   const scores = input.models.map((model): ModelScore => {
     const lab = labById.get(model.lab);
@@ -79,10 +101,13 @@ export function buildHub(input: HubInput): Hub {
       byDomain[d.id] = m === null ? null : round1(m);
     }
 
-    const domainScores = Object.values(byDomain);
     // L'indice pèse chaque métier à égalité, pas chaque benchmark : un métier
-    // doté de trois tests ne doit pas compter trois fois. Un métier manquant
-    // rend l'indice incomparable, donc absent.
+    // doté de trois tests ne doit pas compter trois fois. Il ne porte que sur
+    // les métiers mesurés — un métier sans benchmark publié n'est pas un trou
+    // dans la note du modèle, et l'étendue réelle s'affiche à côté de l'indice.
+    // En revanche un modèle absent de l'un des métiers mesurés n'est pas classé :
+    // sa note ne se comparerait pas à celle des autres.
+    const domainScores = metiersMesures.map((id) => byDomain[id] ?? null);
     const complet = domainScores.length > 0 && domainScores.every((s) => s !== null);
     const rows = Object.values(byBenchmark);
     const cis = rows.map((r) => r.ci).filter((c): c is number => c !== undefined);
@@ -102,13 +127,26 @@ export function buildHub(input: HubInput): Hub {
     };
   });
 
-  const classes = scores.filter((s) => s.indice !== null).sort((a, b) => b.indice! - a.indice!);
+  // À indice égal — et sur une tâche facile, vingt modèles peuvent être parfaits —
+  // c'est le prix qui départage, puis la rapidité. Même règle que dans un
+  // classement de benchmark : deux critères mesurés plutôt qu'un ordre arbitraire.
+  const classes = scores.filter((s) => s.indice !== null).sort((a, b) =>
+    b.indice! - a.indice! ||
+    (a.cost ?? Infinity) - (b.cost ?? Infinity) ||
+    (a.latency ?? Infinity) - (b.latency ?? Infinity));
   classes.forEach((s, i) => { s.rank = i + 1; });
 
   return {
     scores: [...classes, ...scores.filter((s) => s.indice === null)],
     demo: published.some((lb) => lb.status === "demo"),
     updated: published.map((lb) => lb.runDate).sort().at(-1) ?? "",
+    coverage: {
+      domainsMeasured: metiersMesures.length,
+      domainsTotal: input.domains.length,
+      benchmarksMeasured: mesures.size,
+      benchmarksTotal: input.benchmarks.length,
+      domains: metiersMesures,
+    },
   };
 }
 

@@ -57,9 +57,31 @@ describe("indice métier", () => {
     expect(deux.rank).toBe(1);
   });
 
-  it("ne publie pas d'indice quand un métier entier manque", () => {
+  it("n'indice que les métiers mesurés, et dit lesquels", () => {
+    // Sans classement en RH, l'indice porte sur la finance seule : un métier
+    // qu'on n'a pas encore mesuré n'est pas un trou dans la note d'un modèle.
     const partiel = buildHub({ ...input, leaderboards: input.leaderboards.slice(0, 2) });
-    expect(partiel.scores.every((s) => s.indice === null && s.rank === null)).toBe(true);
+    expect(partiel.coverage).toEqual({
+      domainsMeasured: 1, domainsTotal: 2, benchmarksMeasured: 2, benchmarksTotal: 3, domains: ["finance"],
+    });
+    expect(partiel.scores.find((s) => s.model.id === "a/un")!.indice).toBe(80);
+    expect(partiel.scores.find((s) => s.model.id === "b/deux")!.indice).toBe(60);
+  });
+
+  it("ne classe pas un modèle absent de l'un des métiers mesurés", () => {
+    // Trois n'a passé que la finance alors que les deux métiers sont mesurés :
+    // son indice ne se comparerait pas à celui des modèles complets.
+    const trois = buildHub({
+      ...input,
+      models: [...input.models, model("a/trois")],
+      leaderboards: [
+        leaderboard("f1", [row("a/un", 90), row("b/deux", 60), row("a/trois", 95)]),
+        ...input.leaderboards.slice(1),
+      ],
+    }).scores.find((s) => s.model.id === "a/trois")!;
+    expect(trois.byDomain).toEqual({ finance: 95, rh: null });
+    expect(trois.indice).toBeNull();
+    expect(trois.rank).toBeNull();
   });
 
   it("donne le rang du modèle sur chaque benchmark", () => {

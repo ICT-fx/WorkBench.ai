@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "predev": "node scripts/sync-assets.mjs",
-    "prebuild": "node scripts/sync-assets.mjs"
+    "predev": "tsx scripts/sync-assets.ts",
+    "prebuild": "tsx scripts/sync-assets.ts"
   },
   "dependencies": {
     "@hub/schema": "*",

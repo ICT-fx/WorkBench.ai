@@ -29,8 +29,17 @@ d'humains. Une valeur qu'on ne sait pas lire arrête la préparation, elle ne de
 jamais un `null` silencieux — ce `null` signifierait « absent du document » et
 accuserait d'hallucination un modèle qui a correctement lu.
 
-**Les résultats de démonstration.** Tout classement fabriqué porte `status: "demo"` et
-un bandeau visible. Ne jamais présenter des chiffres inventés comme des mesures.
+**Aucune donnée fabriquée dans le dépôt.** Depuis le 2 octobre 2026, il n'y a plus un
+seul document de synthèse ni un seul score de démonstration, et les générateurs qui les
+produisaient ont été supprimés. Une tâche est mesurée et porte ses chiffres, ou elle est
+déclarée à venir et n'en porte aucun — il n'y a pas de troisième état. Ne pas remplir
+une page vide avec des chiffres plausibles : une page qui dit « pas encore mesuré » vaut
+mieux. Le marquage `status: "demo"` et son bandeau restent câblés comme garde-fou, pour
+qu'un classement fabriqué ne puisse pas être publié sans se signaler.
+
+**Un chiffre affiché est un chiffre mesuré.** Cela vaut aussi pour les textes : une page
+qui décrit une étape du protocole doit décrire ce qui a réellement été fait. L'étape
+d'arbitrage humain n'a jamais été exécutée, et le site le dit.
 
 **Avant de publier un classement.** Regarder la répartition des erreurs par champ, et
 comparer le classement obtenu sur tous les champs à celui obtenu sans les champs

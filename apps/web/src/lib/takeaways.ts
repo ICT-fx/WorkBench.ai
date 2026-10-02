@@ -52,11 +52,21 @@ export function takeaways(opts: {
   const pire = rows.reduce((a, b) => (b.hallucinations > a.hallucinations ? b : a));
   if (pire.hallucinations >= 5) out.push(fill(t.hallucinationsWorst, { model: nom(pire), rate: pct(pire.hallucinations, locale) }));
 
-  const plusDure = benchmark.subtasks
-    .map((s) => ({ s, best: Math.max(...rows.map((r) => r.bySubtask?.[s.id] ?? -1)) }))
-    .filter((x) => x.best >= 0)
-    .sort((a, b) => a.best - b.best)[0];
-  if (plusDure !== undefined) out.push(fill(t.hardest, { subtask: tr(plusDure.s.label, locale), score: pct(plusDure.best, locale) }));
+  // La sous-tâche la plus dure se lit sur l'ensemble des modèles, pas sur le
+  // meilleur : quand plusieurs modèles sont parfaits, le maximum vaut 100 % sur
+  // chaque sous-tâche et ne désigne plus rien. La moyenne, elle, départage.
+  const moyennes = benchmark.subtasks
+    .map((s) => {
+      const scores = rows.flatMap((r) => (r.bySubtask?.[s.id] === undefined ? [] : [r.bySubtask[s.id]!]));
+      return { s, moyenne: scores.length === 0 ? -1 : scores.reduce((a, b) => a + b, 0) / scores.length };
+    })
+    .filter((x) => x.moyenne >= 0)
+    .sort((a, b) => a.moyenne - b.moyenne);
+  const plusDure = moyennes[0];
+  // Une sous-tâche que tout le monde réussit n'est la plus dure de rien.
+  if (plusDure !== undefined && plusDure.moyenne < 100) {
+    out.push(fill(t.hardest, { subtask: tr(plusDure.s.label, locale), score: pct(Math.round(plusDure.moyenne * 10) / 10, locale) }));
+  }
 
   if (excluded > 0) out.push(fill(t.excluded, { n: excluded }));
   return out;

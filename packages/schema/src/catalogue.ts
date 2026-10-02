@@ -75,6 +75,43 @@ export const SubtaskSchema = z.object({
 });
 export type Subtask = z.infer<typeof SubtaskSchema>;
 
+/**
+ * D'où viennent les cas de test d'un benchmark mesuré.
+ *
+ * Un classement sans provenance ne se vérifie pas : le lecteur doit pouvoir
+ * retrouver les documents, lire la licence qui autorise leur usage et refaire
+ * le tirage. Absent tant que le benchmark n'a pas de jeu de test.
+ */
+export const DatasetSchema = z.object({
+  name: z.string().min(1),
+  url: z.string().url(),
+  /** La licence telle que la publie la source, pas une interprétation. */
+  licence: z.string().min(1),
+  origin: LocalizedSchema,
+});
+export type Dataset = z.infer<typeof DatasetSchema>;
+
+/**
+ * Ce qu'un benchmark pas encore mesuré attend, et quand il est prévu.
+ *
+ * Afficher un protocole sans mesure est honnête à une condition : dire pourquoi
+ * la mesure manque. Sans cela, une tâche dont les données n'existent pas se
+ * confond avec une tâche qu'on n'a simplement pas encore lancée.
+ */
+export const RoadmapSchema = z.object({
+  /** Rang dans la feuille de route : docs/2026-09-24-modeles-benchmarks-roadmap.md. */
+  wave: z.number().int().min(1).max(4),
+  /**
+   * `publiques`   — un jeu réel et annoté existe, il reste à l'intégrer.
+   * `arbitrage`   — pas de référence publique : il faut une grille et un arbitrage humain.
+   * `partenaires` — documents réels à collecter auprès d'entreprises, avec leur accord.
+   */
+  data: z.enum(["publiques", "arbitrage", "partenaires"]),
+  /** Le jeu de données visé, quand il est déjà identifié. */
+  target: z.string().min(1).optional(),
+});
+export type Roadmap = z.infer<typeof RoadmapSchema>;
+
 export const BenchmarkSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   domain: z.string().min(1),
@@ -86,6 +123,11 @@ export const BenchmarkSchema = z.object({
   input: z.enum(["texte", "document"]),
   /** Unité d'un cas de test, pour libeller le coût : « par facture », « par ticket ». */
   unit: LocalizedSchema,
+  /**
+   * Taille du jeu de test : mesurée pour un benchmark passé, visée pour les
+   * autres. Le site ne confond jamais les deux — un chiffre visé s'affiche comme
+   * une cible, jamais comme un résultat.
+   */
   sampleSize: z.number().int().positive(),
   subtasks: z.array(SubtaskSchema).min(2),
   /**
@@ -93,7 +135,14 @@ export const BenchmarkSchema = z.object({
    * `maquette` : le protocole est rédigé, le jeu de test reste à construire.
    */
   maturity: z.enum(["pipeline", "maquette"]),
-});
+  dataset: DatasetSchema.optional(),
+  roadmap: RoadmapSchema.optional(),
+}).refine(
+  (b) => b.maturity === "pipeline" || b.roadmap !== undefined,
+  // Un protocole sans mesure doit dire ce qui lui manque, sinon le lecteur
+  // ne peut pas distinguer « pas encore lancé » de « données inexistantes ».
+  { message: "Un benchmark en préparation doit porter sa place dans la feuille de route", path: ["roadmap"] },
+);
 export type Benchmark = z.infer<typeof BenchmarkSchema>;
 
 /** Une publication passée d'un benchmark, réduite à ce qu'il faut pour tracer une évolution. */

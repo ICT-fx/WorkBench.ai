@@ -26,44 +26,49 @@ Les quatre ne sont jamais fondues en une note unique. Un modèle peut être prem
 en exactitude et inutilisable parce qu'il invente.
 
 L'**indice métier** du site n'y déroge pas : il ne moyenne que l'exactitude, métier
-par métier, chaque métier pesant autant que les autres. Il n'existe pas tant qu'un
-métier manque, et ne dit rien du coût ni des hallucinations.
+par métier, chaque métier pesant autant que les autres. Il ne porte que sur les
+métiers déjà mesurés — le site dit lesquels et combien — et ne dit rien du coût ni
+des hallucinations.
 
 ## Ce qui est réel aujourd'hui, et ce qui ne l'est pas
 
 | | Statut |
 |---|---|
-| Les 52 modèles, leurs labos, dates de sortie, prix et fenêtres de contexte | **Réels**, synchronisés depuis le catalogue public de l'AI Gateway |
-| La tâche « lecture de factures » : documents, vérités terrain, barème, pipeline | **Réels** et rejouables |
-| Les vingt autres benchmarks | Protocole rédigé, jeu de test **à construire** |
-| Tous les scores affichés | **Démonstration** : fabriqués pour construire le site |
+| Les 27 modèles, leurs labos, dates de sortie, prix et fenêtres de contexte | **Réels**, synchronisés depuis le catalogue public d'OpenRouter |
+| La tâche « lecture de factures publicitaires » : documents, annotations, barème, pipeline | **Réels** et rejouables |
+| Le classement publié : 27 modèles × 19 factures, 513 notations | **Mesuré** — chaque chiffre vient d'un appel réellement passé |
+| Les vingt-et-un autres benchmarks | Protocole rédigé, jeu de test **à construire**, aucun chiffre affiché |
 
-Les scores de démonstration sont produits par `npm run demo:hub` à partir de deux
-faits publics — le prix et la date de sortie du modèle — et d'un aléa déterministe,
-pour n'y glisser aucune opinion sur un labo. Chaque classement porte `status: "demo"`,
-et le site marque « Démo » chaque page, chaque tableau et chaque graphique : une
-capture d'écran sortie de son contexte la porte encore. Dès qu'un benchmark est publié
-par le vrai pipeline (`eval:publish`), son fichier remplace celui de démonstration et
-la marque disparaît, benchmark par benchmark.
+**Le dépôt ne contient plus aucune donnée fabriquée.** Une tâche est mesurée et porte
+ses chiffres, ou elle est au programme et n'en porte aucun ; il n'y a pas de troisième
+état. Le générateur de factures de synthèse et celui de scores de démonstration, qui
+avaient servi à construire le site, ont été retirés : leur seule fonction était de
+produire des chiffres qui n'en étaient pas.
+
+Le marquage `status: "demo"` reste dans le schéma et dans le site — bandeau, pastille
+sur chaque tableau et chaque graphique — comme garde-fou : si un classement fabriqué
+était publié un jour, il ne pourrait pas l'être silencieusement.
 
 ### Les trois verdicts
 
-Un champ absent du document fait partie du test. Une facture en franchise de TVA
-n'a pas de taux de TVA : répondre « rien » est la bonne réponse, produire une
-valeur est une **hallucination**, comptée à part. Un chiffre inventé coûte plus
+Un champ absent du document fait partie du test. Les factures américaines du jeu
+ne portent pas de numéro de TVA : répondre « rien » est la bonne réponse, produire
+une valeur est une **hallucination**, comptée à part. Un chiffre inventé coûte plus
 cher qu'un chiffre manquant, parce qu'il passe la relecture.
+
+Sur le classement publié : **zéro hallucination en 513 occasions**.
 
 ## Rejouer une évaluation
 
 ```bash
 npm install
 npm run eval:run -- --estimate         # coût prévu, sans aucun appel ni clé
-export AI_GATEWAY_API_KEY=...          # clé Vercel AI Gateway
+# clé OpenRouter dans .env.local : OPENROUTER_API_KEY=...
 
-npm run eval:run     -- --run 2026-10-08_facture-fr    # appelle les modèles
-npm run eval:score   -- --run 2026-10-08_facture-fr    # applique le barème
-npm run eval:review  -- --run 2026-10-08_facture-fr    # arbitrage humain
-npm run eval:publish -- --run 2026-10-08_facture-fr    # fige le classement
+npm run eval:run     -- --run 2026-09-27_facture-fcc    # appelle les modèles
+npm run eval:score   -- --run 2026-09-27_facture-fcc    # applique le barème
+npm run eval:review  -- --run 2026-09-27_facture-fcc    # arbitrage humain
+npm run eval:publish -- --run 2026-09-27_facture-fcc    # fige le classement
 ```
 
 Les quatre étapes sont séparées à dessein. Changer le barème et relancer `score`
@@ -87,13 +92,13 @@ ne fait aucun appel à un modèle.
 ```
 data/
   catalogue/            labos, modèles, métiers, benchmarks — ce que le site sait du marché
-  tasks/facture-fr/     définition, barème, prompt, documents, vérités terrain
+  tasks/facture-fcc/    définition, barème, prompt, documents, annotations
   runs/<date>_<tâche>/  réponses brutes, scores, arbitrages — jamais réécrits
   published/            le dernier classement de chaque benchmark
   published/history/    toutes les publications passées : l'évolution dans le temps
   news.json             les actualités rédigées à la main
 packages/schema/        types et validation partagés
-packages/fixtures/      jeu de test, et données de démonstration
+packages/fixtures/      préparation du jeu de test réel depuis les archives publiques
 packages/eval/          le pipeline, et la synchronisation du catalogue
 apps/web/               le site (français et anglais)
 ```
@@ -104,37 +109,49 @@ calculées au build à partir de `data/`.
 
 ## Le jeu de test
 
-Vingt-cinq factures **fabriquées**, pas des factures clients anonymisées : ce dépôt
-est public, et maquiller de vrais documents laisse des traces. Les vérités terrain
-sont exactes par construction, puisque les montants sont produits avant d'être
-imprimés.
-
-Neuf cas pièges y sont placés délibérément — multi-taux de TVA, avoir, remise en
-pied, acompte déjà versé, franchise en base, autoliquidation, scan de travers,
-devise étrangère, facture sur deux pages. Sans eux, tous les modèles finiraient
-au-dessus de 95 % et le classement ne dirait rien.
+Dix-neuf factures **réelles**, pas des factures fabriquées. Ce sont des factures
+d'achat d'espace publicitaire télévisé que les chaînes américaines doivent déposer
+auprès de la Federal Communications Commission, et que la loi rend publiques. Des
+journalistes les ont saisies champ par champ pour suivre les dépenses de campagne :
+c'est cette saisie, faite par des humains et sans rapport avec ce test, qui sert
+d'annotation de référence.
 
 ```bash
-npm run fixtures:generate    # régénère le jeu à l'identique (générateur déterministe)
+npm run deepform:prepare    # télécharge, tire l'échantillon et rend les pages en images
 ```
+
+Le tirage est déterministe : relancé, il produit le même échantillon.
+
+Trois champs sur six sont écartés de la note, chacun avec sa raison écrite dans
+`data/tasks/facture-fcc/task.json`. Ces factures portent six identifiants distincts,
+et la question « le numéro de contrat » n'en désignait aucun sans ambiguïté : on
+mesurait la devinette, pas la lecture. Les réponses restent publiées.
+
+**Ce que ce jeu ne couvre pas** : les lignes de facturation, qui sont la vraie
+difficulté du métier. L'annotation d'origine ne les contient pas. C'est la prochaine
+étape, et elle demandera de construire notre propre référence.
 
 ## Ajouter un modèle
 
 Pour qu'il apparaisse sur le site, ajoutez-le à `data/catalogue/models.seed.json`
-(identifiant AI Gateway, nom, labo, date de sortie, statut des poids), puis :
+(identifiant OpenRouter, nom, labo, date de sortie, statut des poids), puis :
 
 ```bash
 npm run catalogue:sync    # prix, contexte et modalités depuis le catalogue public, sans clé
-npm run demo:hub          # tant que les scores sont de démonstration
 ```
 
 Un modèle absent du catalogue garde des champs vides : le site affiche « non
-communiqué » plutôt qu'un chiffre recopié de mémoire.
+communiqué » plutôt qu'un chiffre recopié de mémoire. Un modèle dont on ne sait pas
+si ses poids sont ouverts porte `null`, et non une supposition.
 
-Pour le mesurer, ajoutez son identifiant à `V1_MODELS` dans
-`packages/eval/src/models.ts`, puis lancez un nouveau run. Les identifiants sont vérifiés contre le catalogue de l'AI
-Gateway avant le premier appel : un modèle absent ou incapable de lire une image
-arrête le run au lieu de produire un classement amputé.
+Pour le mesurer, ajoutez son identifiant à `HUB_MODELS` dans
+`packages/eval/src/models.ts`, puis lancez un nouveau run. Les identifiants sont
+vérifiés contre le catalogue d'OpenRouter avant le premier appel : un modèle absent
+ou incapable de lire une image arrête le run au lieu de produire un classement amputé.
+
+Un modèle ajouté après coup n'apparaît pas dans un classement déjà publié : il
+faudrait rejouer le run entier pour que tous les modèles aient été testés à
+l'identique, ce qui est la seule façon de les comparer.
 
 ## Ajouter une tâche
 

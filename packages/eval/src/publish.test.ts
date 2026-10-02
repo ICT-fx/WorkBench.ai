@@ -1,12 +1,23 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
 import {
   TaskSchema, type DocScore, type Leaderboard, type ModelResult, type ReviewItem, type Task,
 } from "@hub/schema";
 import { appendHistory, applyReview, buildLeaderboard } from "./publish";
 
-const task: Task = TaskSchema.parse(
-  JSON.parse(readFileSync("data/tasks/facture-fr/task.json", "utf8")));
+/**
+ * Un barème de test, écrit ici plutôt que lu dans `data/` : ces tests portent sur
+ * le pipeline, pas sur un jeu de données, et ne doivent pas tomber le jour où une
+ * tâche est retirée du dépôt.
+ */
+const task: Task = TaskSchema.parse({
+  id: "tache-test",
+  label: "Tâche de test",
+  question: "Le pipeline se comporte-t-il comme annoncé ?",
+  criteria: [
+    { id: "total_ttc", label: "Total TTC", kind: "number", weight: 3, critical: true, tolerance: 0 },
+    { id: "echeance", label: "Échéance", kind: "date", weight: 1, critical: false },
+  ],
+});
 
 const baseScore: DocScore = {
   model: "m", docId: "f-001",
@@ -69,7 +80,7 @@ describe("buildLeaderboard", () => {
   ];
 
   it("produit un classement validé par le schéma", () => {
-    const lb = buildLeaderboard({ taskId: "facture-fr", runId: "2026-10-08_facture-fr", status: "reel", runDate: "2026-10-08", scores, results, sampleSize: 1 });
+    const lb = buildLeaderboard({ taskId: "tache-test", runId: "2026-10-08_tache-test", status: "reel", runDate: "2026-10-08", scores, results, sampleSize: 1 });
     expect(lb.rows).toHaveLength(1);
     expect(lb.runDate).toBe("2026-10-08");
   });
@@ -80,20 +91,20 @@ describe("buildLeaderboard", () => {
       { runId: "r", model: "m", modelVersion: "m-v1", docId: "f-002", raw: {}, latencyMs: 0, costUsd: 0, error: "timeout" },
     ];
     expect(() => buildLeaderboard({
-      taskId: "facture-fr", runId: "2026-10-08_facture-fr", status: "reel", runDate: "2026-10-08", scores, results: instables, sampleSize: 2,
+      taskId: "tache-test", runId: "2026-10-08_tache-test", status: "reel", runDate: "2026-10-08", scores, results: instables, sampleSize: 2,
     })).toThrow(/échec/i);
   });
 
   it("refuse une date de run mal formée", () => {
     expect(() => buildLeaderboard({
-      taskId: "facture-fr", runId: "2026-10-08_facture-fr", status: "reel", runDate: "08/10/2026", scores, results, sampleSize: 1,
+      taskId: "tache-test", runId: "2026-10-08_tache-test", status: "reel", runDate: "08/10/2026", scores, results, sampleSize: 1,
     })).toThrow();
   });
 });
 
 describe("appendHistory", () => {
   const publication = (runDate: string, status: "reel" | "demo", exactitude = 90): Leaderboard => ({
-    taskId: "facture-fr", runId: `${runDate}_facture-fr`, status, runDate, sampleSize: 25,
+    taskId: "tache-test", runId: `${runDate}_tache-test`, status, runDate, sampleSize: 25,
     rows: [{
       model: "labo/modele", modelVersion: "v1", sansRelecture: 80, exactitude, hallucinations: 0,
       costPerDoc: 0.01, latencyP50: 1200, errorCount: 0, docCount: 25,

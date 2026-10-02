@@ -23,7 +23,7 @@ const fr = {
     verifiable:
       "Les documents de test, les réponses brutes des modèles et le code de notation sont dans le dépôt public : chaque chiffre mesuré de ce site peut être recalculé.",
     methodology: "Méthodologie",
-    pricesSynced: "Tarifs et fenêtres de contexte synchronisés le {date} depuis le catalogue public de l'AI Gateway.",
+    pricesSynced: "Tarifs et fenêtres de contexte synchronisés le {date} depuis le catalogue public d'OpenRouter, la passerelle par laquelle les appels sont facturés.",
   },
   demo: {
     tag: "Démo",
@@ -81,6 +81,10 @@ const fr = {
     legend: "Légende",
     pipeline: "Protocole exécutable",
     draft: "Protocole en préparation",
+    soon: "À venir",
+    measured: "Mesuré",
+    plannedSample: "Échantillon visé",
+    notMeasuredYet: "Pas encore mesuré",
     textOnly: "Ne lit pas les documents",
     of: "sur",
     vs: "vs",
@@ -119,7 +123,7 @@ const en: typeof fr = {
     verifiable:
       "Test documents, raw model answers and scoring code live in the public repository: every measured figure on this site can be recomputed.",
     methodology: "Methodology",
-    pricesSynced: "Prices and context windows synced on {date} from the public AI Gateway catalogue.",
+    pricesSynced: "Prices and context windows synced on {date} from the public OpenRouter catalogue — the gateway the calls are billed through.",
   },
   demo: {
     tag: "Demo",
@@ -177,6 +181,10 @@ const en: typeof fr = {
     legend: "Legend",
     pipeline: "Runnable protocol",
     draft: "Protocol in preparation",
+    soon: "Coming",
+    measured: "Measured",
+    plannedSample: "Target sample",
+    notMeasuredYet: "Not measured yet",
     textOnly: "Cannot read documents",
     of: "of",
     vs: "vs",

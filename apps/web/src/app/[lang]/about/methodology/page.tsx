@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Criterion } from "@hub/schema";
 import { fill, getDictionary, href, isLocale, tr, type Dictionary } from "@/i18n";
-import { loadCases, loadLeaderboard, loadPrompt, loadReponses, loadTask } from "@/lib/data";
+import { loadLeaderboard, loadPrompt, loadReponses, loadScores, loadTask } from "@/lib/data";
+import { documentsClivants } from "@/lib/exemples";
 import { date, num } from "@/lib/format";
 import { typo } from "@/lib/news";
 import { getHub } from "@/lib/site";
@@ -13,8 +14,8 @@ import { AboutTabs } from "@/components/about/AboutTabs";
 import { content } from "@/components/about/content";
 import { Prose } from "@/components/news/Prose";
 
-/** Le seul protocole exécutable à ce jour : c'est lui que la page documente en détail. */
-const TACHE = "facture-fr";
+/** Le seul protocole mesuré à ce jour : c'est lui que la page documente en détail. */
+const TACHE = "facture-fcc";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about/methodology">): Promise<Metadata> {
   const { lang } = await params;
@@ -62,7 +63,7 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
   };
 
   // Le panel se compte dans le dépôt, pas de mémoire : un dossier de réponses par modèle.
-  const premierDocument = loadCases(TACHE)[0]?.docId;
+  const premierDocument = documentsClivants(loadScores(classement.runId), 1)[0]?.docId;
   const panel = premierDocument === undefined || task.criteria[0] === undefined
     ? 0
     : loadReponses(classement.runId, premierDocument, task.criteria[0].id).length;
@@ -116,8 +117,7 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
           </Section>
 
           <Section id={c.demo.id} title={c.demo.title}>
-            <p className="mt-4"><DemoTag dict={dict} /></p>
-            <Prose body={demo} locale={lang} className="mt-4" />
+            <Prose body={demo} locale={lang} className="mt-5" />
           </Section>
 
           <Section id={c.maturity.id} title={c.maturity.title}>

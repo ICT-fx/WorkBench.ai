@@ -27,16 +27,16 @@ Les classements publics mesurent des examens académiques ; le hub mesure le tra
 
 - Pipeline en quatre commandes séparées (`eval:run`, `eval:score`, `eval:review`, `eval:publish`) ; un run est un dossier horodaté et immuable.
 - Le site est statique : il lit `data/` au build et ne fait aucun appel à un modèle.
-- Catalogue des modèles : sélection éditoriale (`data/catalogue/models.seed.json`), prix et fenêtres de contexte synchronisés depuis le catalogue public de l'AI Gateway (`npm run catalogue:sync`).
+- Catalogue des modèles : sélection éditoriale (`data/catalogue/models.seed.json`), prix et fenêtres de contexte synchronisés depuis le catalogue public d'OpenRouter, la passerelle par laquelle les appels sont facturés (`npm run catalogue:sync`).
 - Structure du site calquée sur vals.ai à la demande du propriétaire : Accueil, Benchmarks (par métier), Modèles, Comparaison, Actualités, À propos.
 
 ## Capabilities and Constraints
 
-- Dix métiers de l'entreprise, vingt et un benchmarks. Un seul est exécutable de bout en bout aujourd'hui (lecture de factures françaises) ; les autres ont un protocole rédigé et un jeu de test à construire (`maturity`).
-- Un indice métier : moyenne des exactitudes par métier, chaque métier à poids égal ; absent tant qu'un métier manque.
+- Dix métiers de l'entreprise, vingt-deux benchmarks. Un seul est mesuré aujourd'hui (lecture de factures publicitaires, sur de vraies factures publiques annotées) ; les vingt-et-un autres ont un protocole rédigé et un jeu de test à construire (`maturity`), et portent leur place dans la feuille de route et ce qui leur manque (`roadmap`).
+- Un indice métier : moyenne des exactitudes par métier, chaque métier à poids égal ; il ne porte que sur les métiers mesurés, et le site affiche lesquels et combien. Un modèle absent d'un métier mesuré n'est pas classé.
 - Historique des publications par benchmark (`data/published/history/`) pour suivre l'évolution dans le temps.
 - Français par défaut, anglais en bascule (`/fr`, `/en`).
-- **Intégrité** : un classement porte `status: "reel" | "demo"`. Les scores actuels sont des données de démonstration attachées à des modèles réels ; chaque page, tableau et graphique porte la marque « Démo », qui disparaît benchmark par benchmark quand le pipeline publie une mesure.
+- **Intégrité** : le dépôt ne contient plus aucune donnée fabriquée — ni documents de synthèse, ni scores de démonstration, ni les générateurs qui les produisaient. Un classement porte `status: "reel" | "demo"` et le marquage « Démo » reste câblé dans le site comme garde-fou : un classement fabriqué ne pourrait pas être publié sans se signaler.
 - Indécis : le calendrier des runs réels, et l'ordre dans lequel les benchmarks en préparation seront construits.
 
 ## Brand Commitments
@@ -47,7 +47,7 @@ Les classements publics mesurent des examens académiques ; le hub mesure le tra
 
 ## Evidence on Hand
 
-- Réel : le jeu de 25 factures fabriquées et leurs vérités terrain (`data/tasks/facture-fr`), le pipeline et ses tests, les métadonnées des 52 modèles (prix, contexte, dates de sortie).
+- Réel : le jeu de 19 factures publiques annotées (`data/tasks/facture-fcc`), les 513 notations et les réponses brutes des 27 modèles (`data/runs/2026-09-27_facture-fcc`), le classement publié, le pipeline et ses tests, les métadonnées des 27 modèles (prix, contexte, dates de sortie).
 - Absent, à ne pas fabriquer : toute mesure réelle de modèle, toute couverture presse, tout témoignage, toute information sur l'équipe au-delà de « publié par Flowera ».
 
 ## Product Principles

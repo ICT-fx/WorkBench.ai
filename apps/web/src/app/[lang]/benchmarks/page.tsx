@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getDictionary, href, isLocale, tr } from "@/i18n";
+import { fill, getDictionary, href, isLocale, tr } from "@/i18n";
 import { getHub } from "@/lib/site";
 import { date } from "@/lib/format";
 import { Icon, hasIcon, type IconName } from "@/components/ui/Icon";
@@ -19,11 +19,16 @@ type Carte = {
   href: string;
   label: string;
   description: string;
-  updated: string;
-  tested: number;
   badges: { icon?: IconName; label: string }[];
   demo: boolean;
-  top: { name: string; lab: { slot?: number; monogram: string; name: string } }[];
+  /** Ce qu'une carte mesurée affiche : la date du run et les premiers du classement. */
+  mesure?: {
+    updated: string;
+    tested: number;
+    top: { name: string; lab: { slot?: number; monogram: string; name: string } }[];
+  };
+  /** Ce qu'une carte au programme affiche à la place : ce qui lui manque. */
+  attente?: { wave: number; waiting: string; sample: string };
 };
 
 export default async function PageBenchmarks({ params }: PageProps<"/[lang]/benchmarks">) {
@@ -36,50 +41,95 @@ export default async function PageBenchmarks({ params }: PageProps<"/[lang]/benc
 
   const icone = (name: string): IconName => (hasIcon(name) ? name : "indice");
 
+  const carte = (b: (typeof benchmarks)[number]): Carte => {
+    const lb = leaderboards.get(b.id);
+    const commun = {
+      href: href(lang, `/benchmarks/${b.id}`),
+      label: tr(b.label, lang),
+      description: tr(b.description, lang),
+      demo: lb?.status === "demo",
+      badges: [
+        { label: lb === undefined ? dict.common.labels.soon : dict.common.labels.pipeline },
+        { icon: (b.input === "document" ? "document" : "text") as IconName, label: b.input === "document" ? t.onDocuments : t.onText },
+      ],
+    };
+
+    if (lb === undefined) {
+      // Pas de classement : la carte dit ce qui manque plutôt que de montrer un vide.
+      return {
+        ...commun,
+        attente: {
+          wave: b.roadmap?.wave ?? 4,
+          waiting: b.roadmap === undefined ? "" : t.dataShort[b.roadmap.data],
+          sample: `${b.sampleSize} ${tr(b.unit, lang)}s`,
+        },
+      };
+    }
+
+    return {
+      ...commun,
+      mesure: {
+        updated: date(lb.runDate, lang),
+        tested: lb.rows.length,
+        top: [...lb.rows].sort((x, y) => y.exactitude - x.exactitude).slice(0, 3).flatMap((r) => {
+          const s = scoreById.get(r.model);
+          return s === undefined ? [] : [{ name: s.model.name, lab: s.lab }];
+        }),
+      },
+    };
+  };
+
+  // Les métiers mesurés d'abord, chacun avec ses benchmarks passés : c'est ce
+  // qu'un visiteur vient chercher. Les tâches au programme suivent, regroupées,
+  // pour que la liste des catégories reste complète sans diluer les mesures.
   const sections = domains.map((d) => ({
     id: d.id,
     label: tr(d.label, lang),
     summary: tr(d.summary, lang),
     icon: icone(d.icon),
-    cartes: benchmarks.filter((b) => b.domain === d.id && leaderboards.has(b.id)).map((b): Carte => {
-      const lb = leaderboards.get(b.id)!;
-      return {
-        href: href(lang, `/benchmarks/${b.id}`),
-        label: tr(b.label, lang),
-        description: tr(b.description, lang),
-        updated: date(lb.runDate, lang),
-        tested: lb.rows.length,
-        demo: lb.status === "demo",
-        badges: [
-          { label: b.maturity === "pipeline" ? dict.common.labels.pipeline : dict.common.labels.draft },
-          { icon: b.input === "document" ? "document" : "text", label: b.input === "document" ? t.onDocuments : t.onText },
-        ],
-        top: [...lb.rows].sort((x, y) => y.exactitude - x.exactitude).slice(0, 3).flatMap((r) => {
-          const s = scoreById.get(r.model);
-          return s === undefined ? [] : [{ name: s.model.name, lab: s.lab }];
-        }),
-      };
-    }),
+    cartes: benchmarks.filter((b) => b.domain === d.id && leaderboards.has(b.id)).map(carte),
   })).filter((s) => s.cartes.length > 0);
+
+  const aVenir = domains.flatMap((d) => {
+    const cartes = benchmarks.filter((b) => b.domain === d.id && !leaderboards.has(b.id));
+    return cartes.length === 0 ? [] : [{
+      id: `a-venir-${d.id}`,
+      label: tr(d.label, lang),
+      icon: icone(d.icon),
+      cartes: [...cartes].sort((a, b) => (a.roadmap?.wave ?? 4) - (b.roadmap?.wave ?? 4)).map(carte),
+    }];
+  });
 
   const indice: Carte = {
     href: href(lang, "/benchmarks/indice"),
     label: t.indexTitle,
     description: t.indexDescription,
-    updated: date(hub.updated, lang),
-    tested: hub.scores.filter((s) => s.indice !== null).length,
     demo: hub.demo,
     badges: [],
-    top: hub.scores.slice(0, 3).map((s) => ({ name: s.model.name, lab: s.lab })),
+    mesure: {
+      updated: date(hub.updated, lang),
+      tested: hub.scores.filter((s) => s.indice !== null).length,
+      top: hub.scores.slice(0, 3).map((s) => ({ name: s.model.name, lab: s.lab })),
+    },
   };
 
-  const sommaire = [{ id: "indice", label: t.indexBand, icon: "indice" as IconName }, ...sections];
+  const sommaire = [
+    { id: "indice", label: t.indexBand, icon: "indice" as IconName },
+    ...sections,
+    ...(aVenir.length === 0 ? [] : [{ id: "a-venir", label: t.soonBand, icon: "calendar" as IconName }]),
+  ];
 
   return (
     <main className="conteneur pb-8">
       <header className="max-w-[48rem] pb-14 pt-16 sm:pt-20">
         <h1 className="etendu text-4xl sm:text-5xl">{t.title}</h1>
         <p className="mt-5 text-xl text-encre-pale">{t.lead}</p>
+        <p className="chiffres mt-6 text-sm text-encre-muette">
+          {fill(t.coverage, {
+            measured: hub.coverage.benchmarksMeasured, total: hub.coverage.benchmarksTotal,
+            domains: hub.coverage.domainsMeasured, domainsTotal: hub.coverage.domainsTotal,
+          })}
+        </p>
       </header>
 
       <div className="grid gap-x-8 gap-y-6 lg:grid-cols-[15rem_minmax(0,1fr)]">
@@ -105,6 +155,18 @@ export default async function PageBenchmarks({ params }: PageProps<"/[lang]/benc
           {sections.map((s) => (
             <Section key={s.id} id={s.id} icon={s.icon} label={s.label} summary={s.summary} cartes={s.cartes} dict={dict} />
           ))}
+
+          {aVenir.length > 0 && (
+            <div id="a-venir" className="scroll-mt-32 lg:scroll-mt-24">
+              <h2 className="etendu text-2xl">{t.soonBand}</h2>
+              <p className="mt-2 max-w-[64ch] text-encre-pale">{t.soonLead}</p>
+              <div className="mt-6 space-y-6">
+                {aVenir.map((s) => (
+                  <Section key={s.id} id={s.id} icon={s.icon} label={s.label} cartes={s.cartes} dict={dict} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </main>
@@ -141,27 +203,51 @@ function Section({ id, icon, label, summary, cartes, dict }: {
                 </p>
                 <h3 className="etendu mt-4 text-xl">{c.label}</h3>
                 <dl className="chiffres mt-3 space-y-0.5 text-xs">
-                  <div className="flex gap-2">
-                    <dt className="etiquette !text-vert">{dict.common.labels.updated}</dt>
-                    <dd className="text-encre-pale">{c.updated}</dd>
-                  </div>
-                  <div className="flex gap-2">
-                    <dt className="etiquette !text-vert">{dict.common.labels.modelsTested}</dt>
-                    <dd className="text-encre-pale">{c.tested}</dd>
-                  </div>
+                  {c.mesure !== undefined ? (
+                    <>
+                      <div className="flex gap-2">
+                        <dt className="etiquette !text-vert">{dict.common.labels.updated}</dt>
+                        <dd className="text-encre-pale">{c.mesure.updated}</dd>
+                      </div>
+                      <div className="flex gap-2">
+                        <dt className="etiquette !text-vert">{dict.common.labels.modelsTested}</dt>
+                        <dd className="text-encre-pale">{c.mesure.tested}</dd>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex gap-2">
+                        <dt className="etiquette !text-vert">{dict.benchmarks.list.waveLabel}</dt>
+                        <dd className="text-encre-pale">{c.attente?.wave}</dd>
+                      </div>
+                      <div className="flex gap-2">
+                        <dt className="etiquette !text-vert">{dict.common.labels.plannedSample}</dt>
+                        <dd className="text-encre-pale">{c.attente?.sample}</dd>
+                      </div>
+                    </>
+                  )}
                 </dl>
                 <p className="mt-4 line-clamp-3 text-sm text-encre-pale">{c.description}</p>
 
-                <p className="etiquette mt-6 !text-vert">{dict.common.labels.topModels}</p>
-                <ol className="mt-2 space-y-1.5 text-sm">
-                  {c.top.map((m, i) => (
-                    <li key={m.name} className="flex items-center gap-2.5">
-                      <span className="chiffres w-3 text-xs text-encre-muette">{i + 1}</span>
-                      <LabMark lab={m.lab} size={17} />
-                      <span className="truncate">{m.name}</span>
-                    </li>
-                  ))}
-                </ol>
+                {c.mesure !== undefined ? (
+                  <>
+                    <p className="etiquette mt-6 !text-vert">{dict.common.labels.topModels}</p>
+                    <ol className="mt-2 space-y-1.5 text-sm">
+                      {c.mesure.top.map((m, i) => (
+                        <li key={m.name} className="flex items-center gap-2.5">
+                          <span className="chiffres w-3 text-xs text-encre-muette">{i + 1}</span>
+                          <LabMark lab={m.lab} size={17} />
+                          <span className="truncate">{m.name}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </>
+                ) : (
+                  <>
+                    <p className="etiquette mt-6 !text-vert">{dict.benchmarks.list.waiting}</p>
+                    <p className="mt-2 text-sm text-encre-pale">{c.attente?.waiting}</p>
+                  </>
+                )}
               </div>
               <p className="etiquette flex items-center gap-2 border-t border-filet px-6 py-3 transition-colors group-hover:!text-encre">
                 {dict.common.labels.viewDetails}

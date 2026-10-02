@@ -66,6 +66,8 @@ export default async function Accueil({ params }: PageProps<"/[lang]">) {
     };
   });
 
+  const aVenir = benchmarks.filter((b) => !leaderboards.has(b.id)).length;
+
   const onglets: DomainTab[] = domains.map((d) => ({
     id: d.id, label: tr(d.label, lang), icon: d.icon,
     benchmarks: benchmarks.filter((b) => b.domain === d.id && leaderboards.has(b.id)).map((b) => {
@@ -121,13 +123,22 @@ export default async function Accueil({ params }: PageProps<"/[lang]">) {
             </Link>
           </div>
           <p className="chiffres mt-8 text-sm text-encre-muette">
-            {fill(t.hero.facts, { models: site.models.length, labs: labs.length, benchmarks: benchmarks.length, domains: domains.length })}
+            {fill(t.hero.facts, {
+              models: site.models.length, labs: labs.length, benchmarks: benchmarks.length,
+              domains: domains.length, measured: hub.coverage.benchmarksMeasured,
+            })}
           </p>
         </section>
 
         <div className="conteneur">
           <h2 className="sr-only">{t.index.title}</h2>
           <BarresIndice items={barres} updated={date(hub.updated, lang)} demo={hub.demo} />
+          {/* Ce que l'indice couvre, sous le graphique qui le montre. */}
+          <p className="chiffres mt-3 text-sm text-encre-muette">
+            {fill(t.index.scope, {
+              domains: hub.coverage.domainsMeasured, domainsTotal: hub.coverage.domainsTotal,
+            })}
+          </p>
         </div>
 
         {rapports.length > 0 && (
@@ -154,6 +165,15 @@ export default async function Accueil({ params }: PageProps<"/[lang]">) {
           <div className="mt-8">
             <ClassementMetier domains={onglets} shown={RECENTS} />
           </div>
+          {/* Les métiers encore sans mesure sont nommés plutôt que passés sous silence. */}
+          {aVenir > 0 && (
+            <p className="mt-6 text-sm text-encre-pale">
+              {fill(t.domains.soon, { n: aVenir, d: domains.length - hub.coverage.domainsMeasured })}{" "}
+              <Link href={`${href(lang, "/benchmarks")}#a-venir`} className="text-vert underline">
+                {t.domains.soonLink}
+              </Link>
+            </p>
+          )}
         </section>
 
         <section className="conteneur mt-24">

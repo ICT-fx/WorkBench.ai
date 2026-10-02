@@ -276,7 +276,7 @@ async function cmdPublish(taskId: string): Promise<void> {
 
 async function main(): Promise<void> {
   const command = process.argv[2];
-  const taskId = arg("task") ?? "facture-fr";
+  const taskId = arg("task") ?? "facture-fcc";
 
   switch (command) {
     case "run": return cmdRun(taskId);
@@ -284,7 +284,7 @@ async function main(): Promise<void> {
     case "review": return cmdReview(taskId);
     case "publish": return cmdPublish(taskId);
     default:
-      console.error("Usage : eval <run|score|review|publish> [--task facture-fr] [--run <id>]");
+      console.error("Usage : eval <run|score|review|publish> [--task facture-fcc] [--run <id>]");
       process.exitCode = 1;
   }
 }

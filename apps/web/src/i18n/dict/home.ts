@@ -5,7 +5,7 @@ const fr = {
       "Les classements publics mesurent des examens. Nous testons les principaux modèles sur le travail réel d'une entreprise — lire une facture, résumer un contrat, répondre à un client — et publions le protocole, les documents et les réponses brutes.",
     ctaBenchmarks: "Parcourir les benchmarks",
     ctaCompare: "Comparer des modèles",
-    facts: "{models} modèles · {labs} labos · {benchmarks} benchmarks · {domains} métiers",
+    facts: "{models} modèles · {labs} labos · {benchmarks} benchmarks dans {domains} métiers · {measured} mesuré à ce jour",
   },
   ticker: {
     label: "Dernières actualités",
@@ -16,6 +16,7 @@ const fr = {
     title: "L'indice métier, labo par labo",
     measure: "Mesure affichée",
     note: "Le meilleur modèle de chaque labo, classé par indice métier.",
+    scope: "Indice calculé sur {domains} métier mesuré sur {domainsTotal}. Les autres métiers ne comptent pas encore — ni en bien, ni en mal.",
   },
   reports: {
     title: "Derniers rapports",
@@ -28,6 +29,8 @@ const fr = {
   domains: {
     title: "Le classement, métier par métier",
     lead: "Le meilleur modèle en finance n'est pas forcément le bon pour votre service client. Choisissez un métier, puis un benchmark.",
+    soon: "{n} autres tâches, dans {d} métiers, ont un protocole écrit et attendent leur jeu de test.",
+    soonLink: "Voir ce qui est au programme",
     pick: "Métier",
     benchmark: "Benchmark",
     showing: "Les {n} modèles les plus récents. La ligne verte relie ceux qu'aucun autre ne bat à la fois en prix et en exactitude.",
@@ -52,7 +55,7 @@ const en: typeof fr = {
       "Public leaderboards measure exams. We test the leading models on a company's real work — reading an invoice, summarising a contract, answering a customer — and publish the protocol, the documents and the raw answers.",
     ctaBenchmarks: "Browse the benchmarks",
     ctaCompare: "Compare models",
-    facts: "{models} models · {labs} labs · {benchmarks} benchmarks · {domains} business functions",
+    facts: "{models} models · {labs} labs · {benchmarks} benchmarks across {domains} business functions · {measured} measured so far",
   },
   ticker: {
     label: "Latest news",
@@ -63,6 +66,7 @@ const en: typeof fr = {
     title: "The Business Index, lab by lab",
     measure: "Displayed measure",
     note: "Each lab's best model, ranked by Business Index.",
+    scope: "Index computed over {domains} of {domainsTotal} business functions measured. The others do not count yet — neither for nor against.",
   },
   reports: {
     title: "Latest reports",
@@ -75,6 +79,8 @@ const en: typeof fr = {
   domains: {
     title: "The leaderboard, function by function",
     lead: "The best model for finance is not necessarily the right one for your customer service. Pick a function, then a benchmark.",
+    soon: "{n} further tasks, across {d} business functions, have a written protocol and are waiting for their test set.",
+    soonLink: "See what is on the roadmap",
     pick: "Function",
     benchmark: "Benchmark",
     showing: "The {n} most recent models. The green line links those that no other model beats on both price and accuracy.",

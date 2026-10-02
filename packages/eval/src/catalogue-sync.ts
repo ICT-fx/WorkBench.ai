@@ -1,11 +1,13 @@
 /**
- * Synchronise le catalogue des modèles avec l'AI Gateway.
+ * Synchronise le catalogue des modèles avec OpenRouter.
  *
  * La sélection des modèles est éditoriale (`data/catalogue/models.seed.json` :
  * nom, labo, date de sortie, statut des poids). Tout ce qui se périme — prix,
- * fenêtre de contexte, modalités — vient du catalogue public de l'AI Gateway,
- * sans clé d'API. Un modèle absent du catalogue garde des champs `null` : le
- * site affiche « non communiqué » plutôt qu'un chiffre recopié de mémoire.
+ * fenêtre de contexte, modalités — vient du catalogue public d'OpenRouter, sans
+ * clé d'API. C'est la passerelle par laquelle les runs passent réellement : les
+ * tarifs affichés sont donc ceux qui ont été facturés, et non ceux d'un autre
+ * revendeur. Un modèle absent du catalogue garde des champs `null` : le site
+ * affiche « non communiqué » plutôt qu'un chiffre recopié de mémoire.
  */
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -13,7 +15,7 @@ import { z } from "zod";
 import { ModelCatalogueSchema, ModalitySchema, type Model, type Modality } from "@hub/schema";
 import { DATA_ROOT } from "./load";
 
-const CATALOGUE_URL = "https://ai-gateway.vercel.sh/v1/models";
+const CATALOGUE_URL = "https://openrouter.ai/api/v1/models";
 
 const SeedSchema = z.array(z.object({
   id: z.string().min(1),
@@ -23,13 +25,23 @@ const SeedSchema = z.array(z.object({
   weights: z.enum(["ouverts", "fermes"]).nullable(),
 }));
 
+/**
+ * Les deux formes de catalogue qu'on sait lire : OpenRouter (`context_length`,
+ * `pricing.prompt`) et la passerelle Vercel (`context_window`, `pricing.input`).
+ * Accepter les deux évite de réécrire ce module le jour où l'on change de
+ * passerelle, et laisse les tests fournir l'une ou l'autre.
+ */
 type GatewayModel = {
   id: string;
   context_window?: number;
+  context_length?: number;
   max_tokens?: number;
+  top_provider?: { max_completion_tokens?: number | null };
   tags?: string[];
+  supported_parameters?: string[];
   modalities?: { input?: string[] };
-  pricing?: { input?: string; output?: string };
+  architecture?: { input_modalities?: string[] };
+  pricing?: { input?: string; output?: string; prompt?: string; completion?: string };
 };
 
 const perMillion = (perToken: string | undefined): number | null => {
@@ -50,17 +62,22 @@ export function mergeSeed(
     const g = byId.get(s.id);
     if (g === undefined) absents.push(s.id);
 
-    const modalities = (g?.modalities?.input ?? ["text"])
+    // `file` chez OpenRouter désigne le PDF natif : c'est la même capacité que
+    // notre modalité `pdf`, sous un autre nom.
+    const brutes = (g?.architecture?.input_modalities ?? g?.modalities?.input ?? ["text"])
+      .map((m) => (m === "file" ? "pdf" : m));
+    const modalities = [...new Set(brutes)]
       .filter((m): m is Modality => ModalitySchema.safeParse(m).success);
 
     return {
       ...s,
-      contextWindow: g?.context_window ?? null,
-      maxOutput: g?.max_tokens ?? null,
-      priceIn: perMillion(g?.pricing?.input),
-      priceOut: perMillion(g?.pricing?.output),
+      contextWindow: g?.context_length ?? g?.context_window ?? null,
+      maxOutput: g?.top_provider?.max_completion_tokens ?? g?.max_tokens ?? null,
+      priceIn: perMillion(g?.pricing?.prompt ?? g?.pricing?.input),
+      priceOut: perMillion(g?.pricing?.completion ?? g?.pricing?.output),
       modalities: modalities.length > 0 ? modalities : ["text"],
-      reasoning: (g?.tags ?? []).includes("reasoning"),
+      reasoning: (g?.tags ?? []).includes("reasoning")
+        || (g?.supported_parameters ?? []).includes("reasoning"),
     };
   });
 

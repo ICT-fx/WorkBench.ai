@@ -50,7 +50,12 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 2,
+      "data": "publiques",
+      "target": "FinanceBench — questions sur les rapports annuels de 40 sociétés cotées, avec page de référence"
+    }
   },
   {
     "id": "prevision-tresorerie",
@@ -103,22 +108,81 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
+  },
+  {
+    "id": "facture-fcc",
+    "domain": "comptabilite",
+    "label": {
+      "fr": "Lecture de factures publicitaires",
+      "en": "Advertising invoice extraction"
+    },
+    "question": {
+      "fr": "Combien de factures un modèle lit-il sans qu'un humain ait à corriger ?",
+      "en": "How many invoices does a model read with nothing for a human to fix?"
+    },
+    "description": {
+      "fr": "De vraies factures d'achat d'espace publicitaire télévisé, déposées auprès du régulateur américain des télécoms et annotées au mot près par des journalistes. Le modèle reçoit les pages scannées et rend trois champs : le montant total facturé, la fin de la période facturée et le numéro de TVA — ce dernier absent de ces documents, pour voir qui invente plutôt que de s'abstenir. Chaque réponse est comparée à l'annotation d'origine par un comparateur écrit à la main : aucune IA ne note une IA.",
+      "en": "Real television advertising invoices filed with the US telecom regulator and annotated word by word by journalists. The model receives the scanned pages and returns three fields: total amount billed, end of the billing period, and VAT number — the last one absent from these documents, to see who invents rather than abstains. Every answer is compared against the original annotation by a hand-written comparator: no AI grades an AI."
+    },
+    "input": "document",
+    "unit": {
+      "fr": "facture",
+      "en": "invoice"
+    },
+    "sampleSize": 19,
+    "subtasks": [
+      {
+        "id": "gross_amount",
+        "label": {
+          "fr": "Montant total facturé",
+          "en": "Total amount billed"
+        }
+      },
+      {
+        "id": "flight_to",
+        "label": {
+          "fr": "Fin de la période facturée",
+          "en": "End of billing period"
+        }
+      },
+      {
+        "id": "vat_number",
+        "label": {
+          "fr": "Numéro de TVA (absent)",
+          "en": "VAT number (absent)"
+        }
+      }
+    ],
+    "maturity": "pipeline",
+    "dataset": {
+      "name": "DeepForm — archives publiques de la FCC",
+      "url": "https://github.com/project-deepform/deepform",
+      "licence": "MIT (outillage) · documents publics déposés auprès de la FCC",
+      "origin": {
+        "fr": "Factures déposées par les chaînes de télévision américaines auprès de la Federal Communications Commission, que la loi rend publiques. Les annotations viennent de journalistes qui les ont saisies à la main pour suivre les dépenses de campagne.",
+        "en": "Invoices filed by US television stations with the Federal Communications Commission, which law makes public. The annotations come from journalists who entered them by hand to track campaign spending."
+      }
+    }
   },
   {
     "id": "facture-fr",
     "domain": "comptabilite",
     "label": {
       "fr": "Lecture de factures françaises",
-      "en": "French invoice reading"
+      "en": "French invoice extraction"
     },
     "question": {
       "fr": "Combien de vos factures passeront sans qu'un humain ait à corriger ?",
       "en": "How many of your invoices will go through without a human fixing them?"
     },
     "description": {
-      "fr": "Extraire les champs d'une facture fournisseur française reçue en scan ou en photo : montants, SIRET, dates, lignes. Neuf pièges y sont placés à dessein — franchise en base de TVA, avoir, acompte, autoliquidation, scan de travers. Un champ absent du document fait partie du test : inventer une valeur est compté comme une hallucination.",
-      "en": "Extract the fields of a French supplier invoice received as a scan or photo: amounts, SIRET, dates, line items. Nine traps are planted on purpose — VAT exemption, credit notes, deposits, reverse charge, skewed scans. A field missing from the document is part of the test: inventing a value counts as a hallucination."
+      "fr": "Extraire les champs d'une facture fournisseur française reçue en scan ou en photo : montants, taux et total de TVA, SIRET, dates, lignes de facturation. Les cas qui font la difficulté du métier français — franchise en base, autoliquidation, avoir, acompte, plusieurs taux sur une même facture — devront être représentés dans le jeu de test. Un champ absent du document fait partie du test : inventer une valeur est compté comme une hallucination.",
+      "en": "Extract the fields of a French supplier invoice received as a scan or a photo: amounts, VAT rates and total, company number, dates, line items. The cases that make French invoicing hard — VAT exemption, reverse charge, credit notes, deposits, several rates on one invoice — will have to be represented in the test set. A field absent from the document is part of the test: inventing a value counts as a hallucination."
     },
     "input": "document",
     "unit": {
@@ -163,7 +227,11 @@
         }
       }
     ],
-    "maturity": "pipeline"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "rapprochement-bancaire",
@@ -216,7 +284,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "note-de-frais",
@@ -269,7 +341,12 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 2,
+      "data": "publiques",
+      "target": "CORD — 1 000 tickets de caisse photographiés, 30 sous-classes annotées, CC BY 4.0"
+    }
   },
   {
     "id": "tri-cv",
@@ -322,7 +399,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 3,
+      "data": "arbitrage"
+    }
   },
   {
     "id": "droit-social",
@@ -375,7 +456,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "arbitrage"
+    }
   },
   {
     "id": "resume-contrat",
@@ -428,7 +513,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 3,
+      "data": "arbitrage"
+    }
   },
   {
     "id": "clauses-risque",
@@ -488,7 +577,12 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 1,
+      "data": "publiques",
+      "target": "CUAD — 510 contrats commerciaux annotés par des juristes, CC BY 4.0"
+    }
   },
   {
     "id": "qualification-leads",
@@ -541,7 +635,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "proposition-commerciale",
@@ -594,7 +692,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "contenu-marque",
@@ -647,7 +749,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "analyse-campagne",
@@ -700,7 +806,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "reponse-sav",
@@ -753,7 +863,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "tri-tickets",
@@ -806,7 +920,12 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 1,
+      "data": "publiques",
+      "target": "CFPB — réclamations réelles de consommateurs, classées par produit et par problème, données publiques"
+    }
   },
   {
     "id": "comparaison-devis",
@@ -859,7 +978,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "prevision-stock",
@@ -912,7 +1035,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "support-it",
@@ -965,7 +1092,11 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 4,
+      "data": "partenaires"
+    }
   },
   {
     "id": "requetes-sql",
@@ -1018,7 +1149,12 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 2,
+      "data": "publiques",
+      "target": "BIRD — 12 751 questions et requêtes de référence sur 95 bases réelles, CC BY-SA 4.0"
+    }
   },
   {
     "id": "synthese-reunion",
@@ -1071,7 +1207,12 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 3,
+      "data": "arbitrage",
+      "target": "QMSum — 232 réunions transcrites et résumées par des humains ; la notation d'un résumé demande une grille"
+    }
   },
   {
     "id": "note-synthese",
@@ -1124,6 +1265,10 @@
         }
       }
     ],
-    "maturity": "maquette"
+    "maturity": "maquette",
+    "roadmap": {
+      "wave": 3,
+      "data": "arbitrage"
+    }
   }
 ]

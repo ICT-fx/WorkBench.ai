@@ -298,7 +298,51 @@ lancer.
 
 ---
 
-# 7. Commandes
+# 7. Ce que le site publie, et ce qu'il ne publie plus
+
+**2 octobre 2026.** Le dépôt a été purgé de toute donnée fabriquée, à la demande de
+Fantin. Ont été supprimés :
+
+- les 22 classements de démonstration (`data/published/*.json`) et leurs historiques,
+  dont les chiffres étaient tirés du prix et de la date de sortie des modèles ;
+- le jeu de 25 factures françaises de synthèse (`data/tasks/facture-fr`), ses vérités
+  terrain et ses images ;
+- le run de démonstration associé ;
+- **les générateurs eux-mêmes** : `invoice-model`, `render`, `scenarios`, `degrade`,
+  `demo-run`, `demo-hub`, `demo-model`, et les commandes `fixtures:generate`,
+  `demo:run`, `demo:hub`. Supprimer les données sans supprimer l'usine à données
+  n'aurait tenu que jusqu'au prochain besoin de remplir une page.
+
+Ce qui reste est mesuré ou déclaré à venir. **Il n'y a pas de troisième état.**
+
+Le catalogue est passé de 52 modèles aux **27 réellement testés**, avec leurs
+identifiants OpenRouter — les anciens étaient ceux de la passerelle Vercel et ne
+correspondaient à rien de ce qui avait été appelé. `catalogue-sync` lit désormais le
+catalogue d'OpenRouter : les prix affichés sont ceux qui ont été facturés.
+
+Les 21 tâches non mesurées restent en ligne, chacune avec sa page, son protocole, sa
+place dans la feuille de route et **ce qui lui manque** : un jeu public à intégrer, une
+grille de notation à écrire, ou des documents que seules des entreprises détiennent.
+Les trois causes ne s'équivalent pas, et les confondre reviendrait à promettre
+vingt-et-un classements imminents.
+
+## Deux règles de plus, apprises ici
+
+**Un indice calculé sur un métier n'est pas un indice métier.** La règle « pas d'indice
+tant qu'un métier manque » rendait l'indice impossible dès qu'un seul benchmark était
+mesuré, et la contourner en silence en aurait fait un verdict général tiré d'une seule
+tâche. L'indice porte maintenant sur les métiers mesurés, et le site affiche partout
+combien il en couvre — 1 sur 10 aujourd'hui.
+
+**Une page d'aide qui décrit une étape jamais exécutée est un mensonge poli.** La page
+méthodologie affirmait qu'« avant publication, un humain relit toutes les
+hallucinations ». L'étape existe dans le pipeline ; elle n'a jamais été lancée. Le site
+dit maintenant que les chiffres publiés sont ceux du comparateur seul, et que 45
+notations sur 513 restent marquées « à relire ».
+
+---
+
+# 8. Commandes
 
 ```bash
 npm run key:check                    # la clé OpenRouter fonctionne-t-elle, et reste-t-il du crédit

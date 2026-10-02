@@ -45,18 +45,29 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
     let hallucinated = 0;
     let absentFields = 0;
     let fields = 0;
+    // Le détail champ par champ : c'est lui qui montre où un modèle se trompe,
+    // et c'est en le regardant qu'on a vu qu'un champ ambigu faussait le
+    // classement entier. Un critère écarté n'apparaît pas dans `byCriterion`,
+    // donc pas ici non plus.
+    const parChamp = new Map<string, { points: number; max: number }>();
 
     for (const score of modelScores) {
-      for (const field of Object.values(score.byCriterion)) {
+      for (const [id, field] of Object.entries(score.byCriterion)) {
         fields++;
         points += field.points;
         maxPoints += field.maxPoints;
+        const champ = parChamp.get(id) ?? { points: 0, max: 0 };
+        parChamp.set(id, { points: champ.points + field.points, max: champ.max + field.maxPoints });
         if (field.expected === null) {
           absentFields++;
           if (field.verdict === "hallucine") hallucinated++;
         }
       }
     }
+
+    const bySubtask = Object.fromEntries(
+      [...parChamp].map(([id, c]) => [id, pct(c.points, c.max)]),
+    );
 
     // Les documents en échec ne pénalisent pas le modèle : dans ce projet, les
     // échecs observés venaient du quota du compte, du crédit réservé par les
@@ -82,6 +93,7 @@ export function aggregate(scores: DocScore[], results: ModelResult[]): Leaderboa
       errorCount: failed.length,
       docCount: modelScores.length,
       ...(ci === undefined ? {} : { ci }),
+      ...(Object.keys(bySubtask).length === 0 ? {} : { bySubtask }),
     });
   }
 

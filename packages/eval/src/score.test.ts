@@ -1,14 +1,38 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
 import { TaskSchema, GroundTruthSchema, type GroundTruth, type Task } from "@hub/schema";
 import { scoreDocument } from "./score";
 
-const task: Task = TaskSchema.parse(
-  JSON.parse(readFileSync("data/tasks/facture-fr/task.json", "utf8")));
+/**
+ * Un barème de test, écrit ici plutôt que lu dans `data/`.
+ *
+ * Les tests portent sur la logique de notation, pas sur un jeu de données : les
+ * accrocher à une tâche réelle les faisait échouer le jour où cette tâche a été
+ * retirée du dépôt. Le barème couvre ce dont la notation a besoin — un champ
+ * critique, un champ secondaire, un champ légitimement absent, un champ écarté.
+ */
+const task: Task = TaskSchema.parse({
+  id: "tache-test",
+  label: "Tâche de test",
+  question: "Le barème se comporte-t-il comme annoncé ?",
+  criteria: [
+    { id: "total_ttc", label: "Total TTC", kind: "number", weight: 3, critical: true, tolerance: 0 },
+    { id: "total_tva", label: "Total TVA", kind: "number", weight: 3, critical: true, tolerance: 0 },
+    { id: "numero_facture", label: "Numéro", kind: "exact", weight: 2, critical: true },
+    { id: "echeance", label: "Échéance", kind: "date", weight: 1, critical: false },
+    { id: "tva_intracom", label: "TVA intracom", kind: "exact", weight: 1, critical: false },
+    { id: "mention", label: "Mention écartée", kind: "text", weight: 1, critical: false,
+      exclu: "Écarté : la question admet plusieurs réponses défendables sur ce document." },
+  ],
+});
 
-// f-019 : franchise en base, donc TVA et TVA intracom légitimement absentes.
-const gt: GroundTruth = GroundTruthSchema.parse(
-  JSON.parse(readFileSync("data/tasks/facture-fr/ground-truth/f-019.json", "utf8")));
+// Une facture en franchise de TVA : TVA et TVA intracom sont légitimement absentes.
+const gt: GroundTruth = GroundTruthSchema.parse({
+  docId: "f-019",
+  fields: {
+    total_ttc: 1200, total_tva: null, numero_facture: "F-2026-019",
+    echeance: "2026-02-28", tva_intracom: null, mention: "franchise en base",
+  },
+});
 
 const parfait = Object.fromEntries(
   Object.entries(gt.fields).map(([k, v]) => [k, v])) as Record<string, unknown>;
@@ -23,7 +47,7 @@ describe("scoreDocument", () => {
     const total = Object.values(s.byCriterion).reduce((a, f) => a + f.points, 0);
     const max = Object.values(s.byCriterion).reduce((a, f) => a + f.maxPoints, 0);
     expect(total).toBe(max);
-    expect(max).toBe(22); // 4×3 + 4×2 + 2×1
+    expect(max).toBe(10); // 3 + 3 + 2 + 1 + 1, le critère écarté ne comptant pas
   });
 
   it("bascule needsReview dès qu'un seul champ critique est faux", () => {
@@ -60,7 +84,7 @@ describe("scoreDocument", () => {
 
   it("note tous les critères du barème même si la réponse est vide", () => {
     const s = scoreDocument(task, gt, {}, "modele-test");
-    expect(Object.keys(s.byCriterion)).toHaveLength(10);
+    expect(Object.keys(s.byCriterion)).toHaveLength(5);
     // Les deux champs légitimement absents sont corrects : ne rien dire est juste.
     expect(s.byCriterion.total_tva!.verdict).toBe("correct");
     expect(s.byCriterion.tva_intracom!.verdict).toBe("correct");
@@ -69,6 +93,14 @@ describe("scoreDocument", () => {
 
   it("ignore les clés inventées hors barème plutôt que de les noter", () => {
     const s = score({ iban_emetteur: "FR76..." });
-    expect(Object.keys(s.byCriterion)).toHaveLength(10);
+    expect(Object.keys(s.byCriterion)).toHaveLength(5);
+  });
+
+  it("ne note pas un critère écarté, et n'en garde aucune trace dans la note", () => {
+    // La réponse du modèle reste dans le fichier brut ; elle ne pèse simplement
+    // sur rien, parce que la question posée admettait plusieurs bonnes réponses.
+    const s = score({ mention: "n'importe quoi" });
+    expect(s.byCriterion.mention).toBeUndefined();
+    expect(s.needsReview).toBe(false);
   });
 });

@@ -2,12 +2,23 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { mkdtemp, readFile, readdir, mkdir, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { readFileSync } from "node:fs";
 import { TaskSchema, type Task } from "@hub/schema";
 import { runTask, type GenerateFn } from "./run";
 
-const task: Task = TaskSchema.parse(
-  JSON.parse(readFileSync("data/tasks/facture-fr/task.json", "utf8")));
+/**
+ * Un barème de test, écrit ici plutôt que lu dans `data/` : ces tests portent sur
+ * le pipeline, pas sur un jeu de données, et ne doivent pas tomber le jour où une
+ * tâche est retirée du dépôt.
+ */
+const task: Task = TaskSchema.parse({
+  id: "tache-test",
+  label: "Tâche de test",
+  question: "Le pipeline se comporte-t-il comme annoncé ?",
+  criteria: [
+    { id: "total_ttc", label: "Total TTC", kind: "number", weight: 3, critical: true, tolerance: 0 },
+    { id: "echeance", label: "Échéance", kind: "date", weight: 1, critical: false },
+  ],
+});
 
 const documents = [
   { docId: "f-001", images: [Buffer.from("img1")] },
@@ -105,7 +116,7 @@ describe("runTask", () => {
   it("écrit un run.json décrivant ce qui a été exécuté", async () => {
     await runTask({ ...base, runId: "r7", models: ["a/x", "b/y"], generate: fakeGenerate() });
     const meta = JSON.parse(await readFile(join(out, "r7", "run.json"), "utf8"));
-    expect(meta.taskId).toBe("facture-fr");
+    expect(meta.taskId).toBe("tache-test");
     expect(meta.docCount).toBe(2);
     expect(meta.models.map((m: { alias: string }) => m.alias).sort()).toEqual(["a/x", "b/y"]);
     expect(meta.models[0].version).toMatch(/2026-08-01/);

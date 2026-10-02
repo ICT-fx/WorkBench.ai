@@ -56,7 +56,15 @@ export default async function PageIndice({ params }: PageProps<"/[lang]/benchmar
         <p><DemoTag dict={dict} show={hub.demo} /></p>
         <h1 className="etendu mt-4 text-4xl sm:text-5xl">{t.title}</h1>
         <p className="mt-5 text-xl text-encre-pale">{t.lead}</p>
-        <p className="chiffres mt-4 text-sm text-encre-muette">{dict.common.labels.updated} {date(hub.updated, lang, "long")}</p>
+        {/* L'étendue réelle de l'indice, à côté de son nom : « indice métier » sur
+            un seul métier mesuré ne veut pas dire la même chose que sur dix. */}
+        <p className="chiffres mt-4 text-sm text-encre-muette">
+          {dict.common.labels.updated} {date(hub.updated, lang, "long")} ·{" "}
+          {fill(t.scope, {
+            domains: hub.coverage.domainsMeasured, domainsTotal: hub.coverage.domainsTotal,
+            measured: hub.coverage.benchmarksMeasured, total: hub.coverage.benchmarksTotal,
+          })}
+        </p>
       </header>
 
       <div className="mt-10">
