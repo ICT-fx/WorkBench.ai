@@ -11,13 +11,18 @@ invent is treated as a serious error — worse than admitting you did not find i
 
 - `contract_num` — the contract or order number identifying this buy, exactly as
   printed. String.
-- `advertiser` — the advertiser being billed, that is the client who bought the
-  advertising, not the TV station and not the media agency. String.
+- `advertiser` — the value of the field labelled `Advertiser` or `Advertiser Name`:
+  the client who bought the advertising. Not the TV station, not the media agency,
+  and not the `Product` or `Brand` field, which often repeats the advertiser's name
+  in a different form. String.
 - `gross_amount` — the total gross amount invoiced, for the whole document.
   This is usually a grand total, and it is often on a later page than the first.
   Number.
 - `flight_from` — the first day of the flight, that is the advertising period
-  covered by this invoice. Format `YYYY-MM-DD`. String.
+  covered by this invoice. Take it from the field labelled `Flight Dates`,
+  `Order Flight` or `Flight`. Do **not** take it from `Invoice Period`, `Bill Period`
+  or `Bill Plan`, which cover the billing cycle and often start on a different day.
+  Format `YYYY-MM-DD`. String.
 - `flight_to` — the last day of that flight. Format `YYYY-MM-DD`. String.
 - `vat_number` — the VAT registration number of the issuing company, if the
   document carries one. String.

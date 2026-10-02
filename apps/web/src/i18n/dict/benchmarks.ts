@@ -79,6 +79,15 @@ const fr = {
     history: "L'état de l'art au fil des runs",
     historyLead: "Le meilleur score mesuré à chaque run, et le nombre de modèles alors en lice.",
     historyModels: "{n} modèles",
+    corpus: "Les documents analysés",
+    corpusLead:
+      "Les {n} documents du test, avec l'annotation qui a servi de référence et le lien vers l'original chez celui qui le publie. Le classement ne demande pas qu'on le croie : il se recompte.",
+    corpusDoc: "Document",
+    corpusPages: "Pages",
+    corpusAmount: "Montant attendu",
+    corpusPeriod: "Fin de période attendue",
+    corpusSource: "Original",
+    corpusOpen: "ouvrir",
     splits: "Les documents qui départagent",
     splitsLead:
       "Ces factures sont réelles : aucune difficulté n'y a été placée. Ce sont celles sur lesquelles les modèles se sont le plus contredits. Voici la page, l'annotation d'origine, et ce que chaque modèle a répondu — de quoi juger la notation sans nous croire sur parole.",
@@ -233,6 +242,15 @@ const en: typeof fr = {
     history: "State of the art across runs",
     historyLead: "The best score measured at each run, and how many models were in the field.",
     historyModels: "{n} models",
+    corpus: "The documents analysed",
+    corpusLead:
+      "The {n} documents in the test, with the annotation used as reference and a link to the original where it is published. The ranking does not ask to be believed: it can be recounted.",
+    corpusDoc: "Document",
+    corpusPages: "Pages",
+    corpusAmount: "Expected amount",
+    corpusPeriod: "Expected period end",
+    corpusSource: "Original",
+    corpusOpen: "open",
     splits: "The documents that split the models",
     splitsLead:
       "These invoices are real: no difficulty was planted in them. They are the ones the models contradicted each other on most. Here is the page, the original annotation, and what each model answered — enough to judge the scoring without taking our word for it.",

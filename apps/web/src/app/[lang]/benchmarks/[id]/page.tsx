@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { fill, getDictionary, href, isLocale, tr } from "@/i18n";
 import { getHub } from "@/lib/site";
 import {
-  documentImages, hasCases, loadCases, loadGroundTruth, loadHistory, loadReponses, loadScores, loadTask,
+  documentImages, hasCases, hasTask, loadCases, loadDocumentSources, loadGroundTruth, loadHistory,
+  loadReponses, loadScores, loadTask,
 } from "@/lib/data";
 import { stateOfTheArt } from "@/lib/hub";
 import { documentsClivants } from "@/lib/exemples";
@@ -280,6 +281,8 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         ? <CasPieges taskId={id} runId={leaderboard.runId} lang={lang} names={names} />
         : <DocumentsClivants taskId={id} runId={leaderboard.runId} lang={lang} names={names} />}
 
+      {hasTask(id) && <Corpus taskId={id} runId={leaderboard.runId} lang={lang} />}
+
       <p className="mt-16 max-w-[64ch]">
         <Link href={href(lang, "/about/methodology")} className="text-vert underline">{t.methodology}</Link> {t.methodologyTail}
       </p>
@@ -300,6 +303,65 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         </nav>
       )}
     </main>
+  );
+}
+
+/**
+ * Le corpus : tout ce que le modèle a eu à lire, document par document.
+ *
+ * Un classement n'est vérifiable que si son jeu de test l'est. Chaque ligne
+ * renvoie au document d'origine, chez celui qui le publie — jamais à une copie
+ * que nous aurions faite — et affiche l'annotation qui a servi de référence.
+ * Un lecteur peut ouvrir la facture et recompter.
+ */
+function Corpus({ taskId, runId, lang }: { taskId: string; runId: string; lang: "fr" | "en" }) {
+  const t = getDictionary(lang).benchmarks.detail;
+  const task = loadTask(taskId);
+  const sources = loadDocumentSources(taskId);
+  const docs = [...new Set(loadScores(runId).map((s) => s.docId))].sort();
+  if (docs.length === 0) return null;
+
+  const labels = Object.fromEntries(task.criteria.map((c) => [c.id, c.label]));
+
+  return (
+    <section className="mt-16">
+      <h2 className="etendu text-2xl">{t.corpus}</h2>
+      <p className="mt-2 max-w-[68ch] text-encre-pale">{fill(t.corpusLead, { n: docs.length })}</p>
+
+      <div className="panneau mt-6 overflow-x-auto">
+        <table className="tableau">
+          <caption className="sr-only">{t.corpus}</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span className="etiquette">{t.corpusDoc}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{t.corpusPages}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{labels.gross_amount ?? t.corpusAmount}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{labels.flight_to ?? t.corpusPeriod}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{t.corpusSource}</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {docs.map((docId) => {
+              const champs = loadGroundTruth(taskId, docId).fields;
+              const url = sources.get(docId);
+              return (
+                <tr key={docId}>
+                  <th scope="row" className="chiffres font-normal">{docId.slice(0, 8)}</th>
+                  <td className="chiffres droite">{documentImages(taskId, docId).length}</td>
+                  <td className="chiffres droite"><ValeurBrute valeur={champs.gross_amount ?? null} abstention="—" /></td>
+                  <td className="chiffres droite"><ValeurBrute valeur={champs.flight_to ?? null} abstention="—" /></td>
+                  <td className="droite">
+                    {url === undefined ? "—" : (
+                      <a href={url} className="text-vert underline" rel="noreferrer">{t.corpusOpen}</a>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }
 

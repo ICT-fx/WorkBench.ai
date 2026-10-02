@@ -1,4 +1,5 @@
 import { mkdir, writeFile, readFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import {
   BenchmarkHistorySchema, DocScoreSchema, ReviewItemSchema,
@@ -44,10 +45,38 @@ function perimetre(documents: LoadedDocument[]): LoadedDocument[] {
   const limit = arg("limit");
   const maxPages = arg("max-pages");
   const maxPixels = arg("max-pixels");
-  let retenus = limit === undefined ? documents : documents.slice(0, Number(limit));
+  let retenus = documents;
+
+  // --deja <run> : les documents qu'un run précédent a déjà mesurés. Les écarter
+  // avant tout le reste évite de repayer une réponse qu'on possède, quand on
+  // élargit un jeu de test sans vouloir rejouer ce qui est déjà fait.
+  const deja = arg("deja");
+  if (deja !== undefined) {
+    const faits = documentsMesures(deja);
+    retenus = retenus.filter((d) => !faits.has(d.docId));
+  }
+
+  if (limit !== undefined) retenus = retenus.slice(0, Number(limit));
   if (maxPages !== undefined) retenus = retenus.filter((d) => d.images.length <= Number(maxPages));
   if (maxPixels !== undefined) retenus = retenus.filter((d) => pixelsTotaux(d.images) <= Number(maxPixels));
   return retenus;
+}
+
+/**
+ * Les documents qu'un run a réellement notés.
+ *
+ * On lit `scores.json` et non le dossier des réponses brutes : un document dont
+ * seuls quelques modèles ont répondu n'est pas mesuré, et doit être rejoué en
+ * entier plutôt que complété — un classement compare des modèles sur les mêmes
+ * documents, ou ne compare rien.
+ */
+function documentsMesures(runId: string): Set<string> {
+  const fichier = join(runsRoot(), runId, "scores.json");
+  if (!existsSync(fichier)) {
+    throw new Error(`Run introuvable : ${fichier}. Vérifier --deja.`);
+  }
+  const scores = z.array(DocScoreSchema).parse(JSON.parse(readFileSync(fichier, "utf8")));
+  return new Set(scores.map((s) => s.docId));
 }
 
 async function cmdRun(taskId: string): Promise<void> {
@@ -225,14 +254,46 @@ async function cmdReview(taskId: string): Promise<void> {
   console.log(`\n${journal.length} arbitrage(s) enregistré(s) dans ${join(runDir, "review.json")}`);
 }
 
+/**
+ * Publie un classement à partir d'un ou plusieurs runs.
+ *
+ * Plusieurs runs : `--run a,b`. Les runs restent immuables et séparés sur le
+ * disque ; seule la lecture les réunit, et le `runId` publié les nomme tous les
+ * deux. Fusionner n'est légitime que si les modèles ont reçu la même question :
+ * quand le prompt a changé entre deux runs, les champs touchés doivent être
+ * écartés du barème, sans quoi le classement comparerait des réponses à des
+ * questions différentes.
+ */
 async function cmdPublish(taskId: string): Promise<void> {
-  const runId = arg("run") ?? `${today()}_${taskId}`;
-  const runDir = join(runsRoot(), runId);
+  const runIds = (arg("run") ?? `${today()}_${taskId}`).split(",").map((r) => r.trim());
+  const runDirs = runIds.map((r) => join(runsRoot(), r));
 
-  const [task, results] = await Promise.all([loadTask(taskId), loadRunResults(runDir)]);
-  const scores = z.array(DocScoreSchema).parse(
-    JSON.parse(await readFile(join(runDir, "scores.json"), "utf8")));
-  const review = await readReview(runDir);
+  const task = await loadTask(taskId);
+  const parRun = await Promise.all(runDirs.map(async (runDir) => ({
+    results: await loadRunResults(runDir),
+    scores: z.array(DocScoreSchema).parse(
+      JSON.parse(await readFile(join(runDir, "scores.json"), "utf8"))),
+    review: await readReview(runDir),
+  })));
+
+  const results = parRun.flatMap((r) => r.results);
+  const scores = parRun.flatMap((r) => r.scores);
+  const review = parRun.flatMap((r) => r.review);
+
+  // Un document présent dans deux runs serait compté deux fois pour un modèle,
+  // et son coût moyen faussé. Mieux vaut refuser que publier un chiffre bancal.
+  const doublons = new Set<string>();
+  const vus = new Set<string>();
+  for (const s of scores) {
+    const cle = `${s.model}/${s.docId}`;
+    if (vus.has(cle)) doublons.add(s.docId);
+    vus.add(cle);
+  }
+  if (doublons.size > 0) {
+    throw new Error(
+      `Publication refusée : ${doublons.size} document(s) noté(s) dans plusieurs runs ` +
+      `(${[...doublons].slice(0, 3).join(", ")}…). Un document doit n'appartenir qu'à un run.`);
+  }
 
   const arbitres = applyReview(task, scores, review);
   // Le classement ne porte que sur les documents notés. Un run peut contenir
@@ -242,9 +303,11 @@ async function cmdPublish(taskId: string): Promise<void> {
   const retenus = results.filter((r) => notes.has(r.docId));
   const leaderboard = buildLeaderboard({
     taskId,
-    runId,
+    runId: runIds.join("+"),
     status: flag("demo") ? "demo" : "reel",
-    runDate: runId.slice(0, 10),
+    // La date d'un classement fusionné est celle du run le plus récent : c'est
+    // la date à laquelle la mesure publiée est complète.
+    runDate: [...runIds].sort().at(-1)!.slice(0, 10),
     scores: arbitres,
     results: retenus,
     sampleSize: new Set(scores.map((s) => s.docId)).size,
@@ -264,7 +327,8 @@ async function cmdPublish(taskId: string): Promise<void> {
   }
   await writeFile(historyFile, `${JSON.stringify(appendHistory(history, leaderboard), null, 2)}\n`);
 
-  console.log(`Classement publié (${review.length} arbitrage(s) humain(s) appliqué(s)) :`);
+  console.log(`Classement publié depuis ${runIds.length} run(s) ` +
+    `(${review.length} arbitrage(s) humain(s) appliqué(s)) :`);
   for (const [i, row] of leaderboard.rows.entries()) {
     console.log(`  ${i + 1}. ${row.model.padEnd(28)} ` +
       `${String(row.sansRelecture).padStart(5)} % sans relecture · ` +
@@ -284,7 +348,7 @@ async function main(): Promise<void> {
     case "review": return cmdReview(taskId);
     case "publish": return cmdPublish(taskId);
     default:
-      console.error("Usage : eval <run|score|review|publish> [--task facture-fcc] [--run <id>]");
+      console.error("Usage : eval <run|score|review|publish> [--task facture-fcc] [--run <id>[,<id>]]\n  --deja <run>   écarte les documents déjà mesurés par ce run");
       process.exitCode = 1;
   }
 }

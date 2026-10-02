@@ -7,3 +7,4 @@ export * from "./score";
 export * from "./leaderboard";
 export * from "./catalogue";
 export * from "./parse-file";
+export * from "./csv";

@@ -11,7 +11,7 @@ import { mkdir, writeFile, readFile, access } from "node:fs/promises";
 import { join } from "node:path";
 import * as mupdf from "mupdf";
 import sharp from "sharp";
-import { GroundTruthSchema, type GroundTruth } from "@hub/schema";
+import { GroundTruthSchema, parseCsv, type GroundTruth } from "@hub/schema";
 
 const MANIFEST_URL =
   "https://raw.githubusercontent.com/project-deepform/deepform/master/data/fcc-data-2020-labeled-manifest.csv";
@@ -23,27 +23,6 @@ export type LigneManifeste = {
   gross_amount: string; flight_from: string; flight_to: string; issues: string; url: string;
 };
 
-/** Lecteur CSV minimal, suffisant pour ce fichier : guillemets et virgules. */
-export function parseCsv(texte: string): Record<string, string>[] {
-  const lignes: string[][] = [];
-  let champ = "", ligne: string[] = [], dansGuillemets = false;
-  for (let i = 0; i < texte.length; i++) {
-    const c = texte[i]!;
-    if (dansGuillemets) {
-      if (c === '"' && texte[i + 1] === '"') { champ += '"'; i++; }
-      else if (c === '"') dansGuillemets = false;
-      else champ += c;
-    } else if (c === '"') dansGuillemets = true;
-    else if (c === ",") { ligne.push(champ); champ = ""; }
-    else if (c === "\n") { ligne.push(champ); lignes.push(ligne); ligne = []; champ = ""; }
-    else if (c !== "\r") champ += c;
-  }
-  if (champ !== "" || ligne.length > 0) { ligne.push(champ); lignes.push(ligne); }
-  const [entetes, ...corps] = lignes;
-  return corps
-    .filter((l) => l.length === entetes!.length)
-    .map((l) => Object.fromEntries(entetes!.map((h, i) => [h.trim(), (l[i] ?? "").trim()])));
-}
 
 /**
  * Une cellule remplie mais que nous ne savons pas lire.

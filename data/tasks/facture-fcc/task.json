@@ -34,7 +34,7 @@
       "weight": 2,
       "critical": false,
       "dateOrder": "MDY",
-      "exclu": "Écarté : le document affiche à la fois « Flight Dates » et « Invoice Period », deux périodes différentes et toutes deux défendables comme début de la facturation."
+      "exclu": "Écarté sur preuve : ces factures portent deux périodes, « Invoice Period » et « Order Flight », dont les dates de début diffèrent souvent. L'annotation d'origine suit la première, le champ demandé nomme la seconde. Sur trois des dix-neuf documents, la quasi-totalité des modèles — jusqu'à 26 sur 27 — répond la date du champ littéralement intitulé « Flight », contre l'annotation. Quand vingt-six lecteurs indépendants s'accordent contre la référence, c'est la question qui est mauvaise, pas eux. Les dates de fin, elles, coïncident presque toujours : « flight_to » reste noté, avec 6,2 % d'erreurs contre 24,2 % ici."
     },
     {
       "id": "flight_to",

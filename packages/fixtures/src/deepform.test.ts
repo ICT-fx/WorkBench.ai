@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { parseCsv, montant, dateUS, toGroundTruth, tirage, ValeurIllisible } from "./deepform";
+import { montant, dateUS, toGroundTruth, tirage, ValeurIllisible } from "./deepform";
+import { parseCsv } from "@hub/schema";
 
 describe("lecture du manifeste", () => {
   it("lit un CSV avec des virgules dans les champs entre guillemets", () => {

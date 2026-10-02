@@ -1,9 +1,10 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { z } from "zod";
+
 import {
   LeaderboardSchema, TaskSchema, GroundTruthSchema, LabSchema, ModelCatalogueSchema,
-  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema, DocScoreSchema,
+  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema, DocScoreSchema, parseCsv,
 } from "@hub/schema";
 import type {
   Benchmark, BenchmarkHistory, DocScore, Domain, GroundTruth, Lab, Leaderboard, ModelCatalogue,
@@ -97,6 +98,33 @@ export function loadScores(runId: string): DocScore[] {
   const file = join(repoRoot(), "data", "runs", runId, "scores.json");
   if (!existsSync(file)) return [];
   return z.array(DocScoreSchema).parse(JSON.parse(readFileSync(file, "utf8")));
+}
+
+export type SourceDocument = {
+  docId: string;
+  /** L'adresse du document d'origine, sur l'archive publique de la source. */
+  url: string;
+};
+
+/**
+ * L'adresse d'origine de chaque document du jeu de test.
+ *
+ * C'est ce qui rend une mesure vérifiable par un lecteur : il doit pouvoir
+ * ouvrir la facture elle-même, chez celui qui la publie, et non une copie que
+ * nous aurions faite. Le manifeste est le fichier que la préparation a
+ * téléchargé ; il reste dans le dépôt, inchangé.
+ */
+export function loadDocumentSources(taskId: string): Map<string, string> {
+  const fichier = join(repoRoot(), "data", "tasks", taskId, "manifest.csv");
+  if (!existsSync(fichier)) return new Map();
+  const lignes = parseCsv(readFileSync(fichier, "utf8"));
+  return new Map(
+    lignes.flatMap((l) => {
+      const id = l.file_id;
+      const url = l.url;
+      return id === undefined || url === undefined || url === "" ? [] : [[id, url] as const];
+    }),
+  );
 }
 
 export type ReponseModele = {
