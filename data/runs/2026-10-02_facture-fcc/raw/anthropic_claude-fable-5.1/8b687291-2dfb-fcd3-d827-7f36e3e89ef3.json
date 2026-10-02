@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "8b687291-2dfb-fcd3-d827-7f36e3e89ef3",
+  "raw": {
+    "contract_num": "953959",
+    "advertiser": "Warren for President",
+    "gross_amount": 8850,
+    "flight_from": "2020-02-29",
+    "flight_to": "2020-03-04",
+    "vat_number": null
+  },
+  "latencyMs": 5576,
+  "costUsd": 0.06639,
+  "provider": "Anthropic",
+  "inputTokens": 6264,
+  "outputTokens": 75
+}

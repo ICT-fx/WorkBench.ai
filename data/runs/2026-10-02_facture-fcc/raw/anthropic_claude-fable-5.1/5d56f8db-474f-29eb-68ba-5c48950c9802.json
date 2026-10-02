@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "5d56f8db-474f-29eb-68ba-5c48950c9802",
+  "raw": {
+    "contract_num": "2006670",
+    "advertiser": "Club For Growth Action",
+    "gross_amount": 12100,
+    "flight_from": "2020-06-23",
+    "flight_to": "2020-06-29",
+    "vat_number": null
+  },
+  "latencyMs": 6927,
+  "costUsd": 0.08524,
+  "provider": "Anthropic",
+  "inputTokens": 8129,
+  "outputTokens": 79
+}

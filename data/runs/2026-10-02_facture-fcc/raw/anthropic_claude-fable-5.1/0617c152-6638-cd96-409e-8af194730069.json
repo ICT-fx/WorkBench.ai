@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "0617c152-6638-cd96-409e-8af194730069",
+  "raw": {
+    "contract_num": "2006411",
+    "advertiser": "Ashford For Congress",
+    "gross_amount": 7465,
+    "flight_from": "2020-04-20",
+    "flight_to": "2020-04-26",
+    "vat_number": null
+  },
+  "latencyMs": 8038,
+  "costUsd": 0.08524,
+  "provider": "Anthropic",
+  "inputTokens": 8129,
+  "outputTokens": 79
+}

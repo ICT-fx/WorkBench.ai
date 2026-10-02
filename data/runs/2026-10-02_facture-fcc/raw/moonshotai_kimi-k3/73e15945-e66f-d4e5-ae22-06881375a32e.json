@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "73e15945-e66f-d4e5-ae22-06881375a32e",
+  "raw": {
+    "contract_num": "946577",
+    "advertiser": "Kay Granger for TX CD12",
+    "gross_amount": 28700,
+    "flight_from": "2020-02-19",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 6327,
+  "costUsd": 0.01292958,
+  "provider": "InferenceNet",
+  "inputTokens": 6159,
+  "outputTokens": 381
+}

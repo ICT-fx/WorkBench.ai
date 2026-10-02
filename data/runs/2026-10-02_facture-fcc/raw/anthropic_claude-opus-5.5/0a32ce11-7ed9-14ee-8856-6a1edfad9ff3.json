@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
+  "raw": {
+    "contract_num": "2418178",
+    "advertiser": "POL/Marsy's Law for Wisconsin PAC",
+    "gross_amount": 1425,
+    "flight_from": "2020-03-09",
+    "flight_to": "2020-04-12",
+    "vat_number": null
+  },
+  "latencyMs": 8169,
+  "costUsd": 0.032996,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 6264,
+  "outputTokens": 397
+}

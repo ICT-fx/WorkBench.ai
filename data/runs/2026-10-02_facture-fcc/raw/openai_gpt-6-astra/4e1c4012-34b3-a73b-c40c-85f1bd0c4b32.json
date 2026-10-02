@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "4e1c4012-34b3-a73b-c40c-85f1bd0c4b32",
+  "raw": {
+    "contract_num": "1986029",
+    "advertiser": "Sandy Lee/D/Circuit Court Judge",
+    "gross_amount": 2255,
+    "flight_from": "2020-02-28",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 3294,
+  "costUsd": 0.073405,
+  "provider": "OpenAI",
+  "inputTokens": 5573,
+  "outputTokens": 75
+}

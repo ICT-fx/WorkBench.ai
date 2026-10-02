@@ -1,0 +1,10 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-sol",
+  "modelVersion": "openai/gpt-6-sol",
+  "docId": "11a46278-4c24-74df-7313-e6f38abcb42f",
+  "raw": null,
+  "latencyMs": 917,
+  "costUsd": 0,
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+}

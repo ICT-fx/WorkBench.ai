@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "11a46278-4c24-74df-7313-e6f38abcb42f",
+  "raw": {
+    "contract_num": "2521014",
+    "advertiser": "POL/Donald Trump/President/US/Rep",
+    "gross_amount": 8260,
+    "flight_from": "2020-05-28",
+    "flight_to": "2020-06-01",
+    "vat_number": null
+  },
+  "latencyMs": 6959,
+  "costUsd": 0.01930009,
+  "provider": "InferenceNet",
+  "inputTokens": 9903,
+  "outputTokens": 449
+}

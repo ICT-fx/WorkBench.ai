@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "x-ai/grok-4.7",
+  "modelVersion": "x-ai/grok-4.7",
+  "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
+  "raw": {
+    "contract_num": "2418178",
+    "advertiser": "POL/Marsy's Law for Wisconsin PAC",
+    "gross_amount": 1425,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 142670,
+  "costUsd": 0.019194,
+  "provider": "xAI",
+  "inputTokens": 6087,
+  "outputTokens": 1458
+}

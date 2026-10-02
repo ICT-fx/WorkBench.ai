@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "26f3961b-264a-e31e-e91e-c5b8211bed89",
+  "raw": {
+    "contract_num": "574056",
+    "advertiser": "NRSC IE (23306)",
+    "gross_amount": 34900,
+    "flight_from": "2020-06-23",
+    "flight_to": "2020-06-29",
+    "vat_number": null
+  },
+  "latencyMs": 6366,
+  "costUsd": 0.038076,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 8129,
+  "outputTokens": 278
+}

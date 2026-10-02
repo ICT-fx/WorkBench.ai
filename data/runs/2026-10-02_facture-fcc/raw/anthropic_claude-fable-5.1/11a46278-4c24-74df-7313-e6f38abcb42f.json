@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "11a46278-4c24-74df-7313-e6f38abcb42f",
+  "raw": {
+    "contract_num": "2521014",
+    "advertiser": "POL/Donald Trump/President/US/Rep",
+    "gross_amount": 8260,
+    "flight_from": "2020-05-28",
+    "flight_to": "2020-06-01",
+    "vat_number": null
+  },
+  "latencyMs": 7586,
+  "costUsd": 0.10434,
+  "provider": "Anthropic",
+  "inputTokens": 9994,
+  "outputTokens": 88
+}

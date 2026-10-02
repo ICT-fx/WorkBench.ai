@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "5d8fb479-8a50-0bd7-467a-9491fd80fa60",
+  "raw": {
+    "contract_num": "709091",
+    "advertiser": "Williams/Democrat/Governor",
+    "gross_amount": 3526,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 5711,
+  "costUsd": 0.075705,
+  "provider": "OpenAI",
+  "inputTokens": 5573,
+  "outputTokens": 121
+}

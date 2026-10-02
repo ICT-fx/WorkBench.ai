@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+  "raw": {
+    "contract_num": null,
+    "advertiser": "POL/M BLOOMBERG/D/PRE/US",
+    "gross_amount": 6680,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 9036,
+  "costUsd": 0.03948,
+  "provider": "OpenAI",
+  "inputTokens": 2167,
+  "outputTokens": 248
+}

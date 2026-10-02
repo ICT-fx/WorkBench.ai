@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "3f335f42-1857-e5c0-203e-a9cc03a13aa4",
+  "raw": {
+    "contract_num": "4367197",
+    "advertiser": "DSCC-Independent Expenditure (73962)",
+    "gross_amount": 6545,
+    "flight_from": "2020-09-29",
+    "flight_to": "2020-10-05",
+    "vat_number": null
+  },
+  "latencyMs": 5876,
+  "costUsd": 0.08299,
+  "provider": "Anthropic",
+  "inputTokens": 7859,
+  "outputTokens": 88
+}

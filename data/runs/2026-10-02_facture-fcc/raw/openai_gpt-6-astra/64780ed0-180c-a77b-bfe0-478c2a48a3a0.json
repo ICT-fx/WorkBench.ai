@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "64780ed0-180c-a77b-bfe0-478c2a48a3a0",
+  "raw": {
+    "contract_num": "566900",
+    "advertiser": "Priorities USA Action (20447)",
+    "gross_amount": 40700,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 5596,
+  "costUsd": 0.0541175,
+  "provider": "OpenAI",
+  "inputTokens": 3870,
+  "outputTokens": 115
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "331ff2f3-ce04-6816-ccb3-98e711ab6904",
+  "raw": {
+    "contract_num": "9731855",
+    "advertiser": "POL/Pete Buttigieg/D/Pres-A",
+    "gross_amount": 22300,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 4076,
+  "costUsd": 0.0536675,
+  "provider": "OpenAI",
+  "inputTokens": 3870,
+  "outputTokens": 106
+}

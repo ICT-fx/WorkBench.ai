@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "707c944c-a76d-b929-5642-9e71e2518d9d",
+  "raw": {
+    "contract_num": "1629253",
+    "advertiser": "Mark Kelly for Senate",
+    "gross_amount": 29175,
+    "flight_from": "2020-10-20",
+    "flight_to": "2020-10-26",
+    "vat_number": null
+  },
+  "latencyMs": 7876,
+  "costUsd": 0.040184,
+  "provider": "Alibaba",
+  "inputTokens": 8840,
+  "outputTokens": 402
+}

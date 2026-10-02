@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "2aac88c6-7849-4aa6-5315-5ceeabbdcf73",
+  "raw": {
+    "contract_num": "1022230",
+    "advertiser": "Teresa Tomlinson for Senate",
+    "gross_amount": 5780,
+    "flight_from": "2020-05-26",
+    "flight_to": "2020-06-01",
+    "vat_number": null
+  },
+  "latencyMs": 3929,
+  "costUsd": 0.034576,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 8129,
+  "outputTokens": 103
+}

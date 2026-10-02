@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "3bdbc1a7-5599-24d3-08a8-8c22749f5e79",
+  "raw": {
+    "contract_num": "224996",
+    "advertiser": "Bloomberg, M. for Presiden",
+    "gross_amount": 3384,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 4017,
+  "costUsd": 0.0960425,
+  "provider": "OpenAI",
+  "inputTokens": 7276,
+  "outputTokens": 102
+}

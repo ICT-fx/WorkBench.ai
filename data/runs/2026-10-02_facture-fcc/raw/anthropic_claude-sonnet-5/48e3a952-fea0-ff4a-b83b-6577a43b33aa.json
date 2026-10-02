@@ -1,0 +1,10 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-sonnet-5",
+  "modelVersion": "anthropic/claude-sonnet-5",
+  "docId": "48e3a952-fea0-ff4a-b83b-6577a43b33aa",
+  "raw": null,
+  "latencyMs": 33499,
+  "costUsd": 0,
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "703ebcab-f247-46bf-2e5d-b2c454296007",
+  "raw": {
+    "contract_num": "111915",
+    "advertiser": "POL/Bloomberg, Mike/D/ Pres/US",
+    "gross_amount": 212,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 4057,
+  "costUsd": 0.027236,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 6264,
+  "outputTokens": 109
+}

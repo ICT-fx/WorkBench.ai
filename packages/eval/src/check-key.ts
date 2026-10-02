@@ -53,10 +53,33 @@ async function main(): Promise<void> {
   const usage = typeof d.usage === "number" ? d.usage : null;
   const limite = typeof d.limit === "number" ? d.limit : null;
 
+  // Le plafond de la clé n'est pas le solde du compte. Confondre les deux a
+  // fait dimensionner un run sur 29 $ de marge alors qu'il en restait 0,09 :
+  // le run s'est arrêté à mi-chemin, et seuls trois modèles sur vingt-sept
+  // avaient fini. C'est le solde qui décide de ce qu'on peut lancer.
+  const soldeRep = await fetch(`${BASE}/credits`, { headers: { Authorization: `Bearer ${cle}` } });
+  const credits = soldeRep.ok
+    ? ((await soldeRep.json()) as { data?: { total_credits?: number; total_usage?: number } }).data
+    : undefined;
+  const solde = credits?.total_credits !== undefined && credits.total_usage !== undefined
+    ? credits.total_credits - credits.total_usage
+    : null;
+
   console.log("Clé valide.");
-  if (usage !== null) console.log(`  déjà dépensé : ${usage.toFixed(2)} $`);
-  if (limite !== null) console.log(`  plafond : ${limite.toFixed(2)} $`);
-  else console.log("  plafond : aucun (le crédit du compte fait foi)");
+  if (solde !== null) {
+    console.log(`  CRÉDIT DISPONIBLE : ${solde.toFixed(2)} $   ` +
+      `(${credits!.total_credits!.toFixed(2)} $ rechargés, ${credits!.total_usage!.toFixed(2)} $ consommés)`);
+  } else {
+    console.log("  crédit disponible : non communiqué par OpenRouter");
+  }
+  if (usage !== null) console.log(`  dépensé par cette clé : ${usage.toFixed(2)} $`);
+  console.log(limite !== null
+    ? `  plafond de la clé : ${limite.toFixed(2)} $ — c'est une limite sur la clé, pas de l'argent disponible`
+    : "  plafond de la clé : aucun");
+
+  if (solde !== null && solde < 1) {
+    console.log("\n⚠ Crédit épuisé : un run refusera les appels dont le coût maximal dépasse le solde.");
+  }
 
   // 2. Les 27 modèles du hub sont-ils tous au catalogue ?
   const cat = await fetch(`${BASE}/models`);

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "88d79dde-ac4a-5e69-b150-1f64fc28dda3",
+  "raw": {
+    "contract_num": "1978587",
+    "advertiser": "Bloomberg/D/President",
+    "gross_amount": 865,
+    "flight_from": "2020-02-03",
+    "flight_to": "2020-02-07",
+    "vat_number": "43-1016745"
+  },
+  "latencyMs": 15535,
+  "costUsd": 0.0158421,
+  "provider": "InferenceNet",
+  "inputTokens": 4287,
+  "outputTokens": 798
+}

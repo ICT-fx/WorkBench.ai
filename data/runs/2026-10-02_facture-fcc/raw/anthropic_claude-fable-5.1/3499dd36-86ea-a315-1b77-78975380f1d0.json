@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "3499dd36-86ea-a315-1b77-78975380f1d0",
+  "raw": {
+    "contract_num": "693596",
+    "advertiser": "McGrath/Democrat/US Senate",
+    "gross_amount": 8670,
+    "flight_from": "2020-04-07",
+    "flight_to": "2020-04-13",
+    "vat_number": null
+  },
+  "latencyMs": 5627,
+  "costUsd": 0.04819,
+  "provider": "Anthropic",
+  "inputTokens": 4399,
+  "outputTokens": 84
+}

@@ -1,0 +1,10 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "x-ai/grok-4.7",
+  "modelVersion": "x-ai/grok-4.7",
+  "docId": "3fb2b31f-5664-3bd2-4fec-e4b0e777ecc5",
+  "raw": null,
+  "latencyMs": 1026,
+  "costUsd": 0,
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+}

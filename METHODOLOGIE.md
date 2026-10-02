@@ -241,6 +241,28 @@ gris**, et vérifier le poids avant de commiter.
 
 ## Sur l'exécution et l'argent
 
+**Le plafond d'une clé n'est pas le solde d'un compte.** `key:check` affichait
+« plafond : 50 $ » : c'est une limite posée sur la clé, pas de l'argent disponible.
+Le compte, lui, n'avait que 0,09 $. Un lot de 40 documents a été dimensionné sur
+29 $ de marge imaginaire ; il s'est arrêté à mi-course, 9,13 $ dépensés et trois
+modèles finis sur vingt-sept. Le solde se lit sur `/api/v1/credits`
+(`total_credits - total_usage`), et c'est lui, désormais affiché en premier, qui
+décide de ce qu'on peut lancer.
+
+**Un appel HTTP sans délai maximal fige un run entier.** `fetch` n'en avait
+aucun : une connexion qui cesse de répondre bloque l'appel pour toujours, et à
+deux appels simultanés, deux connexions mortes suffisent. Le run est resté figé
+à 194 appels sur 1080, processus vivant, zéro pour cent de processeur, sans un
+message. Quatre minutes de plafond, et un dépassement traité comme une erreur
+passagère.
+
+**Un run s'arrête proprement, mais pas au bon endroit.** Le pipeline interroge
+les modèles l'un après l'autre : à l'arrêt, trois modèles avaient lu les quarante
+documents et vingt-quatre n'en avaient lu aucun. Rien n'est publiable dans cet
+état, alors qu'avec un parcours document par document, on aurait eu des documents
+complets et un échantillon réduit mais exploitable. À corriger avant le prochain
+run sur budget serré.
+
 **Deux appels simultanés au maximum.**
 À huit, OpenRouter réserve d'avance plus de crédit que le compte n'en a de disponible et
 refuse tout : **419 appels perdus** sur un premier run. Un seul appel à la fois lorsque

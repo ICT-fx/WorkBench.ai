@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
+  "raw": {
+    "contract_num": "9754886",
+    "advertiser": "POL/Mike Bloomberg/D/Pres/US-A",
+    "gross_amount": 210350,
+    "flight_from": "2020-02-15",
+    "flight_to": "2020-02-21",
+    "vat_number": null
+  },
+  "latencyMs": 12373,
+  "costUsd": 0.02973541,
+  "provider": "InferenceNet",
+  "inputTokens": 15519,
+  "outputTokens": 628
+}

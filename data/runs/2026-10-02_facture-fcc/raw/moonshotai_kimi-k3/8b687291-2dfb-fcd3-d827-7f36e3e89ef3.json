@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "8b687291-2dfb-fcd3-d827-7f36e3e89ef3",
+  "raw": {
+    "contract_num": "953959",
+    "advertiser": "Warren for President",
+    "gross_amount": 8850,
+    "flight_from": "2020-02-29",
+    "flight_to": "2020-03-04",
+    "vat_number": null
+  },
+  "latencyMs": 4914,
+  "costUsd": 0.01211058,
+  "provider": "InferenceNet",
+  "inputTokens": 6159,
+  "outputTokens": 318
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "3f335f42-1857-e5c0-203e-a9cc03a13aa4",
+  "raw": {
+    "contract_num": "4367197",
+    "advertiser": "DSCC-Independent Expenditure (73962)",
+    "gross_amount": 6545,
+    "flight_from": "2020-09-29",
+    "flight_to": "2020-10-05",
+    "vat_number": null
+  },
+  "latencyMs": 63934,
+  "costUsd": 0.075628,
+  "provider": "Alibaba",
+  "inputTokens": 5896,
+  "outputTokens": 4337
+}
