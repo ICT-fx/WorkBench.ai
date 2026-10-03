@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "703ebcab-f247-46bf-2e5d-b2c454296007",
+  "raw": {
+    "contract_num": "0131",
+    "advertiser": "POL/Bloomberg, Mike/D's/Pres/US",
+    "gross_amount": 180.2,
+    "flight_from": "12/30/19",
+    "flight_to": "03/29/20",
+    "vat_number": null
+  },
+  "latencyMs": 2027,
+  "costUsd": 0.00033888,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 5288,
+  "outputTokens": 90
+}

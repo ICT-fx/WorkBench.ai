@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "qwen/qwen3.7-flash",
+  "modelVersion": "qwen/qwen3.7-flash",
+  "docId": "8e41b954-ea3c-0b8d-0c3e-ea345abd4c4c",
+  "raw": {
+    "contract_num": "1007158",
+    "advertiser": "Mike Bloomberg 2020 Inc For President C/O",
+    "gross_amount": 179980,
+    "flight_from": "2020-02-22",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 37347,
+  "costUsd": 0.00046474,
+  "provider": "Alibaba",
+  "inputTokens": 7440,
+  "outputTokens": 1858
+}

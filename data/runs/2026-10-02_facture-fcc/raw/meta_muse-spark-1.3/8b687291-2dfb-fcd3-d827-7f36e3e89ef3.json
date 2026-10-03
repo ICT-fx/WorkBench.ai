@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "meta/muse-spark-1.3",
+  "docId": "8b687291-2dfb-fcd3-d827-7f36e3e89ef3",
+  "raw": {
+    "contract_num": "953959",
+    "advertiser": "Warren for President",
+    "gross_amount": 8850,
+    "flight_from": "2020-02-29",
+    "flight_to": "2020-03-04",
+    "vat_number": null
+  },
+  "latencyMs": 8745,
+  "costUsd": 0.01085825,
+  "provider": "Meta",
+  "inputTokens": 5800,
+  "outputTokens": 849
+}

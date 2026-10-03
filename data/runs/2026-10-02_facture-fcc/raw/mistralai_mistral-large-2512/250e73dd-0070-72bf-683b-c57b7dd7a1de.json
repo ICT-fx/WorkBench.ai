@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "250e73dd-0070-72bf-683b-c57b7dd7a1de",
+  "raw": {
+    "gross_amount": 3755,
+    "vat_number": null
+  },
+  "latencyMs": 22591,
+  "costUsd": 0.0059016,
+  "provider": "Mistral",
+  "inputTokens": 12000,
+  "outputTokens": 88
+}

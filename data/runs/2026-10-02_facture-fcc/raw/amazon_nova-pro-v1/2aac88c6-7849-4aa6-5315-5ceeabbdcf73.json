@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "2aac88c6-7849-4aa6-5315-5ceeabbdcf73",
+  "raw": {
+    "contract_num": "1022230-1",
+    "advertiser": "Teresa Tomlinson for Senate",
+    "gross_amount": 5780,
+    "flight_from": "05/26/20",
+    "flight_to": "06/01/20",
+    "vat_number": null
+  },
+  "latencyMs": 2820,
+  "costUsd": 0.0058152,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 6925,
+  "outputTokens": 86
+}

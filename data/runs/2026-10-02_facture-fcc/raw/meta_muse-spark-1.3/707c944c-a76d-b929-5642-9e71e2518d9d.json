@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "meta/muse-spark-1.3",
+  "docId": "707c944c-a76d-b929-5642-9e71e2518d9d",
+  "raw": {
+    "contract_num": "1629253",
+    "advertiser": "Mark Kelly for Senate",
+    "gross_amount": 29175,
+    "flight_from": "2020-10-20",
+    "flight_to": "2020-10-26",
+    "vat_number": null
+  },
+  "latencyMs": 11859,
+  "costUsd": 0.0194255,
+  "provider": "Meta",
+  "inputTokens": 11134,
+  "outputTokens": 1296
+}

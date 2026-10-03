@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "73e15945-e66f-d4e5-ae22-06881375a32e",
+  "raw": {
+    "contract_num": "946577",
+    "advertiser": "Kay Granger for TX CD12",
+    "gross_amount": 28700,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 45710,
+  "costUsd": 0.01753649,
+  "provider": "Baidu",
+  "inputTokens": 6067,
+  "outputTokens": 3734
+}

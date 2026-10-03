@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "48e3a952-fea0-ff4a-b83b-6577a43b33aa",
+  "raw": {
+    "contract_num": "1931661",
+    "advertiser": "POL/ Michael Bloomberg / D / PRES / US",
+    "gross_amount": 14685,
+    "flight_from": "2020-01-27",
+    "flight_to": "2020-02-09",
+    "vat_number": null
+  },
+  "latencyMs": 10417,
+  "costUsd": 0.00020272,
+  "provider": "DeepInfra",
+  "inputTokens": 1852,
+  "outputTokens": 106
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "4e1c4012-34b3-a73b-c40c-85f1bd0c4b32",
+  "raw": {
+    "contract_num": "1986029",
+    "advertiser": "Sandy Lee/D/Circuit Court Judge",
+    "gross_amount": 2255,
+    "flight_from": "2020-02-28",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 2657,
+  "costUsd": 0.0010401,
+  "provider": "Parasail",
+  "inputTokens": 6064,
+  "outputTokens": 261
+}

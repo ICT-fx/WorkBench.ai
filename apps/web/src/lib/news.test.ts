@@ -25,7 +25,7 @@ const row = (m: string, exactitude: number, over: Partial<LeaderboardRow> = {}):
 });
 
 const leaderboard = (taskId: string, rows: LeaderboardRow[], status: "reel" | "demo" = "reel"): Leaderboard => ({
-  taskId, runId: `2026-09-15_${taskId}`, status, runDate: "2026-09-15", sampleSize: 10, rows,
+  taskId, runId: `2026-09-15_${taskId}`, status, runDate: "2026-09-15", sampleSize: 10, excluded: 0, rows,
 });
 
 const domains: Domain[] = [

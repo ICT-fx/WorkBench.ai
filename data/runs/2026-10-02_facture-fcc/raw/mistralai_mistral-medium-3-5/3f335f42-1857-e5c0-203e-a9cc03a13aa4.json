@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-medium-3-5",
+  "modelVersion": "mistralai/mistral-medium-3-5",
+  "docId": "3f335f42-1857-e5c0-203e-a9cc03a13aa4",
+  "raw": {
+    "contract_num": "4367197",
+    "advertiser": "DSCC-Independent Expenditure",
+    "gross_amount": 6545,
+    "flight_from": "2020-09-29",
+    "flight_to": "2020-10-05",
+    "vat_number": null
+  },
+  "latencyMs": 3691,
+  "costUsd": 0.012396,
+  "provider": "Mistral",
+  "inputTokens": 7819,
+  "outputTokens": 89
+}

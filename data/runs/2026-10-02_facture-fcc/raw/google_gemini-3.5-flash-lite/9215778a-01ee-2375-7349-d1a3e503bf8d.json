@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "9215778a-01ee-2375-7349-d1a3e503bf8d",
+  "raw": {
+    "contract_num": "665725",
+    "advertiser": "Bloomberg/Democrat/President",
+    "gross_amount": 3500,
+    "flight_from": "2020-02-15",
+    "flight_to": "2020-02-21",
+    "vat_number": null
+  },
+  "latencyMs": 1250,
+  "costUsd": 0.0010584,
+  "provider": "Google",
+  "inputTokens": 2703,
+  "outputTokens": 99
+}

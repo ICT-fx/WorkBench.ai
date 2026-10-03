@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "62e6d540-ee87-021d-f1d5-ffa2f8012038",
+  "raw": {
+    "contract_num": "713628",
+    "advertiser": "Marshall/Republican/US Senate",
+    "gross_amount": 4850,
+    "flight_from": "2020-06-09",
+    "flight_to": "2020-06-15",
+    "vat_number": null
+  },
+  "latencyMs": 10043,
+  "costUsd": 0.0034059,
+  "provider": "Cohere",
+  "inputTokens": 5598,
+  "outputTokens": 1151
+}

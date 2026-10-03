@@ -120,7 +120,7 @@ describe("buildLeaderboard", () => {
 
 describe("appendHistory", () => {
   const publication = (runDate: string, status: "reel" | "demo", exactitude = 90): Leaderboard => ({
-    taskId: "tache-test", runId: `${runDate}_tache-test`, status, runDate, sampleSize: 25,
+    taskId: "tache-test", runId: `${runDate}_tache-test`, status, runDate, sampleSize: 25, excluded: 0,
     rows: [{
       model: "labo/modele", modelVersion: "v1", sansRelecture: 80, exactitude, hallucinations: 0,
       costPerDoc: 0.01, latencyP50: 1200, errorCount: 0, docCount: 25,

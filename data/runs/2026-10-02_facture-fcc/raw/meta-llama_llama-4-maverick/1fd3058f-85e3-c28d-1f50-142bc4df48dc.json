@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "1fd3058f-85e3-c28d-1f50-142bc4df48dc",
+  "raw": {
+    "contract_num": "386699",
+    "advertiser": "Claire Chase for Congress",
+    "gross_amount": 11490,
+    "flight_from": "2020-05-21",
+    "flight_to": "2020-05-29",
+    "vat_number": null
+  },
+  "latencyMs": 6138,
+  "costUsd": 0.00197799,
+  "provider": "DigitalOcean",
+  "inputTokens": 10337,
+  "outputTokens": 61
+}

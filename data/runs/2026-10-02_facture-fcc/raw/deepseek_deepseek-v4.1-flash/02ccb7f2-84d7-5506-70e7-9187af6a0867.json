@@ -4,10 +4,10 @@
   "modelVersion": "deepseek/deepseek-v4.1-flash",
   "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
   "raw": null,
-  "latencyMs": 50993,
-  "costUsd": 0.005553144,
-  "provider": "AtlasCloud",
-  "inputTokens": 7384,
+  "latencyMs": 33688,
+  "costUsd": 0.011758236,
+  "provider": "Together",
+  "inputTokens": 7445,
   "outputTokens": 8000,
   "error": "réponse sans JSON exploitable : "
 }

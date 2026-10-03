@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "4e1c4012-34b3-a73b-c40c-85f1bd0c4b32",
+  "raw": {
+    "contract_num": "1986029-1",
+    "advertiser": "Sandy Lee D/Circuit Court Judge",
+    "gross_amount": 1916.75,
+    "flight_from": "03/08/20",
+    "flight_to": "03/08/20",
+    "vat_number": null
+  },
+  "latencyMs": 2286,
+  "costUsd": 0.00454,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 5315,
+  "outputTokens": 90
+}

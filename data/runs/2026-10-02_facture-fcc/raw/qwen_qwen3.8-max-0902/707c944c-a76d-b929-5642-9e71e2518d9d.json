@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "707c944c-a76d-b929-5642-9e71e2518d9d",
-  "raw": null,
-  "latencyMs": 658,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "1629253",
+    "advertiser": "Mark Kelly for Senate",
+    "gross_amount": 29175,
+    "flight_from": "2020-10-20",
+    "flight_to": "2020-10-26",
+    "vat_number": null
+  },
+  "latencyMs": 9995,
+  "costUsd": 0.020026,
+  "provider": "Alibaba",
+  "inputTokens": 8840,
+  "outputTokens": 391
 }

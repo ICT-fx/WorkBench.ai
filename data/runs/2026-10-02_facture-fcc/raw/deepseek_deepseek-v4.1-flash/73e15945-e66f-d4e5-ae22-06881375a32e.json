@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "73e15945-e66f-d4e5-ae22-06881375a32e",
+  "raw": {
+    "contract_num": "946577",
+    "advertiser": "Kay Granger for TX CD12",
+    "gross_amount": 28700,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 16150,
+  "costUsd": 0.007421004,
+  "provider": "Together",
+  "inputTokens": 3081,
+  "outputTokens": 5508
+}

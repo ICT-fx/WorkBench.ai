@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "331ff2f3-ce04-6816-ccb3-98e711ab6904",
+  "raw": {
+    "contract_num": "9731855",
+    "advertiser": "POL/Pete Butteigeig/D/Pres-A",
+    "gross_amount": 22300,
+    "flight_from": "2020-01-07",
+    "flight_to": "2020-01-13",
+    "vat_number": null
+  },
+  "latencyMs": 17922,
+  "costUsd": 0.00013104,
+  "provider": "DeepInfra",
+  "inputTokens": 1048,
+  "outputTokens": 108
+}

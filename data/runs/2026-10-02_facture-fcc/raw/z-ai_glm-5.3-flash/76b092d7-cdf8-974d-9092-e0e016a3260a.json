@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "76b092d7-cdf8-974d-9092-e0e016a3260a",
+  "raw": {
+    "contract_num": "714812",
+    "advertiser": "American Bridge 21st Century PAC",
+    "gross_amount": 3035,
+    "flight_from": "2020-07-14",
+    "flight_to": "2020-07-20",
+    "vat_number": null
+  },
+  "latencyMs": 2708,
+  "costUsd": 0.00072242,
+  "provider": "Together",
+  "inputTokens": 4200,
+  "outputTokens": 277
+}

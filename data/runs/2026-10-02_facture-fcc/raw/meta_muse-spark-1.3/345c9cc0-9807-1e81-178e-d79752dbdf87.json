@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "meta/muse-spark-1.3",
+  "docId": "345c9cc0-9807-1e81-178e-d79752dbdf87",
+  "raw": {
+    "contract_num": "544588",
+    "advertiser": "Pol/P Bush/R/Con/TX",
+    "gross_amount": 15500,
+    "flight_from": "2020-02-25",
+    "flight_to": "2020-02-26",
+    "vat_number": null
+  },
+  "latencyMs": 6390,
+  "costUsd": 0.007382,
+  "provider": "Meta",
+  "inputTokens": 4022,
+  "outputTokens": 554
+}

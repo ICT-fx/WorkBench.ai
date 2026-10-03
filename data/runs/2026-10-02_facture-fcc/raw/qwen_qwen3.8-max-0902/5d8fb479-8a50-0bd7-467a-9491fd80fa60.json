@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "5d8fb479-8a50-0bd7-467a-9491fd80fa60",
-  "raw": null,
-  "latencyMs": 482,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "709091",
+    "advertiser": "WIlliams/Democrat/Govenor",
+    "gross_amount": 3526,
+    "flight_from": "2020-05-27",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 51338,
+  "costUsd": 0.026098,
+  "provider": "Alibaba",
+  "inputTokens": 4676,
+  "outputTokens": 2791
 }

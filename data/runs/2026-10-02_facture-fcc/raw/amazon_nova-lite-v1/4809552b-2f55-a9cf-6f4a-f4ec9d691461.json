@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "4809552b-2f55-a9cf-6f4a-f4ec9d691461",
+  "raw": {
+    "contract_num": "7304001",
+    "advertiser": "Biden for President-D (27957)",
+    "gross_amount": 297.5,
+    "flight_from": "2020-03-15",
+    "flight_to": "2020-03-15",
+    "vat_number": null
+  },
+  "latencyMs": 1849,
+  "costUsd": 0.00014898,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 2095,
+  "outputTokens": 97
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "62e6d540-ee87-021d-f1d5-ffa2f8012038",
+  "raw": {
+    "contract_num": "713628",
+    "advertiser": "Marshall/Republican/US Senate",
+    "gross_amount": 4850,
+    "flight_from": "2020-06-09",
+    "flight_to": "2020-06-15",
+    "vat_number": null
+  },
+  "latencyMs": 4384,
+  "costUsd": 0.000549175,
+  "provider": "OpenAI",
+  "inputTokens": 3870,
+  "outputTokens": 131
+}

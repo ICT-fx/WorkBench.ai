@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-small-2603",
+  "modelVersion": "mistralai/mistral-small-2603",
+  "docId": "3fb2b31f-5664-3bd2-4fec-e4b0e777ecc5",
+  "raw": {
+    "contract_num": "64721",
+    "advertiser": "POLI/B SANDERS/DPRE/US",
+    "gross_amount": 209250,
+    "flight_from": "2020-03-11",
+    "flight_to": "2020-03-14",
+    "vat_number": null
+  },
+  "latencyMs": 2614,
+  "costUsd": 0.00155655,
+  "provider": "Mistral",
+  "inputTokens": 9993,
+  "outputTokens": 96
+}

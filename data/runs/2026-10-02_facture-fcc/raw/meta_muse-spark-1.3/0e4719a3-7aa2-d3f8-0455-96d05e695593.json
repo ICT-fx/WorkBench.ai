@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "meta/muse-spark-1.3",
+  "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+  "raw": {
+    "contract_num": "9752980",
+    "advertiser": "POLIM BLOOMBERG D/PRE/US",
+    "gross_amount": 6680,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 115921,
+  "costUsd": 0.03185375,
+  "provider": "Meta",
+  "inputTokens": 2244,
+  "outputTokens": 6835
+}

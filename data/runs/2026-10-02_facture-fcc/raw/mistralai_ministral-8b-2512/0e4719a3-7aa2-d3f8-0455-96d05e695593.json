@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+  "raw": {
+    "contract_num": "91572",
+    "advertiser": "POLIM BLOOMBERG/D/PRE/US",
+    "gross_amount": 6680,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 2217,
+  "costUsd": 0.0003714,
+  "provider": "Mistral",
+  "inputTokens": 2381,
+  "outputTokens": 95
+}

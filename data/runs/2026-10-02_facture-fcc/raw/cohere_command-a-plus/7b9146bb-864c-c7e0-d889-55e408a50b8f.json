@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "7b9146bb-864c-c7e0-d889-55e408a50b8f",
+  "raw": {
+    "contract_num": "2501988",
+    "advertiser": "POL/John James/US Senate/MI/Rep",
+    "gross_amount": 1025,
+    "flight_from": "2020-05-07",
+    "flight_to": "2020-05-13",
+    "vat_number": null
+  },
+  "latencyMs": 8251,
+  "costUsd": 0.0036015,
+  "provider": "Cohere",
+  "inputTokens": 8170,
+  "outputTokens": 767
+}

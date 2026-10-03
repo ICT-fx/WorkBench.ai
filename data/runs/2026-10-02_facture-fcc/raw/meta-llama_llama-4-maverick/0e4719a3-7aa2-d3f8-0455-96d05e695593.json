@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+  "raw": {
+    "contract_num": "91572",
+    "advertiser": "POLIM BLOOMBERG D/PRE/US",
+    "gross_amount": 6680,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 2736,
+  "costUsd": 0.0005929125,
+  "provider": "DigitalOcean",
+  "inputTokens": 2936,
+  "outputTokens": 65
+}

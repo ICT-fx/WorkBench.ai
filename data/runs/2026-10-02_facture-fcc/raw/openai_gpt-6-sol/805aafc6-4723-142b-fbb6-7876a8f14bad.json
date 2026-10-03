@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "805aafc6-4723-142b-fbb6-7876a8f14bad",
-  "raw": null,
-  "latencyMs": 752,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "2394321",
+    "advertiser": "POL/Tom Steyer/President/US/Dem",
+    "gross_amount": 16045,
+    "flight_from": "2020-02-26",
+    "flight_to": "2020-02-29",
+    "vat_number": null
+  },
+  "latencyMs": 4420,
+  "costUsd": 0.0115535,
+  "provider": "OpenAI",
+  "inputTokens": 3870,
+  "outputTokens": 188
 }

@@ -3,8 +3,17 @@
   "model": "anthropic/claude-opus-5.5",
   "modelVersion": "anthropic/claude-opus-5.5",
   "docId": "62e6d540-ee87-021d-f1d5-ffa2f8012038",
-  "raw": null,
-  "latencyMs": 1185,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "713628",
+    "advertiser": "Marshall/Republican/US Senate",
+    "gross_amount": 4850,
+    "flight_from": "2020-06-09",
+    "flight_to": "2020-06-15",
+    "vat_number": null
+  },
+  "latencyMs": 3165,
+  "costUsd": 0.019256,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 4399,
+  "outputTokens": 83
 }

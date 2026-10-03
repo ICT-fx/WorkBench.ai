@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "qwen/qwen3.7-flash",
+  "modelVersion": "qwen/qwen3.7-flash",
+  "docId": "88d79dde-ac4a-5e69-b150-1f64fc28dda3",
+  "raw": {
+    "contract_num": "1978587",
+    "advertiser": "Bloomberg/D/President",
+    "gross_amount": 865,
+    "flight_from": "2020-02-03",
+    "flight_to": "2020-02-07",
+    "vat_number": null
+  },
+  "latencyMs": 31843,
+  "costUsd": 0.00032747,
+  "provider": "Alibaba",
+  "inputTokens": 3276,
+  "outputTokens": 1763
+}

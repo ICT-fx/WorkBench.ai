@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "345c9cc0-9807-1e81-178e-d79752dbdf87",
-  "raw": null,
-  "latencyMs": 701,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "544588",
+    "advertiser": "Pol/P Bush/R/Con/TX",
+    "gross_amount": 15500,
+    "flight_from": "2020-02-25",
+    "flight_to": "2020-02-26",
+    "vat_number": null
+  },
+  "latencyMs": 4049,
+  "costUsd": 0.0108235,
+  "provider": "OpenAI",
+  "inputTokens": 3870,
+  "outputTokens": 115
 }

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "345c9cc0-9807-1e81-178e-d79752dbdf87",
+  "raw": {
+    "contract_num": "544588",
+    "advertiser": "Pol/P Bush/R/Con/TX",
+    "gross_amount": 15500,
+    "flight_from": "2020-02-25",
+    "flight_to": "2020-02-26",
+    "vat_number": null
+  },
+  "latencyMs": 4928,
+  "costUsd": 0.000551175,
+  "provider": "OpenAI",
+  "inputTokens": 3870,
+  "outputTokens": 135
+}

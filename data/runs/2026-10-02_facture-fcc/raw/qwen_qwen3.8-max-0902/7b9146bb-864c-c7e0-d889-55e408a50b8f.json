@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "7b9146bb-864c-c7e0-d889-55e408a50b8f",
-  "raw": null,
-  "latencyMs": 456,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "2501988",
+    "advertiser": "POL/John James/US Senate/MI/Rep",
+    "gross_amount": 1025,
+    "flight_from": "2020-05-07",
+    "flight_to": "2020-05-13",
+    "vat_number": null
+  },
+  "latencyMs": 11425,
+  "costUsd": 0.011506,
+  "provider": "Alibaba",
+  "inputTokens": 4676,
+  "outputTokens": 359
 }

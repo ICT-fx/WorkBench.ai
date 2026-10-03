@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "5d8fb479-8a50-0bd7-467a-9491fd80fa60",
+  "raw": {
+    "contract_num": "709091",
+    "advertiser": "Williams/Democrat/Governor",
+    "gross_amount": 3526,
+    "flight_from": "2020-05-27",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 5559,
+  "costUsd": 0.0015245625,
+  "provider": "DigitalOcean",
+  "inputTokens": 7870,
+  "outputTokens": 75
+}

@@ -64,6 +64,8 @@ const fr = {
     about: "Ce que mesure ce benchmark",
     facts: {
       sample: "Échantillon",
+      excluded: "Documents écartés",
+      excludedWhy: "{n} document(s) interrogé(s) mais écarté(s) : tout le panel ne les a pas lus, et un classement compare des modèles sur les mêmes documents.",
       input: "Ce que reçoit le modèle",
       inputDocument: "Des documents (images ou PDF)",
       inputText: "Du texte",
@@ -227,6 +229,8 @@ const en: typeof fr = {
     about: "What this benchmark measures",
     facts: {
       sample: "Sample",
+      excluded: "Documents dropped",
+      excludedWhy: "{n} document(s) queried but dropped: the whole panel did not read them, and a ranking compares models on the same documents.",
       input: "What the model receives",
       inputDocument: "Documents (images or PDF)",
       inputText: "Text",

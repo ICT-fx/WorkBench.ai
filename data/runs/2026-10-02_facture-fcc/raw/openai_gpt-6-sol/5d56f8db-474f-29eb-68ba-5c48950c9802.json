@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "5d56f8db-474f-29eb-68ba-5c48950c9802",
-  "raw": null,
-  "latencyMs": 881,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "2006670",
+    "advertiser": "Club For Growth Action",
+    "gross_amount": 12100,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 7486,
+  "costUsd": 0.0214085,
+  "provider": "OpenAI",
+  "inputTokens": 7276,
+  "outputTokens": 322
 }

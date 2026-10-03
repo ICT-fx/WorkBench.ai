@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "4809552b-2f55-a9cf-6f4a-f4ec9d691461",
+  "raw": {
+    "contract_num": "110612717182",
+    "advertiser": "Biden for President-D",
+    "gross_amount": 350,
+    "flight_from": "2020-09-03",
+    "flight_to": "2020-03-15",
+    "vat_number": null
+  },
+  "latencyMs": 28777,
+  "costUsd": 0.001337,
+  "provider": "Mistral",
+  "inputTokens": 2392,
+  "outputTokens": 94
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "805aafc6-4723-142b-fbb6-7876a8f14bad",
+  "raw": {
+    "contract_num": "2394321",
+    "advertiser": "POL/Tom Steyer/President/US/Dem",
+    "gross_amount": 16045,
+    "flight_from": "2020-02-26",
+    "flight_to": "2020-02-29",
+    "vat_number": null
+  },
+  "latencyMs": 2890,
+  "costUsd": 0.0008275,
+  "provider": "Together",
+  "inputTokens": 4200,
+  "outputTokens": 395
+}

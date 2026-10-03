@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "250e73dd-0070-72bf-683b-c57b7dd7a1de",
+  "raw": {
+    "contract_num": "379140",
+    "advertiser": "Biden for President",
+    "gross_amount": 3755,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 3997,
+  "costUsd": 0.002751204,
+  "provider": "Together",
+  "inputTokens": 5667,
+  "outputTokens": 970
+}

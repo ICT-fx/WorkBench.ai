@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-small-2603",
+  "modelVersion": "mistralai/mistral-small-2603",
+  "docId": "17bee528-c562-197f-a7a8-078c223dac58",
+  "raw": {
+    "contract_num": "4204754",
+    "advertiser": "Assembly",
+    "gross_amount": 2095,
+    "flight_from": "2020-01-20",
+    "flight_to": "2020-01-26",
+    "vat_number": null
+  },
+  "latencyMs": 1569,
+  "costUsd": 0.00069885,
+  "provider": "Mistral",
+  "inputTokens": 4315,
+  "outputTokens": 86
+}

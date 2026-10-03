@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "4e1c4012-34b3-a73b-c40c-85f1bd0c4b32",
+  "raw": {
+    "contract_num": "1986029",
+    "advertiser": "Sandy Lee/D.Circuit Court Judge",
+    "gross_amount": 2255,
+    "flight_from": "2020-02-24",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 2653,
+  "costUsd": 0.0030737,
+  "provider": "Mistral",
+  "inputTokens": 6214,
+  "outputTokens": 93
+}

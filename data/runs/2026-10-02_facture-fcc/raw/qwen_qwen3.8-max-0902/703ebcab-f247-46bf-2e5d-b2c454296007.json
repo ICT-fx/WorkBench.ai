@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "703ebcab-f247-46bf-2e5d-b2c454296007",
-  "raw": null,
-  "latencyMs": 448,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "111915",
+    "advertiser": "POL/Bloomberg, Mike/D/ Pres/US",
+    "gross_amount": 212,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-03-29",
+    "vat_number": null
+  },
+  "latencyMs": 14097,
+  "costUsd": 0.012628,
+  "provider": "Alibaba",
+  "inputTokens": 4676,
+  "outputTokens": 546
 }

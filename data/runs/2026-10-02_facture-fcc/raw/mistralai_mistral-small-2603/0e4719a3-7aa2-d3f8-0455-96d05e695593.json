@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-small-2603",
+  "modelVersion": "mistralai/mistral-small-2603",
+  "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+  "raw": {
+    "contract_num": "9752880",
+    "advertiser": "POLLUM BLOOMBERG",
+    "gross_amount": 5680,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 1206,
+  "costUsd": 0.00041475,
+  "provider": "Mistral",
+  "inputTokens": 2393,
+  "outputTokens": 93
+}

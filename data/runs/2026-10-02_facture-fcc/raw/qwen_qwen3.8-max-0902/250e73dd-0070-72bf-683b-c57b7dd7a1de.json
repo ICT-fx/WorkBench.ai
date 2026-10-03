@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "250e73dd-0070-72bf-683b-c57b7dd7a1de",
-  "raw": null,
-  "latencyMs": 478,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "379140",
+    "advertiser": "Biden for President",
+    "gross_amount": 3755,
+    "flight_from": "2020-01-21",
+    "flight_to": "2020-01-27",
+    "vat_number": null
+  },
+  "latencyMs": 10825,
+  "costUsd": 0.020698,
+  "provider": "Alibaba",
+  "inputTokens": 8840,
+  "outputTokens": 503
 }

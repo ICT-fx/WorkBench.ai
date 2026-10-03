@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "3bdbc1a7-5599-24d3-08a8-8c22749f5e79",
+  "raw": {
+    "contract_num": "224996-1",
+    "advertiser": "Bloomberg, M. for President",
+    "gross_amount": 3384,
+    "flight_from": "02/13/20",
+    "flight_to": "02/14/20",
+    "vat_number": null
+  },
+  "latencyMs": 2457,
+  "costUsd": 0.0058152,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 6925,
+  "outputTokens": 86
+}

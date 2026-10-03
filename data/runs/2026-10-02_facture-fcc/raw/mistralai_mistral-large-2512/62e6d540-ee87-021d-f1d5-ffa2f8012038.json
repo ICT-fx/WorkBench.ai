@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "62e6d540-ee87-021d-f1d5-ffa2f8012038",
+  "raw": {
+    "contract_num": "713628",
+    "advertiser": "Marshall/Republican/US Senate",
+    "gross_amount": 4850,
+    "flight_from": "2020-06-09",
+    "flight_to": "2020-06-15",
+    "vat_number": null
+  },
+  "latencyMs": 75946,
+  "costUsd": 0.0021152,
+  "provider": "Mistral",
+  "inputTokens": 4303,
+  "outputTokens": 91
+}

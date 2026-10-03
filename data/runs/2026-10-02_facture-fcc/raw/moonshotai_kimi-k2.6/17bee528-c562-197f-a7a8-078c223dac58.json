@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "17bee528-c562-197f-a7a8-078c223dac58",
+  "raw": {
+    "contract_num": "4204754",
+    "advertiser": "Mike Bloomberg 2020 Inc-D (133903)",
+    "gross_amount": 2095,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 53618,
+  "costUsd": 0.01756884,
+  "provider": "Baidu",
+  "inputTokens": 4200,
+  "outputTokens": 3909
+}

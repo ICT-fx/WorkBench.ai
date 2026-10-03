@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "11a46278-4c24-74df-7313-e6f38abcb42f",
+  "raw": {
+    "contract_num": "11936",
+    "advertiser": "POL/Donald Trump/President/US/Rep",
+    "gross_amount": 8260,
+    "flight_from": "05/28/20",
+    "flight_to": "06/01/20",
+    "vat_number": null
+  },
+  "latencyMs": 2854,
+  "costUsd": 0.0070704,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 8490,
+  "outputTokens": 87
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "5d56f8db-474f-29eb-68ba-5c48950c9802",
+  "raw": {
+    "contract_num": "2006670",
+    "advertiser": "Club For Growth Action",
+    "gross_amount": 12100,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 77530,
+  "costUsd": 0.02982488,
+  "provider": "Baidu",
+  "inputTokens": 7934,
+  "outputTokens": 6559
+}

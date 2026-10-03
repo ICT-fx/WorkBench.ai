@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "62e6d540-ee87-021d-f1d5-ffa2f8012038",
+  "raw": {
+    "contract_num": "713628",
+    "advertiser": "Marshall/Republican/US Senate",
+    "gross_amount": 4850,
+    "flight_from": "06/09/20",
+    "flight_to": "06/15/20",
+    "vat_number": null
+  },
+  "latencyMs": 1630,
+  "costUsd": 0.0032328,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 3705,
+  "outputTokens": 84
+}

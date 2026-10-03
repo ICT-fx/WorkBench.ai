@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "26f3961b-264a-e31e-e91e-c5b8211bed89",
+  "raw": {
+    "contract_num": "574056",
+    "advertiser": "FlexPoint Media Inc -- EDI (5042)",
+    "gross_amount": 34900,
+    "flight_from": "2020-06-23",
+    "flight_to": "2020-06-29",
+    "vat_number": null
+  },
+  "latencyMs": 39730,
+  "costUsd": 0.0108966,
+  "provider": "Cohere",
+  "inputTokens": 10742,
+  "outputTokens": 5116
+}

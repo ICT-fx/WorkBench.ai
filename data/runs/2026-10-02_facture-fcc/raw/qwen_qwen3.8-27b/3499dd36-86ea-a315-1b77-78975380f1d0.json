@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "3499dd36-86ea-a315-1b77-78975380f1d0",
+  "raw": {
+    "contract_num": "693596",
+    "advertiser": "McGrath/Democrat/US Senate",
+    "gross_amount": 8670,
+    "flight_from": "2020-04-07",
+    "flight_to": "2020-04-13",
+    "vat_number": null
+  },
+  "latencyMs": 20266,
+  "costUsd": 0.002152575,
+  "provider": "Phala",
+  "inputTokens": 3386,
+  "outputTokens": 881
+}

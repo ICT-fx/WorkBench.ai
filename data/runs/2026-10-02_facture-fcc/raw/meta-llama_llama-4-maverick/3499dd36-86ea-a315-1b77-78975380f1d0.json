@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "3499dd36-86ea-a315-1b77-78975380f1d0",
+  "raw": {
+    "contract_num": "693596",
+    "advertiser": "McGrath/Democrat/US Senate",
+    "gross_amount": 8670,
+    "flight_from": "2020-04-07",
+    "flight_to": "2020-04-13",
+    "vat_number": null
+  },
+  "latencyMs": 5058,
+  "costUsd": 0.0010626525,
+  "provider": "DigitalOcean",
+  "inputTokens": 5403,
+  "outputTokens": 76
+}

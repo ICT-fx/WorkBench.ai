@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "36ff284e-9896-61f0-8eec-2fc990794d04",
+  "raw": {
+    "contract_num": "691347",
+    "advertiser": "Gianforte /Republican/ Governor",
+    "gross_amount": 2250,
+    "flight_from": "03/30/20",
+    "flight_to": "04/12/20",
+    "vat_number": null
+  },
+  "latencyMs": 1638,
+  "costUsd": 0.003236,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 3705,
+  "outputTokens": 85
+}

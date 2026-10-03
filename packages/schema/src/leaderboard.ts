@@ -41,6 +41,13 @@ export const LeaderboardSchema = z.object({
   status: z.enum(["reel", "demo"]),
   runDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Date attendue au format AAAA-MM-JJ"),
   sampleSize: z.number().int().min(1),
+  /**
+   * Documents interrogés mais écartés du classement, faute d'avoir été lus par
+   * tout le panel. Sans ce chiffre, le classement paraît sans accroc : les
+   * appels en échec ont disparu avec les documents qu'ils concernaient, et
+   * chaque modèle affiche zéro échec. Le lecteur doit savoir ce qui manque.
+   */
+  excluded: z.number().int().min(0).default(0),
   rows: z.array(LeaderboardRowSchema),
 });
 export type Leaderboard = z.infer<typeof LeaderboardSchema>;

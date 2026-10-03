@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+  "raw": {
+    "contract_num": "91752880",
+    "advertiser": "POLI BLOOMBERG/IPI/EUS",
+    "gross_amount": 6680,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-13",
+    "vat_number": null
+  },
+  "latencyMs": 2072,
+  "costUsd": 0.0019696,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 2086,
+  "outputTokens": 94
+}

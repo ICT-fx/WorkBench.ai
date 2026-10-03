@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "5d8fb479-8a50-0bd7-467a-9491fd80fa60",
+  "raw": {
+    "contract_num": "709091",
+    "advertiser": "Williams/Democrat/Governor",
+    "gross_amount": 3526,
+    "flight_from": "05/27/20",
+    "flight_to": "05/31/20",
+    "vat_number": null
+  },
+  "latencyMs": 2156,
+  "costUsd": 0.0045176,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 5315,
+  "outputTokens": 83
+}

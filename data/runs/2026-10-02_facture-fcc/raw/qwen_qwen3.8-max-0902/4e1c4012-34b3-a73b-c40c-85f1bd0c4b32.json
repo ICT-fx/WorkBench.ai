@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "4e1c4012-34b3-a73b-c40c-85f1bd0c4b32",
-  "raw": null,
-  "latencyMs": 849,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "1986029",
+    "advertiser": "Sandy Lee/D/Circuit Court Judge",
+    "gross_amount": 2255,
+    "flight_from": "2020-02-28",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 10134,
+  "costUsd": 0.012058,
+  "provider": "Alibaba",
+  "inputTokens": 4676,
+  "outputTokens": 451
 }

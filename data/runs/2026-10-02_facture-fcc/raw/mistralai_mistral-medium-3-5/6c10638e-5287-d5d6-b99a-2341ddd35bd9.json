@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-medium-3-5",
+  "modelVersion": "mistralai/mistral-medium-3-5",
+  "docId": "6c10638e-5287-d5d6-b99a-2341ddd35bd9",
+  "raw": {
+    "contract_num": "2363932",
+    "advertiser": "POL/Joyce Beatty/Congress/OH/Dem",
+    "gross_amount": 2200,
+    "flight_from": "2020-01-27",
+    "flight_to": "2020-02-09",
+    "vat_number": null
+  },
+  "latencyMs": 1671,
+  "costUsd": 0.0042795,
+  "provider": "Mistral",
+  "inputTokens": 2393,
+  "outputTokens": 92
+}

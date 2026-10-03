@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "11a46278-4c24-74df-7313-e6f38abcb42f",
+  "raw": {
+    "contract_num": "2521014",
+    "advertiser": "POL/Donald Trump/President/US/Rep",
+    "gross_amount": 8260,
+    "flight_from": "2020-05-28",
+    "flight_to": "2020-06-01",
+    "vat_number": null
+  },
+  "latencyMs": 4110,
+  "costUsd": 0.005133,
+  "provider": "Mistral",
+  "inputTokens": 9981,
+  "outputTokens": 95
+}

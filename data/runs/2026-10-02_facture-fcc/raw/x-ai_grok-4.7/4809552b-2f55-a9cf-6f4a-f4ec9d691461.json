@@ -3,8 +3,17 @@
   "model": "x-ai/grok-4.7",
   "modelVersion": "x-ai/grok-4.7",
   "docId": "4809552b-2f55-a9cf-6f4a-f4ec9d691461",
-  "raw": null,
-  "latencyMs": 738,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "4269356",
+    "advertiser": "Biden for President-D (27957)",
+    "gross_amount": 350,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 5736,
+  "costUsd": 0.00815,
+  "provider": "xAI",
+  "inputTokens": 3172,
+  "outputTokens": 589
 }

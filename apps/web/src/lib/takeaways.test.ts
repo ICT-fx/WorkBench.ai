@@ -16,7 +16,7 @@ const row = (model: string, exactitude: number, over: Partial<LeaderboardRow> = 
 });
 
 const classement = (rows: LeaderboardRow[]): Leaderboard =>
-  ({ taskId: "test", runId: "r", status: "reel", runDate: "2026-09-15", sampleSize: 40, rows });
+  ({ taskId: "test", runId: "r", status: "reel", runDate: "2026-09-15", sampleSize: 40, excluded: 0, rows });
 
 const lire = (rows: LeaderboardRow[], excluded = 0) => takeaways({
   benchmark, leaderboard: classement(rows), excluded, locale: "fr", dict: getDictionary("fr"),

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "805aafc6-4723-142b-fbb6-7876a8f14bad",
+  "raw": {
+    "contract_num": "2394321",
+    "advertiser": "Buying Time LLC",
+    "gross_amount": 16045,
+    "flight_from": "02/24/20",
+    "flight_to": "03/29/20",
+    "vat_number": null
+  },
+  "latencyMs": 1946,
+  "costUsd": 0.0032328,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 3705,
+  "outputTokens": 84
+}

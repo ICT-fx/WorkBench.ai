@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-medium-3-5",
+  "modelVersion": "mistralai/mistral-medium-3-5",
+  "docId": "17bee528-c562-197f-a7a8-078c223dac58",
+  "raw": {
+    "contract_num": "4204754",
+    "advertiser": "Mike Bloomberg 2020 Inc-D (133903)",
+    "gross_amount": 1780.75,
+    "flight_from": "2020-01-20",
+    "flight_to": "2020-01-26",
+    "vat_number": null
+  },
+  "latencyMs": 2365,
+  "costUsd": 0.0072075,
+  "provider": "Mistral",
+  "inputTokens": 4315,
+  "outputTokens": 98
+}

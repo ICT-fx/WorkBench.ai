@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "8588921b-ac32-c431-e2f8-b30fbc821a80",
-  "raw": null,
-  "latencyMs": 436,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "2362879",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 3120,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 168345,
+  "costUsd": 0.043884,
+  "provider": "Alibaba",
+  "inputTokens": 3288,
+  "outputTokens": 6218
 }

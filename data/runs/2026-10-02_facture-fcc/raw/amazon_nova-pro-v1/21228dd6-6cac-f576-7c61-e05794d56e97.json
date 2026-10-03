@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "21228dd6-6cac-f576-7c61-e05794d56e97",
+  "raw": {
+    "contract_num": "1551639",
+    "advertiser": "Woody Thrasher for Governor 2020",
+    "gross_amount": 3060,
+    "flight_from": "03/12/20",
+    "flight_to": "03/15/20",
+    "vat_number": null
+  },
+  "latencyMs": 2706,
+  "costUsd": 0.0032488,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 3705,
+  "outputTokens": 89
+}

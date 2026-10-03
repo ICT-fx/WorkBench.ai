@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "76b092d7-cdf8-974d-9092-e0e016a3260a",
+  "raw": {
+    "contract_num": "714812",
+    "advertiser": "American Bridge 21st Century PAC",
+    "gross_amount": 3035,
+    "flight_from": "2020-07-14",
+    "flight_to": "2020-07-20",
+    "vat_number": null
+  },
+  "latencyMs": 18100,
+  "costUsd": 0.0022895,
+  "provider": "Mistral",
+  "inputTokens": 4303,
+  "outputTokens": 92
+}

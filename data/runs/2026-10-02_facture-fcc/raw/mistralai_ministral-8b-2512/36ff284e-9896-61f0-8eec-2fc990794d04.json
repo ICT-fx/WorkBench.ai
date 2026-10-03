@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "36ff284e-9896-61f0-8eec-2fc990794d04",
+  "raw": {
+    "contract_num": "691347",
+    "advertiser": "Gianforte /Republican/ Governor",
+    "gross_amount": 2250,
+    "flight_from": "2020-03-30",
+    "flight_to": "2020-04-12",
+    "vat_number": null
+  },
+  "latencyMs": 2941,
+  "costUsd": 0.0006591,
+  "provider": "Mistral",
+  "inputTokens": 4303,
+  "outputTokens": 91
+}

@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "8b687291-2dfb-fcd3-d827-7f36e3e89ef3",
-  "raw": null,
-  "latencyMs": 646,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "953959",
+    "advertiser": "Warren for President",
+    "gross_amount": 8850,
+    "flight_from": "2020-02-29",
+    "flight_to": "2020-03-04",
+    "vat_number": null
+  },
+  "latencyMs": 4276,
+  "costUsd": 0.015131,
+  "provider": "OpenAI",
+  "inputTokens": 5573,
+  "outputTokens": 120
 }

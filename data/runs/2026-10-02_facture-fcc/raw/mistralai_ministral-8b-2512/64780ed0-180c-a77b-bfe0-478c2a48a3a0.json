@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "64780ed0-180c-a77b-bfe0-478c2a48a3a0",
+  "raw": {
+    "contract_num": "566900",
+    "advertiser": "Priorities USA Action (20447)",
+    "gross_amount": 40700,
+    "flight_from": "2020-05-19",
+    "flight_to": "2020-05-22",
+    "vat_number": null
+  },
+  "latencyMs": 1942,
+  "costUsd": 0.0006564,
+  "provider": "Mistral",
+  "inputTokens": 4281,
+  "outputTokens": 95
+}

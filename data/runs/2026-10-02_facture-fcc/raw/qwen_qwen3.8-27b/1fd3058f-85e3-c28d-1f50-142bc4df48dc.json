@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "1fd3058f-85e3-c28d-1f50-142bc4df48dc",
+  "raw": {
+    "contract_num": "386699",
+    "advertiser": "Claire Chase for Congress",
+    "gross_amount": 11490,
+    "flight_from": "2020-05-21",
+    "flight_to": "2020-05-29",
+    "vat_number": null
+  },
+  "latencyMs": 12410,
+  "costUsd": 0.001905225,
+  "provider": "Phala",
+  "inputTokens": 6162,
+  "outputTokens": 527
+}

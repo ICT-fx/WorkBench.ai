@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-medium-3-5",
+  "modelVersion": "mistralai/mistral-medium-3-5",
+  "docId": "21228dd6-6cac-f576-7c61-e05794d56e97",
+  "raw": {
+    "contract_num": "1551639",
+    "advertiser": "Woody Thrashers for Governor 2020",
+    "gross_amount": 3060,
+    "flight_from": "2020-03-12",
+    "flight_to": "2020-03-15",
+    "vat_number": null
+  },
+  "latencyMs": 2130,
+  "costUsd": 0.00717,
+  "provider": "Mistral",
+  "inputTokens": 4315,
+  "outputTokens": 93
+}

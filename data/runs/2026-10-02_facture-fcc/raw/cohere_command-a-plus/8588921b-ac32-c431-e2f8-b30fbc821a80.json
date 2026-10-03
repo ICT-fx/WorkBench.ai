@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "8588921b-ac32-c431-e2f8-b30fbc821a80",
+  "raw": {
+    "contract_num": "2362879",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 3120,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 41418,
+  "costUsd": 0.0084744,
+  "provider": "Cohere",
+  "inputTokens": 5598,
+  "outputTokens": 4530
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "google/gemini-3.8-flash",
+  "modelVersion": "google/gemini-3.8-flash",
+  "docId": "5d8fb479-8a50-0bd7-467a-9491fd80fa60",
+  "raw": {
+    "contract_num": "709091",
+    "advertiser": "Williams/Democrat/Govenor",
+    "gross_amount": 3526,
+    "flight_from": "2020-05-27",
+    "flight_to": "2020-05-31",
+    "vat_number": null
+  },
+  "latencyMs": 8128,
+  "costUsd": 0.0059775,
+  "provider": "Google",
+  "inputTokens": 3805,
+  "outputTokens": 833
+}

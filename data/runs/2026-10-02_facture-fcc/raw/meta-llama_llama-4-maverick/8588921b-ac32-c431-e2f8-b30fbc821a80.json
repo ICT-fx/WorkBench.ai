@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "8588921b-ac32-c431-e2f8-b30fbc821a80",
+  "raw": {
+    "contract_num": "2362879",
+    "advertiser": "POL/Michael Bloomberg/President/US/Dem",
+    "gross_amount": 3120,
+    "flight_from": "2019-12-30",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 5767,
+  "costUsd": 0.0010639575,
+  "provider": "DigitalOcean",
+  "inputTokens": 5403,
+  "outputTokens": 78
+}

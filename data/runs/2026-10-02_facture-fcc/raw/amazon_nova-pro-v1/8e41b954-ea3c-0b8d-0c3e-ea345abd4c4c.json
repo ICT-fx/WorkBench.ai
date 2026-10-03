@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "8e41b954-ea3c-0b8d-0c3e-ea345abd4c4c",
+  "raw": {
+    "contract_num": "1007158",
+    "advertiser": "Mike Bloomberg 2020 Inc For President C/O",
+    "gross_amount": 179980,
+    "flight_from": "02/22/20",
+    "flight_to": "03/03/20",
+    "vat_number": null
+  },
+  "latencyMs": 3853,
+  "costUsd": 0.0071288,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 8535,
+  "outputTokens": 94
+}

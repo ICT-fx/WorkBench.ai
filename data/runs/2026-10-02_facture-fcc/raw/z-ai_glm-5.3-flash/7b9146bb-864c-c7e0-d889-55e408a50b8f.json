@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "7b9146bb-864c-c7e0-d889-55e408a50b8f",
+  "raw": {
+    "contract_num": "2501988",
+    "advertiser": "POL/John James/US Senate/MI/Rep",
+    "gross_amount": 1025,
+    "flight_from": "2020-05-07",
+    "flight_to": "2020-05-13",
+    "vat_number": null
+  },
+  "latencyMs": 4568,
+  "costUsd": 0.0010981,
+  "provider": "Together",
+  "inputTokens": 6064,
+  "outputTokens": 377
+}

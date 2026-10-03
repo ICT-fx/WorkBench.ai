@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "7bbe366d-1e09-b2c3-e969-c45940fc5d71",
+  "raw": {
+    "contract_num": "90171",
+    "advertiser": "COMMITTEE TO ELECT SHEMIA FAGAN (5673)",
+    "gross_amount": 4485,
+    "flight_from": "2020-05-05",
+    "flight_to": "2020-05-15",
+    "vat_number": null
+  },
+  "latencyMs": 2666,
+  "costUsd": 0.001409,
+  "provider": "Google",
+  "inputTokens": 3805,
+  "outputTokens": 107
+}

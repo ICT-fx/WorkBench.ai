@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "8e41b954-ea3c-0b8d-0c3e-ea345abd4c4c",
+  "raw": {
+    "contract_num": "1007158",
+    "advertiser": "Mike Bloomberg 2020 Inc (For President) C/O",
+    "gross_amount": 179980,
+    "flight_from": "2020-02-22",
+    "flight_to": "2020-03-03",
+    "vat_number": null
+  },
+  "latencyMs": 14343,
+  "costUsd": 0.0069057,
+  "provider": "Cohere",
+  "inputTokens": 13314,
+  "outputTokens": 1941
+}

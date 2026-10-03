@@ -146,6 +146,7 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard & {
       // La taille de l'échantillon est celle du classement, pas celle du run :
       // annoncer les documents écartés comme s'ils avaient été mesurés serait faux.
       sampleSize: communs.size,
+      excluded: incomplets,
       rows,
     }),
     incomplets,

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "26f3961b-264a-e31e-e91e-c5b8211bed89",
+  "raw": {
+    "contract_num": "574056",
+    "advertiser": "NRSC IE (23306)",
+    "gross_amount": 34900,
+    "flight_from": "2020-06-23",
+    "flight_to": "2020-06-29",
+    "vat_number": null
+  },
+  "latencyMs": 6170,
+  "costUsd": 0.003299604,
+  "provider": "Together",
+  "inputTokens": 3911,
+  "outputTokens": 1866
+}

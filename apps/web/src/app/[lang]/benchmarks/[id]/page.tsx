@@ -227,6 +227,7 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
           <dl className="chiffres mt-8 max-w-xl border-t border-filet text-sm">
             {[
               [t.facts.sample, `${leaderboard.sampleSize} ${unit}s`],
+              ...(leaderboard.excluded > 0 ? [[t.facts.excluded, String(leaderboard.excluded)]] : []),
               [t.facts.input, benchmark.input === "document" ? t.facts.inputDocument : t.facts.inputText],
               [t.facts.tested, String(leaderboard.rows.length)],
               [t.facts.maturity, benchmark.maturity === "pipeline" ? dict.common.labels.pipeline : dict.common.labels.draft],
@@ -239,6 +240,11 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
               </div>
             ))}
           </dl>
+          {leaderboard.excluded > 0 && (
+            <p className="mt-4 max-w-[52rem] text-sm text-encre-pale">
+              {fill(t.facts.excludedWhy, { n: leaderboard.excluded })}
+            </p>
+          )}
         </section>
 
         {meneurs.length > 0 && (
