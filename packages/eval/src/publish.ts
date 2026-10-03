@@ -108,11 +108,31 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard & {
     if (r.error !== undefined) t.echecs++;
     tentatives.set(r.model, t);
   }
+  // Deux garde-fous se succèdent, et il ne faut pas les confondre.
+  //
+  // Celui du dessus — n'garder que les documents lus par tout le panel — assure
+  // l'équité : un modèle ne peut plus être noté sur un sous-ensemble flatteur,
+  // puisque ses échecs retirent le document à tout le monde.
+  //
+  // Celui-ci ne protège donc plus l'équité, mais la substance : au-delà de la
+  // moitié d'échecs, un modèle n'a pas été testé, et le classer serait un abus
+  // de langage. En deçà, ses échecs sont rendus visibles — `errorCount` est
+  // publié et affiché — plutôt que de bloquer une mesure par ailleurs juste.
+  // Les échecs observés jusqu'ici venaient tous de notre côté : plafond de
+  // jetons trop bas pour un modèle bavard, limite de débit chez l'hébergeur.
   for (const [model, t] of tentatives) {
-    if (t.total > 0 && t.echecs / t.total > maxErrorRate) {
+    if (t.total > 0 && t.echecs / t.total > 0.5) {
       throw new Error(
-        `Publication refusée : ${model} a ${t.echecs} appel(s) en échec sur ${t.total} ` +
-        `(${Math.round((t.echecs / t.total) * 100)} %). Relancer le run avant de publier.`,
+        `Publication refusée : ${model} a échoué sur ${t.echecs} appel(s) sur ${t.total} ` +
+        `(${Math.round((t.echecs / t.total) * 100)} %). Ce modèle n'a pas été testé, ` +
+        `le classer serait un abus de langage. Relancer le run avant de publier.`,
+      );
+    }
+    if (t.total > 0 && t.echecs / t.total > maxErrorRate) {
+      console.warn(
+        `  ⚠ ${model} : ${t.echecs} appel(s) en échec sur ${t.total} ` +
+        `(${Math.round((t.echecs / t.total) * 100)} %). Les documents concernés sont ` +
+        `écartés pour tout le panel ; le compteur reste publié.`,
       );
     }
   }

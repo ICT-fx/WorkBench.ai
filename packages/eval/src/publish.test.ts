@@ -85,14 +85,30 @@ describe("buildLeaderboard", () => {
     expect(lb.runDate).toBe("2026-10-08");
   });
 
-  it("refuse de publier quand un modèle dépasse 10 % d'appels en échec", () => {
+  it("refuse de publier un modèle qui a échoué plus d'une fois sur deux", () => {
+    // En deçà, les documents en échec sont écartés pour tout le panel et
+    // l'équité tient ; au-delà, le modèle n'a pas été testé du tout.
     const instables: ModelResult[] = [
       ...results,
-      { runId: "r", model: "m", modelVersion: "m-v1", docId: "f-002", raw: {}, latencyMs: 0, costUsd: 0, error: "timeout" },
+      ...["f-002", "f-003"].map((docId) => ({
+        runId: "r", model: "m", modelVersion: "m-v1", docId,
+        raw: null, latencyMs: 0, costUsd: 0, error: "timeout",
+      })),
     ];
     expect(() => buildLeaderboard({
+      taskId: "tache-test", runId: "2026-10-08_tache-test", status: "reel", runDate: "2026-10-08", scores, results: instables, sampleSize: 3,
+    })).toThrow(/n'a pas été testé/);
+  });
+
+  it("publie malgré des échecs minoritaires, en les laissant visibles", () => {
+    const instables: ModelResult[] = [
+      ...results,
+      { runId: "r", model: "m", modelVersion: "m-v1", docId: "f-002", raw: null, latencyMs: 0, costUsd: 0, error: "429" },
+    ];
+    const lb = buildLeaderboard({
       taskId: "tache-test", runId: "2026-10-08_tache-test", status: "reel", runDate: "2026-10-08", scores, results: instables, sampleSize: 2,
-    })).toThrow(/échec/i);
+    });
+    expect(lb.rows).toHaveLength(1);
   });
 
   it("refuse une date de run mal formée", () => {
@@ -190,6 +206,6 @@ describe("taux d'échec et documents écartés", () => {
     ];
     expect(() => buildLeaderboard({
       taskId: "t", runId: "r", status: "reel", runDate: "2026-10-03", scores, results, sampleSize: 2,
-    })).toThrow(/a a 3 appel\(s\) en échec sur 5/);
+    })).toThrow(/a a échoué sur 3 appel\(s\) sur 5/);
   });
 });
