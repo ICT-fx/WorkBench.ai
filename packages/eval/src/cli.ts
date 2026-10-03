@@ -158,6 +158,19 @@ async function cmdScore(taskId: string): Promise<void> {
   const [task, groundTruths, results, documents] = await Promise.all([
     loadTask(taskId), loadGroundTruths(taskId), loadRunResults(runDir), loadDocuments(taskId),
   ]);
+  // La notation refuse --limit : ce filtre est positionnel, et le dossier des
+  // documents grossit entre deux runs. Appliqué des mois plus tard, « les 25
+  // premiers » ne désignent plus les mêmes factures — l'essai a noté sept
+  // documents de septembre sur dix-neuf, sans rien signaler. Le périmètre d'un
+  // run est ce que le run contient ; les plafonds, eux, restent utiles car ils
+  // décrivent une propriété du document.
+  if (arg("limit") !== undefined) {
+    throw new Error(
+      "--limit ne s'applique pas à la notation : il désigne un rang, pas un document, " +
+      "et le tirage s'allonge d'un run à l'autre. Noter avec les seuls plafonds " +
+      "(--max-pages, --max-pixels) ; la publication écarte ensuite les documents " +
+      "que tout le panel n'a pas lus.");
+  }
   const retenus = new Set(perimetre(documents).map((d) => d.docId));
 
   const scores: DocScore[] = [];

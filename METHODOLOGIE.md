@@ -259,6 +259,15 @@ gris**, et vérifier le poids avant de commiter.
 
 ## Sur l'exécution et l'argent
 
+**`--limit` désigne un rang, pas un document.** Le filtre garde les N premiers du
+tirage. Le tirage s'allonge quand on prépare de nouveaux documents : « les 25
+premiers » de septembre, rejoués en octobre sur un dossier passé de 39 à 132
+documents, ne désignent plus les mêmes factures. Renoter septembre avec le même
+`--limit 25` a produit sept documents au lieu de dix-neuf, sans rien signaler.
+La notation le refuse désormais : le périmètre d'un run est ce que le run
+contient, et les plafonds de pages et de pixels suffisent, car ils décrivent une
+propriété du document et non son rang.
+
 **Le plafond d'une clé n'est pas le solde d'un compte.** `key:check` affichait
 « plafond : 50 $ » : c'est une limite posée sur la clé, pas de l'argent disponible.
 Le compte, lui, n'avait que 0,09 $. Un lot de 40 documents a été dimensionné sur

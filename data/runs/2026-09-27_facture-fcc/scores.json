@@ -10,13 +10,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-12-29",
-        "expected": "2020-03-29",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -25,7 +18,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-lite-v1",
@@ -37,13 +30,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -66,13 +52,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -81,7 +60,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-lite-v1",
@@ -93,13 +72,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -122,13 +94,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -149,13 +114,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -178,13 +136,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-10",
-        "expected": "2020-03-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -205,13 +156,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -234,13 +178,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -261,13 +198,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -290,13 +220,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -318,13 +241,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-06-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -333,7 +249,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-lite-v1",
@@ -346,13 +262,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-20",
-        "expected": "2020-05-19",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -361,7 +270,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-lite-v1",
@@ -373,13 +282,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -402,13 +304,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -429,13 +324,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -458,13 +346,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-29",
-        "expected": "2020-03-29",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -473,7 +354,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-lite-v1",
@@ -486,13 +367,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-30",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -501,7 +375,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-lite-v1",
@@ -513,13 +387,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -542,13 +409,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -569,13 +429,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "03/17/20",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -598,13 +451,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -625,13 +471,6 @@
         "verdict": "faux",
         "points": 0,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-09-20",
-        "expected": "2020-02-23",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -654,13 +493,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-06-24",
-        "expected": "2020-05-31",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -681,13 +513,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "03/03/20",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -710,13 +535,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "3/8/2020",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -737,13 +555,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "07/30/20",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -766,13 +577,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "01/17/20",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -793,13 +597,6 @@
         "verdict": "faux",
         "points": 0,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "03/16/20",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -822,13 +619,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -849,13 +639,6 @@
         "verdict": "faux",
         "points": 0,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "05/31/20",
-        "expected": "2020-06-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -878,13 +661,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": null,
-        "expected": "2020-05-19",
-        "verdict": "manquant",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -893,7 +669,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-pro-v1",
@@ -905,13 +681,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "05/18/20",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -933,13 +702,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -962,13 +724,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -990,13 +745,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "03/27/20",
-        "expected": "2020-03-29",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1005,7 +753,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-pro-v1",
@@ -1018,13 +766,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "03/20/20",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1033,7 +774,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "amazon/nova-pro-v1",
@@ -1046,13 +787,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1073,13 +807,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1102,13 +829,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1129,13 +849,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1158,13 +871,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1185,13 +891,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1214,13 +913,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1241,13 +933,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1270,13 +955,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1297,13 +975,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1326,13 +997,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1353,13 +1017,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1382,13 +1039,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1409,13 +1059,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1438,13 +1081,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1465,13 +1101,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1494,13 +1123,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1521,13 +1143,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1550,13 +1165,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1577,13 +1185,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1606,13 +1207,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1633,13 +1227,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1662,13 +1249,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1689,13 +1269,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1718,13 +1291,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1745,13 +1311,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1774,13 +1333,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1801,13 +1353,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1830,13 +1375,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1857,13 +1395,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1886,13 +1417,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1913,13 +1437,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1942,13 +1459,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -1969,13 +1479,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -1998,13 +1501,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2025,13 +1521,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2054,13 +1543,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2082,13 +1564,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2109,13 +1584,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2138,13 +1606,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2165,13 +1626,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2194,13 +1648,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2221,13 +1668,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2250,13 +1690,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2277,13 +1710,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2306,13 +1732,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2333,13 +1752,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2362,13 +1774,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2389,13 +1794,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2418,13 +1816,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2445,13 +1836,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2474,13 +1858,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2501,13 +1878,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2530,13 +1900,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2557,13 +1920,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2586,13 +1942,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2614,13 +1963,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2641,13 +1983,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2670,13 +2005,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2697,13 +2025,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2726,13 +2047,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2753,13 +2067,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2782,13 +2089,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2809,13 +2109,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2838,13 +2131,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2865,13 +2151,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2894,13 +2173,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2921,13 +2193,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -2950,13 +2215,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -2977,13 +2235,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3006,13 +2257,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3033,13 +2277,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3062,13 +2299,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3089,13 +2319,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3118,13 +2341,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3146,13 +2362,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3173,13 +2382,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3202,13 +2404,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3229,13 +2424,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3258,13 +2446,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3285,13 +2466,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3314,13 +2488,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3341,13 +2508,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3370,13 +2530,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3397,13 +2550,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3426,13 +2572,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3453,13 +2592,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3482,13 +2614,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3509,13 +2634,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3538,13 +2656,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3565,13 +2676,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3594,13 +2698,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3621,13 +2718,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3650,13 +2740,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3678,13 +2761,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3705,13 +2781,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3734,13 +2803,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3761,13 +2823,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3790,13 +2845,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3817,13 +2865,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3846,13 +2887,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3873,13 +2907,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3902,13 +2929,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3929,13 +2949,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -3958,13 +2971,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -3985,13 +2991,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4014,13 +3013,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4041,13 +3033,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4070,13 +3055,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4097,13 +3075,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4126,13 +3097,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4153,13 +3117,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4182,13 +3139,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4210,13 +3160,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4237,13 +3180,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4266,13 +3202,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4293,13 +3222,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4322,13 +3244,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4349,13 +3264,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4378,13 +3286,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4405,13 +3306,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4434,13 +3328,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4461,13 +3348,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4490,13 +3370,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4517,13 +3390,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4546,13 +3412,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4573,13 +3432,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4602,13 +3454,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4629,13 +3474,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4658,13 +3496,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4685,13 +3516,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4714,13 +3538,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4742,13 +3559,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4769,13 +3579,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4798,13 +3601,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4825,13 +3621,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4854,13 +3643,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4869,7 +3651,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "google/gemma-4-31b-it",
@@ -4882,13 +3664,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2023-02-03",
-        "expected": "2020-02-23",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4897,7 +3672,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "google/gemma-4-31b-it",
@@ -4910,13 +3685,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4937,13 +3705,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -4966,13 +3727,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-20",
-        "expected": "2020-03-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -4981,7 +3735,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "google/gemma-4-31b-it",
@@ -4993,13 +3747,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5022,13 +3769,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2011-01-20",
-        "expected": "2020-01-17",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5037,7 +3777,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "google/gemma-4-31b-it",
@@ -5049,13 +3789,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5078,13 +3811,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5105,13 +3831,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5134,13 +3853,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5161,13 +3873,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5190,13 +3895,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5217,13 +3915,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5246,13 +3937,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-30",
-        "expected": "2020-03-29",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5261,7 +3945,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "google/gemma-4-31b-it",
@@ -5274,13 +3958,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-30",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5289,7 +3966,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "google/gemma-4-31b-it",
@@ -5301,13 +3978,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5330,13 +4000,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5357,13 +4020,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5386,13 +4042,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5413,13 +4062,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5442,13 +4084,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5469,13 +4104,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5498,13 +4126,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5525,13 +4146,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5554,13 +4168,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5581,13 +4188,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5610,13 +4210,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5637,13 +4230,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5666,13 +4252,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5693,13 +4272,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5722,13 +4294,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5749,13 +4314,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5778,13 +4336,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5805,13 +4356,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5834,13 +4378,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5861,13 +4398,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5890,13 +4420,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5917,13 +4440,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -5946,13 +4462,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -5973,13 +4482,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6002,13 +4504,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6030,13 +4525,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6057,13 +4545,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6086,13 +4567,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6113,13 +4587,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6142,13 +4609,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6169,13 +4629,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6198,13 +4651,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6225,13 +4671,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6254,13 +4693,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6281,13 +4713,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6310,13 +4735,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6337,13 +4755,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6366,13 +4777,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6393,13 +4797,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6422,13 +4819,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6450,13 +4840,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6465,7 +4848,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/ministral-8b-2512",
@@ -6477,13 +4860,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6506,13 +4882,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6534,13 +4903,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-05",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6549,7 +4911,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/ministral-8b-2512",
@@ -6561,13 +4923,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6590,13 +4945,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6617,13 +4965,6 @@
         "verdict": "faux",
         "points": 0,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6646,13 +4987,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6673,13 +5007,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6702,13 +5029,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-06-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6717,7 +5037,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/ministral-8b-2512",
@@ -6729,13 +5049,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6758,13 +5071,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6785,13 +5091,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6814,13 +5113,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6841,13 +5133,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6870,13 +5155,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6885,7 +5163,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/ministral-8b-2512",
@@ -6897,13 +5175,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6926,13 +5197,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6953,13 +5217,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -6982,13 +5239,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -6997,7 +5247,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-large-2512",
@@ -7009,13 +5259,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7038,13 +5281,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7065,13 +5301,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7094,13 +5323,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7121,13 +5343,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7150,13 +5365,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7177,13 +5385,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7206,13 +5407,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7234,13 +5428,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-06-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7249,7 +5436,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-large-2512",
@@ -7261,13 +5448,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7290,13 +5470,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7317,13 +5490,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7346,13 +5512,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7373,13 +5532,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7402,13 +5554,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-20",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7417,7 +5562,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-large-2512",
@@ -7429,13 +5574,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7458,13 +5596,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7485,13 +5616,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7514,13 +5638,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7529,7 +5646,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-medium-3-5",
@@ -7541,13 +5658,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7570,13 +5680,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7597,13 +5700,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7626,13 +5722,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7653,13 +5742,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7682,13 +5764,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7709,13 +5784,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7738,13 +5806,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7766,13 +5827,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-06-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7781,7 +5835,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-medium-3-5",
@@ -7793,13 +5847,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7822,13 +5869,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7849,13 +5889,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7878,13 +5911,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7905,13 +5931,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7934,13 +5953,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -7961,13 +5973,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -7990,13 +5995,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8017,13 +6015,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8046,13 +6037,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-07",
-        "expected": "2020-02-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8061,7 +6045,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-small-2603",
@@ -8073,13 +6057,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8102,13 +6079,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8130,13 +6100,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-05",
-        "expected": "2020-03-03",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8145,7 +6108,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-small-2603",
@@ -8157,13 +6120,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8185,13 +6141,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8214,13 +6163,6 @@
         "points": 0,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8242,13 +6184,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8269,13 +6204,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8298,13 +6226,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-06-08",
-        "verdict": "faux",
-        "points": 0,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8313,7 +6234,7 @@
         "maxPoints": 1
       }
     },
-    "needsReview": true
+    "needsReview": false
   },
   {
     "model": "mistralai/mistral-small-2603",
@@ -8325,13 +6246,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8354,13 +6268,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8381,13 +6288,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8410,13 +6310,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8437,13 +6330,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8466,13 +6352,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8494,13 +6373,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8521,13 +6393,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8550,13 +6415,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8577,13 +6435,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8606,13 +6457,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8633,13 +6477,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8662,13 +6499,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8689,13 +6519,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8718,13 +6541,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8745,13 +6561,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8774,13 +6583,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8801,13 +6603,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8830,13 +6625,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8857,13 +6645,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8886,13 +6667,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8913,13 +6687,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8942,13 +6709,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -8969,13 +6729,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -8998,13 +6751,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9025,13 +6771,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9054,13 +6793,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9081,13 +6813,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9110,13 +6835,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9137,13 +6855,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9166,13 +6877,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9193,13 +6897,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9222,13 +6919,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9249,13 +6939,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9278,13 +6961,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9305,13 +6981,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9334,13 +7003,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9361,13 +7023,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9390,13 +7045,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9417,13 +7065,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9446,13 +7087,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9473,13 +7107,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9502,13 +7129,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9529,13 +7149,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9558,12 +7171,89 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
+      "vat_number": {
+        "got": null,
+        "expected": null,
         "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 21960,
+        "expected": 21960,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 14150,
+        "expected": 14150,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 3625,
+        "expected": 3625,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "d297f399-d37d-4970-7701-9807995d4129",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 6925,
+        "expected": 6925,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
       },
       "vat_number": {
         "got": null,
@@ -9586,13 +7276,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9613,13 +7296,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9642,13 +7318,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9669,13 +7338,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9698,13 +7360,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9725,13 +7380,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9754,13 +7402,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9781,13 +7422,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9810,13 +7444,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9837,13 +7464,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9866,13 +7486,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9893,13 +7506,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9922,13 +7528,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -9949,13 +7548,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -9978,13 +7570,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10005,13 +7590,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10034,13 +7612,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10062,13 +7633,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10089,13 +7653,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10118,13 +7675,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10145,13 +7695,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10174,13 +7717,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10201,13 +7737,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10230,13 +7759,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10257,13 +7779,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10286,13 +7801,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10313,13 +7821,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10342,13 +7843,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10369,13 +7863,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10398,13 +7885,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10425,13 +7905,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10454,13 +7927,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10481,13 +7947,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10510,13 +7969,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10537,13 +7989,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10566,13 +8011,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10594,13 +8032,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10621,13 +8052,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10650,13 +8074,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10677,13 +8094,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10706,13 +8116,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10733,13 +8136,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10762,13 +8158,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10789,13 +8178,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10818,13 +8200,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10845,13 +8220,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10874,13 +8242,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10901,13 +8262,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10930,13 +8284,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -10957,13 +8304,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -10986,13 +8326,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11013,13 +8346,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11042,13 +8368,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11069,13 +8388,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11098,13 +8410,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11126,13 +8431,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11153,13 +8451,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11182,13 +8473,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11209,13 +8493,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11238,13 +8515,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11265,13 +8535,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11294,13 +8557,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11321,13 +8577,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11350,13 +8599,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11377,13 +8619,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11406,13 +8641,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11433,13 +8661,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11462,13 +8683,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11489,13 +8703,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11518,13 +8725,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11545,13 +8745,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11574,13 +8767,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11601,13 +8787,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11630,13 +8809,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11658,13 +8830,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11685,13 +8850,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11714,13 +8872,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11741,13 +8892,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11770,13 +8914,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11797,13 +8934,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11826,13 +8956,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11853,13 +8976,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11882,13 +8998,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11909,13 +9018,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11938,13 +9040,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -11965,13 +9060,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -11994,13 +9082,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12021,13 +9102,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12050,13 +9124,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12077,13 +9144,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12106,13 +9166,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12133,13 +9186,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12162,13 +9208,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12190,13 +9229,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12217,13 +9249,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12246,13 +9271,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12273,13 +9291,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12302,13 +9313,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12329,13 +9333,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12358,13 +9355,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12385,13 +9375,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12414,13 +9397,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12441,13 +9417,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12470,13 +9439,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12497,13 +9459,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12526,13 +9481,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12553,13 +9501,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12582,13 +9523,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12609,13 +9543,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12638,13 +9565,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12665,13 +9585,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12694,13 +9607,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12722,13 +9628,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12749,13 +9648,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12778,13 +9670,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12805,13 +9690,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12834,13 +9712,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12861,13 +9732,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12890,13 +9754,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12917,13 +9774,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -12946,13 +9796,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -12973,13 +9816,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13002,13 +9838,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13029,13 +9858,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13058,13 +9880,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13085,13 +9900,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13114,13 +9922,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13141,13 +9942,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13170,13 +9964,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13197,13 +9984,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13226,13 +10006,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13253,13 +10026,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13282,12 +10048,110 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
+      "vat_number": {
+        "got": null,
+        "expected": null,
         "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "988878c1-0908-63f0-8dcd-71381dcafecb",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 3675,
+        "expected": 3675,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 21960,
+        "expected": 21960,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 14150,
+        "expected": 14150,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "d1ba9225-5d0a-63a9-e0fe-859838e0a716",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 24380,
+        "expected": 24380,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "d297f399-d37d-4970-7701-9807995d4129",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 6925,
+        "expected": 6925,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
       },
       "vat_number": {
         "got": null,
@@ -13310,13 +10174,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13337,13 +10194,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13366,13 +10216,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13393,13 +10236,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13422,13 +10258,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13449,13 +10278,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13478,13 +10300,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13505,13 +10320,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13534,13 +10342,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13561,13 +10362,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13590,13 +10384,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13617,13 +10404,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13646,13 +10426,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13673,13 +10446,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13702,13 +10468,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13729,13 +10488,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13758,13 +10510,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13786,13 +10531,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13813,13 +10551,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13842,13 +10573,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13869,13 +10593,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-17",
-        "expected": "2020-03-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13898,13 +10615,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-03",
-        "expected": "2020-02-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13925,13 +10635,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-23",
-        "expected": "2020-02-23",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -13954,13 +10657,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-31",
-        "expected": "2020-05-31",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -13981,13 +10677,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -14010,13 +10699,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-08",
-        "expected": "2020-03-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14037,13 +10719,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-07-30",
-        "expected": "2020-07-30",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -14066,13 +10741,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-01-17",
-        "expected": "2020-01-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14093,13 +10761,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-03-16",
-        "expected": "2020-03-16",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -14122,13 +10783,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-02-17",
-        "expected": "2020-02-17",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14149,13 +10803,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-06-08",
-        "expected": "2020-06-08",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -14178,13 +10825,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-19",
-        "expected": "2020-05-19",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14205,13 +10845,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-18",
-        "expected": "2020-05-18",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -14234,13 +10867,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-05-04",
-        "expected": "2020-05-04",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14261,13 +10887,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-02-06",
-        "expected": "2020-02-06",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
@@ -14290,13 +10909,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-29",
-        "expected": "2020-03-29",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14318,13 +10930,6 @@
         "points": 3,
         "maxPoints": 3
       },
-      "flight_to": {
-        "got": "2020-03-03",
-        "expected": "2020-03-03",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
-      },
       "vat_number": {
         "got": null,
         "expected": null,
@@ -14345,13 +10950,6 @@
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
-      },
-      "flight_to": {
-        "got": "2020-05-12",
-        "expected": "2020-05-12",
-        "verdict": "correct",
-        "points": 2,
-        "maxPoints": 2
       },
       "vat_number": {
         "got": null,
