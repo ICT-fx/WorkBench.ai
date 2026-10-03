@@ -94,8 +94,16 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
     );
   }
 
-  const jobs = opts.models.flatMap((model) =>
-    opts.documents.map((doc) => ({ model, doc })));
+  // Document par document, et non modèle par modèle.
+  //
+  // L'ordre ne change rien à un run qui va jusqu'au bout, et tout à un run
+  // interrompu. Modèle par modèle, un arrêt à mi-course laisse trois modèles
+  // ayant tout lu et vingt-quatre n'ayant rien lu : aucun classement n'en sort,
+  // car un classement compare des modèles sur les mêmes documents. Document par
+  // document, le même arrêt laisse des documents complets et un échantillon
+  // réduit mais publiable. Un crédit épuisé a déjà fait perdre 9,13 $ ainsi.
+  const jobs = opts.documents.flatMap((doc) =>
+    opts.models.map((model) => ({ model, doc })));
 
   let errors = 0;
   let reused = 0;

@@ -123,3 +123,24 @@ describe("runTask", () => {
     expect(meta.promptHash).toMatch(/^[0-9a-f]{12}$/);
   });
 });
+
+describe("ordre de parcours", () => {
+  it("épuise un document chez tous les modèles avant de passer au suivant", async () => {
+    // Ce qui compte quand le crédit s'épuise : des documents complets plutôt
+    // que des modèles complets. Un classement compare des modèles sur les mêmes
+    // documents ; des modèles complets sur un échantillon partiel ne valent rien.
+    const ordre: string[] = [];
+    await runTask({
+      task, promptText: "p", documents, models: ["m-a", "m-b", "m-c"],
+      runId: "ordre", outRoot: () => out, concurrency: 1,
+      generate: async ({ model, docId }) => {
+        ordre.push(`${docId}/${model}`);
+        return { object: {}, modelVersion: model, latencyMs: 1, costUsd: 0 };
+      },
+    });
+    expect(ordre).toEqual([
+      "f-001/m-a", "f-001/m-b", "f-001/m-c",
+      "f-002/m-a", "f-002/m-b", "f-002/m-c",
+    ]);
+  });
+});
