@@ -157,6 +157,11 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
     await writeFile(file, `${JSON.stringify(ModelResultSchema.parse(result), null, 2)}\n`);
   });
 
+  // Le prompt réellement envoyé, figé avec le run. Le fichier de la tâche évolue
+  // d'un run à l'autre ; sans cette copie, le site afficherait un prompt qui
+  // n'est pas celui qui a produit les chiffres.
+  await writeFile(join(runDir, "prompt.md"), opts.promptText);
+
   const meta: RunMeta = {
     runId: opts.runId,
     taskId: opts.task.id,

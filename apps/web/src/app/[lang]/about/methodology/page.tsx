@@ -51,8 +51,8 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
   const { benchmarks, leaderboards, pricesSyncedAt } = getHub();
 
   const task = loadTask(TACHE);
-  const prompt = loadPrompt(TACHE);
   const classement = loadLeaderboard(TACHE);
+  const prompt = loadPrompt(TACHE, classement.runId);
 
   const publies = [...leaderboards.values()];
   const demos = publies.filter((lb) => lb.status === "demo").length;

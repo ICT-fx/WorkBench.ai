@@ -81,7 +81,18 @@ export function loadTask(taskId: string): Task {
   return TaskSchema.parse(JSON.parse(readFileSync(file, "utf8")));
 }
 
-export function loadPrompt(taskId: string): string {
+/**
+ * Le prompt d'un run, et à défaut celui de la tâche.
+ *
+ * Le fichier de la tâche évolue d'un run à l'autre ; chaque run en garde la
+ * copie qu'il a réellement envoyée. Afficher celle de la tâche à côté de
+ * chiffres produits par une autre version serait faux, même sans le vouloir.
+ */
+export function loadPrompt(taskId: string, runId?: string): string {
+  for (const run of runId === undefined ? [] : runId.split("+")) {
+    const fichier = join(repoRoot(), "data", "runs", run, "prompt.md");
+    if (existsSync(fichier)) return readFileSync(fichier, "utf8");
+  }
   return readFileSync(join(repoRoot(), "data", "tasks", taskId, "prompt.md"), "utf8");
 }
 

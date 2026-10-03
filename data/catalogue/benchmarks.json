@@ -126,8 +126,8 @@
       "en": "How many invoices does a model read with nothing for a human to fix?"
     },
     "description": {
-      "fr": "De vraies factures d'achat d'espace publicitaire télévisé, déposées auprès du régulateur américain des télécoms et annotées au mot près par des journalistes. Le modèle reçoit les pages scannées et rend trois champs : le montant total facturé, la fin de la période facturée et le numéro de TVA — ce dernier absent de ces documents, pour voir qui invente plutôt que de s'abstenir. Chaque réponse est comparée à l'annotation d'origine par un comparateur écrit à la main : aucune IA ne note une IA.",
-      "en": "Real television advertising invoices filed with the US telecom regulator and annotated word by word by journalists. The model receives the scanned pages and returns three fields: total amount billed, end of the billing period, and VAT number — the last one absent from these documents, to see who invents rather than abstains. Every answer is compared against the original annotation by a hand-written comparator: no AI grades an AI."
+      "fr": "De vraies factures d'achat d'espace publicitaire télévisé, déposées auprès du régulateur américain des télécoms et annotées à la main par des journalistes. Le modèle reçoit les pages scannées et doit rendre deux choses : le montant total facturé, et le numéro de TVA — ce dernier absent de ces documents, pour voir qui invente plutôt que de s'abstenir. Chaque réponse est comparée à l'annotation d'origine par un comparateur écrit à la main : aucune IA ne note une IA.",
+      "en": "Real television advertising invoices filed with the US telecom regulator and annotated by hand by journalists. The model receives the scanned pages and must return two things: the total amount billed, and the VAT number — the latter absent from these documents, to see who invents rather than abstains. Every answer is compared against the original annotation by a hand-written comparator: no AI grades an AI."
     },
     "input": "document",
     "unit": {
@@ -144,17 +144,10 @@
         }
       },
       {
-        "id": "flight_to",
-        "label": {
-          "fr": "Fin de la période facturée",
-          "en": "End of billing period"
-        }
-      },
-      {
         "id": "vat_number",
         "label": {
-          "fr": "Numéro de TVA (absent)",
-          "en": "VAT number (absent)"
+          "fr": "Numéro de TVA (absent du document)",
+          "en": "VAT number (absent from the document)"
         }
       }
     ],

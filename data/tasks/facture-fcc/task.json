@@ -1,7 +1,7 @@
 {
   "id": "facture-fcc",
   "label": "Lecture de factures",
-  "question": "Combien de vos factures passeront sans qu'un humain ait à corriger ?",
+  "question": "Combien de factures un modèle lit-il sans qu'un humain ait à corriger le montant ?",
   "criteria": [
     {
       "id": "gross_amount",
@@ -10,39 +10,6 @@
       "weight": 3,
       "critical": true,
       "tolerance": 0
-    },
-    {
-      "id": "contract_num",
-      "label": "Numéro de contrat",
-      "kind": "exact",
-      "weight": 2,
-      "critical": false,
-      "exclu": "Écarté : ces factures portent six identifiants distincts — Contract #, Order #, Invoice #, Estimate #, Alt Order #, Agency Order #. La question n'en désigne aucun sans ambiguïté, et 47 % des réponses ont retenu un autre identifiant du document. On mesurerait la devinette, pas la lecture."
-    },
-    {
-      "id": "advertiser",
-      "label": "Client facturé",
-      "kind": "exact",
-      "weight": 2,
-      "critical": false,
-      "exclu": "Écarté : les champs « Advertiser » et « Product » se recouvrent largement sur ces factures publicitaires, le second reprenant souvent le nom de l'annonceur."
-    },
-    {
-      "id": "flight_from",
-      "label": "Début de la période facturée",
-      "kind": "date",
-      "weight": 2,
-      "critical": false,
-      "dateOrder": "MDY",
-      "exclu": "Écarté sur preuve : ces factures portent deux périodes, « Invoice Period » et « Order Flight », dont les dates de début diffèrent souvent. L'annotation d'origine suit la première, le champ demandé nomme la seconde. Sur trois des dix-neuf documents, la quasi-totalité des modèles — jusqu'à 26 sur 27 — répond la date du champ littéralement intitulé « Flight », contre l'annotation. Quand vingt-six lecteurs indépendants s'accordent contre la référence, c'est la question qui est mauvaise, pas eux. Les dates de fin, elles, coïncident presque toujours : « flight_to » reste noté, avec 6,2 % d'erreurs contre 24,2 % ici."
-    },
-    {
-      "id": "flight_to",
-      "label": "Fin de la période facturée",
-      "kind": "date",
-      "weight": 2,
-      "critical": true,
-      "dateOrder": "MDY"
     },
     {
       "id": "vat_number",
