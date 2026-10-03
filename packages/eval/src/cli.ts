@@ -52,7 +52,9 @@ function perimetre(documents: LoadedDocument[]): LoadedDocument[] {
   // élargit un jeu de test sans vouloir rejouer ce qui est déjà fait.
   const deja = arg("deja");
   if (deja !== undefined) {
-    const faits = documentsMesures(deja);
+    // Plusieurs runs : `--deja a,b`. Élargir un jeu de test sur trois campagnes
+    // demande d'écarter tout ce qui a déjà été payé, pas seulement le dernier run.
+    const faits = new Set(deja.split(",").flatMap((r) => [...documentsMesures(r.trim())]));
     retenus = retenus.filter((d) => !faits.has(d.docId));
   }
 
