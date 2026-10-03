@@ -158,6 +158,11 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard & {
  *
  * L'historique est ce qui permet de suivre un modèle dans le temps : un même
  * alias peut changer de comportement sans prévenir, et seul un re-test le montre.
+ *
+ * Il suppose un barème constant. Quand le barème change — un champ retiré, un
+ * autre ajouté — les publications antérieures ne se comparent plus à la nouvelle,
+ * et les laisser sur la même courbe donnerait à lire une évolution là où il n'y a
+ * qu'un changement de règle. Les retirer à la main est alors la bonne réponse.
  * Republier un run remplace son entrée au lieu de la dupliquer. Une première
  * mesure réelle efface les runs de démonstration : une courbe qui mêlerait les
  * deux ferait passer du fabriqué pour du mesuré.
