@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
+  "raw": {
+    "gross_amount": 6414,
+    "vat_number": null
+  },
+  "latencyMs": 66717,
+  "costUsd": 0.1015821,
+  "provider": "Together",
+  "inputTokens": 11828,
+  "outputTokens": 5159
+}

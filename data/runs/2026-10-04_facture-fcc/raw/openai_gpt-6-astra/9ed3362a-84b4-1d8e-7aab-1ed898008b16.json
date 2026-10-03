@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
+  "raw": {
+    "gross_amount": 9347,
+    "vat_number": null
+  },
+  "latencyMs": 9956,
+  "costUsd": 0.1398425,
+  "provider": "OpenAI",
+  "inputTokens": 10736,
+  "outputTokens": 113
+}

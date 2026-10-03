@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "98905496-5904-ec4a-c59a-7c6d297b4bfa",
+  "raw": {
+    "gross_amount": 1880,
+    "vat_number": null
+  },
+  "latencyMs": 20715,
+  "costUsd": 0.007920605,
+  "provider": "Inceptron",
+  "inputTokens": 7987,
+  "outputTokens": 1717
+}

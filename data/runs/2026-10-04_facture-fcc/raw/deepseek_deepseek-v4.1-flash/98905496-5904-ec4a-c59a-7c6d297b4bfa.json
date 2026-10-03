@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "98905496-5904-ec4a-c59a-7c6d297b4bfa",
+  "raw": {
+    "gross_amount": 1880,
+    "vat_number": null
+  },
+  "latencyMs": 8499,
+  "costUsd": 0.001173261,
+  "provider": "AtlasCloud",
+  "inputTokens": 3993,
+  "outputTokens": 1082
+}

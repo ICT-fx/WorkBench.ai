@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
+  "raw": {
+    "gross_amount": 440,
+    "vat_number": null
+  },
+  "latencyMs": 3882,
+  "costUsd": 0.05925,
+  "provider": "Anthropic",
+  "inputTokens": 5495,
+  "outputTokens": 86
+}

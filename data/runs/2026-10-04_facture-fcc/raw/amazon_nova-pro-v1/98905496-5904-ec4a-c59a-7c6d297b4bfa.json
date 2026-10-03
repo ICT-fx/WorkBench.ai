@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "98905496-5904-ec4a-c59a-7c6d297b4bfa",
+  "raw": {
+    "gross_amount": 1598,
+    "vat_number": null
+  },
+  "latencyMs": 2587,
+  "costUsd": 0.0058736,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 6978,
+  "outputTokens": 91
+}

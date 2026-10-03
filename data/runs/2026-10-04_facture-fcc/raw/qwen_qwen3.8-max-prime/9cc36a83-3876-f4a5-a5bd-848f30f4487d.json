@@ -1,0 +1,13 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
+  "raw": null,
+  "latencyMs": 98527,
+  "costUsd": 0.108304,
+  "provider": "Alibaba",
+  "inputTokens": 3076,
+  "outputTokens": 8000,
+  "error": "réponse sans JSON exploitable : "
+}

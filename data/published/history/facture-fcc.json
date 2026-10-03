@@ -169,6 +169,175 @@
           "latencyP50": 2471
         }
       ]
+    },
+    {
+      "runId": "2026-09-27_facture-fcc+2026-10-02_facture-fcc+2026-10-04_facture-fcc",
+      "runDate": "2026-10-04",
+      "status": "reel",
+      "rows": [
+        {
+          "model": "qwen/qwen3.7-flash",
+          "exactitude": 100,
+          "costPerDoc": 0.000485,
+          "latencyP50": 32576
+        },
+        {
+          "model": "openai/gpt-6-luna",
+          "exactitude": 100,
+          "costPerDoc": 0.000887,
+          "latencyP50": 3788
+        },
+        {
+          "model": "z-ai/glm-5.3-flash",
+          "exactitude": 100,
+          "costPerDoc": 0.001244,
+          "latencyP50": 4970
+        },
+        {
+          "model": "deepseek/deepseek-v4.1-flash",
+          "exactitude": 100,
+          "costPerDoc": 0.003007,
+          "latencyP50": 7190
+        },
+        {
+          "model": "qwen/qwen3.8-27b",
+          "exactitude": 100,
+          "costPerDoc": 0.003524,
+          "latencyP50": 17220
+        },
+        {
+          "model": "cohere/command-a-plus",
+          "exactitude": 100,
+          "costPerDoc": 0.005851,
+          "latencyP50": 15224
+        },
+        {
+          "model": "google/gemini-3.8-flash",
+          "exactitude": 100,
+          "costPerDoc": 0.006677,
+          "latencyP50": 6445
+        },
+        {
+          "model": "meta/muse-spark-1.3",
+          "exactitude": 100,
+          "costPerDoc": 0.012606,
+          "latencyP50": 9889
+        },
+        {
+          "model": "moonshotai/kimi-k2.6",
+          "exactitude": 100,
+          "costPerDoc": 0.012877,
+          "latencyP50": 30984
+        },
+        {
+          "model": "qwen/qwen3.8-max-0902",
+          "exactitude": 100,
+          "costPerDoc": 0.01871,
+          "latencyP50": 14451
+        },
+        {
+          "model": "x-ai/grok-4.7",
+          "exactitude": 100,
+          "costPerDoc": 0.022162,
+          "latencyP50": 16299
+        },
+        {
+          "model": "anthropic/claude-opus-5.5",
+          "exactitude": 100,
+          "costPerDoc": 0.031124,
+          "latencyP50": 5222
+        },
+        {
+          "model": "qwen/qwen3.8-max-prime",
+          "exactitude": 100,
+          "costPerDoc": 0.037605,
+          "latencyP50": 10653
+        },
+        {
+          "model": "openai/gpt-6-astra",
+          "exactitude": 100,
+          "costPerDoc": 0.084916,
+          "latencyP50": 3971
+        },
+        {
+          "model": "moonshotai/kimi-k3",
+          "exactitude": 99.6,
+          "costPerDoc": 0.021803,
+          "latencyP50": 6546
+        },
+        {
+          "model": "google/gemma-4-31b-it",
+          "exactitude": 98.8,
+          "costPerDoc": 0.000223,
+          "latencyP50": 8050
+        },
+        {
+          "model": "mistralai/ministral-8b-2512",
+          "exactitude": 98.8,
+          "costPerDoc": 0.00099,
+          "latencyP50": 2367
+        },
+        {
+          "model": "google/gemini-3.5-flash-lite",
+          "exactitude": 98.8,
+          "costPerDoc": 0.00147,
+          "latencyP50": 1775
+        },
+        {
+          "model": "anthropic/claude-sonnet-5",
+          "exactitude": 98.8,
+          "costPerDoc": 0.014833,
+          "latencyP50": 3061
+        },
+        {
+          "model": "openai/gpt-6-sol",
+          "exactitude": 98.8,
+          "costPerDoc": 0.018019,
+          "latencyP50": 4269
+        },
+        {
+          "model": "anthropic/claude-fable-5.1",
+          "exactitude": 98.8,
+          "costPerDoc": 0.073645,
+          "latencyP50": 5644
+        },
+        {
+          "model": "meta-llama/llama-4-maverick",
+          "exactitude": 97.5,
+          "costPerDoc": 0.001734,
+          "latencyP50": 4571
+        },
+        {
+          "model": "mistralai/mistral-large-2512",
+          "exactitude": 97.5,
+          "costPerDoc": 0.003397,
+          "latencyP50": 19158
+        },
+        {
+          "model": "mistralai/mistral-small-2603",
+          "exactitude": 96.3,
+          "costPerDoc": 0.001051,
+          "latencyP50": 2534
+        },
+        {
+          "model": "mistralai/mistral-medium-3-5",
+          "exactitude": 95.8,
+          "costPerDoc": 0.010701,
+          "latencyP50": 3084
+        },
+        {
+          "model": "amazon/nova-lite-v1",
+          "exactitude": 80,
+          "costPerDoc": 0.000364,
+          "latencyP50": 2216
+        },
+        {
+          "model": "amazon/nova-pro-v1",
+          "exactitude": 75,
+          "costPerDoc": 0.004841,
+          "latencyP50": 2503
+        }
+      ]
     }
   ]
 }

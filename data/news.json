@@ -1,42 +1,46 @@
 [
   {
     "slug": "premiere-mesure-lecture-de-factures",
-    "date": "2026-09-27",
+    "date": "2026-10-04",
     "kind": "benchmark",
     "featured": true,
     "benchmark": "facture-fcc",
     "title": {
-      "fr": "Première mesure : 27 modèles lisent 19 vraies factures",
-      "en": "First measurement: 27 models read 19 real invoices"
+      "fr": "Première mesure : 27 modèles lisent 60 vraies factures",
+      "en": "First measurement: 27 models read 60 real invoices"
     },
     "summary": {
-      "fr": "Dix-neuf modèles sur vingt-sept sont parfaits, et entre le moins cher d'entre eux et le plus cher il y a un facteur 187 pour le même résultat. Zéro invention sur 513 occasions.",
-      "en": "Nineteen models out of twenty-seven are perfect, and between the cheapest and the dearest of them there is a factor of 187 for the same result. Zero inventions across 513 opportunities."
+      "fr": "Quatorze modèles sur vingt-sept lisent chaque montant sans faute, et entre le moins cher d'entre eux et le plus cher il y a un facteur 170 pour le même résultat. Deux modèles inventent un numéro de TVA qui n'existe pas.",
+      "en": "Fourteen models out of twenty-seven read every amount without a mistake, and between the cheapest and the dearest of them there is a factor of 170 for the same result. Two models invent a VAT number that does not exist."
     },
     "body": {
       "fr": [
-        "Le hub publie sa première mesure réelle. Vingt-sept modèles ont lu les mêmes dix-neuf factures, dans les mêmes conditions, avec le même prompt, et chaque réponse a été comparée à une annotation écrite par un humain.",
+        "Le hub publie sa première mesure réelle. Vingt-sept modèles ont lu les mêmes soixante factures, dans les mêmes conditions, et chaque réponse a été comparée à une annotation écrite par un humain.",
         "Les documents ne viennent pas de nous. Ce sont de vraies factures d'achat d'espace publicitaire télévisé, que les chaînes américaines sont tenues de déposer auprès de la Federal Communications Commission et que la loi rend publiques. Des journalistes les ont saisies à la main, champ par champ, pour suivre les dépenses de campagne. C'est cette saisie qui sert de vérité terrain.",
         "Ce que ça donne :",
-        "- Dix-neuf modèles sur vingt-sept obtiennent 100 % d'exactitude. La tâche est moins difficile que prévu, et c'est en soi une information pour une entreprise.",
-        "- Entre le moins cher de ces dix-neuf et le plus cher, il y a un facteur 187 : 0,0006 $ la facture contre 0,109 $, pour un résultat identique.",
-        "- Aucune hallucination. Sur 513 occasions de répondre à un champ absent du document, aucun modèle n'a inventé de valeur.",
-        "- Le dernier du classement, pourtant vendu comme un modèle haut de gamme, ne lit correctement le montant total que dans un cas sur deux.",
-        "Comment on vérifie une réponse, puisque c'est la question qui compte : pas en demandant à une IA de juger une IA. Un comparateur écrit à la main lit la réponse du modèle et l'annotation, et tranche. Un montant est comparé au centime, une date après avoir été ramenée à l'année-mois-jour depuis la dizaine de formats que les modèles emploient, un texte après normalisation des abréviations. Quand le comparateur ne sait pas trancher, le document part en relecture humaine plutôt que d'être compté comme faux.",
-        "Trois des six champs prévus ont été écartés du barème avant publication, et leur raison est écrite dans le barème lui-même. Ces factures portent six identifiants distincts — Contract #, Order #, Invoice #, Estimate #, Alt Order #, Agency Order # — et notre question n'en désignait aucun sans ambiguïté. En notant ce champ, on mesurait si le modèle devinait ce que nous voulions, pas s'il savait lire. Les réponses restent publiées, elles ne comptent simplement pas.",
-        "Ce que cette mesure ne dit pas : elle porte sur dix-neuf documents, ce qui ne départage pas deux modèles séparés de quelques points — la marge d'erreur est affichée pour chacun. Les factures sont américaines et en anglais. Et elle ne mesure pas l'extraction des lignes de facturation, qui est la vraie difficulté du métier : l'annotation d'origine ne les couvre pas."
+        "- Quatorze modèles sur vingt-sept lisent le montant total sans une seule erreur sur soixante factures.",
+        "- Entre le moins cher de ces quatorze et le plus cher, il y a un facteur 170 : 0,0005 $ la facture contre 0,0849 $, pour un résultat identique.",
+        "- Deux modèles inventent. Sur un numéro de TVA que ces factures américaines ne portent pas, Kimi K3 et Mistral Medium 3.5 ont chacun fabriqué une valeur. Les vingt-cinq autres s'abstiennent correctement.",
+        "- Le dernier du classement, pourtant vendu comme un modèle haut de gamme, laisse une facture sur trois à reprendre à la main.",
+        "La taille de l'échantillon change ce qu'on voit. Sur dix-neuf factures, dix-neuf modèles étaient à égalité parfaite et aucun n'inventait rien. Sur soixante, ils ne sont plus que quatorze, et deux inventions apparaissent. Le modèle le plus cher du panel y perd son sans-faute, pour cent cinquante fois le prix du premier.",
+        "Comment on vérifie une réponse, puisque c'est la question qui compte : pas en demandant à une IA de juger une IA. Un comparateur écrit à la main lit la réponse du modèle et l'annotation, et tranche. Un montant est comparé au centime. Quand le comparateur ne sait pas trancher, le document part en relecture humaine plutôt que d'être compté comme faux.",
+        "Le barème ne note que ce qui n'admet qu'une seule bonne réponse : le montant total facturé, et le numéro de TVA absent du document. Les autres champs de ces factures — le numéro de contrat, l'annonceur, la période — admettent plusieurs réponses défendables : ces documents portent six identifiants distincts et deux périodes différentes. La question ne leur est donc plus posée du tout, plutôt que d'être posée puis écartée.",
+        "Douze factures ont été interrogées puis écartées du classement : tout le panel ne les a pas lues, à cause d'une limite de débit chez un hébergeur ou d'un modèle trop bavard pour tenir dans la place qu'on lui laisse. Un classement compare des modèles sur les mêmes documents, ou ne compare rien.",
+        "Ce que cette mesure ne dit pas : les factures sont américaines et en anglais. Elle ne mesure pas l'extraction des lignes de facturation, qui est la vraie difficulté du métier — l'annotation d'origine ne les couvre pas. Et quatorze modèles à égalité parfaite, ce n'est pas un palmarès : cette tâche reste un seuil d'entrée plutôt qu'un classement."
       ],
       "en": [
-        "The hub publishes its first real measurement. Twenty-seven models read the same nineteen invoices, under the same conditions, with the same prompt, and every answer was compared against an annotation written by a human.",
+        "The hub publishes its first real measurement. Twenty-seven models read the same sixty invoices, under the same conditions, and every answer was compared against an annotation written by a human.",
         "The documents are not ours. They are real television advertising invoices that US stations are required to file with the Federal Communications Commission and that law makes public. Journalists entered them by hand, field by field, to track campaign spending. That entry is what serves as ground truth.",
         "What came out:",
-        "- Nineteen models out of twenty-seven reach 100% accuracy. The task is less difficult than expected, which is itself information for a company.",
-        "- Between the cheapest and the dearest of those nineteen there is a factor of 187: $0.0006 per invoice against $0.109, for an identical result.",
-        "- No hallucination. Across 513 opportunities to answer a field absent from the document, no model invented a value.",
-        "- The last model in the ranking, sold as a premium one, reads the total amount correctly only half the time.",
-        "How an answer is verified, since that is the question that matters: not by asking an AI to judge an AI. A hand-written comparator reads the model's answer and the annotation, and decides. An amount is compared to the cent, a date after being reduced to year-month-day from the dozen formats models use, a text after normalising abbreviations. When the comparator cannot decide, the document goes to human review rather than being counted as wrong.",
-        "Three of the six planned fields were excluded from the rubric before publication, and the reason is written into the rubric itself. These invoices carry six distinct identifiers — Contract #, Order #, Invoice #, Estimate #, Alt Order #, Agency Order # — and our question singled out none of them unambiguously. Scoring that field measured whether the model guessed what we wanted, not whether it could read. The answers stay published; they simply do not count.",
-        "What this measurement does not say: it covers nineteen documents, which does not separate two models a few points apart — the margin of error is shown for each. The invoices are American and in English. And it does not measure line-item extraction, which is the real difficulty of the job: the original annotation does not cover it."
+        "- Fourteen models out of twenty-seven read the total amount without a single mistake across sixty invoices.",
+        "- Between the cheapest and the dearest of those fourteen there is a factor of 170: $0.0005 per invoice against $0.0849, for an identical result.",
+        "- Two models invent. On a VAT number these American invoices do not carry, Kimi K3 and Mistral Medium 3.5 each fabricated a value. The other twenty-five abstain correctly.",
+        "- The last model in the ranking, sold as a premium one, leaves one invoice in three to be redone by hand.",
+        "Sample size changes what you see. On nineteen invoices, nineteen models were perfectly tied and none invented anything. On sixty, only fourteen remain, and two inventions appear. The most expensive model in the panel loses its clean sheet, at one hundred and fifty times the price of the first.",
+        "How an answer is verified, since that is the question that matters: not by asking an AI to judge an AI. A hand-written comparator reads the model's answer and the annotation, and decides. An amount is compared to the cent. When the comparator cannot decide, the document goes to human review rather than being counted wrong.",
+        "The rubric scores only what admits a single right answer: the total amount billed, and the VAT number absent from the document. The other fields on these invoices — contract number, advertiser, period — admit several defensible answers: these documents carry six distinct identifiers and two different periods. So the question is no longer asked at all, rather than asked and then discarded.",
+        "Twelve invoices were queried and then dropped from the ranking: the whole panel did not read them, because of a rate limit at a provider or a model too verbose to fit in the room we give it. A ranking compares models on the same documents, or it compares nothing.",
+        "What this measurement does not say: the invoices are American and in English. It does not measure line-item extraction, which is the real difficulty of the job — the original annotation does not cover it. And fourteen models perfectly tied is not a league table: this task remains an entry threshold rather than a ranking."
       ]
     }
   },

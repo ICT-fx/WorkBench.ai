@@ -1,0 +1,10 @@
+{
+  "runId": "2026-10-04_facture-fcc",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+  "raw": null,
+  "latencyMs": 995,
+  "costUsd": 0,
+  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+}

@@ -160,12 +160,12 @@ const fr = {
       body: [
         "- Un seul prompt par modèle. Un prompt travaillé pour un modèle donné améliorerait ses résultats ; nous mesurons ce que donne une intégration standard.",
         "- Aucun ajustement fin, aucun OCR spécialisé en amont. Une chaîne de traitement dédiée ferait mieux.",
-        "- Dix-neuf documents, pas dix mille. Assez pour voir un écart de trente points, pas pour départager deux modèles séparés de deux points. La marge d'erreur de chaque score le dit.",
+        "- Soixante documents, pas dix mille. Assez pour voir un écart de vingt points, pas pour départager deux modèles séparés d'un point. La marge d'erreur de chaque score le dit.",
         "- Des factures américaines, en anglais, et d'un seul secteur : l'achat d'espace publicitaire télévisé. Rien ne garantit que ces résultats se transposent à une facture française.",
         "- Des images, pas des PDF avec couche texte. Un PDF natif est plus facile à lire pour un modèle : les scores publiés sont un plancher, pas un plafond.",
-        "- Trois champs notés sur six. Les trois autres posaient une question ambiguë et ont été écartés, chacun avec sa raison écrite dans le barème.",
+        "- Deux champs notés. Les autres champs de ces factures admettent plusieurs réponses défendables — six identifiants concurrents, deux périodes distinctes — et la question ne leur est plus posée.",
         "- Pas de lignes de facturation. C'est la vraie difficulté du métier, et l'annotation d'origine ne la couvre pas : il faudrait construire notre propre référence.",
-        "- Une tâche plus facile que prévu. Dix-neuf modèles sur vingt-sept sont parfaits : ce test les sépare mal, et il faut le lire comme un seuil d'entrée plutôt que comme un palmarès.",
+        "- Une tâche plus facile que prévu. Quatorze modèles sur vingt-sept lisent chaque montant sans faute : ce test les sépare mal, et il faut le lire comme un seuil d'entrée plutôt que comme un palmarès.",
       ],
     },
     scoring: {
@@ -192,7 +192,7 @@ const fr = {
         "- Halluciné : une valeur là où le document n'en contient aucune.",
         "Seul un champ juste rapporte des points. L'hallucination alimente en plus sa propre mesure : la part des champs réellement absents que le modèle a quand même remplis. Un modèle qui écrit « non trouvé » ou « n/a » s'abstient correctement : sa réponse est ramenée à « rien » avant d'être notée.",
         "Le code n'a pas le dernier mot. Une étape d'arbitrage humain sélectionne les réponses à relire — toutes les hallucinations, celles jugées justes mais écrites autrement que la référence, et un échantillon des autres — et le verdict de l'humain remplace celui du code dans le calcul.",
-        "Sur le run publié, cette étape n'a pas encore été jouée : les chiffres affichés sont ceux du comparateur seul. Quarante-cinq notations sur 513 sont marquées « à relire », et le classement le dira autrement quand elles auront été arbitrées. Le dire plutôt que de laisser croire à une relecture qui n'a pas eu lieu fait partie du protocole.",
+        "Sur le run publié, cette étape n'a pas encore été jouée : les chiffres affichés sont ceux du comparateur seul. Cinquante-deux notations sur 1 620 sont marquées « à relire », et le classement le dira autrement quand elles auront été arbitrées. Le dire plutôt que de laisser croire à une relecture qui n'a pas eu lieu fait partie du protocole.",
       ],
     },
     prompt: {
@@ -357,12 +357,12 @@ const en: typeof fr = {
       body: [
         "- One prompt per model. A prompt tuned for a given model would improve its results; we measure what a standard integration gives.",
         "- No fine-tuning, no specialised OCR upstream. A dedicated processing chain would do better.",
-        "- Nineteen documents, not ten thousand. Enough to see a thirty-point gap, not to separate two models two points apart. Each score's margin of error says so.",
+        "- Sixty documents, not ten thousand. Enough to see a twenty-point gap, not to separate two models one point apart. Each score's margin of error says so.",
         "- American invoices, in English, from a single sector: television advertising buys. Nothing guarantees these results carry over to a French invoice.",
         "- Images, not PDFs with a text layer. A native PDF is easier for a model to read: published scores are a floor, not a ceiling.",
-        "- Three scored fields out of six. The other three asked an ambiguous question and were excluded, each with its reason written into the rubric.",
+        "- Two scored fields. The other fields on these invoices admit several defensible answers — six competing identifiers, two distinct periods — and the question is no longer asked.",
         "- No line items. That is the real difficulty of the job, and the original annotation does not cover it: we would have to build our own reference.",
-        "- A task easier than expected. Nineteen models out of twenty-seven are perfect: this test separates them poorly, and should be read as an entry threshold rather than a ranking.",
+        "- A task easier than expected. Fourteen models out of twenty-seven read every amount without a mistake: this test separates them poorly, and should be read as an entry threshold rather than a ranking.",
       ],
     },
     scoring: {
@@ -389,7 +389,7 @@ const en: typeof fr = {
         "- Hallucinated: a value where the document contains none.",
         "Only a correct field earns points. A hallucination also feeds a measure of its own: the share of genuinely absent fields that the model filled in anyway. A model that writes “non trouvé” or “n/a” is abstaining correctly: its answer is reduced to “nothing” before it is scored.",
         "The code does not have the last word. A human arbitration stage selects the answers to review — every hallucination, those judged correct but written differently from the reference, and a sample of the rest — and the human's verdict replaces the code's in the computation.",
-        "On the published run, that stage has not been played yet: the figures shown are the comparator's alone. Forty-five of the 513 gradings are flagged “needs review”, and the ranking will say otherwise once they have been arbitrated. Saying so, rather than implying a review that did not happen, is part of the protocol.",
+        "On the published run, that stage has not been played yet: the figures shown are the comparator's alone. Fifty-two of the 1,620 gradings are flagged “needs review”, and the ranking will say otherwise once they have been arbitrated. Saying so, rather than implying a review that did not happen, is part of the protocol.",
       ],
     },
     prompt: {

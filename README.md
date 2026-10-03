@@ -36,7 +36,7 @@ des hallucinations.
 |---|---|
 | Les 27 modèles, leurs labos, dates de sortie, prix et fenêtres de contexte | **Réels**, synchronisés depuis le catalogue public d'OpenRouter |
 | La tâche « lecture de factures publicitaires » : documents, annotations, barème, pipeline | **Réels** et rejouables |
-| Le classement publié : 27 modèles × 19 factures, 513 notations | **Mesuré** — chaque chiffre vient d'un appel réellement passé |
+| Le classement publié : 27 modèles × 60 factures, 1 620 notations | **Mesuré** — chaque chiffre vient d'un appel réellement passé |
 | Les vingt-et-un autres benchmarks | Protocole rédigé, jeu de test **à construire**, aucun chiffre affiché |
 
 **Le dépôt ne contient plus aucune donnée fabriquée.** Une tâche est mesurée et porte
@@ -56,7 +56,7 @@ ne portent pas de numéro de TVA : répondre « rien » est la bonne réponse, p
 une valeur est une **hallucination**, comptée à part. Un chiffre inventé coûte plus
 cher qu'un chiffre manquant, parce qu'il passe la relecture.
 
-Sur le classement publié : **zéro hallucination en 513 occasions**.
+Sur le classement publié : **vingt-cinq modèles sur vingt-sept n'inventent jamais**. Deux ont fabriqué un numéro de TVA sur une facture qui n'en porte aucun — un cas chacun sur soixante.
 
 ## Rejouer une évaluation
 
@@ -109,7 +109,7 @@ calculées au build à partir de `data/`.
 
 ## Le jeu de test
 
-Dix-neuf factures **réelles**, pas des factures fabriquées. Ce sont des factures
+Soixante factures **réelles**, pas des factures fabriquées. Ce sont des factures
 d'achat d'espace publicitaire télévisé que les chaînes américaines doivent déposer
 auprès de la Federal Communications Commission, et que la loi rend publiques. Des
 journalistes les ont saisies champ par champ pour suivre les dépenses de campagne :
@@ -122,10 +122,11 @@ npm run deepform:prepare    # télécharge, tire l'échantillon et rend les page
 
 Le tirage est déterministe : relancé, il produit le même échantillon.
 
-Trois champs sur six sont écartés de la note, chacun avec sa raison écrite dans
-`data/tasks/facture-fcc/task.json`. Ces factures portent six identifiants distincts,
-et la question « le numéro de contrat » n'en désignait aucun sans ambiguïté : on
-mesurait la devinette, pas la lecture. Les réponses restent publiées.
+Le barème ne note que ce qui n'admet qu'une seule bonne réponse : le montant total
+facturé, et le numéro de TVA absent de ces documents. Les autres champs — numéro de
+contrat, annonceur, période — ont été retirés de la question elle-même : ces factures
+portent six identifiants distincts et deux périodes également défendables, si bien
+qu'on y mesurait la devinette et non la lecture.
 
 **Ce que ce jeu ne couvre pas** : les lignes de facturation, qui sont la vraie
 difficulté du métier. L'annotation d'origine ne les contient pas. C'est la prochaine
