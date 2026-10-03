@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
+  "raw": {
+    "contract_num": "2418178",
+    "advertiser": "POL/Marsy's Law for Wisconsin PAC",
+    "gross_amount": 1425,
+    "flight_from": "2020-03-30",
+    "flight_to": "2020-04-05",
+    "vat_number": null
+  },
+  "latencyMs": 6321,
+  "costUsd": 0.0015180375,
+  "provider": "DigitalOcean",
+  "inputTokens": 7870,
+  "outputTokens": 65
+}

@@ -327,8 +327,11 @@ async function cmdPublish(taskId: string): Promise<void> {
   }
   await writeFile(historyFile, `${JSON.stringify(appendHistory(history, leaderboard), null, 2)}\n`);
 
-  console.log(`Classement publié depuis ${runIds.length} run(s) ` +
-    `(${review.length} arbitrage(s) humain(s) appliqué(s)) :`);
+  if (leaderboard.incomplets > 0) {
+    console.log(`${leaderboard.incomplets} document(s) écarté(s) : tout le panel ne les a pas lus.`);
+  }
+  console.log(`Classement publié sur ${leaderboard.sampleSize} documents, ` +
+    `depuis ${runIds.length} run(s) (${review.length} arbitrage(s) humain(s) appliqué(s)) :`);
   for (const [i, row] of leaderboard.rows.entries()) {
     console.log(`  ${i + 1}. ${row.model.padEnd(28)} ` +
       `${String(row.sansRelecture).padStart(5)} % sans relecture · ` +

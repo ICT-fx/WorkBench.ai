@@ -134,3 +134,62 @@ describe("appendHistory", () => {
     expect(h.runs.map((r) => r.status)).toEqual(["reel"]);
   });
 });
+
+describe("documents incomplets", () => {
+  const note = (model: string, docId: string): DocScore => ({
+    model, docId,
+    byCriterion: { total_ttc: { got: 1, expected: 1, verdict: "correct", points: 3, maxPoints: 3 } },
+    needsReview: false,
+  });
+  const appel = (model: string, docId: string): ModelResult => ({
+    runId: "r", model, modelVersion: model, docId, raw: {}, latencyMs: 10, costUsd: 0.01,
+  });
+
+  it("ne garde que les documents lus par tout le panel", () => {
+    // f-002 n'a été lu que par un modèle sur deux : le garder donnerait à ce
+    // modèle un échantillon que l'autre n'a pas eu.
+    const scores = [note("a", "f-001"), note("b", "f-001"), note("a", "f-002")];
+    const results = [appel("a", "f-001"), appel("b", "f-001"), appel("a", "f-002")];
+    const lb = buildLeaderboard({
+      taskId: "t", runId: "r", status: "reel", runDate: "2026-10-03", scores, results, sampleSize: 2,
+    });
+    expect(lb.incomplets).toBe(1);
+    expect(lb.sampleSize).toBe(1);
+    expect(lb.rows.every((r) => r.docCount === 1)).toBe(true);
+  });
+
+  it("refuse de publier quand aucun document n'est commun à tout le panel", () => {
+    const scores = [note("a", "f-001"), note("b", "f-002")];
+    const results = [appel("a", "f-001"), appel("b", "f-002")];
+    expect(() => buildLeaderboard({
+      taskId: "t", runId: "r", status: "reel", runDate: "2026-10-03", scores, results, sampleSize: 2,
+    })).toThrow(/aucun document/);
+  });
+});
+
+describe("taux d'échec et documents écartés", () => {
+  it("compte les échecs sur tout le run, pas sur les seuls documents retenus", () => {
+    // Un modèle qui échoue systématiquement sur les documents difficiles les
+    // ferait écarter, puis afficherait un sans-faute sur ceux qui restent.
+    const scores: DocScore[] = ["f-001", "f-002"].flatMap((docId) =>
+      ["a", "b"].map((model) => ({
+        model, docId,
+        byCriterion: { total_ttc: { got: 1, expected: 1, verdict: "correct" as const, points: 3, maxPoints: 3 } },
+        needsReview: false,
+      })));
+    const results: ModelResult[] = [
+      ...scores.map((s) => ({
+        runId: "r", model: s.model, modelVersion: s.model, docId: s.docId,
+        raw: {}, latencyMs: 10, costUsd: 0.01,
+      })),
+      // Trois échecs de « a » sur des documents qu'aucun classement ne retiendra.
+      ...["f-003", "f-004", "f-005"].map((docId) => ({
+        runId: "r", model: "a", modelVersion: "a", docId,
+        raw: null, latencyMs: 0, costUsd: 0, error: "503",
+      })),
+    ];
+    expect(() => buildLeaderboard({
+      taskId: "t", runId: "r", status: "reel", runDate: "2026-10-03", scores, results, sampleSize: 2,
+    })).toThrow(/a a 3 appel\(s\) en échec sur 5/);
+  });
+});

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "03b940c2-0a0a-d558-d634-03a8ac7fa8bc",
+  "raw": {
+    "contract_num": "2009786",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 13897.5,
+    "flight_from": "10/27/20",
+    "flight_to": "11/02/20",
+    "vat_number": null
+  },
+  "latencyMs": 2697,
+  "costUsd": 0.0058088,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 6925,
+  "outputTokens": 84
+}

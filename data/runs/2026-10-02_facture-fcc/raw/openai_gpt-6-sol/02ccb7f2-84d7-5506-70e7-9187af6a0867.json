@@ -3,8 +3,17 @@
   "model": "openai/gpt-6-sol",
   "modelVersion": "openai/gpt-6-sol",
   "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
-  "raw": null,
-  "latencyMs": 1210,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "9754886",
+    "advertiser": "POL/Mike Bloomberg/D/Pres/US-A",
+    "gross_amount": 210350,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 5898,
+  "costUsd": 0.0372085,
+  "provider": "OpenAI",
+  "inputTokens": 14088,
+  "outputTokens": 199
 }

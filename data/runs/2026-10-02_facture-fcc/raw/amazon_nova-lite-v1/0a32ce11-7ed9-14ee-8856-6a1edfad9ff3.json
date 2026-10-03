@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
+  "raw": {
+    "contract_num": "2418178",
+    "advertiser": "Marsys's Law for Wisconsin, LLC",
+    "gross_amount": 1425,
+    "flight_from": "2020-03-30",
+    "flight_to": "2020-04-12",
+    "vat_number": null
+  },
+  "latencyMs": 2690,
+  "costUsd": 0.00034122,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 5315,
+  "outputTokens": 93
+}

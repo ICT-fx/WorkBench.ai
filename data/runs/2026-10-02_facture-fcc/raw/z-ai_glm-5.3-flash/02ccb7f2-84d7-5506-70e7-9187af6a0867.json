@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
+  "raw": {
+    "contract_num": "9754886",
+    "advertiser": "POL/Mike Bloomberg/D/Pres/USA-A",
+    "gross_amount": 210350,
+    "flight_from": "2020-02-15",
+    "flight_to": "2020-02-21",
+    "vat_number": null
+  },
+  "latencyMs": 12554,
+  "costUsd": 0.0026041,
+  "provider": "Friendli",
+  "inputTokens": 15384,
+  "outputTokens": 593
+}

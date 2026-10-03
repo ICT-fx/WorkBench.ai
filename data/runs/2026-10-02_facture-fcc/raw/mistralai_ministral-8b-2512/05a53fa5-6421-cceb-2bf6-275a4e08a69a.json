@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "05a53fa5-6421-cceb-2bf6-275a4e08a69a",
+  "raw": {
+    "contract_num": "26904065",
+    "advertiser": "America First Action Inc",
+    "gross_amount": 6025,
+    "flight_from": "2020-05-22",
+    "flight_to": "2020-05-28",
+    "vat_number": null
+  },
+  "latencyMs": 1812,
+  "costUsd": 0.00062211,
+  "provider": "Mistral",
+  "inputTokens": 4403,
+  "outputTokens": 90
+}

@@ -50,34 +50,86 @@ export type BuildLeaderboardOptions = {
 };
 
 /**
+ * Les documents que tous les modèles ont traités, et eux seuls.
+ *
+ * Un classement compare des modèles sur les mêmes documents, ou ne compare
+ * rien. Un run interrompu — crédit épuisé, panne d'hébergeur — laisse des
+ * documents que seule une partie du panel a lus : les garder donnerait à ces
+ * modèles-là un échantillon différent des autres, et le classement mesurerait
+ * la chance d'avoir été interrogé plutôt que la lecture.
+ */
+export function documentsCommuns(scores: DocScore[]): Set<string> {
+  const modeles = new Set(scores.map((s) => s.model));
+  const parDocument = new Map<string, Set<string>>();
+  for (const s of scores) {
+    const vus = parDocument.get(s.docId) ?? new Set<string>();
+    vus.add(s.model);
+    parDocument.set(s.docId, vus);
+  }
+  return new Set(
+    [...parDocument].filter(([, vus]) => vus.size === modeles.size).map(([docId]) => docId),
+  );
+}
+
+/**
  * Construit le classement publiable.
+ *
+ * Seuls les documents lus par tout le panel entrent dans le classement ; les
+ * autres sont écartés et leur nombre est rendu dans `incomplets`.
  *
  * Un modèle qui a échoué sur plus d'un dixième du jeu bloque la publication :
  * mieux vaut pas de classement qu'un classement calculé sur les seules factures
  * que le modèle a bien voulu traiter.
  */
-export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard {
+export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard & { incomplets: number } {
   const maxErrorRate = opts.maxErrorRate ?? 0.1;
-  const rows = aggregate(opts.scores, opts.results);
+  const communs = documentsCommuns(opts.scores);
+  const tous = new Set(opts.scores.map((s) => s.docId));
+  const incomplets = tous.size - communs.size;
+  const scoresRetenus = opts.scores.filter((s) => communs.has(s.docId));
+  const resultsRetenus = opts.results.filter((r) => communs.has(r.docId));
 
-  for (const row of rows) {
-    const attempted = row.docCount + row.errorCount;
-    if (attempted > 0 && row.errorCount / attempted > maxErrorRate) {
+  if (scoresRetenus.length === 0) {
+    throw new Error(
+      `Publication refusée : aucun document n'a été lu par l'ensemble du panel ` +
+      `(${tous.size} document(s) partiellement traité(s)). Terminer le run avant de publier.`);
+  }
+
+  const rows = aggregate(scoresRetenus, resultsRetenus);
+
+  // Le taux d'échec se mesure sur tous les appels du run, y compris ceux portant
+  // sur des documents écartés faute d'avoir été lus par tout le panel. Le
+  // mesurer sur les seuls documents retenus rendrait invisible un modèle qui
+  // échoue précisément là où les autres réussissent.
+  const tentatives = new Map<string, { total: number; echecs: number }>();
+  for (const r of opts.results) {
+    const t = tentatives.get(r.model) ?? { total: 0, echecs: 0 };
+    t.total++;
+    if (r.error !== undefined) t.echecs++;
+    tentatives.set(r.model, t);
+  }
+  for (const [model, t] of tentatives) {
+    if (t.total > 0 && t.echecs / t.total > maxErrorRate) {
       throw new Error(
-        `Publication refusée : ${row.model} a ${row.errorCount} appel(s) en échec sur ${attempted} ` +
-        `(${Math.round((row.errorCount / attempted) * 100)} %). Relancer le run avant de publier.`,
+        `Publication refusée : ${model} a ${t.echecs} appel(s) en échec sur ${t.total} ` +
+        `(${Math.round((t.echecs / t.total) * 100)} %). Relancer le run avant de publier.`,
       );
     }
   }
 
-  return LeaderboardSchema.parse({
-    taskId: opts.taskId,
-    runId: opts.runId,
-    status: opts.status,
-    runDate: opts.runDate,
-    sampleSize: opts.sampleSize,
-    rows,
-  });
+  return {
+    ...LeaderboardSchema.parse({
+      taskId: opts.taskId,
+      runId: opts.runId,
+      status: opts.status,
+      runDate: opts.runDate,
+      // La taille de l'échantillon est celle du classement, pas celle du run :
+      // annoncer les documents écartés comme s'ils avaient été mesurés serait faux.
+      sampleSize: communs.size,
+      rows,
+    }),
+    incomplets,
+  };
 }
 
 /**

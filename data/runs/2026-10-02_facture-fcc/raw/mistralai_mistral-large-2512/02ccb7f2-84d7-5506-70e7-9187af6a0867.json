@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
+  "raw": {
+    "contract_num": "09754886",
+    "advertiser": "POL/Mike Bloomberg/D/P",
+    "gross_amount": 210350,
+    "flight_from": "2020-02-17",
+    "flight_to": "2020-02-21",
+    "vat_number": null
+  },
+  "latencyMs": 4673,
+  "costUsd": 0.008027,
+  "provider": "Mistral",
+  "inputTokens": 15769,
+  "outputTokens": 95
+}

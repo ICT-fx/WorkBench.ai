@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "03b940c2-0a0a-d558-d634-03a8ac7fa8bc",
+  "raw": {
+    "contract_num": "2009786 /",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 16350,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 29634,
+  "costUsd": 0.01558498,
+  "provider": "SiliconFlow",
+  "inputTokens": 7934,
+  "outputTokens": 2787
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
+  "raw": {
+    "contract_num": "2418178",
+    "advertiser": "POL/Marsy's Law for Wisconsin PAC",
+    "gross_amount": 1425,
+    "flight_from": "2020-03-30",
+    "flight_to": "2020-04-05",
+    "vat_number": null
+  },
+  "latencyMs": 9600,
+  "costUsd": 0.003248,
+  "provider": "Mistral",
+  "inputTokens": 6214,
+  "outputTokens": 94
+}

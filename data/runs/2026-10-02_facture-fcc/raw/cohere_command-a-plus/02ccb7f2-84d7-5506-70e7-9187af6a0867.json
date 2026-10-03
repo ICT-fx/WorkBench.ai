@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
+  "raw": {
+    "contract_num": "9754886",
+    "advertiser": "POL/Mike Bloomberg/D/P",
+    "gross_amount": 210350,
+    "flight_from": null,
+    "flight_to": null,
+    "vat_number": null
+  },
+  "latencyMs": 41931,
+  "costUsd": 0.0130965,
+  "provider": "Cohere",
+  "inputTokens": 21030,
+  "outputTokens": 4525
+}

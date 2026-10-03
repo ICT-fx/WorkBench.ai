@@ -3,8 +3,17 @@
   "model": "meta/muse-spark-1.3",
   "modelVersion": "meta/muse-spark-1.3",
   "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
-  "raw": null,
-  "latencyMs": 992,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "9754886",
+    "advertiser": "POL/Mike Bloomberg/D/Pres/US-A",
+    "gross_amount": 210350,
+    "flight_from": "2020-02-15",
+    "flight_to": "2020-02-21",
+    "vat_number": null
+  },
+  "latencyMs": 13905,
+  "costUsd": 0.023454,
+  "provider": "Meta",
+  "inputTokens": 14690,
+  "outputTokens": 1198
 }

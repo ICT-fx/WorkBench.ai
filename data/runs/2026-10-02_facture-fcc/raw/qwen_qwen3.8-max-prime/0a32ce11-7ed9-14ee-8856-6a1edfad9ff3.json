@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-prime",
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
-  "raw": null,
-  "latencyMs": 363714,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "2418178",
+    "advertiser": "POL/Marsy's Law for Wisconsin PAC",
+    "gross_amount": 1425,
+    "flight_from": "2020-03-30",
+    "flight_to": "2020-04-04",
+    "vat_number": null
+  },
+  "latencyMs": 94156,
+  "costUsd": 0.099092,
+  "provider": "Alibaba",
+  "inputTokens": 4676,
+  "outputTokens": 6699
 }

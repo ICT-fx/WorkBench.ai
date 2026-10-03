@@ -3,8 +3,17 @@
   "model": "qwen/qwen3.8-max-0902",
   "modelVersion": "qwen/qwen3.8-max-0902",
   "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
-  "raw": null,
-  "latencyMs": 333,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "contract_num": "91572",
+    "advertiser": "POLIM BLOOMBERG/D/PRE/US",
+    "gross_amount": 6680,
+    "flight_from": "2020-02-13",
+    "flight_to": "2020-02-14",
+    "vat_number": null
+  },
+  "latencyMs": 110621,
+  "costUsd": 0.037712,
+  "provider": "Alibaba",
+  "inputTokens": 1900,
+  "outputTokens": 5652
 }

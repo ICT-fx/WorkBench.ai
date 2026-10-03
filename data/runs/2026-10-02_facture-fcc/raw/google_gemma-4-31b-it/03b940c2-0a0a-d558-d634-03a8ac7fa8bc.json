@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "03b940c2-0a0a-d558-d634-03a8ac7fa8bc",
+  "raw": {
+    "contract_num": "09823523",
+    "advertiser": "Priorities USA Action",
+    "gross_amount": 16350,
+    "flight_from": "2020-10-27",
+    "flight_to": "2020-11-02",
+    "vat_number": null
+  },
+  "latencyMs": 8315,
+  "costUsd": 0.0001769,
+  "provider": "DeepInfra",
+  "inputTokens": 1584,
+  "outputTokens": 101
+}

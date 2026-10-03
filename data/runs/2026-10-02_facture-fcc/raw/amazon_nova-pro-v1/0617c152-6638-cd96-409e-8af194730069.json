@@ -1,0 +1,19 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "0617c152-6638-cd96-409e-8af194730069",
+  "raw": {
+    "contract_num": "2006411-1",
+    "advertiser": "Ashford For Congress",
+    "gross_amount": 7465,
+    "flight_from": "04/20/20",
+    "flight_to": "04/26/20",
+    "vat_number": null
+  },
+  "latencyMs": 3264,
+  "costUsd": 0.005812,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 6925,
+  "outputTokens": 85
+}
