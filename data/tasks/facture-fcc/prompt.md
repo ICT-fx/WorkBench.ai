@@ -18,10 +18,13 @@ invent is treated as a serious error — worse than admitting you did not find i
 - `gross_amount` — the total gross amount invoiced, for the whole document.
   This is usually a grand total, and it is often on a later page than the first.
   Number.
-- `flight_from` — the first day of the flight, that is the advertising period
-  covered by this invoice. Take it from the field labelled `Flight Dates`,
-  `Order Flight` or `Flight`. Do **not** take it from `Invoice Period`, `Bill Period`
-  or `Bill Plan`, which cover the billing cycle and often start on a different day.
+- `flight_from` — the first day of the advertising period covered by this invoice.
+  When the document names that period — a field labelled `Flight Dates`,
+  `Order Flight` or `Flight` — use it, and prefer it over `Invoice Period`,
+  `Bill Period` or `Bill Plan`, which cover the billing cycle and often start on a
+  different day. **Many of these documents have no flight field at all**: they
+  carry only a billing period, usually labelled `Period`. Use that one then, and
+  do not answer `null` — the period is on the document, under another name.
   Format `YYYY-MM-DD`. String.
 - `flight_to` — the last day of that flight. Format `YYYY-MM-DD`. String.
 - `vat_number` — the VAT registration number of the issuing company, if the

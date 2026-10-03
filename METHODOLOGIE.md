@@ -192,6 +192,24 @@ Chacune a coûté du temps ou de l'argent. Elles sont listées avec la règle qu
 
 ## Sur la méthode
 
+**Préciser une consigne peut la rendre fausse.** Trois champs sur six avaient été
+écartés parce que la question admettait plusieurs réponses. Pour les récupérer, le
+prompt a été réécrit en nommant les étiquettes exactes du document : « prends la
+date du champ `Flight Dates`, `Order Flight` ou `Flight`, **pas** celle de
+`Invoice Period` ». Or beaucoup de ces factures ne portent aucun champ « Flight » :
+elles n'ont qu'un `Period`, et c'est lui que les annotateurs ont saisi. Sur un
+document, seize modèles sur vingt-cinq ont obéi à la consigne et répondu « rien »,
+donc faux ; ceux qui l'ont ignorée ont eu juste. Le taux de « rien » est passé de
+0,2 % à 8,7 %. **Une consigne qui interdit une source doit d'abord vérifier que la
+source autorisée existe sur tous les documents.**
+
+**Un texte identique ne garantit pas une question identique.** Le champ
+« date de fin » était défini par « le dernier jour de *ce* vol », mot pour mot
+inchangé entre les deux runs — mais la définition de « ce vol » avait bougé juste
+au-dessus. Il avait été annoncé comme comparable entre les deux runs sur la foi
+d'un `diff` ; c'était faux, et seules les données l'ont montré. **Comparer les
+textes ne suffit pas : il faut comparer les antécédents.**
+
 **Un prompt ambigu mesure la devinette, pas la compétence.**
 Demander « le numéro de contrat » sur un document qui en porte six revient à mesurer si
 le modèle devine ce qu'on voulait. → **Nommer l'étiquette exacte imprimée sur le
