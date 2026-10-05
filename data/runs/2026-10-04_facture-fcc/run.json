@@ -1,7 +1,7 @@
 {
   "runId": "2026-10-04_facture-fcc",
   "taskId": "facture-fcc",
-  "startedAt": "2026-10-05T13:17:11.777Z",
+  "startedAt": "2026-10-05T15:10:40.297Z",
   "models": [
     {
       "alias": "anthropic/claude-fable-5.1",

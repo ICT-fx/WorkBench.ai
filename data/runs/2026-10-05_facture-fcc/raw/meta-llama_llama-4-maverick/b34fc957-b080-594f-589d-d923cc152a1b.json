@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "b34fc957-b080-594f-589d-d923cc152a1b",
+  "raw": {
+    "gross_amount": 2635,
+    "vat_number": null
+  },
+  "latencyMs": 4022,
+  "costUsd": 0.0019816,
+  "provider": "Parasail",
+  "inputTokens": 5456,
+  "outputTokens": 72
+}

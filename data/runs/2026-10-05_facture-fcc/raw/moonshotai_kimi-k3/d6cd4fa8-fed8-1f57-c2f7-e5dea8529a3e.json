@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "d6cd4fa8-fed8-1f57-c2f7-e5dea8529a3e",
+  "raw": {
+    "gross_amount": 800,
+    "vat_number": null
+  },
+  "latencyMs": 6468,
+  "costUsd": 0.00860188,
+  "provider": "InferenceNet",
+  "inputTokens": 8084,
+  "outputTokens": 244
+}

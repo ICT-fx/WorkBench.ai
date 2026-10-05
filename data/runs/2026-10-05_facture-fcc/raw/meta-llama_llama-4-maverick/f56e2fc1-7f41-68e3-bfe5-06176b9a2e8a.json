@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "f56e2fc1-7f41-68e3-bfe5-06176b9a2e8a",
+  "raw": {
+    "gross_amount": 2690,
+    "vat_number": "52-0854808"
+  },
+  "latencyMs": 12731,
+  "costUsd": 0.0015299325,
+  "provider": "DigitalOcean",
+  "inputTokens": 7923,
+  "outputTokens": 68
+}

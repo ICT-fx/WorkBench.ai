@@ -3,11 +3,13 @@
   "model": "qwen/qwen3.8-max-prime",
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
-  "raw": null,
-  "latencyMs": 129476,
-  "costUsd": 0.108304,
+  "raw": {
+    "gross_amount": 440,
+    "vat_number": null
+  },
+  "latencyMs": 67124,
+  "costUsd": 0.071284,
   "provider": "Alibaba",
   "inputTokens": 3076,
-  "outputTokens": 8000,
-  "error": "réponse sans JSON exploitable : "
+  "outputTokens": 4915
 }

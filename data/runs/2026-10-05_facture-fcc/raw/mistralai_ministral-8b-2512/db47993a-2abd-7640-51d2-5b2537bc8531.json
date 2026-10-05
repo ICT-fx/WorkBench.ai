@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "db47993a-2abd-7640-51d2-5b2537bc8531",
+  "raw": {
+    "gross_amount": 5470,
+    "vat_number": null
+  },
+  "latencyMs": 11739,
+  "costUsd": 0.0009483,
+  "provider": "Mistral",
+  "inputTokens": 6234,
+  "outputTokens": 88
+}

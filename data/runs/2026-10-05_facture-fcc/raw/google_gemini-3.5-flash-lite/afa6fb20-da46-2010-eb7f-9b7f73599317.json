@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "afa6fb20-da46-2010-eb7f-9b7f73599317",
+  "raw": {
+    "gross_amount": 21300,
+    "vat_number": null
+  },
+  "latencyMs": 3162,
+  "costUsd": 0.0030632,
+  "provider": "Google",
+  "inputTokens": 9369,
+  "outputTokens": 101
+}

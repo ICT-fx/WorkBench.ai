@@ -3487,6 +3487,27 @@
   },
   {
     "model": "cohere/command-a-plus",
+    "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 14150,
+        "expected": 14150,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "cohere/command-a-plus",
     "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
     "byCriterion": {
       "gross_amount": {
@@ -8317,11 +8338,74 @@
   },
   {
     "model": "mistralai/mistral-large-2512",
+    "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 21960,
+        "expected": 21960,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
+    "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 14150,
+        "expected": 14150,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
     "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
     "byCriterion": {
       "gross_amount": {
         "got": 3625,
         "expected": 3625,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
+    "docId": "d297f399-d37d-4970-7701-9807995d4129",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 6925,
+        "expected": 6925,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3

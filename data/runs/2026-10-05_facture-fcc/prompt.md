@@ -1,0 +1,42 @@
+You are given the pages of a broadcast advertising invoice, as images.
+Extract the requested information and answer with a JSON object only.
+
+## The most important rule
+
+If a piece of information **does not appear** on the document, answer `null` for
+that field. Never guess, never infer, never fill in what looks usual. A value you
+invent is treated as a serious error — worse than admitting you did not find it.
+
+## Fields
+
+- `contract_num` — the contract or order number identifying this buy, exactly as
+  printed. String.
+- `advertiser` — the value of the field labelled `Advertiser` or `Advertiser Name`:
+  the client who bought the advertising. Not the TV station, not the media agency,
+  and not the `Product` or `Brand` field, which often repeats the advertiser's name
+  in a different form. String.
+- `gross_amount` — the total gross amount invoiced, for the whole document.
+  This is usually a grand total, and it is often on a later page than the first.
+  Number.
+- `flight_from` — the first day of the advertising period covered by this invoice.
+  When the document names that period — a field labelled `Flight Dates`,
+  `Order Flight` or `Flight` — use it, and prefer it over `Invoice Period`,
+  `Bill Period` or `Bill Plan`, which cover the billing cycle and often start on a
+  different day. **Many of these documents have no flight field at all**: they
+  carry only a billing period, usually labelled `Period`. Use that one then, and
+  do not answer `null` — the period is on the document, under another name.
+  Format `YYYY-MM-DD`. String.
+- `flight_to` — the last day of that flight. Format `YYYY-MM-DD`. String.
+- `vat_number` — the VAT registration number of the issuing company, if the
+  document carries one. String.
+
+## Value formats
+
+- Dates: `YYYY-MM-DD`. A date printed `02/03/20` on a US document means
+  3 February 2020, so it becomes `2020-02-03`.
+- Amounts: a plain decimal number, **no currency symbol and no thousands
+  separator**. `$1,880.00` becomes `1880.00`.
+
+## Output
+
+A JSON object with exactly these six keys, and nothing around it.

@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "f9889d44-900c-57fd-ec6d-c0e9b75f465f",
+  "raw": {
+    "gross_amount": 1900,
+    "vat_number": null
+  },
+  "latencyMs": 18822,
+  "costUsd": 0.00091584,
+  "provider": "GMICloud",
+  "inputTokens": 8506,
+  "outputTokens": 501
+}

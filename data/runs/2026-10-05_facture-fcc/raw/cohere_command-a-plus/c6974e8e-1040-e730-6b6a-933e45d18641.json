@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "c6974e8e-1040-e730-6b6a-933e45d18641",
+  "raw": {
+    "gross_amount": 235350,
+    "vat_number": null
+  },
+  "latencyMs": 8867,
+  "costUsd": 0.0037704,
+  "provider": "Cohere",
+  "inputTokens": 8223,
+  "outputTokens": 869
+}

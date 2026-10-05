@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "afa6fb20-da46-2010-eb7f-9b7f73599317",
+  "raw": {
+    "gross_amount": 21300,
+    "vat_number": null
+  },
+  "latencyMs": 4973,
+  "costUsd": 0.064676,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 15654,
+  "outputTokens": 103
+}

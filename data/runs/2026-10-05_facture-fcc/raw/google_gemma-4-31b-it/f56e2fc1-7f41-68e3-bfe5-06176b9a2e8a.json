@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "f56e2fc1-7f41-68e3-bfe5-06176b9a2e8a",
+  "raw": {
+    "gross_amount": 2690,
+    "vat_number": null
+  },
+  "latencyMs": 2690,
+  "costUsd": 0.00017276,
+  "provider": "CoreWeave",
+  "inputTokens": 1374,
+  "outputTokens": 104
+}

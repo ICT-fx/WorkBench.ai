@@ -21,11 +21,11 @@ humains — jamais par une IA.
 |---|---|
 | **Jeu de données** | DeepForm — factures publicitaires télévisées déposées auprès du régulateur américain (FCC), étiquetées à la main par des journalistes |
 | **Licence** | Dépôt distributeur sous licence MIT, documents sources issus d'archives publiques |
-| **Documents** | 132 téléchargés, **60 retenus** dans le classement, 12 écartés faute d'avoir été lus par tout le panel |
-| **Modèles** | **27**, de 0,0002 $ à 0,085 $ par facture |
-| **Appels notés** | 1 620 (60 × 27) |
-| **Coût réel** | 39,80 $ sur trois campagnes, tentatives ratées comprises |
-| **Runs** | `2026-09-27`, `2026-10-02`, `2026-10-04`, fusionnés en un classement |
+| **Documents** | 132 téléchargés, **95 retenus** dans le classement, 5 écartés faute d'avoir été lus par tout le panel |
+| **Modèles** | **27**, de 0,0003 $ à 0,085 $ par facture |
+| **Appels notés** | 2 565 (95 × 27) |
+| **Coût réel** | 52,67 $ sur quatre campagnes, tentatives ratées comprises |
+| **Runs** | `2026-09-27`, `2026-10-02`, `2026-10-04`, `2026-10-05`, fusionnés en un classement |
 
 ## Comment un appel se déroule
 
@@ -122,64 +122,64 @@ consultables.
 
 ## Le classement
 
-60 factures, 27 modèles, 1 620 appels notés. Ordonné par exactitude, puis par prix, puis
+95 factures, 27 modèles, 2 565 appels notés. Ordonné par exactitude, puis par prix, puis
 par rapidité — ces deux derniers critères départagent les égalités, et ils sont mesurés.
 
 | # | Modèle | Exactitude | Sans relecture | $/facture | Latence |
 |---:|---|---:|---:|---:|---:|
-| 1 | `qwen/qwen3.7-flash` | 100.0 % | 100.0 % | 0.0005 $ | 32.6 s |
-| 2 | `openai/gpt-6-luna` | 100.0 % | 100.0 % | 0.0009 $ | 3.8 s |
-| 3 | `z-ai/glm-5.3-flash` | 100.0 % | 100.0 % | 0.0012 $ | 5.0 s |
-| 4 | `deepseek/deepseek-v4.1-flash` | 100.0 % | 100.0 % | 0.0030 $ | 7.2 s |
-| 5 | `qwen/qwen3.8-27b` | 100.0 % | 100.0 % | 0.0035 $ | 17.2 s |
-| 6 | `cohere/command-a-plus` | 100.0 % | 100.0 % | 0.0059 $ | 15.2 s |
-| 7 | `google/gemini-3.8-flash` | 100.0 % | 100.0 % | 0.0067 $ | 6.4 s |
-| 8 | `meta/muse-spark-1.3` | 100.0 % | 100.0 % | 0.0126 $ | 9.9 s |
-| 9 | `moonshotai/kimi-k2.6` | 100.0 % | 100.0 % | 0.0129 $ | 31.0 s |
-| 10 | `qwen/qwen3.8-max-0902` | 100.0 % | 100.0 % | 0.0187 $ | 14.5 s |
-| 11 | `x-ai/grok-4.7` | 100.0 % | 100.0 % | 0.0222 $ | 16.3 s |
-| 12 | `anthropic/claude-opus-5.5` | 100.0 % | 100.0 % | 0.0311 $ | 5.2 s |
-| 13 | `qwen/qwen3.8-max-prime` | 100.0 % | 100.0 % | 0.0376 $ | 10.7 s |
-| 14 | `openai/gpt-6-astra` | 100.0 % | 100.0 % | 0.0849 $ | 4.0 s |
-| 15 | `moonshotai/kimi-k3` | 99.6 % | 100.0 % | 0.0218 $ | 6.5 s |
-| 16 | `google/gemma-4-31b-it` | 98.8 % | 98.3 % | 0.0002 $ | 8.1 s |
-| 17 | `mistralai/ministral-8b-2512` | 98.8 % | 98.3 % | 0.0010 $ | 2.4 s |
-| 18 | `google/gemini-3.5-flash-lite` | 98.8 % | 98.3 % | 0.0015 $ | 1.8 s |
-| 19 | `anthropic/claude-sonnet-5` | 98.8 % | 98.3 % | 0.0148 $ | 3.1 s |
-| 20 | `openai/gpt-6-sol` | 98.8 % | 98.3 % | 0.0180 $ | 4.3 s |
-| 21 | `anthropic/claude-fable-5.1` | 98.8 % | 98.3 % | 0.0736 $ | 5.6 s |
-| 22 | `meta-llama/llama-4-maverick` | 97.5 % | 96.7 % | 0.0017 $ | 4.6 s |
-| 23 | `mistralai/mistral-large-2512` | 97.5 % | 96.7 % | 0.0034 $ | 19.2 s |
-| 24 | `mistralai/mistral-small-2603` | 96.3 % | 95.0 % | 0.0011 $ | 2.5 s |
-| 25 | `mistralai/mistral-medium-3-5` | 95.8 % | 95.0 % | 0.0107 $ | 3.1 s |
-| 26 | `amazon/nova-lite-v1` | 80.0 % | 73.3 % | 0.0004 $ | 2.2 s |
-| 27 | `amazon/nova-pro-v1` | 75.0 % | 66.7 % | 0.0048 $ | 2.5 s |
+| 1 | `openai/gpt-6-luna` | 100.0 % | 100.0 % | 0.0009 $ | 4.0 s |
+| 2 | `deepseek/deepseek-v4.1-flash` | 100.0 % | 100.0 % | 0.0025 $ | 11.9 s |
+| 3 | `cohere/command-a-plus` | 100.0 % | 100.0 % | 0.0061 $ | 14.5 s |
+| 4 | `meta/muse-spark-1.3` | 100.0 % | 100.0 % | 0.0127 $ | 10.4 s |
+| 5 | `moonshotai/kimi-k2.6` | 100.0 % | 100.0 % | 0.0128 $ | 29.1 s |
+| 6 | `moonshotai/kimi-k3` | 99.7 % | 100.0 % | 0.0213 $ | 7.1 s |
+| 7 | `google/gemma-4-31b-it` | 99.2 % | 98.9 % | 0.0003 $ | 4.5 s |
+| 8 | `qwen/qwen3.7-flash` | 99.2 % | 98.9 % | 0.0005 $ | 36.3 s |
+| 9 | `mistralai/ministral-8b-2512` | 99.2 % | 98.9 % | 0.0010 $ | 2.3 s |
+| 10 | `z-ai/glm-5.3-flash` | 99.2 % | 98.9 % | 0.0012 $ | 6.5 s |
+| 11 | `google/gemini-3.5-flash-lite` | 99.2 % | 98.9 % | 0.0015 $ | 1.7 s |
+| 12 | `qwen/qwen3.8-27b` | 99.2 % | 98.9 % | 0.0037 $ | 17.9 s |
+| 13 | `google/gemini-3.8-flash` | 99.2 % | 98.9 % | 0.0072 $ | 6.6 s |
+| 14 | `anthropic/claude-sonnet-5` | 99.2 % | 98.9 % | 0.0147 $ | 2.9 s |
+| 15 | `qwen/qwen3.8-max-0902` | 99.2 % | 98.9 % | 0.0199 $ | 15.3 s |
+| 16 | `x-ai/grok-4.7` | 99.2 % | 98.9 % | 0.0227 $ | 16.7 s |
+| 17 | `anthropic/claude-opus-5.5` | 99.2 % | 98.9 % | 0.0307 $ | 5.0 s |
+| 18 | `qwen/qwen3.8-max-prime` | 99.2 % | 98.9 % | 0.0377 $ | 12.4 s |
+| 19 | `openai/gpt-6-astra` | 99.2 % | 98.9 % | 0.0845 $ | 3.9 s |
+| 20 | `openai/gpt-6-sol` | 98.4 % | 97.9 % | 0.0178 $ | 4.1 s |
+| 21 | `anthropic/claude-fable-5.1` | 98.4 % | 97.9 % | 0.0726 $ | 5.6 s |
+| 22 | `meta-llama/llama-4-maverick` | 98.2 % | 97.9 % | 0.0017 $ | 5.5 s |
+| 23 | `mistralai/mistral-small-2603` | 97.6 % | 96.8 % | 0.0010 $ | 2.5 s |
+| 24 | `mistralai/mistral-large-2512` | 97.6 % | 96.8 % | 0.0034 $ | 19.0 s |
+| 25 | `mistralai/mistral-medium-3-5` | 97.4 % | 96.8 % | 0.0105 $ | 3.0 s |
+| 26 | `amazon/nova-lite-v1` | 83.4 % | 77.9 % | 0.0004 $ | 2.2 s |
+| 27 | `amazon/nova-pro-v1` | 76.3 % | 68.4 % | 0.0048 $ | 2.5 s |
 
 ## Ce que ce classement dit
 
-**Quatorze modèles sur vingt-sept sont parfaits.** Entre le moins cher d'entre eux,
-`qwen/qwen3.7-flash` à 0,0005 $ la facture, et le plus cher, `openai/gpt-6-astra` à
-0,0849 $, il y a un **facteur 170 pour un résultat identique**.
+**Le vainqueur coûte 0,0009 $ la facture.** `openai/gpt-6-luna` lit les 95 factures sans
+une erreur, pour quatre-vingts fois moins cher que `openai/gpt-6-astra`, du même
+fournisseur, qui en rate une.
 
-**L'échantillon a cassé des égalités que dix-neuf factures ne voyaient pas.** Sur 19
-documents, dix-neuf modèles étaient à 100 % ; sur 56, dix-huit ; sur 60, quatorze.
-`claude-fable-5.1`, le modèle le plus cher du panel, tombe à 98,8 % — une facture lue
-de travers sur soixante, pour cent cinquante fois le prix du premier.
+**L'échantillon a fait le tri que dix-neuf factures ne pouvaient pas faire.** Ils étaient
+dix-neuf modèles à 100 % sur dix-neuf documents ; ils sont **cinq sur quatre-vingt-quinze**.
+Les deux modèles les plus chers du panel, `claude-fable-5.1` et `gpt-6-astra`, n'en font
+pas partie. Un classement bâti sur un petit échantillon ne dit pas « ces modèles se
+valent », il dit « ce test ne les sépare pas encore ».
 
-**Deux modèles inventent.** `moonshotai/kimi-k3` et `mistralai/mistral-medium-3-5` ont
-chacun fabriqué un numéro de TVA sur une facture qui n'en porte aucun. Sur dix-neuf
-documents, cela ne s'était jamais produit ; sur soixante, cela apparaît. C'est
-exactement ce qu'un échantillon plus large sert à montrer, et ce que mesure le
-quatrième verdict.
+**Trois modèles inventent** un numéro de TVA que ces factures ne portent pas :
+`kimi-k3`, `llama-4-maverick` et `mistral-medium-3-5`, un cas chacun. Aucun ne le faisait
+sur l'échantillon initial. C'est ce que mesure le quatrième verdict, et il fallait
+quatre-vingt-quinze documents pour le voir.
 
-**Les trois modèles qui décrochent** sont `nova-pro-v1` (75,0 %), `nova-lite-v1`
-(80,0 %) et `mistral-medium-3-5` (95,8 %). Le premier laisse une facture sur trois à
-reprendre à la main, alors qu'il est vendu comme un modèle haut de gamme.
+**Les deux modèles qui décrochent** sont `nova-pro-v1` (76,3 %) et `nova-lite-v1`
+(83,4 %). Le premier laisse près d'une facture sur trois à reprendre à la main, alors
+qu'il est vendu comme un modèle haut de gamme.
 
 **La conclusion méthodologique compte autant que le classement : cette tâche reste
-trop facile.** Quatorze modèles à égalité parfaite, cela ne hiérarchise pas. La vraie
-difficulté est dans les lignes de facturation, que l'annotation d'origine ne couvre
-pas : il faudra construire notre propre référence.
+facile.** Vingt-cinq modèles sur vingt-sept dépassent 97 %. La vraie difficulté est dans
+les lignes de facturation, que l'annotation d'origine ne couvre pas : il faudra
+construire notre propre référence.
 
 ## Répartition des erreurs, tous champs confondus
 
@@ -403,8 +403,8 @@ combien il en couvre — 1 sur 10 aujourd'hui.
 **Une page d'aide qui décrit une étape jamais exécutée est un mensonge poli.** La page
 méthodologie affirmait qu'« avant publication, un humain relit toutes les
 hallucinations ». L'étape existe dans le pipeline ; elle n'a jamais été lancée. Le site
-dit maintenant que les chiffres publiés sont ceux du comparateur seul, et que 52
-notations sur 1 620 restent marquées « à relire ».
+dit maintenant que les chiffres publiés sont ceux du comparateur seul, et que 79
+notations sur 2565 restent marquées « à relire ».
 
 ---
 

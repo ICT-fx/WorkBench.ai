@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "meta/muse-spark-1.3",
+  "docId": "dd623c62-a5b5-69c0-66ae-688d568ec71b",
+  "raw": {
+    "gross_amount": 40700,
+    "vat_number": null
+  },
+  "latencyMs": 29242,
+  "costUsd": 0.01235275,
+  "provider": "Meta",
+  "inputTokens": 4075,
+  "outputTokens": 1708
+}

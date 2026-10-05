@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "c3e9a6e9-cdc2-6a86-b0c8-d97d6f59ca61",
+  "raw": {
+    "gross_amount": 2150,
+    "vat_number": null
+  },
+  "latencyMs": 3783,
+  "costUsd": 0.000577425,
+  "provider": "OpenAI",
+  "inputTokens": 3924,
+  "outputTokens": 174
+}

@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "e3f3dba6-3b9c-1e3a-ef12-d240405f1034",
+  "raw": {
+    "gross_amount": 60,
+    "vat_number": null
+  },
+  "latencyMs": 3272,
+  "costUsd": 0.00047085,
+  "provider": "Together",
+  "inputTokens": 2389,
+  "outputTokens": 225
+}

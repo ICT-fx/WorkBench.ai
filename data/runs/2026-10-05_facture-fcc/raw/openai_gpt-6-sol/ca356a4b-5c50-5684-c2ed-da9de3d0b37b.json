@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "openai/gpt-6-sol",
+  "modelVersion": "openai/gpt-6-sol",
+  "docId": "ca356a4b-5c50-5684-c2ed-da9de3d0b37b",
+  "raw": {
+    "gross_amount": 479,
+    "vat_number": null
+  },
+  "latencyMs": 3150,
+  "costUsd": 0.006771,
+  "provider": "OpenAI",
+  "inputTokens": 2221,
+  "outputTokens": 122
+}

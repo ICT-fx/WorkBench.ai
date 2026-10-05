@@ -3613,6 +3613,27 @@
   },
   {
     "model": "qwen/qwen3.8-max-prime",
+    "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 440,
+        "expected": 440,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
     "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
     "byCriterion": {
       "gross_amount": {

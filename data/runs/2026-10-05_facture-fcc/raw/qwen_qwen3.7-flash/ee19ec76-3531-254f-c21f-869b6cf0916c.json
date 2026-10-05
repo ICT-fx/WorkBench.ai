@@ -1,0 +1,15 @@
+{
+  "runId": "2026-10-05_facture-fcc",
+  "model": "qwen/qwen3.7-flash",
+  "modelVersion": "qwen/qwen3.7-flash",
+  "docId": "ee19ec76-3531-254f-c21f-869b6cf0916c",
+  "raw": {
+    "gross_amount": 80,
+    "vat_number": null
+  },
+  "latencyMs": 18689,
+  "costUsd": 0.00023536,
+  "provider": "Alibaba",
+  "inputTokens": 3330,
+  "outputTokens": 1042
+}

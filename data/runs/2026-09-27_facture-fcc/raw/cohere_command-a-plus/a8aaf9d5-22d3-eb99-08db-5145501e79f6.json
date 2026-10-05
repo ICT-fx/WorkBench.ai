@@ -3,11 +3,13 @@
   "model": "cohere/command-a-plus",
   "modelVersion": "cohere/command-a-plus",
   "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
-  "raw": null,
-  "latencyMs": 100449,
-  "costUsd": 0.0324669,
+  "raw": {
+    "gross_amount": 14150,
+    "vat_number": null
+  },
+  "latencyMs": 12897,
+  "costUsd": 0.0067689,
   "provider": "Cohere",
   "inputTokens": 8223,
-  "outputTokens": 20000,
-  "error": "réponse sans JSON exploitable : "
+  "outputTokens": 2868
 }

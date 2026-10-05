@@ -47,7 +47,7 @@ Les classements publics mesurent des examens académiques ; le hub mesure le tra
 
 ## Evidence on Hand
 
-- Réel : le jeu de 60 factures publiques annotées (`data/tasks/facture-fcc`), les 1 620 notations et les réponses brutes des 27 modèles (trois runs dans `data/runs/`), le classement publié, le pipeline et ses tests, les métadonnées des 27 modèles (prix, contexte, dates de sortie).
+- Réel : le jeu de 95 factures publiques annotées (`data/tasks/facture-fcc`), les 2565 notations et les réponses brutes des 27 modèles (quatre runs dans `data/runs/`), le classement publié, le pipeline et ses tests, les métadonnées des 27 modèles (prix, contexte, dates de sortie).
 - Absent, à ne pas fabriquer : toute mesure réelle de modèle, toute couverture presse, tout témoignage, toute information sur l'équipe au-delà de « publié par Flowera ».
 
 ## Product Principles
