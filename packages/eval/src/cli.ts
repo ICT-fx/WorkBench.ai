@@ -1,5 +1,5 @@
 import { mkdir, writeFile, readFile } from "node:fs/promises";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import {
   BenchmarkHistorySchema, DocScoreSchema, ReviewItemSchema,
@@ -58,6 +58,15 @@ function perimetre(documents: LoadedDocument[]): LoadedDocument[] {
     retenus = retenus.filter((d) => !faits.has(d.docId));
   }
 
+  // --completer <run> : ne garder que les documents que ce run a déjà entamés.
+  // Reprendre un run sans cette restriction relance tout le tirage — 104
+  // documents au lieu des douze à terminer — et dépense sans prévenir.
+  const completer = arg("completer");
+  if (completer !== undefined) {
+    const entames = documentsEntames(completer);
+    retenus = retenus.filter((d) => entames.has(d.docId));
+  }
+
   if (limit !== undefined) retenus = retenus.slice(0, Number(limit));
   if (maxPages !== undefined) retenus = retenus.filter((d) => d.images.length <= Number(maxPages));
   if (maxPixels !== undefined) retenus = retenus.filter((d) => pixelsTotaux(d.images) <= Number(maxPixels));
@@ -72,6 +81,25 @@ function perimetre(documents: LoadedDocument[]): LoadedDocument[] {
  * entier plutôt que complété — un classement compare des modèles sur les mêmes
  * documents, ou ne compare rien.
  */
+/**
+ * Les documents qu'un run a déjà interrogés, même partiellement.
+ *
+ * On lit le dossier des réponses brutes et non `scores.json` : c'est justement
+ * sur les documents incomplets — donc absents du classement — qu'on revient
+ * pour les terminer.
+ */
+function documentsEntames(runId: string): Set<string> {
+  const racine = join(runsRoot(), runId, "raw");
+  if (!existsSync(racine)) throw new Error(`Run introuvable : ${racine}. Vérifier --completer.`);
+  const vus = new Set<string>();
+  for (const dossier of readdirSync(racine)) {
+    for (const fichier of readdirSync(join(racine, dossier))) {
+      vus.add(fichier.replace(/\.json$/, ""));
+    }
+  }
+  return vus;
+}
+
 function documentsMesures(runId: string): Set<string> {
   const fichier = join(runsRoot(), runId, "scores.json");
   if (!existsSync(fichier)) {
