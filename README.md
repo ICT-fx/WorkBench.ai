@@ -36,7 +36,7 @@ des hallucinations.
 |---|---|
 | Les 27 modèles, leurs labos, dates de sortie, prix et fenêtres de contexte | **Réels**, synchronisés depuis le catalogue public d'OpenRouter |
 | La tâche « lecture de factures publicitaires » : documents, annotations, barème, pipeline | **Réels** et rejouables |
-| Le classement publié : 27 modèles × 95 factures  2 565 notations | **Mesuré** — chaque chiffre vient d'un appel réellement passé |
+| Le classement publié : 27 modèles × 100 factures, 2 700 notations | **Mesuré** — chaque chiffre vient d'un appel réellement passé |
 | Les vingt-et-un autres benchmarks | Protocole rédigé, jeu de test **à construire**, aucun chiffre affiché |
 
 **Le dépôt ne contient plus aucune donnée fabriquée.** Une tâche est mesurée et porte
@@ -56,7 +56,7 @@ ne portent pas de numéro de TVA : répondre « rien » est la bonne réponse, p
 une valeur est une **hallucination**, comptée à part. Un chiffre inventé coûte plus
 cher qu'un chiffre manquant, parce qu'il passe la relecture.
 
-Sur le classement publié : **vingt-quatre modèles sur vingt-sept n'inventent jamais**. Trois ont fabriqué un numéro de TVA sur une facture qui n'en porte aucun — un cas chacun sur 95.
+Sur le classement publié : **vingt-quatre modèles sur vingt-sept n'inventent jamais**. Trois ont fabriqué un numéro de TVA sur une facture qui n'en porte aucun — un cas chacun sur cent.
 
 ## Rejouer une évaluation
 
@@ -109,7 +109,7 @@ calculées au build à partir de `data/`.
 
 ## Le jeu de test
 
-Quatre-vingt-quinze factures **réelles**, pas des factures fabriquées. Ce sont des
+Cent factures **réelles**, pas des factures fabriquées. Ce sont des
 factures d'achat d'espace publicitaire télévisé que les chaînes américaines doivent déposer
 auprès de la Federal Communications Commission, et que la loi rend publiques. Des
 journalistes les ont saisies champ par champ pour suivre les dépenses de campagne :

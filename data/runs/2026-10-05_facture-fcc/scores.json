@@ -6721,6 +6721,27 @@
   },
   {
     "model": "mistralai/mistral-large-2512",
+    "docId": "c6974e8e-1040-e730-6b6a-933e45d18641",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 235350,
+        "expected": 235350,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
     "docId": "ca356a4b-5c50-5684-c2ed-da9de3d0b37b",
     "byCriterion": {
       "gross_amount": {
@@ -6805,6 +6826,27 @@
   },
   {
     "model": "mistralai/mistral-large-2512",
+    "docId": "d6cd4fa8-fed8-1f57-c2f7-e5dea8529a3e",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 800,
+        "expected": 800,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
     "docId": "d748c964-6e5b-dc74-0e9c-8c4287c04552",
     "byCriterion": {
       "gross_amount": {
@@ -6873,6 +6915,27 @@
       "gross_amount": {
         "got": 40700,
         "expected": 40700,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
+    "docId": "e3f3dba6-3b9c-1e3a-ef12-d240405f1034",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 60,
+        "expected": 60,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3

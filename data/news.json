@@ -6,40 +6,40 @@
     "featured": true,
     "benchmark": "facture-fcc",
     "title": {
-      "fr": "Première mesure : 27 modèles lisent 95 vraies factures",
-      "en": "First measurement: 27 models read 95 real invoices"
+      "fr": "Première mesure : 27 modèles lisent 100 vraies factures",
+      "en": "First measurement: 27 models read 100 real invoices"
     },
     "summary": {
-      "fr": "Le vainqueur coûte 0,0009 $ la facture et n'en rate aucune. Les deux modèles les plus chers du panel, eux, en ratent une — et trois modèles inventent un numéro de TVA qui n'existe pas.",
-      "en": "The winner costs $0.0009 per invoice and misses none. The two most expensive models in the panel miss one — and three models invent a VAT number that does not exist."
+      "fr": "Le vainqueur coûte 0,0009 $ la facture et n'en rate aucune sur cent. Les deux modèles les plus chers du panel, eux, en ratent une — et trois modèles inventent un numéro de TVA qui n'existe pas.",
+      "en": "The winner costs $0.0009 per invoice and misses none out of a hundred. The two most expensive models in the panel miss one — and three models invent a VAT number that does not exist."
     },
     "body": {
       "fr": [
-        "Le hub publie sa première mesure réelle. Vingt-sept modèles ont lu les mêmes quatre-vingt-quinze factures, et chaque réponse a été comparée à une annotation écrite par un humain.",
+        "Le hub publie sa première mesure réelle. Vingt-sept modèles ont lu les mêmes cent factures, et chaque réponse a été comparée à une annotation écrite par un humain.",
         "Les documents ne viennent pas de nous. Ce sont de vraies factures d'achat d'espace publicitaire télévisé, que les chaînes américaines sont tenues de déposer auprès de la Federal Communications Commission et que la loi rend publiques. Des journalistes les ont saisies à la main, champ par champ, pour suivre les dépenses de campagne. C'est cette saisie qui sert de vérité terrain.",
         "Ce que ça donne :",
-        "- Cinq modèles sur vingt-sept lisent le montant total sans une seule erreur sur quatre-vingt-quinze factures.",
+        "- Cinq modèles sur vingt-sept lisent le montant total sans une seule erreur sur cent factures.",
         "- Le premier, GPT-6 Luna, coûte 0,0009 $ la facture — quatre-vingts fois moins que GPT-6 Astra, du même fournisseur, qui en rate une.",
         "- Trois modèles inventent. Sur un numéro de TVA que ces factures américaines ne portent pas, Kimi K3, Llama 4 Maverick et Mistral Medium ont chacun fabriqué une valeur. Les vingt-quatre autres s'abstiennent correctement.",
         "- Le dernier du classement laisse près d'une facture sur trois à reprendre à la main, alors qu'il est vendu comme un modèle haut de gamme.",
-        "La taille de l'échantillon est ce qui fait la différence entre un classement et une illusion. Sur dix-neuf factures, dix-neuf modèles étaient à égalité parfaite et aucun n'inventait rien. Sur quatre-vingt-quinze, ils ne sont plus que cinq, trois inventions apparaissent, et les deux modèles les plus chers du panel quittent le peloton de tête. Un petit échantillon ne dit pas « ces modèles se valent » : il dit « ce test ne les sépare pas encore ».",
+        "La taille de l'échantillon est ce qui fait la différence entre un classement et une illusion. Sur dix-neuf factures, dix-neuf modèles étaient à égalité parfaite et aucun n'inventait rien. Sur cent, ils ne sont plus que cinq, trois inventions apparaissent, et les deux modèles les plus chers du panel quittent le peloton de tête. Un petit échantillon ne dit pas « ces modèles se valent » : il dit « ce test ne les sépare pas encore ».",
         "Comment on vérifie une réponse, puisque c'est la question qui compte : pas en demandant à une IA de juger une IA. Un comparateur écrit à la main lit la réponse du modèle et l'annotation, et tranche. Un montant est comparé au centime. Quand le comparateur ne sait pas trancher, le document part en relecture humaine plutôt que d'être compté comme faux.",
         "Le barème ne note que ce qui n'admet qu'une seule bonne réponse : le montant total facturé, et le numéro de TVA absent du document. Les autres champs de ces factures — le numéro de contrat, l'annonceur, la période — admettent plusieurs réponses défendables : ces documents portent six identifiants distincts et deux périodes différentes. La question ne leur est donc plus posée du tout, plutôt que d'être posée puis écartée.",
-        "Cinq factures ont été interrogées puis écartées du classement : tout le panel ne les a pas lues, à cause d'une limite de débit chez un hébergeur ou d'un modèle trop bavard pour tenir dans la place qu'on lui laisse. Un classement compare des modèles sur les mêmes documents, ou ne compare rien.",
+        "Les cent factures ont été lues par les vingt-sept modèles, sans exception. Il a fallu plusieurs reprises pour y arriver : une limite de débit chez un hébergeur ou un modèle trop bavard pour tenir dans la place qu'on lui laisse suffit à rendre une facture inexploitable, et un classement compare des modèles sur les mêmes documents ou ne compare rien.",
         "Ce que cette mesure ne dit pas : les factures sont américaines et en anglais. Elle ne mesure pas l'extraction des lignes de facturation, qui est la vraie difficulté du métier — l'annotation d'origine ne les couvre pas. Et vingt-cinq modèles sur vingt-sept dépassent 97 % : cette tâche reste un seuil d'entrée plutôt qu'un palmarès."
       ],
       "en": [
-        "The hub publishes its first real measurement. Twenty-seven models read the same ninety-five invoices, and every answer was compared against an annotation written by a human.",
+        "The hub publishes its first real measurement. Twenty-seven models read the same one hundred invoices, and every answer was compared against an annotation written by a human.",
         "The documents are not ours. They are real television advertising invoices that US stations are required to file with the Federal Communications Commission and that law makes public. Journalists entered them by hand, field by field, to track campaign spending. That entry is what serves as ground truth.",
         "What came out:",
-        "- Five models out of twenty-seven read the total amount without a single mistake across ninety-five invoices.",
+        "- Five models out of twenty-seven read the total amount without a single mistake across one hundred invoices.",
         "- The winner, GPT-6 Luna, costs $0.0009 per invoice — eighty times less than GPT-6 Astra, from the same provider, which misses one.",
         "- Three models invent. On a VAT number these American invoices do not carry, Kimi K3, Llama 4 Maverick and Mistral Medium each fabricated a value. The other twenty-four abstain correctly.",
         "- The last model in the ranking leaves nearly one invoice in three to be redone by hand, while being sold as a premium model.",
-        "Sample size is what separates a ranking from an illusion. On nineteen invoices, nineteen models were perfectly tied and none invented anything. On ninety-five, only five remain, three inventions appear, and the two most expensive models in the panel drop out of the leading pack. A small sample does not say “these models are equivalent”: it says “this test does not separate them yet”.",
+        "Sample size is what separates a ranking from an illusion. On nineteen invoices, nineteen models were perfectly tied and none invented anything. On one hundred, only five remain, three inventions appear, and the two most expensive models in the panel drop out of the leading pack. A small sample does not say “these models are equivalent”: it says “this test does not separate them yet”.",
         "How an answer is verified, since that is the question that matters: not by asking an AI to judge an AI. A hand-written comparator reads the model's answer and the annotation, and decides. An amount is compared to the cent. When the comparator cannot decide, the document goes to human review rather than being counted wrong.",
         "The rubric scores only what admits a single right answer: the total amount billed, and the VAT number absent from the document. The other fields on these invoices — contract number, advertiser, period — admit several defensible answers: these documents carry six distinct identifiers and two different periods. So the question is no longer asked at all, rather than asked and then discarded.",
-        "Five invoices were queried and then dropped from the ranking: the whole panel did not read them, because of a rate limit at a provider or a model too verbose to fit in the room we give it. A ranking compares models on the same documents, or it compares nothing.",
+        "All one hundred invoices were read by all twenty-seven models, without exception. It took several retries: a rate limit at a provider, or a model too verbose to fit in the room we give it, is enough to make an invoice unusable — and a ranking compares models on the same documents, or it compares nothing.",
         "What this measurement does not say: the invoices are American and in English. It does not measure line-item extraction, which is the real difficulty of the job — the original annotation does not cover it. And twenty-five models out of twenty-seven exceed 97%: this task remains an entry threshold rather than a league table."
       ]
     }
