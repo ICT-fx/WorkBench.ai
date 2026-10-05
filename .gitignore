@@ -12,4 +12,12 @@ dist/
 # publique, le tirage étant déterministe. Le manifeste, lui, est versionné :
 # c'est lui qui fixe quels documents composent le jeu.
 # Les pages déjà suivies le restent — ce sont celles que le site affiche.
+#
+# Après chaque publication, les documents retenus pour la section « Les documents
+# qui départagent » changent. Leurs pages doivent être ajoutées de force, sinon
+# le site déployé affiche la section sans ses images :
+#   npx tsx apps/web/scripts/sync-assets.ts
+#   for d in $(ls apps/web/public/documents/*/ | sed 's/-p[0-9]*\.jpg//' | sort -u); do
+#     git add -f data/tasks/*/documents/$d-p*.jpg
+#   done
 data/tasks/*/documents/
