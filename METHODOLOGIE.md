@@ -267,6 +267,15 @@ gris**, et vérifier le poids avant de commiter.
 
 ## Sur l'exécution et l'argent
 
+**Un délai maximal uniforme fait payer trois fois les modèles lents.** Le plafond
+de quatre minutes par appel, posé pour qu'une connexion morte ne fige plus un run,
+interrompt aussi les modèles qui répondent lentement sur un document lourd : deux
+appels ont mis 681 et 685 secondes, c'est-à-dire deux tentatives avortées puis une
+réussie. Les tentatives avortées peuvent être facturées, et à deux appels
+simultanés elles bloquent les deux créneaux pendant onze minutes. Le plafond doit
+suivre le modèle, comme celui des jetons — relevé là où c'est nécessaire, serré
+ailleurs — plutôt que d'être le même pour les vingt-sept.
+
 **`--limit` désigne un rang, pas un document.** Le filtre garde les N premiers du
 tirage. Le tirage s'allonge quand on prépare de nouveaux documents : « les 25
 premiers » de septembre, rejoués en octobre sur un dossier passé de 39 à 132
