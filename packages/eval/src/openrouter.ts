@@ -43,6 +43,16 @@ export type OpenRouterOptions = {
   apiKey: string;
   provider?: ProviderOptions;
   maxTokens?: number;
+  /**
+   * Plafond propre à certains modèles, par alias.
+   *
+   * Un modèle qui réfléchit longuement avant de répondre peut épuiser le plafond
+   * commun sans avoir eu la place d'écrire son JSON : l'appel est facturé et
+   * rendu inexploitable. Relever le plafond pour tout le monde coûterait plus
+   * cher en crédit réservé à chaque requête ; on le relève donc là où c'est
+   * nécessaire, et nulle part ailleurs.
+   */
+  maxTokensParModele?: Record<string, number>;
   /** Informe des reprises, pour que le run ne paraisse pas figé. */
   surReprise?: (model: string, docId: string, tentative: number, attenteMs: number) => void;
 };
@@ -90,7 +100,7 @@ export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
         model,
         messages: [{ role: "user", content: contenu }],
         temperature: 0,
-        max_tokens: opts.maxTokens ?? 2000,
+        max_tokens: opts.maxTokensParModele?.[model] ?? opts.maxTokens ?? 2000,
         usage: { include: true },
         ...(opts.provider === undefined ? {} : { provider: opts.provider }),
       }),

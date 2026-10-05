@@ -139,6 +139,10 @@ async function cmdRun(taskId: string): Promise<void> {
       // jetons, quarante-trois réponses sont revenues vides ou tronquées,
       // faute de place pour écrire le JSON après la réflexion.
       maxTokens: 8000,
+      // Cohere atteint exactement ce plafond cinq fois sur six et n'a plus la
+      // place d'écrire sa réponse : l'appel est facturé pour rien, et la facture
+      // concernée est écartée du classement pour tout le panel.
+      maxTokensParModele: { "cohere/command-a-plus": 20000 },
       surReprise: (model, docId, tentative, ms) => {
         console.log(`  ↻ ${model} ${docId.slice(0, 8)} : reprise ${tentative} dans ${Math.round(ms / 1000)} s`);
       },
