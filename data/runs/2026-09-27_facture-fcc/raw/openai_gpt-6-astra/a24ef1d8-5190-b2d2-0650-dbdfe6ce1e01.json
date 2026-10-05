@@ -3,8 +3,13 @@
   "model": "openai/gpt-6-astra",
   "modelVersion": "openai/gpt-6-astra",
   "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
-  "raw": null,
-  "latencyMs": 205146,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "gross_amount": 21960,
+    "vat_number": null
+  },
+  "latencyMs": 4814,
+  "costUsd": 0.1803675,
+  "provider": "OpenAI",
+  "inputTokens": 14142,
+  "outputTokens": 72
 }

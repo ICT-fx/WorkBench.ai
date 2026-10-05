@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "988878c1-0908-63f0-8dcd-71381dcafecb",
+  "raw": {
+    "gross_amount": 3675,
+    "vat_number": null
+  },
+  "latencyMs": 16535,
+  "costUsd": 0.0004549,
+  "provider": "Novita",
+  "inputTokens": 1370,
+  "outputTokens": 100
+}

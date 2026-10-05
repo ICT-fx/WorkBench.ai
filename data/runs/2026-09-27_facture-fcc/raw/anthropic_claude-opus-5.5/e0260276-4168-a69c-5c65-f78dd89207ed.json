@@ -3,8 +3,13 @@
   "model": "anthropic/claude-opus-5.5",
   "modelVersion": "anthropic/claude-opus-5.5",
   "docId": "e0260276-4168-a69c-5c65-f78dd89207ed",
-  "raw": null,
-  "latencyMs": 204085,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 8000 tokens, but can only afford 4371. To increase, visit https://openrouter.ai/workspaces/default/keys/38c7737c5977c2022db9fa60954723722c11dbd39c8a56c3cd464109e49632f0 and adjust the key's weekly limit"
+  "raw": {
+    "gross_amount": 4455,
+    "vat_number": null
+  },
+  "latencyMs": 3653,
+  "costUsd": 0.026976,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 6329,
+  "outputTokens": 83
 }

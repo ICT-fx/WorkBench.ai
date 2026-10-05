@@ -4579,6 +4579,27 @@
   },
   {
     "model": "cohere/command-a-plus",
+    "docId": "3f335f42-1857-e5c0-203e-a9cc03a13aa4",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 6545,
+        "expected": 6545,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "cohere/command-a-plus",
     "docId": "3fb2b31f-5664-3bd2-4fec-e4b0e777ecc5",
     "byCriterion": {
       "gross_amount": {
@@ -4605,6 +4626,27 @@
       "gross_amount": {
         "got": 350,
         "expected": 350,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "cohere/command-a-plus",
+    "docId": "48e3a952-fea0-ff4a-b83b-6577a43b33aa",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 14685,
+        "expected": 14685,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
@@ -4983,6 +5025,27 @@
       "gross_amount": {
         "got": 3500,
         "expected": 3500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 210350,
+        "expected": 210350,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3

@@ -3,8 +3,13 @@
   "model": "qwen/qwen3.8-max-prime",
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "eabf486e-2ff6-c060-68b7-fcf5363bde66",
-  "raw": null,
-  "latencyMs": 186034,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "gross_amount": 6170,
+    "vat_number": null
+  },
+  "latencyMs": 12044,
+  "costUsd": 0.026672,
+  "provider": "Alibaba",
+  "inputTokens": 4730,
+  "outputTokens": 646
 }

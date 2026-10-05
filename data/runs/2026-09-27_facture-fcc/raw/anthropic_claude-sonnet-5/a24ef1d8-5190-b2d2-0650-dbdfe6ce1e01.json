@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "anthropic/claude-sonnet-5",
+  "modelVersion": "anthropic/claude-sonnet-5",
+  "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
+  "raw": {
+    "gross_amount": 21960,
+    "vat_number": null
+  },
+  "latencyMs": 3490,
+  "costUsd": 0.032284,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 15652,
+  "outputTokens": 98
+}

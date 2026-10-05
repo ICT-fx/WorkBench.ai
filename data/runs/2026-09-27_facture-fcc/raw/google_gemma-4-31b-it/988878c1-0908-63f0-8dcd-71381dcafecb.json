@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "988878c1-0908-63f0-8dcd-71381dcafecb",
+  "raw": {
+    "gross_amount": 3675,
+    "vat_number": null
+  },
+  "latencyMs": 2951,
+  "costUsd": 0.00112825,
+  "provider": "ModelRun",
+  "inputTokens": 1371,
+  "outputTokens": 100
+}

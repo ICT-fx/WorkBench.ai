@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "d297f399-d37d-4970-7701-9807995d4129",
+  "raw": {
+    "gross_amount": 6925,
+    "vat_number": null
+  },
+  "latencyMs": 7250,
+  "costUsd": 0.00094745,
+  "provider": "Parasail",
+  "inputTokens": 4253,
+  "outputTokens": 619
+}

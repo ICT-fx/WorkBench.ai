@@ -3,51 +3,19 @@
   "runId": "2026-09-27_facture-fcc+2026-10-02_facture-fcc+2026-10-04_facture-fcc",
   "status": "reel",
   "runDate": "2026-10-04",
-  "sampleSize": 60,
-  "excluded": 12,
+  "sampleSize": 70,
+  "excluded": 6,
   "rows": [
-    {
-      "model": "qwen/qwen3.7-flash",
-      "modelVersion": "qwen/qwen3.7-flash",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.000485,
-      "latencyP50": 32576,
-      "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
     {
       "model": "openai/gpt-6-luna",
       "modelVersion": "openai/gpt-6-luna",
       "sansRelecture": 100,
       "exactitude": 100,
       "hallucinations": 0,
-      "costPerDoc": 0.000887,
-      "latencyP50": 3788,
+      "costPerDoc": 0.000912,
+      "latencyP50": 3939,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "z-ai/glm-5.3-flash",
-      "modelVersion": "z-ai/glm-5.3-flash",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.001244,
-      "latencyP50": 4970,
-      "errorCount": 0,
-      "docCount": 60,
+      "docCount": 70,
       "ci": 0,
       "bySubtask": {
         "gross_amount": 100,
@@ -60,26 +28,10 @@
       "sansRelecture": 100,
       "exactitude": 100,
       "hallucinations": 0,
-      "costPerDoc": 0.003007,
-      "latencyP50": 7190,
+      "costPerDoc": 0.002946,
+      "latencyP50": 8494,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "qwen/qwen3.8-27b",
-      "modelVersion": "qwen/qwen3.8-27b",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.003524,
-      "latencyP50": 17220,
-      "errorCount": 0,
-      "docCount": 60,
+      "docCount": 70,
       "ci": 0,
       "bySubtask": {
         "gross_amount": 100,
@@ -92,26 +44,10 @@
       "sansRelecture": 100,
       "exactitude": 100,
       "hallucinations": 0,
-      "costPerDoc": 0.005851,
-      "latencyP50": 15224,
+      "costPerDoc": 0.006009,
+      "latencyP50": 15619,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "google/gemini-3.8-flash",
-      "modelVersion": "google/gemini-3.8-flash",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.006677,
-      "latencyP50": 6445,
-      "errorCount": 0,
-      "docCount": 60,
+      "docCount": 70,
       "ci": 0,
       "bySubtask": {
         "gross_amount": 100,
@@ -124,10 +60,10 @@
       "sansRelecture": 100,
       "exactitude": 100,
       "hallucinations": 0,
-      "costPerDoc": 0.012606,
-      "latencyP50": 9889,
+      "costPerDoc": 0.01333,
+      "latencyP50": 10208,
       "errorCount": 0,
-      "docCount": 60,
+      "docCount": 70,
       "ci": 0,
       "bySubtask": {
         "gross_amount": 100,
@@ -140,90 +76,10 @@
       "sansRelecture": 100,
       "exactitude": 100,
       "hallucinations": 0,
-      "costPerDoc": 0.012877,
-      "latencyP50": 30984,
+      "costPerDoc": 0.013365,
+      "latencyP50": 32265,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "qwen/qwen3.8-max-0902",
-      "modelVersion": "qwen/qwen3.8-max-0902",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.01871,
-      "latencyP50": 14451,
-      "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "x-ai/grok-4.7",
-      "modelVersion": "x-ai/grok-4.7",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.022162,
-      "latencyP50": 16299,
-      "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "anthropic/claude-opus-5.5",
-      "modelVersion": "anthropic/claude-opus-5.5",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.031124,
-      "latencyP50": 5222,
-      "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "qwen/qwen3.8-max-prime",
-      "modelVersion": "qwen/qwen3.8-max-prime",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.037605,
-      "latencyP50": 10653,
-      "errorCount": 0,
-      "docCount": 60,
-      "ci": 0,
-      "bySubtask": {
-        "gross_amount": 100,
-        "vat_number": 100
-      }
-    },
-    {
-      "model": "openai/gpt-6-astra",
-      "modelVersion": "openai/gpt-6-astra",
-      "sansRelecture": 100,
-      "exactitude": 100,
-      "hallucinations": 0,
-      "costPerDoc": 0.084916,
-      "latencyP50": 3971,
-      "errorCount": 0,
-      "docCount": 60,
+      "docCount": 70,
       "ci": 0,
       "bySubtask": {
         "gross_amount": 100,
@@ -235,209 +91,353 @@
       "modelVersion": "moonshotai/kimi-k3",
       "sansRelecture": 100,
       "exactitude": 99.6,
-      "hallucinations": 1.7,
-      "costPerDoc": 0.021803,
+      "hallucinations": 1.4,
+      "costPerDoc": 0.022933,
       "latencyP50": 6546,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 1.2,
+      "docCount": 70,
+      "ci": 1,
       "bySubtask": {
         "gross_amount": 100,
-        "vat_number": 98.3
+        "vat_number": 98.6
       }
     },
     {
       "model": "google/gemma-4-31b-it",
       "modelVersion": "google/gemma-4-31b-it",
-      "sansRelecture": 98.3,
-      "exactitude": 98.8,
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
       "hallucinations": 0,
-      "costPerDoc": 0.000223,
-      "latencyP50": 8050,
+      "costPerDoc": 0.000232,
+      "latencyP50": 7785,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2,
+      "docCount": 70,
+      "ci": 1.7,
       "bySubtask": {
-        "gross_amount": 98.3,
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "qwen/qwen3.7-flash",
+      "modelVersion": "qwen/qwen3.7-flash",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.000521,
+      "latencyP50": 34747,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
         "vat_number": 100
       }
     },
     {
       "model": "mistralai/ministral-8b-2512",
       "modelVersion": "mistralai/ministral-8b-2512",
-      "sansRelecture": 98.3,
-      "exactitude": 98.8,
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
       "hallucinations": 0,
-      "costPerDoc": 0.00099,
-      "latencyP50": 2367,
+      "costPerDoc": 0.001029,
+      "latencyP50": 2419,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2,
+      "docCount": 70,
+      "ci": 1.7,
       "bySubtask": {
-        "gross_amount": 98.3,
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "modelVersion": "z-ai/glm-5.3-flash",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.001265,
+      "latencyP50": 5874,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
         "vat_number": 100
       }
     },
     {
       "model": "google/gemini-3.5-flash-lite",
       "modelVersion": "google/gemini-3.5-flash-lite",
-      "sansRelecture": 98.3,
-      "exactitude": 98.8,
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
       "hallucinations": 0,
-      "costPerDoc": 0.00147,
-      "latencyP50": 1775,
+      "costPerDoc": 0.001513,
+      "latencyP50": 1780,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2,
+      "docCount": 70,
+      "ci": 1.7,
       "bySubtask": {
-        "gross_amount": 98.3,
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-27b",
+      "modelVersion": "qwen/qwen3.8-27b",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.003755,
+      "latencyP50": 17914,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "modelVersion": "google/gemini-3.8-flash",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.007609,
+      "latencyP50": 6573,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
         "vat_number": 100
       }
     },
     {
       "model": "anthropic/claude-sonnet-5",
       "modelVersion": "anthropic/claude-sonnet-5",
-      "sansRelecture": 98.3,
-      "exactitude": 98.8,
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
       "hallucinations": 0,
-      "costPerDoc": 0.014833,
-      "latencyP50": 3061,
+      "costPerDoc": 0.015346,
+      "latencyP50": 3077,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2,
+      "docCount": 70,
+      "ci": 1.7,
       "bySubtask": {
-        "gross_amount": 98.3,
+        "gross_amount": 98.6,
         "vat_number": 100
       }
     },
     {
-      "model": "openai/gpt-6-sol",
-      "modelVersion": "openai/gpt-6-sol",
-      "sansRelecture": 98.3,
-      "exactitude": 98.8,
+      "model": "qwen/qwen3.8-max-0902",
+      "modelVersion": "qwen/qwen3.8-max-0902",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
       "hallucinations": 0,
-      "costPerDoc": 0.018019,
-      "latencyP50": 4269,
+      "costPerDoc": 0.020562,
+      "latencyP50": 15447,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2,
+      "docCount": 70,
+      "ci": 1.7,
       "bySubtask": {
-        "gross_amount": 98.3,
+        "gross_amount": 98.6,
         "vat_number": 100
       }
     },
     {
-      "model": "anthropic/claude-fable-5.1",
-      "modelVersion": "anthropic/claude-fable-5.1",
-      "sansRelecture": 98.3,
-      "exactitude": 98.8,
+      "model": "x-ai/grok-4.7",
+      "modelVersion": "x-ai/grok-4.7",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
       "hallucinations": 0,
-      "costPerDoc": 0.073645,
-      "latencyP50": 5644,
+      "costPerDoc": 0.023357,
+      "latencyP50": 16299,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2,
+      "docCount": 70,
+      "ci": 1.7,
       "bySubtask": {
-        "gross_amount": 98.3,
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "modelVersion": "anthropic/claude-opus-5.5",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.032083,
+      "latencyP50": 5382,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-max-prime",
+      "modelVersion": "qwen/qwen3.8-max-prime",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.040174,
+      "latencyP50": 12239,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "modelVersion": "openai/gpt-6-astra",
+      "sansRelecture": 98.6,
+      "exactitude": 98.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.086746,
+      "latencyP50": 3871,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 1.7,
+      "bySubtask": {
+        "gross_amount": 98.6,
         "vat_number": 100
       }
     },
     {
       "model": "meta-llama/llama-4-maverick",
       "modelVersion": "meta-llama/llama-4-maverick",
-      "sansRelecture": 96.7,
-      "exactitude": 97.5,
+      "sansRelecture": 97.1,
+      "exactitude": 97.9,
       "hallucinations": 0,
-      "costPerDoc": 0.001734,
-      "latencyP50": 4571,
+      "costPerDoc": 0.00178,
+      "latencyP50": 5036,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2.8,
+      "docCount": 70,
+      "ci": 2.4,
       "bySubtask": {
-        "gross_amount": 96.7,
+        "gross_amount": 97.1,
         "vat_number": 100
       }
     },
     {
-      "model": "mistralai/mistral-large-2512",
-      "modelVersion": "mistralai/mistral-large-2512",
-      "sansRelecture": 96.7,
-      "exactitude": 97.5,
+      "model": "openai/gpt-6-sol",
+      "modelVersion": "openai/gpt-6-sol",
+      "sansRelecture": 97.1,
+      "exactitude": 97.9,
       "hallucinations": 0,
-      "costPerDoc": 0.003397,
-      "latencyP50": 19158,
+      "costPerDoc": 0.018349,
+      "latencyP50": 4296,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 2.8,
+      "docCount": 70,
+      "ci": 2.4,
       "bySubtask": {
-        "gross_amount": 96.7,
+        "gross_amount": 97.1,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "anthropic/claude-fable-5.1",
+      "modelVersion": "anthropic/claude-fable-5.1",
+      "sansRelecture": 97.1,
+      "exactitude": 97.9,
+      "hallucinations": 0,
+      "costPerDoc": 0.07598,
+      "latencyP50": 5798,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 2.4,
+      "bySubtask": {
+        "gross_amount": 97.1,
         "vat_number": 100
       }
     },
     {
       "model": "mistralai/mistral-small-2603",
       "modelVersion": "mistralai/mistral-small-2603",
-      "sansRelecture": 95,
-      "exactitude": 96.3,
+      "sansRelecture": 95.7,
+      "exactitude": 96.8,
       "hallucinations": 0,
-      "costPerDoc": 0.001051,
-      "latencyP50": 2534,
+      "costPerDoc": 0.001086,
+      "latencyP50": 2662,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 3.4,
+      "docCount": 70,
+      "ci": 2.9,
       "bySubtask": {
-        "gross_amount": 95,
+        "gross_amount": 95.7,
+        "vat_number": 100
+      }
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "modelVersion": "mistralai/mistral-large-2512",
+      "sansRelecture": 95.7,
+      "exactitude": 96.8,
+      "hallucinations": 0,
+      "costPerDoc": 0.003527,
+      "latencyP50": 19113,
+      "errorCount": 0,
+      "docCount": 70,
+      "ci": 2.9,
+      "bySubtask": {
+        "gross_amount": 95.7,
         "vat_number": 100
       }
     },
     {
       "model": "mistralai/mistral-medium-3-5",
       "modelVersion": "mistralai/mistral-medium-3-5",
-      "sansRelecture": 95,
-      "exactitude": 95.8,
-      "hallucinations": 1.7,
-      "costPerDoc": 0.010701,
+      "sansRelecture": 95.7,
+      "exactitude": 96.4,
+      "hallucinations": 1.4,
+      "costPerDoc": 0.011055,
       "latencyP50": 3084,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 3.6,
+      "docCount": 70,
+      "ci": 3.1,
       "bySubtask": {
-        "gross_amount": 95,
-        "vat_number": 98.3
+        "gross_amount": 95.7,
+        "vat_number": 98.6
       }
     },
     {
       "model": "amazon/nova-lite-v1",
       "modelVersion": "amazon/nova-lite-v1",
-      "sansRelecture": 73.3,
-      "exactitude": 80,
+      "sansRelecture": 77.1,
+      "exactitude": 82.9,
       "hallucinations": 0,
-      "costPerDoc": 0.000364,
-      "latencyP50": 2216,
+      "costPerDoc": 0.000377,
+      "latencyP50": 2236,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 7.2,
+      "docCount": 70,
+      "ci": 6.2,
       "bySubtask": {
-        "gross_amount": 73.3,
+        "gross_amount": 77.1,
         "vat_number": 100
       }
     },
     {
       "model": "amazon/nova-pro-v1",
       "modelVersion": "amazon/nova-pro-v1",
-      "sansRelecture": 66.7,
-      "exactitude": 75,
+      "sansRelecture": 67.1,
+      "exactitude": 75.4,
       "hallucinations": 0,
-      "costPerDoc": 0.004841,
+      "costPerDoc": 0.005007,
       "latencyP50": 2503,
       "errorCount": 0,
-      "docCount": 60,
-      "ci": 7.7,
+      "docCount": 70,
+      "ci": 7.1,
       "bySubtask": {
-        "gross_amount": 66.7,
+        "gross_amount": 67.1,
         "vat_number": 100
       }
     }
   ],
-  "incomplets": 12
+  "incomplets": 6
 }

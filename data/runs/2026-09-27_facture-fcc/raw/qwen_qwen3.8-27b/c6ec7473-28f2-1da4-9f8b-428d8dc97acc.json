@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
+  "raw": {
+    "gross_amount": 3625,
+    "vat_number": null
+  },
+  "latencyMs": 9452,
+  "costUsd": 0.002038875,
+  "provider": "Phala",
+  "inputTokens": 4828,
+  "outputTokens": 705
+}

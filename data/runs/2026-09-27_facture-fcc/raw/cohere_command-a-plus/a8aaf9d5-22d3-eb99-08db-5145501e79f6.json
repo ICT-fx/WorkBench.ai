@@ -1,0 +1,13 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+  "raw": null,
+  "latencyMs": 100449,
+  "costUsd": 0.0324669,
+  "provider": "Cohere",
+  "inputTokens": 8223,
+  "outputTokens": 20000,
+  "error": "réponse sans JSON exploitable : "
+}

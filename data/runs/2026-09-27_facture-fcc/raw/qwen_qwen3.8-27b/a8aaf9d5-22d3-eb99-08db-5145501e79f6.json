@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+  "raw": {
+    "gross_amount": 14150,
+    "vat_number": null
+  },
+  "latencyMs": 103547,
+  "costUsd": 0.00492185,
+  "provider": "Darkbloom",
+  "inputTokens": 4321,
+  "outputTokens": 2139
+}

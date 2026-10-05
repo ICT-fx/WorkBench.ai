@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "x-ai/grok-4.7",
+  "modelVersion": "x-ai/grok-4.7",
+  "docId": "e8d41204-64eb-9f4b-608e-5593933aca41",
+  "raw": {
+    "gross_amount": 73200,
+    "vat_number": null
+  },
+  "latencyMs": 6996,
+  "costUsd": 0.016936,
+  "provider": "xAI",
+  "inputTokens": 7598,
+  "outputTokens": 578
+}

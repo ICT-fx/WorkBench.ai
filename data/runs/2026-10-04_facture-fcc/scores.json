@@ -126,6 +126,27 @@
     "needsReview": false
   },
   {
+    "model": "amazon/nova-lite-v1",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
     "model": "amazon/nova-pro-v1",
     "docId": "93cd08d3-28b1-31c0-8902-4060655fcb91",
     "byCriterion": {
@@ -399,6 +420,27 @@
     "needsReview": true
   },
   {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
     "model": "anthropic/claude-opus-5.5",
     "docId": "93cd08d3-28b1-31c0-8902-4060655fcb91",
     "byCriterion": {
@@ -783,6 +825,27 @@
       "gross_amount": {
         "got": 440,
         "expected": 440,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "cohere/command-a-plus",
+    "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 6414,
+        "expected": 6414,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
@@ -903,6 +966,69 @@
     "needsReview": false
   },
   {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 440,
+        "expected": 440,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 6414,
+        "expected": 6414,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
     "model": "google/gemini-3.5-flash-lite",
     "docId": "93cd08d3-28b1-31c0-8902-4060655fcb91",
     "byCriterion": {
@@ -1014,6 +1140,27 @@
       "gross_amount": {
         "got": 6414,
         "expected": 6414,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "google/gemini-3.5-flash-lite",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
@@ -1870,6 +2017,27 @@
   },
   {
     "model": "mistralai/mistral-large-2512",
+    "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 5451.9,
+        "expected": 6414,
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
     "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
     "byCriterion": {
       "gross_amount": {
@@ -2604,6 +2772,27 @@
     "needsReview": true
   },
   {
+    "model": "openai/gpt-6-astra",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
     "model": "openai/gpt-6-luna",
     "docId": "93cd08d3-28b1-31c0-8902-4060655fcb91",
     "byCriterion": {
@@ -2715,6 +2904,27 @@
       "gross_amount": {
         "got": 6414,
         "expected": 6414,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-luna",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
@@ -3001,6 +3211,27 @@
       }
     },
     "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
   },
   {
     "model": "qwen/qwen3.8-27b",
@@ -3219,6 +3450,27 @@
       "gross_amount": {
         "got": 1720,
         "expected": 1720,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 440,
+        "expected": 440,
         "verdict": "correct",
         "points": 3,
         "maxPoints": 3
@@ -3673,5 +3925,26 @@
       }
     },
     "needsReview": true
+  },
+  {
+    "model": "z-ai/glm-5.3-flash",
+    "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+    "byCriterion": {
+      "gross_amount": {
+        "got": 39500,
+        "expected": 39500,
+        "verdict": "correct",
+        "points": 3,
+        "maxPoints": 3
+      },
+      "vat_number": {
+        "got": null,
+        "expected": null,
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
   }
 ]

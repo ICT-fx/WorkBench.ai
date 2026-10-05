@@ -4,7 +4,7 @@
   "modelVersion": "qwen/qwen3.8-max-prime",
   "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
   "raw": null,
-  "latencyMs": 98527,
+  "latencyMs": 129476,
   "costUsd": 0.108304,
   "provider": "Alibaba",
   "inputTokens": 3076,

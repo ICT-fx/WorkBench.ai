@@ -3,8 +3,13 @@
   "model": "anthropic/claude-fable-5.1",
   "modelVersion": "anthropic/claude-fable-5.1",
   "docId": "e0260276-4168-a69c-5c65-f78dd89207ed",
-  "raw": null,
-  "latencyMs": 196731,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "gross_amount": 4455,
+    "vat_number": null
+  },
+  "latencyMs": 14801,
+  "costUsd": 0.06744,
+  "provider": "Google",
+  "inputTokens": 6329,
+  "outputTokens": 83
 }

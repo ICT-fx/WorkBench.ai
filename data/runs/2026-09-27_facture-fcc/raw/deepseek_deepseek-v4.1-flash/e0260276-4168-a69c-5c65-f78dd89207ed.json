@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "e0260276-4168-a69c-5c65-f78dd89207ed",
+  "raw": {
+    "gross_amount": 4455,
+    "vat_number": null
+  },
+  "latencyMs": 10593,
+  "costUsd": 0.0007986104,
+  "provider": "DeepInfra",
+  "inputTokens": 3132,
+  "outputTokens": 1023
+}

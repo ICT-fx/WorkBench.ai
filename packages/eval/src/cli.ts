@@ -208,17 +208,25 @@ async function cmdScore(taskId: string): Promise<void> {
   const retenus = new Set(perimetre(documents).map((d) => d.docId));
 
   const scores: DocScore[] = [];
+  // Un document interrogé puis retiré du jeu — annotation illisible repérée à la
+  // préparation — n'a plus de vérité terrain. Le noter est impossible, et faire
+  // échouer la notation entière le serait tout autant : on l'écarte en le disant.
+  const sansReference = new Set<string>();
   for (const result of results) {
     if (result.error !== undefined) continue;
     if (!retenus.has(result.docId)) continue;
     const gt = groundTruths.get(result.docId);
-    if (gt === undefined) throw new Error(`Vérité terrain manquante pour ${result.docId}`);
+    if (gt === undefined) { sansReference.add(result.docId); continue; }
     const parsed = (result.raw ?? {}) as Record<string, unknown>;
     scores.push(DocScoreSchema.parse(scoreDocument(task, gt, parsed, result.model)));
   }
 
   await writeFile(join(runDir, "scores.json"), `${JSON.stringify(scores, null, 2)}\n`);
   const sansRelecture = scores.filter((s) => !s.needsReview).length;
+  if (sansReference.size > 0) {
+    console.log(`${sansReference.size} document(s) écarté(s), sans vérité terrain : ` +
+      `${[...sansReference].map((d) => d.slice(0, 8)).join(", ")}`);
+  }
   console.log(`${scores.length} documents notés, ${sansRelecture} sans relecture nécessaire.`);
   console.log(`→ ${join(runDir, "scores.json")}`);
 }

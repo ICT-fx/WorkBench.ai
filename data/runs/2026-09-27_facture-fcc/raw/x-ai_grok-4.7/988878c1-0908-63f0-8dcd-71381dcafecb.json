@@ -3,8 +3,13 @@
   "model": "x-ai/grok-4.7",
   "modelVersion": "x-ai/grok-4.7",
   "docId": "988878c1-0908-63f0-8dcd-71381dcafecb",
-  "raw": null,
-  "latencyMs": 213459,
-  "costUsd": 0,
-  "error": "402 Payment Required — {\"error\":{\"message\":\"This request's maximum cost exceeds your available credits. Add credits, or lower max_tokens or prompt size.\",\"code\":402,\"metadata\":{\"reason\":\"weight_exceeds_budget\",\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lowe"
+  "raw": {
+    "gross_amount": 3675,
+    "vat_number": null
+  },
+  "latencyMs": 15689,
+  "costUsd": 0.018828,
+  "provider": "xAI",
+  "inputTokens": 6141,
+  "outputTokens": 1379
 }

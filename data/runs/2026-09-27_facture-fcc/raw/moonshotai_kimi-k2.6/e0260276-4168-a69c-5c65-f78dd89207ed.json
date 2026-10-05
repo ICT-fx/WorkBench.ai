@@ -1,0 +1,15 @@
+{
+  "runId": "2026-09-27_facture-fcc",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "e0260276-4168-a69c-5c65-f78dd89207ed",
+  "raw": {
+    "gross_amount": 4455,
+    "vat_number": null
+  },
+  "latencyMs": 15557,
+  "costUsd": 0.00681712,
+  "provider": "Baidu",
+  "inputTokens": 6120,
+  "outputTokens": 976
+}
