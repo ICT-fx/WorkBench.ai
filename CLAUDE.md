@@ -41,6 +41,14 @@ qu'un classement fabriqué ne puisse pas être publié sans se signaler.
 qui décrit une étape du protocole doit décrire ce qui a réellement été fait. L'étape
 d'arbitrage humain n'a jamais été exécutée, et le site le dit.
 
+**Chaque benchmark explique son propre protocole.** La page Méthodologie est en deux
+parties : ce qui vaut pour tout le hub (indice, marge d'erreur, coûts, maturité), puis
+une partie par benchmark mesuré — ses limites, son barème, ses verdicts, son prompt,
+son dernier run. Un protocole ne se transpose pas d'une tâche à l'autre, et un barème
+lu hors de son benchmark passe pour une règle générale. Toute nouvelle tâche mesurée
+ajoute donc sa section avant d'être publiée ; aucune ne se contente de celle d'une
+autre.
+
 **Avant de publier un classement.** Regarder la répartition des erreurs par champ, et
 comparer le classement obtenu sur tous les champs à celui obtenu sans les champs
 ambigus. S'ils divergent, le benchmark mesure la question posée et non la compétence

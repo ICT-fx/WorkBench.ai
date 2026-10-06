@@ -140,7 +140,7 @@ const fr = {
     },
     maturity: {
       id: "protocoles",
-      toc: "Protocoles",
+      toc: "Mesuré ou à venir",
       title: "Mesuré ou à venir",
       body: [
         "Chaque benchmark porte l'une de ces deux mentions :",
@@ -151,8 +151,14 @@ const fr = {
         "Pourquoi publier un protocole avant ses résultats ? Parce qu'il ne pourra plus être retouché ensuite pour arranger un classement, et parce qu'il se discute mieux avant qu'après.",
       ],
     },
-    invoiceIntro:
-      "Les sections qui suivent documentent le seul protocole mesuré à ce jour, la lecture de factures : ses limites, son barème, ses verdicts, son prompt et son dernier run.",
+    taskPart: {
+      eyebrow: "Protocole d'un benchmark",
+      title: "Le protocole : {benchmark}",
+      body: [
+        "Tout ce qui précède vaut pour l'ensemble du hub : l'indice métier, la marge d'erreur, l'origine des coûts, la maturité d'une tâche. Ce qui suit ne vaut que pour un seul benchmark. Ses limites, son barème, ses verdicts, son prompt et son dernier run lui appartiennent, et ne disent rien des autres.",
+        "Chaque benchmark aura ici sa propre section, à mesure qu'il sera mesuré. Un protocole ne se transpose pas d'une tâche à l'autre : un montant se vérifie au centime, alors que trier des candidatures ou résumer un contrat demande une tout autre grille — et des jugements qu'aucun comparateur automatique ne rend.",
+      ],
+    },
     limits: {
       id: "limites",
       toc: "Limites du test",
@@ -337,7 +343,7 @@ const en: typeof fr = {
     },
     maturity: {
       id: "protocoles",
-      toc: "Protocols",
+      toc: "Measured or coming",
       title: "Measured or coming",
       body: [
         "Every benchmark carries one of these two labels:",
@@ -348,8 +354,14 @@ const en: typeof fr = {
         "Why publish a protocol before its results? Because it can no longer be adjusted afterwards to suit a ranking, and because it is easier to challenge before than after.",
       ],
     },
-    invoiceIntro:
-      "The sections below document the only protocol measured so far, invoice reading: its limits, its scoring grid, its verdicts, its prompt and its latest run.",
+    taskPart: {
+      eyebrow: "One benchmark's protocol",
+      title: "The protocol: {benchmark}",
+      body: [
+        "Everything above applies to the hub as a whole: the Business Index, the margin of error, where costs come from, how mature a task is. What follows applies to one benchmark only. Its limits, its scoring grid, its verdicts, its prompt and its latest run belong to it, and say nothing about the others.",
+        "Every benchmark will get its own section here as it is measured. A protocol does not carry over from one task to the next: an amount is checked to the cent, whereas sorting applications or summarising a contract calls for a different grid entirely — and for judgements no automatic comparator can make.",
+      ],
+    },
     limits: {
       id: "limites",
       toc: "Limits of the test",

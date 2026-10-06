@@ -9,7 +9,7 @@ import { date, num } from "@/lib/format";
 import { typo } from "@/lib/news";
 import { getHub } from "@/lib/site";
 import { DemoTag } from "@/components/ui/DemoTag";
-import { Icon } from "@/components/ui/Icon";
+import { Icon, hasIcon } from "@/components/ui/Icon";
 import { AboutTabs } from "@/components/about/AboutTabs";
 import { content } from "@/components/about/content";
 import { Prose } from "@/components/news/Prose";
@@ -33,10 +33,15 @@ function comparaison(c: Criterion, t: Dictionary["about"]["methodology"]["kinds"
   return t[c.kind];
 }
 
-function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+function Section({ id, title, eyebrow, children }: {
+  id: string; title: string; eyebrow?: string; children: React.ReactNode;
+}) {
   return (
     <section id={id} aria-labelledby={`titre-${id}`} className="scroll-mt-32 lg:scroll-mt-24">
-      <h2 id={`titre-${id}`} className="etendu text-2xl">{title}</h2>
+      {/* Qui arrive par une ancre du sommaire tombe au milieu de la page : la
+          section dit elle-même de quel benchmark elle parle. */}
+      {eyebrow !== undefined && <p className="etiquette text-vert">{eyebrow}</p>}
+      <h2 id={`titre-${id}`} className={`etendu text-2xl${eyebrow === undefined ? "" : " mt-1"}`}>{title}</h2>
       {children}
     </section>
   );
@@ -48,7 +53,10 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
   const dict = getDictionary(lang);
   const t = dict.about.methodology;
   const c = content[lang].methodology;
-  const { benchmarks, leaderboards, pricesSyncedAt } = getHub();
+  const { benchmarks, domains, leaderboards, pricesSyncedAt } = getHub();
+  const benchmark = benchmarks.find((b) => b.id === TACHE);
+  const nomTache = benchmark === undefined ? TACHE : tr(benchmark.label, lang);
+  const iconeTache = domains.find((d) => d.id === benchmark?.domain)?.icon;
 
   const task = loadTask(TACHE);
   const classement = loadLeaderboard(TACHE);
@@ -75,7 +83,13 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
     demos > 0 ? fill(c.demo.statusSome, { demo: demos, total: publies.length }) : c.demo.statusNone,
   ];
 
-  const sommaire = [c.index, c.margin, c.costs, c.demo, c.maturity, c.limits, c.scoring, c.verdicts, c.prompt, c.run];
+  // Le sommaire sépare ce qui vaut pour tout le hub de ce qui n'appartient
+  // qu'à un benchmark : lu à plat, le barème d'une tâche passait pour une règle
+  // générale.
+  const groupes = [
+    { label: t.tocHub, items: [c.index, c.margin, c.costs, c.demo, c.maturity] },
+    { label: fill(t.tocTask, { benchmark: nomTache }), items: [c.limits, c.scoring, c.verdicts, c.prompt, c.run] },
+  ];
 
   return (
     <main className="conteneur pb-8">
@@ -89,18 +103,25 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
       <div className="grid gap-x-8 gap-y-6 lg:grid-cols-[15rem_minmax(0,1fr)]">
         {/* Même sommaire que la page des benchmarks : colonne collante sur grand écran, ruban défilant ailleurs. */}
         <nav aria-label={t.toc} className="sticky top-16 z-20 -mx-4 self-start overflow-x-auto bg-papier/95 px-4 py-2 backdrop-blur-sm sm:-mx-6 sm:px-6 lg:top-24 lg:mx-0 lg:overflow-visible lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
-          <ul className="flex gap-1 lg:flex-col">
-            {sommaire.map((s) => (
-              <li key={s.id} className="flex-none">
-                <a
-                  href={`#${s.id}`}
-                  className="block whitespace-nowrap rounded-full px-3.5 py-2 text-sm text-encre-pale no-underline transition-colors hover:bg-creux hover:text-encre lg:whitespace-normal lg:rounded-[var(--radius-m)]"
-                >
-                  {s.toc}
-                </a>
-              </li>
+          <div className="flex gap-1 lg:flex-col">
+            {groupes.map((g) => (
+              <div key={g.label} className="flex flex-none items-center gap-1 lg:mt-5 lg:flex-col lg:items-stretch lg:gap-0 lg:first:mt-0">
+                <p className="etiquette flex-none whitespace-nowrap px-3.5 py-2 text-encre-muette lg:whitespace-normal">{g.label}</p>
+                <ul className="flex gap-1 lg:flex-col">
+                  {g.items.map((s) => (
+                    <li key={s.id} className="flex-none">
+                      <a
+                        href={`#${s.id}`}
+                        className="block whitespace-nowrap rounded-full px-3.5 py-2 text-sm text-encre-pale no-underline transition-colors hover:bg-creux hover:text-encre lg:whitespace-normal lg:rounded-[var(--radius-m)]"
+                      >
+                        {s.toc}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </nav>
 
         <div className="min-w-0 space-y-16">
@@ -124,13 +145,30 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
             <Prose body={c.maturity.body.map((l) => fill(l, avancement))} locale={lang} className="mt-5" />
           </Section>
 
-          <p className="max-w-[68ch] border-t border-filet pt-8 text-encre-pale">{typo(c.invoiceIntro, lang)}</p>
+          <section id="protocole" aria-labelledby="titre-protocole" className="scroll-mt-32 lg:scroll-mt-24">
+            <div className="panneau border-l-4 border-l-vert p-5 sm:p-7">
+              <p className="etiquette flex items-center gap-2 text-vert">
+                {iconeTache !== undefined && hasIcon(iconeTache) && <Icon name={iconeTache} size={16} />}
+                {c.taskPart.eyebrow}
+              </p>
+              <h2 id="titre-protocole" className="etendu mt-3 text-2xl">
+                {fill(c.taskPart.title, { benchmark: nomTache })}
+              </h2>
+              <Prose body={c.taskPart.body} locale={lang} className="mt-4" />
+              {leaderboards.has(TACHE) && (
+                <Link href={href(lang, `/benchmarks/${TACHE}`)} className="bouton mt-6">
+                  {t.viewBenchmark}
+                  <Icon name="arrow-right" size={15} />
+                </Link>
+              )}
+            </div>
+          </section>
 
-          <Section id={c.limits.id} title={c.limits.title}>
+          <Section id={c.limits.id} title={c.limits.title} eyebrow={nomTache}>
             <Prose body={c.limits.body} locale={lang} className="mt-5" />
           </Section>
 
-          <Section id={c.scoring.id} title={c.scoring.title}>
+          <Section id={c.scoring.id} title={c.scoring.title} eyebrow={nomTache}>
             <Prose body={c.scoring.body} locale={lang} className="mt-5" />
             <div className="panneau mt-6 max-w-[52rem]">
               <div className="overflow-x-auto">
@@ -163,18 +201,18 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
             <Prose body={c.scoring.after} locale={lang} className="mt-6" />
           </Section>
 
-          <Section id={c.verdicts.id} title={c.verdicts.title}>
+          <Section id={c.verdicts.id} title={c.verdicts.title} eyebrow={nomTache}>
             <Prose body={c.verdicts.body} locale={lang} className="mt-5" />
           </Section>
 
-          <Section id={c.prompt.id} title={c.prompt.title}>
+          <Section id={c.prompt.id} title={c.prompt.title} eyebrow={nomTache}>
             <Prose body={c.prompt.body} locale={lang} className="mt-5" />
             <pre lang="fr" className="mt-6 max-w-[52rem] whitespace-pre-wrap break-words rounded-[var(--radius-m)] border border-filet bg-creux p-5 font-sans text-sm leading-relaxed">
               {prompt}
             </pre>
           </Section>
 
-          <Section id={c.run.id} title={c.run.title}>
+          <Section id={c.run.id} title={c.run.title} eyebrow={nomTache}>
             <div className="panneau mt-6 max-w-[36rem]">
               <table className="tableau">
                 <caption className="sr-only">{t.run.caption}</caption>

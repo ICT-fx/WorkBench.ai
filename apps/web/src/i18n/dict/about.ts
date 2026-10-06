@@ -16,8 +16,10 @@ const fr = {
     metaDescription:
       "Comment l'indice métier est calculé, ce que vaut un écart, d'où viennent les coûts, comment sont fabriqués les scores de démonstration, et le barème complet de la lecture de factures.",
     title: "Méthodologie",
-    lead: "Tout ce qui suit est vérifiable dans le dépôt : le prompt envoyé, le barème appliqué, les documents soumis et les réponses brutes de chaque modèle.",
+    lead: "Deux parties : la méthode commune à tout le hub, puis le protocole propre à chaque benchmark mesuré. Tout est vérifiable dans le dépôt — le prompt envoyé, le barème appliqué, les documents soumis et les réponses brutes de chaque modèle.",
     toc: "Sommaire",
+    tocHub: "La méthode du hub",
+    tocTask: "Protocole : {benchmark}",
     table: { field: "Champ", comparison: "Comparaison", weight: "Poids", critical: "Critique", yes: "oui", no: "non" },
     kinds: {
       exact: "identité, ponctuation ignorée",
@@ -59,8 +61,10 @@ const en: typeof fr = {
     metaDescription:
       "How the Business Index is computed, what a gap is worth, where costs come from, how demonstration scores are fabricated, and the full scoring grid for invoice reading.",
     title: "Methodology",
-    lead: "Everything below can be checked in the repository: the prompt sent, the scoring grid applied, the documents submitted and each model's raw answers.",
+    lead: "Two parts: the method common to the whole hub, then the protocol specific to each measured benchmark. Everything can be checked in the repository — the prompt sent, the scoring grid applied, the documents submitted and each model's raw answers.",
     toc: "Contents",
+    tocHub: "The hub's method",
+    tocTask: "Protocol: {benchmark}",
     table: { field: "Field", comparison: "Comparison", weight: "Weight", critical: "Critical", yes: "yes", no: "no" },
     kinds: {
       exact: "identical, punctuation ignored",

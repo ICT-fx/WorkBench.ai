@@ -140,9 +140,9 @@ export default async function PageBenchmarks({ params }: PageProps<"/[lang]/benc
               <li key={s.id} className="flex-none">
                 <a
                   href={`#${s.id}`}
-                  className="flex items-center gap-2.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm text-encre-pale no-underline transition-colors hover:bg-creux hover:text-encre lg:rounded-[var(--radius-m)]"
+                  className="flex items-center gap-2.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium text-encre-pale no-underline transition-colors hover:bg-creux hover:text-encre lg:rounded-[var(--radius-m)]"
                 >
-                  <Icon name={s.icon} size={16} />
+                  <Icon name={s.icon} size={18} />
                   {s.label}
                 </a>
               </li>
@@ -180,7 +180,7 @@ function Section({ id, icon, label, summary, cartes, dict }: {
   return (
     <section id={id} className="panneau scroll-mt-32 lg:scroll-mt-24">
       <div className="bandeau flex-wrap">
-        <Icon name={icon} size={17} />
+        <Icon name={icon} size={23} className="flex-none" />
         <h2>{label}</h2>
         {summary !== undefined && (
           <p className="w-full text-[0.82rem] font-normal normal-case tracking-normal text-sur-vert/80 sm:ml-auto sm:w-auto">{summary}</p>
