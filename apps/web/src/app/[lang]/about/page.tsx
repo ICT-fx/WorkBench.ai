@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { fill, getDictionary, href, isLocale, tr } from "@/i18n";
 import { typo } from "@/lib/news";
 import { getHub } from "@/lib/site";
+import { EDITEUR } from "@/lib/editeur";
 import { Icon } from "@/components/ui/Icon";
 import { AboutTabs } from "@/components/about/AboutTabs";
 import { content } from "@/components/about/content";
@@ -63,7 +64,7 @@ export default async function PageAPropos({ params }: PageProps<"/[lang]/about">
           <div className="prose-hub mt-5">
             <p>
               {c.publisher.before}
-              <a href="https://flowera.fr" rel="noopener">{c.publisher.link}</a>
+              <a href={EDITEUR.url} rel="noopener">{c.publisher.link}</a>
               {c.publisher.after}
             </p>
           </div>

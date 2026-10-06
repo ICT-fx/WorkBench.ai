@@ -7,7 +7,7 @@ const fr = {
     metaDescription:
       "Pourquoi un classement des modèles d'IA sur des tâches d'entreprise concrètes, ce qu'il mesure, ses limites, et qui le publie.",
     title: "À propos du hub",
-    lead: "Le Hub d'évaluations métier classe les modèles d'IA sur des tâches d'entreprise concrètes, métier par métier, et publie tout ce qu'il faut pour refaire le calcul.",
+    lead: "WorkBench.ai classe les modèles d'IA sur des tâches d'entreprise concrètes, métier par métier, et publie tout ce qu'il faut pour refaire le calcul.",
     ctaMethodology: "Lire la méthodologie",
     ctaBenchmarks: "Voir les benchmarks",
   },
@@ -50,7 +50,7 @@ const en: typeof fr = {
     metaDescription:
       "Why rank AI models on concrete business tasks, what the hub measures, its limits, and who publishes it.",
     title: "About the hub",
-    lead: "The Business Evals Hub ranks AI models on concrete business tasks, one business function at a time, and publishes everything needed to redo the sums.",
+    lead: "WorkBench.ai ranks AI models on concrete business tasks, one business function at a time, and publishes everything needed to redo the sums.",
     ctaMethodology: "Read the methodology",
     ctaBenchmarks: "View the benchmarks",
   },

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { fill, href, type Dictionary, type Locale } from "@/i18n";
 import { date } from "@/lib/format";
 import { getHub } from "@/lib/site";
+import { EDITEUR } from "@/lib/editeur";
+import { Icon } from "@/components/ui/Icon";
 import { Logo } from "./Logo";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -27,6 +29,10 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <p className="mt-3 max-w-[56ch] text-xs text-encre-muette">
             {fill(footer.pricesSynced, { date: date(pricesSyncedAt, locale, "long") })}
           </p>
+          <a href={EDITEUR.url} className="bouton mt-5">
+            {footer.visitPublisher}
+            <Icon name="arrow-up-right" size={15} />
+          </a>
         </div>
         <nav aria-label={dict.common.site.name}>
           <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm">

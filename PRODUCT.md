@@ -41,7 +41,8 @@ Les classements publics mesurent des examens académiques ; le hub mesure le tra
 
 ## Brand Commitments
 
-- Nom : « Hub d'évaluations métier », publié par Flowera.
+- Nom : « WorkBench.ai », publié par Flowera (flowera.ch). Chaque page porte un lien vers
+  le site de l'éditeur, en en-tête et en pied de page.
 - Voix : directe, concrète, sans jargon marketing ; des exemples tirés de la vie d'une PME.
 - Demande visuelle du propriétaire (contraignante) : très simple comme vals.ai, mais moins carré, dans des tons verts.
 

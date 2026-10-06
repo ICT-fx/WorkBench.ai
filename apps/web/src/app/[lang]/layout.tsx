@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DemoBanner } from "@/components/layout/DemoBanner";
 import { getHub } from "@/lib/site";
+import { siteUrl } from "@/lib/site-url";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -28,8 +29,17 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   if (!isLocale(lang)) return {};
   const { site } = getDictionary(lang).common;
   return {
+    metadataBase: siteUrl(),
     title: { default: `${site.name} — ${site.tagline}`, template: `%s — ${site.name}` },
     description: site.description,
+    openGraph: {
+      siteName: site.name,
+      title: `${site.name} — ${site.tagline}`,
+      description: site.description,
+      locale: lang === "fr" ? "fr_CH" : "en_US",
+      type: "website",
+      url: `/${lang}`,
+    },
   };
 }
 

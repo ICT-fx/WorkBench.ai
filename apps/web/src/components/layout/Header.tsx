@@ -6,6 +6,7 @@ import { Suspense, useEffect, useState } from "react";
 import { LOCALES, href, type Locale } from "@/i18n";
 import { useI18n } from "@/i18n/client";
 import { Icon } from "@/components/ui/Icon";
+import { EDITEUR } from "@/lib/editeur";
 import { Logo } from "./Logo";
 
 const LIENS = ["benchmarks", "models", "comparison", "news", "about"] as const;
@@ -61,6 +62,15 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Le hub et le site de l'éditeur se répondent : d'ici on repart chez Flowera. */}
+          <a
+            href={EDITEUR.url}
+            className="bouton !px-3 !py-1.5 !text-[0.78rem]"
+            aria-label={dict.common.nav.publisher}
+          >
+            {EDITEUR.nom}
+            <Icon name="arrow-up-right" size={15} />
+          </a>
           <Suspense fallback={null}><LangSwitch /></Suspense>
           <button
             type="button"

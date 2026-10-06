@@ -1,4 +1,4 @@
-# Design — Hub d'évaluations métier
+# Design — WorkBench.ai
 
 Décrit le système tel qu'il est construit dans `apps/web`. La source de vérité reste
 `apps/web/src/app/globals.css` ; ce fichier dit *pourquoi*.

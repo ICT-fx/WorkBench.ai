@@ -1,7 +1,7 @@
 const fr = {
   site: {
-    name: "Hub d'évaluations métier",
-    shortName: "Hub métier",
+    name: "WorkBench.ai",
+    shortName: "WorkBench",
     tagline: "Quel modèle d'IA pour quel métier de l'entreprise",
     description:
       "Le classement des modèles d'IA sur des tâches d'entreprise concrètes : lire une facture, résumer un contrat, répondre à un client. Protocole, documents et réponses brutes publiés.",
@@ -17,9 +17,11 @@ const fr = {
     skip: "Aller au contenu",
     language: "Langue",
     switchTo: "English",
+    publisher: "Le site de Flowera, qui publie ce hub",
   },
   footer: {
     publishedBy: "Publié par Flowera.",
+    visitPublisher: "Aller sur flowera.ch",
     verifiable:
       "Les documents de test, les réponses brutes des modèles et le code de notation sont dans le dépôt public : chaque chiffre mesuré de ce site peut être recalculé.",
     methodology: "Méthodologie",
@@ -100,8 +102,8 @@ const fr = {
 
 const en: typeof fr = {
   site: {
-    name: "Business Evals Hub",
-    shortName: "Evals Hub",
+    name: "WorkBench.ai",
+    shortName: "WorkBench",
     tagline: "Which AI model for which business function",
     description:
       "AI models ranked on concrete business tasks: reading an invoice, summarising a contract, answering a customer. Protocol, documents and raw answers published.",
@@ -117,9 +119,11 @@ const en: typeof fr = {
     skip: "Skip to content",
     language: "Language",
     switchTo: "Français",
+    publisher: "Flowera's own site, which publishes this hub",
   },
   footer: {
     publishedBy: "Published by Flowera.",
+    visitPublisher: "Go to flowera.ch",
     verifiable:
       "Test documents, raw model answers and scoring code live in the public repository: every measured figure on this site can be recomputed.",
     methodology: "Methodology",

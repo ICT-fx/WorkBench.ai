@@ -1,4 +1,4 @@
-# Hub d'évaluations métier
+# WorkBench.ai
 
 Le classement des modèles d'IA sur des tâches d'entreprise concrètes, métier par
 métier — finance, comptabilité, ressources humaines, juridique, service client… — à
@@ -169,4 +169,4 @@ mille. Les scores publiés sont un plancher, pas un plafond.
 
 ---
 
-Publié par [Flowera](https://flowera.fr).
+Publié par [Flowera](https://flowera.ch).

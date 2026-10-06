@@ -1,4 +1,4 @@
-# Hub d'évaluations métier — consignes de travail
+# WorkBench.ai — consignes de travail
 
 Projet de Fantin (Flowera) : un site qui classe les modèles d'IA sur des tâches
 métier concrètes, à partir de mesures réelles et vérifiables.
