@@ -134,7 +134,7 @@
       "fr": "facture",
       "en": "invoice"
     },
-    "sampleSize": 19,
+    "sampleSize": 100,
     "subtasks": [
       {
         "id": "gross_amount",

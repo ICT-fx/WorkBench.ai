@@ -8,7 +8,7 @@ import {
   loadReponses, loadScores, loadTask,
 } from "@/lib/data";
 import { stateOfTheArt } from "@/lib/hub";
-import { documentsClivants } from "@/lib/exemples";
+import { documentsClivants, lecturesParDocument } from "@/lib/exemples";
 import { takeaways } from "@/lib/takeaways";
 import { date, pct } from "@/lib/format";
 import { labView, modelHref, scatterPoints } from "@/lib/views";
@@ -287,7 +287,12 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         ? <CasPieges taskId={id} runId={leaderboard.runId} lang={lang} names={names} />
         : <DocumentsClivants taskId={id} runId={leaderboard.runId} lang={lang} names={names} />}
 
-      {hasTask(id) && <Corpus taskId={id} runId={leaderboard.runId} lang={lang} />}
+      {hasTask(id) && (
+        <Corpus
+          taskId={id} runId={leaderboard.runId} lang={lang}
+          fields={new Map(benchmark.subtasks.map((s) => [s.id, tr(s.label, lang)]))}
+        />
+      )}
 
       <p className="mt-16 max-w-[64ch]">
         <Link href={href(lang, "/about/methodology")} className="text-vert underline">{t.methodology}</Link> {t.methodologyTail}
@@ -313,26 +318,37 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
 }
 
 /**
- * Le corpus : tout ce que le modèle a eu à lire, document par document.
+ * Le corpus : tout ce que le panel a eu à lire, document par document, et ce
+ * qu'il en a tiré.
  *
  * Un classement n'est vérifiable que si son jeu de test l'est. Chaque ligne
  * renvoie au document d'origine, chez celui qui le publie — jamais à une copie
- * que nous aurions faite — et affiche l'annotation qui a servi de référence.
- * Un lecteur peut ouvrir la facture et recompter.
+ * que nous aurions faite — affiche l'annotation qui a servi de référence, et
+ * combien de modèles l'ont retrouvée. Un lecteur peut ouvrir la facture et
+ * recompter.
+ *
+ * Le nombre de pages n'y figure pas : les images ne sont pas toutes versées au
+ * dépôt, et un build fait depuis un clone afficherait zéro page pour les
+ * documents absents — un chiffre affiché doit être un chiffre mesuré.
  */
-function Corpus({ taskId, runId, lang }: { taskId: string; runId: string; lang: "fr" | "en" }) {
+function Corpus({ taskId, runId, lang, fields }: {
+  taskId: string; runId: string; lang: "fr" | "en"; fields: Map<string, string>;
+}) {
   const t = getDictionary(lang).benchmarks.detail;
   const task = loadTask(taskId);
   const sources = loadDocumentSources(taskId);
-  const docs = [...new Set(loadScores(runId).map((s) => s.docId))].sort();
-  if (docs.length === 0) return null;
-
-  const labels = Object.fromEntries(task.criteria.map((c) => [c.id, c.label]));
+  // Le champ décisif est le premier critère critique : c'est de lui que dépend
+  // le classement, donc c'est sur lui qu'un document se compte comme lu ou non.
+  const decisif = task.criteria.find((c) => c.critical) ?? task.criteria[0];
+  if (decisif === undefined) return null;
+  const lectures = lecturesParDocument(loadScores(runId), decisif.id);
+  if (lectures.length === 0) return null;
+  const champ = fields.get(decisif.id) ?? decisif.label;
 
   return (
     <section className="mt-16">
       <h2 className="etendu text-2xl">{t.corpus}</h2>
-      <p className="mt-2 max-w-[68ch] text-encre-pale">{fill(t.corpusLead, { n: docs.length })}</p>
+      <p className="mt-2 max-w-[68ch] text-encre-pale">{fill(t.corpusLead, { n: lectures.length })}</p>
 
       <div className="panneau mt-6 overflow-x-auto">
         <table className="tableau">
@@ -340,22 +356,26 @@ function Corpus({ taskId, runId, lang }: { taskId: string; runId: string; lang: 
           <thead>
             <tr>
               <th scope="col"><span className="etiquette">{t.corpusDoc}</span></th>
-              <th scope="col" className="droite"><span className="etiquette">{t.corpusPages}</span></th>
-              <th scope="col" className="droite"><span className="etiquette">{labels.gross_amount ?? t.corpusAmount}</span></th>
-              <th scope="col" className="droite"><span className="etiquette">{labels.flight_to ?? t.corpusPeriod}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{fill(t.corpusExpected, { field: champ })}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{t.corpusCorrect}</span></th>
+              <th scope="col" className="droite"><span className="etiquette">{t.corpusInvented}</span></th>
               <th scope="col" className="droite"><span className="etiquette">{t.corpusSource}</span></th>
             </tr>
           </thead>
           <tbody>
-            {docs.map((docId) => {
-              const champs = loadGroundTruth(taskId, docId).fields;
-              const url = sources.get(docId);
+            {lectures.map((lecture) => {
+              const attendu = loadGroundTruth(taskId, lecture.docId).fields[decisif.id] ?? null;
+              const url = sources.get(lecture.docId);
               return (
-                <tr key={docId}>
-                  <th scope="row" className="chiffres font-normal">{docId.slice(0, 8)}</th>
-                  <td className="chiffres droite">{documentImages(taskId, docId).length}</td>
-                  <td className="chiffres droite"><ValeurBrute valeur={champs.gross_amount ?? null} abstention="—" /></td>
-                  <td className="chiffres droite"><ValeurBrute valeur={champs.flight_to ?? null} abstention="—" /></td>
+                <tr key={lecture.docId}>
+                  <th scope="row" className="chiffres font-normal">{lecture.docId.slice(0, 8)}</th>
+                  <td className="chiffres droite"><ValeurBrute valeur={attendu} abstention="—" /></td>
+                  <td className="chiffres droite">{lecture.corrects} / {lecture.models}</td>
+                  <td className="chiffres droite">
+                    {lecture.hallucinations === 0
+                      ? "—"
+                      : <span className="text-rouge">{lecture.hallucinations}</span>}
+                  </td>
                   <td className="droite">
                     {url === undefined ? "—" : (
                       <a href={url} className="text-vert underline" rel="noreferrer">{t.corpusOpen}</a>

@@ -154,8 +154,11 @@ export function modelReports(hub: Hub, catalogue: ReportCatalogue, locale: Local
       if (s.hallucinations !== null) puces.push(fill(t.hallucinations, { rate: pct(s.hallucinations, locale) }));
 
       const complet = s.benchmarksTaken >= publies;
+      // Tant qu'un seul benchmark est mesuré, « les 1 benchmarks du hub » se lit
+      // mal et trahit un gabarit : le singulier a sa propre phrase.
+      const toutPris = publies === 1 ? t.takenAllOne : t.takenAll;
       puces.push(fill(
-        complet ? t.takenAll : lisDocuments(s) ? t.takenPartial : t.takenTextOnly,
+        complet ? toutPris : lisDocuments(s) ? t.takenPartial : t.takenTextOnly,
         { taken: s.benchmarksTaken, n: publies },
       ));
 
@@ -168,7 +171,10 @@ export function modelReports(hub: Hub, catalogue: ReportCatalogue, locale: Local
         slug: `evaluation-${modelSlug(s.model.id)}`,
         date: sortie > hub.updated ? hub.updated : sortie,
         kind: "modele",
-        title: fill(complet ? t.titleAll : t.titlePartial, { name: s.model.name, taken: s.benchmarksTaken, n: publies }),
+        title: fill(
+          complet ? (publies === 1 ? t.titleAllOne : t.titleAll) : t.titlePartial,
+          { name: s.model.name, taken: s.benchmarksTaken, n: publies },
+        ),
         summary: fill(hub.demo ? t.summaryDemo : t.summary, {
           name: s.model.name, lab: s.lab.name, date: date(s.model.released, locale, "long"),
         }),

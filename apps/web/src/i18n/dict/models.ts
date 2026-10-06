@@ -4,7 +4,9 @@ const fr = {
     indexDescription:
       "Les {n} modèles d'IA suivis par le hub, chacun avec sa fiche\u00a0: tarifs, fenêtre de contexte, scores par métier et résultats benchmark par benchmark.",
     description:
-      "{model}, de {lab}\u00a0: indice métier, scores par métier, coût par test, temps de réponse et résultats sur chacun des {n} benchmarks du hub.",
+      "{model}, de {lab}\u00a0: indice métier, scores par métier, coût par test, temps de réponse et résultats sur chacun des {n} benchmarks mesurés du hub.",
+    descriptionOne:
+      "{model}, de {lab}\u00a0: indice métier, coût par test, temps de réponse et résultats sur le seul benchmark mesuré du hub.",
   },
   list: {
     navLabel: "Liste des modèles",
@@ -100,7 +102,9 @@ const en: typeof fr = {
     indexDescription:
       "The {n} AI models tracked by the hub, each with its own sheet: pricing, context window, scores by business function and results benchmark by benchmark.",
     description:
-      "{model} by {lab}: Business Index, scores by business function, cost per test, response time and results on each of the hub's {n} benchmarks.",
+      "{model} by {lab}: Business Index, scores by business function, cost per test, response time and results on each of the hub's {n} measured benchmarks.",
+    descriptionOne:
+      "{model} by {lab}: Business Index, cost per test, response time and results on the hub's only measured benchmark.",
   },
   list: {
     navLabel: "Model list",

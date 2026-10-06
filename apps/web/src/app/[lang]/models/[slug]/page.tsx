@@ -18,11 +18,14 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/models/[sl
   const { lang, slug } = await params;
   const score = findScore(slug);
   if (!isLocale(lang) || score === undefined) return {};
-  const { benchmarks } = getHub();
+  // Les benchmarks mesurés, et non le catalogue : une fiche ne porte de
+  // résultats que là où une mesure existe.
+  const mesures = getHub().leaderboards.size;
+  const meta = getDictionary(lang).models.meta;
   return {
     title: score.model.name,
-    description: fill(getDictionary(lang).models.meta.description, {
-      model: score.model.name, lab: score.lab.name, n: benchmarks.length,
+    description: fill(mesures === 1 ? meta.descriptionOne : meta.description, {
+      model: score.model.name, lab: score.lab.name, n: mesures,
     }),
     alternates: {
       canonical: href(lang, `/models/${slug}`),

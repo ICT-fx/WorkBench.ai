@@ -34,6 +34,7 @@ const fr = {
   // Les gabarits des comptes rendus que `lib/news.ts` rédige à partir des classements.
   report: {
     titleAll: "{name} évalué sur les {n} benchmarks du hub",
+    titleAllOne: "{name} évalué sur le seul benchmark du hub",
     titlePartial: "{name} évalué sur {taken} des {n} benchmarks du hub",
     summary:
       "Sorti le {date}, {name} ({lab}) entre dans les classements du hub : son rang à l'indice métier, ses métiers forts et faibles, son coût et son taux d'hallucinations.",
@@ -60,6 +61,7 @@ const fr = {
     hallucinations:
       "Taux d'hallucinations moyen : {rate}, la part des éléments absents de la source pour lesquels il a inventé une valeur.",
     takenAll: "Il a passé les {n} benchmarks du hub.",
+    takenAllOne: "Il a passé le seul benchmark publié du hub.",
     takenTextOnly:
       "Benchmarks passés : {taken} sur {n}. Il ne lit ni image ni PDF : les benchmarks qui soumettent un document lui sont fermés, et chaque métier est noté sur ses seuls benchmarks texte.",
     takenPartial: "Benchmarks passés : {taken} sur {n}. Les autres n'ont pas de résultat publié pour ce modèle.",
@@ -99,6 +101,7 @@ const en: typeof fr = {
   },
   report: {
     titleAll: "{name} evaluated on the hub's {n} benchmarks",
+    titleAllOne: "{name} evaluated on the hub's only benchmark",
     titlePartial: "{name} evaluated on {taken} of the hub's {n} benchmarks",
     summary:
       "Released on {date}, {name} ({lab}) joins the hub's rankings: its place on the Business Index, its strongest and weakest business functions, its cost and its hallucination rate.",
@@ -125,6 +128,7 @@ const en: typeof fr = {
     hallucinations:
       "Mean hallucination rate: {rate}, the share of items missing from the source for which it invented a value.",
     takenAll: "It took all {n} of the hub's benchmarks.",
+    takenAllOne: "It took the hub's only published benchmark.",
     takenTextOnly:
       "Benchmarks taken: {taken} of {n}. It reads neither images nor PDFs: benchmarks that submit a document are closed to it, and each business function is scored on its text benchmarks alone.",
     takenPartial: "Benchmarks taken: {taken} of {n}. The others have no published result for this model.",

@@ -86,6 +86,19 @@ describe("comptes rendus rédigés à partir des classements", () => {
     expect(n!.title).toBe("claude-5.1 évalué sur les 4 benchmarks du hub");
   });
 
+  it("parle au singulier tant qu'un seul benchmark est mesuré", () => {
+    // Le hub n'en a mesuré qu'un : « les 1 benchmarks du hub » trahirait un
+    // gabarit là où le lecteur attend une phrase.
+    const seul = [benchmark("f-texte", "finance")];
+    const hub = buildHub({
+      labs: [lab("a")], models: [model("a/un", "2026-09-01")], domains, benchmarks: seul,
+      leaderboards: [leaderboard("f-texte", [row("a/un", 80, { ci: 2 })])],
+    });
+    const [n] = modelReports(hub, { domains, benchmarks: seul }, "fr");
+    expect(n!.title).toBe("un évalué sur le seul benchmark du hub");
+    expect(n!.body.at(-1)).toBe("- Il a passé le seul benchmark publié du hub.");
+  });
+
   it("ouvre le corps par l'avertissement quand un classement est une démonstration, et le redit dans le résumé", () => {
     const hub = hubDe([model("a/un", "2026-09-01")], { "a/un": partout(80) }, "demo");
     const [n] = modelReports(hub, catalogue, "fr");

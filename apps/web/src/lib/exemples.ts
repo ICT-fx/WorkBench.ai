@@ -54,3 +54,44 @@ export function documentsClivants(scores: DocScore[], limit = 3): DocumentClivan
     .sort((a, b) => b.errors - a.errors || a.docId.localeCompare(b.docId))
     .slice(0, limit);
 }
+
+export type LecturesDocument = {
+  docId: string;
+  /** Nombre de modèles notés sur ce document. */
+  models: number;
+  /** Modèles ayant lu correctement le champ décisif. */
+  corrects: number;
+  /** Modèles ayant inventé une valeur là où le document n'en porte aucune. */
+  hallucinations: number;
+};
+
+/**
+ * Ce que le panel a produit sur chaque document, du plus disputé au plus consensuel.
+ *
+ * Le classement agrège 2 700 lectures en 27 lignes ; cette vue les rend au
+ * document, pour qu'un lecteur voie où la difficulté s'est trouvée plutôt que
+ * de devoir nous croire sur le mot « difficile ». Le champ décisif est celui
+ * dont dépend le classement ; les hallucinations sont comptées sur tous les
+ * champs, parce qu'inventer une valeur absente est une faute en soi.
+ *
+ * Module pur, sans accès disque : les comptes viennent des notations du run,
+ * jamais d'un recalcul.
+ */
+export function lecturesParDocument(scores: DocScore[], criterionId: string): LecturesDocument[] {
+  const parDoc = new Map<string, LecturesDocument>();
+
+  for (const score of scores) {
+    const doc = parDoc.get(score.docId)
+      ?? { docId: score.docId, models: 0, corrects: 0, hallucinations: 0 };
+    doc.models++;
+    if (score.byCriterion[criterionId]?.verdict === "correct") doc.corrects++;
+    if (Object.values(score.byCriterion).some((f) => f.verdict === "hallucine")) doc.hallucinations++;
+    parDoc.set(score.docId, doc);
+  }
+
+  // À égalité de fautes, l'identifiant tranche : l'ordre du tableau doit être
+  // le même d'un build à l'autre.
+  return [...parDoc.values()].sort(
+    (a, b) => (b.models - b.corrects) - (a.models - a.corrects) || a.docId.localeCompare(b.docId),
+  );
+}
