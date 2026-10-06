@@ -21,3 +21,4 @@ dist/
 #     git add -f data/tasks/*/documents/$d-p*.jpg
 #   done
 data/tasks/*/documents/
+.vercel

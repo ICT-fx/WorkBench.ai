@@ -1,5 +1,9 @@
 # WorkBench.ai
 
+**En ligne : [workbench-ai-murex.vercel.app](https://workbench-ai-murex.vercel.app)**
+(adresse provisoire, en attendant `workbench.ai`). Publié par
+[Flowera](https://flowera.ch), déployé depuis `main` à chaque poussée.
+
 Le classement des modèles d'IA sur des tâches d'entreprise concrètes, métier par
 métier — finance, comptabilité, ressources humaines, juridique, service client… — à
 commencer par la lecture d'une facture française.
