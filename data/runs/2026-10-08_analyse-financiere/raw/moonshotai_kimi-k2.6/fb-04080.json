@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fb-04080",
+  "raw": {
+    "answer": 3.46
+  },
+  "latencyMs": 6804,
+  "costUsd": 0.0042196,
+  "provider": "Crusoe",
+  "inputTokens": 3893,
+  "outputTokens": 427
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fq-36",
+  "raw": {
+    "answer": -30.76
+  },
+  "latencyMs": 15233,
+  "costUsd": 0.005362,
+  "provider": "Crusoe",
+  "inputTokens": 501,
+  "outputTokens": 1435
+}

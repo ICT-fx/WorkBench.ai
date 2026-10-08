@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "fb-03029",
+  "raw": {
+    "answer": 1577
+  },
+  "latencyMs": 8558,
+  "costUsd": 0.02105,
+  "provider": "Anthropic",
+  "inputTokens": 2050,
+  "outputTokens": 11
+}

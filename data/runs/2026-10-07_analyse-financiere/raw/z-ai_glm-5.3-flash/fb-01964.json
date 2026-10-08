@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 1102,
+  "costUsd": 0.00034195,
+  "provider": "Together",
+  "inputTokens": 1973,
+  "outputTokens": 92
+}

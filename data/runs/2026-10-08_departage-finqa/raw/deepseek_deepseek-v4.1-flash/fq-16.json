@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fq-16",
+  "raw": {
+    "answer": 35
+  },
+  "latencyMs": 2074,
+  "costUsd": 0.00014744,
+  "provider": "Sail Research",
+  "inputTokens": 1433,
+  "outputTokens": 82
+}

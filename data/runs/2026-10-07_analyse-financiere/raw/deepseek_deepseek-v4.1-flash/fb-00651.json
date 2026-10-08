@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fb-00651",
+  "raw": {
+    "answer": "no"
+  },
+  "latencyMs": 3397,
+  "costUsd": 0.00028482,
+  "provider": "AtlasCloud",
+  "inputTokens": 1012,
+  "outputTokens": 252
+}

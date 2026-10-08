@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "fb-04672",
+  "raw": {
+    "answer": 8.738
+  },
+  "latencyMs": 6311,
+  "costUsd": 0.007496,
+  "provider": "Alibaba",
+  "inputTokens": 1556,
+  "outputTokens": 106
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-max-0902",
+  "modelVersion": "qwen/qwen3.8-max-0902",
+  "docId": "fb-00407",
+  "raw": {
+    "answer": "Corporate bonds"
+  },
+  "latencyMs": 4046,
+  "costUsd": 0.003644,
+  "provider": "Alibaba",
+  "inputTokens": 1519,
+  "outputTokens": 101
+}

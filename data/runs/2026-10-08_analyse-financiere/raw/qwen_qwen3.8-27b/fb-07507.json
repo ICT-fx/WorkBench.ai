@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-07507",
+  "raw": {
+    "answer": 65.4
+  },
+  "latencyMs": 12053,
+  "costUsd": 0.001733175,
+  "provider": "AkashML",
+  "inputTokens": 1587,
+  "outputTokens": 695
+}

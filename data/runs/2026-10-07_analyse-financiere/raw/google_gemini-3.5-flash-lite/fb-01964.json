@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 1026,
+  "costUsd": 0.0003918,
+  "provider": "Google",
+  "inputTokens": 1206,
+  "outputTokens": 12
+}

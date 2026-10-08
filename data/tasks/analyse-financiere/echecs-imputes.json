@@ -1,0 +1,32 @@
+[
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "fb-04458",
+    "date": "2026-10-08",
+    "motif": "Aucune réponse écrite : le modèle a réfléchi jusqu'au plafond de jetons, deux fois de suite (8 000 puis 16 000 jetons), sans jamais écrire son JSON. Les 26 autres modèles ont tous répondu ; la réponse la plus longue reçue sur cette question compte 7 931 jetons (Kimi K2.6)."
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
+    "docId": "fb-04302",
+    "date": "2026-10-08",
+    "motif": "Deux réponses contradictoires dans le même texte : {\"answer\": 57.3}, puis après un recalcul {\"answer\": 55.2}. Rejoué plusieurs fois avec le même résultat. La dernière est juste, mais nous ne choisissons pas à la place du modèle."
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
+    "docId": "fb-06741",
+    "date": "2026-10-08",
+    "motif": "Deux réponses contradictoires dans le même texte : {\"answer\": 5.2}, puis après un recalcul {\"answer\": 6.2}. Rejoué plusieurs fois avec le même résultat. La dernière est juste, mais nous ne choisissons pas à la place du modèle."
+  },
+  {
+    "model": "mistralai/mistral-large-2512",
+    "docId": "fb-02981",
+    "date": "2026-10-08",
+    "motif": "Deux réponses contradictoires dans le même texte : {\"answer\": 13.6}, puis {\"answer\": 10.6}, après un calcul qui passe par 10,28 et 10,3. Aucune des deux n'est juste (référence 10,3). Rejoué quatre fois, avec chaque fois des réponses différentes et contradictoires."
+  },
+  {
+    "model": "mistralai/ministral-8b-2512",
+    "docId": "fb-03031",
+    "date": "2026-10-08",
+    "motif": "Le modèle a écrit une soustraction à la place d'un nombre : {\"answer\": 18150 - 13997}, ce qui n'est pas du JSON valide et ne respecte pas la consigne (« un nombre décimal »). Le résultat de la soustraction, 4 153, n'aurait pas été juste non plus (référence 5 818). Rejoué : même réponse."
+  }
+]

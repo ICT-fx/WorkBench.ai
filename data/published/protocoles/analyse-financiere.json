@@ -1,0 +1,702 @@
+{
+  "taskId": "analyse-financiere",
+  "runId": "2026-10-07_analyse-financiere+2026-10-08_analyse-financiere",
+  "runDate": "2026-10-08",
+  "promptHash": "f24963341faa",
+  "criteriaHash": "3bbaeea2ff20",
+  "parameters": {
+    "maxTokens": 8000,
+    "maxTokensByModel": {
+      "cohere/command-a-plus": 20000,
+      "moonshotai/kimi-k3": 16000,
+      "moonshotai/kimi-k2.6": 16000,
+      "qwen/qwen3.7-flash": 16000,
+      "qwen/qwen3.8-max-0902": 16000
+    },
+    "allowProviderFallbacks": true
+  },
+  "documents": [
+    {
+      "docId": "fb-00206",
+      "pages": 1,
+      "fingerprint": "1dd09a540d858512"
+    },
+    {
+      "docId": "fb-00299",
+      "pages": 1,
+      "fingerprint": "591adf2e1306acff"
+    },
+    {
+      "docId": "fb-00302",
+      "pages": 1,
+      "fingerprint": "46014f90705edc0b"
+    },
+    {
+      "docId": "fb-00407",
+      "pages": 1,
+      "fingerprint": "6aa9e82f3d5dd5c5"
+    },
+    {
+      "docId": "fb-00438",
+      "pages": 1,
+      "fingerprint": "666cbfc6eb27c13b"
+    },
+    {
+      "docId": "fb-00460",
+      "pages": 1,
+      "fingerprint": "a3f55f9ba91bde86"
+    },
+    {
+      "docId": "fb-00476",
+      "pages": 1,
+      "fingerprint": "ef5c9a624dcfd39b"
+    },
+    {
+      "docId": "fb-00517",
+      "pages": 1,
+      "fingerprint": "21826a4fcf716aa2"
+    },
+    {
+      "docId": "fb-00521",
+      "pages": 1,
+      "fingerprint": "d707605852744a6b"
+    },
+    {
+      "docId": "fb-00552",
+      "pages": 1,
+      "fingerprint": "5b2691b6052ab472"
+    },
+    {
+      "docId": "fb-00563",
+      "pages": 1,
+      "fingerprint": "ef806ec291d70950"
+    },
+    {
+      "docId": "fb-00566",
+      "pages": 1,
+      "fingerprint": "ef56f9a54ff70a3d"
+    },
+    {
+      "docId": "fb-00651",
+      "pages": 1,
+      "fingerprint": "2c1766d39a1a8c49"
+    },
+    {
+      "docId": "fb-00684",
+      "pages": 1,
+      "fingerprint": "bc0b9f0e8ed1bdc5"
+    },
+    {
+      "docId": "fb-00735",
+      "pages": 1,
+      "fingerprint": "2d3089e57d5d2c7e"
+    },
+    {
+      "docId": "fb-00746",
+      "pages": 1,
+      "fingerprint": "a6bb627975ede81e"
+    },
+    {
+      "docId": "fb-00757",
+      "pages": 1,
+      "fingerprint": "77e355fc9ede21e6"
+    },
+    {
+      "docId": "fb-00859",
+      "pages": 1,
+      "fingerprint": "fa5333b2fd9624b9"
+    },
+    {
+      "docId": "fb-01163",
+      "pages": 1,
+      "fingerprint": "0d7c1655fee57d69"
+    },
+    {
+      "docId": "fb-01275",
+      "pages": 1,
+      "fingerprint": "c451dbf28cd8e918"
+    },
+    {
+      "docId": "fb-01279",
+      "pages": 1,
+      "fingerprint": "5f48b1c4b4a1bf58"
+    },
+    {
+      "docId": "fb-01319",
+      "pages": 1,
+      "fingerprint": "6627348ccad9d829"
+    },
+    {
+      "docId": "fb-01865",
+      "pages": 1,
+      "fingerprint": "58b25a5d9df4f90b"
+    },
+    {
+      "docId": "fb-01964",
+      "pages": 1,
+      "fingerprint": "9172ac9f94a839ca"
+    },
+    {
+      "docId": "fb-02049",
+      "pages": 1,
+      "fingerprint": "3549067a8ccbb564"
+    },
+    {
+      "docId": "fb-02608",
+      "pages": 1,
+      "fingerprint": "7eea40ea835808d8"
+    },
+    {
+      "docId": "fb-02981",
+      "pages": 1,
+      "fingerprint": "9a192bb108951db7"
+    },
+    {
+      "docId": "fb-02987",
+      "pages": 2,
+      "fingerprint": "3af699d26f8e259c"
+    },
+    {
+      "docId": "fb-03029",
+      "pages": 1,
+      "fingerprint": "c1eba80d0262ce82"
+    },
+    {
+      "docId": "fb-03031",
+      "pages": 1,
+      "fingerprint": "e1fcf11f08cd9ef3"
+    },
+    {
+      "docId": "fb-03069",
+      "pages": 2,
+      "fingerprint": "af2f55f6b540d18c"
+    },
+    {
+      "docId": "fb-03471",
+      "pages": 1,
+      "fingerprint": "5a57ee524848c81d"
+    },
+    {
+      "docId": "fb-03531",
+      "pages": 1,
+      "fingerprint": "017e3e9e685f01e9"
+    },
+    {
+      "docId": "fb-03620",
+      "pages": 2,
+      "fingerprint": "c3217fd5e9b124b7"
+    },
+    {
+      "docId": "fb-03718",
+      "pages": 1,
+      "fingerprint": "83095958b4137125"
+    },
+    {
+      "docId": "fb-03838",
+      "pages": 1,
+      "fingerprint": "673da017e49b8691"
+    },
+    {
+      "docId": "fb-03849",
+      "pages": 2,
+      "fingerprint": "244b7cfea67540a9"
+    },
+    {
+      "docId": "fb-03856",
+      "pages": 2,
+      "fingerprint": "653f7b7a06499215"
+    },
+    {
+      "docId": "fb-03882",
+      "pages": 1,
+      "fingerprint": "1dc780c004c0c56b"
+    },
+    {
+      "docId": "fb-04080",
+      "pages": 2,
+      "fingerprint": "3cd7bf4d292ca1ef"
+    },
+    {
+      "docId": "fb-04103",
+      "pages": 2,
+      "fingerprint": "ea43101bd3734dd8"
+    },
+    {
+      "docId": "fb-04209",
+      "pages": 1,
+      "fingerprint": "26dd4f21fd1c91a1"
+    },
+    {
+      "docId": "fb-04254",
+      "pages": 2,
+      "fingerprint": "8f6aa59cf88961e4"
+    },
+    {
+      "docId": "fb-04302",
+      "pages": 1,
+      "fingerprint": "4d5e60f952859534"
+    },
+    {
+      "docId": "fb-04412",
+      "pages": 2,
+      "fingerprint": "a73471c6979b49d2"
+    },
+    {
+      "docId": "fb-04417",
+      "pages": 1,
+      "fingerprint": "62a4cd1f2084f328"
+    },
+    {
+      "docId": "fb-04458",
+      "pages": 2,
+      "fingerprint": "e3c69aaacbdc4aa8"
+    },
+    {
+      "docId": "fb-04481",
+      "pages": 2,
+      "fingerprint": "647538c9731dca85"
+    },
+    {
+      "docId": "fb-04660",
+      "pages": 1,
+      "fingerprint": "3f663bc6d67a2411"
+    },
+    {
+      "docId": "fb-04672",
+      "pages": 1,
+      "fingerprint": "17244bec11ef6f1e"
+    },
+    {
+      "docId": "fb-04700",
+      "pages": 1,
+      "fingerprint": "5fa5e0e7ad7c8c1c"
+    },
+    {
+      "docId": "fb-04735",
+      "pages": 2,
+      "fingerprint": "88184cd638f1f44d"
+    },
+    {
+      "docId": "fb-04784",
+      "pages": 1,
+      "fingerprint": "b67918c066d254bc"
+    },
+    {
+      "docId": "fb-04854",
+      "pages": 1,
+      "fingerprint": "5637badd50ba25d3"
+    },
+    {
+      "docId": "fb-05915",
+      "pages": 2,
+      "fingerprint": "5bef95cd65372c9e"
+    },
+    {
+      "docId": "fb-06247",
+      "pages": 2,
+      "fingerprint": "2d2d0ae7f1d2b298"
+    },
+    {
+      "docId": "fb-06655",
+      "pages": 2,
+      "fingerprint": "928d1159ddf41c7e"
+    },
+    {
+      "docId": "fb-06741",
+      "pages": 2,
+      "fingerprint": "e1da9b4d398cf10f"
+    },
+    {
+      "docId": "fb-07507",
+      "pages": 1,
+      "fingerprint": "e050d002517a03e4"
+    },
+    {
+      "docId": "fb-07966",
+      "pages": 2,
+      "fingerprint": "45176a60f16d76e1"
+    },
+    {
+      "docId": "fb-08135",
+      "pages": 1,
+      "fingerprint": "5dccf00b794f2105"
+    },
+    {
+      "docId": "fb-09724",
+      "pages": 1,
+      "fingerprint": "fce1067e717060e5"
+    },
+    {
+      "docId": "fb-10130",
+      "pages": 2,
+      "fingerprint": "e7f1a8250c8367fd"
+    },
+    {
+      "docId": "fb-10499",
+      "pages": 2,
+      "fingerprint": "6d5688719685c9a8"
+    }
+  ],
+  "models": [
+    {
+      "alias": "deepseek/deepseek-v4.1-flash",
+      "version": "deepseek/deepseek-v4.1-flash",
+      "canonical": "deepseek/deepseek-v4.1-flash-20260910",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:30.620Z",
+      "lastCall": "2026-10-08T10:21:33.458Z",
+      "providers": [
+        "AtlasCloud",
+        "BaseTen",
+        "CoreWeave",
+        "DeepInfra",
+        "DigitalOcean",
+        "InferenceNet",
+        "Ionstream",
+        "Makora",
+        "Morph",
+        "Novita",
+        "Parasail",
+        "Phala",
+        "StreamLake",
+        "Together"
+      ]
+    },
+    {
+      "alias": "moonshotai/kimi-k2.6",
+      "version": "moonshotai/kimi-k2.6",
+      "canonical": "moonshotai/kimi-k2.6-20260420",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:04.447Z",
+      "lastCall": "2026-10-08T10:17:28.804Z",
+      "providers": [
+        "AtlasCloud",
+        "Baidu",
+        "Chutes",
+        "Cloudflare",
+        "CoreWeave",
+        "Crusoe",
+        "Decart",
+        "DigitalOcean",
+        "Inceptron",
+        "Moonshot AI",
+        "Novita",
+        "Parasail",
+        "Phala",
+        "SiliconFlow",
+        "StreamLake",
+        "Venice"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.8-max-0902",
+      "version": "qwen/qwen3.8-max-0902",
+      "canonical": "qwen/qwen3.8-max-20260902",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:43.908Z",
+      "lastCall": "2026-10-08T10:15:27.097Z",
+      "providers": [
+        "Alibaba"
+      ]
+    },
+    {
+      "alias": "anthropic/claude-opus-5.5",
+      "version": "anthropic/claude-opus-5.5",
+      "canonical": "anthropic/claude-opus-5.5-20260921",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:35.566Z",
+      "lastCall": "2026-10-08T10:08:43.466Z",
+      "providers": [
+        "Claude Platform on AWS"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.8-max-prime",
+      "version": "qwen/qwen3.8-max-prime",
+      "canonical": "qwen/qwen3.8-max-prime-20260923",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:30.791Z",
+      "lastCall": "2026-10-08T10:08:42.123Z",
+      "providers": [
+        "Alibaba"
+      ]
+    },
+    {
+      "alias": "anthropic/claude-fable-5.1",
+      "version": "anthropic/claude-fable-5.1",
+      "canonical": "anthropic/claude-fable-5.1-20260831",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:27.484Z",
+      "lastCall": "2026-10-08T12:57:21.546Z",
+      "providers": [
+        "Anthropic"
+      ]
+    },
+    {
+      "alias": "openai/gpt-6-astra",
+      "version": "openai/gpt-6-astra",
+      "canonical": "openai/gpt-6-astra-20260903",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:24.773Z",
+      "lastCall": "2026-10-08T12:57:26.230Z",
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    {
+      "alias": "z-ai/glm-5.3-flash",
+      "version": "z-ai/glm-5.3-flash",
+      "canonical": "z-ai/glm-5.3-flash-20260826",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:27.886Z",
+      "lastCall": "2026-10-08T10:23:43.604Z",
+      "providers": [
+        "DeepInfra",
+        "Fireworks",
+        "Friendli",
+        "Modal",
+        "Parasail",
+        "Phala",
+        "Sail Research",
+        "StreamLake",
+        "Together",
+        "Wafer"
+      ]
+    },
+    {
+      "alias": "google/gemini-3.8-flash",
+      "version": "google/gemini-3.8-flash",
+      "canonical": "google/gemini-3.8-flash-20260902",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:55.331Z",
+      "lastCall": "2026-10-08T10:17:45.019Z",
+      "providers": [
+        "Google",
+        "Google AI Studio"
+      ]
+    },
+    {
+      "alias": "anthropic/claude-sonnet-5",
+      "version": "anthropic/claude-sonnet-5",
+      "canonical": "anthropic/claude-sonnet-5-20260630",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:40.911Z",
+      "lastCall": "2026-10-08T10:11:15.293Z",
+      "providers": [
+        "Claude Platform on AWS"
+      ]
+    },
+    {
+      "alias": "meta/muse-spark-1.3",
+      "version": "meta/muse-spark-1.3",
+      "canonical": "meta/muse-spark-1.3-20260902",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:50.225Z",
+      "lastCall": "2026-10-08T10:19:28.392Z",
+      "providers": [
+        "Meta"
+      ]
+    },
+    {
+      "alias": "openai/gpt-6-sol",
+      "version": "openai/gpt-6-sol",
+      "canonical": "openai/gpt-6-sol-20260922",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:38.468Z",
+      "lastCall": "2026-10-08T10:11:10.797Z",
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    {
+      "alias": "openai/gpt-6-luna",
+      "version": "openai/gpt-6-luna",
+      "canonical": "openai/gpt-6-luna-20260922",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:24.125Z",
+      "lastCall": "2026-10-08T10:25:38.324Z",
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.8-27b",
+      "version": "qwen/qwen3.8-27b",
+      "canonical": "qwen/qwen3.8-27b-20260814",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:18.345Z",
+      "lastCall": "2026-10-08T10:23:30.129Z",
+      "providers": [
+        "AkashML",
+        "Alibaba",
+        "Chutes",
+        "Cloudflare",
+        "Darkbloom",
+        "DeepInfra",
+        "DekaLLM",
+        "Mancer 2",
+        "Parasail",
+        "Phala",
+        "Reka",
+        "Venice",
+        "Wafer"
+      ]
+    },
+    {
+      "alias": "x-ai/grok-4.7",
+      "version": "x-ai/grok-4.7",
+      "canonical": "x-ai/grok-4.7-20260916",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:38.875Z",
+      "lastCall": "2026-10-08T10:11:04.459Z",
+      "providers": [
+        "xAI"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.7-flash",
+      "version": "qwen/qwen3.7-flash",
+      "canonical": "qwen/qwen3.7-flash-20260727",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:24:18.802Z",
+      "lastCall": "2026-10-08T10:24:27.711Z",
+      "providers": [
+        "Alibaba"
+      ]
+    },
+    {
+      "alias": "moonshotai/kimi-k3",
+      "version": "moonshotai/kimi-k3",
+      "canonical": "moonshotai/kimi-k3-20260715",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:32.466Z",
+      "lastCall": "2026-10-08T10:15:55.592Z",
+      "providers": [
+        "Amazon Bedrock",
+        "InferenceNet",
+        "Makora",
+        "Modal",
+        "Morph",
+        "Parasail",
+        "Relace",
+        "Together"
+      ]
+    },
+    {
+      "alias": "cohere/command-a-plus",
+      "version": "cohere/command-a-plus",
+      "canonical": "cohere/command-a-plus-05-2026",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:03.375Z",
+      "lastCall": "2026-10-08T10:18:59.740Z",
+      "providers": [
+        "Cohere"
+      ]
+    },
+    {
+      "alias": "google/gemini-3.5-flash-lite",
+      "version": "google/gemini-3.5-flash-lite",
+      "canonical": "google/gemini-3.5-flash-lite-20260721",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:19.754Z",
+      "lastCall": "2026-10-08T10:23:33.944Z",
+      "providers": [
+        "Google"
+      ]
+    },
+    {
+      "alias": "mistralai/mistral-medium-3-5",
+      "version": "mistralai/mistral-medium-3-5",
+      "canonical": "mistralai/mistral-medium-3.5-20260430",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:07.295Z",
+      "lastCall": "2026-10-08T10:19:00.220Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "meta-llama/llama-4-maverick",
+      "version": "meta-llama/llama-4-maverick",
+      "canonical": "meta-llama/llama-4-maverick-17b-128e-instruct",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:10.595Z",
+      "lastCall": "2026-10-08T10:21:05.782Z",
+      "providers": [
+        "DigitalOcean",
+        "Novita",
+        "Parasail"
+      ]
+    },
+    {
+      "alias": "mistralai/mistral-small-2603",
+      "version": "mistralai/mistral-small-2603",
+      "canonical": "mistralai/mistral-small-2603",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:11.535Z",
+      "lastCall": "2026-10-08T10:21:06.924Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "mistralai/mistral-large-2512",
+      "version": "mistralai/mistral-large-2512",
+      "canonical": "mistralai/mistral-large-2512",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:08.839Z",
+      "lastCall": "2026-10-08T13:16:09.301Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "google/gemma-4-31b-it",
+      "version": "google/gemma-4-31b-it",
+      "canonical": "google/gemma-4-31b-it-20260402",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:13.894Z",
+      "lastCall": "2026-10-08T10:21:08.878Z",
+      "providers": [
+        "CoreWeave",
+        "DeepInfra",
+        "Friendli",
+        "ModelRun",
+        "Novita"
+      ]
+    },
+    {
+      "alias": "mistralai/ministral-8b-2512",
+      "version": "mistralai/ministral-8b-2512",
+      "canonical": "mistralai/ministral-8b-2512",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:12.553Z",
+      "lastCall": "2026-10-08T12:49:14.096Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "amazon/nova-pro-v1",
+      "version": "amazon/nova-pro-v1",
+      "canonical": "amazon/nova-pro-v1",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:14:51.511Z",
+      "lastCall": "2026-10-08T10:17:30.112Z",
+      "providers": [
+        "Amazon Bedrock"
+      ]
+    },
+    {
+      "alias": "amazon/nova-lite-v1",
+      "version": "amazon/nova-lite-v1",
+      "canonical": "amazon/nova-lite-v1",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-10-07T09:15:25.198Z",
+      "lastCall": "2026-10-08T10:23:35.238Z",
+      "providers": [
+        "Amazon Bedrock"
+      ]
+    }
+  ]
+}

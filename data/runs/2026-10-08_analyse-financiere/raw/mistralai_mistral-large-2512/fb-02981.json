@@ -1,0 +1,13 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "fb-02981",
+  "raw": null,
+  "latencyMs": 22562,
+  "costUsd": 0.0016405,
+  "provider": "Mistral",
+  "inputTokens": 2060,
+  "outputTokens": 407,
+  "error": "réponse sans JSON exploitable : ```json\n{\"answer\": 13.6}\n```\n\nCalculation:\nOperating income % margin for each year:\n- 2019: (1306 / 11503) * 100 = 11.35%\n- 2020: (509 / 11303) * 100 = 4.5%\n- 2021: (2112 / 14082) * 100 = 14.99%\n\n3 year average = (11.35 + 4.5 + 14.99) / 3 = 10.28% (Note: Correct calculation yields 10.28%, but rounding to one decimal place as per the question's requirement gives 10.3%)\n\nRevised to match the exact calculation and rounding:\n(11.4 + 4.5 + 15.0) / 3 = 10.3 (using rounded values for each year to one decimal place)\n\nFinal rounding and calculation:\n(11.35 + 4.50 + 15.00) / 3 = 10.28, rounded to one decimal place = 10.3\n\nHowever, recalculating precisely:\n(1306 + 509 + 2112) / (11503 + 11303 + 14082) * 100 = 3927 / 36888 * 100 ≈ 10.6%\n\nGiven the discrepancy, the accurate average based on total operating income and total net sales is approximately 10.6%.\n\nFinal answer considering the correct total:\n```json\n{\"answer\": 10.6}\n```"
+}

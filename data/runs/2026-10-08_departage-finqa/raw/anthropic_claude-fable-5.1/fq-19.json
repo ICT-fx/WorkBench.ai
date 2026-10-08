@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "fq-19",
+  "raw": {
+    "answer": 446.67
+  },
+  "latencyMs": 7570,
+  "costUsd": 0.01735,
+  "provider": "Anthropic",
+  "inputTokens": 1365,
+  "outputTokens": 74
+}

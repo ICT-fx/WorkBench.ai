@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 1077,
+  "costUsd": 0.0001098,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 1766,
+  "outputTokens": 16
+}

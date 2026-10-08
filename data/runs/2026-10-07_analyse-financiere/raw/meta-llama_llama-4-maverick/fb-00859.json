@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 1845,
+  "costUsd": 0.000492435,
+  "provider": "DigitalOcean",
+  "inputTokens": 2595,
+  "outputTokens": 9
+}

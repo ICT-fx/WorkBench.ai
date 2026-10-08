@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "fb-06741",
+  "raw": {
+    "answer": 6.1
+  },
+  "latencyMs": 2097,
+  "costUsd": 0.0007468,
+  "provider": "Google",
+  "inputTokens": 2381,
+  "outputTokens": 13
+}

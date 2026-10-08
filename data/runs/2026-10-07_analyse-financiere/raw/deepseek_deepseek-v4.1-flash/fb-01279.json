@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "Net cash provided by operating activities"
+  },
+  "latencyMs": 13772,
+  "costUsd": 0.001271679,
+  "provider": "AtlasCloud",
+  "inputTokens": 999,
+  "outputTokens": 2005
+}

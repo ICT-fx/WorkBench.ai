@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "x-ai/grok-4.7",
+  "modelVersion": "x-ai/grok-4.7",
+  "docId": "fb-09724",
+  "raw": {
+    "answer": 39.73
+  },
+  "latencyMs": 20509,
+  "costUsd": 0.013628,
+  "provider": "xAI",
+  "inputTokens": 2821,
+  "outputTokens": 1619
+}

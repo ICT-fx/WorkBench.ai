@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-03856",
+  "raw": {
+    "answer": 0.83
+  },
+  "latencyMs": 7780,
+  "costUsd": 0.00161256,
+  "provider": "Parasail",
+  "inputTokens": 2979,
+  "outputTokens": 408
+}

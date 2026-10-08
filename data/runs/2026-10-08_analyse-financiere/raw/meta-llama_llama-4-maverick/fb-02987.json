@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "meta-llama/llama-4-maverick",
+  "modelVersion": "meta-llama/llama-4-maverick",
+  "docId": "fb-02987",
+  "raw": {
+    "answer": 24.26
+  },
+  "latencyMs": 2669,
+  "costUsd": 0.00090915,
+  "provider": "DigitalOcean",
+  "inputTokens": 4814,
+  "outputTokens": 10
+}

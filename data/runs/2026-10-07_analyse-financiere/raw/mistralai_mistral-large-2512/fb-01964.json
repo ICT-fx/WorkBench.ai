@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Long-term debt"
+  },
+  "latencyMs": 34858,
+  "costUsd": 0.001026,
+  "provider": "Mistral",
+  "inputTokens": 2013,
+  "outputTokens": 13
+}

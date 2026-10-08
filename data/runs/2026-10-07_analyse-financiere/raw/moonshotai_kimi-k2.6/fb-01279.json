@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "operating activities"
+  },
+  "latencyMs": 16458,
+  "costUsd": 0.0039890655,
+  "provider": "StreamLake",
+  "inputTokens": 1983,
+  "outputTokens": 1112
+}

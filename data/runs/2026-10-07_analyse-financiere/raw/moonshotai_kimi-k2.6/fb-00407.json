@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fb-00407",
+  "raw": {
+    "answer": "Corporate bonds"
+  },
+  "latencyMs": 2756,
+  "costUsd": 0.00189925,
+  "provider": "Parasail",
+  "inputTokens": 1977,
+  "outputTokens": 119
+}

@@ -1,0 +1,151 @@
+financebench_id,statut,motif,categorie,sous_tache,forme,attendu,societe,rapport
+financebench_id_03029,retenue,,releve,releve,nombre,,3M,3M_2018_10K
+financebench_id_04672,retenue,,releve,releve,nombre,,3M,3M_2018_10K
+financebench_id_00499,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,3M,3M_2022_10K
+financebench_id_01226,écartée,Explication rédigée : seul un humain peut la noter,,,,,3M,3M_2022_10K
+financebench_id_01865,retenue,,libelle,libelle,libelle,Consumer | Consumer segment,3M,3M_2022_10K
+financebench_id_00807,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,3M,3M_2023Q2_10Q
+financebench_id_00941,écartée,Explication rédigée : seul un humain peut la noter,,,,,3M,3M_2023Q2_10Q
+financebench_id_01858,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,3M,3M_2023Q2_10Q
+financebench_id_02987,extension,,calcul,calcul,nombre,,Activision Blizzard,ACTIVISIONBLIZZARD_2019_10K
+financebench_id_07966,extension,,calcul,calcul,nombre,,Activision Blizzard,ACTIVISIONBLIZZARD_2019_10K
+financebench_id_04735,extension,,calcul,calcul,nombre,,Adobe,ADOBE_2015_10K
+financebench_id_07507,extension,,calcul,calcul,nombre,,Adobe,ADOBE_2016_10K
+financebench_id_03856,extension,,calcul,calcul,nombre,,Adobe,ADOBE_2017_10K
+financebench_id_00438,retenue,,non,verdict,verdict,no,Adobe,ADOBE_2022_10K
+financebench_id_00591,écartée,Oui / non : indicateur non défini (conversion du free cash-flow),,,,,Adobe,ADOBE_2022_10K
+financebench_id_01319,retenue,,releve,releve,nombre,,AES Corporation,AES_2022_10K
+financebench_id_00540,écartée,Nombre : définition du ratio non fixée par la question,,,,,AES Corporation,AES_2022_10K
+financebench_id_10420,écartée après le run,"Échelle ambiguë : la référence est le ratio arrondi à deux décimales (−0,02), alors que la valeur exacte est −0,01531, soit −1,531 %. 22 modèles sur 26 ont répondu à l'échelle du pourcentage (de −0,31 à −1,53, la plupart autour de −1,42), comme la consigne du prompt l'illustre ; seuls Claude Opus 5.5, Claude Fable 5.1 et Grok 4.7 ont écrit −0,02. Cette question mesure le choix de l'échelle, pas le calcul. Écartée après le run, sans remplacement.",calcul,calcul,nombre,,AES Corporation,AES_2022_10K
+financebench_id_06655,extension,,calcul,calcul,nombre,,Amazon,AMAZON_2017_10K
+financebench_id_08135,extension,,calcul,calcul,nombre,,Amazon,AMAZON_2017_10K
+financebench_id_08286,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,Amazon,AMAZON_2019_10K
+financebench_id_03882,retenue,,releve,releve,nombre,,Amcor,AMCOR_2020_10K
+financebench_id_01935,écartée,Explication rédigée : seul un humain peut la noter,,,,,Amcor,AMCOR_2022_8K_dated-2022-07-01
+financebench_id_00799,écartée,Libellé : la référence inverse les deux exercices,,,,,Amcor,AMCOR_2023_10K
+financebench_id_01079,écartée,Explication rédigée : seul un humain peut la noter,,,,,Amcor,AMCOR_2023_10K
+financebench_id_01148,écartée,Explication rédigée : seul un humain peut la noter,,,,,Amcor,AMCOR_2023_10K
+financebench_id_00684,retenue,,non,verdict,verdict,no,Amcor,AMCOR_2023_10K
+financebench_id_01936,écartée,Explication rédigée : seul un humain peut la noter,,,,,Amcor,AMCOR_2023Q2_10Q
+financebench_id_01928,écartée,Nombre : unité non fixée par la question,,,,,Amcor,AMCOR_2023Q4_EARNINGS
+financebench_id_01930,écartée,Explication rédigée : seul un humain peut la noter,,,,,Amcor,AMCOR_2023Q4_EARNINGS
+financebench_id_03069,retenue,,calcul,calcul,nombre,,AMD,AMD_2015_10K
+financebench_id_00222,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,AMD,AMD_2022_10K
+financebench_id_00995,écartée,Explication rédigée : seul un humain peut la noter,,,,,AMD,AMD_2022_10K
+financebench_id_01198,écartée,Explication rédigée : seul un humain peut la noter,,,,,AMD,AMD_2022_10K
+financebench_id_00917,écartée,Explication rédigée : seul un humain peut la noter,,,,,AMD,AMD_2022_10K
+financebench_id_01279,retenue,,libelle,libelle,libelle,operations | operating | operating activities | cash flows from operating activities | cash flow from operations | cash provided by operations | cash provided (used) by operations | net cash provided by operating activities | total cash provided by operating activities | cash provided by operating activities,AMD,AMD_2022_10K
+financebench_id_00563,retenue,,libelle,libelle,libelle,Data Center | Data Center segment,AMD,AMD_2022_10K
+financebench_id_00757,retenue,,oui,verdict,verdict,yes,AMD,AMD_2022_10K
+financebench_id_00476,retenue,,aucun,libelle,libelle,,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_01028,écartée,Explication rédigée : seul un humain peut la noter,,,,,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_00723,écartée,Libellé : « indicateur non pertinent » discutable pour cette société,,,,,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_00720,écartée,Libellé : « indicateur non pertinent » discutable pour cette société,,,,,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_01351,écartée,Explication rédigée : seul un humain peut la noter,,,,,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_01964,retenue,,libelle,libelle,libelle,Customer deposits,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_01981,écartée,Oui / non : question vague,,,,,American Express,AMERICANEXPRESS_2022_10K
+financebench_id_05718,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,American Water Works,AMERICANWATERWORKS_2020_10K
+financebench_id_04254,retenue,,calcul,calcul,nombre,,American Water Works,AMERICANWATERWORKS_2021_10K
+financebench_id_00070,écartée,Oui / non : la clause « si l'indicateur n'est pas pertinent » rend la réponse discutable pour cette société,,,,,American Water Works,AMERICANWATERWORKS_2022_10K
+financebench_id_02608,retenue,,calcul,calcul,nombre,,Best Buy,BESTBUY_2017_10K
+financebench_id_04417,retenue,,releve,releve,nombre,,Best Buy,BESTBUY_2019_10K
+financebench_id_00685,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,Best Buy,BESTBUY_2023_10K
+financebench_id_01077,écartée,Explication rédigée : seul un humain peut la noter,,,,,Best Buy,BESTBUY_2023_10K
+financebench_id_01275,retenue,,libelle,libelle,libelle,operations | operating | operating activities | cash flows from operating activities | cash flow from operations | cash provided by operations | cash provided (used) by operations | net cash provided by operating activities | total cash provided by operating activities | cash provided by operating activities,Best Buy,BESTBUY_2023_10K
+financebench_id_00288,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,Best Buy,BESTBUY_2024Q2_10Q
+financebench_id_00460,retenue,,oui,verdict,verdict,yes,Best Buy,BESTBUY_2024Q2_10Q
+financebench_id_01902,écartée,Libellé : « meilleure performance » admet deux lectures,,,,,Best Buy,BESTBUY_2024Q2_10Q
+financebench_id_04660,retenue,,calcul,calcul,nombre,,Block,BLOCK_2016_10K
+financebench_id_03838,extension,,calcul,calcul,nombre,,Block,BLOCK_2020_10K
+financebench_id_07661,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,Block,BLOCK_2020_10K
+financebench_id_10285,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,Boeing,BOEING_2018_10K
+financebench_id_00517,retenue,,oui,verdict,verdict,yes,Boeing,BOEING_2022_10K
+financebench_id_01091,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,Boeing,BOEING_2022_10K
+financebench_id_00678,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,Boeing,BOEING_2022_10K
+financebench_id_01290,écartée,Explication rédigée : seul un humain peut la noter,,,,,Boeing,BOEING_2022_10K
+financebench_id_00464,écartée,Oui / non : répondable sans le document,,,,,Boeing,BOEING_2022_10K
+financebench_id_00494,écartée,Explication rédigée : seul un humain peut la noter,,,,,Boeing,BOEING_2022_10K
+financebench_id_00585,écartée,Explication rédigée : seul un humain peut la noter,,,,,Boeing,BOEING_2022_10K
+financebench_id_03473,écartée après le run,"Échelle ambiguë : la référence est le ratio arrondi à deux décimales (0,01), alors que la valeur exacte est 0,01425, soit 1,425 %. 21 modèles sur 23 ont répondu à l'échelle du pourcentage (de 0,14 à 1,62, la plupart autour de 1,42), comme la consigne du prompt l'illustre (« 12,5 % s'écrit 12.5 ») ; seuls Claude Opus 5.5 et Claude Fable 5.1 ont écrit 0,01. Cette question mesure le choix de l'échelle, pas le calcul. Écartée après le run, sans remplacement.",calcul,calcul,nombre,,Coca-Cola,COCACOLA_2017_10K
+financebench_id_09724,retenue,,calcul,calcul,nombre,,Coca-Cola,COCACOLA_2021_10K
+financebench_id_06272,écartée,"Échelle ambiguë : taux de distribution des dividendes, référence 0,8 « arrondi à deux décimales ». Ce ratio s'écrit couramment en pourcentage (79,8), et le prompt illustre les pourcentages sans signe (« 12,5 % s'écrit 12.5 ») : même piège que les deux questions de rendement des actifs, relevé avant le run en relisant la question, pas sur des résultats.",,,,,Coca-Cola,COCACOLA_2022_10K
+financebench_id_10130,extension,,calcul,calcul,nombre,,Corning,CORNING_2020_10K
+financebench_id_02981,extension,,calcul,calcul,nombre,,Corning,CORNING_2021_10K
+financebench_id_01346,écartée,Explication rédigée : seul un humain peut la noter,,,,,Corning,CORNING_2022_10K
+financebench_id_00005,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,Corning,CORNING_2022_10K
+financebench_id_04209,retenue,,releve,releve,nombre,,Costco,COSTCO_2021_10K
+financebench_id_05915,retenue,,calcul,calcul,nombre,,CVS Health,CVSHEALTH_2018_10K
+financebench_id_00790,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,CVS Health,CVSHEALTH_2022_10K
+financebench_id_01107,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,CVS Health,CVSHEALTH_2022_10K
+financebench_id_01244,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,CVS Health,CVSHEALTH_2022_10K
+financebench_id_00839,écartée,"Oui / non : seuil laissé au jugement (« nettement plus », « comparable »)",,,,,Foot Locker,FOOTLOCKER_2022_8K_dated_2022-08-19
+financebench_id_00822,écartée,"Oui / non : seuil laissé au jugement (« nettement plus », « comparable »)",,,,,Foot Locker,FOOTLOCKER_2022_8K_dated-2022-05-20
+financebench_id_04103,extension,,calcul,calcul,nombre,,General Mills,GENERALMILLS_2019_10K
+financebench_id_03471,retenue,,calcul,calcul,nombre,,General Mills,GENERALMILLS_2020_10K
+financebench_id_04854,retenue,,calcul,calcul,nombre,,General Mills,GENERALMILLS_2020_10K
+financebench_id_10136,extension écartée après le run,"Échelle ambiguë : la référence est le ratio arrondi à deux décimales (0,54), soit environ 54 %. Sur les 17 modèles qui ont répondu, 8 ont écrit la valeur à l'échelle du pourcentage (de 53,66 à 54,11), comme la consigne du prompt l'illustre (« 12,5 % s'écrit 12.5 »), et 3 seulement ont écrit 0,54. Même défaut que les deux questions de rendement des actifs. Le taux de distribution des dividendes, dont celle-ci est le complément, avait été écarté avant le run ; le taux de rétention nous avait échappé au tri. Écartée après le run, sans remplacement.",calcul,calcul,nombre,,General Mills,GENERALMILLS_2022_10K
+financebench_id_00956,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,Johnson & Johnson,JOHNSON_JOHNSON_2022_10K
+financebench_id_00669,écartée,Explication rédigée : seul un humain peut la noter,,,,,Johnson & Johnson,JOHNSON_JOHNSON_2022_10K
+financebench_id_00711,écartée,Nombre : définition du ratio non fixée par la question,,,,,Johnson & Johnson,JOHNSON_JOHNSON_2022_10K
+financebench_id_00651,retenue,,non,verdict,verdict,no,Johnson & Johnson,JOHNSON_JOHNSON_2022Q4_EARNINGS
+financebench_id_01484,écartée,Explication rédigée : seul un humain peut la noter,,,,,Johnson & Johnson,JOHNSON_JOHNSON_2022Q4_EARNINGS
+financebench_id_01488,"éligible, non tirée",quota de sa forme atteint,libelle,libelle,libelle,,Johnson & Johnson,JOHNSON_JOHNSON_2023_8K_dated-2023-08-30
+financebench_id_01490,écartée,Nombre : unité non fixée par la question,,,,,Johnson & Johnson,JOHNSON_JOHNSON_2023_8K_dated-2023-08-30
+financebench_id_01491,écartée,Nombre : unité non fixée par la question,,,,,Johnson & Johnson,JOHNSON_JOHNSON_2023_8K_dated-2023-08-30
+financebench_id_01487,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,Johnson & Johnson,JOHNSON_JOHNSON_2023Q2_EARNINGS
+financebench_id_00299,retenue,,libelle,libelle,libelle,Corporate | Corporate segment,JPMorgan,JPMORGAN_2021Q1_10Q
+financebench_id_02119,écartée,Nombre : question d'interprétation (valeur par action en cas de liquidation),,,,,JPMorgan,JPMORGAN_2021Q1_10Q
+financebench_id_00206,retenue,,sans_objet,verdict,verdict,not_applicable,JPMorgan,JPMORGAN_2022_10K
+financebench_id_00394,"éligible, non tirée",quota de sa forme atteint,libelle,libelle,libelle,,JPMorgan,JPMORGAN_2022Q2_10Q
+financebench_id_02049,retenue,,oui,verdict,verdict,yes,JPMorgan,JPMORGAN_2023Q2_10Q
+financebench_id_10499,retenue,,calcul,calcul,nombre,,Kraft Heinz,KRAFTHEINZ_2019_10K
+financebench_id_04412,extension,,calcul,calcul,nombre,,Lockheed Martin,LOCKHEEDMARTIN_2020_10K
+financebench_id_03031,extension,,calcul,calcul,nombre,,Lockheed Martin,LOCKHEEDMARTIN_2021_10K
+financebench_id_03718,retenue,,calcul,calcul,nombre,,Lockheed Martin,LOCKHEEDMARTIN_2022_10K
+financebench_id_04171,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,MGM Resorts,MGMRESORTS_2018_10K
+financebench_id_03849,retenue,,calcul,calcul,nombre,,MGM Resorts,MGMRESORTS_2020_10K
+financebench_id_01254,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,MGM Resorts,MGMRESORTS_2022_10K
+financebench_id_00382,"éligible, non tirée",quota de sa forme atteint,libelle,libelle,libelle,,MGM Resorts,MGMRESORTS_2022Q4_EARNINGS
+financebench_id_01911,écartée,Explication rédigée : seul un humain peut la noter,,,,,MGM Resorts,MGMRESORTS_2022Q4_EARNINGS
+financebench_id_01912,"éligible, non tirée",quota de sa forme atteint,libelle,libelle,libelle,,MGM Resorts,MGMRESORTS_2022Q4_EARNINGS
+financebench_id_00407,retenue,,libelle,libelle,libelle,corporate bonds | corporate bond,MGM Resorts,MGMRESORTS_2023Q2_10Q
+financebench_id_04700,retenue,,releve,releve,nombre,,Microsoft,MICROSOFT_2016_10K
+financebench_id_00552,retenue,,non,verdict,verdict,no,Microsoft,MICROSOFT_2023_10K
+financebench_id_04458,retenue,,calcul,calcul,nombre,,Netflix,NETFLIX_2015_10K
+financebench_id_03282,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,Netflix,NETFLIX_2017_10K
+financebench_id_04302,retenue,,calcul,calcul,nombre,,Nike,NIKE_2018_10K
+financebench_id_03531,retenue,,releve,releve,nombre,,Nike,NIKE_2019_10K
+financebench_id_04080,extension,,calcul,calcul,nombre,,Nike,NIKE_2021_10K
+financebench_id_01163,retenue,,libelle,libelle,libelle,operations | operating | operating activities | cash flows from operating activities | cash flow from operations | cash provided by operations | cash provided (used) by operations | net cash provided by operating activities | total cash provided by operating activities | cash provided by operating activities,Nike,NIKE_2023_10K
+financebench_id_00080,écartée,Oui / non : la clause « si l'indicateur n'est pas pertinent » rend la réponse discutable pour cette société,,,,,Paypal,PAYPAL_2022_10K
+financebench_id_04980,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,PepsiCo,PEPSICO_2021_10K
+financebench_id_01009,écartée,Explication rédigée : seul un humain peut la noter,,,,,PepsiCo,PEPSICO_2022_10K
+financebench_id_00735,retenue,,non,verdict,verdict,no,PepsiCo,PEPSICO_2022_10K
+financebench_id_01328,écartée,Nombre : unité non fixée par la question,,,,,PepsiCo,PEPSICO_2022_10K
+financebench_id_03620,retenue,,calcul,calcul,nombre,,PepsiCo,PEPSICO_2022_10K
+financebench_id_04481,extension,,calcul,calcul,nombre,,PepsiCo,PEPSICO_2022_10K
+financebench_id_01482,écartée,Explication rédigée : seul un humain peut la noter,,,,,PepsiCo,PEPSICO_2023_8K_dated-2023-05-05
+financebench_id_00705,écartée,Nombre : unité non fixée par la question,,,,,PepsiCo,PEPSICO_2023_8K_dated-2023-05-30
+financebench_id_00882,écartée,Nombre : unité non fixée par la question,,,,,PepsiCo,PEPSICO_2023_8K_dated-2023-05-30
+financebench_id_01474,écartée,Explication rédigée : seul un humain peut la noter,,,,,PepsiCo,PEPSICO_2023Q1_EARNINGS
+financebench_id_01476,"éligible, non tirée",quota de sa forme atteint,releve,releve,nombre,,PepsiCo,PEPSICO_2023Q1_EARNINGS
+financebench_id_00302,retenue,,oui,verdict,verdict,yes,Pfizer,PFIZER_2021_10K
+financebench_id_00702,"éligible, non tirée",quota de sa forme atteint,oui,verdict,verdict,yes,Pfizer,PFIZER_2021_10K
+financebench_id_02416,écartée,Explication rédigée : seul un humain peut la noter,,,,,Pfizer,PFIZER_2021_10K
+financebench_id_00283,écartée,"Nombre : référence à vérifier, non recoupée",,,,,Pfizer,Pfizer_2023Q2_10Q
+financebench_id_00724,"éligible, non tirée",quota de sa forme atteint,libelle,libelle,libelle,,Pfizer,Pfizer_2023Q2_10Q
+financebench_id_02419,écartée,Oui / non : référence à vérifier (opération datée),,,,,Pfizer,Pfizer_2023Q2_10Q
+financebench_id_00746,retenue,,aucun,libelle,libelle,,Ulta Beauty,ULTABEAUTY_2023_10K
+financebench_id_00521,retenue,,aucun,libelle,libelle,,Ulta Beauty,ULTABEAUTY_2023_10K
+financebench_id_00601,écartée,Explication rédigée : seul un humain peut la noter,,,,,Ulta Beauty,ULTABEAUTY_2023Q4_EARNINGS
+financebench_id_00603,écartée,Explication rédigée : seul un humain peut la noter,,,,,Ulta Beauty,ULTABEAUTY_2023Q4_EARNINGS
+financebench_id_00605,écartée,Nombre : l'annotateur signale lui-même une ambiguïté sur l'exercice fiscal,,,,,Ulta Beauty,ULTABEAUTY_2023Q4_EARNINGS
+financebench_id_00606,écartée,"Libellé : ambiguïté sur l'exercice fiscal, signalée par l'annotateur",,,,,Ulta Beauty,ULTABEAUTY_2023Q4_EARNINGS
+financebench_id_00859,retenue,,libelle,libelle,libelle,Cross currency swaps | Cross currency swap,Verizon,VERIZON_2021_10K
+financebench_id_02024,écartée,Explication rédigée : seul un humain peut la noter,,,,,Verizon,VERIZON_2021_10K
+financebench_id_00216,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,Verizon,VERIZON_2022_10K
+financebench_id_00215,écartée,Oui / non d'opinion : le seuil est laissé au jugement de l'analyste,,,,,Verizon,VERIZON_2022_10K
+financebench_id_00566,retenue,,non,verdict,verdict,no,Verizon,VERIZON_2022_10K
+financebench_id_06247,extension,,calcul,calcul,nombre,,Walmart,WALMART_2018_10K
+financebench_id_04784,retenue,,calcul,calcul,nombre,,Walmart,WALMART_2019_10K
+financebench_id_06741,retenue,,calcul,calcul,nombre,,Walmart,WALMART_2020_10K

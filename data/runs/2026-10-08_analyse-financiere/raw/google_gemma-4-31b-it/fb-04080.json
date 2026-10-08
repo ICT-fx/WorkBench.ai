@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "fb-04080",
+  "raw": {
+    "answer": 3.43
+  },
+  "latencyMs": 767,
+  "costUsd": 0.00055125,
+  "provider": "ModelRun",
+  "inputTokens": 715,
+  "outputTokens": 15
+}

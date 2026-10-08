@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "operating activities"
+  },
+  "latencyMs": 10310,
+  "costUsd": 0.0020225,
+  "provider": "Mancer 2",
+  "inputTokens": 1554,
+  "outputTokens": 685
+}

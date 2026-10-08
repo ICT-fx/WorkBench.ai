@@ -1,0 +1,142 @@
+{
+  "runId": "2026-10-02_facture-fcc",
+  "source": "Date d’écriture de chaque réponse sur le disque de la machine qui a exécuté le run. Les runs lancés à partir du 8 octobre 2026 portent la date de chaque appel dans la réponse elle-même (calledAt).",
+  "recordedAt": "2026-10-08",
+  "models": {
+    "amazon/nova-lite-v1": {
+      "first": "2026-10-03T10:06:19.102Z",
+      "last": "2026-10-03T11:54:21.869Z",
+      "calls": 40
+    },
+    "amazon/nova-pro-v1": {
+      "first": "2026-10-03T10:04:56.206Z",
+      "last": "2026-10-03T11:53:20.921Z",
+      "calls": 40
+    },
+    "anthropic/claude-fable-5.1": {
+      "first": "2026-10-02T14:08:39.485Z",
+      "last": "2026-10-02T14:10:56.809Z",
+      "calls": 40
+    },
+    "anthropic/claude-opus-5.5": {
+      "first": "2026-10-02T14:26:38.248Z",
+      "last": "2026-10-03T11:52:47.136Z",
+      "calls": 40
+    },
+    "anthropic/claude-sonnet-5": {
+      "first": "2026-10-03T10:03:31.620Z",
+      "last": "2026-10-03T11:53:00.607Z",
+      "calls": 40
+    },
+    "cohere/command-a-plus": {
+      "first": "2026-10-03T10:05:45.483Z",
+      "last": "2026-10-05T13:10:51.850Z",
+      "calls": 40
+    },
+    "deepseek/deepseek-v4.1-flash": {
+      "first": "2026-10-03T10:08:39.468Z",
+      "last": "2026-10-05T13:11:04.510Z",
+      "calls": 40
+    },
+    "google/gemini-3.5-flash-lite": {
+      "first": "2026-10-03T10:06:08.899Z",
+      "last": "2026-10-03T11:54:16.257Z",
+      "calls": 40
+    },
+    "google/gemini-3.8-flash": {
+      "first": "2026-10-03T10:05:03.550Z",
+      "last": "2026-10-03T11:53:26.816Z",
+      "calls": 40
+    },
+    "google/gemma-4-31b-it": {
+      "first": "2026-10-03T10:06:06.699Z",
+      "last": "2026-10-03T11:54:19.798Z",
+      "calls": 40
+    },
+    "meta-llama/llama-4-maverick": {
+      "first": "2026-10-03T10:05:54.214Z",
+      "last": "2026-10-03T11:54:03.065Z",
+      "calls": 40
+    },
+    "meta/muse-spark-1.3": {
+      "first": "2026-10-02T15:03:47.511Z",
+      "last": "2026-10-03T11:56:49.824Z",
+      "calls": 40
+    },
+    "mistralai/ministral-8b-2512": {
+      "first": "2026-10-03T10:05:58.215Z",
+      "last": "2026-10-03T11:54:07.126Z",
+      "calls": 40
+    },
+    "mistralai/mistral-large-2512": {
+      "first": "2026-10-03T10:05:25.539Z",
+      "last": "2026-10-03T11:56:10.987Z",
+      "calls": 40
+    },
+    "mistralai/mistral-medium-3-5": {
+      "first": "2026-10-03T10:05:20.862Z",
+      "last": "2026-10-03T11:53:38.730Z",
+      "calls": 40
+    },
+    "mistralai/mistral-small-2603": {
+      "first": "2026-10-03T10:05:54.417Z",
+      "last": "2026-10-03T11:54:04.709Z",
+      "calls": 40
+    },
+    "moonshotai/kimi-k2.6": {
+      "first": "2026-10-03T10:04:52.263Z",
+      "last": "2026-10-03T11:53:36.329Z",
+      "calls": 40
+    },
+    "moonshotai/kimi-k3": {
+      "first": "2026-10-02T14:23:27.125Z",
+      "last": "2026-10-02T14:26:33.831Z",
+      "calls": 40
+    },
+    "openai/gpt-6-astra": {
+      "first": "2026-10-02T14:11:02.175Z",
+      "last": "2026-10-02T14:15:14.856Z",
+      "calls": 40
+    },
+    "openai/gpt-6-luna": {
+      "first": "2026-10-03T10:06:14.755Z",
+      "last": "2026-10-03T11:54:19.665Z",
+      "calls": 40
+    },
+    "openai/gpt-6-sol": {
+      "first": "2026-10-03T10:03:33.532Z",
+      "last": "2026-10-03T11:52:58.302Z",
+      "calls": 40
+    },
+    "qwen/qwen3.7-flash": {
+      "first": "2026-10-03T10:07:24.719Z",
+      "last": "2026-10-03T11:59:49.728Z",
+      "calls": 40
+    },
+    "qwen/qwen3.8-27b": {
+      "first": "2026-10-03T10:05:49.003Z",
+      "last": "2026-10-03T11:53:59.263Z",
+      "calls": 40
+    },
+    "qwen/qwen3.8-max-0902": {
+      "first": "2026-10-03T10:05:14.226Z",
+      "last": "2026-10-03T11:55:28.349Z",
+      "calls": 40
+    },
+    "qwen/qwen3.8-max-prime": {
+      "first": "2026-10-02T14:14:58.404Z",
+      "last": "2026-10-03T10:20:00.295Z",
+      "calls": 40
+    },
+    "x-ai/grok-4.7": {
+      "first": "2026-10-02T14:51:59.860Z",
+      "last": "2026-10-03T11:52:54.128Z",
+      "calls": 40
+    },
+    "z-ai/glm-5.3-flash": {
+      "first": "2026-10-03T10:06:31.658Z",
+      "last": "2026-10-03T11:54:24.453Z",
+      "calls": 40
+    }
+  }
+}

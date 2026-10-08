@@ -1,0 +1,868 @@
+{
+  "taskId": "facture-fcc",
+  "runId": "2026-09-27_facture-fcc+2026-10-02_facture-fcc+2026-10-04_facture-fcc+2026-10-05_facture-fcc",
+  "runDate": "2026-10-05",
+  "promptHash": "015533a8e169",
+  "criteriaHash": "dd28a01cb057",
+  "parameters": {
+    "maxTokens": 8000,
+    "maxTokensByModel": {
+      "cohere/command-a-plus": 20000,
+      "moonshotai/kimi-k3": 16000,
+      "moonshotai/kimi-k2.6": 16000,
+      "qwen/qwen3.7-flash": 16000,
+      "qwen/qwen3.8-max-0902": 16000
+    },
+    "allowProviderFallbacks": true
+  },
+  "documents": [
+    {
+      "docId": "02ccb7f2-84d7-5506-70e7-9187af6a0867",
+      "pages": 8,
+      "fingerprint": "e58a398973cc6963"
+    },
+    {
+      "docId": "03b940c2-0a0a-d558-d634-03a8ac7fa8bc",
+      "pages": 4,
+      "fingerprint": "e2711ec2de4b0c2d"
+    },
+    {
+      "docId": "0458e5e4-b253-f5bb-0bfe-fd9b1a8eaada",
+      "pages": 3,
+      "fingerprint": "10a3c7b3304ff858"
+    },
+    {
+      "docId": "05a53fa5-6421-cceb-2bf6-275a4e08a69a",
+      "pages": 2,
+      "fingerprint": "232bcb1a0fd0b055"
+    },
+    {
+      "docId": "0617c152-6638-cd96-409e-8af194730069",
+      "pages": 4,
+      "fingerprint": "1e7bcd5303c0450e"
+    },
+    {
+      "docId": "0880bc9a-9e5b-8245-f641-0ba7be31ca6f",
+      "pages": 8,
+      "fingerprint": "b1e182360572519a"
+    },
+    {
+      "docId": "08bea544-d037-eaad-848d-8a98dbc62b36",
+      "pages": 7,
+      "fingerprint": "b6c63822e80957db"
+    },
+    {
+      "docId": "0a32ce11-7ed9-14ee-8856-6a1edfad9ff3",
+      "pages": 3,
+      "fingerprint": "da60e8b15fe6d0d2"
+    },
+    {
+      "docId": "0be55a7b-c4b9-7956-d523-30f79a4ebc1a",
+      "pages": 1,
+      "fingerprint": "d66baf9378c91564"
+    },
+    {
+      "docId": "0e4719a3-7aa2-d3f8-0455-96d05e695593",
+      "pages": 1,
+      "fingerprint": "fff9666c41991591"
+    },
+    {
+      "docId": "11a46278-4c24-74df-7313-e6f38abcb42f",
+      "pages": 5,
+      "fingerprint": "3995f60b69656a8e"
+    },
+    {
+      "docId": "15262983-7227-5abf-803b-1089dfad4494",
+      "pages": 3,
+      "fingerprint": "f180fb18a42b7994"
+    },
+    {
+      "docId": "17bee528-c562-197f-a7a8-078c223dac58",
+      "pages": 2,
+      "fingerprint": "844a2581dc5db967"
+    },
+    {
+      "docId": "1fd3058f-85e3-c28d-1f50-142bc4df48dc",
+      "pages": 4,
+      "fingerprint": "6003c987fb9357a1"
+    },
+    {
+      "docId": "1fd7b5c9-39b2-c7da-b420-dc01180b0877",
+      "pages": 4,
+      "fingerprint": "b4a0387bc3eab975"
+    },
+    {
+      "docId": "21228dd6-6cac-f576-7c61-e05794d56e97",
+      "pages": 2,
+      "fingerprint": "d62e5bb9742fe80f"
+    },
+    {
+      "docId": "2388be11-9ced-8bde-f56c-f963d0cdcbe2",
+      "pages": 1,
+      "fingerprint": "121032ff2e3f3daa"
+    },
+    {
+      "docId": "250e73dd-0070-72bf-683b-c57b7dd7a1de",
+      "pages": 6,
+      "fingerprint": "29aee01519ae58e6"
+    },
+    {
+      "docId": "26f3961b-264a-e31e-e91e-c5b8211bed89",
+      "pages": 4,
+      "fingerprint": "b5aff722dac884e1"
+    },
+    {
+      "docId": "29604390-e222-96d8-a7ba-a713a18ad1ea",
+      "pages": 4,
+      "fingerprint": "1e67bf185217339b"
+    },
+    {
+      "docId": "2aac88c6-7849-4aa6-5315-5ceeabbdcf73",
+      "pages": 4,
+      "fingerprint": "f78d393345f1dbca"
+    },
+    {
+      "docId": "331ff2f3-ce04-6816-ccb3-98e711ab6904",
+      "pages": 2,
+      "fingerprint": "08688c4d17d6b54b"
+    },
+    {
+      "docId": "345c9cc0-9807-1e81-178e-d79752dbdf87",
+      "pages": 2,
+      "fingerprint": "e1df10607b8baa10"
+    },
+    {
+      "docId": "3499dd36-86ea-a315-1b77-78975380f1d0",
+      "pages": 2,
+      "fingerprint": "e3a70ec0a3b551e1"
+    },
+    {
+      "docId": "36ff284e-9896-61f0-8eec-2fc990794d04",
+      "pages": 2,
+      "fingerprint": "aecbdd5ee54569fe"
+    },
+    {
+      "docId": "3bdbc1a7-5599-24d3-08a8-8c22749f5e79",
+      "pages": 4,
+      "fingerprint": "93089b8df35f2425"
+    },
+    {
+      "docId": "3f335f42-1857-e5c0-203e-a9cc03a13aa4",
+      "pages": 4,
+      "fingerprint": "b4c821379cca4d46"
+    },
+    {
+      "docId": "3fb2b31f-5664-3bd2-4fec-e4b0e777ecc5",
+      "pages": 5,
+      "fingerprint": "a678317017415553"
+    },
+    {
+      "docId": "4809552b-2f55-a9cf-6f4a-f4ec9d691461",
+      "pages": 1,
+      "fingerprint": "f8d4ee659989b556"
+    },
+    {
+      "docId": "48e3a952-fea0-ff4a-b83b-6577a43b33aa",
+      "pages": 5,
+      "fingerprint": "195bfe6e5b74d834"
+    },
+    {
+      "docId": "4b703aaa-2e13-528c-85f8-9bd7879d4cbb",
+      "pages": 4,
+      "fingerprint": "0831b0b8f3ad6375"
+    },
+    {
+      "docId": "4cee59d1-0fb1-79e5-12e9-56b445330d36",
+      "pages": 4,
+      "fingerprint": "89cd28a6d2a75095"
+    },
+    {
+      "docId": "4e1c4012-34b3-a73b-c40c-85f1bd0c4b32",
+      "pages": 3,
+      "fingerprint": "a0ff9e9177705f2f"
+    },
+    {
+      "docId": "59d47fbe-0fc4-0403-1127-b5dc063d89b3",
+      "pages": 3,
+      "fingerprint": "80215543092b9cdc"
+    },
+    {
+      "docId": "5b40f242-d219-7b52-3bab-2ecf7453ff95",
+      "pages": 5,
+      "fingerprint": "4f1b9d59a4b58874"
+    },
+    {
+      "docId": "5c8edc38-9c6e-f131-6124-bd4aab4b9b01",
+      "pages": 6,
+      "fingerprint": "fa0f5e40955507c7"
+    },
+    {
+      "docId": "5d56f8db-474f-29eb-68ba-5c48950c9802",
+      "pages": 4,
+      "fingerprint": "99bb62ccb85ce52a"
+    },
+    {
+      "docId": "5d8fb479-8a50-0bd7-467a-9491fd80fa60",
+      "pages": 3,
+      "fingerprint": "67677559e4e23ea4"
+    },
+    {
+      "docId": "5e0773ca-7f3a-838c-90de-f0cbc5dd6370",
+      "pages": 4,
+      "fingerprint": "0acc5a0821d186d3"
+    },
+    {
+      "docId": "627d67b5-e1b9-dd0c-29d9-c14d1a652924",
+      "pages": 5,
+      "fingerprint": "c5672c4e80934bac"
+    },
+    {
+      "docId": "62e6d540-ee87-021d-f1d5-ffa2f8012038",
+      "pages": 2,
+      "fingerprint": "148f919a236642d8"
+    },
+    {
+      "docId": "64780ed0-180c-a77b-bfe0-478c2a48a3a0",
+      "pages": 2,
+      "fingerprint": "e43897857c00b341"
+    },
+    {
+      "docId": "6c10638e-5287-d5d6-b99a-2341ddd35bd9",
+      "pages": 1,
+      "fingerprint": "a3982008d5801f04"
+    },
+    {
+      "docId": "703ebcab-f247-46bf-2e5d-b2c454296007",
+      "pages": 3,
+      "fingerprint": "7e7b7bbe539a89bc"
+    },
+    {
+      "docId": "707c944c-a76d-b929-5642-9e71e2518d9d",
+      "pages": 6,
+      "fingerprint": "f9045001388188d7"
+    },
+    {
+      "docId": "73e15945-e66f-d4e5-ae22-06881375a32e",
+      "pages": 3,
+      "fingerprint": "85ea550166469415"
+    },
+    {
+      "docId": "74c779b4-423f-d265-d31a-f3852b42c28b",
+      "pages": 3,
+      "fingerprint": "7e8563d54fd94980"
+    },
+    {
+      "docId": "76b092d7-cdf8-974d-9092-e0e016a3260a",
+      "pages": 2,
+      "fingerprint": "24c68382d3a963cb"
+    },
+    {
+      "docId": "7b9146bb-864c-c7e0-d889-55e408a50b8f",
+      "pages": 3,
+      "fingerprint": "776da7c3c1234235"
+    },
+    {
+      "docId": "7bbe366d-1e09-b2c3-e969-c45940fc5d71",
+      "pages": 3,
+      "fingerprint": "01e5dc0f7dcf339b"
+    },
+    {
+      "docId": "7e00d875-a0c3-6dc1-c2df-8f924a0a159a",
+      "pages": 1,
+      "fingerprint": "f5ede2f75079a66f"
+    },
+    {
+      "docId": "805aafc6-4723-142b-fbb6-7876a8f14bad",
+      "pages": 2,
+      "fingerprint": "e3df1291728e2a2d"
+    },
+    {
+      "docId": "8222d0e9-ba97-47a7-ff04-86fea977425f",
+      "pages": 3,
+      "fingerprint": "5aad6d44341c1061"
+    },
+    {
+      "docId": "8588921b-ac32-c431-e2f8-b30fbc821a80",
+      "pages": 2,
+      "fingerprint": "34ab9a739260a74f"
+    },
+    {
+      "docId": "88d79dde-ac4a-5e69-b150-1f64fc28dda3",
+      "pages": 2,
+      "fingerprint": "06053241d1db359a"
+    },
+    {
+      "docId": "8b687291-2dfb-fcd3-d827-7f36e3e89ef3",
+      "pages": 3,
+      "fingerprint": "21825d23c0a416a8"
+    },
+    {
+      "docId": "8e41b954-ea3c-0b8d-0c3e-ea345abd4c4c",
+      "pages": 5,
+      "fingerprint": "60e9ac768ab6150c"
+    },
+    {
+      "docId": "9215778a-01ee-2375-7349-d1a3e503bf8d",
+      "pages": 2,
+      "fingerprint": "c8233fffd5385799"
+    },
+    {
+      "docId": "9294d8b3-ad2a-b2ae-245d-417533ab01ce",
+      "pages": 5,
+      "fingerprint": "66a7f3ebfc6ab331"
+    },
+    {
+      "docId": "93cd08d3-28b1-31c0-8902-4060655fcb91",
+      "pages": 2,
+      "fingerprint": "c2e842f4a8f16f0a"
+    },
+    {
+      "docId": "97ea6a67-cc97-803b-a2f0-b5e485517bb0",
+      "pages": 2,
+      "fingerprint": "f49873398218f3b1"
+    },
+    {
+      "docId": "988878c1-0908-63f0-8dcd-71381dcafecb",
+      "pages": 3,
+      "fingerprint": "d81578ff1a3fe53a"
+    },
+    {
+      "docId": "98905496-5904-ec4a-c59a-7c6d297b4bfa",
+      "pages": 4,
+      "fingerprint": "5cd7455701cbc8c0"
+    },
+    {
+      "docId": "991a6b5e-47e7-adbe-94d1-fbf91a2242ad",
+      "pages": 3,
+      "fingerprint": "f61f6a600971fd8f"
+    },
+    {
+      "docId": "9cc36a83-3876-f4a5-a5bd-848f30f4487d",
+      "pages": 1,
+      "fingerprint": "1a4864db28b85c22"
+    },
+    {
+      "docId": "9ed3362a-84b4-1d8e-7aab-1ed898008b16",
+      "pages": 6,
+      "fingerprint": "d5eef6b5c465dcc2"
+    },
+    {
+      "docId": "a21fa434-7344-7d98-8203-cd21e31ad4b5",
+      "pages": 6,
+      "fingerprint": "c09d2b0a005d8afd"
+    },
+    {
+      "docId": "a24ef1d8-5190-b2d2-0650-dbdfe6ce1e01",
+      "pages": 8,
+      "fingerprint": "534f07d53bbad4b3"
+    },
+    {
+      "docId": "a5b12494-83b6-c5c0-1e0f-0826f37899f0",
+      "pages": 2,
+      "fingerprint": "041e1621ebedaffe"
+    },
+    {
+      "docId": "a7d60614-8503-c149-eb0d-cf9869d0dd40",
+      "pages": 2,
+      "fingerprint": "d768cea64d3f383a"
+    },
+    {
+      "docId": "a8aaf9d5-22d3-eb99-08db-5145501e79f6",
+      "pages": 3,
+      "fingerprint": "9ab48c86c5e2089b"
+    },
+    {
+      "docId": "abf2f735-74bf-ee22-e217-5e64c7e70221",
+      "pages": 2,
+      "fingerprint": "c398f1fd3113bd6a"
+    },
+    {
+      "docId": "afa6fb20-da46-2010-eb7f-9b7f73599317",
+      "pages": 8,
+      "fingerprint": "f8f868175a5dc3ee"
+    },
+    {
+      "docId": "b34fc957-b080-594f-589d-d923cc152a1b",
+      "pages": 2,
+      "fingerprint": "6b7a9cfe3fe91e56"
+    },
+    {
+      "docId": "bc343c38-ebdb-cfda-3153-c67e8c2bbe71",
+      "pages": 1,
+      "fingerprint": "41a796ac39607cb3"
+    },
+    {
+      "docId": "be9e50f7-45af-e6d8-ebbe-3cb0cba57009",
+      "pages": 2,
+      "fingerprint": "debfad1d35275745"
+    },
+    {
+      "docId": "c0b67c9f-4ae2-812d-87f2-c33465ac2184",
+      "pages": 6,
+      "fingerprint": "0c92fbb5450a1e26"
+    },
+    {
+      "docId": "c6974e8e-1040-e730-6b6a-933e45d18641",
+      "pages": 3,
+      "fingerprint": "f3c670b8616d77f2"
+    },
+    {
+      "docId": "c6ec7473-28f2-1da4-9f8b-428d8dc97acc",
+      "pages": 3,
+      "fingerprint": "f593b2e3ebadcb16"
+    },
+    {
+      "docId": "ca356a4b-5c50-5684-c2ed-da9de3d0b37b",
+      "pages": 1,
+      "fingerprint": "b4b6f3e5a4989fdb"
+    },
+    {
+      "docId": "d06fd8db-a373-bbf7-88e3-a7ba4ecbb1d3",
+      "pages": 1,
+      "fingerprint": "7c05162a5bafc7c1"
+    },
+    {
+      "docId": "d1ba9225-5d0a-63a9-e0fe-859838e0a716",
+      "pages": 3,
+      "fingerprint": "e11117c6f5bd94c7"
+    },
+    {
+      "docId": "d297f399-d37d-4970-7701-9807995d4129",
+      "pages": 2,
+      "fingerprint": "455e4054b21a995e"
+    },
+    {
+      "docId": "d2bbcfb2-5161-3095-6498-ee67f5346032",
+      "pages": 1,
+      "fingerprint": "3fadf4e290153e43"
+    },
+    {
+      "docId": "d6bd95e8-7b71-c7d3-8084-b7f2867f820b",
+      "pages": 2,
+      "fingerprint": "b00c02f6afd3b504"
+    },
+    {
+      "docId": "d6cd4fa8-fed8-1f57-c2f7-e5dea8529a3e",
+      "pages": 4,
+      "fingerprint": "6672f11fd13a7617"
+    },
+    {
+      "docId": "d748c964-6e5b-dc74-0e9c-8c4287c04552",
+      "pages": 2,
+      "fingerprint": "f62dbd9b3aeabc06"
+    },
+    {
+      "docId": "da77aaa0-2540-4aa6-8f25-19be10a1900b",
+      "pages": 4,
+      "fingerprint": "afcea6f1fe6d53c8"
+    },
+    {
+      "docId": "db47993a-2abd-7640-51d2-5b2537bc8531",
+      "pages": 3,
+      "fingerprint": "31980ab45b21cdba"
+    },
+    {
+      "docId": "dd623c62-a5b5-69c0-66ae-688d568ec71b",
+      "pages": 2,
+      "fingerprint": "a2ee539aaa4d4258"
+    },
+    {
+      "docId": "e0260276-4168-a69c-5c65-f78dd89207ed",
+      "pages": 3,
+      "fingerprint": "9f1762325304a459"
+    },
+    {
+      "docId": "e3f3dba6-3b9c-1e3a-ef12-d240405f1034",
+      "pages": 1,
+      "fingerprint": "f58031831f9bfd83"
+    },
+    {
+      "docId": "e5e2f343-d307-1207-8671-f023d09b21ae",
+      "pages": 2,
+      "fingerprint": "7828ef6484a8c90b"
+    },
+    {
+      "docId": "e6846bc9-a6f0-60f0-544f-a80e697b2aec",
+      "pages": 3,
+      "fingerprint": "85b79c147e38af3d"
+    },
+    {
+      "docId": "e8d41204-64eb-9f4b-608e-5593933aca41",
+      "pages": 4,
+      "fingerprint": "2089fb6e1f74d04f"
+    },
+    {
+      "docId": "ec8415e2-54ce-4f66-1386-53c52c8e2fca",
+      "pages": 1,
+      "fingerprint": "f1e290d11e120c04"
+    },
+    {
+      "docId": "ee19ec76-3531-254f-c21f-869b6cf0916c",
+      "pages": 2,
+      "fingerprint": "89ac386a6a4bba98"
+    },
+    {
+      "docId": "f56e2fc1-7f41-68e3-bfe5-06176b9a2e8a",
+      "pages": 3,
+      "fingerprint": "eff322ea5b4ceb2c"
+    },
+    {
+      "docId": "f5871a46-1eec-b7ab-0255-ca56b3adbdd1",
+      "pages": 2,
+      "fingerprint": "08a322df99f890c0"
+    },
+    {
+      "docId": "f9889d44-900c-57fd-ec6d-c0e9b75f465f",
+      "pages": 1,
+      "fingerprint": "cc4d4d14396f15b4"
+    }
+  ],
+  "models": [
+    {
+      "alias": "openai/gpt-6-luna",
+      "version": "openai/gpt-6-luna",
+      "canonical": "openai/gpt-6-luna-20260922",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:10:13.850Z",
+      "lastCall": "2026-10-05T15:02:28.858Z",
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    {
+      "alias": "deepseek/deepseek-v4.1-flash",
+      "version": "deepseek/deepseek-v4.1-flash",
+      "canonical": "deepseek/deepseek-v4.1-flash-20260910",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:27:27.872Z",
+      "lastCall": "2026-10-05T15:02:28.270Z",
+      "providers": [
+        "AtlasCloud",
+        "DeepInfra",
+        "InferenceNet",
+        "Novita",
+        "Parasail",
+        "Together"
+      ]
+    },
+    {
+      "alias": "cohere/command-a-plus",
+      "version": "cohere/command-a-plus",
+      "canonical": "cohere/command-a-plus-05-2026",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:07:19.168Z",
+      "lastCall": "2026-10-05T15:16:59.741Z",
+      "providers": [
+        "Cohere"
+      ]
+    },
+    {
+      "alias": "moonshotai/kimi-k2.6",
+      "version": "moonshotai/kimi-k2.6",
+      "canonical": "moonshotai/kimi-k2.6-20260420",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:56:50.976Z",
+      "lastCall": "2026-10-05T15:15:31.756Z",
+      "providers": [
+        "AtlasCloud",
+        "Baidu",
+        "Chutes",
+        "CoreWeave",
+        "Crusoe",
+        "DigitalOcean",
+        "Inceptron",
+        "Moonshot AI",
+        "Novita",
+        "Parasail",
+        "Phala",
+        "SiliconFlow",
+        "StreamLake"
+      ]
+    },
+    {
+      "alias": "meta/muse-spark-1.3",
+      "version": "meta/muse-spark-1.3",
+      "canonical": "meta/muse-spark-1.3-20260902",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:54:17.256Z",
+      "lastCall": "2026-10-05T15:01:26.972Z",
+      "providers": [
+        "Meta"
+      ]
+    },
+    {
+      "alias": "moonshotai/kimi-k3",
+      "version": "moonshotai/kimi-k3",
+      "canonical": "moonshotai/kimi-k3-20260715",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:09:37.010Z",
+      "lastCall": "2026-10-05T15:01:05.540Z",
+      "providers": [
+        "InferenceNet",
+        "Morph",
+        "Parasail",
+        "Relace",
+        "Together",
+        "Wafer"
+      ]
+    },
+    {
+      "alias": "google/gemma-4-31b-it",
+      "version": "google/gemma-4-31b-it",
+      "canonical": "google/gemma-4-31b-it-20260402",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:10:04.749Z",
+      "lastCall": "2026-10-05T15:02:16.175Z",
+      "providers": [
+        "CoreWeave",
+        "DeepInfra",
+        "Friendli",
+        "ModelRun",
+        "Reka"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.7-flash",
+      "version": "qwen/qwen3.7-flash",
+      "canonical": "qwen/qwen3.7-flash-20260727",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:11:15.491Z",
+      "lastCall": "2026-10-05T15:03:30.633Z",
+      "providers": [
+        "Alibaba"
+      ]
+    },
+    {
+      "alias": "mistralai/ministral-8b-2512",
+      "version": "mistralai/ministral-8b-2512",
+      "canonical": "mistralai/ministral-8b-2512",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:09:58.554Z",
+      "lastCall": "2026-10-05T15:02:13.395Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "z-ai/glm-5.3-flash",
+      "version": "z-ai/glm-5.3-flash",
+      "canonical": "z-ai/glm-5.3-flash-20260826",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:31:00.233Z",
+      "lastCall": "2026-10-05T15:02:47.681Z",
+      "providers": [
+        "Friendli",
+        "GMICloud",
+        "InferenceNet",
+        "NextBit",
+        "Parasail",
+        "Reka",
+        "Sail Research",
+        "SiliconFlow",
+        "StreamLake",
+        "Together",
+        "Wafer"
+      ]
+    },
+    {
+      "alias": "google/gemini-3.5-flash-lite",
+      "version": "google/gemini-3.5-flash-lite",
+      "canonical": "google/gemini-3.5-flash-lite-20260721",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:10:11.644Z",
+      "lastCall": "2026-10-05T15:02:24.306Z",
+      "providers": [
+        "Google"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.8-27b",
+      "version": "qwen/qwen3.8-27b",
+      "canonical": "qwen/qwen3.8-27b-20260814",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:16:06.480Z",
+      "lastCall": "2026-10-05T15:02:23.097Z",
+      "providers": [
+        "AkashML",
+        "CoreWeave",
+        "Darkbloom",
+        "DeepInfra",
+        "DekaLLM",
+        "Mancer 2",
+        "Phala",
+        "Venice",
+        "Wafer"
+      ]
+    },
+    {
+      "alias": "google/gemini-3.8-flash",
+      "version": "google/gemini-3.8-flash",
+      "canonical": "google/gemini-3.8-flash-20260902",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:05:20.365Z",
+      "lastCall": "2026-10-05T15:01:42.387Z",
+      "providers": [
+        "Google",
+        "Google AI Studio"
+      ]
+    },
+    {
+      "alias": "anthropic/claude-sonnet-5",
+      "version": "anthropic/claude-sonnet-5",
+      "canonical": "anthropic/claude-sonnet-5-20260630",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:48:36.842Z",
+      "lastCall": "2026-10-05T15:01:18.530Z",
+      "providers": [
+        "Claude Platform on AWS"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.8-max-0902",
+      "version": "qwen/qwen3.8-max-0902",
+      "canonical": "qwen/qwen3.8-max-20260902",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:49:30.953Z",
+      "lastCall": "2026-10-05T15:01:29.537Z",
+      "providers": [
+        "Alibaba"
+      ]
+    },
+    {
+      "alias": "x-ai/grok-4.7",
+      "version": "x-ai/grok-4.7",
+      "canonical": "x-ai/grok-4.7-20260916",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:38:19.129Z",
+      "lastCall": "2026-10-05T15:01:16.764Z",
+      "providers": [
+        "xAI"
+      ]
+    },
+    {
+      "alias": "anthropic/claude-opus-5.5",
+      "version": "anthropic/claude-opus-5.5",
+      "canonical": "anthropic/claude-opus-5.5-20260921",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:36:44.256Z",
+      "lastCall": "2026-10-05T15:01:08.821Z",
+      "providers": [
+        "Claude Platform on AWS"
+      ]
+    },
+    {
+      "alias": "qwen/qwen3.8-max-prime",
+      "version": "qwen/qwen3.8-max-prime",
+      "canonical": "qwen/qwen3.8-max-prime-20260923",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:08:30.594Z",
+      "lastCall": "2026-10-05T15:10:40.297Z",
+      "providers": [
+        "Alibaba"
+      ]
+    },
+    {
+      "alias": "openai/gpt-6-astra",
+      "version": "openai/gpt-6-astra",
+      "canonical": "openai/gpt-6-astra-20260903",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:08:12.615Z",
+      "lastCall": "2026-10-05T15:00:48.686Z",
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    {
+      "alias": "openai/gpt-6-sol",
+      "version": "openai/gpt-6-sol",
+      "canonical": "openai/gpt-6-sol-20260922",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:46:48.108Z",
+      "lastCall": "2026-10-05T15:01:16.002Z",
+      "providers": [
+        "OpenAI"
+      ]
+    },
+    {
+      "alias": "anthropic/claude-fable-5.1",
+      "version": "anthropic/claude-fable-5.1",
+      "canonical": "anthropic/claude-fable-5.1-20260831",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:07:55.133Z",
+      "lastCall": "2026-10-05T15:00:44.139Z",
+      "providers": [
+        "Anthropic",
+        "Google"
+      ]
+    },
+    {
+      "alias": "meta-llama/llama-4-maverick",
+      "version": "meta-llama/llama-4-maverick",
+      "canonical": "meta-llama/llama-4-maverick-17b-128e-instruct",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:20:50.319Z",
+      "lastCall": "2026-10-05T15:02:09.893Z",
+      "providers": [
+        "DeepInfra",
+        "DigitalOcean",
+        "Novita",
+        "Parasail"
+      ]
+    },
+    {
+      "alias": "mistralai/mistral-small-2603",
+      "version": "mistralai/mistral-small-2603",
+      "canonical": "mistralai/mistral-small-2603",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:22:07.097Z",
+      "lastCall": "2026-10-05T15:02:11.316Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "mistralai/mistral-large-2512",
+      "version": "mistralai/mistral-large-2512",
+      "canonical": "mistralai/mistral-large-2512",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:13:03.278Z",
+      "lastCall": "2026-10-05T15:32:05.980Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "mistralai/mistral-medium-3-5",
+      "version": "mistralai/mistral-medium-3-5",
+      "canonical": "mistralai/mistral-medium-3.5-20260430",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:09:34.477Z",
+      "lastCall": "2026-10-05T15:01:52.484Z",
+      "providers": [
+        "Mistral"
+      ]
+    },
+    {
+      "alias": "amazon/nova-lite-v1",
+      "version": "amazon/nova-lite-v1",
+      "canonical": "amazon/nova-lite-v1",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T09:10:26.745Z",
+      "lastCall": "2026-10-05T15:02:30.051Z",
+      "providers": [
+        "Amazon Bedrock"
+      ]
+    },
+    {
+      "alias": "amazon/nova-pro-v1",
+      "version": "amazon/nova-pro-v1",
+      "canonical": "amazon/nova-pro-v1",
+      "canonicalAsOf": "2026-10-08",
+      "firstCall": "2026-09-27T10:04:22.349Z",
+      "lastCall": "2026-10-05T15:01:32.597Z",
+      "providers": [
+        "Amazon Bedrock"
+      ]
+    }
+  ]
+}

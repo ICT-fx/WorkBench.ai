@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemini-3.5-flash-lite",
+  "modelVersion": "google/gemini-3.5-flash-lite",
+  "docId": "fb-01275",
+  "raw": {
+    "answer": "Total cash provided by operating activities"
+  },
+  "latencyMs": 962,
+  "costUsd": 0.0004057,
+  "provider": "Google",
+  "inputTokens": 1219,
+  "outputTokens": 16
+}

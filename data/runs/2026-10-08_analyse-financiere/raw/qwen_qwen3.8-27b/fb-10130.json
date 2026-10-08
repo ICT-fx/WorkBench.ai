@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-10130",
+  "raw": {
+    "answer": 63.86
+  },
+  "latencyMs": 36621,
+  "costUsd": 0.002442,
+  "provider": "Darkbloom",
+  "inputTokens": 2728,
+  "outputTokens": 1048
+}

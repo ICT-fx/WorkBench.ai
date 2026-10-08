@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fb-00563",
+  "raw": {
+    "answer": "Data Center"
+  },
+  "latencyMs": 14220,
+  "costUsd": 0.0032635,
+  "provider": "CoreWeave",
+  "inputTokens": 1978,
+  "outputTokens": 580
+}

@@ -1,0 +1,42 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "source": "Date d’écriture de chaque réponse sur le disque de la machine qui a exécuté le run. Les runs lancés à partir du 8 octobre 2026 portent la date de chaque appel dans la réponse elle-même (calledAt).",
+  "recordedAt": "2026-10-08",
+  "models": {
+    "anthropic/claude-fable-5.1": {
+      "first": "2026-10-08T13:32:53.894Z",
+      "last": "2026-10-08T14:53:03.577Z",
+      "calls": 40
+    },
+    "anthropic/claude-opus-5.5": {
+      "first": "2026-10-08T13:32:49.220Z",
+      "last": "2026-10-08T14:53:07.032Z",
+      "calls": 40
+    },
+    "deepseek/deepseek-v4.1-flash": {
+      "first": "2026-10-08T13:32:52.590Z",
+      "last": "2026-10-08T14:57:01.651Z",
+      "calls": 40
+    },
+    "moonshotai/kimi-k2.6": {
+      "first": "2026-10-08T13:33:19.733Z",
+      "last": "2026-10-08T14:56:52.433Z",
+      "calls": 40
+    },
+    "openai/gpt-6-astra": {
+      "first": "2026-10-08T13:32:52.000Z",
+      "last": "2026-10-08T14:53:10.647Z",
+      "calls": 40
+    },
+    "qwen/qwen3.8-max-0902": {
+      "first": "2026-10-08T13:33:00.246Z",
+      "last": "2026-10-08T14:54:00.330Z",
+      "calls": 40
+    },
+    "qwen/qwen3.8-max-prime": {
+      "first": "2026-10-08T13:33:04.131Z",
+      "last": "2026-10-08T14:57:29.407Z",
+      "calls": 40
+    }
+  }
+}

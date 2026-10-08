@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fq-19",
+  "raw": {
+    "answer": 446.67
+  },
+  "latencyMs": 54107,
+  "costUsd": 0.004737775,
+  "provider": "Inceptron",
+  "inputTokens": 906,
+  "outputTokens": 1772
+}

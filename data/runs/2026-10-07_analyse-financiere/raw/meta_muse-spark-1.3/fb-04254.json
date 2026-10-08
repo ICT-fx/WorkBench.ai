@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "meta/muse-spark-1.3",
+  "modelVersion": "meta/muse-spark-1.3",
+  "docId": "fb-04254",
+  "raw": {
+    "answer": 1832
+  },
+  "latencyMs": 7704,
+  "costUsd": 0.005764,
+  "provider": "Meta",
+  "inputTokens": 3700,
+  "outputTokens": 268
+}

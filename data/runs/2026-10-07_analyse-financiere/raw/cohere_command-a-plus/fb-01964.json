@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 3406,
+  "costUsd": 0.0011958,
+  "provider": "Cohere",
+  "inputTokens": 2666,
+  "outputTokens": 264
+}

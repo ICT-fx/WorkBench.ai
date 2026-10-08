@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 2348,
+  "costUsd": 0.022255,
+  "provider": "OpenAI",
+  "inputTokens": 1737,
+  "outputTokens": 11
+}

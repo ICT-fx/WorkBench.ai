@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "fb-00517",
+  "raw": {
+    "answer": "yes"
+  },
+  "latencyMs": 3081,
+  "costUsd": 0.0106035,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 2081,
+  "outputTokens": 187
+}

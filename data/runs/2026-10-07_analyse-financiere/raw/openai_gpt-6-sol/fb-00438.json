@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "openai/gpt-6-sol",
+  "modelVersion": "openai/gpt-6-sol",
+  "docId": "fb-00438",
+  "raw": {
+    "answer": "no"
+  },
+  "latencyMs": 5414,
+  "costUsd": 0.0053285,
+  "provider": "OpenAI",
+  "inputTokens": 1844,
+  "outputTokens": 72
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "Net cash provided by operating activities"
+  },
+  "latencyMs": 1966,
+  "costUsd": 0.00004133,
+  "provider": "DeepInfra",
+  "inputTokens": 395,
+  "outputTokens": 17
+}

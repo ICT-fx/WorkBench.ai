@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fb-03069",
+  "raw": {
+    "answer": 4.2
+  },
+  "latencyMs": 74469,
+  "costUsd": 0.006430695,
+  "provider": "Inceptron",
+  "inputTokens": 3903,
+  "outputTokens": 1884
+}

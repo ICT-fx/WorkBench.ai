@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fq-33",
+  "raw": {
+    "answer": 14.9128
+  },
+  "latencyMs": 5981,
+  "costUsd": 0.001294425,
+  "provider": "DigitalOcean",
+  "inputTokens": 969,
+  "outputTokens": 1196
+}

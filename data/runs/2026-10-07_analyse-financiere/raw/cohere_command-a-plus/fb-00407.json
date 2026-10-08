@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "fb-00407",
+  "raw": {
+    "answer": "Commercial paper and certificates of deposit"
+  },
+  "latencyMs": 3152,
+  "costUsd": 0.0015846,
+  "provider": "Cohere",
+  "inputTokens": 2672,
+  "outputTokens": 522
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "x-ai/grok-4.7",
+  "modelVersion": "x-ai/grok-4.7",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 3362,
+  "costUsd": 0.005602,
+  "provider": "xAI",
+  "inputTokens": 2744,
+  "outputTokens": 307
+}

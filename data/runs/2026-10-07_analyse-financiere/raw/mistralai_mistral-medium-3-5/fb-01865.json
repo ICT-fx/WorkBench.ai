@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/mistral-medium-3-5",
+  "modelVersion": "mistralai/mistral-medium-3-5",
+  "docId": "fb-01865",
+  "raw": {
+    "answer": "Health Care"
+  },
+  "latencyMs": 1102,
+  "costUsd": 0.003141,
+  "provider": "Mistral",
+  "inputTokens": 2034,
+  "outputTokens": 12
+}

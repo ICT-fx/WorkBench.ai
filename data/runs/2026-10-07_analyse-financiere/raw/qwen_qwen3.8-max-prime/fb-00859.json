@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 5586,
+  "costUsd": 0.007692,
+  "provider": "Alibaba",
+  "inputTokens": 1461,
+  "outputTokens": 154
+}

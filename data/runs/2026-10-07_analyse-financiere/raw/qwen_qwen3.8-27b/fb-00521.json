@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-00521",
+  "raw": {
+    "answer": null
+  },
+  "latencyMs": 7911,
+  "costUsd": 0.0007947,
+  "provider": "DeepInfra",
+  "inputTokens": 1548,
+  "outputTokens": 300
+}

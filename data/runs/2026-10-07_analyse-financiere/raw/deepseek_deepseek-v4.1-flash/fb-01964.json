@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 2106,
+  "costUsd": 0.000206847,
+  "provider": "AtlasCloud",
+  "inputTokens": 987,
+  "outputTokens": 120
+}

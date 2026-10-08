@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "amazon/nova-pro-v1",
+  "modelVersion": "amazon/nova-pro-v1",
+  "docId": "fb-04412",
+  "raw": {
+    "answer": 1.29
+  },
+  "latencyMs": 1239,
+  "costUsd": 0.0029688,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 3671,
+  "outputTokens": 10
+}

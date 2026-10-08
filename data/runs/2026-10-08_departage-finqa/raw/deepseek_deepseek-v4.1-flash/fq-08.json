@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fq-08",
+  "raw": {
+    "answer": 198180
+  },
+  "latencyMs": 29040,
+  "costUsd": 0.0028314,
+  "provider": "StreamLake",
+  "inputTokens": 500,
+  "outputTokens": 4594
+}

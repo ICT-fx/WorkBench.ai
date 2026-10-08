@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fq-38",
+  "raw": {
+    "answer": 72
+  },
+  "latencyMs": 5686,
+  "costUsd": 0.000192222,
+  "provider": "Baidu",
+  "inputTokens": 266,
+  "outputTokens": 1291
+}

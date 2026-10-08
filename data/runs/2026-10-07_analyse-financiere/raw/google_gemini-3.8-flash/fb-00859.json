@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemini-3.8-flash",
+  "modelVersion": "google/gemini-3.8-flash",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 3614,
+  "costUsd": 0.0018315,
+  "provider": "Google",
+  "inputTokens": 1227,
+  "outputTokens": 243
+}

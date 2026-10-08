@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 3563,
+  "costUsd": 0.0012297,
+  "provider": "Inceptron",
+  "inputTokens": 1870,
+  "outputTokens": 147
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "Net cash provided by operating activities"
+  },
+  "latencyMs": 7929,
+  "costUsd": 0.0229,
+  "provider": "Anthropic",
+  "inputTokens": 2020,
+  "outputTokens": 54
+}

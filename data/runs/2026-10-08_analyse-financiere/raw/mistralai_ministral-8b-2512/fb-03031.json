@@ -1,0 +1,13 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "fb-03031",
+  "raw": null,
+  "latencyMs": 922,
+  "costUsd": 0.00032325,
+  "provider": "Mistral",
+  "inputTokens": 2130,
+  "outputTokens": 25,
+  "error": "réponse sans JSON exploitable : ```json\n{\n  \"answer\": 18150 - 13997\n}\n```"
+}

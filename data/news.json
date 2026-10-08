@@ -1,5 +1,48 @@
 [
   {
+    "slug": "deuxieme-mesure-analyse-de-rapports-financiers",
+    "date": "2026-10-08",
+    "kind": "benchmark",
+    "featured": true,
+    "benchmark": "analyse-financiere",
+    "title": {
+      "fr": "Deuxième mesure : 27 modèles face à 64 questions d'analyste financier",
+      "en": "Second measurement: 27 models face 64 financial-analyst questions"
+    },
+    "summary": {
+      "fr": "Sept modèles répondent juste aux soixante-quatre questions, dont un à 0,001 $ la question. Huit autres en ratent près d'une sur trois ou bien davantage, presque toujours sur un calcul — et deux inventent une réponse là où il n'y en a pas.",
+      "en": "Seven models answer all sixty-four questions correctly, one of them at $0.001 per question. Eight others miss close to one in three or far more, nearly always on a calculation — and two invent an answer where there is none."
+    },
+    "body": {
+      "fr": [
+        "Le hub publie sa deuxième mesure, dans un deuxième métier : la finance. Vingt-sept modèles ont répondu aux mêmes soixante-quatre questions, posées sur cinquante-quatre rapports de trente sociétés cotées américaines.",
+        "C'est le premier étage du travail d'un analyste financier : ouvrir un rapport à la bonne page et en tirer un indicateur ou un jugement. Les questions viennent de FinanceBench et ont été écrites par des analystes, chacune avec sa réponse et la page qui la prouve. Calculer une marge d'EBITDA ou un cycle de conversion de trésorerie, dire si une marge s'améliore, nommer le segment qui a freiné la croissance, reconnaître qu'un indicateur n'a pas de sens pour une banque.",
+        "Ce que ça donne :",
+        "- Sept modèles sur vingt-sept répondent juste aux soixante-quatre questions. Le moins cher, DeepSeek V4.1 Flash, coûte 0,001 $ la question — trente fois moins que GPT-6 Astra, qui fait le même score.",
+        "- Huit modèles échouent sur près d'une question sur trois ou bien davantage, et c'est le calcul qui les arrête. Nova Pro et Nova Lite n'en réussissent qu'un sur trente-deux.",
+        "- Une question sépare les sept premiers des suivants : la marge d'EBITDA de Netflix, ratée par dix-sept modèles sur vingt-sept. Sept d'entre eux ajoutent l'amortissement des contenus aux amortissements que la question demande, et trouvent 56,8 % au lieu de 5,4 %.",
+        "- Deux modèles inventent. Sur les trois questions dont la bonne réponse est « il n'y en a pas », Nova Pro fabrique deux réponses et Nova Lite une. Les vingt-cinq autres s'abstiennent.",
+        "Ce que ce classement ne dit pas : lequel des sept premiers est le meilleur. Ils ont le même score, et le tableau ne les range que par prix, puis par rapidité. Nous avons essayé de les départager sur quarante questions plus dures. Le milieu du classement changeait selon la façon de compter ; nous ne publions donc pas ce départage.",
+        "Comment une réponse est vérifiée : un nombre est juste à 0,5 % près de celui de l'analyste, un oui ou non doit être le bon, un poste doit porter le nom qu'il a sur la page. Aucune IA ne note une IA.",
+        "Nous avons corrigé trois choses après avoir lu les réponses, et nous le disons. Trois questions ont été écartées parce que leur échelle était ambiguë : la référence était un ratio, 0,01, quand la plupart des modèles répondaient en pourcentage, autour de 1,42, comme notre consigne les y invitait. La question mesurait l'échelle choisie, pas le calcul. Une liste de réponses acceptées était trop étroite et refusait douze réponses justes. Et une règle retirait une question du test dès qu'un modèle n'y répondait pas, ce qui faisait sortir les plus dures.",
+        "Les limites de cette mesure : la bonne page est fournie, alors qu'un analyste doit d'abord la trouver dans un rapport de plusieurs centaines de pages. Les sociétés sont célèbres et le jeu de questions est public depuis 2023 : un modèle peut en connaître des chiffres par cœur. Rédiger une note, prévoir ou défendre un avis ne sont pas notés. Et l'arbitrage humain des trois hallucinations n'a pas encore été joué."
+      ],
+      "en": [
+        "The hub publishes its second measurement, in a second business function: finance. Twenty-seven models answered the same sixty-four questions, asked on fifty-four reports from thirty US listed companies.",
+        "This is the first layer of a financial analyst's work: open a report at the right page and draw a metric or a judgement from it. The questions come from FinanceBench and were written by analysts, each with its answer and the page that proves it. Compute an EBITDA margin or a cash conversion cycle, say whether a margin is improving, name the segment that held growth back, recognise that a metric makes no sense for a bank.",
+        "What came out:",
+        "- Seven models out of twenty-seven answer all sixty-four questions correctly. The cheapest, DeepSeek V4.1 Flash, costs $0.001 per question — thirty times less than GPT-6 Astra, which scores the same.",
+        "- Eight models fail close to one question in three or far more, and it is the calculation that stops them. Nova Pro and Nova Lite get one calculation right out of thirty-two.",
+        "- One question separates the top seven from the rest: Netflix's EBITDA margin, missed by seventeen models out of twenty-seven. Seven of them add content amortisation to the depreciation and amortisation the question asks for, and find 56.8% instead of 5.4%.",
+        "- Two models invent. On the three questions whose right answer is “there is none”, Nova Pro fabricates two answers and Nova Lite one. The other twenty-five abstain.",
+        "What this ranking does not say: which of the top seven is best. They have the same score, and the table orders them only by price, then by speed. We tried to separate them on forty harder questions. The middle of the ranking changed with the way of counting, so we are not publishing that tie-break.",
+        "How an answer is verified: a number is right within 0.5% of the analyst's, a yes or no has to be the right one, a line item has to carry the name it has on the page. No AI grades an AI.",
+        "We corrected three things after reading the answers, and we say so. Three questions were dropped because their scale was ambiguous: the reference was a ratio, 0.01, while most models answered as a percentage, around 1.42, as our own instruction invited them to. The question measured the scale chosen, not the calculation. A list of accepted answers was too narrow and rejected twelve correct answers. And a rule removed a question from the test as soon as one model failed to answer it, which pushed out the hardest ones.",
+        "The limits of this measurement: the right page is supplied, whereas an analyst first has to find it in a report of several hundred pages. The companies are famous and the question set has been public since 2023: a model may know some of these figures by heart. Writing a note, forecasting or defending a view are not graded. And the human review of the three hallucinations has not been carried out yet."
+      ]
+    }
+  },
+  {
     "slug": "premiere-mesure-lecture-de-factures",
     "date": "2026-10-05",
     "kind": "benchmark",

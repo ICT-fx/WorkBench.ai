@@ -1,0 +1,17 @@
+[
+  {
+    "docId": "fb-03473",
+    "motif": "Échelle ambiguë : la référence est le ratio arrondi à deux décimales (0,01), alors que la valeur exacte est 0,01425, soit 1,425 %. 21 modèles sur 23 ont répondu à l'échelle du pourcentage (de 0,14 à 1,62, la plupart autour de 1,42), comme la consigne du prompt l'illustre (« 12,5 % s'écrit 12.5 ») ; seuls Claude Opus 5.5 et Claude Fable 5.1 ont écrit 0,01. Cette question mesure le choix de l'échelle, pas le calcul. Écartée après le run, sans remplacement.",
+    "date": "2026-10-07"
+  },
+  {
+    "docId": "fb-10420",
+    "motif": "Échelle ambiguë : la référence est le ratio arrondi à deux décimales (−0,02), alors que la valeur exacte est −0,01531, soit −1,531 %. 22 modèles sur 26 ont répondu à l'échelle du pourcentage (de −0,31 à −1,53, la plupart autour de −1,42), comme la consigne du prompt l'illustre ; seuls Claude Opus 5.5, Claude Fable 5.1 et Grok 4.7 ont écrit −0,02. Cette question mesure le choix de l'échelle, pas le calcul. Écartée après le run, sans remplacement.",
+    "date": "2026-10-07"
+  },
+  {
+    "docId": "fb-10136",
+    "motif": "Échelle ambiguë : la référence est le ratio arrondi à deux décimales (0,54), soit environ 54 %. Sur les 17 modèles qui ont répondu, 8 ont écrit la valeur à l'échelle du pourcentage (de 53,66 à 54,11), comme la consigne du prompt l'illustre (« 12,5 % s'écrit 12.5 »), et 3 seulement ont écrit 0,54. Même défaut que les deux questions de rendement des actifs. Le taux de distribution des dividendes, dont celle-ci est le complément, avait été écarté avant le run ; le taux de rétention nous avait échappé au tri. Écartée après le run, sans remplacement.",
+    "date": "2026-10-08"
+  }
+]

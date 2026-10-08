@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "fb-00563",
+  "raw": {
+    "answer": "Data Center"
+  },
+  "latencyMs": 2982,
+  "costUsd": 0.00015675,
+  "provider": "DeepInfra",
+  "inputTokens": 1980,
+  "outputTokens": 33
+}

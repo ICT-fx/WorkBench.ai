@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "Net cash provided by operating activities"
+  },
+  "latencyMs": 78317,
+  "costUsd": 0.060504,
+  "provider": "Alibaba",
+  "inputTokens": 1524,
+  "outputTokens": 4534
+}

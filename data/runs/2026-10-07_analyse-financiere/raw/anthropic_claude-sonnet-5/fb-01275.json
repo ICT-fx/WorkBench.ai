@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-sonnet-5",
+  "modelVersion": "anthropic/claude-sonnet-5",
+  "docId": "fb-01275",
+  "raw": {
+    "answer": "Total cash provided by operating activities"
+  },
+  "latencyMs": 2249,
+  "costUsd": 0.004252,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 2021,
+  "outputTokens": 21
+}

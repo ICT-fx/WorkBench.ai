@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-fable-5.1",
+  "modelVersion": "anthropic/claude-fable-5.1",
+  "docId": "fb-01163",
+  "raw": {
+    "answer": "Cash provided (used) by operations"
+  },
+  "latencyMs": 6111,
+  "costUsd": 0.02003,
+  "provider": "Anthropic",
+  "inputTokens": 1898,
+  "outputTokens": 21
+}

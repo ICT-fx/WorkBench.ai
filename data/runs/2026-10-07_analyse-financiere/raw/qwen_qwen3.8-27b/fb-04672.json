@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-04672",
+  "raw": {
+    "answer": 8.738
+  },
+  "latencyMs": 2452,
+  "costUsd": 0.000599714,
+  "provider": "DekaLLM",
+  "inputTokens": 1586,
+  "outputTokens": 174
+}

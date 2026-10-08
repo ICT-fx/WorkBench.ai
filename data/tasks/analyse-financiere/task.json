@@ -1,0 +1,43 @@
+{
+  "id": "analyse-financiere",
+  "label": "Analyse de rapports financiers",
+  "question": "Rapport ouvert à la bonne page, un modèle fait-il le premier travail d'un analyste financier ?",
+  "criteria": [
+    {
+      "id": "releve",
+      "label": "Relever un chiffre",
+      "kind": "number",
+      "weight": 1,
+      "critical": true,
+      "toleranceRelative": 0.005,
+      "decimalSeparator": ".",
+      "key": "answer"
+    },
+    {
+      "id": "calcul",
+      "label": "Calculer un indicateur",
+      "kind": "number",
+      "weight": 1,
+      "critical": true,
+      "toleranceRelative": 0.005,
+      "decimalSeparator": ".",
+      "key": "answer"
+    },
+    {
+      "id": "verdict",
+      "label": "Trancher un fait",
+      "kind": "exact",
+      "weight": 1,
+      "critical": true,
+      "key": "answer"
+    },
+    {
+      "id": "libelle",
+      "label": "Nommer un poste",
+      "kind": "exact",
+      "weight": 1,
+      "critical": true,
+      "key": "answer"
+    }
+  ]
+}

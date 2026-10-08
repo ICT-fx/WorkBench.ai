@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "fq-31",
+  "raw": {
+    "answer": 6957
+  },
+  "latencyMs": 8299,
+  "costUsd": 0.005964,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 951,
+  "outputTokens": 108
+}

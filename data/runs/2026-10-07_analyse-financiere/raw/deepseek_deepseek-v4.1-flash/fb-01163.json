@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fb-01163",
+  "raw": {
+    "answer": "Cash provided (used) by operations"
+  },
+  "latencyMs": 6756,
+  "costUsd": 0.00162255,
+  "provider": "Makora",
+  "inputTokens": 975,
+  "outputTokens": 1182
+}

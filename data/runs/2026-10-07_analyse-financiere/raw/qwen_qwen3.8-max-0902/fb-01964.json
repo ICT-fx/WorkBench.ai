@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-max-0902",
+  "modelVersion": "qwen/qwen3.8-max-0902",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 4795,
+  "costUsd": 0.003884,
+  "provider": "Alibaba",
+  "inputTokens": 1513,
+  "outputTokens": 143
+}

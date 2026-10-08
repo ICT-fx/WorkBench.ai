@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "fb-00563",
+  "raw": {
+    "answer": "Data Center"
+  },
+  "latencyMs": 4240,
+  "costUsd": 0.0014361,
+  "provider": "Cohere",
+  "inputTokens": 2672,
+  "outputTokens": 423
+}

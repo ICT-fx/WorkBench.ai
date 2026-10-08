@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemini-3.8-flash",
+  "modelVersion": "google/gemini-3.8-flash",
+  "docId": "fb-00299",
+  "raw": {
+    "answer": "Commercial Banking"
+  },
+  "latencyMs": 59990,
+  "costUsd": 0.0297405,
+  "provider": "Google",
+  "inputTokens": 1209,
+  "outputTokens": 7689
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-sonnet-5",
+  "modelVersion": "anthropic/claude-sonnet-5",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 2428,
+  "costUsd": 0.004164,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 2002,
+  "outputTokens": 16
+}

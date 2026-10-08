@@ -1,0 +1,37 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "taskId": "departage-finqa",
+  "startedAt": "2026-10-08T14:54:46.954Z",
+  "models": [
+    {
+      "alias": "anthropic/claude-fable-5.1",
+      "version": "anthropic/claude-fable-5.1"
+    },
+    {
+      "alias": "anthropic/claude-opus-5.5",
+      "version": "anthropic/claude-opus-5.5"
+    },
+    {
+      "alias": "openai/gpt-6-astra",
+      "version": "openai/gpt-6-astra"
+    },
+    {
+      "alias": "deepseek/deepseek-v4.1-flash",
+      "version": "deepseek/deepseek-v4.1-flash"
+    },
+    {
+      "alias": "moonshotai/kimi-k2.6",
+      "version": "moonshotai/kimi-k2.6"
+    },
+    {
+      "alias": "qwen/qwen3.8-max-0902",
+      "version": "qwen/qwen3.8-max-0902"
+    },
+    {
+      "alias": "qwen/qwen3.8-max-prime",
+      "version": "qwen/qwen3.8-max-prime"
+    }
+  ],
+  "promptHash": "acbae5142932",
+  "docCount": 40
+}

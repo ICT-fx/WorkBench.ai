@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.7-flash",
+  "modelVersion": "qwen/qwen3.7-flash",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "Net cash provided by operating activities"
+  },
+  "latencyMs": 67311,
+  "costUsd": 0.00041599,
+  "provider": "Alibaba",
+  "inputTokens": 1512,
+  "outputTokens": 2851
+}

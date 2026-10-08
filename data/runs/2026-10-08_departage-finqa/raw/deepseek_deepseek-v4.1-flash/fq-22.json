@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fq-22",
+  "raw": {
+    "answer": 940
+  },
+  "latencyMs": 2603,
+  "costUsd": 0.00018105,
+  "provider": "Alibaba",
+  "inputTokens": 611,
+  "outputTokens": 149
+}

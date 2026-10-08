@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-opus-5.5",
+  "modelVersion": "anthropic/claude-opus-5.5",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 2615,
+  "costUsd": 0.008044,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 1921,
+  "outputTokens": 18
+}

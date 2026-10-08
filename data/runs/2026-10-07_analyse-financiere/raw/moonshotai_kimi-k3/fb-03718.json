@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "moonshotai/kimi-k3",
+  "modelVersion": "moonshotai/kimi-k3",
+  "docId": "fb-03718",
+  "raw": {
+    "answer": 0.4
+  },
+  "latencyMs": 4546,
+  "costUsd": 0.0131014,
+  "provider": "Parasail",
+  "inputTokens": 2099,
+  "outputTokens": 588
+}

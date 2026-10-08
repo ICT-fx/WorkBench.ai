@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/mistral-medium-3-5",
+  "modelVersion": "mistralai/mistral-medium-3-5",
+  "docId": "fb-04854",
+  "raw": {
+    "answer": 3205.4
+  },
+  "latencyMs": 1361,
+  "costUsd": 0.003228,
+  "provider": "Mistral",
+  "inputTokens": 2072,
+  "outputTokens": 16
+}

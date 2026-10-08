@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "amazon/nova-lite-v1",
+  "modelVersion": "amazon/nova-lite-v1",
+  "docId": "fb-01279",
+  "raw": {
+    "answer": "Cash flows from operating activities"
+  },
+  "latencyMs": 866,
+  "costUsd": 0.00010764,
+  "provider": "Amazon Bedrock",
+  "inputTokens": 1722,
+  "outputTokens": 18
+}

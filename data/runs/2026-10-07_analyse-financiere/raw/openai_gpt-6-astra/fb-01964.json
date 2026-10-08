@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 2562,
+  "costUsd": 0.023105,
+  "provider": "OpenAI",
+  "inputTokens": 1805,
+  "outputTokens": 11
+}

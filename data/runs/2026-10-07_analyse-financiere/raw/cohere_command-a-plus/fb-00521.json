@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "cohere/command-a-plus",
+  "modelVersion": "cohere/command-a-plus",
+  "docId": "fb-00521",
+  "raw": {
+    "answer": null
+  },
+  "latencyMs": 7401,
+  "costUsd": 0.0019662,
+  "provider": "Cohere",
+  "inputTokens": 2669,
+  "outputTokens": 777
+}

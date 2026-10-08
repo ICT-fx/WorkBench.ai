@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fq-30",
+  "raw": {
+    "answer": 3462694.66
+  },
+  "latencyMs": 32873,
+  "costUsd": 0.01485575,
+  "provider": "AtlasCloud",
+  "inputTokens": 665,
+  "outputTokens": 3556
+}

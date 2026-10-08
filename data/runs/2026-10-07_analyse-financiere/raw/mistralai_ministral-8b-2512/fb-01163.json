@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "fb-01163",
+  "raw": {
+    "answer": "Cash provided (used) by operations"
+  },
+  "latencyMs": 1061,
+  "costUsd": 0.00028815,
+  "provider": "Mistral",
+  "inputTokens": 1901,
+  "outputTokens": 20
+}

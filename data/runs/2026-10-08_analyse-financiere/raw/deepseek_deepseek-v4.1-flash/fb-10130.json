@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fb-10130",
+  "raw": {
+    "answer": 63.86
+  },
+  "latencyMs": 7332,
+  "costUsd": 0.00051603,
+  "provider": "InferenceNet",
+  "inputTokens": 1926,
+  "outputTokens": 523
+}

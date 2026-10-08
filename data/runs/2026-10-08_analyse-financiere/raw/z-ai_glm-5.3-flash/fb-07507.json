@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_analyse-financiere",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "fb-07507",
+  "raw": {
+    "answer": 65.4
+  },
+  "latencyMs": 8000,
+  "costUsd": 0.0004816,
+  "provider": "Parasail",
+  "inputTokens": 2014,
+  "outputTokens": 359
+}

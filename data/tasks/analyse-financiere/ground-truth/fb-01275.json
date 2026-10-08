@@ -1,0 +1,18 @@
+{
+  "docId": "fb-01275",
+  "fields": {
+    "libelle": [
+      "operations",
+      "operating",
+      "operating activities",
+      "cash flows from operating activities",
+      "cash flow from operations",
+      "cash provided by operations",
+      "cash provided (used) by operations",
+      "net cash provided by operating activities",
+      "total cash provided by operating activities",
+      "cash provided by operating activities"
+    ]
+  },
+  "notes": "FinanceBench financebench_id_01275"
+}

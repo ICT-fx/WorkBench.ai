@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "openai/gpt-6-luna",
+  "modelVersion": "openai/gpt-6-luna",
+  "docId": "fb-03620",
+  "raw": {
+    "answer": 9068
+  },
+  "latencyMs": 4263,
+  "costUsd": 0.00049105,
+  "provider": "OpenAI",
+  "inputTokens": 3629,
+  "outputTokens": 75
+}

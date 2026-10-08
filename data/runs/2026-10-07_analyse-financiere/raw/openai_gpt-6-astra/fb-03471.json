@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "fb-03471",
+  "raw": {
+    "answer": 0.68
+  },
+  "latencyMs": 2455,
+  "costUsd": 0.024855,
+  "provider": "OpenAI",
+  "inputTokens": 1849,
+  "outputTokens": 35
+}

@@ -1,0 +1,17 @@
+{
+  "id": "departage-finqa",
+  "label": "Départage : calculs financiers en plusieurs étapes",
+  "question": "Parmi les modèles qui ne se trompent pas sur les rapports financiers, lesquels tiennent un calcul en trois étapes ou plus ?",
+  "criteria": [
+    {
+      "id": "calcul",
+      "label": "Calculer en plusieurs étapes",
+      "kind": "number",
+      "weight": 1,
+      "critical": true,
+      "toleranceRelative": 0.005,
+      "decimalSeparator": ".",
+      "key": "answer"
+    }
+  ]
+}

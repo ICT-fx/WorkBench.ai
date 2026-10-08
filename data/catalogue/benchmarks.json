@@ -3,58 +3,62 @@
     "id": "analyse-financiere",
     "domain": "finance",
     "label": {
-      "fr": "Analyse de liasse fiscale",
-      "en": "Financial statement analysis"
+      "fr": "Analyse de rapports financiers",
+      "en": "Financial report analysis"
     },
     "question": {
-      "fr": "Un modèle sait-il lire une liasse fiscale et dire si l'entreprise va bien ?",
-      "en": "Can a model read a French tax return package and tell whether the company is healthy?"
+      "fr": "Rapport ouvert à la bonne page, un modèle fait-il le premier travail d'un analyste financier ?",
+      "en": "With the report open at the right page, does a model do the first layer of a financial analyst's work?"
     },
     "description": {
-      "fr": "À partir du bilan et du compte de résultat d'une PME, le modèle calcule les soldes intermédiaires de gestion et les ratios usuels, puis rédige un commentaire. Chaque chiffre cité est vérifié contre la liasse : un ratio juste appuyé sur un montant inventé ne rapporte rien.",
-      "en": "From an SME's balance sheet and income statement, the model computes the intermediate management balances and standard ratios, then writes a commentary. Every figure quoted is checked against the source: a correct ratio built on an invented amount scores nothing."
+      "fr": "Le premier étage du travail d'un analyste financier : tirer d'un rapport des indicateurs et un jugement. Les questions, écrites par des analystes pour FinanceBench, portent sur les rapports annuels et trimestriels de sociétés cotées américaines : calculer une marge d'EBITDA ou un cycle de conversion de trésorerie, dire si une marge s'améliore, quel segment a freiné la croissance, ou qu'un indicateur n'a pas de sens pour une banque. Le modèle reçoit la ou les pages utiles en image et la question d'origine, en anglais ; il rend un nombre, un oui / non ou le nom d'un poste, comparé à la réponse qu'un analyste humain a écrite, page de preuve à l'appui. Les questions à réponse rédigée ou d'opinion sont écartées : seul un humain pourrait les noter.",
+      "en": "The first layer of a financial analyst's work: turning a report into metrics and a judgement. The questions, written by analysts for FinanceBench, bear on the annual and quarterly reports of US listed companies: compute an EBITDA margin or a cash conversion cycle, say whether a margin is improving, which segment held growth back, or that a metric makes no sense for a bank. The model receives the relevant page or pages as images and the original question; it returns a number, a yes / no, or the name of a line item, compared with the answer a human analyst wrote, backed by the page of evidence. Questions calling for a written or opinion-based answer are left out: only a human could grade them."
     },
     "input": "document",
     "unit": {
-      "fr": "dossier",
-      "en": "file"
+      "fr": "question",
+      "en": "question"
     },
-    "sampleSize": 30,
+    "sampleSize": 64,
     "subtasks": [
       {
-        "id": "ratios",
+        "id": "releve",
         "label": {
-          "fr": "Ratios financiers",
-          "en": "Financial ratios"
+          "fr": "Relever un chiffre",
+          "en": "Read a figure"
         }
       },
       {
-        "id": "sig",
+        "id": "calcul",
         "label": {
-          "fr": "Soldes intermédiaires de gestion",
-          "en": "Intermediate balances"
+          "fr": "Calculer un indicateur",
+          "en": "Compute a metric"
         }
       },
       {
-        "id": "alertes",
+        "id": "verdict",
         "label": {
-          "fr": "Signaux d'alerte",
-          "en": "Warning signs"
+          "fr": "Trancher un fait",
+          "en": "Settle a fact"
         }
       },
       {
-        "id": "commentaire",
+        "id": "libelle",
         "label": {
-          "fr": "Commentaire de gestion",
-          "en": "Management commentary"
+          "fr": "Nommer un poste",
+          "en": "Name a line item"
         }
       }
     ],
-    "maturity": "maquette",
-    "roadmap": {
-      "wave": 2,
-      "data": "publiques",
-      "target": "FinanceBench — questions sur les rapports annuels de 40 sociétés cotées, avec page de référence"
+    "maturity": "pipeline",
+    "dataset": {
+      "name": "FinanceBench — Patronus AI",
+      "url": "https://github.com/patronus-ai/financebench",
+      "licence": "CC BY-NC 4.0 · usage non commercial",
+      "origin": {
+        "fr": "150 questions d'analyste publiées par Patronus AI sur les rapports de sociétés cotées américaines (annuels, trimestriels, communiqués de résultats). Chaque réponse a été écrite par un humain, avec la page de preuve. Nous en avons préparé 67 : 50 tirées par une règle fixe parmi celles qu'une réponse automatique permet de vérifier, puis 17 calculs ajoutés. Trois ont été écartées après coup pour leur échelle ambiguë ; le tableau ci-dessous dit lesquelles et pourquoi. Le tri des 150 est publié ligne par ligne.",
+        "en": "150 analyst questions published by Patronus AI on the reports of US listed companies (annual, quarterly, earnings releases). Every answer was written by a human, with the page of evidence. We prepared 67: 50 drawn by a fixed rule among those whose answer can be checked automatically, then 17 added calculations. Three were dropped afterwards for their ambiguous scale; the table below says which and why. The sorting of all 150 is published line by line."
+      }
     }
   },
   {
@@ -917,7 +921,7 @@
     "roadmap": {
       "wave": 1,
       "data": "publiques",
-      "target": "CFPB — réclamations réelles de consommateurs, classées par produit et par problème, données publiques"
+      "target": "CFPB — la base ne fournit plus le texte des réclamations (constaté le 6 octobre 2026) : une source de tickets réels reste à trouver"
     }
   },
   {

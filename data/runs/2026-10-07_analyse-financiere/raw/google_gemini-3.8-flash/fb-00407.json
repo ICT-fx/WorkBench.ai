@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemini-3.8-flash",
+  "modelVersion": "google/gemini-3.8-flash",
+  "docId": "fb-00407",
+  "raw": {
+    "answer": "Corporate bonds"
+  },
+  "latencyMs": 10041,
+  "costUsd": 0.0020145,
+  "provider": "Google",
+  "inputTokens": 1211,
+  "outputTokens": 295
+}

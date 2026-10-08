@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fq-14",
+  "raw": {
+    "answer": 115.27
+  },
+  "latencyMs": 3161,
+  "costUsd": 0.0004815,
+  "provider": "AtlasCloud",
+  "inputTokens": 353,
+  "outputTokens": 313
+}

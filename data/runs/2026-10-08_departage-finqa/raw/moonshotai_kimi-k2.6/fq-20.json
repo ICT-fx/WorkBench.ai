@@ -1,0 +1,13 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fq-20",
+  "raw": null,
+  "latencyMs": 53017,
+  "costUsd": 0.0552958,
+  "provider": "CoreWeave",
+  "inputTokens": 1132,
+  "outputTokens": 16000,
+  "error": "réponse sans JSON exploitable : "
+}

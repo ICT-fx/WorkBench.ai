@@ -1,0 +1,13 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "fb-06741",
+  "raw": null,
+  "latencyMs": 46887,
+  "costUsd": 0.003879,
+  "provider": "Mistral",
+  "inputTokens": 4008,
+  "outputTokens": 1250,
+  "error": "réponse sans JSON exploitable : ```json\n{\"answer\": 5.2}\n```\n\n### Calculation:\n**Unadjusted EBITDA = Operating Income + Depreciation and Amortization**\n\n- **FY2018:**\n  - Operating Income = 20,437\n  - Depreciation and Amortization = 10,529\n  - Unadjusted EBITDA = 20,437 + 10,529 = 30,966\n  - Revenue = 500,343\n  - EBITDA % Margin = (30,966 / 500,343) * 100 = 6.2%\n\n- **FY2019:**\n  - Operating Income = 21,957\n  - Depreciation and Amortization = 10,678\n  - Unadjusted EBITDA = 21,957 + 10,678 = 32,635\n  - Revenue = 514,405\n  - EBITDA % Margin = (32,635 / 514,405) * 100 = 6.3%\n\n- **FY2020:**\n  - Operating Income = 20,568\n  - Depreciation and Amortization = 10,987\n  - Unadjusted EBITDA = 20,568 + 10,987 = 31,555\n  - Revenue = 523,964\n  - EBITDA % Margin = (31,555 / 523,964) * 100 = 6.0%\n\n**3-Year Average EBITDA % Margin = (6.2 + 6.3 + 6.0) / 3 = 6.1667 ≈ 6.2%**\n\n**Correction:** The question asks for **FY2018 - FY2020** (which corresponds to 2018, 2019, and 2020 as per the fiscal years shown). The average of 6.2%, 6.3%, and 6.0% is **6.2** when rounded to one decimal place.\n\nHowever, rechecking the **FY2018 EBITDA % margin** calculation:\n- (30,966 / 500,343) * 100 = **6.19%** ≈ **6.2%**\n- FY2019: **6.3%**\n- FY2020: **6.0%**\n\nAverage = (6.2 + 6.3 + 6.0) / 3 = **6.1667 ≈ 6.2%**\n\nBut the question specifies **FY2018 - FY2020**, which aligns with the fiscal years **2018, 2019, and 2020** in the report.\n\n**Final Answer:** `{\"answer\": 6.2}`\n\n**However**, the question asks for **unadjusted EBITDA % margin**, and the provided calculation is correct. But reviewing the **FY2018** numbers again:\n\n- **FY2018 Operating Income = 20,437**\n- **FY2018 Depreciation and Amortization = 10,529**\n- **FY2018 Revenue = 500,343**\n- **FY2018 Unadjusted EBITDA = 20,437 + 10,529 = 30,966**\n- **FY2018 EBITDA % Margin = (30,966 / 500,343) * 100 = 6.19% ≈ 6.2%**\n\n- **FY2019 Operating Income = 21,957**\n- **FY2019 Depreciation and Amortization = 10,678**\n- **FY2019 Revenue = 514,405**\n- **FY2019 Unadjusted EBITDA = 21,957 + 10,678 = 32,635"
+}

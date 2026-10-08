@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "openai/gpt-6-astra",
+  "modelVersion": "openai/gpt-6-astra",
+  "docId": "fq-36",
+  "raw": {
+    "answer": -30.76
+  },
+  "latencyMs": 5348,
+  "costUsd": 0.009,
+  "provider": "OpenAI",
+  "inputTokens": 495,
+  "outputTokens": 81
+}

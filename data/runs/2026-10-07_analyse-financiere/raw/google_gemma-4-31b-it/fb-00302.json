@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "google/gemma-4-31b-it",
+  "modelVersion": "google/gemma-4-31b-it",
+  "docId": "fb-00302",
+  "raw": {
+    "answer": "not_applicable"
+  },
+  "latencyMs": 599,
+  "costUsd": 0.0000616,
+  "provider": "Friendli",
+  "inputTokens": 400,
+  "outputTokens": 14
+}

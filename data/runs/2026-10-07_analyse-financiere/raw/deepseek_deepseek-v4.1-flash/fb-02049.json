@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "modelVersion": "deepseek/deepseek-v4.1-flash",
+  "docId": "fb-02049",
+  "raw": {
+    "answer": "yes"
+  },
+  "latencyMs": 1951,
+  "costUsd": 0.0004551,
+  "provider": "BaseTen",
+  "inputTokens": 169,
+  "outputTokens": 337
+}

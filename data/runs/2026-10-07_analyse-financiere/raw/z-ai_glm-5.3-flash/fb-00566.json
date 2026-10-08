@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "z-ai/glm-5.3-flash",
+  "modelVersion": "z-ai/glm-5.3-flash",
+  "docId": "fb-00566",
+  "raw": {
+    "answer": "no"
+  },
+  "latencyMs": 1853,
+  "costUsd": 0.0003601,
+  "provider": "Friendli",
+  "inputTokens": 1874,
+  "outputTokens": 158
+}

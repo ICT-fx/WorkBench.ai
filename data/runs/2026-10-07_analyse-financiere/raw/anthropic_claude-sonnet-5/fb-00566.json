@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "anthropic/claude-sonnet-5",
+  "modelVersion": "anthropic/claude-sonnet-5",
+  "docId": "fb-00566",
+  "raw": {
+    "answer": "no"
+  },
+  "latencyMs": 3003,
+  "costUsd": 0.00395,
+  "provider": "Claude Platform on AWS",
+  "inputTokens": 1920,
+  "outputTokens": 11
+}

@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.7-flash",
+  "modelVersion": "qwen/qwen3.7-flash",
+  "docId": "fb-00206",
+  "raw": {
+    "answer": "not_applicable. Gross margins are not a relevant metric for JPMorgan Chase because it is a financial services company (specifically a bank and financial holding company) rather than a manufacturer or retailer. The text describes the company's business as 'investment banking, financial services for consumers and small businesses, commercial banking, financial transaction processing and asset management' organized into segments like 'Consumer & Community Banking' and 'Corporate & Investment Bank'. These are service-oriented businesses that generate revenue through interest income and fees rather than selling physical goods with a Cost of Goods Sold (COGS). Therefore, metrics like Net Interest Margin are more appropriate than gross margin."
+  },
+  "latencyMs": 97502,
+  "costUsd": 0.00052683,
+  "provider": "Alibaba",
+  "inputTokens": 1545,
+  "outputTokens": 3696
+}

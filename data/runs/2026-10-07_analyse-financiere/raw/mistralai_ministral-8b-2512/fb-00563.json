@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/ministral-8b-2512",
+  "modelVersion": "mistralai/ministral-8b-2512",
+  "docId": "fb-00563",
+  "raw": {
+    "answer": "Data Center"
+  },
+  "latencyMs": 725,
+  "costUsd": 0.0003054,
+  "provider": "Mistral",
+  "inputTokens": 2021,
+  "outputTokens": 15
+}

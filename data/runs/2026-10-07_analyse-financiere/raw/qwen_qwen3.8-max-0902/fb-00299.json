@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-max-0902",
+  "modelVersion": "qwen/qwen3.8-max-0902",
+  "docId": "fb-00299",
+  "raw": {
+    "answer": "Corporate"
+  },
+  "latencyMs": 173885,
+  "costUsd": 0.047618,
+  "provider": "Alibaba",
+  "inputTokens": 1516,
+  "outputTokens": 7431
+}

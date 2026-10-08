@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "qwen/qwen3.8-27b",
+  "modelVersion": "qwen/qwen3.8-27b",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 1753,
+  "costUsd": 0.000486607,
+  "provider": "DekaLLM",
+  "inputTokens": 1543,
+  "outputTokens": 137
+}

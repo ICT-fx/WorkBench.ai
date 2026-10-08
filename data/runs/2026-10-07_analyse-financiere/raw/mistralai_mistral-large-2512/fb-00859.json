@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "mistralai/mistral-large-2512",
+  "modelVersion": "mistralai/mistral-large-2512",
+  "docId": "fb-00859",
+  "raw": {
+    "answer": "Cross currency swaps"
+  },
+  "latencyMs": 17819,
+  "costUsd": 0.0009765,
+  "provider": "Mistral",
+  "inputTokens": 1911,
+  "outputTokens": 14
+}

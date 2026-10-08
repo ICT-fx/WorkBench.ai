@@ -1,0 +1,3894 @@
+[
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 19.9,
+        "expected": "68.9",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 1692,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": 378287,
+        "expected": "290395",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 32100,
+        "expected": "79900",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 98180,
+        "expected": "98180",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 55.39,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.28,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 33.3,
+        "expected": "33.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6820,
+        "expected": "6820",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.57,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.67,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-20",
+    "byCriterion": {
+      "calcul": {
+        "got": 33.91,
+        "expected": "7.87",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.0179,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 43.86,
+        "expected": "43.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.5,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": -5.61,
+        "expected": "-5.61",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.39,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.9,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 18210,
+        "expected": "18210",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.91,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.53,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": -22,
+        "expected": "-22",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 26.3,
+        "expected": "26.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-fable-5.1",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 19.9,
+        "expected": "68.9",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 1692,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": 290395,
+        "expected": "290395",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 32100,
+        "expected": "79900",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 98180,
+        "expected": "98180",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 85.5,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.28,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 33.33,
+        "expected": "33.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6820,
+        "expected": "6820",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.57,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.67,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-20",
+    "byCriterion": {
+      "calcul": {
+        "got": 262.5,
+        "expected": "7.87",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.0179,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 43.86,
+        "expected": "43.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.53,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": -5.61,
+        "expected": "-5.61",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.39,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.93,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 18210,
+        "expected": "18210",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.91,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.53,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": -22,
+        "expected": "-22",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 26.34,
+        "expected": "26.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 68.9,
+        "expected": "68.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 1692,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": 318063,
+        "expected": "290395",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 32100,
+        "expected": "79900",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 198180,
+        "expected": "98180",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 180.54,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.276,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 8000,
+        "expected": "33.3",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6820,
+        "expected": "6820",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.5717,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.6666666666667,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-20",
+    "byCriterion": {
+      "calcul": {
+        "got": 21.43,
+        "expected": "7.87",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.0178979,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 2500,
+        "expected": "43.9",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.531914893617,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": -5.61,
+        "expected": "-5.61",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.3857566766,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.93,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 118210,
+        "expected": "18210",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.9128,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.527638190954773,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": 22,
+        "expected": "-22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 72,
+        "expected": "26.3",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 68.9,
+        "expected": "68.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 192,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": null,
+        "expected": "290395",
+        "verdict": "manquant",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 32100,
+        "expected": "79900",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 198180,
+        "expected": "98180",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 55.4,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.28,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 8000,
+        "expected": "33.3",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6.82,
+        "expected": "6820",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.57,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.67,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.02,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 2500,
+        "expected": "43.9",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.5,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": -5.61,
+        "expected": "-5.61",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.4,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.93,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 118210,
+        "expected": "18210",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.91,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.5,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": -22,
+        "expected": "-22",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 12,
+        "expected": "26.3",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 68.9,
+        "expected": "68.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 1692,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": 290395,
+        "expected": "290395",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 79900,
+        "expected": "79900",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 98180,
+        "expected": "98180",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 55.39,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.28,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 33.33,
+        "expected": "33.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6820,
+        "expected": "6820",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.57,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.67,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-20",
+    "byCriterion": {
+      "calcul": {
+        "got": 262.5,
+        "expected": "7.87",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.02,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 43.86,
+        "expected": "43.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.53,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": -5.61,
+        "expected": "-5.61",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.39,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.93,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 18210,
+        "expected": "18210",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.91,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.53,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": -22,
+        "expected": "-22",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 26.34,
+        "expected": "26.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 68.9,
+        "expected": "68.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 192,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": 290395,
+        "expected": "290395",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 32100,
+        "expected": "79900",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 98180,
+        "expected": "98180",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 55.39,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.28,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 8000,
+        "expected": "33.3",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6.82,
+        "expected": "6820",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.57,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.67,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-20",
+    "byCriterion": {
+      "calcul": {
+        "got": 21.43,
+        "expected": "7.87",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.0179,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 43.86,
+        "expected": "43.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.53,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": 5.61,
+        "expected": "-5.61",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.39,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.93,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 118210,
+        "expected": "18210",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.91,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.53,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": -22,
+        "expected": "-22",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 26.34,
+        "expected": "26.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-01",
+    "byCriterion": {
+      "calcul": {
+        "got": 65.2,
+        "expected": "65.2",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-02",
+    "byCriterion": {
+      "calcul": {
+        "got": 12.16,
+        "expected": "12.16",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-03",
+    "byCriterion": {
+      "calcul": {
+        "got": 68.9,
+        "expected": "68.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-04",
+    "byCriterion": {
+      "calcul": {
+        "got": 74.35,
+        "expected": "77.7",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-05",
+    "byCriterion": {
+      "calcul": {
+        "got": 1692,
+        "expected": "94",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-06",
+    "byCriterion": {
+      "calcul": {
+        "got": 290395,
+        "expected": "290395",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-07",
+    "byCriterion": {
+      "calcul": {
+        "got": 32100,
+        "expected": "79900",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-08",
+    "byCriterion": {
+      "calcul": {
+        "got": 198180,
+        "expected": "98180",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-09",
+    "byCriterion": {
+      "calcul": {
+        "got": 31.5,
+        "expected": "31.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-10",
+    "byCriterion": {
+      "calcul": {
+        "got": 180.54,
+        "expected": "194.1",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-11",
+    "byCriterion": {
+      "calcul": {
+        "got": 2.28,
+        "expected": "130",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-12",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-13",
+    "byCriterion": {
+      "calcul": {
+        "got": 33.33,
+        "expected": "33.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-14",
+    "byCriterion": {
+      "calcul": {
+        "got": 115.27,
+        "expected": "115.27",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-15",
+    "byCriterion": {
+      "calcul": {
+        "got": 6.82,
+        "expected": "6820",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-16",
+    "byCriterion": {
+      "calcul": {
+        "got": 35,
+        "expected": "35000000",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-17",
+    "byCriterion": {
+      "calcul": {
+        "got": 100.9,
+        "expected": "100.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-18",
+    "byCriterion": {
+      "calcul": {
+        "got": -44.57,
+        "expected": "-44.6",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-19",
+    "byCriterion": {
+      "calcul": {
+        "got": 446.67,
+        "expected": "446",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-21",
+    "byCriterion": {
+      "calcul": {
+        "got": -0.0179,
+        "expected": "1.26",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-22",
+    "byCriterion": {
+      "calcul": {
+        "got": 940,
+        "expected": "940",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-23",
+    "byCriterion": {
+      "calcul": {
+        "got": 56.3,
+        "expected": "56.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-24",
+    "byCriterion": {
+      "calcul": {
+        "got": 43.86,
+        "expected": "43.9",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-25",
+    "byCriterion": {
+      "calcul": {
+        "got": 25.53,
+        "expected": "25.5",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-26",
+    "byCriterion": {
+      "calcul": {
+        "got": 90.62,
+        "expected": "90.62",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-27",
+    "byCriterion": {
+      "calcul": {
+        "got": -5.61,
+        "expected": "-5.61",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-28",
+    "byCriterion": {
+      "calcul": {
+        "got": 10.39,
+        "expected": "10.4",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-29",
+    "byCriterion": {
+      "calcul": {
+        "got": 29.93,
+        "expected": "22",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-30",
+    "byCriterion": {
+      "calcul": {
+        "got": 3462694.66,
+        "expected": "3462694",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-31",
+    "byCriterion": {
+      "calcul": {
+        "got": 6957,
+        "expected": "6957",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-32",
+    "byCriterion": {
+      "calcul": {
+        "got": 118210,
+        "expected": "18210",
+        "verdict": "faux",
+        "points": 0,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": true
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-33",
+    "byCriterion": {
+      "calcul": {
+        "got": 14.91,
+        "expected": "14.91",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-34",
+    "byCriterion": {
+      "calcul": {
+        "got": 58665,
+        "expected": "58665",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-35",
+    "byCriterion": {
+      "calcul": {
+        "got": 15.53,
+        "expected": "15.53",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-36",
+    "byCriterion": {
+      "calcul": {
+        "got": -30.76,
+        "expected": "-30.76",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-37",
+    "byCriterion": {
+      "calcul": {
+        "got": -22,
+        "expected": "-22",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-38",
+    "byCriterion": {
+      "calcul": {
+        "got": 26.34,
+        "expected": "26.3",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-39",
+    "byCriterion": {
+      "calcul": {
+        "got": 113.63,
+        "expected": "113.63",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fq-40",
+    "byCriterion": {
+      "calcul": {
+        "got": 16.43,
+        "expected": "16.43",
+        "verdict": "correct",
+        "points": 1,
+        "maxPoints": 1
+      }
+    },
+    "needsReview": false
+  }
+]

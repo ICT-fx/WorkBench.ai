@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-07_analyse-financiere",
+  "model": "x-ai/grok-4.7",
+  "modelVersion": "x-ai/grok-4.7",
+  "docId": "fb-01964",
+  "raw": {
+    "answer": "Customer deposits"
+  },
+  "latencyMs": 2500,
+  "costUsd": 0.004928,
+  "provider": "xAI",
+  "inputTokens": 2797,
+  "outputTokens": 177
+}

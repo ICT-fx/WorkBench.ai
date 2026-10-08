@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "qwen/qwen3.8-max-prime",
+  "modelVersion": "qwen/qwen3.8-max-prime",
+  "docId": "fq-25",
+  "raw": {
+    "answer": 25.53
+  },
+  "latencyMs": 5578,
+  "costUsd": 0.008888,
+  "provider": "Alibaba",
+  "inputTokens": 1136,
+  "outputTokens": 362
+}

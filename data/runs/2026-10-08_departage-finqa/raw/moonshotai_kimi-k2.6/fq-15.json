@@ -1,0 +1,14 @@
+{
+  "runId": "2026-10-08_departage-finqa",
+  "model": "moonshotai/kimi-k2.6",
+  "modelVersion": "moonshotai/kimi-k2.6",
+  "docId": "fq-15",
+  "raw": {
+    "answer": 6.82
+  },
+  "latencyMs": 164424,
+  "costUsd": 0.012152392,
+  "provider": "Baidu",
+  "inputTokens": 856,
+  "outputTokens": 6449
+}
