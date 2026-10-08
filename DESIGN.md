@@ -1,4 +1,4 @@
-# Design — WorkBench.ai
+# Design — AIWorkBench.fr
 
 Décrit le système tel qu'il est construit dans `apps/web`. La source de vérité reste
 `apps/web/src/app/globals.css` ; ce fichier dit *pourquoi*.

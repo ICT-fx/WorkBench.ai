@@ -1,7 +1,7 @@
 const fr = {
   site: {
-    name: "WorkBench.ai",
-    shortName: "WorkBench",
+    name: "AIWorkBench.fr",
+    shortName: "AIWorkBench",
     tagline: "Quel modèle d'IA pour quel métier de l'entreprise",
     description:
       "Le classement des modèles d'IA sur des tâches d'entreprise concrètes : lire une facture, résumer un contrat, répondre à un client. Protocole, documents et réponses brutes publiés.",
@@ -102,8 +102,8 @@ const fr = {
 
 const en: typeof fr = {
   site: {
-    name: "WorkBench.ai",
-    shortName: "WorkBench",
+    name: "AIWorkBench.fr",
+    shortName: "AIWorkBench",
     tagline: "Which AI model for which business function",
     description:
       "AI models ranked on concrete business tasks: reading an invoice, summarising a contract, answering a customer. Protocol, documents and raw answers published.",

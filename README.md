@@ -1,7 +1,7 @@
-# WorkBench.ai
+# AIWorkBench.fr
 
 **En ligne : [workbench-ai-murex.vercel.app](https://workbench-ai-murex.vercel.app)**
-(adresse provisoire, en attendant `workbench.ai`). Publié par
+(adresse provisoire, en attendant `aiworkbench.fr`). Publié par
 [Flowera](https://flowera.ch), déployé depuis `main` à chaque poussée.
 
 Le classement des modèles d'IA sur des tâches d'entreprise concrètes, métier par

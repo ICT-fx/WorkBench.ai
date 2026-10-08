@@ -4,7 +4,7 @@ const fr = {
   index: {
     metaTitle: "Actualités",
     metaDescription:
-      "Comptes rendus par modèle, ouverture de benchmarks et notes de méthode de WorkBench.ai.",
+      "Comptes rendus par modèle, ouverture de benchmarks et notes de méthode d'AIWorkBench.fr.",
     title: "Actualités du hub",
     lead: "Ce qui entre dans les classements, ce qui change dans la méthode, et la raison de chaque parti pris.",
     tabsLabel: "Filtrer les articles par type",
@@ -72,7 +72,7 @@ const en: typeof fr = {
   kinds: { modele: "Model", benchmark: "Benchmark", analyse: "Analysis", annonce: "Announcement" },
   index: {
     metaTitle: "News",
-    metaDescription: "Model reports, benchmark launches and notes on method from WorkBench.ai.",
+    metaDescription: "Model reports, benchmark launches and notes on method from AIWorkBench.fr.",
     title: "Hub news",
     lead: "What enters the rankings, what changes in the method, and the reasoning behind every choice.",
     tabsLabel: "Filter articles by type",
