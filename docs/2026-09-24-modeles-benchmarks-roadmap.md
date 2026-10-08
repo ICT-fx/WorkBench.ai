@@ -2,6 +2,7 @@
 
 **24 septembre 2026** · document de cadrage, à valider
 *Révisé le 26/09 : 27 modèles, catégories renommées, passage à OpenRouter.*
+*Révisé le 07/10 : deux sources vérifiées sur pièces — FinanceBench est sous licence non commerciale, et la base CFPB ne fournit plus le texte des réclamations.*
 
 Trois questions traitées ici : quels modèles tester, dans quel ordre construire les
 benchmarks et lesquels sont réellement testables, et par quelle API passer.
@@ -148,16 +149,20 @@ Légende : **✅ testable tout de suite** · **⚠️ partiellement** · **❌ p
 | | | | **SROIE** : tickets scannés, 4 champs | 973 | À vérifier |
 | 3 | Juridique | Détection de clauses à risque | **CUAD** : vrais contrats commerciaux annotés sous supervision de juristes, 41 types de clauses | 510 | CC BY 4.0, **usage commercial autorisé** |
 | | | | **LEDGAR / LexGLUE** : clauses issues de contrats déposés auprès du régulateur boursier américain | 80 000 | CC BY 4.0 |
-| 4 | Service client | Tri et routage de tickets | **CFPB** : réclamations réelles de consommateurs, texte écrit par le client, classé par produit et problème. **Mis à jour en continu** | > 100 000 | Données publiques, libres |
+| 4 | Service client | Tri et routage de tickets | **CFPB** : réclamations réelles de consommateurs, classées par produit et problème. ⚠️ Le 06/10/2026, la base ne fournit plus le texte écrit par le client : il n'y a plus rien à classer, une autre source est à trouver | 18 millions de fiches, sans texte | Données publiques, libres |
 | 5 | Informatique | Du besoin métier à la requête SQL | **BIRD** : questions en langage courant et requêtes de référence sur 95 bases réelles, 37 domaines | 12 751 | CC BY-SA 4.0 |
 | | | | **Spider 2.0** : problèmes d'entreprise, requêtes de plus de 100 lignes | ~600 | À vérifier |
-| 6 | Finance | Analyse de documents financiers | **FinanceBench** : questions sur les rapports annuels de 40 sociétés cotées, avec réponse et page de référence | 150 ouverts (10 231 au total) | Permissive, à confirmer |
+| 6 | Finance | Analyse de documents financiers | **FinanceBench** : questions sur les rapports de sociétés cotées, avec réponse et page de référence. Les 150 questions ouvertes portent sur 32 sociétés ; 50 sont retenues (spec du 07/10) | 150 ouverts (10 231 au total, privés) | CC BY-NC 4.0 : usage non commercial |
 | 7 | Direction | Compte rendu de réunion | **QMSum** : vraies réunions transcrites (produit, académique, parlementaire) avec résumés écrits par des humains | 1 808 résumés, 232 réunions | AMI en CC BY 4.0 |
 
 **Le meilleur des sept, méthodologiquement : le tri de tickets.** La base CFPB est
 alimentée en continu. On peut ne retenir que des réclamations **postérieures à la date
 d'entraînement des modèles**, donc qu'aucun d'eux n'a pu mémoriser. C'est exactement la
 parade que vals.ai applique avec ses jeux de test privés.
+
+⚠️ *Constaté le 06/10/2026 : cet avantage n'existe plus. L'API publique de la base ne
+renvoie plus le texte des réclamations, quelle que soit leur date. Le tri de tickets
+n'a donc plus de source, et sort de la vague 1 tant qu'on n'en a pas trouvé une autre.*
 
 **Le plus parlant : les clauses de contrat.** Dans un contrat donné, la plupart des 41
 clauses sont absentes. Un modèle qui invente une clause de non-concurrence commet

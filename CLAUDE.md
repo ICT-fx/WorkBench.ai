@@ -1,4 +1,4 @@
-# WorkBench.ai — consignes de travail
+# AIWorkBench.fr — consignes de travail
 
 Projet de Fantin (Flowera) : un site qui classe les modèles d'IA sur des tâches
 métier concrètes, à partir de mesures réelles et vérifiables.
@@ -8,7 +8,8 @@ métier concrètes, à partir de mesures réelles et vérifiables.
 **[METHODOLOGIE.md](METHODOLOGIE.md)** — le protocole, la façon de vérifier une
 réponse, les résultats obtenus, et surtout la liste des erreurs déjà commises. Sa
 section 4 est la plus importante : chacune de ces erreurs a coûté du temps ou de
-l'argent réel.
+l'argent réel. La section 11 dit comment publier et comment tester un
+modèle sorti après coup.
 
 Autres repères : `docs/2026-09-24-modeles-benchmarks-roadmap.md` (les 27 modèles et la
 feuille de route), `docs/superpowers/specs/` (les specs de conception).
@@ -48,6 +49,24 @@ son dernier run. Un protocole ne se transpose pas d'une tâche à l'autre, et un
 lu hors de son benchmark passe pour une règle générale. Toute nouvelle tâche mesurée
 ajoute donc sa section avant d'être publiée ; aucune ne se contente de celle d'une
 autre.
+
+**Les données partent telles quelles.** Tout ce que le pipeline écrit dans `data/` — réponses
+brutes, notes, classements, tests figés, catalogue — est versionné et poussé sans retouche : le
+site en ligne lit les mêmes fichiers que nous. On ne corrige jamais un chiffre dans un fichier
+publié, on corrige ce qui l'a produit et on republie. Seule exception, les pages rendues des
+factures (206 Mo), que `npm run deepform:prepare` régénère et dont le test figé garde l'empreinte.
+
+**Une publication, une actualité.** Mettre un classement en ligne — un nouveau benchmark, un
+modèle ajouté, une règle de notation changée — s'accompagne d'un article dans `data/news.json`,
+daté du jour de la mesure, qui dit ce qui a été mesuré, ce que ça donne et ce que ça ne dit pas.
+Sans lui, l'accueil continue d'annoncer la publication d'avant.
+
+**Un nouveau modèle passe le test publié, pas un test voisin.** `eval publish` fige le test de
+chaque benchmark dans `data/published/protocoles/` : documents avec leur empreinte, prompt,
+barème, paramètres d'appel, version datée et dates d'appel de chaque modèle. Pour ajouter un
+modèle sorti après coup, lancer `eval run --test-publie`, qui s'arrête avant le premier appel si
+quoi que ce soit a changé, puis `eval publish --ajouter <run>`. La marche à suivre est dans
+METHODOLOGIE.md, section 11.
 
 **Avant de publier un classement.** Regarder la répartition des erreurs par champ, et
 comparer le classement obtenu sur tous les champs à celui obtenu sans les champs
