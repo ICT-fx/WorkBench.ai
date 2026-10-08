@@ -43,6 +43,7 @@ const fr = {
     yes: "Oui",
     no: "Non",
     gatewayId: "Identifiant OpenRouter",
+    datedVersion: "Version datée, relevée le {date}\u00a0:",
   },
   overview: {
     title: "En un coup d'œil",
@@ -79,17 +80,15 @@ const fr = {
     title: "Stabilité d'un run à l'autre",
     intro:
       "Un même alias de modèle peut changer de comportement sans prévenir\u00a0; le re-tester à chaque run permet de détecter ces dérives.",
-    chartTitle: "Exactitude moyenne à chaque run",
+    chartTitle: "Exactitude à chaque run",
     caption:
-      "Moyenne de l'exactitude du modèle sur les benchmarks où il figure, run après run. L'axe vertical est tronqué pour que les écarts restent lisibles.",
-    onlyLastRun: "Ce modèle n'a été testé que lors du dernier run.",
-    benchmarks: { one: "{n} benchmark", other: "{n} benchmarks" },
-    averageOver: "Moyenne sur {benchmarks}",
-    point: "{date}\u00a0: {value} en moyenne sur {benchmarks}",
+      "L'exactitude du modèle sur ce benchmark, à chaque publication de son classement. Deux benchmarks ne partagent jamais une courbe\u00a0: leurs scores ne se comparent pas. L'axe vertical est tronqué pour que les écarts restent lisibles.",
+    onlyLastRun: "Aucun benchmark n'a encore été publié deux fois avec ce modèle\u00a0: il n'y a pas de courbe à tracer.",
+    singleRun: "Publié une seule fois à ce jour, donc sans courbe\u00a0: {benchmarks}.",
+    point: "{date}\u00a0: {value} sur {benchmark}",
     showTable: "Voir les valeurs",
     run: "Run",
-    avgAccuracy: "Exactitude moyenne",
-    benchmarksColumn: "Benchmarks",
+    accuracy: "Exactitude",
   },
   updates: {
     title: "Mises à jour",
@@ -141,6 +140,7 @@ const en: typeof fr = {
     yes: "Yes",
     no: "No",
     gatewayId: "OpenRouter identifier",
+    datedVersion: "Dated version, as of {date}:",
   },
   overview: {
     title: "At a glance",
@@ -177,17 +177,15 @@ const en: typeof fr = {
     title: "Stability from run to run",
     intro:
       "A given model alias can change behaviour without notice; re-testing it at every run is how that drift gets caught.",
-    chartTitle: "Mean accuracy at each run",
+    chartTitle: "Accuracy at each run",
     caption:
-      "Mean of the model's accuracy across the benchmarks it appears in, run after run. The vertical axis is truncated so that small gaps stay readable.",
-    onlyLastRun: "This model has only been tested in the latest run.",
-    benchmarks: { one: "{n} benchmark", other: "{n} benchmarks" },
-    averageOver: "Mean across {benchmarks}",
-    point: "{date}: {value} on average across {benchmarks}",
+      "The model's accuracy on this benchmark, at each publication of its leaderboard. Two benchmarks never share a curve: their scores do not compare. The vertical axis is truncated so that small gaps stay readable.",
+    onlyLastRun: "No benchmark has been published twice with this model yet: there is no curve to draw.",
+    singleRun: "Published only once so far, hence no curve: {benchmarks}.",
+    point: "{date}: {value} on {benchmark}",
     showTable: "View the values",
     run: "Run",
-    avgAccuracy: "Mean accuracy",
-    benchmarksColumn: "Benchmarks",
+    accuracy: "Accuracy",
   },
   updates: {
     title: "Updates",

@@ -126,6 +126,8 @@ export default async function Accueil({ params }: PageProps<"/[lang]">) {
             {fill(t.hero.facts, {
               models: site.models.length, labs: labs.length, benchmarks: benchmarks.length,
               domains: domains.length, measured: hub.coverage.benchmarksMeasured,
+              // Le français accorde : « 1 mesuré », « 2 mesurés ».
+              measuredS: hub.coverage.benchmarksMeasured > 1 ? "s" : "",
             })}
           </p>
         </section>
@@ -137,6 +139,8 @@ export default async function Accueil({ params }: PageProps<"/[lang]">) {
           <p className="chiffres mt-3 text-sm text-encre-muette">
             {fill(t.index.scope, {
               domains: hub.coverage.domainsMeasured, domainsTotal: hub.coverage.domainsTotal,
+              // Le français accorde : « 1 métier mesuré », « 2 métiers mesurés ».
+              domainsS: hub.coverage.domainsMeasured > 1 ? "s" : "",
             })}
           </p>
         </div>

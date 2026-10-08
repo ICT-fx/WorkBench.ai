@@ -199,9 +199,13 @@ export function frontier(scores: ModelScore[], value: (s: ModelScore) => number 
   return out;
 }
 
-/** Deux scores séparés par moins que leurs marges cumulées ne sont pas départagés. */
+/**
+ * Deux scores égaux, ou séparés par moins que la plus large de leurs deux marges,
+ * ne sont pas départagés. L'égalité se dit à part : deux modèles à 100 % ont une
+ * marge nulle, et « 0 < 0 » les aurait déclarés départagés.
+ */
 export const indistinguishable = (a: LeaderboardRow, b: LeaderboardRow): boolean =>
-  Math.abs(a.exactitude - b.exactitude) < Math.max(a.ci ?? 0, b.ci ?? 0);
+  a.exactitude === b.exactitude || Math.abs(a.exactitude - b.exactitude) < Math.max(a.ci ?? 0, b.ci ?? 0);
 
 /**
  * Le meilleur rapport précision-prix : le moins cher parmi les modèles à moins

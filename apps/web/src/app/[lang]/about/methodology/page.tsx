@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Criterion } from "@hub/schema";
 import { fill, getDictionary, href, isLocale, tr, type Dictionary } from "@/i18n";
-import { loadLeaderboard, loadPrompt, loadReponses, loadScores, loadTask } from "@/lib/data";
+import { hasTask, loadLeaderboard, loadPrompt, loadQuestionsPosees, loadReponses, loadScores, loadTask } from "@/lib/data";
 import { documentsClivants } from "@/lib/exemples";
 import { date, num } from "@/lib/format";
 import { typo } from "@/lib/news";
@@ -14,8 +14,14 @@ import { AboutTabs } from "@/components/about/AboutTabs";
 import { content } from "@/components/about/content";
 import { Prose } from "@/components/news/Prose";
 
-/** Le seul protocole mesuré à ce jour : c'est lui que la page documente en détail. */
-const TACHE = "facture-fcc";
+type Tache = keyof (typeof content)["fr"]["methodology"]["protocoles"];
+
+/**
+ * L'ancre d'une section de protocole. Celles des factures gardent leur forme
+ * d'origine, parce que des liens y renvoient peut-être ; les autres portent le
+ * nom de leur benchmark, pour qu'aucune ancre ne soit en double.
+ */
+const idSection = (id: string, tache: Tache): string => (tache === "facture-fcc" ? id : `${id}-${tache}`);
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about/methodology">): Promise<Metadata> {
   const { lang } = await params;
@@ -28,7 +34,10 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/about/meth
   };
 }
 
-function comparaison(c: Criterion, t: Dictionary["about"]["methodology"]["kinds"], ecart: (n: number) => string): string {
+function comparaison(
+  c: Criterion, t: Dictionary["about"]["methodology"]["kinds"], ecart: (n: number) => string, pourcent: (n: number) => string,
+): string {
+  if (c.kind === "number" && c.toleranceRelative !== undefined) return fill(t.numberRelative, { n: pourcent(c.toleranceRelative * 100) });
   if (c.kind === "number" && (c.tolerance ?? 0) > 0) return fill(t.numberTolerance, { n: ecart(c.tolerance!) });
   return t[c.kind];
 }
@@ -54,13 +63,23 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
   const t = dict.about.methodology;
   const c = content[lang].methodology;
   const { benchmarks, domains, leaderboards, pricesSyncedAt } = getHub();
-  const benchmark = benchmarks.find((b) => b.id === TACHE);
-  const nomTache = benchmark === undefined ? TACHE : tr(benchmark.label, lang);
-  const iconeTache = domains.find((d) => d.id === benchmark?.domain)?.icon;
 
-  const task = loadTask(TACHE);
-  const classement = loadLeaderboard(TACHE);
-  const prompt = loadPrompt(TACHE, classement.runId);
+  // Un protocole par benchmark mesuré : une tâche à venir n'a pas de section ici.
+  const taches = (Object.keys(c.protocoles) as Tache[]).filter((id) => leaderboards.has(id) && hasTask(id));
+  const protocoles = taches.map((tache) => {
+    const benchmark = benchmarks.find((b) => b.id === tache);
+    const classement = loadLeaderboard(tache);
+    return {
+      tache,
+      p: c.protocoles[tache],
+      nom: benchmark === undefined ? tache : tr(benchmark.label, lang),
+      icone: domains.find((d) => d.id === benchmark?.domain)?.icon,
+      task: loadTask(tache),
+      classement,
+      prompt: loadPrompt(tache, classement.runId),
+      surQuestions: loadQuestionsPosees(tache).length > 0,
+    };
+  });
 
   const publies = [...leaderboards.values()];
   const demos = publies.filter((lb) => lb.status === "demo").length;
@@ -71,10 +90,12 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
   };
 
   // Le panel se compte dans le dépôt, pas de mémoire : un dossier de réponses par modèle.
-  const premierDocument = documentsClivants(loadScores(classement.runId), 1)[0]?.docId;
-  const panel = premierDocument === undefined || task.criteria[0] === undefined
+  const premier = protocoles[0];
+  const premierDocument = premier === undefined ? undefined : documentsClivants(loadScores(premier.classement.runId), 1)[0]?.docId;
+  const premierCritere = premier?.task.criteria[0];
+  const panel = premier === undefined || premierDocument === undefined || premierCritere === undefined
     ? 0
-    : loadReponses(classement.runId, premierDocument, task.criteria[0].id).length;
+    : loadReponses(premier.classement.runId, premierDocument, premierCritere.id).length;
 
   const demo = [
     ...c.demo.body,
@@ -85,10 +106,13 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
 
   // Le sommaire sépare ce qui vaut pour tout le hub de ce qui n'appartient
   // qu'à un benchmark : lu à plat, le barème d'une tâche passait pour une règle
-  // générale.
+  // générale. Chaque benchmark mesuré y a son propre groupe.
   const groupes = [
     { label: t.tocHub, items: [c.index, c.margin, c.costs, c.demo, c.maturity] },
-    { label: fill(t.tocTask, { benchmark: nomTache }), items: [c.limits, c.scoring, c.verdicts, c.prompt, c.run] },
+    ...protocoles.map(({ tache, p, nom }) => ({
+      label: fill(t.tocTask, { benchmark: nom }),
+      items: [p.limits, p.scoring, p.verdicts, p.prompt, p.run].map((s) => ({ ...s, id: idSection(s.id, tache) })),
+    })),
   ];
 
   return (
@@ -145,113 +169,120 @@ export default async function PageMethodologie({ params }: PageProps<"/[lang]/ab
             <Prose body={c.maturity.body.map((l) => fill(l, avancement))} locale={lang} className="mt-5" />
           </Section>
 
-          <section id="protocole" aria-labelledby="titre-protocole" className="scroll-mt-32 lg:scroll-mt-24">
-            <div className="panneau border-l-4 border-l-vert p-5 sm:p-7">
-              <p className="etiquette flex items-center gap-2 text-vert">
-                {iconeTache !== undefined && hasIcon(iconeTache) && <Icon name={iconeTache} size={16} />}
-                {c.taskPart.eyebrow}
-              </p>
-              <h2 id="titre-protocole" className="etendu mt-3 text-2xl">
-                {fill(c.taskPart.title, { benchmark: nomTache })}
-              </h2>
-              <Prose body={c.taskPart.body} locale={lang} className="mt-4" />
-              {leaderboards.has(TACHE) && (
-                <Link href={href(lang, `/benchmarks/${TACHE}`)} className="bouton mt-6">
+          <section id="protocole-par-benchmark" aria-labelledby="titre-protocole-par-benchmark" className="scroll-mt-32 lg:scroll-mt-24">
+            <p className="etiquette text-vert">{c.taskPart.eyebrow}</p>
+            <h2 id="titre-protocole-par-benchmark" className="etendu mt-1 text-2xl">{c.taskPart.title}</h2>
+            <Prose body={c.taskPart.body} locale={lang} className="mt-5" />
+          </section>
+
+          {protocoles.map(({ tache, p, nom, icone, task, classement, prompt, surQuestions }) => (
+            <div key={tache} className="space-y-16">
+              <section id={idSection("protocole", tache)} aria-labelledby={`titre-protocole-${tache}`} className="scroll-mt-32 lg:scroll-mt-24">
+                <div className="panneau border-l-4 border-l-vert p-5 sm:p-7">
+                  <p className="etiquette flex items-center gap-2 text-vert">
+                    {icone !== undefined && hasIcon(icone) && <Icon name={icone} size={16} />}
+                    {nom}
+                  </p>
+                  <h2 id={`titre-protocole-${tache}`} className="etendu mt-3 text-2xl">
+                    {fill(p.title, { benchmark: nom })}
+                  </h2>
+                  <Prose body={p.intro} locale={lang} className="mt-4" />
+                  <Link href={href(lang, `/benchmarks/${tache}`)} className="bouton mt-6">
+                    {t.viewBenchmark}
+                    <Icon name="arrow-right" size={15} />
+                  </Link>
+                </div>
+              </section>
+
+              <Section id={idSection(p.limits.id, tache)} title={p.limits.title} eyebrow={nom}>
+                <Prose body={p.limits.body} locale={lang} className="mt-5" />
+              </Section>
+
+              <Section id={idSection(p.scoring.id, tache)} title={p.scoring.title} eyebrow={nom}>
+                <Prose body={p.scoring.body} locale={lang} className="mt-5" />
+                <div className="panneau mt-6 max-w-[52rem]">
+                  <div className="overflow-x-auto">
+                    <table className="tableau">
+                      <caption className="sr-only">{t.scoringCaption}</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col"><span className="etiquette">{t.table.field}</span></th>
+                          <th scope="col"><span className="etiquette">{t.table.comparison}</span></th>
+                          <th scope="col" className="droite"><span className="etiquette">{t.table.weight}</span></th>
+                          <th scope="col" className="droite"><span className="etiquette">{t.table.critical}</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {task.criteria.map((critere) => (
+                          <tr key={critere.id}>
+                            <th scope="row" lang="fr">{critere.label}</th>
+                            <td className="text-encre-pale">{comparaison(critere, t.kinds, (n) => num(n, lang, 2), (n) => num(n, lang, 1))}</td>
+                            <td className="chiffres droite">{critere.weight}</td>
+                            <td className={`droite ${critere.critical ? "font-semibold" : "text-encre-muette"}`}>
+                              {critere.critical ? t.table.yes : t.table.no}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                {lang !== "fr" && <p className="mt-3 text-sm text-encre-muette">{t.originalLabels}</p>}
+                <Prose body={p.scoring.after} locale={lang} className="mt-6" />
+              </Section>
+
+              <Section id={idSection(p.verdicts.id, tache)} title={p.verdicts.title} eyebrow={nom}>
+                <Prose body={p.verdicts.body} locale={lang} className="mt-5" />
+              </Section>
+
+              <Section id={idSection(p.prompt.id, tache)} title={p.prompt.title} eyebrow={nom}>
+                <Prose body={p.prompt.body} locale={lang} className="mt-5" />
+                <pre lang={surQuestions ? "en" : "fr"} className="mt-6 max-w-[52rem] whitespace-pre-wrap break-words rounded-[var(--radius-m)] border border-filet bg-creux p-5 font-sans text-sm leading-relaxed">
+                  {prompt}
+                </pre>
+              </Section>
+
+              <Section id={idSection(p.run.id, tache)} title={p.run.title} eyebrow={nom}>
+                {p.run.body.length > 0 && <Prose body={p.run.body} locale={lang} className="mt-5" />}
+                <div className="panneau mt-6 max-w-[36rem]">
+                  <table className="tableau">
+                    <caption className="sr-only">{t.run.caption}</caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row" className="text-encre-pale">{t.run.run}</th>
+                        <td className="droite break-all">{classement.runId}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" className="text-encre-pale">{t.run.date}</th>
+                        <td className="chiffres droite">{date(classement.runDate, lang, "long")}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" className="text-encre-pale">{surQuestions ? t.run.questions : t.run.documents}</th>
+                        <td className="chiffres droite">{classement.sampleSize}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" className="text-encre-pale">{t.run.models}</th>
+                        <td className="chiffres droite">{classement.rows.length}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" className="text-encre-pale">{t.run.status}</th>
+                        <td className="droite">
+                          <span className="inline-flex items-center gap-2">
+                            {classement.status === "demo" ? t.run.demo : t.run.real}
+                            <DemoTag dict={dict} show={classement.status === "demo"} />
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <Link href={href(lang, `/benchmarks/${tache}`)} className="bouton mt-6">
                   {t.viewBenchmark}
                   <Icon name="arrow-right" size={15} />
                 </Link>
-              )}
+              </Section>
             </div>
-          </section>
-
-          <Section id={c.limits.id} title={c.limits.title} eyebrow={nomTache}>
-            <Prose body={c.limits.body} locale={lang} className="mt-5" />
-          </Section>
-
-          <Section id={c.scoring.id} title={c.scoring.title} eyebrow={nomTache}>
-            <Prose body={c.scoring.body} locale={lang} className="mt-5" />
-            <div className="panneau mt-6 max-w-[52rem]">
-              <div className="overflow-x-auto">
-                <table className="tableau">
-                  <caption className="sr-only">{t.scoringCaption}</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col"><span className="etiquette">{t.table.field}</span></th>
-                      <th scope="col"><span className="etiquette">{t.table.comparison}</span></th>
-                      <th scope="col" className="droite"><span className="etiquette">{t.table.weight}</span></th>
-                      <th scope="col" className="droite"><span className="etiquette">{t.table.critical}</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {task.criteria.map((critere) => (
-                      <tr key={critere.id}>
-                        <th scope="row" lang="fr">{critere.label}</th>
-                        <td className="text-encre-pale">{comparaison(critere, t.kinds, (n) => num(n, lang, 2))}</td>
-                        <td className="chiffres droite">{critere.weight}</td>
-                        <td className={`droite ${critere.critical ? "font-semibold" : "text-encre-muette"}`}>
-                          {critere.critical ? t.table.yes : t.table.no}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            {lang !== "fr" && <p className="mt-3 text-sm text-encre-muette">{t.originalLabels}</p>}
-            <Prose body={c.scoring.after} locale={lang} className="mt-6" />
-          </Section>
-
-          <Section id={c.verdicts.id} title={c.verdicts.title} eyebrow={nomTache}>
-            <Prose body={c.verdicts.body} locale={lang} className="mt-5" />
-          </Section>
-
-          <Section id={c.prompt.id} title={c.prompt.title} eyebrow={nomTache}>
-            <Prose body={c.prompt.body} locale={lang} className="mt-5" />
-            <pre lang="fr" className="mt-6 max-w-[52rem] whitespace-pre-wrap break-words rounded-[var(--radius-m)] border border-filet bg-creux p-5 font-sans text-sm leading-relaxed">
-              {prompt}
-            </pre>
-          </Section>
-
-          <Section id={c.run.id} title={c.run.title} eyebrow={nomTache}>
-            <div className="panneau mt-6 max-w-[36rem]">
-              <table className="tableau">
-                <caption className="sr-only">{t.run.caption}</caption>
-                <tbody>
-                  <tr>
-                    <th scope="row" className="text-encre-pale">{t.run.run}</th>
-                    <td className="droite break-all">{classement.runId}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" className="text-encre-pale">{t.run.date}</th>
-                    <td className="chiffres droite">{date(classement.runDate, lang, "long")}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" className="text-encre-pale">{t.run.documents}</th>
-                    <td className="chiffres droite">{classement.sampleSize}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" className="text-encre-pale">{t.run.models}</th>
-                    <td className="chiffres droite">{classement.rows.length}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" className="text-encre-pale">{t.run.status}</th>
-                    <td className="droite">
-                      <span className="inline-flex items-center gap-2">
-                        {classement.status === "demo" ? t.run.demo : t.run.real}
-                        <DemoTag dict={dict} show={classement.status === "demo"} />
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            {leaderboards.has(TACHE) && (
-              <Link href={href(lang, `/benchmarks/${TACHE}`)} className="bouton mt-6">
-                {t.viewBenchmark}
-                <Icon name="arrow-right" size={15} />
-              </Link>
-            )}
-          </Section>
+          ))}
         </div>
       </div>
     </main>

@@ -38,7 +38,33 @@ describe("phrases « À retenir »", () => {
 
   it("chiffre le meilleur rapport précision-prix face au premier", () => {
     const phrases = lire([row("a/un", 90, { costPerDoc: 0.2 }), row("b/deux", 88, { costPerDoc: 0.02 }), row("c/trois", 60)]);
-    expect(phrases.some((p) => p.includes("Deux") && p.includes("10 fois moins cher"))).toBe(true);
+    expect(phrases.some((p) => p.includes("Deux") && p.includes("10 fois moins cher que Un"))).toBe(true);
+  });
+
+  it("accorde « point » avec l'écart affiché", () => {
+    const a = lire([row("a/un", 90, { costPerDoc: 0.2 }), row("b/deux", 88, { costPerDoc: 0.02 }), row("c/trois", 60)]);
+    expect(a.some((p) => p.includes("à 2,0 points du meilleur score"))).toBe(true);
+    const b = lire([row("a/un", 90, { costPerDoc: 0.2 }), row("b/deux", 89.3, { costPerDoc: 0.02 }), row("c/trois", 60)]);
+    expect(b.some((p) => p.includes("à 0,7 point du meilleur score"))).toBe(true);
+  });
+
+  // Le cas des questions financières : sept modèles à 100 %, rangés par prix.
+  it("ne fait pas un podium de modèles à égalité : il les nomme tous et dit que le test ne les départage pas", () => {
+    const phrases = lire([row("a/un", 100, { ci: 0 }), row("b/deux", 100, { ci: 0 }), row("c/trois", 70)]);
+    const tete = phrases[0];
+    // Le pourcentage porte l'espace insécable du français : on ne le recopie pas ici.
+    expect(tete).toContain("2 modèles terminent à égalité en tête, à 100,0");
+    expect(tete).toContain("Un et Deux");
+    expect(tete).toContain("ne les départage pas");
+    expect(phrases.some((p) => p.includes("prend la tête"))).toBe(false);
+  });
+
+  it("abrège une longue liste d'ex æquo", () => {
+    const rows = Array.from({ length: 12 }, (_, i) => row(`m/${i}`, 100, { ci: 0 }));
+    const [tete] = lire([...rows, row("c/trois", 70)]);
+    expect(tete).toContain("12 modèles terminent à égalité");
+    expect(tete).toContain("m/6 et 5 autres");
+    expect(tete).not.toContain("m/7");
   });
 
   it("signale le modèle qui invente, seulement quand il invente vraiment", () => {

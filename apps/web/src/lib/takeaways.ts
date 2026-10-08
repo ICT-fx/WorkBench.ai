@@ -1,7 +1,10 @@
 import type { Benchmark, Leaderboard, LeaderboardRow } from "@hub/schema";
-import { fill, tr, type Dictionary, type Locale } from "@/i18n";
+import { INTL, fill, tr, type Dictionary, type Locale } from "@/i18n";
 import { bestValue, indistinguishable } from "./hub";
 import { num, pct, usd } from "./format";
+
+/** Au-delà, une liste d'ex æquo se termine par « et N autres ». */
+const NOMS_CITES = 8;
 
 /**
  * Les phrases « À retenir » d'un benchmark, écrites à partir du classement. Rien
@@ -27,22 +30,39 @@ export function takeaways(opts: {
   const unit = tr(benchmark.unit, locale);
   const out: string[] = [];
 
-  out.push(third === undefined
-    ? fill(t.leaderTwo, { first: nom(first), score: pct(first.exactitude, locale), second: nom(second), score2: pct(second.exactitude, locale) })
-    : fill(t.leader, {
-        first: nom(first), score: pct(first.exactitude, locale),
-        second: nom(second), score2: pct(second.exactitude, locale),
-        third: nom(third), score3: pct(third.exactitude, locale),
-      }));
+  // Plusieurs modèles au même score ne forment pas un podium. Le tableau les range
+  // par prix parce qu'il lui faut un ordre ; écrire que le premier « prend la tête
+  // devant » les autres ferait dire à la mesure ce qu'elle ne dit pas.
+  const enTete = rows.filter((r) => r.exactitude === first.exactitude);
+  if (enTete.length > 1) {
+    const cites = enTete.slice(0, enTete.length > NOMS_CITES ? NOMS_CITES - 1 : NOMS_CITES).map(nom);
+    const reste = enTete.length - cites.length;
+    out.push(fill(t.leaderTie, {
+      n: enTete.length, score: pct(first.exactitude, locale),
+      names: new Intl.ListFormat(INTL[locale], { style: "long", type: "conjunction" })
+        .format(reste > 0 ? [...cites, fill(t.others, { n: reste })] : cites),
+    }));
+  } else {
+    out.push(third === undefined
+      ? fill(t.leaderTwo, { first: nom(first), score: pct(first.exactitude, locale), second: nom(second), score2: pct(second.exactitude, locale) })
+      : fill(t.leader, {
+          first: nom(first), score: pct(first.exactitude, locale),
+          second: nom(second), score2: pct(second.exactitude, locale),
+          third: nom(third), score3: pct(third.exactitude, locale),
+        }));
 
-  if (indistinguishable(first, second)) out.push(fill(t.tie, { first: nom(first), second: nom(second) }));
+    if (indistinguishable(first, second)) out.push(fill(t.tie, { first: nom(first), second: nom(second) }));
+  }
 
   const affaire = bestValue(rows);
   if (affaire !== null && first.costPerDoc > 0) {
+    const ecart = Math.round((first.exactitude - affaire.exactitude) * 10) / 10;
     out.push(affaire.model === first.model
       ? t.valueSame
       : fill(t.value, {
-          model: nom(affaire), gap: num(first.exactitude - affaire.exactitude, locale), cost: usd(affaire.costPerDoc, locale), unit,
+          model: nom(affaire), gap: num(ecart, locale), cost: usd(affaire.costPerDoc, locale), unit, first: nom(first),
+          // « 0,7 point » mais « 4,7 points » : l'accord suit la langue, sur la valeur affichée.
+          points: new Intl.PluralRules(INTL[locale]).select(ecart) === "one" ? t.pointUnit.one : t.pointUnit.other,
           ratio: num(first.costPerDoc / affaire.costPerDoc, locale, first.costPerDoc / affaire.costPerDoc >= 10 ? 0 : 1),
         }));
   }

@@ -1,8 +1,8 @@
-import { fill, type Dictionary, type Locale } from "@/i18n";
+import { fill, tr, type Dictionary, type Locale } from "@/i18n";
 import { loadHistory } from "@/lib/data";
 import { date, monthYear, pct } from "@/lib/format";
 import type { ModelScore } from "@/lib/hub";
-import { axisRange, runAverages, runDates, timePositions } from "@/lib/models";
+import { axisRange, runsByBenchmark, timePositions, type BenchmarkRuns } from "@/lib/models";
 import { getHub } from "@/lib/site";
 import { DemoTag } from "@/components/ui/DemoTag";
 import { Icon } from "@/components/ui/Icon";
@@ -10,8 +10,10 @@ import { serie } from "@/components/ui/LabMark";
 import { StabilityChart, type StabilityPoint } from "./StabilityChart";
 
 /**
- * L'exactitude moyenne du modèle, run après run. Un alias de modèle peut
- * changer sans prévenir : cette courbe est l'endroit où une dérive se verrait.
+ * L'exactitude du modèle, run après run, benchmark par benchmark. Un alias de
+ * modèle peut changer sans prévenir : ces courbes sont l'endroit où une dérive se
+ * verrait. Chaque benchmark a la sienne — une courbe commune ferait passer un
+ * changement de tâche pour un changement de modèle.
  */
 export function Stability({ score, lang, dict }: { score: ModelScore; lang: Locale; dict: Dictionary }) {
   // Un modèle jamais testé n'a pas d'histoire à raconter.
@@ -23,47 +25,63 @@ export function Stability({ score, lang, dict }: { score: ModelScore; lang: Loca
     const history = loadHistory(b.id);
     return history === null ? [] : [history];
   });
-  const moyennes = runAverages(histories, score.model.id);
+  const nom = (id: string): string => {
+    const b = benchmarks.find((x) => x.id === id);
+    return b === undefined ? id : tr(b.label, lang);
+  };
+  const series = runsByBenchmark(histories, score.model.id);
+  // Une courbe demande au moins deux runs du même benchmark.
+  const suivies = series.filter((s) => s.points.length >= 2);
+  const uniques = series.filter((s) => s.points.length === 1);
   const demo = hub.demo || histories.some((h) => h.runs.some((run) => run.status === "demo"));
 
   return (
     <section aria-labelledby="stabilite" className="mt-16">
       <h2 id="stabilite" className="etendu text-2xl">{t.title}</h2>
       <p className="mt-2 max-w-[68ch] text-sm text-encre-pale">{t.intro}</p>
-      {moyennes.length < 2
-        ? <p className="mt-5 border-y border-filet py-4">{t.onlyLastRun}</p>
-        : <Courbe moyennes={moyennes} axe={runDates(histories)} couleur={serie(score.lab)} demo={demo} lang={lang} dict={dict} />}
+      {suivies.length === 0 && <p className="mt-5 border-y border-filet py-4">{t.onlyLastRun}</p>}
+      {suivies.map((s) => (
+        <Courbe key={s.benchmarkId} serie={s} titre={nom(s.benchmarkId)} couleur={serie(score.lab)} demo={demo} lang={lang} dict={dict} />
+      ))}
+      {suivies.length > 0 && uniques.length > 0 && (
+        <p className="mt-4 max-w-[68ch] text-sm text-encre-pale">
+          {fill(t.singleRun, { benchmarks: uniques.map((s) => nom(s.benchmarkId)).join(", ") })}
+        </p>
+      )}
     </section>
   );
 }
 
-function Courbe({ moyennes, axe, couleur, demo, lang, dict }: {
-  moyennes: ReturnType<typeof runAverages>;
-  /** Toutes les dates de run du hub : l'axe du temps ne bouge pas d'une fiche à l'autre. */
-  axe: string[];
+function Courbe({ serie: runs, titre, couleur, demo, lang, dict }: {
+  serie: BenchmarkRuns;
+  /** Le nom du benchmark : une courbe ne porte que sur lui. */
+  titre: string;
   couleur: string;
   demo: boolean;
   lang: Locale;
   dict: Dictionary;
 }) {
   const t = dict.models.stability;
+  const axe = runs.points.map((p) => p.date);
   const places = timePositions(axe);
-  const { lo, hi, ticks } = axisRange(moyennes.map((m) => m.value));
-  const surBenchmarks = (n: number) => fill(n === 1 ? t.benchmarks.one : t.benchmarks.other, { n });
+  const { lo, hi, ticks } = axisRange(runs.points.map((p) => p.value));
 
-  const points = moyennes.map((m): StabilityPoint => ({
-    x: places[axe.indexOf(m.date)] ?? 0,
-    y: (hi - m.value) / (hi - lo),
-    date: date(m.date, lang, "long"),
-    value: pct(m.value, lang),
-    basis: fill(t.averageOver, { benchmarks: surBenchmarks(m.n) }),
-    spoken: fill(t.point, { date: date(m.date, lang, "long"), value: pct(m.value, lang), benchmarks: surBenchmarks(m.n) }),
+  const points = runs.points.map((p, i): StabilityPoint => ({
+    x: places[i] ?? 0,
+    y: (hi - p.value) / (hi - lo),
+    date: date(p.date, lang, "long"),
+    value: pct(p.value, lang),
+    basis: titre,
+    spoken: fill(t.point, { date: date(p.date, lang, "long"), value: pct(p.value, lang), benchmark: titre }),
   }));
 
   return (
     <figure className="panneau mt-5">
       <figcaption className="barre">
-        <span className="etiquette">{t.chartTitle}</span>
+        <p className="flex flex-wrap items-baseline gap-x-3">
+          <span className="font-medium">{titre}</span>
+          <span className="etiquette">{t.chartTitle}</span>
+        </p>
         <DemoTag dict={dict} show={demo} />
       </figcaption>
 
@@ -88,16 +106,14 @@ function Courbe({ moyennes, axe, couleur, demo, lang, dict }: {
             <thead>
               <tr>
                 <th scope="col" className="etiquette">{t.run}</th>
-                <th scope="col" className="etiquette droite">{t.avgAccuracy}</th>
-                <th scope="col" className="etiquette droite">{t.benchmarksColumn}</th>
+                <th scope="col" className="etiquette droite">{t.accuracy}</th>
               </tr>
             </thead>
             <tbody>
-              {moyennes.map((m) => (
-                <tr key={m.date}>
-                  <th scope="row">{date(m.date, lang, "long")}</th>
-                  <td className="chiffres droite">{pct(m.value, lang)}</td>
-                  <td className="chiffres droite">{m.n}</td>
+              {runs.points.map((p) => (
+                <tr key={p.date}>
+                  <th scope="row">{date(p.date, lang, "long")}</th>
+                  <td className="chiffres droite">{pct(p.value, lang)}</td>
                 </tr>
               ))}
             </tbody>

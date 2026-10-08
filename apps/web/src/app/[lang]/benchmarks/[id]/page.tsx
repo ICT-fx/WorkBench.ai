@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { fill, getDictionary, href, isLocale, tr } from "@/i18n";
 import { getHub } from "@/lib/site";
 import {
-  documentImages, hasCases, hasTask, loadCases, loadDocumentSources, loadGroundTruth, loadHistory,
-  loadReponses, loadScores, loadTask,
+  cleReponse, documentImages, hasCases, hasTask, loadCases, loadDocumentSources, loadEchecsImputes, loadExclusions,
+  loadGroundTruth, loadHistory, loadQuestionsPosees, loadReponses, loadScores, loadTask,
 } from "@/lib/data";
+import { lignesQuestions } from "@/lib/questions";
 import { stateOfTheArt } from "@/lib/hub";
 import { documentsClivants, lecturesParDocument } from "@/lib/exemples";
 import { takeaways } from "@/lib/takeaways";
@@ -21,6 +22,7 @@ import { Recommandations } from "@/components/Recommandations";
 import { NuageCout } from "@/components/charts/NuageCout";
 import { LigneRuns } from "@/components/charts/LigneRuns";
 import { LeaderboardTable, type TableRow } from "@/components/benchmarks/LeaderboardTable";
+import { QuestionsPosees } from "@/components/benchmarks/QuestionsPosees";
 
 /**
  * Toutes les tâches du catalogue ont une page, mesurées ou non. Une tâche au
@@ -287,12 +289,20 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         ? <CasPieges taskId={id} runId={leaderboard.runId} lang={lang} names={names} />
         : <DocumentsClivants taskId={id} runId={leaderboard.runId} lang={lang} names={names} />}
 
-      {hasTask(id) && (
-        <Corpus
-          taskId={id} runId={leaderboard.runId} lang={lang}
-          fields={new Map(benchmark.subtasks.map((s) => [s.id, tr(s.label, lang)]))}
-        />
-      )}
+      {hasTask(id) && (loadQuestionsPosees(id).length > 0
+        ? (
+          <SectionQuestions
+            taskId={id} runId={leaderboard.runId} lang={lang} names={names}
+            panel={leaderboard.rows.length}
+            fields={new Map(benchmark.subtasks.map((s) => [s.id, tr(s.label, lang)]))}
+          />
+        )
+        : (
+          <Corpus
+            taskId={id} runId={leaderboard.runId} lang={lang}
+            fields={new Map(benchmark.subtasks.map((s) => [s.id, tr(s.label, lang)]))}
+          />
+        ))}
 
       <p className="mt-16 max-w-[64ch]">
         <Link href={href(lang, "/about/methodology")} className="text-vert underline">{t.methodology}</Link> {t.methodologyTail}
@@ -392,6 +402,37 @@ function Corpus({ taskId, runId, lang, fields }: {
 }
 
 /**
+ * Les questions d'une tâche qui en pose une par document, avec ce que le panel en a fait.
+ *
+ * Les comptes viennent des notations du run, jamais d'un recalcul ; les questions
+ * sorties du classement restent listées, avec leur raison.
+ */
+function SectionQuestions({ taskId, runId, lang, names, panel, fields }: {
+  taskId: string; runId: string; lang: "fr" | "en"; names: Map<string, string>;
+  panel: number; fields: Map<string, string>;
+}) {
+  const t = getDictionary(lang).benchmarks.detail;
+  const task = loadTask(taskId);
+  const lignes = lignesQuestions(
+    loadQuestionsPosees(taskId), loadScores(runId), panel, loadExclusions(taskId), loadEchecsImputes(taskId),
+  );
+  return (
+    <QuestionsPosees
+      t={t}
+      lignes={lignes.map((l) => ({
+        ...l,
+        attendu: loadGroundTruth(taskId, l.docId).fields[l.sousTache] ?? null,
+        tache: fields.get(l.sousTache) ?? l.sousTache,
+        manquants: l.statut === "hors-classement"
+          ? loadReponses(runId, l.docId, cleReponse(task, l.sousTache)).filter((r) => r.enEchec).map((r) => names.get(r.model) ?? r.model)
+          : [],
+        imputesNoms: l.imputes.map((e) => ({ nom: names.get(e.model) ?? e.model, motif: e.motif })),
+      }))}
+    />
+  );
+}
+
+/**
  * Les documents sur lesquels les modèles se sont le plus contredits, avec la
  * réponse brute de chacun en face de l'annotation d'origine.
  *
@@ -407,19 +448,34 @@ function DocumentsClivants({ taskId, runId, lang, names }: {
   const t = dict.benchmarks.detail;
   const task = loadTask(taskId);
   const labels = Object.fromEntries(task.criteria.map((c) => [c.id, c.label]));
-  const clivants = documentsClivants(loadScores(runId));
+  const scores = loadScores(runId);
+  const clivants = documentsClivants(scores);
   if (clivants.length === 0) return null;
+  // Une tâche qui pose une question par document la montre avec sa page : sans elle,
+  // une réponse « 2.8 » n'a aucun sens pour le lecteur.
+  const questions = new Map(loadQuestionsPosees(taskId).map((q) => [q.docId, q]));
+  const surQuestions = questions.size > 0;
+  // Un échec imputé au modèle n'est pas une panne de notre côté : il compte contre
+  // lui, et la ligne doit le dire au lieu d'afficher « appel en échec ».
+  const imputes = new Set(loadEchecsImputes(taskId).map((e) => `${e.model}/${e.docId}`));
 
   return (
     <section className="mt-16">
       <h2 className="etendu text-2xl">{t.splits}</h2>
-      <p className="mt-2 max-w-[68ch] text-encre-pale">{t.splitsLead}</p>
+      <p className="mt-2 max-w-[68ch] text-encre-pale">{surQuestions ? t.splitsLeadQuestions : t.splitsLead}</p>
 
       <div className="mt-8 space-y-10">
         {clivants.map((clivant) => {
           const attendu = loadGroundTruth(taskId, clivant.docId).fields[clivant.criterionId] ?? null;
-          const reponses = loadReponses(runId, clivant.docId, clivant.criterionId);
+          const reponses = loadReponses(runId, clivant.docId, cleReponse(task, clivant.criterionId));
           const pages = documentImages(taskId, clivant.docId);
+          const question = questions.get(clivant.docId);
+          // Le verdict est celui du run : comparer la valeur affichée à l'attendu par
+          // égalité stricte marquerait faux « 2.8 » face à « "2.8" », ou une réponse
+          // juste à une décimale d'écart d'une référence arrondie.
+          const verdicts = new Map(
+            scores.filter((s) => s.docId === clivant.docId).map((s) => [s.model, s.byCriterion[clivant.criterionId]?.verdict]),
+          );
 
           return (
             <article key={clivant.docId} className="panneau">
@@ -432,34 +488,38 @@ function DocumentsClivants({ taskId, runId, lang, names }: {
                   })}
                 </span>
               </div>
+              {question !== undefined && (
+                <p lang="en" className="border-b border-filet px-5 py-4 text-sm sm:px-7">{question.question}</p>
+              )}
               <div className="grid gap-8 p-5 sm:p-7 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] md:items-start">
                 {pages[0] !== undefined && (
                   <figure>
                     <div className="overflow-hidden rounded-[var(--radius-m)] border border-filet">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={pages[0]} alt={fill(t.invoiceAlt, { doc: clivant.docId })} className="w-full" loading="lazy" />
+                      <img src={pages[0]} alt={fill(question === undefined ? t.invoiceAlt : t.questionAlt, { doc: clivant.docId })} className="w-full" loading="lazy" />
                     </div>
                     <figcaption className="chiffres mt-2 text-xs text-encre-muette">
-                      {fill(t.splitPages, { n: pages.length })} · {clivant.docId}
+                      {fill(surQuestions ? t.splitPagesReport : t.splitPages, { n: pages.length, s: pages.length > 1 ? "s" : "" })} · {clivant.docId}
                     </figcaption>
                   </figure>
                 )}
                 <dl className="text-sm">
                   <div className="flex flex-wrap items-baseline justify-between gap-2 border-b-2 border-filet-fort pb-2.5">
-                    <dt className="font-semibold">{t.splitExpected}</dt>
+                    <dt className="font-semibold">{surQuestions ? t.splitExpectedQuestion : t.splitExpected}</dt>
                     <dd className="chiffres font-semibold text-vert">
-                      {attendu === null ? t.nothingToFind : <ValeurBrute valeur={attendu} abstention={t.abstains} />}
+                      {attendu === null ? t.nothingToFind : <ValeurBrute valeur={Array.isArray(attendu) ? attendu.join(" · ") : attendu} abstention={t.abstains} />}
                     </dd>
                   </div>
                   {reponses.map((r) => {
-                    // Le verdict n'est pas recalculé ici : on compare à l'affiché,
-                    // uniquement pour signaler visuellement ce qui diverge.
-                    const diverge = !r.enEchec && JSON.stringify(r.valeur ?? null) !== JSON.stringify(attendu);
+                    const impute = imputes.has(`${r.model}/${clivant.docId}`);
+                    const diverge = impute || (!r.enEchec && verdicts.get(r.model) !== "correct");
                     return (
                       <div key={r.model} className="flex flex-wrap items-baseline justify-between gap-2 border-b border-filet py-2.5">
                         <dt>{names.get(r.model) ?? r.model}</dt>
                         <dd className={diverge ? "font-semibold text-rouge" : undefined}>
-                          {r.enEchec ? t.callFailed : <ValeurBrute valeur={r.valeur} abstention={t.abstains} />}
+                          {impute
+                            ? t.noUsableAnswer
+                            : r.enEchec ? t.callFailed : <ValeurBrute valeur={r.valeur} abstention={t.abstains} />}
                         </dd>
                       </div>
                     );
@@ -498,7 +558,8 @@ function BenchmarkAVenir({ lang, id }: { lang: "fr" | "en"; id: string }) {
       <nav aria-label={t.breadcrumb} className="flex flex-wrap items-center gap-2 text-sm text-encre-pale">
         <Link href={href(lang, "/benchmarks")} className="no-underline hover:underline">{t.breadcrumb}</Link>
         <Icon name="chevron-right" size={14} />
-        <Link href={`${href(lang, "/benchmarks")}#${domaine.id}`} className="flex items-center gap-1.5 no-underline hover:underline">
+        {/* La carte d'une tâche au programme est rangée sous « Au programme », dans le groupe de son métier. */}
+        <Link href={`${href(lang, "/benchmarks")}#a-venir-${domaine.id}`} className="flex items-center gap-1.5 no-underline hover:underline">
           <Icon name={hasIcon(domaine.icon) ? domaine.icon : "indice"} size={15} />
           {tr(domaine.label, lang)}
         </Link>
@@ -611,7 +672,7 @@ function CasPieges({ taskId, runId, lang, names }: {
           const piege = cas.traps[0]!;
           const champ = CHAMP_MONTRE[piege.id] ?? "total_ttc";
           const attendu = loadGroundTruth(taskId, cas.docId).fields[champ] ?? null;
-          const reponses = loadReponses(runId, cas.docId, champ);
+          const reponses = loadReponses(runId, cas.docId, cleReponse(task, champ));
           const image = documentImages(taskId, cas.docId)[0];
 
           return (

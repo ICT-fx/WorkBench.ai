@@ -102,32 +102,26 @@ export function standing(
   return { rank: devant + 1, of: values.length };
 }
 
-export type RunAverage = { date: string; value: number; n: number };
+export type BenchmarkRuns = {
+  benchmarkId: string;
+  /** L'exactitude du modèle à chaque publication de ce benchmark, de la plus ancienne à la plus récente. */
+  points: { date: string; value: number }[];
+};
 
 /**
- * L'exactitude moyenne d'un modèle à chaque run, sur les benchmarks où il
- * figure ce jour-là. `n` accompagne la moyenne : deux runs qui ne couvrent pas
- * les mêmes benchmarks ne se comparent pas sans le savoir.
+ * L'exactitude d'un modèle run après run, benchmark par benchmark.
+ *
+ * Deux benchmarks ne partagent jamais une courbe. Une moyenne par date mêlait les
+ * runs de factures et celui des questions financières dès que leurs dates
+ * différaient : la courbe d'un modèle passait de 98 % à 53 % sans qu'il ait changé,
+ * parce que c'est la tâche qui avait changé.
  */
-export function runAverages(histories: BenchmarkHistory[], modelId: string): RunAverage[] {
-  const parDate = new Map<string, number[]>();
-  for (const history of histories) {
-    for (const point of modelHistory(history, modelId)) {
-      parDate.set(point.date, [...(parDate.get(point.date) ?? []), point.value]);
-    }
-  }
-  return [...parDate.entries()]
-    .sort(([a], [b]) => (a < b ? -1 : 1))
-    .map(([date, values]) => ({
-      date,
-      value: Math.round((values.reduce((a, b) => a + b, 0) / values.length) * 10) / 10,
-      n: values.length,
-    }));
+export function runsByBenchmark(histories: BenchmarkHistory[], modelId: string): BenchmarkRuns[] {
+  return histories.flatMap((history) => {
+    const points = [...modelHistory(history, modelId)].sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+    return points.length === 0 ? [] : [{ benchmarkId: history.benchmarkId, points }];
+  });
 }
-
-/** Toutes les dates de run du hub : l'axe du temps est le même d'une fiche à l'autre. */
-export const runDates = (histories: BenchmarkHistory[]): string[] =>
-  [...new Set(histories.flatMap((h) => h.runs.map((run) => run.runDate)))].sort();
 
 /** La place de chaque date entre la première (0) et la dernière (1). */
 export function timePositions(dates: string[]): number[] {

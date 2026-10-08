@@ -14,6 +14,8 @@ export type Site = {
   leaderboards: Map<string, Leaderboard>;
   /** Date de synchronisation des tarifs avec le catalogue public. */
   pricesSyncedAt: string;
+  /** Date à laquelle la version datée de chaque modèle a été relevée, si elle l'a été. */
+  versionsSyncedAt: string | null;
 };
 
 /**
@@ -38,5 +40,6 @@ export const getHub = cache((): Site => {
     labs, models: catalogue.models, domains, benchmarks,
     leaderboards: new Map(leaderboards.map((lb) => [lb.taskId, lb])),
     pricesSyncedAt: catalogue.syncedAt,
+    versionsSyncedAt: catalogue.versionsSyncedAt ?? null,
   };
 });

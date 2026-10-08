@@ -142,6 +142,8 @@ describe("lecture honnête d'un classement", () => {
   it("ne départage pas deux modèles plus proches que la marge d'erreur", () => {
     expect(indistinguishable(row("a", 80, { ci: 3 }), row("b", 78.5, { ci: 2 }))).toBe(true);
     expect(indistinguishable(row("a", 80, { ci: 3 }), row("b", 75, { ci: 2 }))).toBe(false);
+    // Deux modèles parfaits ont une marge nulle : ils ne sont pas départagés pour autant.
+    expect(indistinguishable(row("a", 100, { ci: 0 }), row("b", 100, { ci: 0 }))).toBe(true);
   });
 
   it("cherche le meilleur rapport précision-prix parmi les modèles proches du premier", () => {

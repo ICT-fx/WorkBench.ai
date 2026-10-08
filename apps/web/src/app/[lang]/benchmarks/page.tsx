@@ -128,6 +128,9 @@ export default async function PageBenchmarks({ params }: PageProps<"/[lang]/benc
           {fill(t.coverage, {
             measured: hub.coverage.benchmarksMeasured, total: hub.coverage.benchmarksTotal,
             domains: hub.coverage.domainsMeasured, domainsTotal: hub.coverage.domainsTotal,
+            // Le français accorde : « 1 benchmark mesuré », « 2 benchmarks mesurés ».
+            measuredS: hub.coverage.benchmarksMeasured > 1 ? "s" : "",
+            domainsS: hub.coverage.domainsMeasured > 1 ? "s" : "",
           })}
         </p>
       </header>

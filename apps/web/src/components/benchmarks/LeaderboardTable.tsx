@@ -135,7 +135,7 @@ export function LeaderboardTable({ rows, subtasks, title, subtitle, unit, demo }
                     <span className="font-medium">{r.name}</span>
                   </Link>
                   {r.errorCount > 0 && (
-                    <span className="ml-[1.9rem] block text-xs text-encre-pale">{fill(t.errors, { n: r.errorCount })}</span>
+                    <span className="ml-[1.9rem] block text-xs text-encre-pale">{fill(t.errors, { n: r.errorCount, s: r.errorCount > 1 ? "s" : "" })}</span>
                   )}
                 </th>
                 <td className="droite whitespace-nowrap">

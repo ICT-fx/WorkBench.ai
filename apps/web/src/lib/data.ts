@@ -6,6 +6,7 @@ import {
   LeaderboardSchema, TaskSchema, GroundTruthSchema, LabSchema, ModelCatalogueSchema,
   DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema, DocScoreSchema, parseCsv,
 } from "@hub/schema";
+import { lireQuestions, type QuestionPosee } from "./questions";
 import type {
   Benchmark, BenchmarkHistory, DocScore, Domain, GroundTruth, Lab, Leaderboard, ModelCatalogue,
   News, Task,
@@ -143,6 +144,42 @@ export function loadDocumentSources(taskId: string): Map<string, string> {
   );
 }
 
+/**
+ * Les questions d'une tâche qui en pose une par document, lues dans son manifeste.
+ * Liste vide pour une tâche dont tous les documents reçoivent le même prompt.
+ */
+export function loadQuestionsPosees(taskId: string): QuestionPosee[] {
+  const fichier = join(repoRoot(), "data", "tasks", taskId, "manifest.csv");
+  if (!existsSync(fichier)) return [];
+  return lireQuestions(parseCsv(readFileSync(fichier, "utf8")));
+}
+
+/**
+ * Les questions écartées après un run, avec leur motif.
+ *
+ * Leurs réponses restent enregistrées, mais elles n'entrent plus dans le
+ * classement. Les cacher du site reviendrait à retoucher le jeu de test sans le
+ * dire : elles y sont listées, avec la raison.
+ */
+export function loadExclusions(taskId: string): Map<string, string> {
+  const fichier = join(repoRoot(), "data", "tasks", taskId, "exclusions.json");
+  if (!existsSync(fichier)) return new Map();
+  const liste = z.array(z.object({ docId: z.string(), motif: z.string().min(1), date: z.string() }))
+    .parse(JSON.parse(readFileSync(fichier, "utf8")));
+  return new Map(liste.map((e) => [e.docId, e.motif]));
+}
+
+/**
+ * Les échecs imputés au modèle : il n'a rien rendu d'exploitable, et on lui compte
+ * « manquant » plutôt que de retirer la question à tout le panel.
+ */
+export function loadEchecsImputes(taskId: string): { model: string; docId: string; motif: string }[] {
+  const fichier = join(repoRoot(), "data", "tasks", taskId, "echecs-imputes.json");
+  if (!existsSync(fichier)) return [];
+  return z.array(z.object({ model: z.string(), docId: z.string(), motif: z.string().min(1), date: z.string() }))
+    .parse(JSON.parse(readFileSync(fichier, "utf8"))).map(({ model, docId, motif }) => ({ model, docId, motif }));
+}
+
 export type ReponseModele = {
   model: string;
   /** La valeur brute produite par le modèle pour ce champ, telle qu'écrite. */
@@ -151,13 +188,25 @@ export type ReponseModele = {
 };
 
 /**
- * Ce que chaque modèle a répondu sur un champ d'un document donné.
+ * La clé JSON sous laquelle un modèle écrit sa réponse à un critère : l'identifiant
+ * du critère, sauf quand le barème en déclare une autre. Les questions financières
+ * se répondent toutes sous « answer », quel que soit le critère qu'elles posent.
+ */
+export const cleReponse = (task: Task, criterionId: string): string =>
+  task.criteria.find((c) => c.id === criterionId)?.key ?? criterionId;
+
+/**
+ * Ce que chaque modèle a répondu sur un document donné, sous la clé `cle`.
  *
  * Lit les réponses brutes du run, jamais les scores : afficher la réponse
  * telle qu'elle a été produite est ce qui permet au lecteur de juger par
  * lui-même plutôt que de nous croire sur parole.
+ *
+ * `cle` vient de `cleReponse`, pas de l'identifiant du critère. Lue sous
+ * « calcul », une réponse écrite sous « answer » vaut « rien » : la page a
+ * affiché vingt-sept abstentions qui n'avaient pas eu lieu.
  */
-export function loadReponses(runId: string, docId: string, criterionId: string): ReponseModele[] {
+export function loadReponses(runId: string, docId: string, cle: string): ReponseModele[] {
   // Le document n'appartient qu'à un seul run — la publication refuse le
   // contraire — donc le premier run qui le contient est le bon.
   const rawDir = runId.split("+")
@@ -174,7 +223,7 @@ export function loadReponses(runId: string, docId: string, criterionId: string):
     };
     return {
       model: result.model,
-      valeur: (result.raw as Record<string, unknown> | null)?.[criterionId] ?? null,
+      valeur: (result.raw as Record<string, unknown> | null)?.[cle] ?? null,
       enEchec: result.error !== undefined,
     };
   });

@@ -5,7 +5,7 @@ const fr = {
       "Les classements publics mesurent des examens. Nous testons les principaux modèles sur le travail réel d'une entreprise — lire une facture, résumer un contrat, répondre à un client — et publions le protocole, les documents et les réponses brutes.",
     ctaBenchmarks: "Parcourir les benchmarks",
     ctaCompare: "Comparer des modèles",
-    facts: "{models} modèles · {labs} labos · {benchmarks} benchmarks dans {domains} métiers · {measured} mesuré à ce jour",
+    facts: "{models} modèles · {labs} labos · {benchmarks} benchmarks dans {domains} métiers · {measured} mesuré{measuredS} à ce jour",
   },
   ticker: {
     label: "Dernières actualités",
@@ -16,7 +16,7 @@ const fr = {
     title: "L'indice métier, labo par labo",
     measure: "Mesure affichée",
     note: "Le meilleur modèle de chaque labo, classé par indice métier.",
-    scope: "Indice calculé sur {domains} métier mesuré sur {domainsTotal}. Les autres métiers ne comptent pas encore — ni en bien, ni en mal.",
+    scope: "Indice calculé sur {domains} métier{domainsS} mesuré{domainsS} sur {domainsTotal}. Les autres métiers ne comptent pas encore — ni en bien, ni en mal.",
   },
   reports: {
     title: "Derniers rapports",

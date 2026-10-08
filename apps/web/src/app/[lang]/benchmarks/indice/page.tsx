@@ -63,6 +63,9 @@ export default async function PageIndice({ params }: PageProps<"/[lang]/benchmar
           {fill(t.scope, {
             domains: hub.coverage.domainsMeasured, domainsTotal: hub.coverage.domainsTotal,
             measured: hub.coverage.benchmarksMeasured, total: hub.coverage.benchmarksTotal,
+            // Le français accorde : « 1 métier », « 2 métiers ».
+            domainsS: hub.coverage.domainsMeasured > 1 ? "s" : "",
+            measuredS: hub.coverage.benchmarksMeasured > 1 ? "s" : "",
           })}
         </p>
       </header>

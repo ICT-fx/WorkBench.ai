@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { BenchmarkHistory } from "@hub/schema";
 import {
-  NO_FILTER, axisRange, filterModels, ordinal, position, readsDocuments, runAverages, runDates,
+  NO_FILTER, axisRange, filterModels, ordinal, position, readsDocuments, runsByBenchmark,
   sortModels, standing, timePositions, type ModelListItem,
 } from "./models";
 
@@ -125,20 +125,35 @@ describe("stabilité d'un modèle d'un run à l'autre", () => {
     history("tickets", [["2026-07-15", { "a/un": 40.2 }]]),
   ];
 
-  it("moyenne, à chaque run, l'exactitude du modèle sur les benchmarks où il figure", () => {
-    expect(runAverages(histories, "a/un")).toEqual([
-      { date: "2026-05-15", value: 65, n: 2 },
-      { date: "2026-07-15", value: 57.9, n: 3 },
+  it("rend une série par benchmark, jamais une moyenne de plusieurs", () => {
+    expect(runsByBenchmark(histories, "a/un")).toEqual([
+      { benchmarkId: "factures", points: [{ date: "2026-05-15", value: 60 }, { date: "2026-07-15", value: 62 }] },
+      { benchmarkId: "contrats", points: [{ date: "2026-05-15", value: 70 }, { date: "2026-07-15", value: 71.5 }] },
+      { benchmarkId: "tickets", points: [{ date: "2026-07-15", value: 40.2 }] },
     ]);
   });
 
-  it("ne crée pas de point pour un run où le modèle est absent", () => {
-    expect(runAverages(histories, "b/deux")).toEqual([{ date: "2026-07-15", value: 80, n: 2 }]);
-    expect(runAverages(histories, "c/inconnu")).toEqual([]);
+  it("ne crée ni point pour un run où le modèle est absent, ni série pour un benchmark qu'il n'a pas passé", () => {
+    expect(runsByBenchmark(histories, "b/deux")).toEqual([
+      { benchmarkId: "factures", points: [{ date: "2026-07-15", value: 70 }] },
+      { benchmarkId: "contrats", points: [{ date: "2026-07-15", value: 90 }] },
+    ]);
+    expect(runsByBenchmark(histories, "c/inconnu")).toEqual([]);
   });
 
-  it("recense les dates de run du hub, de la plus ancienne à la plus récente", () => {
-    expect(runDates(histories)).toEqual(["2026-05-15", "2026-07-15"]);
+  // Le cas qui a fait écrire cette fonction : deux benchmarks publiés à des dates
+  // différentes. Une moyenne par date aurait tracé 98 → 53, comme si le modèle avait dérivé.
+  it("ne met pas bout à bout deux benchmarks publiés à des dates différentes", () => {
+    const series = runsByBenchmark([
+      history("factures", [["2026-10-02", { "a/un": 97.3 }], ["2026-10-05", { "a/un": 97.8 }]]),
+      history("finance", [["2026-10-08", { "a/un": 53.1 }]]),
+    ], "a/un");
+    expect(series.map((s) => s.points.map((p) => p.value))).toEqual([[97.3, 97.8], [53.1]]);
+  });
+
+  it("range les runs d'un benchmark du plus ancien au plus récent", () => {
+    const [serie] = runsByBenchmark([history("factures", [["2026-07-15", { "a/un": 62 }], ["2026-05-15", { "a/un": 60 }]])], "a/un");
+    expect(serie!.points.map((p) => p.date)).toEqual(["2026-05-15", "2026-07-15"]);
   });
 
   it("place les runs sur l'axe du temps selon leur date, pas selon leur numéro d'ordre", () => {

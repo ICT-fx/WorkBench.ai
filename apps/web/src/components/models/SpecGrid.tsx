@@ -1,6 +1,7 @@
 import type { Lab, Modality, Model } from "@hub/schema";
-import type { Dictionary, Locale } from "@/i18n";
-import { price, tokens } from "@/lib/format";
+import { fill, type Dictionary, type Locale } from "@/i18n";
+import { date, price, tokens } from "@/lib/format";
+import { getHub } from "@/lib/site";
 import { Icon, type IconName } from "@/components/ui/Icon";
 
 const ICONE_MODALITE: Record<Modality, IconName> = {
@@ -23,6 +24,7 @@ function Spec({ label, children }: { label: string; children: React.ReactNode })
 export function SpecGrid({ model, lab, lang, dict }: { model: Model; lab: Lab; lang: Locale; dict: Dictionary }) {
   const t = dict.models.specs;
   const { labels, metrics } = dict.common;
+  const { versionsSyncedAt } = getHub();
   const pays = (dict.common.countries as Record<string, string>)[lab.country] ?? lab.country;
   const inconnu = <span className="text-encre-pale">{labels.unknown}</span>;
   const enTokens = (n: number | null) => (n === null ? inconnu : (
@@ -71,6 +73,14 @@ export function SpecGrid({ model, lab, lang, dict }: { model: Model; lab: Lab; l
         <Spec label={t.reasoning}>{model.reasoning ? t.yes : t.no}</Spec>
         <Spec label={t.gatewayId}>
           <span className="select-all break-all">{model.id}</span>
+          {/* L'identifiant ne porte pas de date : la version vers laquelle il pointait
+              le jour du relevé dit quel modèle a réellement été testé. */}
+          {model.canonicalSlug != null && model.canonicalSlug !== model.id && versionsSyncedAt !== null && (
+            <span className="mt-1 block text-sm text-encre-pale">
+              {fill(t.datedVersion, { date: date(versionsSyncedAt, lang, "long") })}{" "}
+              <span className="select-all break-all">{model.canonicalSlug}</span>
+            </span>
+          )}
         </Spec>
       </dl>
     </section>
