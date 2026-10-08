@@ -2,22 +2,24 @@ import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import {
-  BenchmarkHistorySchema, DocScoreSchema, ReviewItemSchema,
-  type BenchmarkHistory, type DocScore, type ReviewItem,
+  BenchmarkHistorySchema, DocScoreSchema, LeaderboardSchema, ModelCatalogueSchema, ReviewItemSchema,
+  type BenchmarkHistory, type DocScore, type ReviewItem, type RunCalendar,
 } from "@hub/schema";
 import { z } from "zod";
 import { createInterface } from "node:readline/promises";
 import { runTask } from "./run";
 import { selectForReview, type ReviewCandidate } from "./review";
-import { scoreDocument } from "./score";
-import { appendHistory, applyReview, buildLeaderboard } from "./publish";
+import { scoreResults } from "./score";
+import { appendHistory, applyReview, buildLeaderboard, documentsCommuns } from "./publish";
 import { existsSync } from "node:fs";
 import { fetchCatalogue, assertUsable, HUB_MODELS } from "./models";
 import { createOpenRouterGenerate } from "./openrouter";
 import { estimateRunCost } from "./estimate";
+import { PARAMETRES_APPEL, construireProtocole, documentsDuTest } from "./protocole";
 import {
-  loadTask, loadPrompt, loadDocuments, loadGroundTruths, loadRunResults,
-  runsRoot, publishedDir, pixelsTotaux, type LoadedDocument,
+  loadTask, loadPrompt, loadTaskDocuments, loadGroundTruths, loadRunResults,
+  loadExclusions, loadEchecsImputes, loadProtocole, loadCalendrier, sansExclusions,
+  DATA_ROOT, runsRoot, publishedDir, protocolesDir, pixelsTotaux, type LoadedDocument,
 } from "./load";
 
 const arg = (name: string): string | undefined => {
@@ -117,15 +119,39 @@ async function cmdRun(taskId: string): Promise<void> {
   assertUsable(catalogue, models);
 
   const [task, promptText, documents] = await Promise.all([
-    loadTask(taskId), loadPrompt(taskId), loadDocuments(taskId),
+    loadTask(taskId), loadPrompt(taskId), loadTaskDocuments(taskId),
   ]);
 
-  const subset = perimetre(documents);
+  // --test-publie : le test du classement publié, document pour document. C'est la
+  // voie pour ajouter un modèle sorti après coup : il passe ce que les autres ont
+  // passé, ou la commande s'arrête avant le premier appel.
+  let subset: LoadedDocument[];
+  if (flag("test-publie")) {
+    const protocole = await loadProtocole(taskId);
+    if (protocole === null) {
+      throw new Error(`Aucun test publié pour « ${taskId} » : publier d'abord, ou lancer sans --test-publie.`);
+    }
+    for (const option of ["limit", "max-pages", "max-pixels", "deja"]) {
+      if (arg(option) !== undefined) {
+        throw new Error(`--${option} ne se combine pas avec --test-publie : le test publié fixe déjà ses documents.`);
+      }
+    }
+    subset = documentsDuTest(protocole, documents, promptText, task.criteria);
+    console.log(`Test publié de « ${taskId} » (${protocole.runDate}) : ${subset.length} documents, ` +
+      `prompt ${protocole.promptHash}, barème ${protocole.criteriaHash} — identiques à la publication.`);
+  } else {
+    // Les questions écartées après un run ne sont ni rejouées ni notées : sans ce
+    // filtre, un rejeu leur renverrait des appels payants.
+    subset = perimetre(sansExclusions(documents, await loadExclusions(taskId)));
+  }
 
   // L'estimation ne passe aucun appel et n'exige aucune clé : on sait ce qu'on
   // va dépenser avant de le dépenser.
   if (flag("estimate")) {
-    const e = estimateRunCost(catalogue, models, subset.map((d) => ({ images: d.images.length })), promptText);
+    const e = estimateRunCost(catalogue, models, subset.map((d) => ({
+      images: d.images.length,
+      ...(d.promptText === undefined ? {} : { promptChars: d.promptText.length }),
+    })), promptText);
     const usd = (n: number) => `${n.toFixed(2)} $`;
     console.log(`Estimation : ${subset.length} documents × ${models.length} modèles = ${e.calls} appels\n`);
     for (const m of e.perModel) {
@@ -158,24 +184,22 @@ async function cmdRun(taskId: string): Promise<void> {
     outRoot: runsRoot,
     generate: createOpenRouterGenerate({
       apiKey,
-      // Le report sur un autre hébergeur est autorisé : l'interdire a fait
-      // échouer tous les appels d'un modèle dont l'hébergeur principal était
-      // en panne. L'hébergeur réellement utilisé est enregistré à chaque
-      // appel, ce qui suffit à rendre le run vérifiable.
-      provider: { allow_fallbacks: true },
-      // Certains modèles réfléchissent longuement avant de répondre : à 3 000
-      // jetons, quarante-trois réponses sont revenues vides ou tronquées,
-      // faute de place pour écrire le JSON après la réflexion.
-      maxTokens: 8000,
-      // Cohere atteint exactement ce plafond cinq fois sur six et n'a plus la
-      // place d'écrire sa réponse : l'appel est facturé pour rien, et la facture
-      // concernée est écartée du classement pour tout le panel.
-      maxTokensParModele: { "cohere/command-a-plus": 20000 },
+      // Les paramètres vivent dans `protocole.ts`, avec leurs raisons : la
+      // publication les consigne tels qu'ils ont servi.
+      provider: { allow_fallbacks: PARAMETRES_APPEL.allowProviderFallbacks },
+      maxTokens: PARAMETRES_APPEL.maxTokens,
+      maxTokensParModele: PARAMETRES_APPEL.maxTokensByModel,
       surReprise: (model, docId, tentative, ms) => {
         console.log(`  ↻ ${model} ${docId.slice(0, 8)} : reprise ${tentative} dans ${Math.round(ms / 1000)} s`);
       },
     }),
     resume: flag("resume"),
+    // La version datée de chaque alias, telle que le catalogue la donne à l'instant
+    // du lancement : c'est elle qui dira, plus tard, quel modèle a répondu.
+    canoniques: new Map(models.flatMap((m) => {
+      const canonique = catalogue.get(m)?.canonical;
+      return canonique === undefined ? [] : [[m, canonique] as const];
+    })),
     // Deux appels à la fois : au-delà, OpenRouter réserve plus de crédit que
     // le compte n'en a de disponible et refuse les requêtes.
     concurrency: Number(arg("concurrency") ?? 2),
@@ -190,7 +214,7 @@ async function cmdScore(taskId: string): Promise<void> {
   const runDir = join(runsRoot(), runId);
 
   const [task, groundTruths, results, documents] = await Promise.all([
-    loadTask(taskId), loadGroundTruths(taskId), loadRunResults(runDir), loadDocuments(taskId),
+    loadTask(taskId), loadGroundTruths(taskId), loadRunResults(runDir), loadTaskDocuments(taskId),
   ]);
   // La notation refuse --limit : ce filtre est positionnel, et le dossier des
   // documents grossit entre deux runs. Appliqué des mois plus tard, « les 25
@@ -205,21 +229,16 @@ async function cmdScore(taskId: string): Promise<void> {
       "(--max-pages, --max-pixels) ; la publication écarte ensuite les documents " +
       "que tout le panel n'a pas lus.");
   }
-  const retenus = new Set(perimetre(documents).map((d) => d.docId));
+  const retenus = new Set(
+    perimetre(sansExclusions(documents, await loadExclusions(taskId))).map((d) => d.docId));
 
-  const scores: DocScore[] = [];
   // Un document interrogé puis retiré du jeu — annotation illisible repérée à la
   // préparation — n'a plus de vérité terrain. Le noter est impossible, et faire
   // échouer la notation entière le serait tout autant : on l'écarte en le disant.
-  const sansReference = new Set<string>();
-  for (const result of results) {
-    if (result.error !== undefined) continue;
-    if (!retenus.has(result.docId)) continue;
-    const gt = groundTruths.get(result.docId);
-    if (gt === undefined) { sansReference.add(result.docId); continue; }
-    const parsed = (result.raw ?? {}) as Record<string, unknown>;
-    scores.push(DocScoreSchema.parse(scoreDocument(task, gt, parsed, result.model)));
-  }
+  const { scores: notes, sansReference } = scoreResults({
+    task, groundTruths, results, retenus, imputes: await loadEchecsImputes(taskId),
+  });
+  const scores = notes.map((s) => DocScoreSchema.parse(s));
 
   await writeFile(join(runDir, "scores.json"), `${JSON.stringify(scores, null, 2)}\n`);
   const sansRelecture = scores.filter((s) => !s.needsReview).length;
@@ -320,7 +339,18 @@ async function cmdReview(taskId: string): Promise<void> {
  * questions différentes.
  */
 async function cmdPublish(taskId: string): Promise<void> {
-  const runIds = (arg("run") ?? `${today()}_${taskId}`).split(",").map((r) => r.trim());
+  // --ajouter <run> : les runs déjà publiés, plus celui-ci. C'est la publication
+  // d'un modèle ajouté au test : rien n'est rejoué pour les autres.
+  const ajouter = arg("ajouter");
+  let runIds: string[];
+  if (ajouter !== undefined) {
+    const publie = join(publishedDir(), `${taskId}.json`);
+    if (!existsSync(publie)) throw new Error(`Rien n'est publié pour « ${taskId} » : --ajouter complète un classement existant.`);
+    const deja = LeaderboardSchema.parse(JSON.parse(await readFile(publie, "utf8"))).runId.split("+");
+    runIds = [...new Set([...deja, ...ajouter.split(",").map((r) => r.trim())])];
+  } else {
+    runIds = (arg("run") ?? `${today()}_${taskId}`).split(",").map((r) => r.trim());
+  }
   const runDirs = runIds.map((r) => join(runsRoot(), r));
 
   const task = await loadTask(taskId);
@@ -381,6 +411,34 @@ async function cmdPublish(taskId: string): Promise<void> {
     // Première publication de ce benchmark : pas encore d'historique.
   }
   await writeFile(historyFile, `${JSON.stringify(appendHistory(history, leaderboard), null, 2)}\n`);
+
+  // Le test figé : ce qu'il faudra renvoyer, à l'identique, à un modèle qui n'existe
+  // pas encore. Écrit avec le classement, pour qu'ils ne puissent pas diverger.
+  const catalogueFichier = join(DATA_ROOT, "catalogue", "models.json");
+  const catalogue = existsSync(catalogueFichier)
+    ? ModelCatalogueSchema.parse(JSON.parse(await readFile(catalogueFichier, "utf8")))
+    : null;
+  const calendriers = new Map<string, RunCalendar>();
+  for (const [i, runDir] of runDirs.entries()) {
+    const calendrier = await loadCalendrier(runDir);
+    if (calendrier !== null) calendriers.set(runIds[i]!, calendrier);
+  }
+  const { incomplets: _, ...publie } = leaderboard;
+  const protocole = construireProtocole({
+    leaderboard: publie,
+    criteria: task.criteria,
+    promptText: await loadPrompt(taskId),
+    documents: await loadTaskDocuments(taskId),
+    results,
+    // Les mêmes documents que le classement : ceux que tout le panel a lus.
+    docIds: documentsCommuns(scores),
+    calendriers,
+    canoniques: new Map((catalogue?.models ?? []).flatMap((m) =>
+      (m.canonicalSlug == null ? [] : [[m.id, m.canonicalSlug] as const]))),
+    ...(catalogue?.versionsSyncedAt === undefined ? {} : { canoniquesAu: catalogue.versionsSyncedAt }),
+  });
+  await mkdir(protocolesDir(), { recursive: true });
+  await writeFile(join(protocolesDir(), `${taskId}.json`), `${JSON.stringify(protocole, null, 2)}\n`);
 
   if (leaderboard.incomplets > 0) {
     console.log(`${leaderboard.incomplets} document(s) écarté(s) : tout le panel ne les a pas lus.`);

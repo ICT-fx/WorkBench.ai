@@ -144,6 +144,25 @@ describe("appendHistory", () => {
     expect(h.runs[0]!.rows[0]!.exactitude).toBe(93);
   });
 
+  // Les factures ont été publiées trois fois, sur 56, 70 puis 100 documents : le
+  // même test, complété. L'historique en faisait trois points « dans le temps ».
+  it("remplace une publication dont elle reprend tous les runs : élargir un test ne re-teste personne", () => {
+    const etape = (runId: string, runDate: string, exactitude: number): Leaderboard =>
+      ({ ...publication(runDate, "reel", exactitude), runId });
+    let h = appendHistory(null, etape("a+b", "2026-10-02", 97.3));
+    h = appendHistory(h, etape("a+b+c", "2026-10-04", 96.8));
+    h = appendHistory(h, etape("a+b+c+d", "2026-10-05", 97.8));
+    expect(h.runs.map((r) => [r.runId, r.rows[0]!.exactitude])).toEqual([["a+b+c+d", 97.8]]);
+  });
+
+  it("garde un vrai re-test : des runs que la publication d'avant n'avait pas tous", () => {
+    const etape = (runId: string, runDate: string): Leaderboard => ({ ...publication(runDate, "reel"), runId });
+    const h = appendHistory(appendHistory(null, etape("a+b", "2026-10-05")), etape("e+f", "2027-01-15"));
+    expect(h.runs.map((r) => r.runId)).toEqual(["a+b", "e+f"]);
+    // Reprendre une partie seulement des anciens runs n'est pas les compléter.
+    expect(appendHistory(h, etape("a+g", "2027-03-01")).runs.map((r) => r.runId)).toEqual(["a+b", "e+f", "a+g"]);
+  });
+
   it("efface les runs de démonstration à la première mesure réelle", () => {
     const demo = appendHistory(appendHistory(null, publication("2026-07-15", "demo")), publication("2026-09-15", "demo"));
     const h = appendHistory(demo, publication("2026-10-08", "reel"));

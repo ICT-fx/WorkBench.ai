@@ -42,4 +42,12 @@ describe("estimateRunCost", () => {
     const e = estimateRunCost(catalogue, ["b/econome", "a/cher"], [{ images: 1 }], prompt, hypotheses);
     expect(e.perModel.map((m) => m.model)).toEqual(["a/cher", "b/econome"]);
   });
+
+  it("compte le prompt de chaque document quand il lui est propre", () => {
+    // 400 caractères de gabarit, soit 100 tokens ; un document porte 800 caractères.
+    const commun = estimateRunCost(catalogue, ["a/cher"], [{ images: 1 }], prompt, hypotheses);
+    const propre = estimateRunCost(catalogue, ["a/cher"], [{ images: 1, promptChars: 800 }], prompt, hypotheses);
+    expect(commun.perModel[0]!.inputTokens).toBe(1100);
+    expect(propre.perModel[0]!.inputTokens).toBe(1200);
+  });
 });

@@ -159,3 +159,57 @@ describe("mentions", () => {
       "Pas de TVA sur cette facture")).toBe("faux");
   });
 });
+
+describe("nombres arrondis d'un rapport américain", () => {
+  // Les références de FinanceBench sont arrondies, et le rapport écrit ses
+  // décimales avec un point : la tolérance et la lecture suivent le document.
+  const fin: Criterion = {
+    id: "calcul", label: "Calcul", kind: "number", weight: 1, critical: true,
+    toleranceRelative: 0.005, decimalSeparator: ".",
+  };
+
+  it.each([
+    ["1616.00", 1615.9, "correct"],     // la page porte 1 615,9, la référence arrondit
+    ["303.00", 302.578, "correct"],     // 302 578 milliers, rendus en millions
+    ["303.00", 302578, "faux"],         // l'unité demandée n'est pas respectée
+    ["1.9", 1.94, "correct"],           // moitié du dernier chiffre affiché : 0,05
+    ["1.9", 2.0, "faux"],
+    ["0.66", "0.664", "correct"],
+    ["1.73", "1.734", "correct"],       // 1,734 et non 1 734
+    ["-0.02", -0.019, "correct"],
+    ["-0.02", 0.02, "faux"],            // le signe compte
+    ["1.9", "1.9%", "correct"],         // l'écriture ne fait pas tomber une valeur juste
+    ["1616.00", "$1,616", "correct"],
+    ["0", 0, "correct"],
+    ["0", 411, "faux"],
+  ] as const)("attendu %s, produit %s → %s", (attendu, produit, verdict) => {
+    expect(compareField(fin, attendu, produit)).toBe(verdict);
+  });
+
+  it("garde la lecture française quand le séparateur n'est pas fixé", () => {
+    expect(compareField(num, 1234, "1.234")).toBe("correct");
+  });
+});
+
+describe("libellé parmi plusieurs formes acceptées", () => {
+  it("accepte l'une des formes, sans égard à la casse ni à la ponctuation", () => {
+    expect(compareField(exact, ["Corporate", "Corporate segment"], "corporate")).toBe("correct");
+    expect(compareField(exact, ["operations", "operating activities"], "Operating activities")).toBe("correct");
+  });
+
+  it("refuse un libellé qui contient la forme attendue sans l'être", () => {
+    // Une comparaison par inclusion compterait juste un autre segment de la banque.
+    expect(compareField(exact, ["Corporate", "Corporate segment"], "Corporate & Investment Bank")).toBe("faux");
+  });
+
+  it("lit un verdict sans le prendre pour une abstention", () => {
+    expect(compareField(exact, "yes", "Yes")).toBe("correct");
+    expect(compareField(exact, "no", "no")).toBe("correct");
+    expect(compareField(exact, "no", "yes")).toBe("faux");
+  });
+
+  it("distingue « il n'y en a pas » d'un poste inventé", () => {
+    expect(compareField(exact, null, "None")).toBe("correct");
+    expect(compareField(exact, null, "Class A notes")).toBe("hallucine");
+  });
+});

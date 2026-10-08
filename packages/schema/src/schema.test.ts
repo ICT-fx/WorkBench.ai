@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { TaskSchema, GroundTruthSchema, LeaderboardSchema, ModelResultSchema } from "./index";
+import { TaskSchema, GroundTruthSchema, LeaderboardSchema, ModelResultSchema, CriterionSchema } from "./index";
 
 describe("TaskSchema", () => {
   it("accepte une tâche minimale valide", () => {
@@ -97,5 +97,24 @@ describe("Value imbriqué", () => {
     };
     const lignes = GroundTruthSchema.parse(gt).fields.lignes as Array<Record<string, unknown>>;
     expect(lignes[0]!.taux_tva).toBeNull();
+  });
+});
+
+describe("réglages d'un critère", () => {
+  const base = { id: "calcul", label: "Calcul", kind: "number", weight: 1, critical: true };
+
+  it("accepte une clé de réponse, une tolérance relative et un séparateur décimal", () => {
+    const c = CriterionSchema.parse({ ...base, key: "answer", toleranceRelative: 0.005, decimalSeparator: "." });
+    expect(c.key).toBe("answer");
+    expect(c.toleranceRelative).toBe(0.005);
+    expect(c.decimalSeparator).toBe(".");
+  });
+
+  it("refuse un séparateur qui n'est ni le point ni la virgule", () => {
+    expect(() => CriterionSchema.parse({ ...base, decimalSeparator: ";" })).toThrow();
+  });
+
+  it("refuse une tolérance relative négative", () => {
+    expect(() => CriterionSchema.parse({ ...base, toleranceRelative: -1 })).toThrow();
   });
 });

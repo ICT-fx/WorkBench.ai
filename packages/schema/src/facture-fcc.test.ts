@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
-import { TaskSchema } from "./index";
+import { readFileSync, readdirSync } from "node:fs";
+import { TaskSchema, GroundTruthSchema } from "./index";
 
 const task = TaskSchema.parse(
   JSON.parse(readFileSync("data/tasks/facture-fcc/task.json", "utf8")),
@@ -48,5 +48,17 @@ describe("prompt facture-fcc", () => {
 
   it("fixe le format des montants", () => {
     expect(prompt.toLowerCase()).toMatch(/no currency symbol|no thousands/);
+  });
+});
+
+describe("vérités terrain facture-fcc", () => {
+  it("déclarent toutes les deux champs notés : un champ omis ne serait pas noté", () => {
+    // Depuis qu'un champ omis vaut « non posé », un oubli dans la vérité terrain
+    // sortirait le document de la note sans bruit. Ici, tout est posé partout.
+    const dossier = "data/tasks/facture-fcc/ground-truth";
+    for (const fichier of readdirSync(dossier)) {
+      const gt = GroundTruthSchema.parse(JSON.parse(readFileSync(`${dossier}/${fichier}`, "utf8")));
+      for (const c of task.criteria) expect(c.id in gt.fields, `${fichier} · ${c.id}`).toBe(true);
+    }
   });
 });

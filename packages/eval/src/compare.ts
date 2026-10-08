@@ -28,13 +28,15 @@ export function normalizeGot(got: unknown): Value | null {
 }
 
 /** Lit un montant, quel que soit le format de rendu du modèle. */
-export function parseNumber(v: Value): number | null {
+export function parseNumber(v: Value, decimalSeparator?: "." | ","): number | null {
   if (typeof v === "number") return Number.isFinite(v) ? v : null;
   if (typeof v !== "string") return null;
 
   let s = v.replace(/[\s   ]/g, "");
   s = s.replace(/(eur|euros?|chf|usd|dollars?|francs?)/gi, "");
   s = s.replace(/[€$£]/g, "");
+  // Un pourcentage écrit avec son signe reste le nombre demandé.
+  s = s.replace(/%$/, "");
 
   let negative = false;
   if (/^\(.*\)$/.test(s)) {
@@ -50,7 +52,10 @@ export function parseNumber(v: Value): number | null {
   const lastDot = s.lastIndexOf(".");
   const lastComma = s.lastIndexOf(",");
 
-  if (lastDot >= 0 && lastComma >= 0) {
+  if (decimalSeparator !== undefined) {
+    // Le document fixe la convention : rien à deviner, l'autre signe sépare les milliers.
+    s = s.split(decimalSeparator === "." ? "," : ".").join("").replace(",", ".");
+  } else if (lastDot >= 0 && lastComma >= 0) {
     // Le séparateur le plus à droite est le décimal, l'autre marque les milliers.
     const [decimal, thousands] = lastComma > lastDot ? [",", "."] : [".", ","];
     s = s.split(thousands).join("").replace(decimal, ".");
@@ -208,6 +213,36 @@ export function compareLines(expected: Value, got: Value): FieldVerdict {
 }
 
 /**
+ * La moitié du dernier chiffre qu'une référence affiche : « 1.9 » → 0,05.
+ *
+ * Seule une référence gardée en chaîne porte son écriture ; un nombre JSON a
+ * déjà perdu ses zéros, et ne dit plus à quelle décimale il a été arrondi.
+ */
+function demiUnite(expected: Value, decimalSeparator: "." | ","): number {
+  if (typeof expected !== "string") return 0;
+  const decimales = expected.trim().split(decimalSeparator)[1]?.replace(/\D/g, "").length ?? 0;
+  return 0.5 * 10 ** -decimales;
+}
+
+/**
+ * L'écart admis autour d'une référence numérique.
+ *
+ * Sans tolérance relative, c'est l'écart absolu du critère — zéro pour une
+ * facture, qui se lit au centime. Avec, la référence est un arrondi : on admet
+ * le plus large de la proportion demandée et de la demi-unité affichée, sans
+ * quoi un modèle qui lit le chiffre exact de la page serait compté faux.
+ */
+function toleranceNombre(criterion: Criterion, expected: Value, e: number): number {
+  const absolue = criterion.tolerance ?? 0;
+  if (criterion.toleranceRelative === undefined) return absolue;
+  return Math.max(
+    absolue,
+    criterion.toleranceRelative * Math.abs(e),
+    demiUnite(expected, criterion.decimalSeparator ?? "."),
+  );
+}
+
+/**
  * Le verdict d'un champ.
  *
  * L'ordre de décision est imposé : l'absence se juge avant le contenu, car
@@ -222,10 +257,10 @@ export function compareField(criterion: Criterion, expected: Value | null, got: 
 
   switch (criterion.kind) {
     case "number": {
-      const e = parseNumber(expected);
-      const o = parseNumber(g);
+      const e = parseNumber(expected, criterion.decimalSeparator);
+      const o = parseNumber(g, criterion.decimalSeparator);
       if (e === null || o === null) return "faux";
-      return Math.abs(e - o) <= (criterion.tolerance ?? 0) ? "correct" : "faux";
+      return Math.abs(e - o) <= toleranceNombre(criterion, expected, e) ? "correct" : "faux";
     }
     case "date": {
       const e = parseDate(expected, criterion.dateOrder);
@@ -233,8 +268,14 @@ export function compareField(criterion: Criterion, expected: Value | null, got: 
       if (e === null || o === null) return "faux";
       return e === o ? "correct" : "faux";
     }
-    case "exact":
-      return normalizeExact(expected) === normalizeExact(g) ? "correct" : "faux";
+    case "exact": {
+      // Un libellé s'écrit parfois de plusieurs façons : la référence est alors
+      // la liste des formes acceptées. L'égalité reste entière — par inclusion,
+      // « Corporate & Investment Bank » passerait pour « Corporate ».
+      const formes = Array.isArray(expected) ? expected : [expected];
+      const produit = normalizeExact(g);
+      return formes.some((f) => normalizeExact(f) === produit) ? "correct" : "faux";
+    }
     case "lines":
       return compareLines(expected, g);
     case "text":

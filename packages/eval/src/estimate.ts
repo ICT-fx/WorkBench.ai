@@ -46,7 +46,8 @@ export type Estimation = {
 export function estimateRunCost(
   catalogue: Catalogue,
   models: readonly string[],
-  documents: { images: number }[],
+  /** `promptChars` : la longueur du prompt propre au document, quand il en a un. */
+  documents: { images: number; promptChars?: number }[],
   promptText: string,
   hypotheses: Hypotheses = HYPOTHESES_PAR_DEFAUT,
 ): Estimation {
@@ -55,7 +56,9 @@ export function estimateRunCost(
   const perModel = models.map((model) => {
     const entry = catalogue.get(model);
     const inputTokens = documents.reduce(
-      (acc, d) => acc + promptTokens + d.images * hypotheses.imageTokens, 0);
+      (acc, d) => acc
+        + (d.promptChars === undefined ? promptTokens : Math.ceil(d.promptChars / hypotheses.charsPerToken))
+        + d.images * hypotheses.imageTokens, 0);
     const outputTokens = documents.length * hypotheses.outputTokens;
     return {
       model,

@@ -30,6 +30,8 @@ export type CatalogueEntry = {
   inputPrice: number;
   outputPrice: number;
   acceptsImages: boolean;
+  /** La version datée vers laquelle l'identifiant pointe aujourd'hui, si le catalogue la donne. */
+  canonical?: string;
 };
 
 export type Catalogue = Map<string, CatalogueEntry>;
@@ -40,6 +42,8 @@ type RawModel = {
   id: string;
   name?: string;
   type?: string;
+  /** OpenRouter : `anthropic/claude-opus-5.5-20260921` pour `anthropic/claude-opus-5.5`. */
+  canonical_slug?: string;
   /** Forme de la passerelle Vercel. */
   modalities?: { input?: string[] };
   /** Forme d'OpenRouter. */
@@ -61,6 +65,7 @@ export function parseCatalogue(payload: unknown): Catalogue {
       inputPrice: Number(m.pricing?.prompt ?? m.pricing?.input ?? 0),
       outputPrice: Number(m.pricing?.completion ?? m.pricing?.output ?? 0),
       acceptsImages: entrees.includes("image"),
+      ...(m.canonical_slug === undefined || m.canonical_slug === "" ? {} : { canonical: m.canonical_slug }),
     });
   }
   return catalogue;

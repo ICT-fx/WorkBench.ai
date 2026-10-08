@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile, access } from "node:fs/promises";
 import { join } from "node:path";
 import type { ModelResult, RunMeta, Task } from "@hub/schema";
-import { ModelResultSchema } from "@hub/schema";
+import { ModelResultSchema, RunMetaSchema } from "@hub/schema";
 
 export type GenerateArgs = {
   model: string;
@@ -48,7 +48,8 @@ export class ErreurFacturee extends Error {
 export type RunTaskOptions = {
   task: Task;
   promptText: string;
-  documents: { docId: string; images: Buffer[] }[];
+  /** `promptText` : le prompt propre au document, quand la tâche en compose un par question. */
+  documents: { docId: string; images: Buffer[]; promptText?: string }[];
   models: string[];
   runId: string;
   /** Racine des runs. Fonction pour faciliter les tests. */
@@ -56,9 +57,22 @@ export type RunTaskOptions = {
   generate: GenerateFn;
   resume?: boolean;
   concurrency?: number;
+  /** La version datée de chaque alias au lancement, lue dans le catalogue. */
+  canoniques?: ReadonlyMap<string, string>;
+  /** L'horloge, pour que les tests fixent l'instant de chaque appel. */
+  maintenant?: () => Date;
 };
 
 export type RunSummary = { calls: number; errors: number; reused: number; runDir: string };
+
+/** Le `run.json` d'un passage précédent, ou rien s'il manque ou s'il est illisible. */
+async function lireMeta(fichier: string): Promise<RunMeta | null> {
+  try {
+    return RunMetaSchema.parse(JSON.parse(await readFile(fichier, "utf8")));
+  } catch {
+    return null;
+  }
+}
 
 /** Un alias de modèle contient une barre oblique, un nom de dossier non. */
 const slug = (model: string): string => model.replace(/\//g, "_");
@@ -107,7 +121,10 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
 
   let errors = 0;
   let reused = 0;
+  // La version servie par un appel de ce passage prime sur celle d'une réponse
+  // réutilisée : sans cela, la version enregistrée dépendrait de l'ordre de traitement.
   const versions = new Map<string, string>();
+  const versionsReutilisees = new Map<string, string>();
 
   await pool(jobs, opts.concurrency ?? 4, async ({ model, doc }) => {
     const dir = join(runDir, "raw", slug(model));
@@ -119,16 +136,20 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
       // Un échec se rejoue ; une réponse valide déjà payée se conserve.
       if (previous.error === undefined) {
         reused++;
-        versions.set(model, previous.modelVersion);
+        versionsReutilisees.set(model, previous.modelVersion);
         return;
       }
     }
 
     const started = Date.now();
+    // L'instant de l'appel, relevé avant de le passer : c'est la date à laquelle
+    // le modèle a été interrogé, pas celle où sa réponse a fini d'arriver.
+    const calledAt = (opts.maintenant?.() ?? new Date()).toISOString();
     let result: ModelResult;
     try {
       const r = await opts.generate({
-        model, docId: doc.docId, promptText: opts.promptText, images: doc.images, task: opts.task,
+        model, docId: doc.docId, promptText: doc.promptText ?? opts.promptText,
+        images: doc.images, task: opts.task,
       });
       versions.set(model, r.modelVersion);
       result = {
@@ -137,19 +158,21 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
         ...(r.provider === undefined ? {} : { provider: r.provider }),
         ...(r.inputTokens === undefined ? {} : { inputTokens: r.inputTokens }),
         ...(r.outputTokens === undefined ? {} : { outputTokens: r.outputTokens }),
+        calledAt,
       };
     } catch (e) {
       errors++;
       const f = e instanceof ErreurFacturee ? e.facture : undefined;
       result = {
         runId: opts.runId, model,
-        modelVersion: f?.modelVersion ?? versions.get(model) ?? model,
+        modelVersion: f?.modelVersion ?? versions.get(model) ?? versionsReutilisees.get(model) ?? model,
         docId: doc.docId,
         raw: null, latencyMs: Date.now() - started,
         costUsd: f?.costUsd ?? 0,
         ...(f?.provider === undefined ? {} : { provider: f.provider }),
         ...(f?.inputTokens === undefined ? {} : { inputTokens: f.inputTokens }),
         ...(f?.outputTokens === undefined ? {} : { outputTokens: f.outputTokens }),
+        calledAt,
         error: e instanceof Error ? e.message : String(e),
       };
     }
@@ -162,13 +185,29 @@ export async function runTask(opts: RunTaskOptions): Promise<RunSummary> {
   // n'est pas celui qui a produit les chiffres.
   await writeFile(join(runDir, "prompt.md"), opts.promptText);
 
+  // Reprendre un run avec quelques modèles seulement — rejouer leurs échecs — ne doit pas
+  // effacer la trace des autres : le run décrit tout ce qui a été exécuté, pas le dernier
+  // passage. Les modèles relancés voient leur version mise à jour.
+  const precedent = opts.resume ? await lireMeta(join(runDir, "run.json")) : null;
+  const modeles = new Map((precedent?.models ?? []).map((m) => [m.alias, m.version] as const));
+  const canoniques = new Map((precedent?.models ?? []).flatMap((m) =>
+    (m.canonical === undefined ? [] : [[m.alias, m.canonical] as const])));
+  for (const alias of opts.models) {
+    modeles.set(alias, versions.get(alias) ?? versionsReutilisees.get(alias) ?? modeles.get(alias) ?? alias);
+    // Un modèle relancé prend la version datée du jour : c'est celle qui vient de répondre.
+    const canonique = opts.canoniques?.get(alias);
+    if (canonique !== undefined) canoniques.set(alias, canonique);
+  }
   const meta: RunMeta = {
     runId: opts.runId,
     taskId: opts.task.id,
-    startedAt: new Date().toISOString(),
-    models: opts.models.map((alias) => ({ alias, version: versions.get(alias) ?? alias })),
+    startedAt: precedent?.startedAt ?? new Date().toISOString(),
+    models: [...modeles].map(([alias, version]) => ({
+      alias, version,
+      ...(canoniques.has(alias) ? { canonical: canoniques.get(alias)! } : {}),
+    })),
     promptHash: createHash("sha256").update(opts.promptText).digest("hex").slice(0, 12),
-    docCount: opts.documents.length,
+    docCount: Math.max(precedent?.docCount ?? 0, opts.documents.length),
   };
   await writeFile(join(runDir, "run.json"), `${JSON.stringify(meta, null, 2)}\n`);
 

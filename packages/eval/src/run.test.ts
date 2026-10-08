@@ -52,6 +52,34 @@ describe("runTask", () => {
       .toEqual(["f-001.json", "f-002.json"]);
   });
 
+  it("date chaque appel, réussi ou non", async () => {
+    const instants = ["2026-10-08T10:00:00.000Z", "2026-10-08T10:00:07.000Z"];
+    let i = 0;
+    await runTask({
+      ...base, runId: "r-date", models: ["a/x"], concurrency: 1,
+      maintenant: () => new Date(instants[i++]!),
+      generate: fakeGenerate((_, docId) => { if (docId === "f-002") throw new Error("panne"); }),
+    });
+    const lu = async (doc: string) => JSON.parse(await readFile(join(out, "r-date", "raw", "a_x", `${doc}.json`), "utf8"));
+    expect((await lu("f-001")).calledAt).toBe("2026-10-08T10:00:00.000Z");
+    expect(await lu("f-002")).toMatchObject({ calledAt: "2026-10-08T10:00:07.000Z", error: "panne" });
+  });
+
+  it("consigne la version datée de chaque alias, et la garde quand le run est repris sans lui", async () => {
+    const canoniques = new Map([["a/x", "a/x-20260921"], ["b/y", "b/y-20260902"]]);
+    await runTask({ ...base, runId: "r-version", models: ["a/x", "b/y"], generate: fakeGenerate(), canoniques });
+    await runTask({
+      ...base, runId: "r-version", models: ["b/y"], generate: fakeGenerate(), resume: true,
+      canoniques: new Map([["b/y", "b/y-20261001"]]),
+    });
+    const meta = JSON.parse(await readFile(join(out, "r-version", "run.json"), "utf8"));
+    expect(meta.models).toEqual([
+      { alias: "a/x", version: "a/x-2026-08-01", canonical: "a/x-20260921" },
+      // Relancé : il prend la version datée du jour de la reprise.
+      { alias: "b/y", version: "b/y-2026-08-01", canonical: "b/y-20261001" },
+    ]);
+  });
+
   it("capture la version réelle du modèle, pas l'alias demandé", async () => {
     await runTask({ ...base, runId: "r2", models: ["a/x"], generate: fakeGenerate() });
     const raw = JSON.parse(await readFile(join(out, "r2", "raw", "a_x", "f-001.json"), "utf8"));
@@ -121,6 +149,63 @@ describe("runTask", () => {
     expect(meta.models.map((m: { alias: string }) => m.alias).sort()).toEqual(["a/x", "b/y"]);
     expect(meta.models[0].version).toMatch(/2026-08-01/);
     expect(meta.promptHash).toMatch(/^[0-9a-f]{12}$/);
+  });
+
+  it("garde tous les modèles du run quand on le reprend avec quelques-uns seulement", async () => {
+    // Rejouer les échecs de deux modèles ne doit pas effacer la trace des vingt-cinq autres.
+    await runTask({ ...base, runId: "r8", models: ["a/x", "b/y", "c/z"], generate: fakeGenerate() });
+    await runTask({ ...base, runId: "r8", models: ["b/y"], resume: true, generate: fakeGenerate() });
+    const meta = JSON.parse(await readFile(join(out, "r8", "run.json"), "utf8"));
+    expect(meta.models.map((m: { alias: string }) => m.alias).sort()).toEqual(["a/x", "b/y", "c/z"]);
+    expect(meta.docCount).toBe(2);
+  });
+
+  it("garde le nombre de documents du run quand la reprise n'en rejoue qu'une partie", async () => {
+    await runTask({ ...base, runId: "r9", models: ["a/x"], generate: fakeGenerate() });
+    await runTask({ ...base, runId: "r9", models: ["a/x"], documents: documents.slice(0, 1), resume: true, generate: fakeGenerate() });
+    expect(JSON.parse(await readFile(join(out, "r9", "run.json"), "utf8")).docCount).toBe(2);
+  });
+
+  it("met à jour la version d'un modèle relancé", async () => {
+    await runTask({ ...base, runId: "r10", models: ["a/x"], generate: fakeGenerate() });
+    const rejoue: GenerateFn = async ({ model }) => ({ object: {}, modelVersion: `${model}-2026-09-01`, latencyMs: 1, costUsd: 0 });
+    // Un échec qu'on rejoue : la nouvelle version servie remplace l'ancienne.
+    await writeFile(join(out, "r10", "raw", "a_x", "f-001.json"), JSON.stringify({
+      runId: "r10", model: "a/x", modelVersion: "a/x", docId: "f-001", raw: null, latencyMs: 1, costUsd: 0, error: "429",
+    }));
+    await runTask({ ...base, runId: "r10", models: ["a/x"], resume: true, generate: rejoue });
+    const meta = JSON.parse(await readFile(join(out, "r10", "run.json"), "utf8"));
+    expect(meta.models).toEqual([{ alias: "a/x", version: "a/x-2026-09-01" }]);
+  });
+});
+
+describe("une question par document", () => {
+  it("envoie à chaque document son propre prompt, et fige le gabarit avec le run", async () => {
+    const recus: string[] = [];
+    const generate: GenerateFn = async ({ model, docId, promptText }) => {
+      recus.push(`${docId}:${promptText}`);
+      return { object: {}, modelVersion: `${model}-v`, latencyMs: 10, costUsd: 0.001 };
+    };
+    await runTask({
+      ...base, runId: "r-questions", models: ["a/x"], concurrency: 1, generate,
+      promptText: "gabarit {{question}}",
+      documents: [
+        { docId: "q-1", images: [Buffer.from("p1")], promptText: "gabarit capex ?" },
+        { docId: "q-2", images: [Buffer.from("p2")], promptText: "gabarit dette ?" },
+      ],
+    });
+    expect(recus).toEqual(["q-1:gabarit capex ?", "q-2:gabarit dette ?"]);
+    expect(await readFile(join(out, "r-questions", "prompt.md"), "utf8")).toBe("gabarit {{question}}");
+  });
+
+  it("garde le prompt de la tâche pour un document qui n'en porte pas", async () => {
+    const recus: string[] = [];
+    const generate: GenerateFn = async ({ model, promptText }) => {
+      recus.push(promptText);
+      return { object: {}, modelVersion: `${model}-v`, latencyMs: 10, costUsd: 0.001 };
+    };
+    await runTask({ ...base, runId: "r-commun", models: ["a/x"], generate });
+    expect(recus).toEqual(["prompt", "prompt"]);
   });
 });
 

@@ -15,6 +15,28 @@ export const CriterionSchema = z.object({
   /** Écart toléré pour les critères numériques. 0 = au centime près. */
   tolerance: z.number().min(0).optional(),
   /**
+   * Écart toléré en proportion de la référence : 0.005 vaut 0,5 %.
+   *
+   * Sert aux références arrondies par leur annotateur — la page porte 1 615,9,
+   * la référence dit 1 616. S'y ajoute alors la moitié du dernier chiffre que la
+   * référence affiche (« 1.9 » → 0,05) ; le plus large des écarts s'applique.
+   */
+  toleranceRelative: z.number().min(0).optional(),
+  /**
+   * Le signe décimal du document, pour les critères de kind "number".
+   * Quand il est fixé, l'autre signe sépare les milliers : sur un rapport
+   * américain, « 1.734 » vaut 1,734 et non 1 734. Sans lui, la lecture devine,
+   * ce qui suffit à des montants mais pas à des ratios.
+   */
+  decimalSeparator: z.enum([".", ","]).optional(),
+  /**
+   * La clé JSON où lire la réponse du modèle, quand elle diffère de `id`.
+   *
+   * Sert aux tâches où chaque document ne pose qu'une question : le modèle
+   * répond toujours sous la même clé, sans avoir à savoir quel critère le note.
+   */
+  key: z.string().min(1).optional(),
+  /**
    * Convention de lecture des dates chiffrées, pour les critères de kind "date".
    * "DMY" (défaut) : 02/03 = 2 mars, usage français.
    * "MDY" : 02/03 = 3 février, usage américain.

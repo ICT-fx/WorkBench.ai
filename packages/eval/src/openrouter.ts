@@ -5,25 +5,74 @@ import { HttpError, reessayer } from "./retry";
 const BASE = "https://openrouter.ai/api/v1/chat/completions";
 
 /**
+ * Longueur du texte conservé quand une réponse n'a pas pu être lue.
+ *
+ * Ce texte est tout ce qui reste d'un appel facturé : 160 caractères ne
+ * permettaient pas de dire si le refus venait du modèle ou de notre extracteur.
+ */
+const TEXTE_CONSERVE = 2000;
+
+/**
+ * Les objets JSON de premier niveau d'un texte, dans l'ordre où ils apparaissent.
+ *
+ * On parcourt le texte en comptant les accolades, chaînes de caractères
+ * comprises : une accolade écrite dans une chaîne ne ferme rien. Un fragment
+ * qui ressemble à un objet sans en être un — une accolade de prose, une
+ * formule — est sauté.
+ */
+function objetsJson(texte: string): Record<string, unknown>[] {
+  const objets: Record<string, unknown>[] = [];
+  let i = 0;
+  while (i < texte.length) {
+    if (texte[i] !== "{") { i++; continue; }
+    let profondeur = 0, dansChaine = false, fin = -1;
+    for (let j = i; j < texte.length; j++) {
+      const c = texte[j]!;
+      if (dansChaine) {
+        if (c === "\\") j++;
+        else if (c === '"') dansChaine = false;
+      } else if (c === '"') dansChaine = true;
+      else if (c === "{") profondeur++;
+      else if (c === "}" && --profondeur === 0) { fin = j; break; }
+    }
+    if (fin < 0) { i++; continue; }
+    try {
+      const v: unknown = JSON.parse(texte.slice(i, fin + 1));
+      if (typeof v === "object" && v !== null && !Array.isArray(v)) {
+        objets.push(v as Record<string, unknown>);
+        i = fin + 1;
+        continue;
+      }
+    } catch { /* ce n'était pas du JSON */ }
+    i++;
+  }
+  return objets;
+}
+
+/**
  * Isole l'objet JSON d'une réponse de modèle.
  *
- * Les modèles encadrent volontiers leur JSON de texte ou de balises de code.
- * Refuser ces réponses reviendrait à mesurer le respect d'une consigne de
- * forme plutôt que la lecture du document ; on extrait donc l'objet.
+ * Les modèles encadrent volontiers leur JSON de texte ou de balises de code, et
+ * le font suivre d'un calcul qui contient lui-même des accolades. Refuser ces
+ * réponses reviendrait à mesurer le respect d'une consigne de forme plutôt que
+ * la lecture du document ; on extrait donc l'objet.
+ *
+ * Quand le modèle a écrit la même réponse deux fois, on la prend. Quand il a
+ * écrit plusieurs objets, on les réunit tant qu'ils ne se contredisent pas.
+ * Quand deux d'entre eux donnent des valeurs différentes à une même clé, on ne
+ * choisit pas à sa place : l'appel est traité comme inexploitable, et rejoué.
  */
 export function extraireJson(contenu: string): Record<string, unknown> | null {
-  const sansBalises = contenu.replace(/```(?:json)?/gi, "");
-  const debut = sansBalises.indexOf("{");
-  const fin = sansBalises.lastIndexOf("}");
-  if (debut < 0 || fin <= debut) return null;
-  try {
-    const v: unknown = JSON.parse(sansBalises.slice(debut, fin + 1));
-    return typeof v === "object" && v !== null && !Array.isArray(v)
-      ? (v as Record<string, unknown>)
-      : null;
-  } catch {
-    return null;
+  const objets = objetsJson(contenu.replace(/```(?:json)?/gi, ""));
+  if (objets.length === 0) return null;
+  const reunion: Record<string, unknown> = {};
+  for (const objet of objets) {
+    for (const [cle, valeur] of Object.entries(objet)) {
+      if (cle in reunion && JSON.stringify(reunion[cle]) !== JSON.stringify(valeur)) return null;
+      reunion[cle] = valeur;
+    }
   }
+  return reunion;
 }
 
 export type ProviderOptions = {
@@ -137,12 +186,12 @@ export function createOpenRouterGenerate(opts: OpenRouterOptions): GenerateFn {
     if (objet === null) {
       // L'appel a été facturé même si sa réponse est inutilisable.
       throw new ErreurFacturee(
-        `réponse sans JSON exploitable : ${texte.slice(0, 160)}`, facture);
+        `réponse sans JSON exploitable : ${texte.slice(0, TEXTE_CONSERVE)}`, facture);
     }
 
     // On ne garde que les clés du barème : une clé inventée hors barème ne doit
     // ni être notée, ni encombrer le fichier de résultats.
-    const attendues = new Set(task.criteria.map((c) => c.id));
+    const attendues = new Set(task.criteria.map((c) => c.key ?? c.id));
     const filtre = Object.fromEntries(
       Object.entries(objet).filter(([k]) => attendues.has(k)),
     );

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { TaskSchema, GroundTruthSchema, type GroundTruth, type Task } from "@hub/schema";
-import { scoreDocument } from "./score";
+import { TaskSchema, GroundTruthSchema, type GroundTruth, type ModelResult, type Task } from "@hub/schema";
+import { scoreDocument, scoreEchecImpute, scoreResults } from "./score";
 
 /**
  * Un barème de test, écrit ici plutôt que lu dans `data/`.
@@ -102,5 +102,122 @@ describe("scoreDocument", () => {
     const s = score({ mention: "n'importe quoi" });
     expect(s.byCriterion.mention).toBeUndefined();
     expect(s.needsReview).toBe(false);
+  });
+});
+
+describe("une question ne porte qu'un critère", () => {
+  // Quatre formes de réponse, une seule posée par question. Un critère que la
+  // vérité terrain ne déclare pas n'est ni juste ni faux : lu comme `null`, il
+  // vaudrait « absent du document » et donnerait des points pour rien.
+  const parForme: Task = TaskSchema.parse({
+    id: "tache-formes",
+    label: "Tâche à formes",
+    question: "Ne note-t-on que ce qui est posé ?",
+    criteria: [
+      { id: "calcul", label: "Calcul", kind: "number", weight: 1, critical: true, key: "answer", toleranceRelative: 0.005, decimalSeparator: "." },
+      { id: "verdict", label: "Verdict", kind: "exact", weight: 1, critical: true, key: "answer" },
+      { id: "libelle", label: "Libellé", kind: "exact", weight: 1, critical: true, key: "answer" },
+    ],
+  });
+
+  it("ne note pas un critère que la vérité terrain ne déclare pas", () => {
+    const question = GroundTruthSchema.parse({ docId: "q-1", fields: { calcul: "1.9" } });
+    const s = scoreDocument(parForme, question, { answer: 1.94 }, "modele-test");
+    expect(Object.keys(s.byCriterion)).toEqual(["calcul"]);
+    expect(s.byCriterion.calcul!.verdict).toBe("correct");
+    expect(s.needsReview).toBe(false);
+  });
+
+  it("lit la réponse dans la clé du critère, pas dans son identifiant", () => {
+    const question = GroundTruthSchema.parse({ docId: "q-2", fields: { verdict: "no" } });
+    expect(scoreDocument(parForme, question, { answer: "no" }, "m").byCriterion.verdict!.verdict).toBe("correct");
+    expect(scoreDocument(parForme, question, { verdict: "no" }, "m").byCriterion.verdict!.verdict).toBe("manquant");
+  });
+
+  it("note un champ déclaré null : absent du document, donc piège", () => {
+    const piege = GroundTruthSchema.parse({ docId: "q-3", fields: { libelle: null } });
+    expect(scoreDocument(parForme, piege, { answer: null }, "m").byCriterion.libelle!.verdict).toBe("correct");
+    expect(scoreDocument(parForme, piege, { answer: "Class A notes" }, "m").byCriterion.libelle!.verdict).toBe("hallucine");
+  });
+});
+
+describe("un échec que l'on impute au modèle", () => {
+  // Un modèle qui réfléchit sans jamais écrire de réponse, ou qui se contredit, a fait
+  // son propre travail : on ne retire pas la question à tout le monde à cause de lui.
+  const parForme: Task = TaskSchema.parse({
+    id: "tache-formes", label: "Tâche à formes", question: "Un échec propre au modèle est-il compté contre lui ?",
+    criteria: [
+      { id: "calcul", label: "Calcul", kind: "number", weight: 1, critical: true, key: "answer" },
+      { id: "libelle", label: "Libellé", kind: "exact", weight: 1, critical: true, key: "answer" },
+    ],
+  });
+
+  it("note « manquant », zéro point, sur le critère que la question pose", () => {
+    const gt = GroundTruthSchema.parse({ docId: "q-1", fields: { calcul: "5.4" } });
+    const s = scoreEchecImpute(parForme, gt, "kimi");
+    expect(Object.keys(s.byCriterion)).toEqual(["calcul"]);
+    expect(s.byCriterion.calcul).toMatchObject({ verdict: "manquant", points: 0, maxPoints: 1, got: null, expected: "5.4" });
+    expect(s.needsReview).toBe(true);
+  });
+
+  it("ne donne aucun point sur une question piège : « rien » y est une bonne réponse, pas un échec", () => {
+    // Lu comme une réponse vide, un échec sur « il n'y en a pas » vaudrait un point.
+    const gt = GroundTruthSchema.parse({ docId: "q-2", fields: { libelle: null } });
+    const s = scoreEchecImpute(parForme, gt, "kimi");
+    expect(s.byCriterion.libelle).toMatchObject({ verdict: "manquant", points: 0 });
+  });
+});
+
+describe("scoreResults", () => {
+  const t: Task = TaskSchema.parse({
+    id: "t", label: "T", question: "Q ?",
+    criteria: [{ id: "calcul", label: "Calcul", kind: "number", weight: 1, critical: true, key: "answer" }],
+  });
+  const gts = new Map([
+    ["q-1", GroundTruthSchema.parse({ docId: "q-1", fields: { calcul: "10" } })],
+    ["q-2", GroundTruthSchema.parse({ docId: "q-2", fields: { calcul: "20" } })],
+  ]);
+  const res = (model: string, docId: string, extra: Partial<ModelResult> = {}): ModelResult => ({
+    runId: "r", model, modelVersion: model, docId, raw: { answer: 10 }, latencyMs: 1, costUsd: 0, ...extra,
+  });
+  const retenus = new Set(["q-1", "q-2"]);
+
+  it("note chaque réponse reçue", () => {
+    const { scores } = scoreResults({ task: t, groundTruths: gts, results: [res("a", "q-1")], retenus, imputes: new Map() });
+    expect(scores).toHaveLength(1);
+    expect(scores[0]!.byCriterion.calcul!.verdict).toBe("correct");
+  });
+
+  it("laisse de côté un échec que personne n'a imputé au modèle", () => {
+    const echec = res("a", "q-2", { raw: null, error: "429 Too Many Requests" });
+    const { scores } = scoreResults({ task: t, groundTruths: gts, results: [echec], retenus, imputes: new Map() });
+    expect(scores).toEqual([]);
+  });
+
+  it("note « manquant » un échec imputé au modèle, et lui seul", () => {
+    const echec = res("a", "q-2", { raw: null, error: "réponse sans JSON exploitable" });
+    const autre = res("b", "q-2", { raw: null, error: "429 Too Many Requests" });
+    const { scores } = scoreResults({
+      task: t, groundTruths: gts, results: [echec, autre], retenus,
+      imputes: new Map([["a/q-2", "contradiction"]]),
+    });
+    expect(scores.map((s) => `${s.model}/${s.docId}/${s.byCriterion.calcul!.verdict}`)).toEqual(["a/q-2/manquant"]);
+  });
+
+  it("ignore une imputation qui ne correspond à aucun échec : une réponse reçue n'est jamais réécrite", () => {
+    const { scores } = scoreResults({
+      task: t, groundTruths: gts, results: [res("a", "q-1")], retenus, imputes: new Map([["a/q-1", "à tort"]]),
+    });
+    expect(scores[0]!.byCriterion.calcul!.verdict).toBe("correct");
+  });
+
+  it("écarte les documents hors périmètre, et signale ceux qui n'ont plus de vérité terrain", () => {
+    const { scores, sansReference } = scoreResults({
+      task: t, groundTruths: gts,
+      results: [res("a", "q-1"), res("a", "hors"), res("a", "q-3")],
+      retenus: new Set(["q-1", "q-3"]), imputes: new Map(),
+    });
+    expect(scores.map((s) => s.docId)).toEqual(["q-1"]);
+    expect([...sansReference]).toEqual(["q-3"]);
   });
 });

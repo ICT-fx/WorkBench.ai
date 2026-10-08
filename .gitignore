@@ -21,4 +21,10 @@ dist/
 #     git add -f data/tasks/*/documents/$d-p*.jpg
 #   done
 data/tasks/*/documents/
+# Exception : les 89 pages de l'analyse de rapports financiers pèsent 13 Mo et sont
+# versionnées, pour que le site montre la page exacte que chaque modèle a vue.
+!data/tasks/analyse-financiere/documents/
 .vercel
+# Les rapports téléchargés par `npm run financebench:prepare` : 98 Mo de PDF publics,
+# retéléchargés à l'identique depuis le dépôt de FinanceBench.
+.cache/

@@ -46,12 +46,21 @@ export const ModelSchema = z.object({
   priceOut: z.number().min(0).nullable(),
   modalities: z.array(ModalitySchema).min(1),
   reasoning: z.boolean(),
+  /**
+   * La version datée vers laquelle l'identifiant pointe chez OpenRouter
+   * (`canonical_slug`) : `anthropic/claude-opus-5.5-20260921`. Un identifiant sans
+   * date peut être redirigé vers une version plus récente ; ce champ dit laquelle
+   * on avait sous les yeux, à la date `versionsSyncedAt` du catalogue.
+   */
+  canonicalSlug: z.string().min(1).nullable().optional(),
 });
 export type Model = z.infer<typeof ModelSchema>;
 
 export const ModelCatalogueSchema = z.object({
   /** Date de la dernière synchronisation des prix et fenêtres de contexte. */
   syncedAt: isoDate,
+  /** Date à laquelle les versions datées (`canonicalSlug`) ont été relevées. */
+  versionsSyncedAt: isoDate.optional(),
   source: z.string().url(),
   models: z.array(ModelSchema).min(1),
 }).refine(

@@ -1,12 +1,17 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { TaskSchema, GroundTruthSchema, ModelResultSchema, parseFile } from "@hub/schema";
-import type { GroundTruth, ModelResult, Task } from "@hub/schema";
+import { z } from "zod";
+import {
+  TaskSchema, GroundTruthSchema, ModelResultSchema, RunCalendarSchema, TestProtocolSchema, parseFile, parseCsv,
+} from "@hub/schema";
+import type { GroundTruth, ModelResult, RunCalendar, Task, TestProtocol } from "@hub/schema";
 
 export const DATA_ROOT = "data";
 export const taskDir = (taskId: string): string => join(DATA_ROOT, "tasks", taskId);
 export const runsRoot = (): string => join(DATA_ROOT, "runs");
 export const publishedDir = (): string => join(DATA_ROOT, "published");
+/** Le test figé de chaque benchmark publié, un fichier par tâche. */
+export const protocolesDir = (): string => join(publishedDir(), "protocoles");
 
 export const loadTask = (taskId: string): Promise<Task> =>
   parseFile(TaskSchema, join(taskDir(taskId), "task.json"));
@@ -14,7 +19,111 @@ export const loadTask = (taskId: string): Promise<Task> =>
 export const loadPrompt = (taskId: string): Promise<string> =>
   readFile(join(taskDir(taskId), "prompt.md"), "utf8");
 
-export type LoadedDocument = { docId: string; images: Buffer[] };
+export type LoadedDocument = {
+  docId: string;
+  images: Buffer[];
+  /** Le prompt propre à ce document, quand la tâche pose une question par document. */
+  promptText?: string;
+};
+
+/**
+ * Compose le prompt d'une question : le gabarit de la tâche, la question, et la
+ * seule consigne de format qui la concerne.
+ *
+ * Le gabarit porte `{{question}}` puis un bloc par forme de réponse, ouvert par
+ * `<!-- forme: nom -->`. Garder les trois consignes dans un même fichier permet
+ * au run de figer, d'un seul tenant, tout ce qui a pu être envoyé.
+ */
+export function composerPrompt(gabarit: string, question: string, forme: string): string {
+  const [entete, ...blocs] = gabarit.split(/<!--\s*forme:\s*([\w-]+)\s*-->/);
+  if (!entete!.includes("{{question}}")) {
+    throw new Error("Le gabarit du prompt ne porte pas {{question}} : la question ne serait pas posée.");
+  }
+  const consignes = new Map<string, string>();
+  for (let i = 0; i < blocs.length; i += 2) consignes.set(blocs[i]!, blocs[i + 1] ?? "");
+  const consigne = consignes.get(forme);
+  if (consigne === undefined) {
+    throw new Error(`Le gabarit du prompt n'a pas de consigne pour la forme « ${forme} ».`);
+  }
+  // Une fonction de remplacement : une question contenant « $& » ne doit pas être réinterprétée.
+  return `${entete!.replace("{{question}}", () => question).trimEnd()}\n\n${consigne.trim()}\n`;
+}
+
+/**
+ * Les documents écartés d'une tâche après coup, avec leur motif.
+ *
+ * Un document peut être écarté après le run, quand on découvre en dépouillant
+ * les réponses que sa question mesure autre chose que ce qu'on croyait. Ses
+ * réponses restent enregistrées et consultables, mais il n'entre plus ni dans
+ * le périmètre d'un rejeu, ni dans la notation. Table vide si la tâche n'en a pas.
+ */
+export async function loadExclusions(taskId: string): Promise<Map<string, string>> {
+  let texte: string;
+  try {
+    texte = await readFile(join(taskDir(taskId), "exclusions.json"), "utf8");
+  } catch {
+    return new Map();
+  }
+  const liste = z.array(z.object({
+    docId: z.string().min(1), motif: z.string().min(1), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  })).parse(JSON.parse(texte));
+  return new Map(liste.map((e) => [e.docId, e.motif]));
+}
+
+/**
+ * Les échecs que l'on impute au modèle, avec leur motif, clés `modèle/document`.
+ *
+ * Chacun a été lu : le texte de la réponse rejetée, ou son absence, montre que le
+ * modèle n'a rien rendu d'exploitable. Table vide si la tâche n'en a pas.
+ */
+export async function loadEchecsImputes(taskId: string): Promise<Map<string, string>> {
+  let texte: string;
+  try {
+    texte = await readFile(join(taskDir(taskId), "echecs-imputes.json"), "utf8");
+  } catch {
+    return new Map();
+  }
+  const liste = z.array(z.object({
+    model: z.string().min(1), docId: z.string().min(1), motif: z.string().min(1), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  })).parse(JSON.parse(texte));
+  return new Map(liste.map((e) => [`${e.model}/${e.docId}`, e.motif]));
+}
+
+/** Le périmètre sans les documents écartés. L'ordre des autres ne change pas. */
+export const sansExclusions = <T extends { docId: string }>(
+  documents: T[], exclusions: ReadonlyMap<string, string>,
+): T[] => documents.filter((d) => !exclusions.has(d.docId));
+
+export type Question = {
+  question: string;
+  forme: string;
+  /** Les pages attendues en image. Vide : le document est du texte seul, tout est dans la question. */
+  pages: string;
+};
+
+/**
+ * Les questions d'une tâche qui en pose une par document, lues dans son manifeste.
+ *
+ * Rend une table vide pour une tâche sans colonne `question` : les factures
+ * reçoivent toutes le même prompt, et leur manifeste n'en porte pas.
+ */
+export async function loadQuestions(taskId: string): Promise<Map<string, Question>> {
+  let texte: string;
+  try {
+    texte = await readFile(join(taskDir(taskId), "manifest.csv"), "utf8");
+  } catch {
+    return new Map();
+  }
+  const questions = new Map<string, Question>();
+  for (const l of parseCsv(texte)) {
+    if (l.file_id === undefined || l.question === undefined) continue;
+    if (l.question === "" || l.forme === undefined || l.forme === "") {
+      throw new Error(`Manifeste de ${taskId} : la ligne ${l.file_id} n'a pas de question ou pas de forme.`);
+    }
+    questions.set(l.file_id, { question: l.question, forme: l.forme, pages: l.pages ?? "" });
+  }
+  return questions;
+}
 
 /**
  * Dimensions d'une image JPEG, lues dans son en-tête.
@@ -92,6 +201,26 @@ export async function loadGroundTruths(taskId: string): Promise<Map<string, Grou
   return map;
 }
 
+/** Le test figé d'un benchmark publié, ou rien s'il n'a jamais été publié. */
+export async function loadProtocole(taskId: string): Promise<TestProtocol | null> {
+  try {
+    return await parseFile(TestProtocolSchema, join(protocolesDir(), `${taskId}.json`));
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw e;
+  }
+}
+
+/** Les dates d'appel relevées pour un run antérieur à `calledAt`, s'il y en a. */
+export async function loadCalendrier(runDir: string): Promise<RunCalendar | null> {
+  try {
+    return await parseFile(RunCalendarSchema, join(runDir, "calendrier.json"));
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw e;
+  }
+}
+
 export async function loadRunResults(runDir: string): Promise<ModelResult[]> {
   const rawDir = join(runDir, "raw");
   const models = await readdir(rawDir);
@@ -103,4 +232,35 @@ export async function loadRunResults(runDir: string): Promise<ModelResult[]> {
     }
   }
   return results;
+}
+
+/**
+ * Les documents d'une tâche, prêts à être envoyés : le run et la notation partent de
+ * la même liste, sans quoi leurs périmètres divergeraient.
+ *
+ * Une tâche qui pose une question par document compose un prompt par document. Un
+ * document en image sans question arrête tout, comme une question qui attend des pages
+ * qu'on n'a pas rendues : envoyer l'un sans l'autre serait payer pour une réponse à
+ * rien. Une question sans pages attendues est un document en texte seul.
+ */
+export async function loadTaskDocuments(taskId: string): Promise<LoadedDocument[]> {
+  const [gabarit, questions] = await Promise.all([loadPrompt(taskId), loadQuestions(taskId)]);
+  // Une tâche en texte seul n'a pas de dossier d'images.
+  const images = await loadDocuments(taskId).catch((e: NodeJS.ErrnoException) => {
+    if (e.code === "ENOENT") return [] as LoadedDocument[];
+    throw e;
+  });
+  if (questions.size === 0) return images;
+
+  const enImages = new Map(images.map((d) => [d.docId, d]));
+  for (const d of images) {
+    if (!questions.has(d.docId)) throw new Error(`Le document ${d.docId} n'a pas de question dans le manifeste de ${taskId}.`);
+  }
+  return [...questions].sort(([a], [b]) => a.localeCompare(b)).map(([docId, q]) => {
+    const pages = enImages.get(docId)?.images ?? [];
+    if (pages.length === 0 && q.pages !== "") {
+      throw new Error(`La question ${docId} attend les pages ${q.pages}, qui n'ont pas été rendues.`);
+    }
+    return { docId, images: pages, promptText: composerPrompt(gabarit, q.question, q.forme) };
+  });
 }

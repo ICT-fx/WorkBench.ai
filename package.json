@@ -20,7 +20,9 @@
     "catalogue:sync": "tsx packages/eval/src/catalogue-sync.ts",
     "eval:review": "tsx packages/eval/src/cli.ts review",
     "key:check": "tsx packages/eval/src/check-key.ts",
-    "deepform:prepare": "tsx packages/fixtures/src/deepform.ts"
+    "deepform:prepare": "tsx packages/fixtures/src/deepform.ts",
+    "financebench:prepare": "tsx packages/fixtures/src/financebench.ts",
+    "finqa:prepare": "tsx packages/fixtures/src/finqa.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

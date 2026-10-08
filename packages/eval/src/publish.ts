@@ -166,10 +166,20 @@ export function buildLeaderboard(opts: BuildLeaderboardOptions): Leaderboard & {
  * Republier un run remplace son entrée au lieu de la dupliquer. Une première
  * mesure réelle efface les runs de démonstration : une courbe qui mêlerait les
  * deux ferait passer du fabriqué pour du mesuré.
+ *
+ * Une publication qui reprend tous les runs d'une publication antérieure la
+ * remplace elle aussi. Élargir un jeu de test ou y ajouter un modèle ne re-teste
+ * personne : les réponses des autres sont les mêmes, à la virgule près. Garder les
+ * deux entrées traçait une courbe « dans le temps » — 97,3 %, 96,8 %, 97,8 % pour
+ * un même modèle — là où seul l'échantillon avait grossi. Un point d'historique,
+ * c'est un nouveau passage du test, donc des runs que la publication d'avant
+ * n'avait pas tous.
  */
 export function appendHistory(history: BenchmarkHistory | null, leaderboard: Leaderboard): BenchmarkHistory {
+  const nouveaux = new Set(leaderboard.runId.split("+"));
+  const repris = (runId: string): boolean => runId.split("+").every((r) => nouveaux.has(r));
   const gardes = (history?.runs ?? []).filter((run) =>
-    run.runId !== leaderboard.runId && (leaderboard.status === "demo" || run.status === "reel"));
+    !repris(run.runId) && (leaderboard.status === "demo" || run.status === "reel"));
 
   return BenchmarkHistorySchema.parse({
     benchmarkId: leaderboard.taskId,

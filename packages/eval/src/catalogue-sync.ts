@@ -33,6 +33,7 @@ const SeedSchema = z.array(z.object({
  */
 type GatewayModel = {
   id: string;
+  canonical_slug?: string;
   context_window?: number;
   context_length?: number;
   max_tokens?: number;
@@ -78,6 +79,9 @@ export function mergeSeed(
       modalities: modalities.length > 0 ? modalities : ["text"],
       reasoning: (g?.tags ?? []).includes("reasoning")
         || (g?.supported_parameters ?? []).includes("reasoning"),
+      // La version datée derrière l'identifiant : sans elle, on ne saurait pas dire
+      // dans six mois quel modèle portait ce nom le jour du test.
+      canonicalSlug: g?.canonical_slug === undefined || g.canonical_slug === "" ? null : g.canonical_slug,
     };
   });
 
@@ -97,8 +101,10 @@ async function main(): Promise<void> {
   const seed = SeedSchema.parse(JSON.parse(await readFile(join(dir, "models.seed.json"), "utf8")));
   const { models, absents } = mergeSeed(seed, (payload as { data?: GatewayModel[] }).data ?? []);
 
+  const aujourdhui = new Date().toISOString().slice(0, 10);
   const catalogue = ModelCatalogueSchema.parse({
-    syncedAt: new Date().toISOString().slice(0, 10),
+    syncedAt: aujourdhui,
+    versionsSyncedAt: aujourdhui,
     source: CATALOGUE_URL,
     models,
   });

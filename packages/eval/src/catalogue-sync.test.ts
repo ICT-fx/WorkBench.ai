@@ -33,6 +33,11 @@ describe("synchronisation du catalogue", () => {
     });
   });
 
+  it("relève la version datée de chaque identifiant, ou null quand le catalogue ne la donne pas", () => {
+    const { models } = mergeSeed(seed, [{ id: "labo/present", canonical_slug: "labo/present-20260921" }]);
+    expect(models.map((m) => m.canonicalSlug)).toEqual(["labo/present-20260921", null]);
+  });
+
   it("laisse à null ce que le catalogue ne dit pas, et signale le modèle absent", () => {
     const { models, absents } = mergeSeed(seed, []);
     expect(absents).toEqual(["labo/present", "labo/absent"]);
