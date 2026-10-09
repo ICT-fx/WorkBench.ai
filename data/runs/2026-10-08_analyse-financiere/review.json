@@ -1,0 +1,236 @@
+[
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "anthropic/claude-sonnet-5",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "anthropic/claude-sonnet-5",
+    "docId": "fb-06247",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "anthropic/claude-sonnet-5",
+    "docId": "fb-06655",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "google/gemini-3.5-flash-lite",
+    "docId": "fb-04080",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "google/gemini-3.8-flash",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/ministral-8b-2512",
+    "docId": "fb-08135",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/mistral-medium-3-5",
+    "docId": "fb-06655",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/mistral-medium-3-5",
+    "docId": "fb-07507",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/mistral-medium-3-5",
+    "docId": "fb-10130",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/mistral-small-2603",
+    "docId": "fb-04080",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/mistral-small-2603",
+    "docId": "fb-06247",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "mistralai/mistral-small-2603",
+    "docId": "fb-07507",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "moonshotai/kimi-k2.6",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "openai/gpt-6-astra",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "openai/gpt-6-luna",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "openai/gpt-6-sol",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "docId": "fb-04080",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "docId": "fb-04103",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "docId": "fb-06655",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.8-27b",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.8-max-0902",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.8-max-prime",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "z-ai/glm-5.3-flash",
+    "docId": "fb-04481",
+    "criterionId": "calcul",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  }
+]

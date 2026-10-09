@@ -40,7 +40,15 @@ qu'un classement fabriqué ne puisse pas être publié sans se signaler.
 
 **Un chiffre affiché est un chiffre mesuré.** Cela vaut aussi pour les textes : une page
 qui décrit une étape du protocole doit décrire ce qui a réellement été fait. L'étape
-d'arbitrage humain n'a jamais été exécutée, et le site le dit.
+d'arbitrage humain a été jouée le 9 octobre 2026 sur les hallucinations et sur les réponses
+acceptées malgré un écart d'écriture ; le contrôle au hasard, lui, ne l'a pas été, et le
+site le dit.
+
+**« Halluciné » se confirme document ouvert.** Le comparateur sait qu'une valeur a été donnée
+là où la référence dit « rien » ; il ne sait pas si elle figure ailleurs sur la page. Les six
+hallucinations qu'il avait comptées étaient toutes des valeurs imprimées sur le document :
+Fantin les a requalifiées « fausses ». Ne jamais écrire qu'un modèle « invente » sur la foi du
+seul comparateur.
 
 **Chaque benchmark explique son propre protocole.** La page Méthodologie est en deux
 parties : ce qui vaut pour tout le hub (indice, marge d'erreur, coûts, maturité), puis

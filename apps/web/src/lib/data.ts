@@ -4,12 +4,13 @@ import { z } from "zod";
 
 import {
   LeaderboardSchema, TaskSchema, GroundTruthSchema, LabSchema, ModelCatalogueSchema,
-  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema, DocScoreSchema, parseCsv,
+  DomainSchema, BenchmarkSchema, BenchmarkHistorySchema, NewsSchema, DocScoreSchema, ReviewItemSchema, parseCsv,
 } from "@hub/schema";
+import { appliquerArbitrages, requalifications, type Requalification } from "./arbitrage";
 import { lireQuestions, type QuestionPosee } from "./questions";
 import type {
   Benchmark, BenchmarkHistory, DocScore, Domain, GroundTruth, Lab, Leaderboard, ModelCatalogue,
-  News, Task,
+  News, ReviewItem, Task,
 } from "@hub/schema";
 
 /** Remonte jusqu'au dépôt : le cwd diffère entre `next dev`, le build et les tests. */
@@ -102,9 +103,20 @@ export function loadGroundTruth(taskId: string, docId: string): GroundTruth {
   return GroundTruthSchema.parse(JSON.parse(readFileSync(file, "utf8")));
 }
 
+/** Le journal d'arbitrage humain d'un run : vide tant que personne n'a tranché. */
+function loadReview(run: string): ReviewItem[] {
+  const file = join(repoRoot(), "data", "runs", run, "review.json");
+  if (!existsSync(file)) return [];
+  return z.array(ReviewItemSchema).parse(JSON.parse(readFileSync(file, "utf8")));
+}
+
 /**
- * Les notations d'un run. Le site les lit pour choisir quels documents montrer
- * et pour afficher le verdict champ par champ ; il ne les recalcule jamais.
+ * Les notations d'un run, arbitrages humains appliqués. Le site les lit pour
+ * choisir quels documents montrer et pour afficher le verdict champ par champ ;
+ * il ne note rien lui-même.
+ *
+ * Ce sont les verdicts sur lesquels le classement publié est calculé : la note du
+ * comparateur, sauf là où un humain a tranché autrement.
  *
  * Un classement publié peut porter plusieurs runs, séparés par « + » : les runs
  * restent immuables et séparés sur le disque, c'est la lecture qui les réunit.
@@ -113,9 +125,13 @@ export function loadScores(runId: string): DocScore[] {
   return runId.split("+").flatMap((run) => {
     const file = join(repoRoot(), "data", "runs", run, "scores.json");
     if (!existsSync(file)) return [];
-    return z.array(DocScoreSchema).parse(JSON.parse(readFileSync(file, "utf8")));
+    return appliquerArbitrages(z.array(DocScoreSchema).parse(JSON.parse(readFileSync(file, "utf8"))), loadReview(run));
   });
 }
+
+/** Les réponses dont un humain a changé le verdict, dans les runs d'un classement. */
+export const loadRequalifications = (runId: string): Requalification[] =>
+  runId.split("+").flatMap((run) => requalifications(loadReview(run)));
 
 export type SourceDocument = {
   docId: string;

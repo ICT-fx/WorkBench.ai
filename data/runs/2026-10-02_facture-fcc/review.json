@@ -1,0 +1,29 @@
+[
+  {
+    "model": "mistralai/mistral-medium-3-5",
+    "docId": "88d79dde-ac4a-5e69-b150-1f64fc28dda3",
+    "criterionId": "vat_number",
+    "autoVerdict": "hallucine",
+    "humanVerdict": "faux",
+    "reason": "Arbitrage humain du 9 octobre 2026 : la valeur donnée est imprimée sur la page, mais ce n'est pas ce que la question demande. Réponse fausse, pas inventée.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "moonshotai/kimi-k3",
+    "docId": "88d79dde-ac4a-5e69-b150-1f64fc28dda3",
+    "criterionId": "vat_number",
+    "autoVerdict": "hallucine",
+    "humanVerdict": "faux",
+    "reason": "Arbitrage humain du 9 octobre 2026 : la valeur donnée est imprimée sur la page, mais ce n'est pas ce que la question demande. Réponse fausse, pas inventée.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "docId": "21228dd6-6cac-f576-7c61-e05794d56e97",
+    "criterionId": "gross_amount",
+    "autoVerdict": "correct",
+    "humanVerdict": "correct",
+    "reason": "Arbitrage humain du 9 octobre 2026 : écriture confirmée, sur le tableau des réponses acceptées malgré un écart avec la référence.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  }
+]

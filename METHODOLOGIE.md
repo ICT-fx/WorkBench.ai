@@ -167,7 +167,7 @@ Les deux modèles les plus chers du panel, `claude-fable-5.1` et `gpt-6-astra`, 
 pas partie. Un classement bâti sur un petit échantillon ne dit pas « ces modèles se
 valent », il dit « ce test ne les sépare pas encore ».
 
-**Trois modèles inventent** un numéro de TVA que ces factures ne portent pas :
+**Trois modèles inventent** *(requalifié le 9 octobre : voir la section 12 — le numéro donné est imprimé sur la facture)* un numéro de TVA que ces factures ne portent pas :
 `kimi-k3`, `llama-4-maverick` et `mistral-medium-3-5`, un cas chacun. Aucun ne le faisait
 sur l'échantillon initial. C'est ce que mesure le quatrième verdict, et il fallait
 cent documents pour le voir.
@@ -357,7 +357,7 @@ lancer.
    notre propre vérité terrain.
 2. **Reprendre le prompt** en nommant les étiquettes exactes, si l'on veut réutiliser les
    champs ambigus.
-3. **Étape d'arbitrage humain** (`npm run eval:review`), jamais exécutée à ce jour. Elle
+3. **Étape d'arbitrage humain** (`npm run eval:review`), jouée en partie le 9 octobre (section 12). Elle
    soumet les hallucinations, les écarts d'écriture et un échantillon de contrôle.
 4. **Épingler l'hébergeur** une fois qu'on sait lesquels servent bien chaque modèle.
    L'hébergeur est déjà enregistré à chaque appel.
@@ -404,7 +404,8 @@ combien il en couvre — 1 sur 10 aujourd'hui.
 méthodologie affirmait qu'« avant publication, un humain relit toutes les
 hallucinations ». L'étape existe dans le pipeline ; elle n'a jamais été lancée. Le site
 dit maintenant que les chiffres publiés sont ceux du comparateur seul, et que 80
-notations sur 2700 restent marquées « à relire ».
+notations sur 2700 restent marquées « à relire ». *(Depuis le 9 octobre, l'étape a été
+jouée en partie : la section 12 dit sur quoi, et le site aussi.)*
 
 ---
 
@@ -475,7 +476,8 @@ au lieu de 5,4 %. La référence prend la ligne nommée D&A, ce que la question 
 gardée, et sans elle dix modèles seraient parfaits.
 
 En bas, Nova Pro et Nova Lite (33 et 30 %) sont les seuls à inventer une réponse sur les trois
-questions où il n'y en a pas (trois hallucinations en tout). Le classement est stable :
+questions où il n'y en a pas (trois hallucinations en tout ; requalifiées « fausses » le 9 octobre,
+voir la section 12). Le classement est stable :
 corrélation de rang de 0,97 à 1,00 selon la tolérance, les nombres seuls, les calculs seuls ou le
 premier tirage seul ; **0,86** sur les verdicts et libellés seuls, où quatorze modèles sont
 parfaits et l'ordre se joue sur très peu de questions. À 0,1 %, plus aucun modèle n'est parfait :
@@ -767,3 +769,71 @@ décrit le modèle testé, pas la famille.
 
 À revoir aussi : la date de sortie du catalogue est celle de l'arrivée du modèle sur OpenRouter.
 Pour Command A+, c'est le 22 septembre 2026, alors que ses poids sont publics depuis mai.
+
+---
+
+# 12. L'arbitrage humain du 9 octobre 2026
+
+L'étape prévue depuis le début a été jouée pour la première fois. Fantin a tranché ; le code
+n'a fait que ranger ses verdicts dans le `review.json` de chaque run, puis republier.
+
+## 12.1 Les six « hallucinations » n'en étaient pas
+
+Le comparateur comptait six hallucinations : trois sur les factures, trois sur les rapports
+financiers. Dans les six cas, la valeur donnée par le modèle est **imprimée sur la page**.
+
+| Modèle | Document | Réponse du modèle | Ce que c'est, sur la page |
+|---|---|---|---|
+| Kimi K3, Mistral Medium 3.5 | Facture WKCF (`88d79dde`) | « 43-1016745 » pour le numéro de TVA | « FIIY # 43-1016745 », l'identifiant fiscal de la chaîne |
+| Llama 4 Maverick | Facture WJXT (`f56e2fc1`) | « 52-0854808 » pour le numéro de TVA | « TIN: 52-0854808 », idem |
+| Nova Pro, Nova Lite | American Express (`fb-00476`) | « Common Shares » pour les titres de dette cotés | La seule ligne du tableau des titres cotés : des actions |
+| Nova Pro | Ulta Beauty (`fb-00746`) | « The Nasdaq Global Select Market », idem | Le nom de la bourse, sur la même ligne |
+
+Verdict : **faux, pas halluciné**, pour les six. L'exactitude ne bouge pas, une réponse fausse
+valant zéro comme une réponse inventée. Le taux d'hallucinations passe à zéro pour les 27
+modèles sur les deux tests : Kimi K3, Llama 4 Maverick et Mistral Medium 3.5 de 1 % à 0 sur les
+factures, Nova Pro de 66,7 % à 0 et Nova Lite de 33,3 % à 0 sur la finance.
+
+**Ce que nous avions écrit de faux**, et qui est corrigé : « trois modèles inventent un numéro
+de TVA qui n'existe pas » (article du 5 octobre, section 3 de ce document), « Nova Pro
+fabrique deux réponses » (article du 8 octobre, section 9.2). Les deux articles portent une
+correction datée, et un article du 9 octobre raconte l'arbitrage.
+
+**La règle qui en sort.** Le comparateur sait qu'une valeur a été donnée là où la référence dit
+« rien ». Il ne sait pas si cette valeur figure ailleurs sur le document. Un verdict
+« halluciné » sorti du code est donc une présomption : est halluciné ce qui ne figure **nulle
+part** sur le document, et seul un humain qui l'ouvre peut le dire. Une valeur recopiée de la
+page qui ne répond pas à la question est fausse.
+
+Un détail sur les factures : la référence « aucun numéro de TVA » n'est pas une annotation. Les
+journalistes ont saisi cinq champs, pas celui-là ; c'est notre préparation qui écrit « aucun »
+pour les cent factures, par principe. Il n'y avait donc rien à comparer que la page elle-même.
+
+## 12.2 Les écritures confirmées
+
+Les réponses jugées justes mais écrites autrement que la référence ont été montrées en tableau,
+et confirmées : 17 questions chiffrées (le cas le plus large : « 5.43 » pour « 5.4 », qui passe
+par la règle du dernier chiffre et non par celle des 0,5 %), 9 questions de libellé (dont
+« Net cash provided by operating activities » pour « operations »), et sur les factures
+« 3060.00 » pour 3060. Cela fait 373 notations en finance et une sur les factures.
+
+Les 698 notations où le modèle écrit **le même nombre** sous une autre forme (« 5409 » pour
+« 5409.00 ») n'ont pas été soumises : elles ne sont pas inscrites comme arbitrées.
+
+## 12.3 Ce qui n'a pas été fait
+
+Le contrôle au hasard : 553 réponses identiques à leur référence, tirées au sort (35 en finance,
+518 sur les factures). Les vérifier demande de rouvrir les documents. Le site dit que ce contrôle
+n'a pas eu lieu.
+
+`eval:review` ne présente toujours pas les réponses jugées fausses (section 9.3).
+
+## 12.4 Ce que le site lit
+
+`data/runs/<run>/review.json` porte chaque décision : le verdict du comparateur, celui de
+l'humain, le motif, la date. Le classement publié est calculé sur les verdicts arbitrés, et le
+site applique les mêmes aux tableaux par question et par document — sans quoi un tableau
+annoncerait « 2 valeurs inventées » sous un classement qui n'en compte plus. Chaque réponse
+requalifiée porte son motif sous la question ou le document concerné.
+`apps/web/src/lib/arbitrage.test.ts` vérifie que le site et le pipeline rendent les mêmes
+verdicts, et qu'aucun classement publié ne garde une hallucination qu'un humain n'a pas arbitrée.

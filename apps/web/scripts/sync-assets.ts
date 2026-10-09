@@ -11,10 +11,11 @@ import { cp, mkdir, readdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { join, dirname } from "node:path";
-import { LeaderboardSchema, DocScoreSchema } from "@hub/schema";
+import { LeaderboardSchema, DocScoreSchema, ReviewItemSchema } from "@hub/schema";
 import { z } from "zod";
 import { readFileSync } from "node:fs";
 import { documentsClivants } from "../src/lib/exemples";
+import { appliquerArbitrages } from "../src/lib/arbitrage";
 
 const web = dirname(dirname(fileURLToPath(import.meta.url)));
 const repo = join(web, "..", "..");
@@ -29,14 +30,17 @@ for (const fichier of await readdir(publie)) {
   const leaderboard = LeaderboardSchema.parse(JSON.parse(readFileSync(join(publie, fichier), "utf8")));
   const documents = join(repo, "data", "tasks", leaderboard.taskId, "documents");
   // Un classement peut porter plusieurs runs, séparés par « + ».
-  const fichiers = leaderboard.runId.split("+")
-    .map((run) => join(repo, "data", "runs", run, "scores.json"))
-    .filter((f) => existsSync(f));
-  if (!existsSync(documents) || fichiers.length === 0) continue;
+  const runs = leaderboard.runId.split("+")
+    .map((run) => join(repo, "data", "runs", run))
+    .filter((dir) => existsSync(join(dir, "scores.json")));
+  if (!existsSync(documents) || runs.length === 0) continue;
 
-  const clivants = documentsClivants(
-    fichiers.flatMap((f) => z.array(DocScoreSchema).parse(JSON.parse(readFileSync(f, "utf8")))),
-  );
+  // Les notes arbitrées, comme la page : un verdict humain peut changer quels
+  // documents départagent, et l'image d'un document affiché ne doit pas manquer.
+  const lire = <T,>(schema: z.ZodType<T>, f: string): T[] =>
+    (existsSync(f) ? z.array(schema).parse(JSON.parse(readFileSync(f, "utf8"))) : []);
+  const clivants = documentsClivants(runs.flatMap((dir) =>
+    appliquerArbitrages(lire(DocScoreSchema, join(dir, "scores.json")), lire(ReviewItemSchema, join(dir, "review.json")))));
   const attendus = new Set(clivants.map((c) => c.docId));
   const vers = join(racine, leaderboard.taskId);
   await mkdir(vers, { recursive: true });

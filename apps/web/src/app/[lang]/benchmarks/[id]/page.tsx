@@ -5,9 +5,10 @@ import { fill, getDictionary, href, isLocale, tr } from "@/i18n";
 import { getHub } from "@/lib/site";
 import {
   cleReponse, documentImages, hasCases, hasTask, loadCases, loadDocumentSources, loadEchecsImputes, loadExclusions,
-  loadGroundTruth, loadHistory, loadQuestionsPosees, loadReponses, loadScores, loadTask,
+  loadGroundTruth, loadHistory, loadQuestionsPosees, loadReponses, loadRequalifications, loadScores, loadTask,
 } from "@/lib/data";
 import { lignesQuestions } from "@/lib/questions";
+import type { Requalification } from "@/lib/arbitrage";
 import { stateOfTheArt } from "@/lib/hub";
 import { documentsClivants, lecturesParDocument } from "@/lib/exemples";
 import { takeaways } from "@/lib/takeaways";
@@ -299,7 +300,7 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
         )
         : (
           <Corpus
-            taskId={id} runId={leaderboard.runId} lang={lang}
+            taskId={id} runId={leaderboard.runId} lang={lang} names={names}
             fields={new Map(benchmark.subtasks.map((s) => [s.id, tr(s.label, lang)]))}
           />
         ))}
@@ -341,8 +342,8 @@ export default async function PageBenchmark({ params }: PageProps<"/[lang]/bench
  * dépôt, et un build fait depuis un clone afficherait zéro page pour les
  * documents absents — un chiffre affiché doit être un chiffre mesuré.
  */
-function Corpus({ taskId, runId, lang, fields }: {
-  taskId: string; runId: string; lang: "fr" | "en"; fields: Map<string, string>;
+function Corpus({ taskId, runId, lang, fields, names }: {
+  taskId: string; runId: string; lang: "fr" | "en"; fields: Map<string, string>; names: Map<string, string>;
 }) {
   const t = getDictionary(lang).benchmarks.detail;
   const task = loadTask(taskId);
@@ -354,6 +355,7 @@ function Corpus({ taskId, runId, lang, fields }: {
   const lectures = lecturesParDocument(loadScores(runId), decisif.id);
   if (lectures.length === 0) return null;
   const champ = fields.get(decisif.id) ?? decisif.label;
+  const requalifies = [...parDocument(loadRequalifications(runId), names)];
 
   return (
     <section className="mt-16">
@@ -397,8 +399,35 @@ function Corpus({ taskId, runId, lang, fields }: {
           </tbody>
         </table>
       </div>
+
+      {/* Les verdicts qu'un humain a changés : le tableau les compte déjà ainsi. */}
+      {requalifies.length > 0 && (
+        <ul className="mt-4 max-w-[68ch] space-y-2 text-sm text-encre-pale">
+          {requalifies.flatMap(([docId, groupes]) => groupes.map((g) => (
+            <li key={docId + g.noms.join()}>
+              {fill(t.requalifiedDoc, { doc: docId.slice(0, 8), models: g.noms.join(", "), motif: g.motif })}
+            </li>
+          )))}
+        </ul>
+      )}
     </section>
   );
+}
+
+/** Les verdicts changés par un humain, par document, les modèles d'un même motif réunis. */
+function parDocument(
+  requalifications: Requalification[], names: Map<string, string>,
+): Map<string, { noms: string[]; motif: string }[]> {
+  const parDoc = new Map<string, { noms: string[]; motif: string }[]>();
+  for (const r of requalifications) {
+    const groupes = parDoc.get(r.docId) ?? [];
+    const groupe = groupes.find((g) => g.motif === r.motif);
+    const nom = names.get(r.model) ?? r.model;
+    if (groupe === undefined) groupes.push({ noms: [nom], motif: r.motif });
+    else groupe.noms.push(nom);
+    parDoc.set(r.docId, groupes);
+  }
+  return parDoc;
 }
 
 /**
@@ -413,6 +442,7 @@ function SectionQuestions({ taskId, runId, lang, names, panel, fields }: {
 }) {
   const t = getDictionary(lang).benchmarks.detail;
   const task = loadTask(taskId);
+  const requalifies = parDocument(loadRequalifications(runId), names);
   const lignes = lignesQuestions(
     loadQuestionsPosees(taskId), loadScores(runId), panel, loadExclusions(taskId), loadEchecsImputes(taskId),
   );
@@ -427,6 +457,7 @@ function SectionQuestions({ taskId, runId, lang, names, panel, fields }: {
           ? loadReponses(runId, l.docId, cleReponse(task, l.sousTache)).filter((r) => r.enEchec).map((r) => names.get(r.model) ?? r.model)
           : [],
         imputesNoms: l.imputes.map((e) => ({ nom: names.get(e.model) ?? e.model, motif: e.motif })),
+        requalifies: requalifies.get(l.docId) ?? [],
       }))}
     />
   );

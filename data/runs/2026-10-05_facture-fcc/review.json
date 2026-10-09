@@ -1,0 +1,11 @@
+[
+  {
+    "model": "meta-llama/llama-4-maverick",
+    "docId": "f56e2fc1-7f41-68e3-bfe5-06176b9a2e8a",
+    "criterionId": "vat_number",
+    "autoVerdict": "hallucine",
+    "humanVerdict": "faux",
+    "reason": "Arbitrage humain du 9 octobre 2026 : la valeur donnée est imprimée sur la page, mais ce n'est pas ce que la question demande. Réponse fausse, pas inventée.",
+    "decidedAt": "2026-10-09T07:50:43.436Z"
+  }
+]

@@ -1,5 +1,47 @@
 [
   {
+    "slug": "arbitrage-humain-six-reponses-requalifiees",
+    "date": "2026-10-09",
+    "kind": "analyse",
+    "featured": true,
+    "title": {
+      "fr": "Arbitrage humain : les six « inventions » étaient imprimées sur la page",
+      "en": "Human review: the six “inventions” were printed on the page"
+    },
+    "summary": {
+      "fr": "Le comparateur avait compté six hallucinations sur nos deux benchmarks. Un humain a ouvert les six documents : chaque valeur y figure, elle ne répond simplement pas à la question. Les six réponses restent fausses, et plus aucun modèle n'est compté comme inventeur.",
+      "en": "The comparator had counted six hallucinations across our two benchmarks. A human opened the six documents: every value is there; it simply does not answer the question. The six answers remain wrong, and no model is counted as inventing any more."
+    },
+    "body": {
+      "fr": [
+        "Nos deux classements affichaient un taux d'hallucinations non nul pour cinq modèles. Sur les factures, Kimi K3, Llama 4 Maverick et Mistral Medium 3.5 donnaient un numéro de TVA à des factures américaines qui n'en portent pas. Sur les rapports financiers, Nova Pro et Nova Lite nommaient un titre là où l'analyste répond « il n'y en a pas ».",
+        "Ces verdicts venaient du comparateur, et le protocole prévoit qu'un humain les relise. C'est fait depuis le 9 octobre, document ouvert.",
+        "Ce que portent les pages :",
+        "- Factures : le « numéro de TVA » donné par les trois modèles est imprimé sur la facture. C'est l'identifiant fiscal fédéral de la chaîne de télévision, noté « FIIY # » sur l'une et « TIN » sur l'autre.",
+        "- American Express : à la question « quels titres de dette sont cotés ? », Nova Pro et Nova Lite répondent « Common Shares », la seule ligne du tableau des titres cotés. Ce sont des actions, pas de la dette.",
+        "- Ulta Beauty : à la même question, Nova Pro répond « The Nasdaq Global Select Market », le nom de la bourse, imprimé sur la même ligne.",
+        "Aucune de ces six valeurs n'est inventée. Toutes sont fausses : le modèle a pris sur la page autre chose que ce qu'on lui demandait. Nous les comptons désormais ainsi. Les scores d'exactitude ne bougent pas, puisqu'une réponse fausse et une réponse inventée valent zéro l'une comme l'autre. Le taux d'hallucinations, lui, passe à zéro pour les vingt-sept modèles sur les deux tests.",
+        "Zéro ne veut pas dire que ces modèles n'inventent jamais. Le test finance ne compte que trois questions dont la bonne réponse est « il n'y en a pas », et les factures un seul champ absent.",
+        "Ce que nous avions écrit de faux : que trois modèles « inventent un numéro de TVA qui n'existe pas », et que deux autres « fabriquent » une réponse. Les deux articles concernés sont corrigés, et la correction y est datée.",
+        "La leçon de méthode : un comparateur sait qu'une valeur a été donnée là où la référence dit « rien ». Il ne sait pas si cette valeur est sur la page. Un verdict « halluciné » sorti du code est donc une présomption, que seul un humain qui ouvre le document peut confirmer.",
+        "L'arbitrage a aussi confirmé les réponses acceptées malgré un écart d'écriture avec la référence : « 5.43 » pour « 5.4 », « Net cash provided by operating activities » pour « operations ». Il n'a pas porté sur le contrôle au hasard des réponses identiques à la référence, qui reste à faire."
+      ],
+      "en": [
+        "Our two rankings showed a non-zero hallucination rate for five models. On the invoices, Kimi K3, Llama 4 Maverick and Mistral Medium 3.5 gave a VAT number for American invoices that carry none. On the financial reports, Nova Pro and Nova Lite named a security where the analyst answers “there is none”.",
+        "Those verdicts came from the comparator, and the protocol provides for a human to review them. That has been done since 9 October, with the documents open.",
+        "What the pages carry:",
+        "- Invoices: the “VAT number” given by the three models is printed on the invoice. It is the TV station's federal tax identifier, labelled “FIIY #” on one and “TIN” on the other.",
+        "- American Express: asked “which debt securities are listed?”, Nova Pro and Nova Lite answer “Common Shares”, the only line in the table of listed securities. Those are shares, not debt.",
+        "- Ulta Beauty: asked the same question, Nova Pro answers “The Nasdaq Global Select Market”, the name of the exchange, printed on the same line.",
+        "None of these six values is invented. All are wrong: the model took from the page something other than what it was asked for. We now count them that way. Accuracy scores do not move, since a wrong answer and an invented one are both worth zero. The hallucination rate, though, drops to zero for all twenty-seven models on both tests.",
+        "Zero does not mean these models never invent. The finance test has only three questions whose right answer is “there is none”, and the invoices a single absent field.",
+        "What we had written that was wrong: that three models “invent a VAT number that does not exist”, and that two others “fabricate” an answer. Both articles are corrected, and the correction is dated in each.",
+        "The lesson on method: a comparator knows that a value was given where the reference says “nothing”. It does not know whether that value is on the page. A “hallucinated” verdict coming out of the code is therefore a presumption, which only a human opening the document can confirm.",
+        "The review also confirmed the answers accepted despite a difference in spelling from the reference: “5.43” for “5.4”, “Net cash provided by operating activities” for “operations”. It did not cover the random check of answers identical to the reference, which remains to be done."
+      ]
+    }
+  },
+  {
     "slug": "deuxieme-mesure-analyse-de-rapports-financiers",
     "date": "2026-10-08",
     "kind": "benchmark",
@@ -10,8 +52,8 @@
       "en": "Second measurement: 27 models face 64 financial-analyst questions"
     },
     "summary": {
-      "fr": "Sept modèles répondent juste aux soixante-quatre questions, dont un à 0,001 $ la question. Huit autres en ratent près d'une sur trois ou bien davantage, presque toujours sur un calcul — et deux inventent une réponse là où il n'y en a pas.",
-      "en": "Seven models answer all sixty-four questions correctly, one of them at $0.001 per question. Eight others miss close to one in three or far more, nearly always on a calculation — and two invent an answer where there is none."
+      "fr": "Sept modèles répondent juste aux soixante-quatre questions, dont un à 0,001 $ la question. Huit autres en ratent près d'une sur trois ou bien davantage, presque toujours sur un calcul — et deux répondent à côté quand la bonne réponse est « il n'y en a pas ».",
+      "en": "Seven models answer all sixty-four questions correctly, one of them at $0.001 per question. Eight others miss close to one in three or far more, nearly always on a calculation — and two answer beside the point when the right answer is “there is none”."
     },
     "body": {
       "fr": [
@@ -21,11 +63,11 @@
         "- Sept modèles sur vingt-sept répondent juste aux soixante-quatre questions. Le moins cher, DeepSeek V4.1 Flash, coûte 0,001 $ la question — trente fois moins que GPT-6 Astra, qui fait le même score.",
         "- Huit modèles échouent sur près d'une question sur trois ou bien davantage, et c'est le calcul qui les arrête. Nova Pro et Nova Lite n'en réussissent qu'un sur trente-deux.",
         "- Une question sépare les sept premiers des suivants : la marge d'EBITDA de Netflix, ratée par dix-sept modèles sur vingt-sept. Sept d'entre eux ajoutent l'amortissement des contenus aux amortissements que la question demande, et trouvent 56,8 % au lieu de 5,4 %.",
-        "- Deux modèles inventent. Sur les trois questions dont la bonne réponse est « il n'y en a pas », Nova Pro fabrique deux réponses et Nova Lite une. Les vingt-cinq autres s'abstiennent.",
+        "- Deux modèles répondent à côté. Sur les trois questions dont la bonne réponse est « il n'y en a pas », Nova Pro donne deux réponses fausses et Nova Lite une : les actions de la société, ou le nom de la bourse, là où l'on demandait des titres de dette. Les vingt-cinq autres s'abstiennent.",
         "Ce que ce classement ne dit pas : lequel des sept premiers est le meilleur. Ils ont le même score, et le tableau ne les range que par prix, puis par rapidité. Nous avons essayé de les départager sur quarante questions plus dures. Le milieu du classement changeait selon la façon de compter ; nous ne publions donc pas ce départage.",
         "Comment une réponse est vérifiée : un nombre est juste à 0,5 % près de celui de l'analyste, un oui ou non doit être le bon, un poste doit porter le nom qu'il a sur la page. Aucune IA ne note une IA.",
         "Nous avons corrigé trois choses après avoir lu les réponses, et nous le disons. Trois questions ont été écartées parce que leur échelle était ambiguë : la référence était un ratio, 0,01, quand la plupart des modèles répondaient en pourcentage, autour de 1,42, comme notre consigne les y invitait. La question mesurait l'échelle choisie, pas le calcul. Une liste de réponses acceptées était trop étroite et refusait douze réponses justes. Et une règle retirait une question du test dès qu'un modèle n'y répondait pas, ce qui faisait sortir les plus dures.",
-        "Les limites de cette mesure : la bonne page est fournie, alors qu'un analyste doit d'abord la trouver dans un rapport de plusieurs centaines de pages. Les sociétés sont célèbres et le jeu de questions est public depuis 2023 : un modèle peut en connaître des chiffres par cœur. Rédiger une note, prévoir ou défendre un avis ne sont pas notés. Et l'arbitrage humain des trois hallucinations n'a pas encore été joué."
+        "Les limites de cette mesure : la bonne page est fournie, alors qu'un analyste doit d'abord la trouver dans un rapport de plusieurs centaines de pages. Les sociétés sont célèbres et le jeu de questions est public depuis 2023 : un modèle peut en connaître des chiffres par cœur. Rédiger une note, prévoir ou défendre un avis ne sont pas notés. Correction du 9 octobre 2026 : cet article écrivait que deux modèles « inventent ». L'arbitrage humain a requalifié leurs trois réponses : ce qu'ils nomment est imprimé sur la page, et ne répond pas à la question. Elles sont fausses, pas inventées."
       ],
       "en": [
         "The hub publishes its second measurement, in a second business function: finance. Twenty-seven models answered the same sixty-four questions, asked on fifty-four reports from thirty US listed companies.",
@@ -34,11 +76,11 @@
         "- Seven models out of twenty-seven answer all sixty-four questions correctly. The cheapest, DeepSeek V4.1 Flash, costs $0.001 per question — thirty times less than GPT-6 Astra, which scores the same.",
         "- Eight models fail close to one question in three or far more, and it is the calculation that stops them. Nova Pro and Nova Lite get one calculation right out of thirty-two.",
         "- One question separates the top seven from the rest: Netflix's EBITDA margin, missed by seventeen models out of twenty-seven. Seven of them add content amortisation to the depreciation and amortisation the question asks for, and find 56.8% instead of 5.4%.",
-        "- Two models invent. On the three questions whose right answer is “there is none”, Nova Pro fabricates two answers and Nova Lite one. The other twenty-five abstain.",
+        "- Two models answer beside the point. On the three questions whose right answer is “there is none”, Nova Pro gives two wrong answers and Nova Lite one: the company's shares, or the name of the exchange, where debt securities were asked for. The other twenty-five abstain.",
         "What this ranking does not say: which of the top seven is best. They have the same score, and the table orders them only by price, then by speed. We tried to separate them on forty harder questions. The middle of the ranking changed with the way of counting, so we are not publishing that tie-break.",
         "How an answer is verified: a number is right within 0.5% of the analyst's, a yes or no has to be the right one, a line item has to carry the name it has on the page. No AI grades an AI.",
         "We corrected three things after reading the answers, and we say so. Three questions were dropped because their scale was ambiguous: the reference was a ratio, 0.01, while most models answered as a percentage, around 1.42, as our own instruction invited them to. The question measured the scale chosen, not the calculation. A list of accepted answers was too narrow and rejected twelve correct answers. And a rule removed a question from the test as soon as one model failed to answer it, which pushed out the hardest ones.",
-        "The limits of this measurement: the right page is supplied, whereas an analyst first has to find it in a report of several hundred pages. The companies are famous and the question set has been public since 2023: a model may know some of these figures by heart. Writing a note, forecasting or defending a view are not graded. And the human review of the three hallucinations has not been carried out yet."
+        "The limits of this measurement: the right page is supplied, whereas an analyst first has to find it in a report of several hundred pages. The companies are famous and the question set has been public since 2023: a model may know some of these figures by heart. Writing a note, forecasting or defending a view are not graded. Correction of 9 October 2026: this article said that two models “invent”. Human review reclassified their three answers: what they name is printed on the page, and does not answer the question. They are wrong, not invented."
       ]
     }
   },
@@ -53,8 +95,8 @@
       "en": "First measurement: 27 models read 100 real invoices"
     },
     "summary": {
-      "fr": "Le vainqueur coûte 0,0009 $ la facture et n'en rate aucune sur cent. Les deux modèles les plus chers du panel, eux, en ratent une — et trois modèles inventent un numéro de TVA qui n'existe pas.",
-      "en": "The winner costs $0.0009 per invoice and misses none out of a hundred. The two most expensive models in the panel miss one — and three models invent a VAT number that does not exist."
+      "fr": "Le vainqueur coûte 0,0009 $ la facture et n'en rate aucune sur cent. Les deux modèles les plus chers du panel, eux, en ratent une — et trois modèles donnent pour numéro de TVA un identifiant fiscal qui n'en est pas un.",
+      "en": "The winner costs $0.0009 per invoice and misses none out of a hundred. The two most expensive models in the panel miss one — and three models give as a VAT number a tax identifier that is not one."
     },
     "body": {
       "fr": [
@@ -63,13 +105,14 @@
         "Ce que ça donne :",
         "- Cinq modèles sur vingt-sept lisent le montant total sans une seule erreur sur cent factures.",
         "- Le premier, GPT-6 Luna, coûte 0,0009 $ la facture — quatre-vingts fois moins que GPT-6 Astra, du même fournisseur, qui en rate une.",
-        "- Trois modèles inventent. Sur un numéro de TVA que ces factures américaines ne portent pas, Kimi K3, Llama 4 Maverick et Mistral Medium ont chacun fabriqué une valeur. Les vingt-quatre autres s'abstiennent correctement.",
+        "- Trois modèles se trompent de numéro. Ces factures américaines ne portent pas de numéro de TVA ; Kimi K3, Llama 4 Maverick et Mistral Medium ont donné à la place l'identifiant fiscal de la chaîne, imprimé sur la page. Les vingt-quatre autres s'abstiennent correctement.",
         "- Le dernier du classement laisse près d'une facture sur trois à reprendre à la main, alors qu'il est vendu comme un modèle haut de gamme.",
-        "La taille de l'échantillon est ce qui fait la différence entre un classement et une illusion. Sur dix-neuf factures, dix-neuf modèles étaient à égalité parfaite et aucun n'inventait rien. Sur cent, ils ne sont plus que cinq, trois inventions apparaissent, et les deux modèles les plus chers du panel quittent le peloton de tête. Un petit échantillon ne dit pas « ces modèles se valent » : il dit « ce test ne les sépare pas encore ».",
+        "La taille de l'échantillon est ce qui fait la différence entre un classement et une illusion. Sur dix-neuf factures, dix-neuf modèles étaient à égalité parfaite et aucun ne se trompait sur le numéro de TVA. Sur cent, ils ne sont plus que cinq, trois erreurs sur le numéro de TVA apparaissent, et les deux modèles les plus chers du panel quittent le peloton de tête. Un petit échantillon ne dit pas « ces modèles se valent » : il dit « ce test ne les sépare pas encore ».",
         "Comment on vérifie une réponse, puisque c'est la question qui compte : pas en demandant à une IA de juger une IA. Un comparateur écrit à la main lit la réponse du modèle et l'annotation, et tranche. Un montant est comparé au centime. Quand le comparateur ne sait pas trancher, le document part en relecture humaine plutôt que d'être compté comme faux.",
         "Le barème ne note que ce qui n'admet qu'une seule bonne réponse : le montant total facturé, et le numéro de TVA absent du document. Les autres champs de ces factures — le numéro de contrat, l'annonceur, la période — admettent plusieurs réponses défendables : ces documents portent six identifiants distincts et deux périodes différentes. La question ne leur est donc plus posée du tout, plutôt que d'être posée puis écartée.",
         "Les cent factures ont été lues par les vingt-sept modèles, sans exception. Il a fallu plusieurs reprises pour y arriver : une limite de débit chez un hébergeur ou un modèle trop bavard pour tenir dans la place qu'on lui laisse suffit à rendre une facture inexploitable, et un classement compare des modèles sur les mêmes documents ou ne compare rien.",
-        "Ce que cette mesure ne dit pas : les factures sont américaines et en anglais. Elle ne mesure pas l'extraction des lignes de facturation, qui est la vraie difficulté du métier — l'annotation d'origine ne les couvre pas. Et vingt-cinq modèles sur vingt-sept dépassent 97 % : cette tâche reste un seuil d'entrée plutôt qu'un palmarès."
+        "Ce que cette mesure ne dit pas : les factures sont américaines et en anglais. Elle ne mesure pas l'extraction des lignes de facturation, qui est la vraie difficulté du métier — l'annotation d'origine ne les couvre pas. Et vingt-cinq modèles sur vingt-sept dépassent 97 % : cette tâche reste un seuil d'entrée plutôt qu'un palmarès.",
+        "Correction du 9 octobre 2026 : cet article écrivait que trois modèles « inventaient » un numéro de TVA. Un humain a ouvert les deux factures concernées : le numéro donné y est imprimé, c'est l'identifiant fiscal de la chaîne. La réponse reste fausse, mais elle n'est pas inventée, et le taux d'hallucinations de ce test est de zéro."
       ],
       "en": [
         "The hub publishes its first real measurement. Twenty-seven models read the same one hundred invoices, and every answer was compared against an annotation written by a human.",
@@ -77,13 +120,14 @@
         "What came out:",
         "- Five models out of twenty-seven read the total amount without a single mistake across one hundred invoices.",
         "- The winner, GPT-6 Luna, costs $0.0009 per invoice — eighty times less than GPT-6 Astra, from the same provider, which misses one.",
-        "- Three models invent. On a VAT number these American invoices do not carry, Kimi K3, Llama 4 Maverick and Mistral Medium each fabricated a value. The other twenty-four abstain correctly.",
+        "- Three models pick the wrong number. These American invoices carry no VAT number; Kimi K3, Llama 4 Maverick and Mistral Medium gave the station's tax identifier instead, which is printed on the page. The other twenty-four abstain correctly.",
         "- The last model in the ranking leaves nearly one invoice in three to be redone by hand, while being sold as a premium model.",
-        "Sample size is what separates a ranking from an illusion. On nineteen invoices, nineteen models were perfectly tied and none invented anything. On one hundred, only five remain, three inventions appear, and the two most expensive models in the panel drop out of the leading pack. A small sample does not say “these models are equivalent”: it says “this test does not separate them yet”.",
+        "Sample size is what separates a ranking from an illusion. On nineteen invoices, nineteen models were perfectly tied and none got the VAT number wrong. On one hundred, only five remain, three mistakes on the VAT number appear, and the two most expensive models in the panel drop out of the leading pack. A small sample does not say “these models are equivalent”: it says “this test does not separate them yet”.",
         "How an answer is verified, since that is the question that matters: not by asking an AI to judge an AI. A hand-written comparator reads the model's answer and the annotation, and decides. An amount is compared to the cent. When the comparator cannot decide, the document goes to human review rather than being counted wrong.",
         "The rubric scores only what admits a single right answer: the total amount billed, and the VAT number absent from the document. The other fields on these invoices — contract number, advertiser, period — admit several defensible answers: these documents carry six distinct identifiers and two different periods. So the question is no longer asked at all, rather than asked and then discarded.",
         "All one hundred invoices were read by all twenty-seven models, without exception. It took several retries: a rate limit at a provider, or a model too verbose to fit in the room we give it, is enough to make an invoice unusable — and a ranking compares models on the same documents, or it compares nothing.",
-        "What this measurement does not say: the invoices are American and in English. It does not measure line-item extraction, which is the real difficulty of the job — the original annotation does not cover it. And twenty-five models out of twenty-seven exceed 97%: this task remains an entry threshold rather than a league table."
+        "What this measurement does not say: the invoices are American and in English. It does not measure line-item extraction, which is the real difficulty of the job — the original annotation does not cover it. And twenty-five models out of twenty-seven exceed 97%: this task remains an entry threshold rather than a league table.",
+        "Correction of 9 October 2026: this article said that three models “invented” a VAT number. A human opened the two invoices concerned: the number given is printed on them; it is the station's tax identifier. The answer is still wrong, but it is not invented, and this test's hallucination rate is zero."
       ]
     }
   },

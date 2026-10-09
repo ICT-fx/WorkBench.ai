@@ -13,6 +13,8 @@ export type LigneAffichee = LigneQuestion & {
   manquants: string[];
   /** Ceux dont l'échec est imputé au modèle, avec son motif : la question reste classée. */
   imputesNoms: { nom: string; motif: string }[];
+  /** Les réponses dont un humain a changé le verdict, regroupées par motif. */
+  requalifies: { noms: string[]; motif: string }[];
 };
 
 function Attendu({ valeur, t }: { valeur: unknown; t: Detail }) {
@@ -72,6 +74,13 @@ export function QuestionsPosees({ lignes, t }: { lignes: LigneAffichee[]; t: Det
                   {l.statut === "classee" && l.imputesNoms.map((e) => (
                     <p key={e.nom} className="mt-2 text-xs text-encre-pale">
                       {fill(t.questionsImpute, { model: e.nom, motif: e.motif })}
+                    </p>
+                  ))}
+                  {/* Un verdict changé par un humain se dit sous la question : sans cela, le
+                      compte affiché à droite ne s'expliquerait pas par les réponses. */}
+                  {l.requalifies.map((r) => (
+                    <p key={r.noms.join()} className="mt-2 text-xs text-encre-pale">
+                      {fill(t.requalified, { models: r.noms.join(", "), motif: r.motif })}
                     </p>
                   ))}
                   {l.statut === "ecartee" && l.motif !== undefined && (
